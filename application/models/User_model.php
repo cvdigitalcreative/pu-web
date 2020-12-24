@@ -85,7 +85,7 @@ class User_model extends CI_Model
         return json_decode($result, TRUE);
     }
 
-    // ======================= Auth ========================
+    // ======================= Model Functions ========================
 
     public function login($email_no_telepon, $password)
     {
