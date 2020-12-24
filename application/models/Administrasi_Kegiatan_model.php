@@ -32,22 +32,6 @@ class Administrasi_Kegiatan_model extends CI_Model
         return json_decode($result, TRUE);
     }
 
-    public function http_request_update($data, $function, $token)
-    {
-        $dataHeader = ['Authentication: ' . $token];
-        $curl = curl_init();
-        $url = API_URL . "/administrasi-kegiatan" . $function;
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $dataHeader);
-        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-        $result = curl_exec($curl);
-        curl_close($curl);
-
-        return json_decode($result, TRUE);
-    }
-
     public function http_request_delete($function, $token)
     {
         $dataHeader = ['Authentication: ' . $token];
