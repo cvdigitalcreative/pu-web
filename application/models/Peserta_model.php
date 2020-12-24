@@ -3,7 +3,7 @@
 class Peserta_model extends CI_Model
 {
 
-    public function http_request_get_with_token($function, $token)
+    public function http_request_get($function, $token)
     {
         $dataHeader = ['Authentication: ' . $token];
         $curl = curl_init();
@@ -32,7 +32,7 @@ class Peserta_model extends CI_Model
     }
 
 
-    public function http_request_delete_with_token($function, $token)
+    public function http_request_delete($function, $token)
     {
         $dataHeader = ['Authentication: ' . $token];
         $curl = curl_init();
@@ -166,22 +166,22 @@ class Peserta_model extends CI_Model
 
     public function delete_peserta($id_user_peserta, $token)
     {
-        return $this->http_request_delete_with_token("/$id_user_peserta", $token);
+        return $this->http_request_delete("/$id_user_peserta", $token);
     }
 
     public function view_seluruh_peserta($token)
     {
-        return $this->http_request_get_with_token("/", $token);
+        return $this->http_request_get("/", $token);
     }
 
     public function view_peserta_daerah($id_provinsi, $token)
     {
-        return $this->http_request_get_with_token("/provinsi/$id_provinsi", $token);
+        return $this->http_request_get("/provinsi/$id_provinsi", $token);
     }
 
     public function view_detail_peserta($id_user_peserta, $token)
     {
 
-        return $this->http_request_get_with_token("/$id_user_peserta", $token);
+        return $this->http_request_get("/$id_user_peserta", $token);
     }
 }
