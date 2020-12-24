@@ -62,4 +62,86 @@ class Tenaga_Ahli_model extends CI_Model
 
         return json_decode($result, TRUE);
     }
+
+    // ======================= Model Functions ========================
+
+    public function add_tenaga_ahli(
+        $nama_lengkap,
+        $tempat_lahir,
+        $tanggal_lahir,
+        $id_jenis_kelamin,
+        $nik,
+        $email,
+        $alamat_rumah,
+        $id_provinsi,
+        $id_kabupaten_kota,
+        $no_telepon_rumah,
+        $no_handphone,
+        $id_jabker,
+        $id_kategori_tenaga_ahli,
+        $token
+    ) {
+        $data = [
+            'nama_lengkap' => $nama_lengkap,
+            'tempat_lahir' => $tempat_lahir,
+            'tanggal_lahir' => $tanggal_lahir,
+            'id_jenis_kelamin' => $id_jenis_kelamin,
+            'nik' => $nik,
+            'email' => $email,
+            'alamat_rumah' => $alamat_rumah,
+            'id_provinsi' => $id_provinsi,
+            'id_kabupaten_kota' => $id_kabupaten_kota,
+            'no_telepon_rumah' => $no_telepon_rumah,
+            'no_handphone' => $no_handphone,
+            'id_jabker' => $id_jabker,
+            'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
+        ];
+
+        $data = http_build_query($data);
+
+        return $this->http_request_post($data, "/", $token);
+    }
+
+    public function edit_tenaga_ahli(
+        $nama_lengkap,
+        $tempat_lahir,
+        $tanggal_lahir,
+        $id_jenis_kelamin,
+        $nik,
+        $email,
+        $alamat_rumah,
+        $id_provinsi,
+        $id_kabupaten_kota,
+        $no_telepon_rumah,
+        $no_handphone,
+        $id_jabker,
+        $id_kategori_tenaga_ahli,
+        $id_tenaga_ahli,
+        $token
+    ) {
+        $data = [
+            'nama_lengkap' => $nama_lengkap,
+            'tempat_lahir' => $tempat_lahir,
+            'tanggal_lahir' => $tanggal_lahir,
+            'id_jenis_kelamin' => $id_jenis_kelamin,
+            'nik' => $nik,
+            'email' => $email,
+            'alamat_rumah' => $alamat_rumah,
+            'id_provinsi' => $id_provinsi,
+            'id_kabupaten_kota' => $id_kabupaten_kota,
+            'no_telepon_rumah' => $no_telepon_rumah,
+            'no_handphone' => $no_handphone,
+            'id_jabker' => $id_jabker,
+            'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
+        ];
+
+        $data = http_build_query($data);
+
+        return $this->http_request_post($data, "/$id_tenaga_ahli", $token);
+    }
+
+    public function delete_tenaga_ahli($id_tenaga_ahli, $token)
+    {
+        return $this->http_request_delete("/$id_tenaga_ahli", $token);
+    }
 }
