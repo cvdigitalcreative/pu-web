@@ -167,6 +167,6 @@ class User_model extends CI_Model
 
         $data = http_build_query($data);
 
-        return $this->http_request_update($data, "forgot-password/change-password/$id_forgot_password");
+        return $this->http_request_update($data, "/forgot-password/change-password/$id_forgot_password");
     }
 }
