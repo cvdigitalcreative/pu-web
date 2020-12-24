@@ -144,4 +144,19 @@ class Tenaga_Ahli_model extends CI_Model
     {
         return $this->http_request_delete("/$id_tenaga_ahli", $token);
     }
+
+    public function view_seluruh_tenaga_ahli($id_kategori_tenaga_ahli, $token)
+    {
+        return $this->http_request_get("/$id_kategori_tenaga_ahli", $token);
+    }
+
+    public function view_tenaga_ahli_by_provinsi($id_provinsi, $token)
+    {
+        return $this->http_request_get("/provinsi/$id_provinsi", $token);
+    }
+
+    public function view_detail_tenaga_ahli($id_tenaga_ahli, $token)
+    {
+        return $this->http_request_get("/$id_tenaga_ahli", $token);
+    }
 }
