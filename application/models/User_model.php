@@ -154,7 +154,7 @@ class User_model extends CI_Model
 
     public function forgot_password($email_no_telepon){
         $data = [
-            'email_no_telpon' => $email_no_telepon
+            'email_no_telepon' => $email_no_telepon
         ];
 
         return $this->http_request_post($data, "/forgot-password");
