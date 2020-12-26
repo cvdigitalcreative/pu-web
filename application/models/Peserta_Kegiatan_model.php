@@ -5,7 +5,7 @@ class Peserta_Kegiatan_model extends CI_Model
 
     public function http_request_update($data, $function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/peserta-kegiatan" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);

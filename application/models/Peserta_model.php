@@ -5,7 +5,7 @@ class Peserta_model extends CI_Model
 
     public function http_request_get($function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/peserta" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -34,7 +34,7 @@ class Peserta_model extends CI_Model
 
     public function http_request_delete($function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/peserta" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);

@@ -4,7 +4,7 @@ class User_model extends CI_Model
 {
     public function http_request_get($function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/user" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -32,7 +32,7 @@ class User_model extends CI_Model
 
     public function http_request_post_with_token($data, $function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/user" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -152,7 +152,8 @@ class User_model extends CI_Model
         return $this->http_request_post_with_token($data, "/", $token);
     }
 
-    public function forgot_password($email_no_telepon){
+    public function forgot_password($email_no_telepon)
+    {
         $data = [
             'email_no_telepon' => $email_no_telepon
         ];
@@ -160,7 +161,8 @@ class User_model extends CI_Model
         return $this->http_request_post($data, "/forgot-password");
     }
 
-    public function change_password($id_forgot_password, $new_password){
+    public function change_password($id_forgot_password, $new_password)
+    {
         $data = [
             'new_password' => $new_password
         ];
