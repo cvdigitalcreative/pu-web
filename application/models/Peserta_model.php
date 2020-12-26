@@ -17,12 +17,14 @@ class Peserta_model extends CI_Model
         return json_decode($result, TRUE);
     }
 
-    public function http_request_post($data, $function)
+    public function http_request_post($data, $function, $token)
     {
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/peserta" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_POST, TRUE);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $dataHeader);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         $result = curl_exec($curl);
@@ -71,9 +73,11 @@ class Peserta_model extends CI_Model
         $no_handphone,
         $id_status_rumah,
         $id_pendidikan,
+        $id_jabker,
         $id_kompetensi,
         $no_sertifikat,
-        $file_foto_profil
+        $file_foto_profil,
+        $token
     ) {
 
         $data = [
@@ -84,7 +88,7 @@ class Peserta_model extends CI_Model
             'id_kota_kabupaten' => $id_kota_kabupaten,
             'id_kecamatan' => $id_kecamatan,
             'id_kelurahan' => $id_kelurahan,
-            'id_kenis_kelamin' => $id_jenis_kelamin,
+            'id_jenis_kelamin' => $id_jenis_kelamin,
             'id_status_perkawinan' => $id_status_perkawinan,
             'nama_perusahaan' => $nama_perusahaan,
             'jabatan' => $jabatan,
@@ -98,12 +102,13 @@ class Peserta_model extends CI_Model
             'no_handphone' => $no_handphone,
             'id_status_rumah' => $id_status_rumah,
             'id_pendidikan' => $id_pendidikan,
+            'id_jabker' => $id_jabker,
             'id_kompetensi' => $id_kompetensi,
             'no_sertifikat' => $no_sertifikat,
-            'file_foto_profil' => $file_foto_profil
+            'file_foto_profile' => $file_foto_profil
         ];
 
-        return $this->http_request_post($data, "/");
+        return $this->http_request_post($data, "/", $token);
     }
 
     public function edit_peserta(
@@ -128,10 +133,12 @@ class Peserta_model extends CI_Model
         $no_handphone,
         $id_status_rumah,
         $id_pendidikan,
+        $id_jabker,
         $id_kompetensi,
         $no_sertifikat,
         $file_foto_profil,
-        $id_user_peserta
+        $id_user_peserta,
+        $token
     ) {
 
         $data = [
@@ -142,7 +149,7 @@ class Peserta_model extends CI_Model
             'id_kota_kabupaten' => $id_kota_kabupaten,
             'id_kecamatan' => $id_kecamatan,
             'id_kelurahan' => $id_kelurahan,
-            'id_kenis_kelamin' => $id_jenis_kelamin,
+            'id_jenis_kelamin' => $id_jenis_kelamin,
             'id_status_perkawinan' => $id_status_perkawinan,
             'nama_perusahaan' => $nama_perusahaan,
             'jabatan' => $jabatan,
@@ -156,12 +163,13 @@ class Peserta_model extends CI_Model
             'no_handphone' => $no_handphone,
             'id_status_rumah' => $id_status_rumah,
             'id_pendidikan' => $id_pendidikan,
+            'id_jabker' => $id_jabker,
             'id_kompetensi' => $id_kompetensi,
             'no_sertifikat' => $no_sertifikat,
-            'file_foto_profil' => $file_foto_profil
+            'file_foto_profile' => $file_foto_profil
         ];
 
-        return $this->http_request_post($data, "/$id_user_peserta");
+        return $this->http_request_post($data, "/$id_user_peserta", $token);
     }
 
     public function delete_peserta($id_user_peserta, $token)
