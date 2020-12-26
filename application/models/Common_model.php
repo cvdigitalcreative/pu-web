@@ -4,7 +4,7 @@ class Common_model extends CI_Model
 {
     public function http_request_get($function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/common" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -47,7 +47,7 @@ class Common_model extends CI_Model
     {
         return $this->http_request_get("/provinsi", $token);
     }
-    
+
     public function view_kabupaten_kota($id_provinsi, $token)
     {
         return $this->http_request_get("/kabupaten-kota/$id_provinsi", $token);

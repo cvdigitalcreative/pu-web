@@ -4,7 +4,7 @@ class Tenaga_Ahli_model extends CI_Model
 {
     public function http_request_get($function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/tenaga-ahli" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -18,7 +18,7 @@ class Tenaga_Ahli_model extends CI_Model
 
     public function http_request_post($data, $function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/tenaga-ahli" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -34,7 +34,7 @@ class Tenaga_Ahli_model extends CI_Model
 
     public function http_request_update($data, $function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/tenaga-ahli" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
@@ -50,7 +50,7 @@ class Tenaga_Ahli_model extends CI_Model
 
     public function http_request_delete($function, $token)
     {
-        $dataHeader = ['Authentication: ' . $token];
+        $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL . "/tenaga-ahli" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
