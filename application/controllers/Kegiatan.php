@@ -1,0 +1,222 @@
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Kegiatan extends CI_Controller
+{
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Peserta_model');
+        $this->load->model('Tenaga_Ahli_model');
+        $this->load->model('Kegiatan_model');
+        $this->load->model('Common_model');
+    }
+
+    public function index()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan($this->session->userdata('token'));
+            if ($data['kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['kegiatan']['status'] == "Success") {
+                    $data['kegiatan'] = $data['kegiatan']['data'];
+                } else {
+                    $data['kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
+                }
+            }
+            if ($null)
+                redirect();
+        } else
+            redirect();
+    }
+
+    public function tanggal()
+    {
+        $tanggal = $this->input->post('bulan');
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_perbulan($tanggal, $this->session->userdata('token'));
+            var_dump($data['kegiatan']);
+            if ($data['kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['kegiatan']['status'] == "Success") {
+                    $data['kegiatan'] = $data['kegiatan']['data'];
+                } else {
+                    $data['kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
+                }
+            }
+            if ($null)
+                redirect();
+        } else
+            redirect();
+    }
+
+    public function detail($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['kegiatan'] = $this->Kegiatan_model->view_detail_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            if ($data['kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['kegiatan']['status'] == "Success") {
+                    $data['kegiatan'] = $data['kegiatan']['data'];
+                } else {
+                    $data['kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
+                }
+            }
+
+            if ($null)
+                redirect();
+        } else
+            redirect();
+    }
+
+    public function daftar($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $daftar_kegiatan = $this->Kegiatan_model->daftar_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            if ($daftar_kegiatan == null) {
+                redirect();
+            } else {
+                if ($daftar_kegiatan['status'] == "Success") {
+                    $this->session->set_flashdata('success', $daftar_kegiatan['message']);
+                    redirect();
+                } else {
+                    $this->session->set_flashdata('APImessage', $daftar_kegiatan['message']);
+                    redirect();
+                }
+            }
+        } else
+            redirect();
+    }
+
+    public function tambah()
+    {
+        $this->load->view('edit_profile');
+    }
+
+    public function tambah_kegiatan_action()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $judul_kegiatan = $this->input->post('judul_kegiatan');
+            $deskripsi_kegiatan = $this->input->post('deskripsi_kegiatan');
+            $tanggal_kegiatan = $this->input->post('tanggal_kegiatan');
+            $temparr = explode('-', $tanggal_kegiatan);
+            $indextglreverse = 0;
+            for ($j = count($temparr) - 1; $j >= 0; $j--) {
+                $arrtemptanggal[$indextglreverse] = $temparr[$j];
+                $indextglreverse++;
+            }
+            $tanggal_kegiatan = implode('-', $arrtemptanggal);
+            $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
+            $latitude_lokasi = $this->input->post('latitude_lokasi');
+            $longitude_lokasi = $this->input->post('longitude_lokasi');
+            $status_kegiatan = $this->input->post('status_kegiatan');
+            $id_pelatih_kegiatan = $this->input->post('id_pelatih_kegiatan');
+            $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+
+            $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
+                $judul_kegiatan,
+                $deskripsi_kegiatan,
+                $tanggal_kegiatan,
+                $lokasi_kegiatan,
+                $latitude_lokasi,
+                $longitude_lokasi,
+                $status_kegiatan,
+                $id_pelatih_kegiatan,
+                $foto_banner_kegiatan,
+                $this->session->userdata('token')
+            );
+
+            if ($tambah_kegiatan == null) {
+                redirect();
+            }
+            if ($tambah_kegiatan['status'] == "Success") {
+                $this->session->set_flashdata('success', $tambah_kegiatan['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('failed', $tambah_kegiatan['message']);
+                redirect();
+            }
+        } else {
+            redirect();
+        }
+    }
+
+    public function edit_kegiatan_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $judul_kegiatan = $this->input->post('judul_kegiatan');
+            $deskripsi_kegiatan = $this->input->post('deskripsi_kegiatan');
+            $tanggal_kegiatan = $this->input->post('tanggal_kegiatan');
+            $temparr = explode('-', $tanggal_kegiatan);
+            $indextglreverse = 0;
+            for ($j = count($temparr) - 1; $j >= 0; $j--) {
+                $arrtemptanggal[$indextglreverse] = $temparr[$j];
+                $indextglreverse++;
+            }
+            $tanggal_kegiatan = implode('-', $arrtemptanggal);
+            $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
+            $latitude_lokasi = $this->input->post('latitude_lokasi');
+            $longitude_lokasi = $this->input->post('longitude_lokasi');
+            $status_kegiatan = $this->input->post('status_kegiatan');
+            $id_pelatih_kegiatan = $this->input->post('id_pelatih_kegiatan');
+            $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+
+            $edit_kegiatan = $this->Kegiatan_model->edit_kegiatan(
+                $judul_kegiatan,
+                $deskripsi_kegiatan,
+                $tanggal_kegiatan,
+                $lokasi_kegiatan,
+                $latitude_lokasi,
+                $longitude_lokasi,
+                $status_kegiatan,
+                $id_pelatih_kegiatan,
+                $foto_banner_kegiatan,
+                $id_kegiatan,
+                $this->session->userdata('token')
+            );
+
+            if ($edit_kegiatan == null) {
+                redirect();
+            }
+            if ($edit_kegiatan['status'] == "Success") {
+                $this->session->set_flashdata('success', $edit_kegiatan['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('failed', $edit_kegiatan['message']);
+                redirect();
+            }
+        } else {
+            redirect();
+        }
+    }
+
+    public function delete_kegiatan($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $delete_kegiatan = $this->Kegiatan_model->delete_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            if ($delete_kegiatan == null) {
+                redirect();
+            } else {
+                if ($delete_kegiatan['status'] == "Success") {
+                    $this->session->set_flashdata('success', $delete_kegiatan['message']);
+                    redirect();
+                } else {
+                    $this->session->set_flashdata('APImessage', $delete_kegiatan['message']);
+                    redirect();
+                }
+            }
+        } else
+            redirect();
+    }
+}
