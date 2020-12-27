@@ -21,6 +21,22 @@ class Kegiatan extends CI_Controller
             else {
                 if ($data['kegiatan']['status'] == "Success") {
                     $data['kegiatan'] = $data['kegiatan']['data'];
+
+                    $indexKegiatan = 0;
+                    foreach ($data['kegiatan'] as $val) {
+                        $data['kegiatan'][$indexKegiatan]['berita_acara'] = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
+                        if ($data['kegiatan'][$indexKegiatan]['berita_acara'] == null)
+                            $null = true;
+                        else {
+                            if ($data['kegiatan'][$indexKegiatan]['berita_acara']['status'] == "Success") {
+                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = $data['kegiatan'][$indexKegiatan]['berita_acara']['data'];
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = null;
+                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['berita_acara']['message']);
+                            }
+                        }
+                        $indexKegiatan++;
+                    }
                 } else {
                     $data['kegiatan'] = null;
                     $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
@@ -59,6 +75,41 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
             $data['kegiatan'] = $this->Kegiatan_model->view_detail_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            if ($data['kegiatan'] == null)
+            $null = true;
+            else {
+                if ($data['kegiatan']['status'] == "Success") {
+                    $data['kegiatan'] = $data['kegiatan']['data'];
+                    
+                    $data['kegiatan']['berita_acara'] = $this->Kegiatan_model->view_berita_acara($id_kegiatan, $this->session->userdata('token'));
+                    if ($data['kegiatan']['berita_acara'] == null)
+                    $null = true;
+                    else {
+                        if ($data['kegiatan']['berita_acara']['status'] == "Success") {
+                            $data['kegiatan']['berita_acara'] = $data['kegiatan']['berita_acara']['data'];
+                        } else {
+                            $data['kegiatan']['berita_acara'] = null;
+                            $this->session->set_flashdata('APImessage', $data['kegiatan']['berita_acara']['message']);
+                        }
+                    }
+                } else {
+                    $data['kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
+                }
+            }
+            
+            if ($null)
+                redirect();
+        } else
+            redirect();
+    }
+
+    // blm done
+    public function peserta($id_kegiatan, $id_status)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['kegiatan'] = $this->Kegiatan_model->view_peserta_by_status($id_kegiatan, $id_status, $this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
             else {
@@ -214,5 +265,66 @@ class Kegiatan extends CI_Controller
             }
         } else
             redirect();
+    }
+
+    // ====================== Berita Acara ==================================
+
+
+    //blm done
+    public function tambah_berita_acara_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $deskripsi_berita_acara = $this->input->post('deskripsi_berita_acara');
+            $file_berita_acara = new \CurlFile($_FILES['file_berita_acara']['tmp_name'], $_FILES['file_berita_acara']['type'], $_FILES['file_berita_acara']['name']);
+
+            $tambah_berita_acara = $this->Kegiatan_model->add_berita_acara(
+                $deskripsi_berita_acara,
+                $file_berita_acara,
+                $id_kegiatan,
+                $this->session->userdata('token')
+            );
+
+            if ($tambah_berita_acara == null) {
+                redirect();
+            }
+            if ($tambah_berita_acara['status'] == "Success") {
+                $this->session->set_flashdata('success', $tambah_berita_acara['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('failed', $tambah_berita_acara['message']);
+                redirect();
+            }
+        } else {
+            redirect();
+        }
+    }
+
+    //blm done
+    public function edit_berita_acara_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $deskripsi_berita_acara = $this->input->post('deskripsi_berita_acara');
+            $file_berita_acara = new \CurlFile($_FILES['file_berita_acara']['tmp_name'], $_FILES['file_berita_acara']['type'], $_FILES['file_berita_acara']['name']);
+
+            $edit_berita_acara = $this->Kegiatan_model->edit_berita_acara(
+                $deskripsi_berita_acara,
+                $file_berita_acara,
+                $id_kegiatan,
+                $this->session->userdata('token')
+            );
+
+            if ($edit_berita_acara == null) {
+                redirect();
+            }
+            if ($edit_berita_acara['status'] == "Success") {
+                $this->session->set_flashdata('success', $edit_berita_acara['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('failed', $edit_berita_acara['message']);
+                redirect();
+            }
+        } else {
+            redirect();
+        }
     }
 }
