@@ -77,7 +77,7 @@ class Administrasi_Kegiatan_model extends CI_Model
             'file_administrasi_kegiatan' => $file_administrasi_kegiatan
         ];
 
-        return $this->http_request_post($data, "/$file_administrasi_kegiatan", $token);
+        return $this->http_request_post($data, "/$id_administrasi_kegiatan", $token);
     }
 
     public function delete_administrasi_kegiatan($id_administrasi_kegiatan, $token)
