@@ -14,7 +14,7 @@ class User extends CI_Controller
     public function index()
     {
         $null = false;
-        $data['user'] = $this->User_model->view_user_detail(TOKEN);
+        $data['user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
         if ($data['user'] == null)
             $null = true;
         else {
@@ -87,7 +87,7 @@ class User extends CI_Controller
                 $id_kompetensi,
                 $no_sertifikat,
                 $file_foto_profil,
-                TOKEN
+                $this->session->userdata('token')
             );
 
             if ($edit_profile == null) {
