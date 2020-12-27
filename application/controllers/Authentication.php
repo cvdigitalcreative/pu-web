@@ -26,7 +26,7 @@ class Authentication extends CI_Controller
                 $this->session->set_flashdata('success', $register['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $register['message']);
+                $this->session->set_flashdata('APImessage', $register['message']);
                 redirect();
             }
         } else {
@@ -52,7 +52,7 @@ class Authentication extends CI_Controller
                 $this->session->set_userdata('role', $login['data']['id_role']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $login['message']);
+                $this->session->set_flashdata('APImessage', $login['message']);
                 redirect();
             }
         } else {
@@ -67,7 +67,7 @@ class Authentication extends CI_Controller
             $this->session->set_flashdata('success', $verification['message']);
             redirect();
         } else {
-            $this->session->set_flashdata('failed', $verification['message']);
+            $this->session->set_flashdata('APImessage', $verification['message']);
             redirect();
         }
     }
@@ -80,7 +80,7 @@ class Authentication extends CI_Controller
         $this->session->unset_userdata('role');
         $this->session->sess_destroy();
 
-        $this->session->set_flashdata('failed', "Logout berhasil");
+        $this->session->set_flashdata('APImessage', "Logout berhasil");
     }
 
     public function forgot_password()
@@ -93,7 +93,7 @@ class Authentication extends CI_Controller
             $this->session->set_flashdata('success', $forgot_password['message']);
             redirect();
         } else {
-            $this->session->set_flashdata('failed', $forgot_password['message']);
+            $this->session->set_flashdata('APImessage', $forgot_password['message']);
             redirect();
         }
     }
@@ -109,7 +109,7 @@ class Authentication extends CI_Controller
             $this->session->set_flashdata('success', $change_password['message']);
             redirect();
         } else {
-            $this->session->set_flashdata('failed', $change_password['message']);
+            $this->session->set_flashdata('APImessage', $change_password['message']);
             redirect();
         }
     }
