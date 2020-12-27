@@ -166,10 +166,14 @@ class Kegiatan_model extends CI_Model
         return $this->http_request_post($data, "/daftar/", $token);
     }
 
+    // ====================== Peserta Kegiatan ==================================
+
     public function view_peserta_by_status($id_kegiatan, $id_status, $token)
     {
         return $this->http_request_get("/$id_kegiatan/$id_status", $token);
     }
+
+    // ====================== Berita Acara ==================================
 
     public function add_berita_acara(
         $deskripsi_berita_acara,
@@ -202,5 +206,75 @@ class Kegiatan_model extends CI_Model
     public function view_berita_acara($id_kegiatan, $token)
     {
         return $this->http_request_get("/$id_kegiatan/berita-acara/", $token);
+    }
+
+    // ====================== invoice ==================================
+
+    public function add_invoice(
+        $deskripsi_invoice,
+        $file_invoice,
+        $id_kegiatan,
+        $token
+    ) {
+        $data = [
+            'deskripsi_invoice' => $deskripsi_invoice,
+            'file_invoice' => $file_invoice
+        ];
+
+        return $this->http_request_post($data, "/$id_kegiatan/invoice/", $token);
+    }
+
+    public function edit_invoice(
+        $deskripsi_invoice,
+        $file_invoice,
+        $id_kegiatan,
+        $token
+    ) {
+        $data = [
+            'deskripsi_invoice' => $deskripsi_invoice,
+            'file_invoice' => $file_invoice
+        ];
+
+        return $this->http_request_update($data, "/$id_kegiatan/invoice/", $token);
+    }
+
+    public function view_invoice($id_kegiatan, $token)
+    {
+        return $this->http_request_get("/$id_kegiatan/invoice/", $token);
+    }
+
+    // ====================== bukti_pembayaran ==================================
+
+    public function add_bukti_pembayaran(
+        $deskripsi_bukti_pembayaran,
+        $file_bukti_pembayaran,
+        $id_kegiatan,
+        $token
+    ) {
+        $data = [
+            'deskripsi_bukti_pembayaran' => $deskripsi_bukti_pembayaran,
+            'file_bukti_pembayaran' => $file_bukti_pembayaran
+        ];
+
+        return $this->http_request_post($data, "/$id_kegiatan/bukti-pembayaran/", $token);
+    }
+
+    public function edit_bukti_pembayaran(
+        $deskripsi_bukti_pembayaran,
+        $file_bukti_pembayaran,
+        $id_kegiatan,
+        $token
+    ) {
+        $data = [
+            'deskripsi_bukti_pembayaran' => $deskripsi_bukti_pembayaran,
+            'file_bukti_pembayaran' => $file_bukti_pembayaran
+        ];
+
+        return $this->http_request_update($data, "/$id_kegiatan/bukti-pembayaran/", $token);
+    }
+
+    public function view_bukti_pembayaran($id_kegiatan, $token)
+    {
+        return $this->http_request_get("/$id_kegiatan/bukti-pembayaran/", $token);
     }
 }
