@@ -14,8 +14,82 @@ class Peserta extends CI_Controller
         $this->load->model('Common_model');
     }
 
-    public function index(){
-        $this->load->view('edit_profile');
+    public function index()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($this->session->userdata('token'));
+            if ($data['peserta'] == null)
+                $null = true;
+            else {
+                if ($data['peserta']['status'] == "Success") {
+                    $data['peserta'] = $data['peserta']['data'];
+                    redirect();
+                } else {
+                    $data['peserta'] = null;
+                    $this->session->set_flashdata('APImessage', $data['peserta']['message']);
+                    redirect();
+                }
+            }
+
+            if ($null)
+                redirect();
+
+            $this->load->view("");
+        } else
+            redirect();
+    }
+
+    public function daerah($id_provinsi)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['peserta'] = $this->Peserta_model->view_peserta_daerah($id_provinsi, $this->session->userdata('token'));
+            if ($data['peserta'] == null)
+                $null = true;
+            else {
+                if ($data['peserta']['status'] == "Success") {
+                    $data['peserta'] = $data['peserta']['data'];
+                    redirect();
+                } else {
+                    $data['peserta'] = null;
+                    $this->session->set_flashdata('APImessage', $data['peserta']['message']);
+                    redirect();
+                }
+            }
+
+            if ($null)
+                redirect();
+
+            $this->load->view("");
+        } else
+            redirect();
+    }
+
+    public function detail($id_user)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['peserta'] = $this->Peserta_model->view_detail_peserta($id_user, $this->session->userdata('token'));
+            if ($data['peserta'] == null)
+                $null = true;
+            else {
+                if ($data['peserta']['status'] == "Success") {
+                    $data['peserta'] = $data['peserta']['data'];
+                    redirect();
+                } else {
+                    $data['peserta'] = null;
+                    $this->session->set_flashdata('APImessage', $data['peserta']['message']);
+                    redirect();
+                }
+            }
+
+            if ($null)
+                redirect();
+
+            $this->load->view("");
+        } else
+            redirect();
     }
 
     public function tambah_peserta_action()
@@ -76,7 +150,7 @@ class Peserta extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            if($tambah_peserta == null){
+            if ($tambah_peserta == null) {
                 redirect();
             }
             if ($tambah_peserta['status'] == "Success") {
@@ -151,7 +225,7 @@ class Peserta extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            if($edit_peserta == null){
+            if ($edit_peserta == null) {
                 redirect();
             }
             if ($edit_peserta['status'] == "Success") {
@@ -164,5 +238,28 @@ class Peserta extends CI_Controller
         } else {
             redirect();
         }
+    }
+
+    public function delete_peserta()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $id_user_peserta = "";
+
+            $delete_peserta = $this->Peserta_model->delete_peserta($id_user_peserta, $this->session->userdata('token'));
+            var_dump($delete_peserta);
+            die;
+            if ($delete_peserta == null) {
+                redirect();
+            } else {
+                if ($delete_peserta['status'] == "Success") {
+                    $this->session->set_flashdata('success', $delete_peserta['message']);
+                    redirect();
+                } else {
+                    $this->session->set_flashdata('failed', $delete_peserta['message']);
+                    redirect();
+                }
+            }
+        } else
+            redirect();
     }
 }
