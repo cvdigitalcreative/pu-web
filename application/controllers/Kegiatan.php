@@ -215,7 +215,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $tambah_kegiatan['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $tambah_kegiatan['message']);
+                $this->session->set_flashdata('APImessage', $tambah_kegiatan['message']);
                 redirect();
             }
         } else {
@@ -264,7 +264,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $edit_kegiatan['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $edit_kegiatan['message']);
+                $this->session->set_flashdata('APImessage', $edit_kegiatan['message']);
                 redirect();
             }
         } else {
@@ -315,7 +315,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $tambah_berita_acara['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $tambah_berita_acara['message']);
+                $this->session->set_flashdata('APImessage', $tambah_berita_acara['message']);
                 redirect();
             }
         } else {
@@ -344,7 +344,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $edit_berita_acara['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $edit_berita_acara['message']);
+                $this->session->set_flashdata('APImessage', $edit_berita_acara['message']);
                 redirect();
             }
         } else {
@@ -375,7 +375,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $tambah_invoice['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $tambah_invoice['message']);
+                $this->session->set_flashdata('APImessage', $tambah_invoice['message']);
                 redirect();
             }
         } else {
@@ -404,7 +404,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $edit_invoice['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $edit_invoice['message']);
+                $this->session->set_flashdata('APImessage', $edit_invoice['message']);
                 redirect();
             }
         } else {
@@ -435,7 +435,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $tambah_bukti_pembayaran['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $tambah_bukti_pembayaran['message']);
+                $this->session->set_flashdata('APImessage', $tambah_bukti_pembayaran['message']);
                 redirect();
             }
         } else {
@@ -464,7 +464,7 @@ class Kegiatan extends CI_Controller
                 $this->session->set_flashdata('success', $edit_bukti_pembayaran['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $edit_bukti_pembayaran['message']);
+                $this->session->set_flashdata('APImessage', $edit_bukti_pembayaran['message']);
                 redirect();
             }
         } else {
