@@ -8,9 +8,6 @@ class Administrasi_kegiatan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Peserta_model');
-        $this->load->model('Tenaga_Ahli_model');
-        $this->load->model('Common_model');
         $this->load->model('Administrasi_Kegiatan_model');
     }
 
