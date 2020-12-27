@@ -299,7 +299,7 @@ class Peserta extends CI_Controller
                 $this->session->set_flashdata('success', $tambah_peserta['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $tambah_peserta['message']);
+                $this->session->set_flashdata('APImessage', $tambah_peserta['message']);
                 redirect();
             }
         } else {
@@ -530,7 +530,7 @@ class Peserta extends CI_Controller
                 $this->session->set_flashdata('success', $edit_peserta['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $edit_peserta['message']);
+                $this->session->set_flashdata('APImessage', $edit_peserta['message']);
                 redirect();
             }
         } else {
@@ -551,7 +551,7 @@ class Peserta extends CI_Controller
                     $this->session->set_flashdata('success', $delete_peserta['message']);
                     redirect();
                 } else {
-                    $this->session->set_flashdata('failed', $delete_peserta['message']);
+                    $this->session->set_flashdata('APImessage', $delete_peserta['message']);
                     redirect();
                 }
             }
