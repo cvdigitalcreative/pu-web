@@ -97,7 +97,7 @@ class User extends CI_Controller
                 $this->session->set_flashdata('success', $edit_profile['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $edit_profile['message']);
+                $this->session->set_flashdata('APImessage', $edit_profile['message']);
                 redirect();
             }
         } else {
