@@ -58,7 +58,7 @@ class Administrasi_Kegiatan_model extends CI_Model
         $data = [
             'judul_administrasi_kegiatan' => $judul_administrasi_kegiatan,
             'deskripsi_administrasi_kegiatan' => $deskripsi_administrasi_kegiatan,
-            'deskripsi_administrasi_kegiatan' => $file_administrasi_kegiatan
+            'file_administrasi_kegiatan' => $file_administrasi_kegiatan
         ];
 
         return $this->http_request_post($data, "/", $token);
@@ -74,7 +74,7 @@ class Administrasi_Kegiatan_model extends CI_Model
         $data = [
             'judul_administrasi_kegiatan' => $judul_administrasi_kegiatan,
             'deskripsi_administrasi_kegiatan' => $deskripsi_administrasi_kegiatan,
-            'deskripsi_administrasi_kegiatan' => $file_administrasi_kegiatan
+            'file_administrasi_kegiatan' => $file_administrasi_kegiatan
         ];
 
         return $this->http_request_post($data, "/$file_administrasi_kegiatan", $token);
