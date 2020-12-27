@@ -8,10 +8,7 @@ class Kegiatan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Peserta_model');
-        $this->load->model('Tenaga_Ahli_model');
         $this->load->model('Kegiatan_model');
-        $this->load->model('Common_model');
     }
 
     public function index()
