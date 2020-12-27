@@ -170,4 +170,37 @@ class Kegiatan_model extends CI_Model
     {
         return $this->http_request_get("/$id_kegiatan/$id_status", $token);
     }
+
+    public function add_berita_acara(
+        $deskripsi_berita_acara,
+        $file_berita_acara,
+        $id_kegiatan,
+        $token
+    ) {
+        $data = [
+            'deskripsi_berita_acara' => $deskripsi_berita_acara,
+            'file_berita_acara' => $file_berita_acara
+        ];
+
+        return $this->http_request_post($data, "/$id_kegiatan/berita-acara/", $token);
+    }
+
+    public function edit_berita_acara(
+        $deskripsi_berita_acara,
+        $file_berita_acara,
+        $id_kegiatan,
+        $token
+    ) {
+        $data = [
+            'deskripsi_berita_acara' => $deskripsi_berita_acara,
+            'file_berita_acara' => $file_berita_acara
+        ];
+
+        return $this->http_request_update($data, "/$id_kegiatan/berita-acara/", $token);
+    }
+
+    public function view_berita_acara($id_kegiatan, $token)
+    {
+        return $this->http_request_get("/$id_kegiatan/berita-acara/", $token);
+    }
 }
