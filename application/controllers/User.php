@@ -22,7 +22,7 @@ class User extends CI_Controller
                 $data['user'] = $data['user']['data'];
             else {
                 $data['user'] = null;
-                $this->session->set_flashdata("error", $data['user']['message']);
+                $this->session->set_flashdata("APImessage", $data['user']['message']);
             }
         }
 
