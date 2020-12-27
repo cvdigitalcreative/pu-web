@@ -31,7 +31,6 @@ class Tenaga_ahli extends CI_Controller
 
             if ($null)
                 redirect();
-
         } else
             redirect();
     }
@@ -88,9 +87,9 @@ class Tenaga_ahli extends CI_Controller
             $tanggal_lahir = $this->input->post('tanggal_lahir');
             $temparr = explode('-', $tanggal_lahir);
             $indextglreverse = 0;
-            for($j = count($temparr)-1; $j>=0; $j--){
+            for ($j = count($temparr) - 1; $j >= 0; $j--) {
                 $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                $indextglreverse++;    
+                $indextglreverse++;
             }
             $tanggal_lahir = implode('-', $arrtemptanggal);
             $id_jenis_kelamin = $this->input->post('id_jenis_kelamin');
@@ -102,10 +101,10 @@ class Tenaga_ahli extends CI_Controller
             $no_telepon_rumah = $this->input->post('no_telepon_rumah');
             $no_handphone = $this->input->post('no_handphone');
             $id_jabker = $this->input->post('id_jabker');
-            if(count($id_jabker) == 1)
-            $id_jabker = $id_jabker['0'];
+            if (count($id_jabker) == 1)
+                $id_jabker = $id_jabker['0'];
             else
-            $id_jabker = '['.implode(',', $id_jabker).']';
+                $id_jabker = '[' . implode(',', $id_jabker) . ']';
             $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
             $tambah_tenaga_ahli = $this->Tenaga_Ahli_model->add_tenaga_ahli(
                 $nama_lengkap,
@@ -131,7 +130,7 @@ class Tenaga_ahli extends CI_Controller
                 $this->session->set_flashdata('success', $tambah_tenaga_ahli['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $tambah_tenaga_ahli['message']);
+                $this->session->set_flashdata('APImessage', $tambah_tenaga_ahli['message']);
                 redirect();
             }
         } else {
@@ -147,9 +146,9 @@ class Tenaga_ahli extends CI_Controller
             $tanggal_lahir = $this->input->post('tanggal_lahir');
             $temparr = explode('-', $tanggal_lahir);
             $indextglreverse = 0;
-            for($j = count($temparr)-1; $j>=0; $j--){
+            for ($j = count($temparr) - 1; $j >= 0; $j--) {
                 $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                $indextglreverse++;    
+                $indextglreverse++;
             }
             $tanggal_lahir = implode('-', $arrtemptanggal);
             $id_jenis_kelamin = $this->input->post('id_jenis_kelamin');
@@ -161,10 +160,10 @@ class Tenaga_ahli extends CI_Controller
             $no_telepon_rumah = $this->input->post('no_telepon_rumah');
             $no_handphone = $this->input->post('no_handphone');
             $id_jabker = $this->input->post('id_jabker');
-            if(count($id_jabker) == 1)
-            $id_jabker = $id_jabker['0'];
+            if (count($id_jabker) == 1)
+                $id_jabker = $id_jabker['0'];
             else
-            $id_jabker = '['.implode(',', $id_jabker).']';
+                $id_jabker = '[' . implode(',', $id_jabker) . ']';
             $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
             $edit_tenaga_ahli = $this->Tenaga_Ahli_model->edit_tenaga_ahli(
                 $nama_lengkap,
@@ -191,7 +190,7 @@ class Tenaga_ahli extends CI_Controller
                 $this->session->set_flashdata('success', $edit_tenaga_ahli['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('failed', $edit_tenaga_ahli['message']);
+                $this->session->set_flashdata('APImessage', $edit_tenaga_ahli['message']);
                 redirect();
             }
         } else {
