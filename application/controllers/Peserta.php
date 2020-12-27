@@ -9,8 +9,6 @@ class Peserta extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Peserta_model');
-        $this->load->model('User_model');
-        $this->load->model('Kegiatan_model');
         $this->load->model('Common_model');
     }
 
@@ -35,7 +33,7 @@ class Peserta extends CI_Controller
             if ($null)
                 redirect();
 
-            $this->load->view("");
+            $this->load->view("", $data);
         } else
             redirect();
     }
@@ -61,7 +59,7 @@ class Peserta extends CI_Controller
             if ($null)
                 redirect();
 
-            $this->load->view("");
+            $this->load->view("", $data);
         } else
             redirect();
     }
@@ -90,6 +88,150 @@ class Peserta extends CI_Controller
             $this->load->view("");
         } else
             redirect();
+    }
+
+    public function tambah()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+
+            $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
+            if ($data['provinsi'] == null)
+                $null = true;
+            else {
+                if ($data['provinsi']['status'] == "Success") {
+                    $data['provinsi'] = $data['provinsi']['data'];
+
+                    $index_provinsi = 0;
+                    foreach ($data['provinsi'] as $val) {
+                        $data['provinsi'][$index_provinsi]['kota_kabupaten'] = $this->Common_model->view_kabupaten_kota($val['id_provinsi'], $this->session->userdata('token'));
+                        if ($data['provinsi'][$index_provinsi]['kota_kabupaten'] == null)
+                            $null = true;
+                        else {
+                            if ($data['provinsi'][$index_provinsi]['kota_kabupaten']['status'] == "Success") {
+                                $data['provinsi'][$index_provinsi]['kota_kabupaten'] = $data['provinsi'][$index_provinsi]['kota_kabupaten']['data'];
+
+                                $index_kota_kabupaten = 0;
+                                foreach ($data['provinsi'][$index_provinsi]['kota_kabupaten'] as $val) {
+                                    $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] = $this->Common_model->view_kecamatan($val['id_kabupaten_kota'], $this->session->userdata('token'));
+                                    if ($data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] == null)
+                                        $null = true;
+                                    else {
+                                        if ($data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan']['status'] == "Success") {
+                                            $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] = $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan']['data'];
+                                        } else {
+                                            $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] = null;
+                                            $this->session->set_flashdata('APImessage', $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan']['message']);
+                                        }
+                                    }
+
+                                    $index_kota_kabupaten++;
+                                }
+                            } else {
+                                $data['provinsi'][$index_provinsi]['kota_kabupaten'] = null;
+                                $this->session->set_flashdata('APImessage', $data['provinsi'][$index_provinsi]['kota_kabupaten']['message']);
+                            }
+                        }
+
+                        $index_provinsi++;
+                    }
+                } else {
+                    $data['provinsi'] = null;
+                    $this->session->set_flashdata('APImessage', $data['provinsi']['message']);
+                }
+            }
+
+            $data['kelurahan'] = $this->Common_model->view_kelurahan_desa($this->session->userdata('token'));
+            if ($data['kelurahan'] == null)
+                $null = true;
+            else {
+                if ($data['kelurahan']['status'] == "Success") {
+                    $data['kelurahan'] = $data['kelurahan']['data'];
+                } else {
+                    $data['kelurahan'] = null;
+                    $this->session->set_flashdata("APImessage", $data['kelurahan']['message']);
+                }
+            }
+
+            $data['jenis_kelamin'] = $this->Common_model->view_jenis_kelamin($this->session->userdata('token'));
+            if ($data['jenis_kelamin'] == null)
+                $null = true;
+            else {
+                if ($data['jenis_kelamin']['status'] == "Success") {
+                    $data['jenis_kelamin'] = $data['jenis_kelamin']['data'];
+                } else {
+                    $data['jenis_kelamin'] = null;
+                    $this->session->set_flashdata("APImessage", $data['jenis_kelamin']['message']);
+                }
+            }
+
+            $data['status_perkawinan'] = $this->Common_model->view_status_perkawinan($this->session->userdata('token'));
+            if ($data['status_perkawinan'] == null)
+                $null = true;
+            else {
+                if ($data['status_perkawinan']['status'] == "Success") {
+                    $data['status_perkawinan'] = $data['status_perkawinan']['data'];
+                } else {
+                    $data['status_perkawinan'] = null;
+                    $this->session->set_flashdata("APImessage", $data['status_perkawinan']['message']);
+                }
+            }
+
+            $data['status_rumah'] = $this->Common_model->view_status_rumah($this->session->userdata('token'));
+            if ($data['status_rumah'] == null)
+                $null = true;
+            else {
+                if ($data['status_rumah']['status'] == "Success") {
+                    $data['status_rumah'] = $data['status_rumah']['data'];
+                } else {
+                    $data['status_rumah'] = null;
+                    $this->session->set_flashdata("APImessage", $data['status_rumah']['message']);
+                }
+            }
+
+            $data['pendidikan'] = $this->Common_model->view_pendidikan($this->session->userdata('token'));
+            if ($data['pendidikan'] == null)
+                $null = true;
+            else {
+                if ($data['pendidikan']['status'] == "Success") {
+                    $data['pendidikan'] = $data['pendidikan']['data'];
+                } else {
+                    $data['pendidikan'] = null;
+                    $this->session->set_flashdata("APImessage", $data['pendidikan']['message']);
+                }
+            }
+
+            $data['jabker'] = $this->Common_model->view_jabker($this->session->userdata('token'));
+            if ($data['jabker'] == null)
+                $null = true;
+            else {
+                if ($data['jabker']['status'] == "Success") {
+                    $data['jabker'] = $data['jabker']['data'];
+                } else {
+                    $data['jabker'] = null;
+                    $this->session->set_flashdata("APImessage", $data['jabker']['message']);
+                }
+            }
+
+            // $data['kompetensi'] = $this->Common_model->view_($this->session->userdata('token'));
+            // if ($data['kompetensi'] == null)
+            //     $null = true;
+            // else {
+            //     if ($data['kompetensi']['status'] == "Success") {
+            //         $data['kompetensi'] = $data['kompetensi']['data'];
+            //     } else {
+            //         $data['kompetensi'] = null;
+            //         $this->session->set_flashdata("APImessage", $data['kompetensi']['message']);
+            //     }
+            // }
+
+            if ($null)
+                redirect();
+
+            $this->load->view("", $data);
+        } else {
+            redirect();
+        }
     }
 
     public function tambah_peserta_action()
@@ -160,6 +302,162 @@ class Peserta extends CI_Controller
                 $this->session->set_flashdata('failed', $tambah_peserta['message']);
                 redirect();
             }
+        } else {
+            redirect();
+        }
+    }
+
+    public function edit($id_user_peserta)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+
+            $data['peserta'] = $this->Peserta_model->view_detail_peserta($id_user_peserta, $this->session->userdata('token'));
+            if ($data['peserta'] == null)
+                $null = true;
+            else {
+                if ($data['peserta']['status'] == "Success") {
+                    $data['peserta'] = $data['peserta']['data'];
+                } else {
+                    $data['peserta'] = null;
+                    $this->session->set_flashdata('APImessage', $data['peserta']['message']);
+                }
+            }
+
+            $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
+            if ($data['provinsi'] == null)
+                $null = true;
+            else {
+                if ($data['provinsi']['status'] == "Success") {
+                    $data['provinsi'] = $data['provinsi']['data'];
+
+                    $index_provinsi = 0;
+                    foreach ($data['provinsi'] as $val) {
+                        $data['provinsi'][$index_provinsi]['kota_kabupaten'] = $this->Common_model->view_kabupaten_kota($val['id_provinsi'], $this->session->userdata('token'));
+                        if ($data['provinsi'][$index_provinsi]['kota_kabupaten'] == null)
+                            $null = true;
+                        else {
+                            if ($data['provinsi'][$index_provinsi]['kota_kabupaten']['status'] == "Success") {
+                                $data['provinsi'][$index_provinsi]['kota_kabupaten'] = $data['provinsi'][$index_provinsi]['kota_kabupaten']['data'];
+
+                                $index_kota_kabupaten = 0;
+                                foreach ($data['provinsi'][$index_provinsi]['kota_kabupaten'] as $val) {
+                                    $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] = $this->Common_model->view_kecamatan($val['id_kabupaten_kota'], $this->session->userdata('token'));
+                                    if ($data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] == null)
+                                        $null = true;
+                                    else {
+                                        if ($data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan']['status'] == "Success") {
+                                            $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] = $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan']['data'];
+                                        } else {
+                                            $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan'] = null;
+                                            $this->session->set_flashdata('APImessage', $data['provinsi'][$index_provinsi]['kota_kabupaten'][$index_kota_kabupaten]['kecamatan']['message']);
+                                        }
+                                    }
+
+                                    $index_kota_kabupaten++;
+                                }
+                            } else {
+                                $data['provinsi'][$index_provinsi]['kota_kabupaten'] = null;
+                                $this->session->set_flashdata('APImessage', $data['provinsi'][$index_provinsi]['kota_kabupaten']['message']);
+                            }
+                        }
+
+                        $index_provinsi++;
+                    }
+                } else {
+                    $data['provinsi'] = null;
+                    $this->session->set_flashdata('APImessage', $data['provinsi']['message']);
+                }
+            }
+
+            $data['kelurahan'] = $this->Common_model->view_kelurahan_desa($this->session->userdata('token'));
+            if ($data['kelurahan'] == null)
+                $null = true;
+            else {
+                if ($data['kelurahan']['status'] == "Success") {
+                    $data['kelurahan'] = $data['kelurahan']['data'];
+                } else {
+                    $data['kelurahan'] = null;
+                    $this->session->set_flashdata("APImessage", $data['kelurahan']['message']);
+                }
+            }
+
+            $data['jenis_kelamin'] = $this->Common_model->view_jenis_kelamin($this->session->userdata('token'));
+            if ($data['jenis_kelamin'] == null)
+                $null = true;
+            else {
+                if ($data['jenis_kelamin']['status'] == "Success") {
+                    $data['jenis_kelamin'] = $data['jenis_kelamin']['data'];
+                } else {
+                    $data['jenis_kelamin'] = null;
+                    $this->session->set_flashdata("APImessage", $data['jenis_kelamin']['message']);
+                }
+            }
+
+            $data['status_perkawinan'] = $this->Common_model->view_status_perkawinan($this->session->userdata('token'));
+            if ($data['status_perkawinan'] == null)
+                $null = true;
+            else {
+                if ($data['status_perkawinan']['status'] == "Success") {
+                    $data['status_perkawinan'] = $data['status_perkawinan']['data'];
+                } else {
+                    $data['status_perkawinan'] = null;
+                    $this->session->set_flashdata("APImessage", $data['status_perkawinan']['message']);
+                }
+            }
+
+            $data['status_rumah'] = $this->Common_model->view_status_rumah($this->session->userdata('token'));
+            if ($data['status_rumah'] == null)
+                $null = true;
+            else {
+                if ($data['status_rumah']['status'] == "Success") {
+                    $data['status_rumah'] = $data['status_rumah']['data'];
+                } else {
+                    $data['status_rumah'] = null;
+                    $this->session->set_flashdata("APImessage", $data['status_rumah']['message']);
+                }
+            }
+
+            $data['pendidikan'] = $this->Common_model->view_pendidikan($this->session->userdata('token'));
+            if ($data['pendidikan'] == null)
+                $null = true;
+            else {
+                if ($data['pendidikan']['status'] == "Success") {
+                    $data['pendidikan'] = $data['pendidikan']['data'];
+                } else {
+                    $data['pendidikan'] = null;
+                    $this->session->set_flashdata("APImessage", $data['pendidikan']['message']);
+                }
+            }
+
+            $data['jabker'] = $this->Common_model->view_jabker($this->session->userdata('token'));
+            if ($data['jabker'] == null)
+                $null = true;
+            else {
+                if ($data['jabker']['status'] == "Success") {
+                    $data['jabker'] = $data['jabker']['data'];
+                } else {
+                    $data['jabker'] = null;
+                    $this->session->set_flashdata("APImessage", $data['jabker']['message']);
+                }
+            }
+
+            // $data['kompetensi'] = $this->Common_model->view_($this->session->userdata('token'));
+            // if ($data['kompetensi'] == null)
+            //     $null = true;
+            // else {
+            //     if ($data['kompetensi']['status'] == "Success") {
+            //         $data['kompetensi'] = $data['kompetensi']['data'];
+            //     } else {
+            //         $data['kompetensi'] = null;
+            //         $this->session->set_flashdata("APImessage", $data['kompetensi']['message']);
+            //     }
+            // }
+
+            if ($null)
+                redirect();
+
+            $this->load->view("", $data);
         } else {
             redirect();
         }
@@ -246,8 +544,6 @@ class Peserta extends CI_Controller
             $id_user_peserta = "";
 
             $delete_peserta = $this->Peserta_model->delete_peserta($id_user_peserta, $this->session->userdata('token'));
-            var_dump($delete_peserta);
-            die;
             if ($delete_peserta == null) {
                 redirect();
             } else {
