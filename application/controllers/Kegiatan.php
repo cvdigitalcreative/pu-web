@@ -41,7 +41,6 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
             $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_perbulan($tanggal, $this->session->userdata('token'));
-            var_dump($data['kegiatan']);
             if ($data['kegiatan'] == null)
                 $null = true;
             else {
