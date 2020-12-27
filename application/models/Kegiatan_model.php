@@ -19,7 +19,7 @@ class Kegiatan_model extends CI_Model
     public function http_request_get_tanggal($function, $tanggal, $token)
     {
         $dataHeader = [
-            'Authentication: ' . $token,
+            'Authorization: Bearer ' . $token,
             'tanggal: ' . $tanggal
         ];
         $curl = curl_init();
@@ -134,7 +134,7 @@ class Kegiatan_model extends CI_Model
             'foto_banner_kegiatan' => $foto_banner_kegiatan
         ];
 
-        return $this->http_request_update($data, "/$id_kegiatan", $token);
+        return $this->http_request_post($data, "/$id_kegiatan", $token);
     }
 
     public function delete_kegiatan($id_kegiatan, $token)
