@@ -47,6 +47,18 @@ class Kegiatan extends CI_Controller
                                 $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['invoice']['message']);
                             }
                         }
+
+                        $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
+                        if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] == null)
+                            $null = true;
+                        else {
+                            if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['status'] == "Success") {
+                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['data'];
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = null;
+                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['message']);
+                            }
+                        }
                         $indexKegiatan++;
                     }
                 } else {
@@ -62,7 +74,8 @@ class Kegiatan extends CI_Controller
 
     public function tanggal()
     {
-        $tanggal = $this->input->post('bulan');
+        $tanggal = $this->input->post('tanggal');
+        $tanggal = "2020-11-23";
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
             $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_perbulan($tanggal, $this->session->userdata('token'));
@@ -71,6 +84,46 @@ class Kegiatan extends CI_Controller
             else {
                 if ($data['kegiatan']['status'] == "Success") {
                     $data['kegiatan'] = $data['kegiatan']['data'];
+
+                    $indexKegiatan = 0;
+                    foreach ($data['kegiatan'] as $val) {
+                        $data['kegiatan'][$indexKegiatan]['berita_acara'] = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
+                        if ($data['kegiatan'][$indexKegiatan]['berita_acara'] == null)
+                            $null = true;
+                        else {
+                            if ($data['kegiatan'][$indexKegiatan]['berita_acara']['status'] == "Success") {
+                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = $data['kegiatan'][$indexKegiatan]['berita_acara']['data'];
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = null;
+                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['berita_acara']['message']);
+                            }
+                        }
+
+                        $data['kegiatan'][$indexKegiatan]['invoice'] = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
+                        if ($data['kegiatan'][$indexKegiatan]['invoice'] == null)
+                            $null = true;
+                        else {
+                            if ($data['kegiatan'][$indexKegiatan]['invoice']['status'] == "Success") {
+                                $data['kegiatan'][$indexKegiatan]['invoice'] = $data['kegiatan'][$indexKegiatan]['invoice']['data'];
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['invoice'] = null;
+                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['invoice']['message']);
+                            }
+                        }
+
+                        $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
+                        if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] == null)
+                            $null = true;
+                        else {
+                            if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['status'] == "Success") {
+                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['data'];
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = null;
+                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['message']);
+                            }
+                        }
+                        $indexKegiatan++;
+                    }
                 } else {
                     $data['kegiatan'] = null;
                     $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
@@ -114,6 +167,17 @@ class Kegiatan extends CI_Controller
                         } else {
                             $data['kegiatan']['invoice'] = null;
                             $this->session->set_flashdata('APImessage', $data['kegiatan']['invoice']['message']);
+                        }
+                    }
+                    $data['kegiatan']['bukti_pembayaran'] = $this->Kegiatan_model->view_bukti_pembayaran($id_kegiatan, $this->session->userdata('token'));
+                    if ($data['kegiatan']['bukti_pembayaran'] == null)
+                        $null = true;
+                    else {
+                        if ($data['kegiatan']['bukti_pembayaran']['status'] == "Success") {
+                            $data['kegiatan']['bukti_pembayaran'] = $data['kegiatan']['bukti_pembayaran']['data'];
+                        } else {
+                            $data['kegiatan']['bukti_pembayaran'] = null;
+                            $this->session->set_flashdata('APImessage', $data['kegiatan']['bukti_pembayaran']['message']);
                         }
                     }
                 } else {
