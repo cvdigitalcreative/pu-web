@@ -9,6 +9,7 @@ class SKA extends CI_Controller
     {
         parent::__construct();
         $this->load->model('SKA_model');
+        $this->load->model('Common_model');
     }
 
     public function index()
@@ -55,6 +56,29 @@ class SKA extends CI_Controller
             redirect();
     }
 
+    public function tambah()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+
+            $data['kategori_ska'] = $this->Common_model->view_skkni_ska($this->session->userdata('token'));
+            if ($data['kategori_ska'] == null)
+                $null = true;
+            else {
+                if ($data['kategori_ska']['status'] == "Success") {
+                    $data['kategori_ska'] = $data['kategori_ska']['data'];
+                } else {
+                    $data['kategori_ska'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kategori_ska']['message']);
+                }
+            }
+
+            if ($null)
+                redirect();
+        } else
+            redirect();
+    }
+
     public function tambah_ska_action()
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -86,6 +110,29 @@ class SKA extends CI_Controller
         }
     }
 
+    public function edit()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+
+            $data['kategori_ska'] = $this->Common_model->view_skkni_ska($this->session->userdata('token'));
+            if ($data['kategori_ska'] == null)
+                $null = true;
+            else {
+                if ($data['kategori_ska']['status'] == "Success") {
+                    $data['kategori_ska'] = $data['kategori_ska']['data'];
+                } else {
+                    $data['kategori_ska'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kategori_ska']['message']);
+                }
+            }
+
+            if ($null)
+                redirect();
+        } else
+            redirect();
+    }
+
     //blm done
     public function edit_ska_action($id_ska)
     {
@@ -104,7 +151,8 @@ class SKA extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($edit_ska); die;
+            var_dump($edit_ska);
+            die;
             if ($edit_ska == null) {
                 redirect();
             }
