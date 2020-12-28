@@ -186,7 +186,7 @@ class Kegiatan_model extends CI_Model
             'file_berita_acara' => $file_berita_acara
         ];
 
-        return $this->http_request_post($data, "/$id_kegiatan/berita-acara/", $token);
+        return $this->http_request_post($data, "/$id_kegiatan/berita-acara/add/", $token);
     }
 
     public function edit_berita_acara(
@@ -200,7 +200,7 @@ class Kegiatan_model extends CI_Model
             'file_berita_acara' => $file_berita_acara
         ];
 
-        return $this->http_request_update($data, "/$id_kegiatan/berita-acara/", $token);
+        return $this->http_request_post($data, "/$id_kegiatan/berita-acara/edit/", $token);
     }
 
     public function view_berita_acara($id_kegiatan, $token)
@@ -221,7 +221,7 @@ class Kegiatan_model extends CI_Model
             'file_invoice' => $file_invoice
         ];
 
-        return $this->http_request_post($data, "/$id_kegiatan/invoice/", $token);
+        return $this->http_request_post($data, "/$id_kegiatan/invoice/add/", $token);
     }
 
     public function edit_invoice(
@@ -235,7 +235,7 @@ class Kegiatan_model extends CI_Model
             'file_invoice' => $file_invoice
         ];
 
-        return $this->http_request_update($data, "/$id_kegiatan/invoice/", $token);
+        return $this->http_request_post($data, "/$id_kegiatan/invoice/edit/", $token);
     }
 
     public function view_invoice($id_kegiatan, $token)
@@ -256,7 +256,7 @@ class Kegiatan_model extends CI_Model
             'file_bukti_pembayaran' => $file_bukti_pembayaran
         ];
 
-        return $this->http_request_post($data, "/$id_kegiatan/bukti-pembayaran/", $token);
+        return $this->http_request_post($data, "/$id_kegiatan/bukti-pembayaran/add/", $token);
     }
 
     public function edit_bukti_pembayaran(
@@ -270,7 +270,7 @@ class Kegiatan_model extends CI_Model
             'file_bukti_pembayaran' => $file_bukti_pembayaran
         ];
 
-        return $this->http_request_update($data, "/$id_kegiatan/bukti-pembayaran/", $token);
+        return $this->http_request_post($data, "/$id_kegiatan/bukti-pembayaran/edit/", $token);
     }
 
     public function view_bukti_pembayaran($id_kegiatan, $token)
