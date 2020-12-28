@@ -65,7 +65,7 @@ class Common_model extends CI_Model
 
     public function view_skkni_ska($token)
     {
-        return $this->http_request_get("/sskni-ska", $token);
+        return $this->http_request_get("/skkni-ska", $token);
     }
 
     public function view_kategori_modul($token)
