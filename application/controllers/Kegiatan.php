@@ -357,8 +357,6 @@ class Kegiatan extends CI_Controller
 
     // ====================== Berita Acara ==================================
 
-
-    //blm done
     public function tambah_berita_acara_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -387,7 +385,6 @@ class Kegiatan extends CI_Controller
         }
     }
 
-    //blm done
     public function edit_berita_acara_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -431,6 +428,7 @@ class Kegiatan extends CI_Controller
                 $id_kegiatan,
                 $this->session->userdata('token')
             );
+            var_dump($tambah_invoice); die;
 
             if ($tambah_invoice == null) {
                 redirect();
@@ -461,6 +459,8 @@ class Kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
 
+            var_dump($edit_invoice); die;
+
             if ($edit_invoice == null) {
                 redirect();
             }
@@ -478,7 +478,6 @@ class Kegiatan extends CI_Controller
 
     // ====================== bukti_pembayaran ==================================
 
-    //blm done
     public function tambah_bukti_pembayaran_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -507,7 +506,6 @@ class Kegiatan extends CI_Controller
         }
     }
 
-    //blm done
     public function edit_bukti_pembayaran_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
