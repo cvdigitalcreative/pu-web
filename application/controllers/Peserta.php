@@ -9,6 +9,7 @@ class Peserta extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Peserta_model');
+        $this->load->model('Peserta_Kegiatan_model');
         $this->load->model('Common_model');
     }
 
@@ -442,18 +443,6 @@ class Peserta extends CI_Controller
                 }
             }
 
-            // $data['kompetensi'] = $this->Common_model->view_($this->session->userdata('token'));
-            // if ($data['kompetensi'] == null)
-            //     $null = true;
-            // else {
-            //     if ($data['kompetensi']['status'] == "Success") {
-            //         $data['kompetensi'] = $data['kompetensi']['data'];
-            //     } else {
-            //         $data['kompetensi'] = null;
-            //         $this->session->set_flashdata("APImessage", $data['kompetensi']['message']);
-            //     }
-            // }
-
             if ($null)
                 redirect();
 
@@ -537,6 +526,34 @@ class Peserta extends CI_Controller
             redirect();
         }
     }
+
+    public function edit_peserta_kegiatan_action($id_jadwal_kegiatan, $id_peserta)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $id_status_peserta_kegiatan = $this->input->post('id_status_peserta_kegiatan');
+            $id_status_peserta_kegiatan = 1;
+            $edit_peserta = $this->Peserta_Kegiatan_model->update_peserta_kegiatan(
+                $id_peserta,
+                $id_status_peserta_kegiatan,
+                $id_jadwal_kegiatan,
+                $this->session->userdata('token')
+            );
+
+            if ($edit_peserta == null) {
+                redirect();
+            }
+            if ($edit_peserta['status'] == "Success") {
+                $this->session->set_flashdata('success', $edit_peserta['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('APImessage', $edit_peserta['message']);
+                redirect();
+            }
+        } else {
+            redirect();
+        }
+    }
+
 
     public function delete_peserta()
     {

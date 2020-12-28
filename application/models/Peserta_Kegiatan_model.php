@@ -32,6 +32,6 @@ class Peserta_Kegiatan_model extends CI_Model
             'id_status_peserta_kegiatan' => $id_status_peserta_kegiatan
         ];
 
-        $this->http_request_update($data, "/$id_jadwal_kegiatan", $token);
+        return $this->http_request_update($data, "/$id_jadwal_kegiatan", $token);
     }
 }
