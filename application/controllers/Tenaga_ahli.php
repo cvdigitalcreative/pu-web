@@ -8,7 +8,6 @@ class Tenaga_ahli extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Peserta_model');
         $this->load->model('Tenaga_Ahli_model');
         $this->load->model('Common_model');
     }
@@ -79,6 +78,30 @@ class Tenaga_ahli extends CI_Controller
             redirect();
     }
 
+    //blm done
+    public function tambah()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+
+            $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
+            if ($data['kategori_tenaga_ahli'] == null)
+                $null = true;
+            else {
+                if ($data['kategori_tenaga_ahli']['status'] == "Success") {
+                    $data['kategori_tenaga_ahli'] = $data['kategori_tenaga_ahli']['data'];
+                } else {
+                    $data['kategori_tenaga_ahli'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kategori_tenaga_ahli']['message']);
+                }
+            }
+
+            if ($null)
+                redirect();
+        } else
+            redirect();
+    }
+
     public function tambah_tenaga_ahli_action()
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -137,6 +160,30 @@ class Tenaga_ahli extends CI_Controller
             redirect();
         }
     }
+
+        //blm done
+        public function edit()
+        {
+            if ($this->session->userdata('logged_in') == true) {
+                $null = false;
+    
+                $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
+                if ($data['kategori_tenaga_ahli'] == null)
+                    $null = true;
+                else {
+                    if ($data['kategori_tenaga_ahli']['status'] == "Success") {
+                        $data['kategori_tenaga_ahli'] = $data['kategori_tenaga_ahli']['data'];
+                    } else {
+                        $data['kategori_tenaga_ahli'] = null;
+                        $this->session->set_flashdata('APImessage', $data['kategori_tenaga_ahli']['message']);
+                    }
+                }
+    
+                if ($null)
+                    redirect();
+            } else
+                redirect();
+        }
 
     public function edit_tenaga_ahli_action($id_tenaga_ahli)
     {
