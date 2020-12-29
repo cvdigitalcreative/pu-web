@@ -147,7 +147,11 @@ class Kegiatan_model extends CI_Model
         return $this->http_request_get("/", $token);
     }
 
-    public function view_kegiatan_perbulan($tanggal, $token)
+    public function view_kegiatan_perbulan($bulan, $token)
+    {
+        return $this->http_request_get_tanggal("/bulan/", $bulan, $token);
+    }
+    public function view_kegiatan_berdasarkan_tanggal($tanggal, $token)
     {
         return $this->http_request_get_tanggal("/tanggal/", $tanggal, $token);
     }
@@ -171,6 +175,13 @@ class Kegiatan_model extends CI_Model
     public function view_peserta_by_status($id_kegiatan, $id_status, $token)
     {
         return $this->http_request_get("/$id_kegiatan/$id_status", $token);
+    }
+
+    //blm done
+    public function tambah_peserta($id_jadwal_kegiatan, $token)
+    {
+        $data = [];
+        return $this->http_request_post($data, "/$id_jadwal_kegiatan/peserta/", $token);
     }
 
     // ====================== Berita Acara ==================================
@@ -276,5 +287,25 @@ class Kegiatan_model extends CI_Model
     public function view_bukti_pembayaran($id_kegiatan, $token)
     {
         return $this->http_request_get("/$id_kegiatan/bukti-pembayaran/", $token);
+    }
+
+    // ====================== pelatih kegiatan ==================================
+
+    //blm done
+    public function delete_pelatih_kegiatan($id_jadwal_kegiatan, $token)
+    {
+        return $this->http_request_delete("/$id_jadwal_kegiatan/pelatih/", $token);
+    }
+
+    //blm done
+    public function delete_asesor_kegiatan($id_jadwal_kegiatan, $token)
+    {
+        return $this->http_request_delete("/$id_jadwal_kegiatan/asesor/", $token);
+    }
+
+    //blm done
+    public function delete_instruktur_kegiatan($id_jadwal_kegiatan, $token)
+    {
+        return $this->http_request_delete("/$id_jadwal_kegiatan/instruktur/", $token);
     }
 }
