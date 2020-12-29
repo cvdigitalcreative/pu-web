@@ -316,23 +316,41 @@ class Kegiatan extends CI_Controller
                 $indextglreverse++;
             }
             $tanggal_kegiatan = implode('-', $arrtemptanggal);
+
+            $tanggal_kegiatan_selesai = $this->input->post('tanggal_kegiatan_selesai');
+            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+            $indextglselesaireverse = 0;
+            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
+                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
+                $indextglselesaireverse++;
+            }
+            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
             $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
             $latitude_lokasi = $this->input->post('latitude_lokasi');
             $longitude_lokasi = $this->input->post('longitude_lokasi');
             $status_kegiatan = $this->input->post('status_kegiatan');
-            $id_pelatih_kegiatan = $this->input->post('id_pelatih_kegiatan');
             $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+            $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
+            $id_jenis_kegiatan = $this->input->post('id_jenis_kegiatan');
+            $id_pelatih_kegiatan = $this->input->post('id_pelatih_kegiatan');
+            $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
+            $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
 
             $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
                 $judul_kegiatan,
                 $deskripsi_kegiatan,
                 $tanggal_kegiatan,
+                $tanggal_kegiatan_selesai,
                 $lokasi_kegiatan,
                 $latitude_lokasi,
                 $longitude_lokasi,
                 $status_kegiatan,
-                $id_pelatih_kegiatan,
                 $foto_banner_kegiatan,
+                $id_akun_kegiatan,
+                $id_jenis_kegiatan,
+                $id_pelatih_kegiatan,
+                $id_asesor_kegiatan,
+                $id_instruktur_kegiatan,
                 $this->session->userdata('token')
             );
 
@@ -351,6 +369,7 @@ class Kegiatan extends CI_Controller
         }
     }
 
+    //blm done
     public function edit_kegiatan_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -364,41 +383,61 @@ class Kegiatan extends CI_Controller
                 $indextglreverse++;
             }
             $tanggal_kegiatan = implode('-', $arrtemptanggal);
+
+            $tanggal_kegiatan_selesai = $this->input->post('tanggal_kegiatan_selesai');
+            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+            $indextglselesaireverse = 0;
+            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
+                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
+                $indextglselesaireverse++;
+            }
+            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
             $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
             $latitude_lokasi = $this->input->post('latitude_lokasi');
             $longitude_lokasi = $this->input->post('longitude_lokasi');
             $status_kegiatan = $this->input->post('status_kegiatan');
-            $id_pelatih_kegiatan = $this->input->post('id_pelatih_kegiatan');
             $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+            $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
+            $id_jenis_kegiatan = $this->input->post('id_jenis_kegiatan');
+            $id_pelatih_kegiatan = $this->input->post('id_pelatih_kegiatan');
+            $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
+            $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
 
-            $edit_kegiatan = $this->Kegiatan_model->edit_kegiatan(
+            $tambah_kegiatan = $this->Kegiatan_model->edit_kegiatan(
                 $judul_kegiatan,
                 $deskripsi_kegiatan,
                 $tanggal_kegiatan,
+                $tanggal_kegiatan_selesai,
                 $lokasi_kegiatan,
                 $latitude_lokasi,
                 $longitude_lokasi,
                 $status_kegiatan,
-                $id_pelatih_kegiatan,
                 $foto_banner_kegiatan,
+                $id_akun_kegiatan,
+                $id_jenis_kegiatan,
+                $id_pelatih_kegiatan,
+                $id_asesor_kegiatan,
+                $id_instruktur_kegiatan,
                 $id_kegiatan,
                 $this->session->userdata('token')
             );
 
-            if ($edit_kegiatan == null) {
+            var_dump($tambah_kegiatan); die;
+            if ($tambah_kegiatan == null) {
                 redirect();
             }
-            if ($edit_kegiatan['status'] == "Success") {
-                $this->session->set_flashdata('success', $edit_kegiatan['message']);
+            if ($tambah_kegiatan['status'] == "Success") {
+                $this->session->set_flashdata('success', $tambah_kegiatan['message']);
                 redirect();
             } else {
-                $this->session->set_flashdata('APImessage', $edit_kegiatan['message']);
+                $this->session->set_flashdata('APImessage', $tambah_kegiatan['message']);
                 redirect();
             }
         } else {
             redirect();
         }
     }
+
 
     public function delete_kegiatan($id_kegiatan)
     {
@@ -492,7 +531,8 @@ class Kegiatan extends CI_Controller
                 $id_kegiatan,
                 $this->session->userdata('token')
             );
-            var_dump($tambah_invoice); die;
+            var_dump($tambah_invoice);
+            die;
 
             if ($tambah_invoice == null) {
                 redirect();
@@ -523,7 +563,8 @@ class Kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($edit_invoice); die;
+            var_dump($edit_invoice);
+            die;
 
             if ($edit_invoice == null) {
                 redirect();
@@ -541,20 +582,20 @@ class Kegiatan extends CI_Controller
     }
 
     // ====================== bukti_pembayaran ==================================
-    
+
     public function tambah_bukti_pembayaran_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
             $deskripsi_bukti_pembayaran = $this->input->post('deskripsi_bukti_pembayaran');
             $file_bukti_pembayaran = new \CurlFile($_FILES['file_bukti_pembayaran']['tmp_name'], $_FILES['file_bukti_pembayaran']['type'], $_FILES['file_bukti_pembayaran']['name']);
-            
+
             $tambah_bukti_pembayaran = $this->Kegiatan_model->add_bukti_pembayaran(
                 $deskripsi_bukti_pembayaran,
                 $file_bukti_pembayaran,
                 $id_kegiatan,
                 $this->session->userdata('token')
             );
-            
+
             if ($tambah_bukti_pembayaran == null) {
                 redirect();
             }
@@ -575,14 +616,14 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $deskripsi_bukti_pembayaran = $this->input->post('deskripsi_bukti_pembayaran');
             $file_bukti_pembayaran = new \CurlFile($_FILES['file_bukti_pembayaran']['tmp_name'], $_FILES['file_bukti_pembayaran']['type'], $_FILES['file_bukti_pembayaran']['name']);
-            
+
             $edit_bukti_pembayaran = $this->Kegiatan_model->edit_bukti_pembayaran(
                 $deskripsi_bukti_pembayaran,
                 $file_bukti_pembayaran,
                 $id_kegiatan,
                 $this->session->userdata('token')
             );
-            
+
             if ($edit_bukti_pembayaran == null) {
                 redirect();
             }
@@ -599,55 +640,14 @@ class Kegiatan extends CI_Controller
     }
 
     // ====================== pelatih kegiatan ==================================
-    
+
     //blm done
     public function delete_pelatih($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_kegiatan = $this->Kegiatan_model->delete_pelatih_kegiatan($id_kegiatan, $this->session->userdata('token'));
-            var_dump($delete_kegiatan); die;
-            if ($delete_kegiatan == null) {
-                redirect();
-            } else {
-                if ($delete_kegiatan['status'] == "Success") {
-                    $this->session->set_flashdata('success', $delete_kegiatan['message']);
-                    redirect();
-                } else {
-                    $this->session->set_flashdata('APImessage', $delete_kegiatan['message']);
-                    redirect();
-                }
-            }
-        } else
-        redirect();
-    }
-    
-    //blm done
-    public function delete_asesor($id_kegiatan)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $delete_kegiatan = $this->Kegiatan_model->delete_asesor_kegiatan($id_kegiatan, $this->session->userdata('token'));
-            var_dump($delete_kegiatan); die;
-            if ($delete_kegiatan == null) {
-                redirect();
-            } else {
-                if ($delete_kegiatan['status'] == "Success") {
-                    $this->session->set_flashdata('success', $delete_kegiatan['message']);
-                    redirect();
-                } else {
-                    $this->session->set_flashdata('APImessage', $delete_kegiatan['message']);
-                    redirect();
-                }
-            }
-        } else
-        redirect();
-    }
-    
-    //blm done
-    public function delete_instruktur($id_kegiatan)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $delete_kegiatan = $this->Kegiatan_model->delete_instruktur_kegiatan($id_kegiatan, $this->session->userdata('token'));
-            var_dump($delete_kegiatan); die;
+            var_dump($delete_kegiatan);
+            die;
             if ($delete_kegiatan == null) {
                 redirect();
             } else {
@@ -662,5 +662,48 @@ class Kegiatan extends CI_Controller
         } else
             redirect();
     }
-    
+
+    //blm done
+    public function delete_asesor($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $delete_kegiatan = $this->Kegiatan_model->delete_asesor_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            var_dump($delete_kegiatan);
+            die;
+            if ($delete_kegiatan == null) {
+                redirect();
+            } else {
+                if ($delete_kegiatan['status'] == "Success") {
+                    $this->session->set_flashdata('success', $delete_kegiatan['message']);
+                    redirect();
+                } else {
+                    $this->session->set_flashdata('APImessage', $delete_kegiatan['message']);
+                    redirect();
+                }
+            }
+        } else
+            redirect();
+    }
+
+    //blm done
+    public function delete_instruktur($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $delete_kegiatan = $this->Kegiatan_model->delete_instruktur_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            var_dump($delete_kegiatan);
+            die;
+            if ($delete_kegiatan == null) {
+                redirect();
+            } else {
+                if ($delete_kegiatan['status'] == "Success") {
+                    $this->session->set_flashdata('success', $delete_kegiatan['message']);
+                    redirect();
+                } else {
+                    $this->session->set_flashdata('APImessage', $delete_kegiatan['message']);
+                    redirect();
+                }
+            }
+        } else
+            redirect();
+    }
 }

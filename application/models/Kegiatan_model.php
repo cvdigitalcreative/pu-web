@@ -86,24 +86,34 @@ class Kegiatan_model extends CI_Model
         $judul_kegiatan,
         $deskripsi_kegiatan,
         $tanggal_kegiatan,
+        $tanggal_kegiatan_selesai,
         $lokasi_kegiatan,
         $latitude_lokasi,
         $longitude_lokasi,
         $status_kegiatan,
-        $id_pelatih_kegiatan,
         $foto_banner_kegiatan,
+        $id_akun_kegiatan,
+        $id_jenis_kegiatan,
+        $id_pelatih_kegiatan,
+        $id_asesor_kegiatan,
+        $id_instruktur_kegiatan,
         $token
     ) {
         $data = [
             'judul_kegiatan' => $judul_kegiatan,
             'deskripsi_kegiatan' => $deskripsi_kegiatan,
             'tanggal_kegiatan' => $tanggal_kegiatan,
+            'tanggal_kegiatan_selesai' => $tanggal_kegiatan_selesai,
             'lokasi_kegiatan' => $lokasi_kegiatan,
             'latitude_lokasi' => $latitude_lokasi,
             'longitude_lokasi' => $longitude_lokasi,
             'status_kegiatan' => $status_kegiatan,
+            'foto_banner_kegiatan' => $foto_banner_kegiatan,
+            'id_akun_kegiatan' => $id_akun_kegiatan,
+            'id_jenis_kegiatan' => $id_jenis_kegiatan,
             'id_pelatih_kegiatan' => $id_pelatih_kegiatan,
-            'foto_banner_kegiatan' => $foto_banner_kegiatan
+            'id_asesor_kegiatan' => $id_asesor_kegiatan,
+            'id_instruktur_kegiatan' => $id_instruktur_kegiatan
         ];
 
         return $this->http_request_post($data, "/", $token);
@@ -113,12 +123,17 @@ class Kegiatan_model extends CI_Model
         $judul_kegiatan,
         $deskripsi_kegiatan,
         $tanggal_kegiatan,
+        $tanggal_kegiatan_selesai,
         $lokasi_kegiatan,
         $latitude_lokasi,
         $longitude_lokasi,
         $status_kegiatan,
-        $id_pelatih_kegiatan,
         $foto_banner_kegiatan,
+        $id_akun_kegiatan,
+        $id_jenis_kegiatan,
+        $id_pelatih_kegiatan,
+        $id_asesor_kegiatan,
+        $id_instruktur_kegiatan,
         $id_kegiatan,
         $token
     ) {
@@ -126,16 +141,22 @@ class Kegiatan_model extends CI_Model
             'judul_kegiatan' => $judul_kegiatan,
             'deskripsi_kegiatan' => $deskripsi_kegiatan,
             'tanggal_kegiatan' => $tanggal_kegiatan,
+            'tanggal_kegiatan_selesai' => $tanggal_kegiatan_selesai,
             'lokasi_kegiatan' => $lokasi_kegiatan,
             'latitude_lokasi' => $latitude_lokasi,
             'longitude_lokasi' => $longitude_lokasi,
             'status_kegiatan' => $status_kegiatan,
+            'foto_banner_kegiatan' => $foto_banner_kegiatan,
+            'id_akun_kegiatan' => $id_akun_kegiatan,
+            'id_jenis_kegiatan' => $id_jenis_kegiatan,
             'id_pelatih_kegiatan' => $id_pelatih_kegiatan,
-            'foto_banner_kegiatan' => $foto_banner_kegiatan
+            'id_asesor_kegiatan' => $id_asesor_kegiatan,
+            'id_instruktur_kegiatan' => $id_instruktur_kegiatan
         ];
 
-        return $this->http_request_post($data, "/$id_kegiatan", $token);
+        return $this->http_request_update($data, "/$id_kegiatan", $token);
     }
+
 
     public function delete_kegiatan($id_kegiatan, $token)
     {
