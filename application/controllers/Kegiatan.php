@@ -300,7 +300,36 @@ class Kegiatan extends CI_Controller
 
     public function tambah()
     {
-        $this->load->view('edit_profile');
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['asesor'] = $this->Common_model->view_asesor($this->session->userdata('token'));
+            if ($data['asesor'] == null)
+                $null = true;
+            else {
+                if ($data['asesor']['status'] == "Success") {
+                    $data['asesor'] = $data['asesor']['data'];
+                } else {
+                    $data['asesor'] = null;
+                    $this->session->set_flashdata("APImessage", $data['asesor']['message']);
+                }
+            }
+            $data['instruktur'] = $this->Common_model->view_instruktur($this->session->userdata('token'));
+            if ($data['instruktur'] == null)
+                $null = true;
+            else {
+                if ($data['instruktur']['status'] == "Success") {
+                    $data['instruktur'] = $data['instruktur']['data'];
+                } else {
+                    $data['instruktur'] = null;
+                    $this->session->set_flashdata("APImessage", $data['instruktur']['message']);
+                }
+            }
+
+            if ($null)
+                redirect();
+            $this->load->view('edit_profile');
+        } else
+            redirect();
     }
 
     public function tambah_kegiatan_action()
@@ -368,6 +397,40 @@ class Kegiatan extends CI_Controller
             redirect();
         }
     }
+    
+    public function edit($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['asesor'] = $this->Common_model->view_asesor($this->session->userdata('token'));
+            if ($data['asesor'] == null)
+                $null = true;
+            else {
+                if ($data['asesor']['status'] == "Success") {
+                    $data['asesor'] = $data['asesor']['data'];
+                } else {
+                    $data['asesor'] = null;
+                    $this->session->set_flashdata("APImessage", $data['asesor']['message']);
+                }
+            }
+            $data['instruktur'] = $this->Common_model->view_instruktur($this->session->userdata('token'));
+            if ($data['instruktur'] == null)
+                $null = true;
+            else {
+                if ($data['instruktur']['status'] == "Success") {
+                    $data['instruktur'] = $data['instruktur']['data'];
+                } else {
+                    $data['instruktur'] = null;
+                    $this->session->set_flashdata("APImessage", $data['instruktur']['message']);
+                }
+            }
+
+            if ($null)
+                redirect();
+            $this->load->view('edit_profile');
+        } else
+            redirect();
+    }
 
     //blm done
     public function edit_kegiatan_action($id_kegiatan)
@@ -422,7 +485,8 @@ class Kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($tambah_kegiatan); die;
+            var_dump($tambah_kegiatan);
+            die;
             if ($tambah_kegiatan == null) {
                 redirect();
             }
@@ -437,7 +501,6 @@ class Kegiatan extends CI_Controller
             redirect();
         }
     }
-
 
     public function delete_kegiatan($id_kegiatan)
     {

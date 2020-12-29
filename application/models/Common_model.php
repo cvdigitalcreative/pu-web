@@ -84,4 +84,16 @@ class Common_model extends CI_Model
     {
         return $this->http_request_get("/status-peserta-kegiatan", $token);
     }
+
+    //blm done
+    public function view_asesor($token)
+    {
+        return $this->http_request_get("/asesor", $token);
+    }
+
+    //blm done
+    public function view_instruktur($token)
+    {
+        return $this->http_request_get("/instruktur", $token);
+    }
 }
