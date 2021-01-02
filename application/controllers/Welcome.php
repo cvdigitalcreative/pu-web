@@ -11,8 +11,8 @@ class Welcome extends CI_Controller {
 		$this->load->model('User_model');
 		$this->load->model('Kegiatan_model');
 	}
-	
+
 	public function index(){
-		var_dump($this->User_model->login("zorayaw31@gmail.com", "abc123"));
+		echo $this->session->userdata('token');
 	}
 }
