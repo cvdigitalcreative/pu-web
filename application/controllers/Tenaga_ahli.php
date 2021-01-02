@@ -12,7 +12,7 @@ class Tenaga_ahli extends CI_Controller
         $this->load->model('Common_model');
     }
 
-    public function index($id_kategori_tenaga_ahli)
+    public function seluruh($id_kategori_tenaga_ahli)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
@@ -27,6 +27,7 @@ class Tenaga_ahli extends CI_Controller
                     $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
                 }
             }
+
 
             if ($null)
                 redirect();
@@ -129,6 +130,17 @@ class Tenaga_ahli extends CI_Controller
             else
                 $id_jabker = '[' . implode(',', $id_jabker) . ']';
             $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
+            $is_instruktur = $this->input->post('is_instruktur');
+            if($is_instruktur == 1)
+            $is_instruktur = true;
+            else
+            $is_instruktur = false;
+            $is_asesor = $this->input->post('is_asesor');
+            if($is_asesor == 1)
+            $is_asesor = true;
+            else
+            $is_asesor = false;
+
             $tambah_tenaga_ahli = $this->Tenaga_Ahli_model->add_tenaga_ahli(
                 $nama_lengkap,
                 $tempat_lahir,
@@ -143,6 +155,8 @@ class Tenaga_ahli extends CI_Controller
                 $no_handphone,
                 $id_jabker,
                 $id_kategori_tenaga_ahli,
+                $is_instruktur,
+                $is_asesor,
                 $this->session->userdata('token')
             );
 
@@ -212,6 +226,17 @@ class Tenaga_ahli extends CI_Controller
             else
                 $id_jabker = '[' . implode(',', $id_jabker) . ']';
             $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
+            $is_instruktur = $this->input->post('is_instruktur');
+            if($is_instruktur == 1)
+            $is_instruktur = true;
+            else
+            $is_instruktur = false;
+            $is_asesor = $this->input->post('is_asesor');
+            if($is_asesor == 1)
+            $is_asesor = true;
+            else
+            $is_asesor = false;
+
             $edit_tenaga_ahli = $this->Tenaga_Ahli_model->edit_tenaga_ahli(
                 $nama_lengkap,
                 $tempat_lahir,
@@ -226,6 +251,8 @@ class Tenaga_ahli extends CI_Controller
                 $no_handphone,
                 $id_jabker,
                 $id_kategori_tenaga_ahli,
+                $is_instruktur,
+                $is_asesor,
                 $id_tenaga_ahli,
                 $this->session->userdata('token')
             );

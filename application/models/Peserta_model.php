@@ -177,9 +177,9 @@ class Peserta_model extends CI_Model
         return $this->http_request_delete("/$id_user_peserta", $token);
     }
 
-    public function view_seluruh_peserta($token)
+    public function view_seluruh_peserta($id_jadwal_kegiatan, $token)
     {
-        return $this->http_request_get("/", $token);
+        return $this->http_request_get("/$id_jadwal_kegiatan", $token);
     }
 
     public function view_peserta_daerah($id_provinsi, $token)
@@ -189,7 +189,6 @@ class Peserta_model extends CI_Model
 
     public function view_detail_peserta($id_user_peserta, $token)
     {
-
         return $this->http_request_get("/$id_user_peserta", $token);
     }
 }

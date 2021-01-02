@@ -58,9 +58,9 @@ class Common_model extends CI_Model
         return $this->http_request_get("/kecamatan/$id_kabupaten_kota", $token);
     }
 
-    public function view_kelurahan_desa($token)
+    public function view_kelurahan_desa($id_kecamatan, $token)
     {
-        return $this->http_request_get("/kelurahan-desa", $token);
+        return $this->http_request_get("/kelurahan-desa/$id_kecamatan", $token);
     }
 
     public function view_skkni_ska($token)

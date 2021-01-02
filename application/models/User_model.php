@@ -173,4 +173,8 @@ class User_model extends CI_Model
 
         return $this->http_request_update($data, "/forgot-password/change-password/$id_forgot_password");
     }
+
+    public function request_token($id_user){
+        return $this->http_request_post(null, "/request-token/$id_user");
+    }
 }
