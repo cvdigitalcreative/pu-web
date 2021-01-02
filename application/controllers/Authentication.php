@@ -86,7 +86,7 @@ class Authentication extends CI_Controller
     public function forgot_password()
     {
         $email_no_telepon = $this->input->post('email_no_telepon');
-
+        
         $forgot_password = $this->User_model->forgot_password($email_no_telepon);
 
         if ($forgot_password['status'] == "Success") {
@@ -110,6 +110,19 @@ class Authentication extends CI_Controller
             redirect();
         } else {
             $this->session->set_flashdata('APImessage', $change_password['message']);
+            redirect();
+        }
+    }
+
+    public function request_token($id_user)
+    {
+        $request = $this->User_model->request_token($id_user);
+
+        if ($request['status'] == "Success") {
+            $this->session->set_flashdata('success', $request['message']);
+            redirect();
+        } else {
+            $this->session->set_flashdata('APImessage', $request['message']);
             redirect();
         }
     }
