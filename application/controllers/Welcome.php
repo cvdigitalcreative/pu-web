@@ -13,6 +13,6 @@ class Welcome extends CI_Controller {
 	}
 
 	public function index(){
-		echo $this->session->userdata('token');
+		$this->load->view('administrator/dashboard');
 	}
 }
