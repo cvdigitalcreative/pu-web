@@ -13,6 +13,6 @@ class Welcome extends CI_Controller {
 	}
 	
 	public function index(){
-		var_dump($this->User_model->login("zorayaw31@gmail.com", "abc123"));
+		$this->load->view('administrator/dashboard');
 	}
 }
