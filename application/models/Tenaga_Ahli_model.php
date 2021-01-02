@@ -79,6 +79,8 @@ class Tenaga_Ahli_model extends CI_Model
         $no_handphone,
         $id_jabker,
         $id_kategori_tenaga_ahli,
+        $is_instruktur,
+        $is_asesor,
         $token
     ) {
         $data = [
@@ -95,6 +97,8 @@ class Tenaga_Ahli_model extends CI_Model
             'no_handphone' => $no_handphone,
             'id_jabker' => $id_jabker,
             'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
+            'is_instruktur' => $is_instruktur,
+            'is_asesor' => $is_asesor
         ];
 
         return $this->http_request_post($data, "/", $token);
@@ -114,6 +118,8 @@ class Tenaga_Ahli_model extends CI_Model
         $no_handphone,
         $id_jabker,
         $id_kategori_tenaga_ahli,
+        $is_instruktur,
+        $is_asesor,
         $id_tenaga_ahli,
         $token
     ) {
@@ -131,6 +137,8 @@ class Tenaga_Ahli_model extends CI_Model
             'no_handphone' => $no_handphone,
             'id_jabker' => $id_jabker,
             'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
+            'is_instruktur' => $is_instruktur,
+            'is_asesor' => $is_asesor
         ];
 
 
@@ -161,6 +169,6 @@ class Tenaga_Ahli_model extends CI_Model
 
     public function delete_jabatan_kerja($id_jabker, $token)
     {
-        return $this->http_request_get("/jabatan-kerja-ahli/$id_jabker", $token);
+        return $this->http_request_delete("/jabatan-kerja-ahli/$id_jabker", $token);
     }
 }
