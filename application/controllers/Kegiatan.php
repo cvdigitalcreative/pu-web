@@ -10,12 +10,26 @@ class Kegiatan extends CI_Controller
         parent::__construct();
         $this->load->model('Kegiatan_model');
         $this->load->model('Common_model');
+        $this->load->model('User_model');
     }
 
-    public function index()
+    public function seluruh()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan($this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
@@ -95,8 +109,20 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
-            $data['kegiatan'] = $this->Kegiatan_model->view_my_kegiatan($this->session->userdata('token'));
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
+            $data['kegiatan'] = $this->Kegiatan_model->view_my_kegiatan($this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
             else {
@@ -158,6 +184,19 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_selesai($this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
@@ -221,6 +260,20 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $tanggal = $this->input->post('tanggal');
             $null = false;
+
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_berdasarkan_tanggal($tanggal, $this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
@@ -284,6 +337,19 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $bulan = $this->input->post('bulan');
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_perbulan($bulan, $this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
@@ -345,6 +411,19 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['kegiatan'] = $this->Kegiatan_model->view_detail_kegiatan($id_kegiatan, $this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
@@ -402,6 +481,19 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['kegiatan'] = $this->Kegiatan_model->view_peserta_by_status($id_kegiatan, $id_status, $this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
@@ -443,6 +535,19 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['asesor'] = $this->Common_model->view_asesor($this->session->userdata('token'));
             if ($data['asesor'] == null)
                 $null = true;
@@ -547,6 +652,19 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['asesor'] = $this->Common_model->view_asesor($this->session->userdata('token'));
             if ($data['asesor'] == null)
                 $null = true;
