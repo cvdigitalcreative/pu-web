@@ -5,7 +5,7 @@
 <meta name="author" content="">
 
 <title>
-    <?php echo SITE_NAME_ADMIN . " " . ucfirst($this->uri->segment(2)) ?>
+    <?php echo SITE_NAME_ADMIN . " - " . ucfirst($this->uri->segment(2)) ?>
 </title>
 <link rel="shortcut icon" type="image/x-icon" href="<?=base_url('assets/image/pupr-logo.svg')?>" />
 
