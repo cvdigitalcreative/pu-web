@@ -11,15 +11,13 @@ class Administrasi_kegiatan extends CI_Controller
         $this->load->model('Administrasi_Kegiatan_model');
     }
 
-    //blm done
     public function index()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
             $data['administrasi_kegiatan'] = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan($this->session->userdata('token'));
-            var_dump($data['administrasi_kegiatan']); die;
             if ($data['administrasi_kegiatan'] == null)
-                $null = true;
+            $null = true;
             else {
                 if ($data['administrasi_kegiatan']['status'] == "Success") {
                     $data['administrasi_kegiatan'] = $data['administrasi_kegiatan']['data'];
@@ -28,7 +26,7 @@ class Administrasi_kegiatan extends CI_Controller
                     $this->session->set_flashdata('APImessage', $data['administrasi_kegiatan']['message']);
                 }
             }
-
+            
             if ($null)
                 redirect();
         } else
@@ -40,7 +38,6 @@ class Administrasi_kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
             $data['administrasi_kegiatan'] = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan_detail($id_administrasi_kegiatan, $this->session->userdata('token'));
-            var_dump($data['administrasi_kegiatan']);
             if ($data['administrasi_kegiatan'] == null)
                 $null = true;
             else {

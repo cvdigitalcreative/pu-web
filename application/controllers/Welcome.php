@@ -11,7 +11,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('User_model');
 		$this->load->model('Kegiatan_model');
 	}
-	
+
 	public function index(){
 		$this->load->view('administrator/dashboard');
 	}

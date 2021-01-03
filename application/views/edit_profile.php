@@ -1,3 +1,171 @@
+</html>
+<!-- ==================================== Buku Saku ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="<?= base_url() ?>Buku_saku/edit_buku_saku_action/haloha" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Judul</th>
+                <th>:</th>
+                <th><input type="text" name="judul_buku_saku" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>Deskripsi</th>
+                <th>:</th>
+                <th><input type="text" name="deskripsi_buku_saku" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_buku_saku" placeholder="file_administrasi_kegiatan" accept=".docx, .doc, .ppt, .pdf"></th>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body> -->
+<!-- ==================================== administrasi kegiatan ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="<?= base_url() ?>Administrasi_kegiatan/edit_administrasi_kegiatan_action/1" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Judul</th>
+                <th>:</th>
+                <th><input type="text" name="judul_administrasi_kegiatan" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>Deskripsi</th>
+                <th>:</th>
+                <th><input type="text" name="deskripsi_administrasi_kegiatan" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_administrasi_kegiatan" placeholder="file_administrasi_kegiatan" accept=".docx, .doc, .ppt, .pdf"></th>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body> -->
+<!-- ==================================== berita acara ======================================= -->
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <form action="<?= base_url() ?>Kegiatan/tambah_bukti_pembayaran_action/haloha" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+            <th>Deskripsi</th>
+            <th>:</th>
+            <th><input type="text" name="deskripsi_bukti_pembayaran" placeholder="Deskripsi"></th>
+        </tr>
+        <tr>
+            <th>File</th>
+            <th>:</th>
+            <th><input type="file" name="file_bukti_pembayaran" placeholder="file_bukti_pembayaran" accept=".docx, .doc, .ppt, .pdf"></th>
+        </tr>
+        
+    </table>
+    <button type="submit">Submit</button>
+    </form>
+</body>
+<!-- ==================================== SKA ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="<?= base_url() ?>SKA/edit_ska_action/1" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Judul</th>
+                <th>:</th>
+                <th><input type="text" name="judul_ska" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>Deskripsi</th>
+                <th>:</th>
+                <th><input type="text" name="deskripsi_ska" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>Kategori</th>
+                <th>:</th>
+                <th><input type="text" name="kategori_ska" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_ska" placeholder="file_berita_acara" accept=".docx, .doc, .ppt, .pdf"></th>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body> -->
+
+<!-- ==================================== Hasil Kegiatan ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="<?= base_url() ?>Hasil_kegiatan/edit_hasil_kegiatan_action/1/1/1" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>nomor sertifikat</th>
+                <th>:</th>
+                <th><input type="text" name="nomor_sertifikat" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_sertifikat" placeholder="file_berita_acara" accept=".docx, .doc, .ppt, .pdf"></th>
+            </tr>
+            <tr>
+                <th>jabker</th>
+                <th>:</th>
+                <th><input type="text" name="id_jabker" placeholder="Deskripsi"></th>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body> -->
+<!-- ==================================== Modul =======================================
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +176,164 @@
 </head>
 
 <body>
-    <form action="<?= base_url() ?>Tenaga_ahli/edit_tenaga_ahli_action/1" method="post" enctype="multipart/form-data">
-    <table>
+    <form action="<?= base_url() ?>Modul/edit_modul_action/1" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Judul</th>
+                <th>:</th>
+                <th><input type="text" name="judul_modul" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>Deskripsi</th>
+                <th>:</th>
+                <th><input type="text" name="deskripsi_modul" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>Kategori</th>
+                <th>:</th>
+                <th><input type="text" name="kategori_modul" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_modul" placeholder="file_berita_acara" accept=".docx, .doc, .ppt, .pdf"></th>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body> -->
+
+
+<!-- ==================================== kegiatan ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <form action="<?= base_url() ?>Kegiatan/edit_kegiatan_action/10" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+            <th>Judul Kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="judul_kegiatan" placeholder="Judul"></th>
+        </tr>
         <tr>
+            <th>Deskripsi kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="deskripsi_kegiatan" placeholder="Deskripsi Kegiatan"></th>
+        </tr>
+        <tr>
+            <th>Tanggal Kegiatan</th>
+            <th>:</th>
+            <th><input type="date" name="tanggal_kegiatan" placeholder="Tanggal Kegiatan"></th>
+        </tr>
+        <tr>
+            <th>Tanggal Kegiatan Selesai</th>
+            <th>:</th>
+            <th><input type="date" name="tanggal_kegiatan_selesai" placeholder="Tanggal Kegiatan"></th>
+        </tr>
+        <tr>
+            <th>lokasi kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="lokasi_kegiatan" placeholder="lokasi kegiatan"></th>
+        </tr>
+        <tr>
+            <th>latitude lokasi</th>
+            <th>:</th>
+            <th><input type="text" name="latitude_lokasi" placeholder="latitude lokasi"></th>
+        </tr>
+        <tr>
+            <th>longitude_lokasi</th>
+            <th>:</th>
+            <th><input type="text" name="longitude_lokasi" placeholder="longitude lokasi"></th>
+        </tr>
+        <tr>
+            <th>status_kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="status_kegiatan" placeholder="status_kegiatan"></th>
+        </tr>
+        <tr>
+            <th>foto_banner_kegiatan</th>
+            <th>:</th>
+            <th><input type="file" name="foto_banner_kegiatan" placeholder="foto_banner_kegiatan" accept=".jpg, .jpeg, .png"></th>
+        </tr>
+        <tr>
+            <th>id_akun_kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="id_akun_kegiatan" placeholder="id_akun_kegiatan"></th>
+        </tr>
+        <tr>
+            <th>id_jenis_kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="id_jenis_kegiatan" placeholder="id_jenis_kegiatan"></th>
+        </tr>
+        <tr>
+            <th>id_pelatih_kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="id_pelatih_kegiatan" placeholder="id_pelatih_kegiatan"></th>
+        </tr>
+        <tr>
+            <th>id_asesor_kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="id_asesor_kegiatan" placeholder="id_asesor_kegiatan"></th>
+        </tr>
+        <tr>
+            <th>id_instruktur_kegiatan</th>
+            <th>:</th>
+            <th><input type="text" name="id_instruktur_kegiatan" placeholder="id_instruktur_kegiatan"></th>
+        </tr>
+    </table>
+    <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html> -->
+
+<!-- ==================================== Peserta schedule ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <form action="<?= base_url() ?>Kegiatan/tambah_peserta_action/haloha" method="post" enctype="multipart/form-data">
+            <table>
+        <tr>
+            <th>file_excel</th>
+            <th>:</th>
+            <th><input type="file" name="file_excel" placeholder="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"></th>
+        </tr>
+    </table>
+    <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html> -->
+
+<!-- ==================================== tenaga ahli ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    
+    <body>
+        <form action="<?= base_url() ?>Tenaga_ahli/edit_tenaga_ahli_action/1" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
             <th>Nama</th>
             <th>:</th>
             <th><input type="text" name="nama_lengkap" placeholder="Nama lengkap"></th>
@@ -77,12 +400,29 @@
             <th><input type="checkbox" name="id_jabker[]" value="26">26</th>
             <th><input type="checkbox" name="id_jabker[]" value="26">27</th>
         </tr>
+        <tr>
+            <th>Instruktur</th>
+            <th>:</th>
+            <th><input type="radio" value="1" name="is_instruktur">Ya</th>
+            <th><input type="radio" value="0" name="is_instruktur">tidak</th>
+        </tr>
+        <tr>
+            <th>Asesor</th>
+            <th>:</th>
+            <th><input type="radio" value="1" name="is_asesor">Ya</th>
+            <th><input type="radio" value="0" name="is_asesor">tidak</th>
+        </tr>
+        
     </table>
     <button type="submit">Submit</button>
     </form>
 </body>
 
-</html>
+</html> -->
+
+
+<!-- ==================================== user / peserta ======================================= -->
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 
@@ -93,7 +433,7 @@
 </head>
 
 <body>
-    <form action="<?= base_url() ?>Peserta/edit_peserta_action" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url() ?>Peserta/tambah_peserta_action" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <th>Nama</th>
