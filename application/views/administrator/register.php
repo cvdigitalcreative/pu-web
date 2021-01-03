@@ -67,17 +67,6 @@
                                     placeholder="Kata sandi" name="password" aria-describedby="passwordHelp">
                                 <small id="passwordHelp" class="form-text text-muted">Minimal 8 Karakter.</small>
 							</div>
-							<div class="form-check">
-								<div class="d-flex justify-content-between">
-									<div>
-										<input type="checkbox" class="form-check-input" id="exampleCheck1">
-										<label class="form-check-label" for="exampleCheck1">Ingat saya</label>
-									</div>
-									<div>
-										<a class="lupa-password" href="#">Lupa password?</a>
-									</div>
-								</div>
-							</div>
 							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Masuk</button>
 							<div class="mt-4">
 								Sudah punya akun?<a class="ml-1 lupa-password"
