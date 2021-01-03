@@ -48,6 +48,12 @@
 	box-sizing: border-box
 }
 
+.user-login-name {
+	font-size: 16px;
+	font-weight: 800;
+	color: #2b2b2b;
+}
+
 html {
 	font-family: 'Poppins', sans-serif;
 	line-height: 1.15;
@@ -76,7 +82,7 @@ body {
 	line-height: 1.5;
 	color: #2b2b2b;
 	text-align: left;
-	background-color: #F4F6F9
+	background-color: #F4F6F9 !important;
 }
 
 [tabindex="-1"]:focus {
