@@ -47,7 +47,7 @@ class Administrasi_kegiatan extends CI_Controller
 
                 $this->load->view("administrator/administration", $data);
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function detail($id_administrasi_kegiatan)
@@ -82,7 +82,7 @@ class Administrasi_kegiatan extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah_administrasi_kegiatan_action()
@@ -110,7 +110,7 @@ class Administrasi_kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -140,7 +140,7 @@ class Administrasi_kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -160,6 +160,6 @@ class Administrasi_kegiatan extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }
