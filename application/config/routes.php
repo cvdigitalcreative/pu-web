@@ -54,7 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // Route dashboard
-$route['pupr/dashboard'] = 'Dashboard' ;
+$route['pupr/dashboard'] = 'Dashboard/dashboard' ;
 
 // Route events
 $route['pupr/events'] = "Kegiatan";
