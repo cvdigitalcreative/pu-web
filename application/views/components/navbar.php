@@ -13,7 +13,7 @@
 		<li class="nav-item dropdown no-arrow">
 			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false">
-				<span class="mr-3 d-none d-lg-inline user-login-name">NAMA USER SESUAI LOGIN</span>
+				<span class="mr-3 d-none d-lg-inline user-login-name"><?= $detail_user['nama']?></span>
 				<img class="" width="42" height="42" src="<?=base_url('assets/image/pupr-profile-user.svg')?>">
 			</a>
 			<!-- Dropdown - User Information -->
