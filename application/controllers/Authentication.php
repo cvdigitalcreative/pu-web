@@ -12,7 +12,7 @@ class Authentication extends CI_Controller
         $this->load->model('Kegiatan_model');
     }
 
-    public function index()
+    public function login()
     {
         if ($this->session->userdata("logged_in") == true)
             redirect('Dashboard');
@@ -25,11 +25,7 @@ class Authentication extends CI_Controller
         if (!$this->session->userdata('logged_in')) {
             $email_no_telepon = $this->input->post('email_no_telepon');
             $password = hash("sha256", $this->input->post('password'));
-            
-            $email_no_telepon = "zorayaw31@gmail.com";
-            $password = hash("sha256", "a");
             $login = $this->User_model->login($email_no_telepon, $password);
-
             if ($login['status'] == "Success") {
                 $this->session->set_flashdata('success', $login['message']);
 
@@ -41,7 +37,7 @@ class Authentication extends CI_Controller
                 redirect();
             } else {
                 $this->session->set_flashdata('APImessage', $login['message']);
-                redirect();
+                redirect('pupr/login');
             }
         } else {
             redirect();
