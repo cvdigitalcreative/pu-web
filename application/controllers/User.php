@@ -11,25 +11,40 @@ class User extends CI_Controller
         $this->load->model('User_model');
     }
 
-    public function index()
+    public function profile()
     {
-        $null = false;
-        $data['user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-        if ($data['user'] == null)
-            $null = true;
-        else {
-            if ($data['user']['status'] == "Success")
-                $data['user'] = $data['user']['data'];
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
             else {
-                $data['user'] = null;
-                $this->session->set_flashdata("APImessage", $data['user']['message']);
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
             }
-        }
 
-        if ($null) {
-            redirect();
-        }
-        $this->load->view('edit_profile');
+            $data['user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['user'] == null)
+                $null = true;
+            else {
+                if ($data['user']['status'] == "Success")
+                    $data['user'] = $data['user']['data'];
+                else {
+                    $data['user'] = null;
+                    $this->session->set_flashdata("APImessage", $data['user']['message']);
+                }
+            }
+
+            if ($null) {
+                redirect();
+            }
+        } else
+            redirect("pupr/login");
     }
 
     public function edit_profile_action()
@@ -101,7 +116,7 @@ class User extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 }
