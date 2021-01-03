@@ -57,7 +57,15 @@ $route['translate_uri_dashes'] = FALSE;
 $route['pupr/dashboard'] = 'Dashboard/dashboard' ;
 
 // Route events
-$route['pupr/events'] = "Kegiatan";
+$route['pupr/events'] = "Kegiatan/seluruh";
+$route['pupr/events/my'] = "Kegiatan/my";
+$route['pupr/events/finished'] = "Kegiatan/selesai";
+$route['pupr/events/date'] = "Kegiatan/tanggal";
+$route['pupr/events/month'] = "Kegiatan/bulan";
+$route['pupr/events/detail/(:any)'] = "Kegiatan/detail/$1";
+$route['pupr/events/participants/(:any)/(:any)'] = "Kegiatan/peserta/$1/$2";
+$route['pupr/events/add'] = "Kegiatan/tambah";
+$route['pupr/events/update/(:any)'] = "Kegiatan/edit/$1";
 
 // Route experts
 $route['pupr/experts/(:any)'] = "Tenaga_ahli/Seluruh/$1";
