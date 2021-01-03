@@ -10,12 +10,25 @@ class Hasil_kegiatan extends CI_Controller
         parent::__construct();
         $this->load->model('Hasil_Kegiatan_model');
         $this->load->model('Common_model');
+        $this->load->model('User_model');
     }
 
     public function tambah()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
             $data['jabker'] = $this->Common_model->view_jabker($this->session->userdata('token'));
             if ($data['jabker'] == null)
@@ -32,7 +45,7 @@ class Hasil_kegiatan extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     //blm done
@@ -52,7 +65,8 @@ class Hasil_kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($tambah_hasil_kegiatan); die;
+            var_dump($tambah_hasil_kegiatan);
+            die;
 
             if ($tambah_hasil_kegiatan == null) {
                 redirect();
@@ -65,7 +79,7 @@ class Hasil_kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -73,6 +87,18 @@ class Hasil_kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
             $data['jabker'] = $this->Common_model->view_jabker($this->session->userdata('token'));
             if ($data['jabker'] == null)
@@ -89,7 +115,7 @@ class Hasil_kegiatan extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     //blm done
@@ -110,7 +136,8 @@ class Hasil_kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($edit_hasil_kegiatan); die;
+            var_dump($edit_hasil_kegiatan);
+            die;
 
             if ($edit_hasil_kegiatan == null) {
                 redirect();
@@ -123,7 +150,7 @@ class Hasil_kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -132,7 +159,8 @@ class Hasil_kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_hasil_kegiatan = $this->Hasil_Kegiatan_model->delete_hasil_kegiatan($id_hasil_kegiatan, $this->session->userdata('token'));
-            var_dump($delete_hasil_kegiatan); die;
+            var_dump($delete_hasil_kegiatan);
+            die;
             if ($delete_hasil_kegiatan == null) {
                 redirect();
             } else {
@@ -145,6 +173,6 @@ class Hasil_kegiatan extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }
