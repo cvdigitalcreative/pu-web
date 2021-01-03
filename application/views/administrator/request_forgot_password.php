@@ -43,8 +43,10 @@
 
                         <?php endif; ?>
                         <div>
-                            <img style="vertical-align:middle" src="<?= base_url('assets/icons/pupr-button-back.svg') ?>"
+							<a class="lupa-password" href="<?= base_url()?>pupr/login">
+                            	<img class="mb-2" src="<?= base_url('assets/icons/pupr-button-back.svg') ?>"
 								width="40" height="40">
+							</a>
                         </div>
 						<span class="masuk-title">Lupa Password</span>
 						<h6 class="mt-2 keterangan-title mb-2">Masuk Email / no.telepon akun anda</h6>

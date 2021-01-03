@@ -41,20 +41,21 @@
 							<?= $this->session->flashdata("APImessage"); ?>
 						</div>
 
-                        <?php endif; ?>
-                        <div>
-                            <img style="vertical-align:middle" src="<?= base_url('assets/icons/pupr-button-back.svg') ?>"
-								width="40" height="40">
-                        </div>
+						<?php endif; ?>
+						<div>
+							<a class="lupa-password" href="<?= base_url()?>pupr/login">
+								<img class="mb-2" src="<?= base_url('assets/icons/pupr-button-back.svg') ?>" width="40"
+									height="40">
+							</a>
+						</div>
 						<span class="masuk-title">Lupa Password</span>
 						<h6 class="mt-2 keterangan-title mb-2">Atur ulang password akun anda</h6>
 
-						<form action="<?= base_url(); ?>Authentication/change_password_action/<?=$id_forgot_password?>" method="POST"
-							enctype="multipart/form-data">
+						<form action="<?= base_url(); ?>Authentication/change_password_action/<?=$id_forgot_password?>"
+							method="POST" enctype="multipart/form-data">
 							<div class="form-group mt-4">
 								<input type="password" class="form-control input" id="settingNewPassword"
-									aria-describedby="passwordHelp" placeholder="Password baru"
-									name="new_password">
+									aria-describedby="passwordHelp" placeholder="Password baru" name="new_password">
 							</div>
 							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Kirim</button>
 						</form>
