@@ -4,12 +4,21 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>BJKW II Palembang - Dashboard</title>
+<title>
+    <?php echo SITE_NAME_ADMIN . " " . ucfirst($this->uri->segment(2)) ?>
+</title>
+<link rel="shortcut icon" type="image/x-icon" href="<?=base_url('assets/image/pupr-logo.svg')?>" />
+
+<!-- Bootstrap core CSS-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <!-- Custom fonts for this template-->
-<link href="assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link href="<?php echo base_url('assets/fonts/css/all.min.css') ?>" rel="stylesheet" type="text/css">
 
 <!-- Custom styles for this template-->
-<link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="<?php echo base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('assets/css/admin.css') ?>" rel="stylesheet">
+

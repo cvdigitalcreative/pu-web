@@ -1,3 +1,50 @@
 body {
-    
+    overflow: hidden;
+}
+
+.image {
+    border: 5px solid #2b2b2b;
+}
+
+.image-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-left: 12px;
+}
+
+.masuk-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.row {
+    min-height: 100vh;
+}
+
+.left {
+    background-color: #FFC928;
+}
+
+
+.right {
+    background-color: #fff;
+}
+
+.lupa-password {
+    text-align: right;
+    color: #364878;
+}
+
+.input {
+    height: 44px;
+}
+
+.btn-masuk {
+    background-color: #FFC928 !important;
+    border: none;
+    height: 44px;
+    color: #2b2b2b;
+    border-radius: 33px;
+    font-weight: 600;
+    font-size: 16px;
 }
