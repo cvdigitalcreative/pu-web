@@ -64,13 +64,13 @@ class Authentication extends CI_Controller
             
             if ($register['status'] == "Success") {
                 $this->session->set_flashdata('success', $register['message']);
-                redirect("pupr/dashboard");
+                redirect("pupr/login");
             } else {
                 $this->session->set_flashdata('APImessage', $register['message']);
                 redirect("pupr/register");
             }
         } else {
-            redirect();
+            redirect("pupr/dashboard");
         }
     }
 
