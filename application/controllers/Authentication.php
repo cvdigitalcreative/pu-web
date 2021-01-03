@@ -12,26 +12,12 @@ class Authentication extends CI_Controller
         $this->load->model('Kegiatan_model');
     }
 
-    public function register()
+    public function index()
     {
-        if (!$this->session->userdata('logged_in')) {
-            $nama = $this->input->post('nama');
-            $email = $this->input->post('email');
-            $no_telpon = $this->input->post('no_telpon');
-            $password = $this->input->post('password');
-
-            $register = $this->User_model->register($nama, $email, $no_telpon, $password);
-
-            if ($register['status'] == "Success") {
-                $this->session->set_flashdata('success', $register['message']);
-                redirect();
-            } else {
-                $this->session->set_flashdata('APImessage', $register['message']);
-                redirect();
-            }
-        } else {
-            redirect();
-        }
+        if ($this->session->userdata("logged_in") == true)
+            redirect('Dashboard');
+        else
+            $this->load->view("administrator/login");
     }
 
     public function login()
@@ -40,6 +26,8 @@ class Authentication extends CI_Controller
             $email_no_telepon = $this->input->post('email_no_telepon');
             $password = $this->input->post('password');
 
+            $email_no_telepon = "zorayaw31@gmail.com";
+            $password = "abc123";
             $login = $this->User_model->login($email_no_telepon, $password);
 
             if ($login['status'] == "Success") {
@@ -53,6 +41,36 @@ class Authentication extends CI_Controller
                 redirect();
             } else {
                 $this->session->set_flashdata('APImessage', $login['message']);
+                redirect();
+            }
+        } else {
+            redirect();
+        }
+    }
+
+    public function register()
+    {
+        if ($this->session->userdata("logged_in") == true)
+            redirect('Dashboard');
+        else
+            $this->load->view("administrator/register");
+    }
+    
+    public function register_action()
+    {
+        if (!$this->session->userdata('logged_in')) {
+            $nama = $this->input->post('nama');
+            $email = $this->input->post('email');
+            $no_telpon = $this->input->post('no_telpon');
+            $password = $this->input->post('password');
+            
+            $register = $this->User_model->register($nama, $email, $no_telpon, $password);
+            
+            if ($register['status'] == "Success") {
+                $this->session->set_flashdata('success', $register['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('APImessage', $register['message']);
                 redirect();
             }
         } else {
@@ -86,7 +104,7 @@ class Authentication extends CI_Controller
     public function forgot_password()
     {
         $email_no_telepon = $this->input->post('email_no_telepon');
-        
+
         $forgot_password = $this->User_model->forgot_password($email_no_telepon);
 
         if ($forgot_password['status'] == "Success") {

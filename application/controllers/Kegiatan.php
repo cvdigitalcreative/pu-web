@@ -69,6 +69,8 @@ class Kegiatan extends CI_Controller
             }
             if ($null)
                 redirect();
+
+            $this->load->view("administrator/events", $data);
         } else
             redirect();
     }
@@ -78,7 +80,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
             $data['kegiatan'] = $this->Kegiatan_model->view_my_kegiatan($this->session->userdata('token'));
-            
+
             if ($data['kegiatan'] == null)
                 $null = true;
             else {
@@ -509,7 +511,7 @@ class Kegiatan extends CI_Controller
                 $id_instruktur_kegiatan,
                 $this->session->userdata('token')
             );
-            
+
             if ($tambah_kegiatan == null) {
                 redirect();
             }

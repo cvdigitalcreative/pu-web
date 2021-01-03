@@ -29,6 +29,8 @@ class Buku_saku extends CI_Controller
 
             if ($null)
                 redirect();
+
+                $this->load->view('administrator/pocketbook', $data);
         } else
             redirect();
     }

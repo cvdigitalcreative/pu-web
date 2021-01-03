@@ -29,6 +29,8 @@ class Administrasi_kegiatan extends CI_Controller
             
             if ($null)
                 redirect();
+
+                $this->load->view("administrator/administration", $data);
         } else
             redirect();
     }

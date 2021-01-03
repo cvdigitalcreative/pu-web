@@ -53,27 +53,26 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-
 // Route dashboard
-// $route['pupr/dashboard'] ;
+$route['pupr/dashboard'] = 'Dashboard' ;
 
 // Route events
-// $route['pupr/events'];
+$route['pupr/events'] = "Kegiatan";
 
 // Route experts
-// $route['pupr/experts'];
+$route['pupr/experts/(:any)'] = "Tenaga_ahli/Seluruh/$1";
 
 // Route participant
-// $route['pupr/participant'];
+$route['pupr/participant'] = "Peserta";
 
 // Route pocketbook
-// $route['pupr/pocketbook'];
+$route['pupr/pocketbook'] = "Buku_saku";
 
 // Route administration
-// $route['pupr/administration'];
+$route['pupr/administration'] = "Administrasi_kegiatan";
 
 // Route skkni
-// $route['pupr/skkni'];
+$route['pupr/skkni'] = "SKA";
 
 // Route modul
-// $route['pupr/modul'];
+$route['pupr/modul'] = "Modul";

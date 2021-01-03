@@ -28,6 +28,7 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
+            $this->load->view("administrator/experts", $data);
 
             if ($null)
                 redirect();

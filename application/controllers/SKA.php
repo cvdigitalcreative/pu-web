@@ -30,6 +30,8 @@ class SKA extends CI_Controller
 
             if ($null)
                 redirect();
+
+                // $this->load->view("administrator/", $data);
         } else
             redirect();
     }

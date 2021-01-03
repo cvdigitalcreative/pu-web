@@ -30,6 +30,8 @@ class Modul extends CI_Controller
 
             if ($null)
                 redirect();
+                
+            $this->load->view("administrator/modul", $data);
         } else
             redirect();
     }

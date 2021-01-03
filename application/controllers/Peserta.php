@@ -33,6 +33,7 @@ class Peserta extends CI_Controller
             if ($null)
                 redirect();
 
+                $this->load->view("administrator/participant", $data);
             $this->load->view("", $data);
         } else
             redirect();
