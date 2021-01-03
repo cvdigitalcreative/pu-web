@@ -2,8 +2,14 @@ body {
     overflow: hidden;
 }
 
-.image {
+.image-ilustrasi {
     border: 5px solid #2b2b2b;
+}
+
+.ilustrasi-title {
+    font-size: 33px;
+    font-weight: 800;
+    margin-left: 12px;
 }
 
 .image-title {
@@ -13,8 +19,13 @@ body {
 }
 
 .masuk-title {
-    font-size: 1.8rem;
+    font-size: 33px;
     font-weight: 800;
+}
+
+.keterangan-title {
+    font-size: 19px;
+    font-weight: ;
 }
 
 .row {
