@@ -67,7 +67,7 @@
                                     placeholder="Kata sandi" name="password" aria-describedby="passwordHelp">
                                 <small id="passwordHelp" class="form-text text-muted">Minimal 8 Karakter.</small>
 							</div>
-							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Masuk</button>
+							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Daftar</button>
 							<div class="mt-4">
 								Sudah punya akun?<a class="ml-1 lupa-password"
 									href="<?= base_url()?>pupr/register">Masuk</a>
