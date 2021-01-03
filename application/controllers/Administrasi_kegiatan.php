@@ -9,12 +9,27 @@ class Administrasi_kegiatan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Administrasi_Kegiatan_model');
+        $this->load->model('User_model');
     }
 
-    public function index()
+    public function seluruh()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['administrasi_kegiatan'] = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan($this->session->userdata('token'));
             if ($data['administrasi_kegiatan'] == null)
             $null = true;
@@ -39,6 +54,19 @@ class Administrasi_kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['administrasi_kegiatan'] = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan_detail($id_administrasi_kegiatan, $this->session->userdata('token'));
             if ($data['administrasi_kegiatan'] == null)
                 $null = true;

@@ -66,13 +66,21 @@ $route['pupr/experts/(:any)'] = "Tenaga_ahli/Seluruh/$1";
 $route['pupr/participant'] = "Peserta";
 
 // Route pocketbook
-$route['pupr/pocketbook'] = "Buku_saku";
+$route['pupr/pocketbook'] = "Buku_saku/seluruh";
+$route['pupr/pocketbook/detail/(:any)'] = "Buku_saku/detail/$1";
 
 // Route administration
-$route['pupr/administration'] = "Administrasi_kegiatan";
+$route['pupr/administration'] = "Administrasi_kegiatan/seluruh";
+$route['pupr/administration/detail/(:any)'] = "Administrasi_kegiatan/detail/$1";
 
 // Route skkni
 $route['pupr/skkni'] = "SKA";
 
 // Route modul
 $route['pupr/modul'] = "Modul";
+
+//route news
+$route['pupr/news'] = "Berita/seluruh";
+$route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
+
+
