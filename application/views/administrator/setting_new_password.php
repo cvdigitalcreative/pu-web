@@ -49,12 +49,12 @@
 						<span class="masuk-title">Lupa Password</span>
 						<h6 class="mt-2 keterangan-title mb-2">Atur ulang password akun anda</h6>
 
-						<form action="<?= base_url(); ?>" method="POST"
+						<form action="<?= base_url(); ?>Authentication/change_password_action/<?=$id_forgot_password?>" method="POST"
 							enctype="multipart/form-data">
 							<div class="form-group mt-4">
 								<input type="password" class="form-control input" id="settingNewPassword"
 									aria-describedby="passwordHelp" placeholder="Password baru"
-									name="password">
+									name="new_password">
 							</div>
 							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Kirim</button>
 						</form>

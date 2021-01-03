@@ -65,7 +65,7 @@
 										<label class="form-check-label" for="exampleCheck1">Ingat saya</label>
 									</div>
 									<div>
-										<a class="lupa-password" href="#">Lupa password?</a>
+										<a class="lupa-password" href="<?= base_url()?>pupr/password/forgot">Lupa password?</a>
 									</div>
 								</div>
 							</div>

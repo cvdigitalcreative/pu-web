@@ -49,7 +49,7 @@
 						<span class="masuk-title">Lupa Password</span>
 						<h6 class="mt-2 keterangan-title mb-2">Masuk Email / no.telepon akun anda</h6>
 
-						<form action="<?= base_url(); ?>" method="POST"
+						<form action="<?= base_url(); ?>Authentication/forgot_password_action" method="POST"
 							enctype="multipart/form-data">
 							<div class="form-group mt-4">
 								<input type="text" class="form-control input" id="forgotPasswordEmailNoTelepon"

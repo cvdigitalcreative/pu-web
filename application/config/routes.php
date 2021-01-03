@@ -58,6 +58,8 @@ $route['translate_uri_dashes'] = FALSE;
 // Route Auth
 $route['pupr/login'] = 'Authentication/login' ;
 $route['pupr/register'] = 'Authentication/register' ;
+$route['pupr/password/forgot'] = 'Authentication/forgot_password' ;
+$route['pupr/password/reset/(:any)'] = 'Authentication/change_password/$1' ;
 
 // Route dashboard
 $route['pupr/dashboard'] = 'Dashboard/dashboard' ;

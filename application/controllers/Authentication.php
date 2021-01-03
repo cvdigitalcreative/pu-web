@@ -100,32 +100,50 @@ class Authentication extends CI_Controller
 
     public function forgot_password()
     {
+        if(!$this->session->userdata('logged_in')){
+            $this->load->view('administrator/request_forgot_password');
+        }
+        else
+        redirect("pupr/dashboard");
+    }
+
+    public function forgot_password_action()
+    {
         $email_no_telepon = $this->input->post('email_no_telepon');
 
         $forgot_password = $this->User_model->forgot_password($email_no_telepon);
 
         if ($forgot_password['status'] == "Success") {
             $this->session->set_flashdata('success', $forgot_password['message']);
-            redirect();
+            redirect("pupr/login");
         } else {
             $this->session->set_flashdata('APImessage', $forgot_password['message']);
-            redirect();
+            redirect("pupr/password/forgot");
         }
     }
 
-    public function change_password()
+    public function change_password($id_forgot_password)
     {
-        $id_forgot_password = $this->input->post('id_forgot_password');
+        if(!$this->session->userdata('logged_in')){
+            $data['id_forgot_password'] = $id_forgot_password;
+            $this->load->view('administrator/setting_new_password', $data);
+        }
+        else
+        redirect("pupr/dashboard");
+    }
+
+    public function change_password_action($id_forgot_password)
+    {
         $new_password = $this->input->post('new_password');
 
         $change_password = $this->User_model->change_password($id_forgot_password, $new_password);
 
         if ($change_password['status'] == "Success") {
             $this->session->set_flashdata('success', $change_password['message']);
-            redirect();
+            redirect("pupr/login");
         } else {
             $this->session->set_flashdata('APImessage', $change_password['message']);
-            redirect();
+            redirect("pupr/password/reset/$id_forgot_password");
         }
     }
 
