@@ -79,7 +79,7 @@ class Kegiatan extends CI_Controller
                     }
                 } else {
                     $data['kegiatan'] = null;
-                    $data['jumlah_seluruh_kegiatan'] = count($data['kegiatan']);
+                    $data['jumlah_seluruh_kegiatan'] = 0;
 
                     $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
                 }
