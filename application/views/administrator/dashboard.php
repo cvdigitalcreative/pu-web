@@ -18,7 +18,7 @@
 			<!-- Main Content -->
 			<div id="content">
 
-				<?php $this->load->view("components/navbar.php")?>
+				<?php $this->load->view("components/navbar.php", $header)?>
 
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
