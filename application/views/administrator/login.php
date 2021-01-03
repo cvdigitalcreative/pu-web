@@ -12,9 +12,9 @@
 		<div class="row align-items-center justify-content-center">
 			<div class="col-6 left align-self-center">
 				<div class="">
-					<img class="align-items-middle" width="284.58" height="320"
+					<img class="align-items-middle image-ilustrasi" width="284.58" height="320"
 						src="<?=base_url('assets/image/pupr-ilustrasi.png')?>">
-					<h3 class="mt-4">BJKW II Palembang</h3>
+					<h3 class="mt-4 ilustrasi-title">BJKW II Palembang</h3>
 				</div>
 
 			</div>
@@ -27,7 +27,7 @@
 						<span class="image-title">BJKW II Palembang</span>
 					</div>
 					<span class="masuk-title">Masuk</span>
-					<h6>Masuk untuk melanjutkan</h6>
+					<h6 class="mt-2 keterangan-title mb-2">Masuk untuk melanjutkan</h6>
 
 					<form>
 						<div class="form-group mt-4">
@@ -50,12 +50,15 @@
 							</div>
 						</div>
 						<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Masuk</button>
+						<div class="mt-4">
+							Belum punya akun?<a class="ml-1 lupa-password" href="#">Daftar</a>
+						</div>
 					</form>
-                </div>
-                
+				</div>
+
 			</div>
 		</div>
-    </div>
+	</div>
 
 	<?php $this->load->view("components/js.php")?>
 </body>
