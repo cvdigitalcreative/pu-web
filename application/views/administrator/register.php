@@ -36,11 +36,9 @@
 						</div>
 
 						<?php if ($this->session->flashdata("APImessage")) : ?>
-
 						<div class="alert alert-info" role="alert">
 							<?= $this->session->flashdata("APImessage"); ?>
 						</div>
-
 						<?php endif; ?>
 						<span class="masuk-title">Daftar</span>
 						<h6 class="mt-2 keterangan-title mb-2">Lengkapi formulir dibawah</h6>
@@ -50,17 +48,17 @@
 							<div class="form-group mt-4">
 								<input type="text" class="form-control input" id="registerEmail"
 									aria-describedby="emailNoTeleponHelp" placeholder="Email / no.telepon"
-									name="email_no_telepon">
+									name="email">
                             </div>
                             <div class="form-group mt-4">
 								<input type="text" class="form-control input" id="registerNama"
 									aria-describedby="namaLengkapHelp" placeholder="Nama lengkap"
-									name="nama_lengkap">
+									name="nama">
                             </div>
                             <div class="form-group mt-4">
 								<input type="text" class="form-control input" id="registerNoTelepon"
 									aria-describedby="noTeleponHelp" placeholder="081234567890"
-									name="no_telepon">
+									name="no_telpon">
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control input" id="registerPassword"
@@ -70,7 +68,7 @@
 							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Daftar</button>
 							<div class="mt-4">
 								Sudah punya akun?<a class="ml-1 lupa-password"
-									href="<?= base_url()?>pupr/register">Masuk</a>
+									href="<?= base_url()?>pupr/login">Masuk</a>
 							</div>
 						</form>
 
