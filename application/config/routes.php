@@ -52,3 +52,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+// Route dashboard
+// $route['pupr/dashboard'] ;
+
+// Route events
+// $route['pupr/events'];
+
+// Route experts
+// $route['pupr/experts'];
+
+// Route participant
+// $route['pupr/participant'];
+
+// Route pocketbook
+// $route['pupr/pocketbook'];
+
+// Route administration
+// $route['pupr/administration'];
+
+// Route skkni
+// $route['pupr/skkni'];
+
+// Route modul
+// $route['pupr/modul'];
