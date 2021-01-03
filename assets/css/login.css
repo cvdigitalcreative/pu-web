@@ -25,7 +25,7 @@ body {
 
 .keterangan-title {
     font-size: 19px;
-    font-weight: ;
+    font-weight: normal;
 }
 
 .row {
@@ -44,6 +44,7 @@ body {
 .lupa-password {
     text-align: right;
     color: #364878;
+    font-weight: 600;
 }
 
 .input {
