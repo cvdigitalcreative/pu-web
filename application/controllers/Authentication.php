@@ -20,14 +20,14 @@ class Authentication extends CI_Controller
             $this->load->view("administrator/login");
     }
 
-    public function login()
+    public function login_action()
     {
         if (!$this->session->userdata('logged_in')) {
             $email_no_telepon = $this->input->post('email_no_telepon');
-            $password = $this->input->post('password');
-
+            $password = hash("sha256", $this->input->post('password'));
+            
             $email_no_telepon = "zorayaw31@gmail.com";
-            $password = "abc123";
+            $password = hash("sha256", "a");
             $login = $this->User_model->login($email_no_telepon, $password);
 
             if ($login['status'] == "Success") {
@@ -62,7 +62,7 @@ class Authentication extends CI_Controller
             $nama = $this->input->post('nama');
             $email = $this->input->post('email');
             $no_telpon = $this->input->post('no_telpon');
-            $password = $this->input->post('password');
+            $password = hash("sha256", $this->input->post('password'));
             
             $register = $this->User_model->register($nama, $email, $no_telpon, $password);
             
