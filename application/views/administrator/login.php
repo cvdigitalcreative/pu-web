@@ -36,11 +36,13 @@
 						</div>
 
 						<?php if ($this->session->flashdata("APImessage")) : ?>
-
 						<div class="alert alert-info" role="alert">
 							<?= $this->session->flashdata("APImessage"); ?>
 						</div>
-
+						<?php elseif ($this->session->flashdata("success")) : ?>
+						<div class="alert alert-success" role="alert">
+							<?= $this->session->flashdata("success"); ?>
+						</div>
 						<?php endif; ?>
 						<span class="masuk-title">Masuk</span>
 						<h6 class="mt-2 keterangan-title mb-2">Masuk akun anda untuk melanjutkan</h6>

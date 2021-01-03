@@ -43,7 +43,7 @@
 						<span class="masuk-title">Daftar</span>
 						<h6 class="mt-2 keterangan-title mb-2">Lengkapi formulir dibawah</h6>
 
-						<form action="<?= base_url(); ?>Authentication/login_action" method="POST"
+						<form action="<?= base_url(); ?>Authentication/register_action" method="POST"
 							enctype="multipart/form-data">
 							<div class="form-group mt-4">
 								<input type="text" class="form-control input" id="registerEmail"
