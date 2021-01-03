@@ -30,17 +30,17 @@ class Dashboard extends CI_Controller
                 }
             }
 
-            $data['dashboard'] = $this->dashboard_model->view_dashboard($this->session->userdata('token'));
-            if ($data['dashboard'] == null)
-                $null = true;
-            else {
-                if ($data['dashboard']['status'] == "Success") {
-                    $data['dashboard'] = $data['dashboard']['data'];
-                } else {
-                    $data['dashboard'] = null;
-                    $this->session->set_flashdata('APImessage', $data['dashboard']['message']);
-                }
-            }
+            // $data['dashboard'] = $this->dashboard_model->view_dashboard($this->session->userdata('token'));
+            // if ($data['dashboard'] == null)
+            //     $null = true;
+            // else {
+            //     if ($data['dashboard']['status'] == "Success") {
+            //         $data['dashboard'] = $data['dashboard']['data'];
+            //     } else {
+            //         $data['dashboard'] = null;
+            //         $this->session->set_flashdata('APImessage', $data['dashboard']['message']);
+            //     }
+            // }
 
             if ($null)
                 redirect("pupr/dashboard");
