@@ -22,6 +22,7 @@ class Kegiatan extends CI_Controller
             else {
                 if ($data['kegiatan']['status'] == "Success") {
                     $data['kegiatan'] = $data['kegiatan']['data'];
+                    $data['jumlah_seluruh_kegiatan'] = count($data['kegiatan']);
 
                     $indexKegiatan = 0;
                     foreach ($data['kegiatan'] as $val) {
@@ -64,9 +65,24 @@ class Kegiatan extends CI_Controller
                     }
                 } else {
                     $data['kegiatan'] = null;
+                    $data['jumlah_seluruh_kegiatan'] = count($data['kegiatan']);
+
                     $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
                 }
             }
+
+            $data['jumlah_kegiatan_selesai'] = $this->Kegiatan_model->view_kegiatan_selesai($this->session->userdata('token'));
+            if ($data['jumlah_kegiatan_selesai'] == null)
+                $null = true;
+            else {
+                if ($data['jumlah_kegiatan_selesai']['status'] == "Success") {
+                    $data['jumlah_kegiatan_selesai'] = count($data['jumlah_kegiatan_selesai']['data']);
+                } else {
+                    $data['jumlah_kegiatan_selesai'] = 0;
+                    $this->session->set_flashdata('APImessage', $data['jumlah_kegiatan_selesai']['message']);
+                }
+            }
+
             if ($null)
                 redirect();
 
