@@ -14,7 +14,7 @@
 			<div class="col left">
 				<div class="row d-flex flex-column justify-content-center align-items-center">
 					<div class="align-items-center">
-						<img class="image-ilustrasi" width="284.58" height="320"
+						<img class="img-fluids image-ilustrasi" width="284.58" height="320"
 							src="<?= base_url('assets/image/pupr-ilustrasi.png') ?>">
 					</div>
 					<div>
