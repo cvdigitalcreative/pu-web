@@ -43,7 +43,7 @@
 
 						<?php endif; ?>
 						<span class="masuk-title">Masuk</span>
-						<h6 class="mt-2 keterangan-title mb-2">Masuk untuk melanjutkan</h6>
+						<h6 class="mt-2 keterangan-title mb-2">Masuk akun anda untuk melanjutkan</h6>
 
 						<form action="<?= base_url(); ?>Authentication/login_action" method="POST"
 							enctype="multipart/form-data">
