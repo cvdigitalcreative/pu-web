@@ -15,7 +15,7 @@ class Authentication extends CI_Controller
     public function login()
     {
         if ($this->session->userdata("logged_in") == true)
-            redirect('Dashboard');
+            redirect("pupr/dashboard");
         else
             $this->load->view("administrator/login");
     }
@@ -34,20 +34,20 @@ class Authentication extends CI_Controller
                 $this->session->set_userdata('token', $login['data']['id_token']);
                 $this->session->set_userdata('nama', $login['data']['nama']);
                 $this->session->set_userdata('role', $login['data']['id_role']);
-                redirect();
+                redirect("pupr/dashboard");
             } else {
                 $this->session->set_flashdata('APImessage', $login['message']);
                 redirect('pupr/login');
             }
         } else {
-            redirect();
+            redirect("pupr/dashboard");
         }
     }
 
     public function register()
     {
         if ($this->session->userdata("logged_in") == true)
-            redirect('Dashboard');
+            redirect("pupr/dashboard");
         else
             $this->load->view("administrator/register");
     }
@@ -64,10 +64,10 @@ class Authentication extends CI_Controller
             
             if ($register['status'] == "Success") {
                 $this->session->set_flashdata('success', $register['message']);
-                redirect();
+                redirect("pupr/dashboard");
             } else {
                 $this->session->set_flashdata('APImessage', $register['message']);
-                redirect();
+                redirect("pupr/register");
             }
         } else {
             redirect();
@@ -95,6 +95,7 @@ class Authentication extends CI_Controller
         $this->session->sess_destroy();
 
         $this->session->set_flashdata('APImessage', "Logout berhasil");
+        redirect("pupr/login");
     }
 
     public function forgot_password()
