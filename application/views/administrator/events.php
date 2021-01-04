@@ -37,7 +37,11 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div class="text-xl font-weight-bold text-black text-uppercase mb-1">
-												Total Jumlah</div>
+												Total Jumlah
+											</div>
+											<div class="row no-gutters align-items-center">
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10 Kegiatan</div>
+											</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -53,7 +57,11 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div class="text-xl font-weight-bold text-black text-uppercase mb-1">
-												Selesai</div>
+												Selesai
+											</div>
+											<div class="row no-gutters align-items-center">
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10 Kegiatan</div>
+											</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -69,7 +77,11 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div class="text-xl font-weight-bold text-black text-uppercase mb-1">
-												Sedang Berjalan</div>
+												Sedang Berjalan
+											</div>
+											<div class="row no-gutters align-items-center">
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10 Kegiatan</div>
+											</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
