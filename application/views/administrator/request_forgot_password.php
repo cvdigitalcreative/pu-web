@@ -36,44 +36,29 @@
 						</div>
 
 						<?php if ($this->session->flashdata("APImessage")) : ?>
+
 						<div class="alert alert-info" role="alert">
 							<?= $this->session->flashdata("APImessage"); ?>
 						</div>
-						<?php elseif ($this->session->flashdata("success")) : ?>
-						<div class="alert alert-success" role="alert">
-							<?= $this->session->flashdata("success"); ?>
-						</div>
-						<?php endif; ?>
-						<span class="masuk-title">Masuk</span>
-						<h6 class="mt-2 keterangan-title mb-2">Masuk akun anda untuk melanjutkan</h6>
 
-						<form action="<?= base_url(); ?>Authentication/login_action" method="POST"
+                        <?php endif; ?>
+                        <div>
+							<a class="lupa-password" href="<?= base_url()?>pupr/login">
+                            	<img class="mb-2" src="<?= base_url('assets/icons/pupr-button-back.svg') ?>"
+								width="40" height="40">
+							</a>
+                        </div>
+						<span class="masuk-title">Lupa Password</span>
+						<h6 class="mt-2 keterangan-title mb-2">Masuk Email / no.telepon akun anda</h6>
+
+						<form action="<?= base_url(); ?>Authentication/forgot_password_action" method="POST"
 							enctype="multipart/form-data">
 							<div class="form-group mt-4">
-								<input type="text" class="form-control input" id="exampleInputEmail1"
+								<input type="text" class="form-control input" id="forgotPasswordEmailNoTelepon"
 									aria-describedby="emailHelp" placeholder="Email / no.telepon"
 									name="email_no_telepon">
 							</div>
-							<div class="form-group">
-								<input type="password" class="form-control input" id="exampleInputPassword1"
-									placeholder="Kata sandi" name="password">
-							</div>
-							<div class="form-check">
-								<div class="d-flex justify-content-between">
-									<div>
-										<input type="checkbox" class="form-check-input" id="exampleCheck1">
-										<label class="form-check-label" for="exampleCheck1">Ingat saya</label>
-									</div>
-									<div>
-										<a class="lupa-password" href="<?= base_url()?>pupr/password/forgot">Lupa password?</a>
-									</div>
-								</div>
-							</div>
-							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Masuk</button>
-							<div class="mt-4">
-								Belum punya akun?<a class="ml-1 lupa-password"
-									href="<?= base_url()?>pupr/register">Daftar</a>
-							</div>
+							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Kirim</button>
 						</form>
 
 					</div>

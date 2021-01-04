@@ -98,11 +98,11 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
 
             $this->load->view("administrator/events", $data);
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function my()
@@ -174,9 +174,9 @@ class Kegiatan extends CI_Controller
                 }
             }
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     //blm done
@@ -250,9 +250,9 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tanggal()
@@ -326,9 +326,9 @@ class Kegiatan extends CI_Controller
                 }
             }
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     //blm done
@@ -402,9 +402,9 @@ class Kegiatan extends CI_Controller
                 }
             }
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function detail($id_kegiatan)
@@ -472,9 +472,9 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function peserta($id_kegiatan, $id_status)
@@ -507,9 +507,9 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function daftar($id_kegiatan)
@@ -528,7 +528,7 @@ class Kegiatan extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah()
@@ -575,7 +575,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             $this->load->view('edit_profile');
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah_kegiatan_action()
@@ -644,7 +644,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -692,7 +692,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             $this->load->view('edit_profile');
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function edit_kegiatan_action($id_kegiatan)
@@ -763,7 +763,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -788,7 +788,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -808,7 +808,7 @@ class Kegiatan extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     // ====================== Berita Acara ==================================
@@ -837,7 +837,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -865,7 +865,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
     // ====================== invoice ==================================
@@ -898,7 +898,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -930,7 +930,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -960,7 +960,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -988,7 +988,7 @@ class Kegiatan extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -1010,7 +1010,7 @@ class Kegiatan extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function delete_asesor($id_kegiatan, $id_tenaga_ahli)
@@ -1029,7 +1029,7 @@ class Kegiatan extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function delete_instruktur($id_kegiatan, $id_tenaga_ahli)
@@ -1048,6 +1048,6 @@ class Kegiatan extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }

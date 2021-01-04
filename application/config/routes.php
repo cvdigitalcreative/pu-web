@@ -49,6 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
 $route['default_controller'] = 'Authentication/login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
@@ -57,6 +58,8 @@ $route['translate_uri_dashes'] = FALSE;
 // Route Auth
 $route['pupr/login'] = 'Authentication/login' ;
 $route['pupr/register'] = 'Authentication/register' ;
+$route['pupr/password/forgot'] = 'Authentication/forgot_password' ;
+$route['pupr/password/reset/(:any)'] = 'Authentication/change_password/$1' ;
 
 // Route dashboard
 $route['pupr/dashboard'] = 'Dashboard/dashboard' ;
@@ -74,9 +77,13 @@ $route['pupr/events/update/(:any)'] = "Kegiatan/edit/$1";
 
 // Route experts
 $route['pupr/experts/(:any)'] = "Tenaga_ahli/Seluruh/$1";
+$route['pupr/experts/area/(:any)/(:any)'] = "Tenaga_ahli/daerah/$1/$2";
+$route['pupr/experts/detail/(:any)'] = "Tenaga_ahli/detail/$1";
 
 // Route participant
-$route['pupr/participant'] = "Peserta";
+$route['pupr/participant/(:any)'] = "Peserta/seluruh/$1";
+$route['pupr/participant/area/(:any)'] = "Peserta/daerah/$1";
+$route['pupr/participant/detail/(:any)'] = "Peserta/detail/$1";
 
 // Route pocketbook
 $route['pupr/pocketbook'] = "Buku_saku/seluruh";
@@ -87,13 +94,19 @@ $route['pupr/administration'] = "Administrasi_kegiatan/seluruh";
 $route['pupr/administration/detail/(:any)'] = "Administrasi_kegiatan/detail/$1";
 
 // Route skkni
-$route['pupr/skkni'] = "SKA";
+$route['pupr/skkni'] = "SKA/seluruh";
+$route['pupr/skkni/detail/(:any)'] = "SKA/detail/$1";
 
 // Route modul
-$route['pupr/modul'] = "Modul";
+$route['pupr/modul'] = "Modul/seluruh";
+$route['pupr/modul/detail/(:any)'] = "Modul/detail/$1";
 
 //route news
 $route['pupr/news'] = "Berita/seluruh";
+$route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
+
+//route profile
+$route['pupr/profile'] = "User/profile";
 $route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
 
 

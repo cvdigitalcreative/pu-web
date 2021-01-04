@@ -44,7 +44,7 @@ class Berita extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function detail($id_berita)
@@ -79,7 +79,7 @@ class Berita extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah_berita_action()
@@ -107,7 +107,7 @@ class Berita extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
     public function edit_berita_action($id_berita)
@@ -136,11 +136,9 @@ class Berita extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
-
-   
 
     public function delete_berita($id_berita)
     {
@@ -158,6 +156,6 @@ class Berita extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }

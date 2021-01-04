@@ -10,12 +10,26 @@ class Tenaga_ahli extends CI_Controller
         parent::__construct();
         $this->load->model('Tenaga_Ahli_model');
         $this->load->model('Common_model');
+        $this->load->model('User_model');
     }
 
     public function seluruh($id_kategori_tenaga_ahli)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($id_kategori_tenaga_ahli, $this->session->userdata('token'));
             if ($data['tenaga_ahli'] == null)
                 $null = true;
@@ -33,13 +47,26 @@ class Tenaga_ahli extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function daerah($id_provinsi, $id_kategori_tenaga_ahli)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_tenaga_ahli_by_provinsi($id_provinsi, $id_kategori_tenaga_ahli, $this->session->userdata('token'));
             if ($data['tenaga_ahli'] == null)
                 $null = true;
@@ -55,13 +82,26 @@ class Tenaga_ahli extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function detail($id_tenaga_ahli)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_detail_tenaga_ahli($id_tenaga_ahli, $this->session->userdata('token'));
             if ($data['tenaga_ahli'] == null)
                 $null = true;
@@ -77,7 +117,7 @@ class Tenaga_ahli extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     //blm done
@@ -85,6 +125,18 @@ class Tenaga_ahli extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
             $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
             if ($data['kategori_tenaga_ahli'] == null)
@@ -101,7 +153,7 @@ class Tenaga_ahli extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah_tenaga_ahli_action()
@@ -132,15 +184,15 @@ class Tenaga_ahli extends CI_Controller
                 $id_jabker = '[' . implode(',', $id_jabker) . ']';
             $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
             $is_instruktur = $this->input->post('is_instruktur');
-            if($is_instruktur == 1)
-            $is_instruktur = true;
+            if ($is_instruktur == 1)
+                $is_instruktur = true;
             else
-            $is_instruktur = false;
+                $is_instruktur = false;
             $is_asesor = $this->input->post('is_asesor');
-            if($is_asesor == 1)
-            $is_asesor = true;
+            if ($is_asesor == 1)
+                $is_asesor = true;
             else
-            $is_asesor = false;
+                $is_asesor = false;
 
             $tambah_tenaga_ahli = $this->Tenaga_Ahli_model->add_tenaga_ahli(
                 $nama_lengkap,
@@ -172,33 +224,45 @@ class Tenaga_ahli extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
-        //blm done
-        public function edit()
-        {
-            if ($this->session->userdata('logged_in') == true) {
-                $null = false;
-    
-                $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
-                if ($data['kategori_tenaga_ahli'] == null)
-                    $null = true;
-                else {
-                    if ($data['kategori_tenaga_ahli']['status'] == "Success") {
-                        $data['kategori_tenaga_ahli'] = $data['kategori_tenaga_ahli']['data'];
-                    } else {
-                        $data['kategori_tenaga_ahli'] = null;
-                        $this->session->set_flashdata('APImessage', $data['kategori_tenaga_ahli']['message']);
-                    }
+    //blm done
+    public function edit()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
                 }
-    
-                if ($null)
-                    redirect();
-            } else
+            }
+
+            $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
+            if ($data['kategori_tenaga_ahli'] == null)
+                $null = true;
+            else {
+                if ($data['kategori_tenaga_ahli']['status'] == "Success") {
+                    $data['kategori_tenaga_ahli'] = $data['kategori_tenaga_ahli']['data'];
+                } else {
+                    $data['kategori_tenaga_ahli'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kategori_tenaga_ahli']['message']);
+                }
+            }
+
+            if ($null)
                 redirect();
-        }
+        } else
+            redirect("pupr/login");
+    }
 
     public function edit_tenaga_ahli_action($id_tenaga_ahli)
     {
@@ -228,15 +292,15 @@ class Tenaga_ahli extends CI_Controller
                 $id_jabker = '[' . implode(',', $id_jabker) . ']';
             $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
             $is_instruktur = $this->input->post('is_instruktur');
-            if($is_instruktur == 1)
-            $is_instruktur = true;
+            if ($is_instruktur == 1)
+                $is_instruktur = true;
             else
-            $is_instruktur = false;
+                $is_instruktur = false;
             $is_asesor = $this->input->post('is_asesor');
-            if($is_asesor == 1)
-            $is_asesor = true;
+            if ($is_asesor == 1)
+                $is_asesor = true;
             else
-            $is_asesor = false;
+                $is_asesor = false;
 
             $edit_tenaga_ahli = $this->Tenaga_Ahli_model->edit_tenaga_ahli(
                 $nama_lengkap,
@@ -269,7 +333,7 @@ class Tenaga_ahli extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -289,7 +353,7 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function delete_jabatan_kerja($id_jabker)
@@ -308,6 +372,6 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }

@@ -10,12 +10,26 @@ class Modul extends CI_Controller
         parent::__construct();
         $this->load->model('Modul_model');
         $this->load->model('Common_model');
+        $this->load->model('User_model');
     }
 
-    public function index()
+    public function seluruh()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['modul'] = $this->Modul_model->view_modul($this->session->userdata('token'));
             if ($data['modul'] == null)
                 $null = true;
@@ -30,16 +44,29 @@ class Modul extends CI_Controller
 
             if ($null)
                 redirect();
-                
+
             $this->load->view("administrator/modul", $data);
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function detail($id_modul)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['modul'] = $this->Modul_model->view_modul_detail($id_modul, $this->session->userdata('token'));
             if ($data['modul'] == null)
                 $null = true;
@@ -55,13 +82,26 @@ class Modul extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
             $data['kategori_modul'] = $this->Common_model->view_kategori_modul($this->session->userdata('token'));
             if ($data['kategori_modul'] == null)
@@ -78,7 +118,7 @@ class Modul extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah_modul_action()
@@ -116,6 +156,18 @@ class Modul extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
             $data['kategori_modul'] = $this->Common_model->view_kategori_modul($this->session->userdata('token'));
             if ($data['kategori_modul'] == null)
@@ -132,7 +184,7 @@ class Modul extends CI_Controller
             if ($null)
                 redirect();
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function edit_modul_action($id_modul)
@@ -163,7 +215,7 @@ class Modul extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -183,6 +235,6 @@ class Modul extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }

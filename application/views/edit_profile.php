@@ -33,7 +33,7 @@
     </form>
 </body> -->
 <!-- ==================================== administrasi kegiatan ======================================= -->
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -43,7 +43,7 @@
 </head>
 
 <body>
-    <form action="<?= base_url() ?>Administrasi_kegiatan/edit_administrasi_kegiatan_action/1" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url() ?>Administrasi_kegiatan/edit_administrasi_kegiatan_action/3" method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <th>Judul</th>
@@ -64,9 +64,9 @@
         </table>
         <button type="submit">Submit</button>
     </form>
-</body> -->
+</body>
 <!-- ==================================== berita acara ======================================= -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     
     <head>
@@ -92,7 +92,7 @@
     </table>
     <button type="submit">Submit</button>
     </form>
-</body>
+</body> -->
 <!-- ==================================== SKA ======================================= -->
 <!-- <!DOCTYPE html>
 <html lang="en">

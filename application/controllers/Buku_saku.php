@@ -42,11 +42,11 @@ class Buku_saku extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
 
                 $this->load->view('administrator/pocketbook', $data);
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function detail($id_buku_saku)
@@ -79,9 +79,9 @@ class Buku_saku extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                redirect("pupr/dashboard");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah_buku_saku_action()
@@ -109,7 +109,7 @@ class Buku_saku extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
     public function edit_buku_saku_action($id_buku_saku)
@@ -138,11 +138,9 @@ class Buku_saku extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
-
-   
 
     public function delete_buku_saku($id_buku_saku)
     {
@@ -160,6 +158,6 @@ class Buku_saku extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }

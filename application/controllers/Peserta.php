@@ -11,12 +11,26 @@ class Peserta extends CI_Controller
         $this->load->model('Peserta_model');
         $this->load->model('Peserta_Kegiatan_model');
         $this->load->model('Common_model');
+        $this->load->model('User_model');
     }
 
     public function seluruh($id_jadwal_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_jadwal_kegiatan, $this->session->userdata('token'));
             if ($data['peserta'] == null)
                 $null = true;
@@ -33,16 +47,28 @@ class Peserta extends CI_Controller
             if ($null)
                 redirect();
 
-                $this->load->view("administrator/participant", $data);
-            $this->load->view("", $data);
+            $this->load->view("administrator/participant", $data);
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function daerah($id_provinsi)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['peserta'] = $this->Peserta_model->view_peserta_daerah($id_provinsi, $this->session->userdata('token'));
             if ($data['peserta'] == null)
                 $null = true;
@@ -62,13 +88,26 @@ class Peserta extends CI_Controller
 
             $this->load->view("", $data);
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function detail($id_user)
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
             $data['peserta'] = $this->Peserta_model->view_detail_peserta($id_user, $this->session->userdata('token'));
             if ($data['peserta'] == null)
                 $null = true;
@@ -88,13 +127,25 @@ class Peserta extends CI_Controller
 
             $this->load->view("");
         } else
-            redirect();
+            redirect("pupr/login");
     }
 
     public function tambah()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
             $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
             if ($data['provinsi'] == null)
@@ -235,7 +286,7 @@ class Peserta extends CI_Controller
 
             $this->load->view("", $data);
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -308,7 +359,7 @@ class Peserta extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -316,6 +367,18 @@ class Peserta extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
+            //================= User detail for navbar =======================
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
 
             $data['peserta'] = $this->Peserta_model->view_detail_peserta($id_user_peserta, $this->session->userdata('token'));
             if ($data['peserta'] == null)
@@ -328,7 +391,7 @@ class Peserta extends CI_Controller
                     $this->session->set_flashdata('APImessage', $data['peserta']['message']);
                 }
             }
-            
+
             $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
             if ($data['provinsi'] == null)
                 $null = true;
@@ -468,7 +531,7 @@ class Peserta extends CI_Controller
 
             $this->load->view("", $data);
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -543,7 +606,7 @@ class Peserta extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -570,7 +633,7 @@ class Peserta extends CI_Controller
                 redirect();
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -591,6 +654,6 @@ class Peserta extends CI_Controller
                 }
             }
         } else
-            redirect();
+            redirect("pupr/login");
     }
 }
