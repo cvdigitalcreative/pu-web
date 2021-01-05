@@ -73,7 +73,7 @@ class User extends CI_Controller
             $id_pendidikan = $this->input->post('id_pendidikan');
             $id_jabker = $this->input->post('id_jabker');
             $id_kompetensi = $this->input->post('id_kompetensi');
-            $no_sertifikat = $this->input->post('no_sertifikat');
+            // $no_sertifikat = $this->input->post('no_sertifikat');
             $file_foto_profil = new \CurlFile($_FILES['file_foto_profil']['tmp_name'], $_FILES['file_foto_profil']['type'], $_FILES['file_foto_profil']['name']);
 
             $edit_profile = $this->User_model->edit_user_detail(
@@ -100,7 +100,7 @@ class User extends CI_Controller
                 $id_pendidikan,
                 $id_jabker,
                 $id_kompetensi,
-                $no_sertifikat,
+                // $no_sertifikat,
                 $file_foto_profil,
                 $this->session->userdata('token')
             );

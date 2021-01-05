@@ -316,7 +316,7 @@ class Peserta extends CI_Controller
             $id_pendidikan = $this->input->post('id_pendidikan');
             $id_jabker = $this->input->post('id_jabker');
             $id_kompetensi = $this->input->post('id_kompetensi');
-            $no_sertifikat = $this->input->post('no_sertifikat');
+            // $no_sertifikat = $this->input->post('no_sertifikat');
             $file_foto_profil = new \CurlFile($_FILES['file_foto_profil']['tmp_name'], $_FILES['file_foto_profil']['type'], $_FILES['file_foto_profil']['name']);
 
             $tambah_peserta = $this->Peserta_model->add_peserta(
@@ -343,7 +343,7 @@ class Peserta extends CI_Controller
                 $id_pendidikan,
                 $id_jabker,
                 $id_kompetensi,
-                $no_sertifikat,
+                // $no_sertifikat,
                 $file_foto_profil,
                 $this->session->userdata('token')
             );
@@ -561,7 +561,7 @@ class Peserta extends CI_Controller
             $id_pendidikan = $this->input->post('id_pendidikan');
             $id_jabker = $this->input->post('id_jabker');
             $id_kompetensi = $this->input->post('id_kompetensi');
-            $no_sertifikat = $this->input->post('no_sertifikat');
+            // $no_sertifikat = $this->input->post('no_sertifikat');
             $id_user = "";
             $file_foto_profil = new \CurlFile($_FILES['file_foto_profil']['tmp_name'], $_FILES['file_foto_profil']['type'], $_FILES['file_foto_profil']['name']);
 
@@ -589,7 +589,7 @@ class Peserta extends CI_Controller
                 $id_pendidikan,
                 $id_jabker,
                 $id_kompetensi,
-                $no_sertifikat,
+                // $no_sertifikat,
                 $file_foto_profil,
                 $id_user,
                 $this->session->userdata('token')

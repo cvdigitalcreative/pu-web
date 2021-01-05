@@ -118,7 +118,7 @@ class User_model extends CI_Model
         $id_pendidikan,
         $id_jabker,
         $id_kompetensi,
-        $no_sertifikat,
+        // $no_sertifikat,
         $file_foto_profil,
         $token
     ) {
@@ -147,7 +147,7 @@ class User_model extends CI_Model
             'id_pendidikan' => $id_pendidikan,
             'id_jabker' => $id_jabker,
             'id_kompetensi' => $id_kompetensi,
-            'no_sertifikat' => $no_sertifikat,
+            // 'no_sertifikat' => $no_sertifikat,
             'file_foto_profil' => $file_foto_profil
         ];
 
