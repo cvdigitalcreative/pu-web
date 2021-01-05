@@ -97,6 +97,8 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['jumlah_kegiatan_berjalan'] = $data['jumlah_seluruh_kegiatan'] - $data['jumlah_kegiatan_selesai'];
+
             if ($null)
                 redirect("pupr/dashboard");
 

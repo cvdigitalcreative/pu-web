@@ -40,7 +40,7 @@
 												Total Jumlah
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10 Kegiatan</div>
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_seluruh_kegiatan?> Kegiatan</div>
 											</div>
 										</div>
 										<div class="col-auto">
@@ -60,7 +60,7 @@
 												Selesai
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10 Kegiatan</div>
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_selesai?> Kegiatan</div>
 											</div>
 										</div>
 										<div class="col-auto">
@@ -80,7 +80,7 @@
 												Sedang Berjalan
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10 Kegiatan</div>
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_berjalan?> Kegiatan</div>
 											</div>
 										</div>
 										<div class="col-auto">
