@@ -25,19 +25,24 @@ class Authentication extends CI_Controller
         if (!$this->session->userdata('logged_in')) {
             $email_no_telepon = $this->input->post('email_no_telepon');
             $password = hash("sha256", $this->input->post('password'));
-            $login = $this->User_model->login($email_no_telepon, $password);
-            if ($login['status'] == "Success") {
-                $this->session->set_flashdata('success', $login['message']);
 
-                // ============ set userdata =============
-                $this->session->set_userdata('logged_in', true);
-                $this->session->set_userdata('token', $login['data']['id_token']);
-                $this->session->set_userdata('nama', $login['data']['nama']);
-                $this->session->set_userdata('role', $login['data']['id_role']);
-                redirect("pupr/dashboard");
-            } else {
-                $this->session->set_flashdata('APImessage', $login['message']);
-                redirect('pupr/login');
+            $login = $this->User_model->login($email_no_telepon, $password);
+            if ($login == null)
+                $this->load->view('error_page');
+            else {
+                if ($login['status'] == "Success") {
+                    $this->session->set_flashdata('success', $login['message']);
+
+                    // ============ set userdata =============
+                    $this->session->set_userdata('logged_in', true);
+                    $this->session->set_userdata('token', $login['data']['id_token']);
+                    $this->session->set_userdata('nama', $login['data']['nama']);
+                    $this->session->set_userdata('role', $login['data']['id_role']);
+                    redirect("pupr/dashboard");
+                } else {
+                    $this->session->set_flashdata('APImessage', $login['message']);
+                    redirect('pupr/login');
+                }
             }
         } else {
             redirect("pupr/dashboard");
@@ -51,7 +56,7 @@ class Authentication extends CI_Controller
         else
             $this->load->view("administrator/register");
     }
-    
+
     public function register_action()
     {
         if (!$this->session->userdata('logged_in')) {
@@ -59,15 +64,19 @@ class Authentication extends CI_Controller
             $email = $this->input->post('email');
             $no_telpon = $this->input->post('no_telpon');
             $password = hash("sha256", $this->input->post('password'));
-            
+
             $register = $this->User_model->register($nama, $email, $no_telpon, $password);
-            
-            if ($register['status'] == "Success") {
-                $this->session->set_flashdata('success', $register['message']);
-                redirect("pupr/login");
-            } else {
-                $this->session->set_flashdata('APImessage', $register['message']);
-                redirect("pupr/register");
+
+            if ($register == null)
+                $this->load->view('error_page');
+            else {
+                if ($register['status'] == "Success") {
+                    $this->session->set_flashdata('success', $register['message']);
+                    redirect("pupr/login");
+                } else {
+                    $this->session->set_flashdata('APImessage', $register['message']);
+                    redirect("pupr/register");
+                }
             }
         } else {
             redirect("pupr/dashboard");
@@ -77,12 +86,17 @@ class Authentication extends CI_Controller
     public function email_verification($id_user)
     {
         $verification = $this->User_model->email_verification($id_user);
-        if ($verification['status'] == "Success") {
-            $this->session->set_flashdata('success', $verification['message']);
-            redirect();
-        } else {
-            $this->session->set_flashdata('APImessage', $verification['message']);
-            redirect();
+
+        if ($verification == null)
+            $this->load->view('error_page');
+        else {
+            if ($verification['status'] == "Success") {
+                $this->session->set_flashdata('success', $verification['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('APImessage', $verification['message']);
+                redirect();
+            }
         }
     }
 
@@ -100,11 +114,10 @@ class Authentication extends CI_Controller
 
     public function forgot_password()
     {
-        if(!$this->session->userdata('logged_in')){
+        if (!$this->session->userdata('logged_in')) {
             $this->load->view('administrator/request_forgot_password');
-        }
-        else
-        redirect("pupr/dashboard");
+        } else
+            redirect("pupr/dashboard");
     }
 
     public function forgot_password_action()
@@ -113,23 +126,26 @@ class Authentication extends CI_Controller
 
         $forgot_password = $this->User_model->forgot_password($email_no_telepon);
 
-        if ($forgot_password['status'] == "Success") {
-            $this->session->set_flashdata('success', $forgot_password['message']);
-            redirect("pupr/login");
-        } else {
-            $this->session->set_flashdata('APImessage', $forgot_password['message']);
-            redirect("pupr/password/forgot");
+        if ($forgot_password == null)
+            $this->load->view('error_page');
+        else {
+            if ($forgot_password['status'] == "Success") {
+                $this->session->set_flashdata('success', $forgot_password['message']);
+                redirect("pupr/login");
+            } else {
+                $this->session->set_flashdata('APImessage', $forgot_password['message']);
+                redirect("pupr/password/forgot");
+            }
         }
     }
 
     public function change_password($id_forgot_password)
     {
-        if(!$this->session->userdata('logged_in')){
+        if (!$this->session->userdata('logged_in')) {
             $data['id_forgot_password'] = $id_forgot_password;
             $this->load->view('administrator/setting_new_password', $data);
-        }
-        else
-        redirect("pupr/dashboard");
+        } else
+            redirect("pupr/dashboard");
     }
 
     public function change_password_action($id_forgot_password)
@@ -138,12 +154,16 @@ class Authentication extends CI_Controller
 
         $change_password = $this->User_model->change_password($id_forgot_password, $new_password);
 
-        if ($change_password['status'] == "Success") {
-            $this->session->set_flashdata('success', $change_password['message']);
-            redirect("pupr/login");
-        } else {
-            $this->session->set_flashdata('APImessage', $change_password['message']);
-            redirect("pupr/password/reset/$id_forgot_password");
+        if ($change_password == null)
+            $this->load->view('error_page');
+        else {
+            if ($change_password['status'] == "Success") {
+                $this->session->set_flashdata('success', $change_password['message']);
+                redirect("pupr/login");
+            } else {
+                $this->session->set_flashdata('APImessage', $change_password['message']);
+                redirect("pupr/password/reset/$id_forgot_password");
+            }
         }
     }
 
@@ -151,12 +171,16 @@ class Authentication extends CI_Controller
     {
         $request = $this->User_model->request_token($id_user);
 
-        if ($request['status'] == "Success") {
-            $this->session->set_flashdata('success', $request['message']);
-            redirect();
-        } else {
-            $this->session->set_flashdata('APImessage', $request['message']);
-            redirect();
+        if ($request == null)
+            $this->load->view('error_page');
+        else {
+            if ($request['status'] == "Success") {
+                $this->session->set_flashdata('success', $request['message']);
+                redirect();
+            } else {
+                $this->session->set_flashdata('APImessage', $request['message']);
+                redirect();
+            }
         }
     }
 }
