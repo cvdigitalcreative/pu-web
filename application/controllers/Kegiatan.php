@@ -175,6 +175,95 @@ class Kegiatan extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan($this->session->userdata('token'));
+            if ($data['kegiatan'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['kegiatan']['status'] == "Success") {
+                    if (count($data['kegiatan']['data']) > 0) {
+                        $data['kegiatan'] = $data['kegiatan']['data'];
+                        $indexKegiatan = 0;
+                        $noKegiatan = 1;
+                        foreach ($data['kegiatan'] as $val) {
+
+                            $data['kegiatan'][$indexKegiatan]['no_kegiatan'] = $noKegiatan;
+                            // ======================= tanggal Kegiatan ================================
+                            $tanggal_kegiatan = $val['tanggal_kegiatan'];
+                            $temparr = explode('-', $tanggal_kegiatan);
+                            $indextglreverse = 0;
+                            for ($j = count($temparr) - 1; $j >= 0; $j--) {
+                                $arrtemptanggal[$indextglreverse] = $temparr[$j];
+                                $indextglreverse++;
+                            }
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan'] = implode('-', $arrtemptanggal);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = strtotime($val['tanggal_kegiatan']);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text']);
+
+                            // ======================= tanggal Kegiatan Selesai ================================
+                            $tanggal_kegiatan_selesai = $val['tanggal_kegiatan_selesai'];
+                            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+                            $indextglselesaireverse = 0;
+                            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
+                                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
+                                $indextglselesaireverse++;
+                            }
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai'] = implode('-', $arrtemptanggalselesai);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = strtotime($val['tanggal_kegiatan_selesai']);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text']);
+
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_full_text'] = $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] . " - " . $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'];
+
+                            // ==================== Instruktur Kegiatan ===========================
+                            $indexInstruktur = 0;
+                            foreach ($data['kegiatan'][$indexKegiatan]['instruktur_kegiatan'] as $val2) {
+                                if ($indexInstruktur == 0) {
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = $val2['nama'];
+                                } else
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] . ", " . $val2['nama'];
+                                $indexInstruktur++;
+                            }
+
+                            // ==================== Asesor Kegiatan ===========================
+                            $indexAsesor = 0;
+                            foreach ($data['kegiatan'][$indexKegiatan]['asesor_kegiatan'] as $val2) {
+                                if ($indexAsesor == 0) {
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = $val2['nama'];
+                                } else
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['asesor_kegiatan']['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
+                                $indexAsesor++;
+                            }
+
+                            $indexKegiatan++;
+                            $noKegiatan++;
+                        }
+                        $callback = array(
+                            'data' => $data['kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
+
     public function my()
     {
         if ($this->session->userdata('logged_in') == true) {

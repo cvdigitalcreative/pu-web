@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
 	// upload image kalender kegiatan js
@@ -69,7 +70,76 @@ $(document).ready(function () {
 	// end input date rangepicker
 
 	// Datatable js
-	$('#kalender_kegiatan').DataTable();
+	$('#kalender_kegiatan').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Kegiatan/dataSeluruh`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_kegiatan',
+			},
+			{
+				data: 'tanggal_kegiatan_full_text',
+			},
+			{
+				data: 'jenis_kegiatan',
+			},
+			{
+				data: 'akun_kegiatan',
+			},
+			{
+				data: 'status_kegiatan',
+			},
+			{
+				data: 'judul_kegiatan',
+			},
+			{
+				data: 'str_nama_instruktur_kegiatan',
+			},
+			{
+				data: 'str_nama_asesor_kegiatan',
+			},
+			{
+				data: 'provinsi',
+			},
+			{
+				data: 'kota_kabupaten',
+			},
+			{
+				data: 'lokasi_kegiatan',
+			},
+			{
+				data: 'jumlah_peserta',
+			},
+			{
+				data: 'nama_file_materi_kegiatan',
+			},
+			{
+				data: 'file_materi_kegiatan',
+				render: function (data) {
+					return `
+					<a href='${data}'>file</a>`
+				}
+			},
+			{
+				data: 'id_kegiatan',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	});
 
 
 });

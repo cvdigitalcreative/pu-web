@@ -225,36 +225,12 @@
 									<th>Kota Kegiatan</th>
 									<th>Lokasi Kegiatan</th>
 									<th>Jumlah Peserta</th>
-									<th>Materi Kegiatan</th>
+									<th>Nama Materi Kegiatan</th>
+									<th>File Materi Kegiatan</th>
 									<th>Aksi</th>
 								</tr>
 							</thead>
-							<tbody>
-								<?php $no = 0;
-								if ($kegiatan != null) :
-									foreach ($kegiatan as $row) :
-										$no++; ?>
-										<tr>
-											<td><?= $no ?></td>
-											<td><?= $row['tanggal_kegiatan_text'] ?> - <?= $row['tanggal_kegiatan_selesai_text'] ?></td>
-											<td><?= $row['jenis_kegiatan']?></td>
-											<td><?= $row['akun_kegiatan']?></td>
-											<td><?= $row['status_kegiatan']?></td>
-											<td><?= $row['judul_kegiatan']?></td>
-											<td><?= $row['str_nama_instruktur_kegiatan']?></td>
-											<td><?= $row['str_nama_asesor_kegiatan']?></td>
-											<td><?= $row['provinsi']?></td>
-											<td><?= $row['kota_kabupaten']?></td>
-											<td><?= $row['lokasi_kegiatan']?></td>
-											<td><?= $row['jumlah_peserta']?></td>
-											<td><a href="<?= $row['file_materi_kegiatan']?>" target="__blank"><?= $row['nama_file_materi_kegiatan']?></a></td>
-											<td>
-
-											</td>
-										</tr>
-								<?php endforeach;
-								endif; ?>
-							</tbody>
+							
 						</table>
 					</div>
 
