@@ -97,6 +97,8 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['jumlah_kegiatan_berjalan'] = $data['jumlah_seluruh_kegiatan'] - $data['jumlah_kegiatan_selesai'];
+
             if ($null)
                 redirect("pupr/dashboard");
 
@@ -647,6 +649,87 @@ class Kegiatan extends CI_Controller
             redirect("pupr/login");
         }
     }
+
+    //blm done
+    // public function import_kegiatan_action()
+    // {
+    //     include APPPATH . 'third_party/PHPExcel/PHPExcel.php';
+
+    //     $config['upload_path'] = realpath('assets/docs/');
+    //     $config['allowed_types'] = 'xlsx|xls|csv';
+    //     $config['max_size'] = '10000';
+    //     $config['encrypt_name'] = true;
+
+    //     $this->load->library('upload', $config);
+
+    //     if ($_FILES['userfile']['name'][0] != null) {
+    //         $index = count($_FILES['userfile']['name']);
+    //         for ($i = 0; $i < $index; $i++) {
+
+    //             $filename = $_FILES['userfile']['name'][$i];
+    //             if (move_uploaded_file($_FILES['userfile']['tmp_name'][$i], 'assets/docs/' . $filename)) {
+
+    //                 $excelreader     = new PHPExcel_Reader_Excel2007();
+    //                 $loadexcel         = $excelreader->load('assets/docs/' . $filename);
+    //                 $sheet             = $loadexcel->getActiveSheet()->toArray(null, true, true, true);
+    //                 $data = array();
+
+    //                 $numrow = 1;
+    //                 foreach ($sheet as $row) {
+    //                     if ($numrow > 1) {
+    //                         $tanggal_kegiatan = $row['C'];
+    //                         $temparr = explode('/', $tanggal_kegiatan);
+    //                         $indextglreverse = 0;
+    //                         for ($j = count($temparr) - 1; $j >= 0; $j--) {
+    //                             $arrtemptanggal[$indextglreverse] = $temparr[$j];
+    //                             $indextglreverse++;
+    //                         }
+    //                         $tanggal_kegiatan = implode('-', $arrtemptanggal);
+
+    //                         $tanggal_kegiatan_selesai = $row['D'];
+    //                         $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
+    //                         $indextglreverse = 0;
+    //                         for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
+    //                             $arrtemptanggalselesai[$indextglreverse] = $temparrselesai[$j];
+    //                             $indextglreverse++;
+    //                         }
+    //                         $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
+
+    //                         $status_kegiatan = $row['F'];
+    //                         if($status_kegiatan == "Belum Dilaksanakan")
+    //                         $status_kegiatan = 1;
+    //                         else if($status_kegiatan == "Telah Dilaksanakan")
+    //                         $status_kegiatan = 2;
+    //                         $data = [
+    //                             "judul_kegiatan" => $row['A'],
+    //                             "deskripsi_kegiatan" => $row['B'],
+    //                             "tanggal_kegiatan" => $tanggal_kegiatan,
+    //                             "tanggal_kegiatan_selesai" => $tanggal_kegiatan_selesai,
+    //                             "lokasi_kegiatan" => $row['E'],
+    //                             "latitude_kegiatan" => 0,
+    //                             "longitude_kegiatan" => 0,
+    //                             "id_akun_kegiatan" => 0,
+    //                             "id_jenis_kegiatan" => 0,
+
+    //                         ];
+    //                     }
+    //                     $numrow++;
+    //                 }
+    //                 $this->db->insert_batch('tbl_dosen', $data);
+
+    //                 unlink(realpath('assets/docs/' . $filename));
+
+    //                 $this->session->set_flashdata('success', 'Data has been imported from excel successfully');
+    //             } else {
+    //                 $this->session->set_flashdata('failed', 'Import data failed. ' . $this->upload->display_errors());
+    //             }
+    //         }
+    //     } else {
+    //         $this->session->set_flashdata('failed', 'You have not choose any file yet');
+    //     }
+    //     redirect('Import');
+    // }
+
 
     public function edit($id_kegiatan)
     {

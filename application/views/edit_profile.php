@@ -33,7 +33,7 @@
     </form>
 </body> -->
 <!-- ==================================== administrasi kegiatan ======================================= -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -64,7 +64,7 @@
         </table>
         <button type="submit">Submit</button>
     </form>
-</body>
+</body> -->
 <!-- ==================================== berita acara ======================================= -->
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -423,7 +423,7 @@
 
 <!-- ==================================== user / peserta ======================================= -->
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -550,11 +550,11 @@
             <th>:</th>
             <th><input type="text" name="id_kompetensi" placeholder="Kompetensi"></th>
         </tr>
-        <tr>
+        <!-- <tr>
             <th>Nomor Sertifikat</th>
             <th>:</th>
             <th><input type="text" name="no_sertifikat" placeholder="Nomor Sertifikat"></th>
-        </tr>
+        </tr> -->
         <tr>
             <th>Foto Profil</th>
             <th>:</th>
@@ -565,4 +565,4 @@
     </form>
 </body>
 
-</html> -->
+</html>

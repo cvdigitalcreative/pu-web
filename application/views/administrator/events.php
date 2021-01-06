@@ -162,9 +162,9 @@
 												Total Jumlah
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="text-xl mb-0 mr-3 font-weight-medium text-gray-800">10
-													Kegiatan
-												</div>
+
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_seluruh_kegiatan?> Kegiatan</div>
+
 											</div>
 										</div>
 									</div>
@@ -181,9 +181,9 @@
 												Selesai
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="text-xl mb-0 mr-3 font-weight-medium text-gray-800">10
-													Kegiatan
-												</div>
+
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_selesai?> Kegiatan</div>
+
 											</div>
 										</div>
 									</div>
@@ -200,9 +200,9 @@
 												Sedang Berjalan
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="text-xl mb-0 mr-3 font-weight-medium text-gray-800">10
-													Kegiatan
-												</div>
+
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_berjalan?> Kegiatan</div>
+
 											</div>
 										</div>
 									</div>

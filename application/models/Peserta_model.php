@@ -75,7 +75,7 @@ class Peserta_model extends CI_Model
         $id_pendidikan,
         $id_jabker,
         $id_kompetensi,
-        $no_sertifikat,
+        // $no_sertifikat,
         $file_foto_profil,
         $token
     ) {
@@ -104,7 +104,7 @@ class Peserta_model extends CI_Model
             'id_pendidikan' => $id_pendidikan,
             'id_jabker' => $id_jabker,
             'id_kompetensi' => $id_kompetensi,
-            'no_sertifikat' => $no_sertifikat,
+            // 'no_sertifikat' => 0,
             'file_foto_profile' => $file_foto_profil
         ];
 
@@ -135,7 +135,7 @@ class Peserta_model extends CI_Model
         $id_pendidikan,
         $id_jabker,
         $id_kompetensi,
-        $no_sertifikat,
+        // $no_sertifikat,
         $file_foto_profil,
         $id_user_peserta,
         $token
@@ -165,7 +165,7 @@ class Peserta_model extends CI_Model
             'id_pendidikan' => $id_pendidikan,
             'id_jabker' => $id_jabker,
             'id_kompetensi' => $id_kompetensi,
-            'no_sertifikat' => $no_sertifikat,
+            // 'no_sertifikat' => $no_sertifikat,
             'file_foto_profile' => $file_foto_profil
         ];
 
