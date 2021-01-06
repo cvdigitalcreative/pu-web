@@ -14,3 +14,11 @@
 <!-- Page level plugins -->
 <script src="<?=base_url('assets/datatables/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
+
+<!-- custom javascript -->
+<script src="<?=base_url('assets/js/administrator/administrator.js')?>"></script>
+
+<!-- date range picker -->
+<script src="<?=base_url('assets/js/daterangepicker/moment.min.js')?>"></script>
+<script src="<?=base_url('assets/js/daterangepicker/daterangepicker.js')?>"></script>
+

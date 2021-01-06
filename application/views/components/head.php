@@ -22,3 +22,9 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 <link href="<?php echo base_url('assets/css/sb-admin-2.min.css') ?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/css/admin.css') ?>" rel="stylesheet">
 
+<!-- datatable -->
+<link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<!-- date range picker -->
+<link rel="stylesheet" href="<?php echo base_url('assets/css/daterangepicker/daterangepicker.css') ?>">
+
