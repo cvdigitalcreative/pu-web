@@ -96,4 +96,19 @@ class Common_model extends CI_Model
     {
         return $this->http_request_get("/instruktur", $token);
     }
+
+    public function view_status_kegiatan($token)
+    {
+        return $this->http_request_get("/status-kegiatan", $token);
+    }
+
+    public function view_akun_kegiatan($token)
+    {
+        return $this->http_request_get("/akun-kegiatan", $token);
+    }
+
+    public function view_jenis_kegiatan($token)
+    {
+        return $this->http_request_get("/jenis-kegiatan", $token);
+    }
 }

@@ -18,25 +18,25 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="">
+					<form method="POST" action="<?= base_url()?>Kegiatan/tambah_kegiatan_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="akunKegiatan">Akun Kegiatan*</label>
 							<select class="form-control" id="akun-kegiatan" name="id_akun_kegiatan" required>
-								<option selected>Data Dari API</option>
-								<option>Vokasi</option>
-								<option>Pelatihan dan Uji Sertifikasi Skema I</option>
-								<option>Pelatihan dan Uji Sertifikasi Skema II</option>
-								<option>Fasilitasi Pembinaan Jasa Konstruksi</option>
+								<option selected disabled>Pilih akun kegiatan</option>
+								<?php if($akun_kegiatan != null):
+								foreach ($akun_kegiatan as $row):?>
+									<option value="<?=$row['id_akun_kegiatan']?>"><?= $row['akun_kegiatan']?></option>
+							<?php endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="jenisKegiatan">Jenis kegiatan *</label>
 							<select class="form-control" id="jenis-kegiatan" name="id_jenis_kegiatan" required>
-								<option selected>Data Dari API</option>
-								<option>Bintek</option>
-								<option>Pelatihan</option>
-								<option>Pembekalan dan Uji Sertifikasi</option>
-								<option>Uji Sertifikasi</option>
+								<option selected disabled>Pilih jenis kegiatan</option>
+								<?php if($jenis_kegiatan != null):
+								foreach ($jenis_kegiatan as $row):?>
+									<option value="<?=$row['id_jenis_kegiatan']?>"><?= $row['jenis_kegiatan']?></option>
+							<?php endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -86,7 +86,7 @@
 						<div class="form-group py-2">
 							<label for="kotaKegiatan">Kota kegiatan *</label>
 							<select class="form-control" id="kota-kegiatan" name="id_kota_kabupaten" required>
-								<option selected disabled>Mohon pilih provinsi terlebih dahulu</option>
+								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -96,8 +96,11 @@
 						<div class="form-group py-2">
 							<label for="statusKegiatan">Status kegiatan *</label>
 							<select class="form-control" id="status-kegiatan" name="status_kegiatan" aria-placeholder="Pilih status kegiatan" required>
-								<option selected>Belum dimulai</option>
-								<option>Sudah dimulai</option>
+							<option selected disabled>Pilih status kegiatan</option>
+								<?php if($status_kegiatan != null):
+								foreach ($status_kegiatan as $row):?>
+									<option value="<?=$row['id_status_kegiatan']?>"><?= $row['status_kegiatan']?></option>
+							<?php endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -215,6 +218,7 @@
 								<tr>
 									<th>No</th>
 									<th>Tanggal Kegiatan</th>
+									<th>Banner Kegiatan</th>
 									<th>Jenis Kegiatan</th>
 									<th>Akun Kegiatan</th>
 									<th>Status Kegiatan</th>

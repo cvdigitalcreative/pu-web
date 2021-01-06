@@ -46,7 +46,7 @@ $(document).ready(function () {
 
 	// tanggal mulai
 	$(function () {
-		$('input[name="tanggalMulaikegiatan"]').daterangepicker({
+		$('input[name="tanggal_kegiatan"]').daterangepicker({
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -58,7 +58,7 @@ $(document).ready(function () {
 
 	// tanggal selesai
 	$(function () {
-		$('input[name="tanggalSelesaikegiatan"]').daterangepicker({
+		$('input[name="tanggal_kegiatan_selesai"]').daterangepicker({
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -89,6 +89,12 @@ $(document).ready(function () {
 			{
 				data: 'tanggal_kegiatan_full_text',
 			},
+			{
+				data: 'foto_banner_kegiatan',
+				render: function (data) {
+					return `
+					<img src="${data}" style="width: 150px; height: 150px; overflow: hidden;">`
+				}			},
 			{
 				data: 'jenis_kegiatan',
 			},

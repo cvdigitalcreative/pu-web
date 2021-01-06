@@ -167,6 +167,40 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['status_kegiatan'] = $this->Common_model->view_status_kegiatan($this->session->userdata('token'));
+            if ($data['status_kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['status_kegiatan']['status'] == "Success") {
+                    $data['status_kegiatan'] = $data['status_kegiatan']['data'];
+                } else {
+                    $data['status_kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['status_kegiatan']['message']);
+                }
+            }
+            $data['akun_kegiatan'] = $this->Common_model->view_akun_kegiatan($this->session->userdata('token'));
+            if ($data['akun_kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['akun_kegiatan']['status'] == "Success") {
+                    $data['akun_kegiatan'] = $data['akun_kegiatan']['data'];
+                } else {
+                    $data['akun_kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['akun_kegiatan']['message']);
+                }
+            }
+            $data['jenis_kegiatan'] = $this->Common_model->view_jenis_kegiatan($this->session->userdata('token'));
+            if ($data['jenis_kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['jenis_kegiatan']['status'] == "Success") {
+                    $data['jenis_kegiatan'] = $data['jenis_kegiatan']['data'];
+                } else {
+                    $data['jenis_kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['jenis_kegiatan']['message']);
+                }
+            }
+
             if ($null)
                 redirect("pupr/dashboard");
 
@@ -779,8 +813,8 @@ class Kegiatan extends CI_Controller
             }
             $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
             $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
-            $latitude_lokasi = $this->input->post('latitude_lokasi');
-            $longitude_lokasi = $this->input->post('longitude_lokasi');
+            $latitude_lokasi = 0;
+            $longitude_lokasi = 0;
             $status_kegiatan = $this->input->post('status_kegiatan');
             $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
             $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
@@ -810,6 +844,8 @@ class Kegiatan extends CI_Controller
                 $file_materi_kegiatan,
                 $this->session->userdata('token')
             );
+
+            var_dump($tambah_kegiatan);die;
 
             if ($tambah_kegiatan == null) {
                 redirect();
