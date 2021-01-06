@@ -110,7 +110,7 @@
 							<label for="fileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-materi-kegiatan"
-									name="fileMateriKegiatan" required>
+									name="fileMateriKegiatan">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
 								<small id="file-materi-kegiatan" class="form-text text-muted">
 									File materi adalah opsional
