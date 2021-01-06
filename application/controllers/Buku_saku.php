@@ -42,9 +42,9 @@ class Buku_saku extends CI_Controller
             }
 
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
 
-                $this->load->view('administrator/pocketbook', $data);
+            $this->load->view('administrator/pocketbook', $data);
         } else
             redirect("pupr/login");
     }
@@ -79,7 +79,7 @@ class Buku_saku extends CI_Controller
             }
 
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -99,7 +99,7 @@ class Buku_saku extends CI_Controller
             );
 
             if ($tambah_buku_saku == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_buku_saku['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_buku_saku['message']);
@@ -112,6 +112,8 @@ class Buku_saku extends CI_Controller
             redirect("pupr/login");
         }
     }
+
+    //blm done
     public function edit_buku_saku_action($id_buku_saku)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -126,9 +128,10 @@ class Buku_saku extends CI_Controller
                 $id_buku_saku,
                 $this->session->userdata('token')
             );
-
+            var_dump($edit_buku_saku);
+            die;
             if ($edit_buku_saku == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_buku_saku['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_buku_saku['message']);
@@ -147,7 +150,7 @@ class Buku_saku extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete_buku_saku = $this->Buku_Saku_model->delete_buku_saku($id_buku_saku, $this->session->userdata('token'));
             if ($delete_buku_saku == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_buku_saku['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_buku_saku['message']);

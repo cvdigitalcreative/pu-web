@@ -22,3 +22,15 @@
 <script src="<?=base_url('assets/js/daterangepicker/moment.min.js')?>"></script>
 <script src="<?=base_url('assets/js/daterangepicker/daterangepicker.js')?>"></script>
 
+<script>
+    function getState(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#kota-kegiatan").html(data);
+            }
+        });
+    }
+</script>
