@@ -796,7 +796,7 @@ class Kegiatan extends CI_Controller
             $judul_kegiatan = $this->input->post('judul_kegiatan');
             $deskripsi_kegiatan = $this->input->post('deskripsi_kegiatan');
             $tanggal_kegiatan = $this->input->post('tanggal_kegiatan');
-            $temparr = explode('-', $tanggal_kegiatan);
+            $temparr = explode('/', $tanggal_kegiatan);
             $indextglreverse = 0;
             for ($j = count($temparr) - 1; $j >= 0; $j--) {
                 $arrtemptanggal[$indextglreverse] = $temparr[$j];
@@ -805,7 +805,7 @@ class Kegiatan extends CI_Controller
             $tanggal_kegiatan = implode('-', $arrtemptanggal);
 
             $tanggal_kegiatan_selesai = $this->input->post('tanggal_kegiatan_selesai');
-            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+            $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
             $indextglselesaireverse = 0;
             for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
                 $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
@@ -822,7 +822,9 @@ class Kegiatan extends CI_Controller
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
             $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
+            $id_asesor_kegiatan = 0;
             $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
+            $id_instruktur_kegiatan = 0;
             $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
 
             $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
