@@ -1,5 +1,5 @@
 </html>
-<!-- ==================================== Buku Saku ======================================= -->
+<!-- ==================================== Import Peserta ======================================= -->
 <!-- <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +10,36 @@
 </head>
 
 <body>
-    <form action="<?= base_url() ?>Buku_saku/edit_buku_saku_action/haloha" method="post" enctype="multipart/form-data">
+    <?= $this->session->flashdata("APImessage"); ?>
+    <form action="<?= base_url() ?>Peserta/import_peserta_action/haloha" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_excel[]" placeholder="file_administrasi_kegiatan" accept=".xlsx" multiple></th>
+            </tr>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_foto" placeholder="file_administrasi_kegiatan"></th>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body> -->
+<!-- ==================================== Buku Saku ======================================= -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="<?= base_url() ?>Buku_saku/edit_buku_saku_action/13" method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <th>Judul</th>
@@ -31,7 +60,7 @@
         </table>
         <button type="submit">Submit</button>
     </form>
-</body> -->
+</body>
 <!-- ==================================== administrasi kegiatan ======================================= -->
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +72,7 @@
 </head>
 
 <body>
-    <form action="<?= base_url() ?>Administrasi_kegiatan/edit_administrasi_kegiatan_action/3" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url() ?>Administrasi_kegiatan/tambah_administrasi_kegiatan_action" method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <th>Judul</th>
@@ -91,6 +120,39 @@
         
     </table>
     <button type="submit">Submit</button>
+    </form>
+</body> -->
+<!-- ==================================== berita ======================================= -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="<?= base_url() ?>Berita/edit_berita_action/2" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Judul</th>
+                <th>:</th>
+                <th><input type="text" name="judul_berita" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>Deskripsi</th>
+                <th>:</th>
+                <th><input type="text" name="deskripsi_berita" placeholder="Deskripsi"></th>
+            </tr>
+            <tr>
+                <th>File</th>
+                <th>:</th>
+                <th><input type="file" name="file_berita" placeholder="file_bukti_pembayaran" accept=".jpg, .jpeg., .png"></th>
+            </tr>
+
+        </table>
+        <button type="submit">Submit</button>
     </form>
 </body> -->
 <!-- ==================================== SKA ======================================= -->
@@ -423,7 +485,7 @@
 
 <!-- ==================================== user / peserta ======================================= -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -550,11 +612,6 @@
             <th>:</th>
             <th><input type="text" name="id_kompetensi" placeholder="Kompetensi"></th>
         </tr>
-        <!-- <tr>
-            <th>Nomor Sertifikat</th>
-            <th>:</th>
-            <th><input type="text" name="no_sertifikat" placeholder="Nomor Sertifikat"></th>
-        </tr> -->
         <tr>
             <th>Foto Profil</th>
             <th>:</th>
@@ -565,4 +622,4 @@
     </form>
 </body>
 
-</html>
+</html> -->
