@@ -43,7 +43,7 @@ class Dashboard extends CI_Controller
             // }
 
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
 
             $this->load->view('administrator/dashboard', $data);
         } else

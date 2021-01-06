@@ -79,9 +79,9 @@ class Kegiatan_model extends CI_Model
         $id_jenis_kegiatan,
         $id_provinsi,
         $id_kota_kabupaten,
-        $id_pelatih_kegiatan,
         $id_asesor_kegiatan,
         $id_instruktur_kegiatan,
+        $file_materi_kegiatan,
         $token
     ) {
         $data = [
@@ -98,9 +98,9 @@ class Kegiatan_model extends CI_Model
             'id_jenis_kegiatan' => $id_jenis_kegiatan,
             'id_provinsi' => $id_provinsi,
             'id_kota_kabupaten' => $id_kota_kabupaten,
-            'id_pelatih_kegiatan' => $id_pelatih_kegiatan,
             'id_asesor_kegiatan' => $id_asesor_kegiatan,
-            'id_instruktur_kegiatan' => $id_instruktur_kegiatan
+            'id_instruktur_kegiatan' => $id_instruktur_kegiatan,
+            'file_materi_kegiatan' => $file_materi_kegiatan
         ];
 
         return $this->http_request_post($data, "/", $token);
@@ -120,9 +120,9 @@ class Kegiatan_model extends CI_Model
         $id_jenis_kegiatan,
         $id_provinsi,
         $id_kota_kabupaten,
-        $id_pelatih_kegiatan,
         $id_asesor_kegiatan,
         $id_instruktur_kegiatan,
+        $file_materi_kegiatan,
         $id_kegiatan,
         $token
     ) {
@@ -140,9 +140,9 @@ class Kegiatan_model extends CI_Model
             'id_jenis_kegiatan' => $id_jenis_kegiatan,
             'id_provinsi' => $id_provinsi,
             'id_kota_kabupaten' => $id_kota_kabupaten,
-            'id_pelatih_kegiatan' => $id_pelatih_kegiatan,
             'id_asesor_kegiatan' => $id_asesor_kegiatan,
-            'id_instruktur_kegiatan' => $id_instruktur_kegiatan
+            'id_instruktur_kegiatan' => $id_instruktur_kegiatan,
+            'file_materi_kegiatan' => $file_materi_kegiatan
         ];
 
         return $this->http_request_post($data, "/$id_kegiatan", $token);

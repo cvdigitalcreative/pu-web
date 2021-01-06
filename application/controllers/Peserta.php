@@ -37,15 +37,13 @@ class Peserta extends CI_Controller
             else {
                 if ($data['peserta']['status'] == "Success") {
                     $data['peserta'] = $data['peserta']['data'];
-                    redirect();
                 } else {
                     $data['peserta'] = null;
                     $this->session->set_flashdata('APImessage', $data['peserta']['message']);
-                    redirect();
                 }
             }
             if ($null)
-                redirect();
+                $this->load->view('error_page');
 
             $this->load->view("administrator/participant", $data);
         } else
@@ -75,18 +73,15 @@ class Peserta extends CI_Controller
             else {
                 if ($data['peserta']['status'] == "Success") {
                     $data['peserta'] = $data['peserta']['data'];
-                    redirect();
                 } else {
                     $data['peserta'] = null;
                     $this->session->set_flashdata('APImessage', $data['peserta']['message']);
-                    redirect();
                 }
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
 
-            $this->load->view("", $data);
         } else
             redirect("pupr/login");
     }
@@ -114,18 +109,15 @@ class Peserta extends CI_Controller
             else {
                 if ($data['peserta']['status'] == "Success") {
                     $data['peserta'] = $data['peserta']['data'];
-                    redirect();
                 } else {
                     $data['peserta'] = null;
                     $this->session->set_flashdata('APImessage', $data['peserta']['message']);
-                    redirect();
                 }
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
 
-            $this->load->view("");
         } else
             redirect("pupr/login");
     }
@@ -282,9 +274,8 @@ class Peserta extends CI_Controller
             // }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
 
-            $this->load->view("", $data);
         } else {
             redirect("pupr/login");
         }
@@ -349,7 +340,7 @@ class Peserta extends CI_Controller
             );
 
             if ($tambah_peserta == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_peserta['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_peserta['message']);
@@ -527,7 +518,7 @@ class Peserta extends CI_Controller
             // }
 
             if ($null)
-                redirect();
+            $this->load->view('error_page');
 
             $this->load->view("", $data);
         } else {
@@ -596,7 +587,7 @@ class Peserta extends CI_Controller
             );
 
             if ($edit_peserta == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_peserta['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_peserta['message']);
@@ -623,7 +614,7 @@ class Peserta extends CI_Controller
             );
 
             if ($edit_peserta == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_peserta['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_peserta['message']);
@@ -637,13 +628,95 @@ class Peserta extends CI_Controller
         }
     }
 
+    // blm done
+    // public function import_peserta_action($id_kegiatan)
+    // {
+    //     include APPPATH . 'third_party/PHPExcel/PHPExcel.php';
+
+    //     $config['upload_path'] = realpath('assets/docs/');
+    //     $config['allowed_types'] = 'xlsx|xls|csv';
+    //     $config['max_size'] = '10000';
+    //     $config['encrypt_name'] = true;
+
+    //     $this->load->library('upload', $config);
+
+    //     $file_foto = new \CurlFile($_FILES['file_foto']['tmp_name'], $_FILES['file_foto']['type'], $_FILES['file_foto']['name']);
+
+    //     if ($_FILES['file_excel']['name'][0] != null) {
+    //         $index = count($_FILES['file_excel']['name']);
+    //         for ($i = 0; $i < $index; $i++) {
+
+    //             $filename = $_FILES['file_excel']['name'][$i];
+    //             if (move_uploaded_file($_FILES['file_excel']['tmp_name'][$i], 'assets/docs/' . $filename)) {
+
+    //                 $excelreader     = new PHPExcel_Reader_Excel2007();
+    //                 $loadexcel         = $excelreader->load('assets/docs/' . $filename);
+    //                 $sheet             = $loadexcel->getActiveSheet()->toArray(null, true, true, true);
+    //                 $numrow = 1;
+    //                 foreach ($sheet as $row) {
+    //                     if ($numrow > 1) {
+    //                         $tambah_peserta = $this->Peserta_model->add_peserta(
+    //                             $row['A'],
+    //                             $row['B'],
+    //                             $row['C'],
+    //                             0,
+    //                             0,
+    //                             0,
+    //                             0,
+    //                             1,
+    //                             0,
+    //                             "-",
+    //                             "-",
+    //                             "-",
+    //                             "-",
+    //                             "-",
+    //                             "-",
+    //                             "-",
+    //                             "-",
+    //                             "-",
+    //                             $row['C'],
+    //                             0,
+    //                             0,
+    //                             0,
+    //                             0,
+    //                             // $no_sertifikat,
+    //                             $file_foto,
+    //                             $this->session->userdata('token')
+    //                         );
+
+    //                         var_dump($tambah_peserta);
+    //                         if ($tambah_peserta == null) {
+    //                             $this->load->view('error_page'); die;
+    //                         }
+    //                         if ($tambah_peserta['status'] == "Success") {
+    //                             $this->session->set_flashdata('APImessage', $tambah_peserta['message']);
+    //                         } else {
+    //                             $this->session->set_flashdata('APImessage', $tambah_peserta['message']);
+    //                         }
+    //                     }
+    //                     $numrow++;
+    //                 }
+    //                 unlink(realpath('assets/docs/' . $filename));
+
+    //                 $this->session->set_flashdata('APImessage', 'Data has been imported from excel successfully');
+    //             } else {
+    //                 $this->session->set_flashdata('APImessage', 'Import data failed. ' . $this->upload->display_errors());
+    //             }
+    //         }
+    //     } else {
+    //         $this->session->set_flashdata('APImessage', 'You have not choose any file yet');
+    //     }
+
+    //     die;
+    //     redirect("Kegiatan/tambah");
+    // }
 
     public function delete_peserta($id_user_peserta)
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_peserta = $this->Peserta_model->delete_peserta($id_user_peserta, $this->session->userdata('token'));
             if ($delete_peserta == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_peserta['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_peserta['message']);

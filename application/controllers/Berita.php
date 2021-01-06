@@ -42,7 +42,7 @@ class Berita extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -77,7 +77,7 @@ class Berita extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -97,7 +97,7 @@ class Berita extends CI_Controller
             );
 
             if ($tambah_berita == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_berita['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_berita['message']);
@@ -126,7 +126,7 @@ class Berita extends CI_Controller
             );
 
             if ($edit_berita == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_berita['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_berita['message']);
@@ -144,8 +144,9 @@ class Berita extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_berita = $this->Berita_model->delete_berita($id_berita, $this->session->userdata('token'));
+
             if ($delete_berita == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_berita['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_berita['message']);

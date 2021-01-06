@@ -179,7 +179,7 @@ class Peserta_model extends CI_Model
 
     public function view_seluruh_peserta($id_jadwal_kegiatan, $token)
     {
-        return $this->http_request_get("/$id_jadwal_kegiatan", $token);
+        return $this->http_request_get("/?id_jadwal_kegiatan=$id_jadwal_kegiatan", $token);
     }
 
     public function view_peserta_daerah($id_provinsi, $token)

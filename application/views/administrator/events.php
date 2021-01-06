@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<?php $this->load->view("components/head.php")?>
+	<?php $this->load->view("components/head.php") ?>
 </head>
 
 <body id="page-top">
@@ -21,7 +21,7 @@
 					<form method="POST" action="">
 						<div class="form-group py-2">
 							<label for="akunKegiatan">Akun Kegiatan*</label>
-							<select class="form-control" id="akun-kegiatan" name="akunKegiatan" required>
+							<select class="form-control" id="akun-kegiatan" name="id_akun_kegiatan" required>
 								<option selected>Data Dari API</option>
 								<option>Vokasi</option>
 								<option>Pelatihan dan Uji Sertifikasi Skema I</option>
@@ -31,7 +31,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="jenisKegiatan">Jenis kegiatan *</label>
-							<select class="form-control" id="jenis-kegiatan" name="jenisKegiatan" required>
+							<select class="form-control" id="jenis-kegiatan" name="id_jenis_kegiatan" required>
 								<option selected>Data Dari API</option>
 								<option>Bintek</option>
 								<option>Pelatihan</option>
@@ -42,28 +42,23 @@
 						<div class="form-group py-2">
 							<label for="bannerKegiatan">Banner Kegiatan *</label>
 							<div id="profile-container">
-								<image id="banner-image" src="<?=base_url('assets/icons/pupr-add-image-icon.svg')?>" />
-								<input id="banner-kegiatan" type="file" name="bannerKegiatan" id="bannerKegiatan"
-									placeholder="Photo" alt="Pilih Foto" required="" capture>
+								<image id="banner-image" src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
+								<input id="banner-kegiatan" type="file" name="foto_banner_kegiatan" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" required="" capture>
 							</div>
 						</div>
 						<div class="form-group py-2">
 							<label for="namaKegiatan">Nama Kegiatan *</label>
-							<input type="text" class="form-control" id="nama-kegiatan" name="namaKegiatan"
-								placeholder="Contoh: Kegiatan Pelatihan" required>
+							<input type="text" class="form-control" id="nama-kegiatan" name="judul_kegiatan" placeholder="Contoh: Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiKegiatan">Deskripsi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="deskripsi-kegiatan" name="deskripsiKegiatan"
-								placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
+							<textarea type="text" class="form-control" id="deskripsi-kegiatan" name="deskripsi_kegiatan" placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="row">
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="tanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="tanggal-mulai-kegiatan" data-drops="up" name="tanggalMulaikegiatan" value=""
-										placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="tanggal-mulai-kegiatan" data-drops="up" name="tanggal_kegiatan" value="" placeholder="Pilih tanggal kegiatan" required>
 									<small id="file-materi-kegiatan" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -72,9 +67,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="tanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="tanggal-selesai-kegiatan" data-drops="up" name="tanggalSelesaikegiatan"
-										value="" placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="tanggal-selesai-kegiatan" data-drops="up" name="tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" required>
 									<small id="file-materi-kegiatan" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -83,25 +76,26 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="provinsiKegiatan">Provinsi kegiatan *</label>
-							<select class="form-control" id="provinsi-kegiatan" name="provinsiKegiatan" required>
-								<option selected>Data dari API</option>
+							<select class="form-control" id="provinsi-kegiatan" name="id_provinsi" onChange="getState(this.value);" required>
+								<option selected disabled>Pilih Provinsi</option>
+								<?php foreach ($provinsi as $row) : ?>
+								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
+								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="kotaKegiatan">Kota kegiatan *</label>
-							<select class="form-control" id="kota-kegiatan" name="kotaKegiatan" required>
-								<option selected>Data dari API</option>
+							<select class="form-control" id="kota-kegiatan" name="id_kota_kabupaten" required>
+								<option selected disabled>Mohon pilih provinsi terlebih dahulu</option>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="lokasiKegiatan">Lokasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="lokasi-kegiatan" name="lokasiKegiatan"
-								placeholder="Contoh: Jalan demang lebar daun" required></textarea>
+							<textarea type="text" class="form-control" id="lokasi-kegiatan" name="lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="statusKegiatan">Status kegiatan *</label>
-							<select class="form-control" id="status-kegiatan" name="statusKegiatan"
-								aria-placeholder="Pilih status kegiatan" required>
+							<select class="form-control" id="status-kegiatan" name="status_kegiatan" aria-placeholder="Pilih status kegiatan" required>
 								<option selected>Belum dimulai</option>
 								<option>Sudah dimulai</option>
 							</select>
@@ -109,8 +103,12 @@
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
+<<<<<<< HEAD
 								<input type="file" class="custom-file-input" id="file-materi-kegiatan"
 									name="fileMateriKegiatan">
+=======
+								<input type="file" class="custom-file-input" id="file-materi-kegiatan" name="file_materi_kegiatan" required>
+>>>>>>> cb00fa0f0c61140074855a9866311e1ea7a1ddff
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
 								<small id="file-materi-kegiatan" class="form-text text-muted">
 									File materi adalah opsional
@@ -121,8 +119,7 @@
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
 							Kegiatan</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>
 				</div>
 			</div>
@@ -132,7 +129,7 @@
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
-		<?php $this->load->view("components/sidebar.php")?>
+		<?php $this->load->view("components/sidebar.php") ?>
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
@@ -140,7 +137,7 @@
 			<!-- Main Content -->
 			<div id="content">
 
-				<?php $this->load->view("components/navbar.php", $header)?>
+				<?php $this->load->view("components/navbar.php", $header) ?>
 
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
@@ -163,7 +160,7 @@
 											</div>
 											<div class="row no-gutters align-items-center">
 
-												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_seluruh_kegiatan?> Kegiatan</div>
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_seluruh_kegiatan ?> Kegiatan</div>
 
 											</div>
 										</div>
@@ -182,7 +179,7 @@
 											</div>
 											<div class="row no-gutters align-items-center">
 
-												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_selesai?> Kegiatan</div>
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_selesai ?> Kegiatan</div>
 
 											</div>
 										</div>
@@ -201,7 +198,7 @@
 											</div>
 											<div class="row no-gutters align-items-center">
 
-												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_berjalan?> Kegiatan</div>
+												<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><?= $jumlah_kegiatan_berjalan ?> Kegiatan</div>
 
 											</div>
 										</div>
@@ -214,13 +211,9 @@
 
 					<div class="container-fluid mt-4 container-background">
 						<div class="col button-field">
-							<button class="btn btn-light btn-filter-kegiatan"><img class="img-profile mr-2"
-									src="<?=base_url('assets/icons/pupr-filter-icon.svg')?>">Filter</button>
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-kegiatan"><img class="img-profile mr-2"
-									src="<?=base_url('assets/icons/pupr-add-icon.svg')?>">Add Kegiatan</button>
-							<button class="btn btn-outline-primary btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?=base_url('assets/icons/pupr-import-icon.svg')?>">Import Kegiatan</button>
+							<button class="btn btn-light btn-filter-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
+							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal" data-target="#modal-tambah-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Kegiatan</button>
+							<button class="btn btn-outline-primary btn-import-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Kegiatan</button>
 						</div>
 						<table id="kalender_kegiatan" class="display">
 							<thead>
@@ -242,6 +235,32 @@
 									<th>Aksi</th>
 								</tr>
 							</thead>
+							<tbody>
+								<?php $no = 0;
+								if ($kegiatan != null) :
+									foreach ($kegiatan as $row) :
+										$no++; ?>
+										<tr>
+											<td><?= $no ?></td>
+											<td><?= $row['tanggal_kegiatan_text'] ?> - <?= $row['tanggal_kegiatan_selesai_text'] ?></td>
+											<td><?= $row['jenis_kegiatan']?></td>
+											<td><?= $row['akun_kegiatan']?></td>
+											<td><?= $row['status_kegiatan']?></td>
+											<td><?= $row['judul_kegiatan']?></td>
+											<td><?= $row['str_nama_instruktur_kegiatan']?></td>
+											<td><?= $row['str_nama_asesor_kegiatan']?></td>
+											<td><?= $row['provinsi']?></td>
+											<td><?= $row['kota_kabupaten']?></td>
+											<td><?= $row['lokasi_kegiatan']?></td>
+											<td><?= $row['jumlah_peserta']?></td>
+											<td><a href="<?= $row['file_materi_kegiatan']?>" target="__blank"><?= $row['nama_file_materi_kegiatan']?></a></td>
+											<td>
+
+											</td>
+										</tr>
+								<?php endforeach;
+								endif; ?>
+							</tbody>
 						</table>
 					</div>
 
@@ -251,7 +270,7 @@
 			</div>
 			<!-- End of Main Content -->
 
-			<?php $this->load->view("components/footer.php")?>
+			<?php $this->load->view("components/footer.php") ?>
 
 		</div>
 		<!-- End of Content Wrapper -->
@@ -260,11 +279,11 @@
 	<!-- End of Page Wrapper -->
 
 	<!-- Scroll to Top Button-->
-	<?php $this->load->view("components/scrolltotop.php")?>
+	<?php $this->load->view("components/scrolltotop.php") ?>
 
-	<?php $this->load->view("components/modal.php")?>
+	<?php $this->load->view("components/modal.php") ?>
 
-	<?php $this->load->view("components/js.php")?>
+	<?php $this->load->view("components/js.php") ?>
 
 </body>
 

@@ -58,7 +58,7 @@ class Berita_model extends CI_Model
         $data = [
             'judul_berita' => $judul_berita,
             'deskripsi_berita' => $deskripsi_berita,
-            'file__gambar_berita' => $file_berita
+            'file_gambar_berita' => $file_berita
         ];
 
         return $this->http_request_post($data, "/", $token);
