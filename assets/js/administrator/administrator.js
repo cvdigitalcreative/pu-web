@@ -23,26 +23,6 @@ $(document).ready(function () {
 	});
 	// end upload image kalender kegiatan js
 
-	// input date rangepicker
-	// $(function () {
-
-	// 	$('input[name="tanggalkegiatan"]').daterangepicker({
-	// 		autoUpdateInput: false,
-	// 		locale: {
-	// 			cancelLabel: 'Clear'
-	// 		}
-	// 	});
-
-	// 	$('input[name="tanggalkegiatan"]').on('apply.daterangepicker', function (ev, picker) {
-	// 		$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-	// 	});
-
-	// 	$('input[name="tanggalkegiatan"]').on('cancel.daterangepicker', function (ev, picker) {
-	// 		$(this).val('');
-	// 	});
-
-	// });
-
 	// tanggal mulai
 	$(function () {
 		$('input[name="tanggalMulaikegiatan"]').daterangepicker({
