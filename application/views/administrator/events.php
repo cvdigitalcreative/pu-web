@@ -219,6 +219,7 @@
 									<th>Akun Kegiatan</th>
 									<th>Status Kegiatan</th>
 									<th>Nama Kegiatan</th>
+									<th>Banner Kegiatan</th>
 									<th>Instruktur Kegiatan</th>
 									<th>Assesor Kegiatan</th>
 									<th>Provinsi Kegiatan</th>
