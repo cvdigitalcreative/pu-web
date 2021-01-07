@@ -35,8 +35,10 @@ class Buku_saku extends CI_Controller
             else {
                 if ($data['buku_saku']['status'] == "Success") {
                     $data['buku_saku'] = $data['buku_saku']['data'];
+                    $data['total_buku_saku'] = count($data['buku_saku']);
                 } else {
                     $data['buku_saku'] = null;
+                    $data['total_buku_saku'] = 0;
                     $this->session->set_flashdata('APImessage', $data['buku_saku']['message']);
                 }
             }
@@ -146,10 +148,10 @@ class Buku_saku extends CI_Controller
             }
             if ($tambah_buku_saku['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_buku_saku['message']);
-                redirect();
+                redirect("pupr/pocketbook");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_buku_saku['message']);
-                redirect();
+                redirect("pupr/pocketbook");
             }
         } else {
             redirect("pupr/login");
@@ -178,10 +180,10 @@ class Buku_saku extends CI_Controller
             }
             if ($edit_buku_saku['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_buku_saku['message']);
-                redirect();
+                redirect("pupr/pocketbook");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_buku_saku['message']);
-                redirect();
+                redirect("pupr/pocketbook");
             }
         } else {
             redirect("pupr/login");
@@ -197,10 +199,10 @@ class Buku_saku extends CI_Controller
             } else {
                 if ($delete_buku_saku['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_buku_saku['message']);
-                    redirect();
+                    redirect("pupr/pocketbook");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_buku_saku['message']);
-                    redirect();
+                    redirect("pupr/pocketbook");
                 }
             }
         } else
