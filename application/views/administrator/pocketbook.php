@@ -118,6 +118,7 @@
 											<th>No</th>
 											<th>Judul Buku Saku</th>
 											<th>Deskripsi Buku Saku</th>
+											<th>Nama File Buku Saku</th>
 											<th>File Buku Saku</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>

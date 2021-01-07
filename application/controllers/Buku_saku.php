@@ -49,6 +49,49 @@ class Buku_saku extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['buku_saku'] = $this->Buku_Saku_model->view_buku_saku($this->session->userdata('token'));
+            if ($data['buku_saku'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['buku_saku']['status'] == "Success") {
+                    if (count($data['buku_saku']['data']) > 0) {
+                        $data['buku_saku'] = $data['buku_saku']['data'];
+
+                        $indexBukuSaku = 0;
+                        $noBukuSaku = 1;
+                        foreach ($data['buku_saku'] as $val){
+                            $data['buku_saku'][$indexBukuSaku]['no_buku_saku'] = $noBukuSaku;
+
+                            $indexBukuSaku++;
+                            $noBukuSaku++;
+                        }
+                        $callback = array(
+                            'data' => $data['buku_saku']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
     public function detail($id_buku_saku)
     {
         if ($this->session->userdata('logged_in') == true) {
