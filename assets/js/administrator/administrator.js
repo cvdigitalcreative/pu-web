@@ -50,7 +50,7 @@ $(document).ready(function () {
 	// end input date rangepicker
 
 	// Datatable js
-	$('#kalender_kegiatan').DataTable({
+	$('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
