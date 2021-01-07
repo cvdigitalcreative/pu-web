@@ -18,7 +18,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>"
+					<form method="POST" action="<?= base_url()?>SKA/tambah_ska_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulSkkni">Judul Skkni *</label>
