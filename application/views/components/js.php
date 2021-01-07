@@ -15,7 +15,9 @@
 <script src="<?=base_url('assets/datatables/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
 
+
 <!-- custom javascript -->
+<script>const BASE_URL='<?= base_url(); ?>'; </script>
 <script src="<?=base_url('assets/js/administrator/administrator.js')?>"></script>
 
 <!-- date range picker -->
