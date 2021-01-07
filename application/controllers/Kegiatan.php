@@ -139,6 +139,7 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+
             $data['jumlah_kegiatan_selesai'] = $this->Kegiatan_model->view_kegiatan_selesai($this->session->userdata('token'));
             if ($data['jumlah_kegiatan_selesai'] == null)
                 $null = true;
@@ -225,6 +226,8 @@ class Kegiatan extends CI_Controller
                         $noKegiatan = 1;
                         foreach ($data['kegiatan'] as $val) {
 
+                            $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = "-";
+                            $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = "-";
                             $data['kegiatan'][$indexKegiatan]['no_kegiatan'] = $noKegiatan;
                             // ======================= tanggal Kegiatan ================================
                             $tanggal_kegiatan = $val['tanggal_kegiatan'];
@@ -855,10 +858,10 @@ class Kegiatan extends CI_Controller
             }
             if ($tambah_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             }
         } else {
             redirect("pupr/login");
@@ -1055,10 +1058,10 @@ class Kegiatan extends CI_Controller
             }
             if ($edit_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             }
         } else {
             redirect("pupr/login");
@@ -1094,15 +1097,16 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_kegiatan = $this->Kegiatan_model->delete_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            var_dump($delete_kegiatan); die;
             if ($delete_kegiatan == null) {
                 $this->load->view('error_page');
             } else {
                 if ($delete_kegiatan['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_kegiatan['message']);
-                    redirect();
+                    redirect("pupr/events");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_kegiatan['message']);
-                    redirect();
+                    redirect("pupr/events");
                 }
             }
         } else
