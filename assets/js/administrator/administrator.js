@@ -137,6 +137,9 @@ $(document).ready(function () {
 	// SKKNI Datatable
 	$('#skkni_table').DataTable();
 
+	// Modul Datatable
+	$('#modul_table').DataTable();
+
 
 
 });
