@@ -24,26 +24,6 @@ $(document).ready(function () {
 	});
 	// end upload image kalender kegiatan js
 
-	// input date rangepicker
-	// $(function () {
-
-	// 	$('input[name="tanggalkegiatan"]').daterangepicker({
-	// 		autoUpdateInput: false,
-	// 		locale: {
-	// 			cancelLabel: 'Clear'
-	// 		}
-	// 	});
-
-	// 	$('input[name="tanggalkegiatan"]').on('apply.daterangepicker', function (ev, picker) {
-	// 		$(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-	// 	});
-
-	// 	$('input[name="tanggalkegiatan"]').on('cancel.daterangepicker', function (ev, picker) {
-	// 		$(this).val('');
-	// 	});
-
-	// });
-
 	// tanggal mulai
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
@@ -69,12 +49,12 @@ $(document).ready(function () {
 	});
 	// end input date rangepicker
 
-	// Datatable js
-	$('#kalender_kegiatan').DataTable({
+	// Kalender Kegiatan Datatable
+	$('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		sDom: 'lrtip',
+		// sDom: 'lrtip',
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -93,8 +73,9 @@ $(document).ready(function () {
 				data: 'foto_banner_kegiatan',
 				render: function (data) {
 					return `
-					<img src="${data}" style="width: 150px; height: 150px; overflow: hidden;">`
-				}			},
+					<img src="${data}" style="width: 200px; height: 200px; overflow: hidden;">`
+				}
+			},
 			{
 				data: 'jenis_kegiatan',
 			},
@@ -146,6 +127,13 @@ $(document).ready(function () {
 			},
 		]
 	});
+	// End of Kalender kegiatan datatable 
 
+
+	// Buku Saku Datatable
+	$('#buku_saku_table').DataTable();
+
+	// Administrasi Kegiatan Datatable
+	$('#administrasi_kegiatan_table').DataTable();
 
 });
