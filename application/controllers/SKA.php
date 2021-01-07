@@ -52,6 +52,49 @@ class SKA extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['ska'] = $this->SKA_model->view_ska($this->session->userdata('token'));
+            if ($data['ska'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['ska']['status'] == "Success") {
+                    if (count($data['ska']['data']) > 0) {
+                        $data['ska'] = $data['ska']['data'];
+
+                        $indexska = 0;
+                        $noska = 1;
+                        foreach ($data['ska'] as $val) {
+                            $data['ska'][$indexska]['no_ska'] = $noska;
+
+                            $indexska++;
+                            $noska++;
+                        }
+                        $callback = array(
+                            'data' => $data['ska']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
     public function detail($id_ska)
     {
         if ($this->session->userdata('logged_in') == true) {
