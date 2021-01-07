@@ -41,7 +41,7 @@ class User extends CI_Controller
             }
 
             if ($null) {
-                redirect();
+                $this->load->view('error_page');
             }
         } else
             redirect("pupr/login");
@@ -106,7 +106,7 @@ class User extends CI_Controller
             );
 
             if ($edit_profile == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_profile['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_profile['message']);
