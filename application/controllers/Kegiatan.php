@@ -167,6 +167,40 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['status_kegiatan'] = $this->Common_model->view_status_kegiatan($this->session->userdata('token'));
+            if ($data['status_kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['status_kegiatan']['status'] == "Success") {
+                    $data['status_kegiatan'] = $data['status_kegiatan']['data'];
+                } else {
+                    $data['status_kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['status_kegiatan']['message']);
+                }
+            }
+            $data['akun_kegiatan'] = $this->Common_model->view_akun_kegiatan($this->session->userdata('token'));
+            if ($data['akun_kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['akun_kegiatan']['status'] == "Success") {
+                    $data['akun_kegiatan'] = $data['akun_kegiatan']['data'];
+                } else {
+                    $data['akun_kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['akun_kegiatan']['message']);
+                }
+            }
+            $data['jenis_kegiatan'] = $this->Common_model->view_jenis_kegiatan($this->session->userdata('token'));
+            if ($data['jenis_kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['jenis_kegiatan']['status'] == "Success") {
+                    $data['jenis_kegiatan'] = $data['jenis_kegiatan']['data'];
+                } else {
+                    $data['jenis_kegiatan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['jenis_kegiatan']['message']);
+                }
+            }
+
             if ($null)
                 redirect("pupr/dashboard");
 
@@ -174,6 +208,95 @@ class Kegiatan extends CI_Controller
         } else
             redirect("pupr/login");
     }
+
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan($this->session->userdata('token'));
+            if ($data['kegiatan'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['kegiatan']['status'] == "Success") {
+                    if (count($data['kegiatan']['data']) > 0) {
+                        $data['kegiatan'] = $data['kegiatan']['data'];
+                        $indexKegiatan = 0;
+                        $noKegiatan = 1;
+                        foreach ($data['kegiatan'] as $val) {
+
+                            $data['kegiatan'][$indexKegiatan]['no_kegiatan'] = $noKegiatan;
+                            // ======================= tanggal Kegiatan ================================
+                            $tanggal_kegiatan = $val['tanggal_kegiatan'];
+                            $temparr = explode('-', $tanggal_kegiatan);
+                            $indextglreverse = 0;
+                            for ($j = count($temparr) - 1; $j >= 0; $j--) {
+                                $arrtemptanggal[$indextglreverse] = $temparr[$j];
+                                $indextglreverse++;
+                            }
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan'] = implode('-', $arrtemptanggal);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = strtotime($val['tanggal_kegiatan']);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text']);
+
+                            // ======================= tanggal Kegiatan Selesai ================================
+                            $tanggal_kegiatan_selesai = $val['tanggal_kegiatan_selesai'];
+                            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+                            $indextglselesaireverse = 0;
+                            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
+                                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
+                                $indextglselesaireverse++;
+                            }
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai'] = implode('-', $arrtemptanggalselesai);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = strtotime($val['tanggal_kegiatan_selesai']);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text']);
+
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_full_text'] = $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] . " - " . $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'];
+
+                            // ==================== Instruktur Kegiatan ===========================
+                            $indexInstruktur = 0;
+                            foreach ($data['kegiatan'][$indexKegiatan]['instruktur_kegiatan'] as $val2) {
+                                if ($indexInstruktur == 0) {
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = $val2['nama'];
+                                } else
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] . ", " . $val2['nama'];
+                                $indexInstruktur++;
+                            }
+
+                            // ==================== Asesor Kegiatan ===========================
+                            $indexAsesor = 0;
+                            foreach ($data['kegiatan'][$indexKegiatan]['asesor_kegiatan'] as $val2) {
+                                if ($indexAsesor == 0) {
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = $val2['nama'];
+                                } else
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['asesor_kegiatan']['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
+                                $indexAsesor++;
+                            }
+
+                            $indexKegiatan++;
+                            $noKegiatan++;
+                        }
+                        $callback = array(
+                            'data' => $data['kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
 
     public function my()
     {
@@ -673,7 +796,7 @@ class Kegiatan extends CI_Controller
             $judul_kegiatan = $this->input->post('judul_kegiatan');
             $deskripsi_kegiatan = $this->input->post('deskripsi_kegiatan');
             $tanggal_kegiatan = $this->input->post('tanggal_kegiatan');
-            $temparr = explode('-', $tanggal_kegiatan);
+            $temparr = explode('/', $tanggal_kegiatan);
             $indextglreverse = 0;
             for ($j = count($temparr) - 1; $j >= 0; $j--) {
                 $arrtemptanggal[$indextglreverse] = $temparr[$j];
@@ -682,7 +805,7 @@ class Kegiatan extends CI_Controller
             $tanggal_kegiatan = implode('-', $arrtemptanggal);
 
             $tanggal_kegiatan_selesai = $this->input->post('tanggal_kegiatan_selesai');
-            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+            $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
             $indextglselesaireverse = 0;
             for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
                 $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
@@ -690,8 +813,8 @@ class Kegiatan extends CI_Controller
             }
             $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
             $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
-            $latitude_lokasi = $this->input->post('latitude_lokasi');
-            $longitude_lokasi = $this->input->post('longitude_lokasi');
+            $latitude_lokasi = 0;
+            $longitude_lokasi = 0;
             $status_kegiatan = $this->input->post('status_kegiatan');
             $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
             $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
@@ -699,7 +822,9 @@ class Kegiatan extends CI_Controller
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
             $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
+            $id_asesor_kegiatan = 0;
             $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
+            $id_instruktur_kegiatan = 0;
             $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
 
             $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
@@ -721,6 +846,8 @@ class Kegiatan extends CI_Controller
                 $file_materi_kegiatan,
                 $this->session->userdata('token')
             );
+
+            var_dump($tambah_kegiatan);die;
 
             if ($tambah_kegiatan == null) {
                 redirect();
