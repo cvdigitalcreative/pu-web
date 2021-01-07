@@ -132,5 +132,8 @@ $(document).ready(function () {
 	// Buku Saku Datatable
 	$('#buku_saku_table').DataTable();
 
+	// Administrasi Kegiatan Datatable
+	$('#administrasi_kegiatan_table').DataTable();
+
 
 });
