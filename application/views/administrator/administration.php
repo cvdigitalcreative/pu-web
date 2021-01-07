@@ -18,7 +18,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>"
+					<form method="POST" action="<?= base_url()?>Administrasi_kegiatan/tambah_administrasi_kegiatan_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulAdministrasiKegiatan">Judul Administrasi Kegiatan *</label>
@@ -79,6 +79,17 @@
 						<h1 class="h2 font-weight-bold mb-4 mt-4">Administrasi Kegiatan</h1>
 					</div>
 
+					<!-- Alert -->
+					<?php if ($this->session->flashdata('success')) : ?>
+						<div class="alert alert-success mb-4" role="alert">
+							<?= $this->session->flashdata('success') ?>
+						</div>
+					<?php elseif ($this->session->flashdata('APImessage')) : ?>
+						<div class="alert alert-danger mb-4" role="alert">
+							<?= $this->session->flashdata('APImessage') ?>
+						</div>
+					<?php endif; ?>
+					
 					<!-- Content Row -->
 					<div class="row mt-4">
 
@@ -93,7 +104,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													100</div>
+													<?=$total_administrasi_kegiatan?></div>
 
 											</div>
 										</div>
@@ -118,6 +129,7 @@
 											<th>No</th>
 											<th>Judul Administrasi Kegiatan</th>
 											<th>Deskripsi Administrasi Kegiatan</th>
+											<th>Nama File Administrasi Kegiatan</th>
 											<th>File Administrasi Kegiatan</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
