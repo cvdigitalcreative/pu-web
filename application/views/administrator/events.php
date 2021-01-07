@@ -226,7 +226,7 @@
 
 					</div>
 
-					<div class="container-fluid mt-2 container-background">
+					<div class="container-fluid mt-2 mb-4 container-background">
 						<div class="col button-field">
 							<button class="btn btn-light btn-filter-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
