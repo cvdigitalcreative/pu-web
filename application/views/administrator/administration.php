@@ -18,7 +18,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>"
+					<form method="POST" action="<?= base_url()?>Administrasi_kegiatan/tambah_administrasi_kegiatan_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulAdministrasiKegiatan">Judul Administrasi Kegiatan *</label>
@@ -93,7 +93,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													100</div>
+													<?=$total_administrasi_kegiatan?></div>
 
 											</div>
 										</div>
@@ -118,6 +118,7 @@
 											<th>No</th>
 											<th>Judul Administrasi Kegiatan</th>
 											<th>Deskripsi Administrasi Kegiatan</th>
+											<th>Nama File Administrasi Kegiatan</th>
 											<th>File Administrasi Kegiatan</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>

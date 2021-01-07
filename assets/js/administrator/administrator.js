@@ -179,6 +179,51 @@ $(document).ready(function () {
 	});
 
 	// Administrasi Kegiatan Datatable
-	$('#administrasi_kegiatan_table').DataTable();
+	$('#administrasi_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Administrasi_kegiatan/dataSeluruh`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_administrasi_kegiatan',
+			},
+			{
+				data: 'judul_administrasi_kegiatan',
+			},
+			{
+				data: 'deskripsi_administrasi_kegiatan',
+			},
+			{
+				data: 'nama_file_administrasi_kegiatan',
+			},
+			{
+				data: 'file_administrasi_kegiatan',
+				render: function (data) {
+					return `
+					<a href='${data}' target="__blank">file</a>`
+				}
+			},
+			{
+				data: 'pengirim',
+			},
+			{
+				data: 'id_administrasi_kegiatan',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	});
 
 });
