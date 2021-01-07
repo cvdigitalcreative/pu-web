@@ -13,7 +13,7 @@ class Tenaga_ahli extends CI_Controller
         $this->load->model('User_model');
     }
 
-    public function seluruh($id_kategori_tenaga_ahli)
+    public function seluruh()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
@@ -30,17 +30,17 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
-            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($id_kategori_tenaga_ahli, $this->session->userdata('token'));
-            if ($data['tenaga_ahli'] == null)
-                $null = true;
-            else {
-                if ($data['tenaga_ahli']['status'] == "Success") {
-                    $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
-                } else {
-                    $data['tenaga_ahli'] = null;
-                    $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
-                }
-            }
+            // $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($id_kategori_tenaga_ahli, $this->session->userdata('token'));
+            // if ($data['tenaga_ahli'] == null)
+            //     $null = true;
+            // else {
+            //     if ($data['tenaga_ahli']['status'] == "Success") {
+            //         $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+            //     } else {
+            //         $data['tenaga_ahli'] = null;
+            //         $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
+            //     }
+            // }
 
             $this->load->view("administrator/experts", $data);
 
