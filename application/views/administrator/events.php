@@ -18,8 +18,10 @@
 					</button>
 				</div>
 				<div class="modal-body">
+          
 					<form method="POST" action="<?= base_url()?>Kegiatan/tambah_kegiatan_action"
 						enctype="multipart/form-data">
+
 						<div class="form-group py-2">
 							<label for="akunKegiatan">Akun Kegiatan*</label>
 							<select class="form-control" id="akun-kegiatan" name="id_akun_kegiatan" required>

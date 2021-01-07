@@ -49,7 +49,7 @@ $(document).ready(function () {
 	});
 	// end input date rangepicker
 
-	// Datatable js
+	// Kalender Kegiatan Datatable 
 	$('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
