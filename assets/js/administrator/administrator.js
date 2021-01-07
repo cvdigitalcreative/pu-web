@@ -129,8 +129,13 @@ $(document).ready(function () {
 	});
 	// End of Kalender kegiatan datatable 
 
+	// SKKNI Datatable
+	$('#skkni_table').DataTable();
 
-	// Buku Saku Datatable
+	// Modul Datatable
+	$('#modul_table').DataTable();
+
+  // Buku Saku Datatable
 	$('#buku_saku_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,

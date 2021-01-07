@@ -8,11 +8,11 @@
 <body id="page-top">
 
 	<!-- Tambah Kegiatan Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-modul" tabindex="-1" role="dialog">
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-skkni" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Modul</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah SKKNI</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -21,35 +21,35 @@
 					<form method="POST" action="<?= base_url()?>"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="judulModul">Judul Modul *</label>
-							<input type="text" class="form-control" id="judul-modul" name="judul_modul"
-								placeholder="Contoh: Modul Kegiatan Pelatihan" required>
+							<label for="judulSkkni">Judul Skkni *</label>
+							<input type="text" class="form-control" id="judul-skkni" name="judul_skkni"
+								placeholder="Contoh: SKKNI Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
-							<label for="deskripsiModul">Deskripsi Modul *</label>
-							<textarea type="text" class="form-control" id="deskripsi-modul" name="deskripsi_modul"
-								placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
+							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
+							<textarea type="text" class="form-control" id="deskripsi-skkni" name="deskripsi_skkni"
+								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileModul">File Modul *</label>
+							<label for="fileSkkni">File Skkni *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-modul"
-									name="file_modul" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file modul...</label>
-								<small id="file_modul" class="form-text text-muted">
-									Pilih file modul yang sesuai!
+								<input type="file" class="custom-file-input" id="file-skkni"
+									name="file_skkni" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file skkni...</label>
+								<small id="file_skkni" class="form-text text-muted">
+									Pilih file skkni yang sesuai!
 								</small>
 							</div>
 						</div>
                         <div class="form-group py-2">
-							<label for="namaPengirimModul">Pengirim *</label>
-							<select class="form-control" id="nama-pengirim-skkni" name="nama_pengirim_skkni" required>
+							<label for="namaSkkni">Pengirim *</label>
+							<select class="form-control" id="pengirim-skkni" name="nama_skkni" required>
 								<option selected disabled>Pilih nama pengirim</option>
 							</select>
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-							Modul</button>
+							Skkni</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -76,7 +76,7 @@
 
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h2 font-weight-bold mb-4 mt-4">Modul</h1>
+						<h1 class="h2 font-weight-bold mb-4 mt-4">SKKNI</h1>
 					</div>
 
 					<!-- Content Row -->
@@ -107,18 +107,18 @@
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
 							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-modul"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Modul</button>
+								data-target="#modal-tambah-skkni"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add SKKNI</button>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table id="modul_table" class="display">
+								<table id="skkni_table" class="display">
 									<thead>
 										<tr>
 											<th>No</th>
-											<th>Judul Modul</th>
-											<th>Deskripsi Modul</th>
-											<th>File Modul</th>
+											<th>Judul SKKNI</th>
+											<th>Deskripsi SKKNI</th>
+											<th>File SKKNI</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
 										</tr>
