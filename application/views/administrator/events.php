@@ -103,12 +103,8 @@
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
-<<<<<<< HEAD
 								<input type="file" class="custom-file-input" id="file-materi-kegiatan"
 									name="fileMateriKegiatan">
-=======
-								<input type="file" class="custom-file-input" id="file-materi-kegiatan" name="file_materi_kegiatan" required>
->>>>>>> cb00fa0f0c61140074855a9866311e1ea7a1ddff
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
 								<small id="file-materi-kegiatan" class="form-text text-muted">
 									File materi adalah opsional
