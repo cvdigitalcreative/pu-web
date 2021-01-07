@@ -43,7 +43,7 @@ class Hasil_kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+            $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -69,7 +69,7 @@ class Hasil_kegiatan extends CI_Controller
             die;
 
             if ($tambah_hasil_kegiatan == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_hasil_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_hasil_kegiatan['message']);
@@ -113,7 +113,7 @@ class Hasil_kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+            $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -140,7 +140,7 @@ class Hasil_kegiatan extends CI_Controller
             die;
 
             if ($edit_hasil_kegiatan == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_hasil_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_hasil_kegiatan['message']);
@@ -162,7 +162,7 @@ class Hasil_kegiatan extends CI_Controller
             var_dump($delete_hasil_kegiatan);
             die;
             if ($delete_hasil_kegiatan == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_hasil_kegiatan['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_hasil_kegiatan['message']);
