@@ -130,7 +130,52 @@ $(document).ready(function () {
 	// End of Kalender kegiatan datatable 
 
 	// SKKNI Datatable
-	$('#skkni_table').DataTable();
+	$('#skkni_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}SKA/dataSeluruh`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_ska',
+			},
+			{
+				data: 'judul_ska',
+			},
+			{
+				data: 'deskripsi_ska',
+			},
+			{
+				data: 'nama_file_ska',
+			},
+			{
+				data: 'file_ska',
+				render: function (data) {
+					return `
+					<a href='${data}' target="__blank">file</a>`
+				}
+			},
+			{
+				data: 'pengirim',
+			},
+			{
+				data: 'id_ska',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	});
 
 	// Modul Datatable
 	$('#modul_table').DataTable({
