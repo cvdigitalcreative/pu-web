@@ -23,7 +23,7 @@
 						<div class="form-group py-2">
 							<label for="judulSkkni">Judul Skkni *</label>
 							<input type="text" class="form-control" id="judul-skkni" name="judul_skkni"
-								placeholder="Contoh: Buku SKKNI Kegiatan Pelatihan" required>
+								placeholder="Contoh: SKKNI Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
