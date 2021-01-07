@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
 	// upload image kalender kegiatan js
@@ -48,7 +49,6 @@ $(document).ready(function () {
 	});
 	// end input date rangepicker
 
-
 	// Kalender Kegiatan Datatable
 	$('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
@@ -62,7 +62,8 @@ $(document).ready(function () {
 			url: `${BASE_URL}Kegiatan/dataSeluruh`,
 			type: "GET",
 		},
-		columns: [{
+		columns: [
+			{
 				data: 'no_kegiatan',
 			},
 			{
@@ -134,6 +135,4 @@ $(document).ready(function () {
 
 	// Administrasi Kegiatan Datatable
 	$('#administrasi_kegiatan_table').DataTable();
-
-
 });
