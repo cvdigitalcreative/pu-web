@@ -135,4 +135,5 @@ $(document).ready(function () {
 
 	// Administrasi Kegiatan Datatable
 	$('#administrasi_kegiatan_table').DataTable();
+
 });
