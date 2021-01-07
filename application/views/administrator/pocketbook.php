@@ -18,30 +18,26 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>"
-						enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url() ?>Buku_saku/tambah_buku_saku_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulBukuSaku">Judul Buku Saku *</label>
-							<input type="text" class="form-control" id="judul-buku-saku" name="judul_buku_saku"
-								placeholder="Contoh: Buku Kegiatan Pelatihan" required>
+							<input type="text" class="form-control" id="judul-buku-saku" name="judul_buku_saku" placeholder="Contoh: Buku Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiBukuSaku">Deskripsi Buku Saku *</label>
-							<textarea type="text" class="form-control" id="deskripsi-buku-saku" name="deskripsi_buku_saku"
-								placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
+							<textarea type="text" class="form-control" id="deskripsi-buku-saku" name="deskripsi_buku_saku" placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="fileBukuSaku">File Buku Saku *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-buku-saku"
-									name="file_buku_saku" required>
+								<input type="file" class="custom-file-input" id="file-buku-saku" name="file_buku_saku" required>
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file buku saku...</label>
 								<small id="file_buku_saku" class="form-text text-muted">
 									Pilih file buku saku yang sesuai!
 								</small>
 							</div>
 						</div>
-                        <div class="form-group py-2">
+						<div class="form-group py-2">
 							<label for="namaPengirimBukuSaku">Pengirim *</label>
 							<select class="form-control" id="pengirim-buku-saku" name="nama_pengirim_buku_saku" required>
 								<option selected disabled>Pilih nama pengirim</option>
@@ -50,8 +46,7 @@
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
 							Buku Saku</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>
 				</div>
 			</div>
@@ -106,9 +101,7 @@
 
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-buku-saku"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Buku Saku</button>
+							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal" data-target="#modal-tambah-buku-saku"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Buku Saku</button>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
