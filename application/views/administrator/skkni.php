@@ -42,8 +42,8 @@
 							</div>
 						</div>
                         <div class="form-group py-2">
-							<label for="namaSkkni">Pengirim *</label>
-							<select class="form-control" id="pengirim-skkni" name="nama_skkni" required>
+							<label for="namaPengirimSkkni">Pengirim *</label>
+							<select class="form-control" id="nama-pengirim-skkni" name="nama_pengirim_skkni" required>
 								<option selected disabled>Pilih nama pengirim</option>
 							</select>
 						</div>
