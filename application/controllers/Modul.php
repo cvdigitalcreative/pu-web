@@ -186,13 +186,13 @@ class Modul extends CI_Controller
             }
             if ($tambah_modul['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -253,10 +253,10 @@ class Modul extends CI_Controller
             }
             if ($edit_modul['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             }
         } else {
             redirect("pupr/login");
@@ -272,10 +272,10 @@ class Modul extends CI_Controller
             } else {
                 if ($delete_modul['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_modul['message']);
-                    redirect();
+                    redirect("pupr/modul");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_modul['message']);
-                    redirect();
+                    redirect("pupr/modul");
                 }
             }
         } else

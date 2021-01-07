@@ -79,6 +79,17 @@
 						<h1 class="h2 font-weight-bold mb-4 mt-4">Modul</h1>
 					</div>
 
+					<!-- Alert -->
+					<?php if ($this->session->flashdata('success')) : ?>
+						<div class="alert alert-success mb-4" role="alert">
+							<?= $this->session->flashdata('success') ?>
+						</div>
+					<?php elseif ($this->session->flashdata('APImessage')) : ?>
+						<div class="alert alert-danger mb-4" role="alert">
+							<?= $this->session->flashdata('APImessage') ?>
+						</div>
+					<?php endif; ?>
+
 					<!-- Content Row -->
 					<div class="row mt-4">
 
