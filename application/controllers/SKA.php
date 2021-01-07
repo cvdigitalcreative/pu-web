@@ -36,15 +36,18 @@ class SKA extends CI_Controller
             else {
                 if ($data['ska']['status'] == "Success") {
                     $data['ska'] = $data['ska']['data'];
+                    $data['total_ska'] = count($data['ska']);
                 } else {
                     $data['ska'] = null;
+                    $data['total_ska'] = 0;
                     $this->session->set_flashdata('APImessage', $data['ska']['message']);
                 }
             }
 
             if ($null)
                 $this->load->view('error_page');
-            // $this->load->view("administrator/", $data);
+
+            $this->load->view("administrator/skkni", $data);
         } else
             redirect("pupr/login");
     }
@@ -140,10 +143,10 @@ class SKA extends CI_Controller
             }
             if ($tambah_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             }
         } else {
             redirect("pupr/login");
@@ -210,10 +213,10 @@ class SKA extends CI_Controller
             }
             if ($edit_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             }
         } else {
             redirect("pupr/login");
@@ -229,10 +232,10 @@ class SKA extends CI_Controller
             } else {
                 if ($delete_ska['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_ska['message']);
-                    redirect();
+                    redirect("pupr/skkni");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_ska['message']);
-                    redirect();
+                    redirect("pupr/skkni");
                 }
             }
         } else
