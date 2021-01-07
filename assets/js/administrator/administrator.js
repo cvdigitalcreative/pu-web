@@ -62,7 +62,6 @@ $(document).ready(function () {
 			url: `${BASE_URL}Kegiatan/dataSeluruh`,
 			type: "GET",
 		},
-
 		columns: [
 			{
 				data: 'no_kegiatan',
@@ -133,10 +132,12 @@ $(document).ready(function () {
 
 	// Buku Saku Datatable
 	$('#buku_saku_table').DataTable();
-
+  
+	// Administrasi Kegiatan Datatable
+	$('#administrasi_kegiatan_table').DataTable();
+  
 	// SKKNI Datatable
 	$('#skkni_table').DataTable();
-
 
 
 });
