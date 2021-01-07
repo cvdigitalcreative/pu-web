@@ -62,7 +62,6 @@ $(document).ready(function () {
 			url: `${BASE_URL}Kegiatan/dataSeluruh`,
 			type: "GET",
 		},
-
 		columns: [
 			{
 				data: 'no_kegiatan',
@@ -131,6 +130,9 @@ $(document).ready(function () {
 	// End of Kalender kegiatan datatable 
 
 
+	// Administrasi Kegiatan Datatable
+	$('#administrasi_kegiatan_table').DataTable();
+  
 	// Buku Saku Datatable
 	$('#buku_saku_table').DataTable();
 
@@ -139,7 +141,6 @@ $(document).ready(function () {
 
 	// Modul Datatable
 	$('#modul_table').DataTable();
-
 
 
 });
