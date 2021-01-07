@@ -18,7 +18,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>"
+					<form method="POST" action="<?= base_url()?>Modul/tambah_modul_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulModul">Judul Modul *</label>
@@ -43,7 +43,7 @@
 						</div>
                         <div class="form-group py-2">
 							<label for="namaPengirimModul">Pengirim *</label>
-							<select class="form-control" id="nama-pengirim-skkni" name="nama_pengirim_skkni" required>
+							<select class="form-control" id="nama-pengirim-modul" name="nama_pengirim_modul" required>
 								<option selected disabled>Pilih nama pengirim</option>
 							</select>
 						</div>
@@ -93,7 +93,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													100</div>
+													<?= $total_modul ?></div>
 
 											</div>
 										</div>
@@ -118,6 +118,7 @@
 											<th>No</th>
 											<th>Judul Modul</th>
 											<th>Deskripsi Modul</th>
+											<th>Nama File Modul</th>
 											<th>File Modul</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
