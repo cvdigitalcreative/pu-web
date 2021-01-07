@@ -43,8 +43,7 @@ class SKA extends CI_Controller
             }
 
             if ($null)
-                redirect();
-
+                $this->load->view('error_page');
             // $this->load->view("administrator/", $data);
         } else
             redirect("pupr/login");
@@ -80,7 +79,7 @@ class SKA extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -115,7 +114,7 @@ class SKA extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -137,7 +136,7 @@ class SKA extends CI_Controller
             );
 
             if ($tambah_ska == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_ska['message']);
@@ -181,7 +180,7 @@ class SKA extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -207,7 +206,7 @@ class SKA extends CI_Controller
             var_dump($edit_ska);
             die;
             if ($edit_ska == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_ska['message']);
@@ -226,7 +225,7 @@ class SKA extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete_ska = $this->SKA_model->delete_ska($id_ska, $this->session->userdata('token'));
             if ($delete_ska == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_ska['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_ska['message']);

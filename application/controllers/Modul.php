@@ -43,8 +43,7 @@ class Modul extends CI_Controller
             }
 
             if ($null)
-                redirect();
-
+                $this->load->view('error_page');
             $this->load->view("administrator/modul", $data);
         } else
             redirect("pupr/login");
@@ -80,7 +79,7 @@ class Modul extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -116,7 +115,7 @@ class Modul extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -138,7 +137,7 @@ class Modul extends CI_Controller
             );
 
             if ($tambah_modul == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_modul['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_modul['message']);
@@ -182,7 +181,7 @@ class Modul extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -205,7 +204,7 @@ class Modul extends CI_Controller
             );
 
             if ($edit_modul == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_modul['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_modul['message']);
@@ -224,7 +223,7 @@ class Modul extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete_modul = $this->Modul_model->delete_modul($id_modul, $this->session->userdata('token'));
             if ($delete_modul == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_modul['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_modul['message']);
