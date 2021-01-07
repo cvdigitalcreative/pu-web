@@ -131,7 +131,52 @@ $(document).ready(function () {
 
 
 	// Buku Saku Datatable
-	$('#buku_saku_table').DataTable();
+	$('#buku_saku_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Buku_saku/dataSeluruh`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_buku_saku',
+			},
+			{
+				data: 'judul_buku_saku',
+			},
+			{
+				data: 'deskripsi_buku_saku',
+			},
+			{
+				data: 'nama_file_buku_saku',
+			},
+			{
+				data: 'file_buku_saku',
+				render: function (data) {
+					return `
+					<a href='${data}' target="__blank">file</a>`
+				}
+			},
+			{
+				data: 'pengirim',
+			},
+			{
+				data: 'id_buku_saku',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	});
 
 	// Administrasi Kegiatan Datatable
 	$('#administrasi_kegiatan_table').DataTable();
