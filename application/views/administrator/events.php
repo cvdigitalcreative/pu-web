@@ -7,7 +7,7 @@
 
 <body id="page-top">
 
-	<!-- Tambah Kegiatan Modal -->
+	<!-- Filter Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-filter-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -77,7 +77,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- End modal tambah kegiatan -->
+	<!-- End modal filter kegiatan -->
 
 	<!-- Tambah Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan" tabindex="-1" role="dialog">
