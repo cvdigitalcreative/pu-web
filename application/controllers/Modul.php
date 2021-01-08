@@ -36,8 +36,10 @@ class Modul extends CI_Controller
             else {
                 if ($data['modul']['status'] == "Success") {
                     $data['modul'] = $data['modul']['data'];
+                    $data['total_modul'] = count($data['modul']);
                 } else {
                     $data['modul'] = null;
+                    $data['total_modul'] = 0;
                     $this->session->set_flashdata('APImessage', $data['modul']['message']);
                 }
             }
@@ -47,6 +49,49 @@ class Modul extends CI_Controller
             $this->load->view("administrator/modul", $data);
         } else
             redirect("pupr/login");
+    }
+
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['modul'] = $this->Modul_model->view_modul($this->session->userdata('token'));
+            if ($data['modul'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['modul']['status'] == "Success") {
+                    if (count($data['modul']['data']) > 0) {
+                        $data['modul'] = $data['modul']['data'];
+
+                        $indexBukuSaku = 0;
+                        $noBukuSaku = 1;
+                        foreach ($data['modul'] as $val) {
+                            $data['modul'][$indexBukuSaku]['no_modul'] = $noBukuSaku;
+
+                            $indexBukuSaku++;
+                            $noBukuSaku++;
+                        }
+                        $callback = array(
+                            'data' => $data['modul']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
     }
 
     public function detail($id_modul)
@@ -141,13 +186,13 @@ class Modul extends CI_Controller
             }
             if ($tambah_modul['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             }
         } else {
-            redirect();
+            redirect("pupr/login");
         }
     }
 
@@ -208,10 +253,10 @@ class Modul extends CI_Controller
             }
             if ($edit_modul['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_modul['message']);
-                redirect();
+                redirect("pupr/modul");
             }
         } else {
             redirect("pupr/login");
@@ -227,10 +272,10 @@ class Modul extends CI_Controller
             } else {
                 if ($delete_modul['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_modul['message']);
-                    redirect();
+                    redirect("pupr/modul");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_modul['message']);
-                    redirect();
+                    redirect("pupr/modul");
                 }
             }
         } else
