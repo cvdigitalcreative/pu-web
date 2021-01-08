@@ -8,6 +8,78 @@
 <body id="page-top">
 
 	<!-- Tambah Kegiatan Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-filter-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Filter Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+						<div class="row">
+							<div class="col">
+								<div class="form-group py-2">
+									<label for="filterTanggalMulaikegiatan">Tanggal Mulai *</label>
+									<input type="text" class="form-control js-daterangepicker"
+										id="filter-tanggal-mulai-kegiatan" data-drops="up"
+										name="filter_tanggal_kegiatan_mulai" value=""
+										placeholder="Pilih tanggal kegiatan" required>
+									<small id="filter-tanggal-mulai-kegiatan" class="form-text text-muted">
+										Tanggal mulai kegiatan
+									</small>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group py-2">
+									<label for="filterTanggalSelesaikegiatan">Tanggal Selesai *</label>
+									<input type="text" class="form-control js-daterangepicker"
+										id="filter-tanggal-selesai-kegiatan" data-drops="up"
+										name="filter_tanggal_kegiatan_selesai" value=""
+										placeholder="Pilih tanggal kegiatan" required>
+									<small id="filter-tanggal-selesai-kegiatan" class="form-text text-muted">
+										Tanggal selesai kegiatan
+									</small>
+								</div>
+							</div>
+						</div>
+						<div class="form-group py-2">
+							<label for="filterJenisKegiatan">Jenis kegiatan *</label>
+							<select class="form-control" id="filter-jenis-kegiatan" name="id_jenis_kegiatan" required>
+								<option selected disabled>Pilih jenis kegiatan</option>
+								<?php if($jenis_kegiatan != null):
+								foreach ($jenis_kegiatan as $row):?>
+								<option value="<?=$row['id_jenis_kegiatan']?>"><?= $row['jenis_kegiatan']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="filterStatusKegiatan">Status kegiatan *</label>
+							<select class="form-control" id="filter-status-kegiatan" name="filter_status_kegiatan"
+								aria-placeholder="Pilih status kegiatan" required>
+								<option selected disabled>Pilih status kegiatan</option>
+								<?php if($status_kegiatan != null):
+								foreach ($status_kegiatan as $row):?>
+								<option value="<?=$row['id_status_kegiatan']?>"><?= $row['status_kegiatan']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Terapkan
+							Filter</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah kegiatan -->
+
+	<!-- Tambah Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -68,7 +140,7 @@
 									<input type="text" class="form-control js-daterangepicker"
 										id="tanggal-mulai-kegiatan" data-drops="up" name="tanggal_kegiatan" value=""
 										placeholder="Pilih tanggal kegiatan" required>
-									<small id="file-materi-kegiatan" class="form-text text-muted">
+									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
 								</div>
@@ -79,7 +151,7 @@
 									<input type="text" class="form-control js-daterangepicker"
 										id="tanggal-selesai-kegiatan" data-drops="up" name="tanggal_kegiatan_selesai"
 										value="" placeholder="Pilih tanggal kegiatan" required>
-									<small id="file-materi-kegiatan" class="form-text text-muted">
+									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
 								</div>
@@ -189,7 +261,8 @@
 						</div>
 
 						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Import File Excel</button>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Import File
+							Excel</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -197,6 +270,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- End of Import Excel Tambah Kegiatan Modal -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -221,13 +295,13 @@
 
 					<!-- Alert -->
 					<?php if ($this->session->flashdata('success')) : ?>
-						<div class="alert alert-success mb-4" role="alert">
-							<?= $this->session->flashdata('success') ?>
-						</div>
+					<div class="alert alert-success mb-4" role="alert">
+						<?= $this->session->flashdata('success') ?>
+					</div>
 					<?php elseif ($this->session->flashdata('APImessage')) : ?>
-						<div class="alert alert-danger mb-4" role="alert">
-							<?= $this->session->flashdata('APImessage') ?>
-						</div>
+					<div class="alert alert-danger mb-4" role="alert">
+						<?= $this->session->flashdata('APImessage') ?>
+					</div>
 					<?php endif; ?>
 
 					<!-- Content Row -->
@@ -297,7 +371,8 @@
 
 					<div class="container-fluid mt-2 mb-4 container-background">
 						<div class="col button-field">
-							<button class="btn btn-light btn-filter-kegiatan"><img class="img-profile mr-2"
+							<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal"
+								data-target="#modal-filter-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
 							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
 								data-target="#modal-tambah-kegiatan"><img class="img-profile mr-2"
