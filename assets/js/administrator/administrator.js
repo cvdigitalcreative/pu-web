@@ -83,7 +83,7 @@ $(document).ready(function () {
 	// 
 
 	// Kalender Kegiatan Datatable
-	$('#kalender_kegiatan_table').DataTable({
+ $('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
@@ -258,7 +258,7 @@ $(document).ready(function () {
 		]
 	});
 
-  // Buku Saku Datatable
+	// Buku Saku Datatable
 	$('#buku_saku_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
@@ -354,4 +354,93 @@ $(document).ready(function () {
 		]
 	});
 
+	$('#btn-filter-kegiatan').click(function () {
+		event.preventDefault();
+		$.ajax({
+			url: `${BASE_URL}Kegiatan/filter`,
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				'filter_tanggal_kegiatan_mulai': $('#filter-tanggal-mulai-kegiatan').val(),
+				'filter_tanggal_kegiatan_selesai': $('#filter-tanggal-selesai-kegiatan').val(),
+				'filter_jenis_kegiatan': $('#filter-jenis-kegiatan').val(),
+				'filter_status_kegiatan': $('#filter-status-kegiatan').val()
+			},
+			success: function (hasil) {
+				console.log(hasil);
+
+				$('#kalender_kegiatan_table').DataTable().clear().destroy();
+				// reinitiate
+				$('#kalender_kegiatan_table').DataTable({
+					data: hasil,
+					columns: [
+						{
+							data: 'no_kegiatan',
+						},
+						{
+							data: 'tanggal_kegiatan_full_text',
+						},
+						{
+							data: 'foto_banner_kegiatan',
+							render: function (data) {
+								return `
+								<img src="${data}" style="width: 200px; height: 200px; overflow: hidden;">`
+							}
+						},
+						{
+							data: 'jenis_kegiatan',
+						},
+						{
+							data: 'akun_kegiatan',
+						},
+						{
+							data: 'status_kegiatan',
+						},
+						{
+							data: 'judul_kegiatan',
+						},
+						{
+							data: 'str_nama_instruktur_kegiatan',
+						},
+						{
+							data: 'str_nama_asesor_kegiatan',
+						},
+						{
+							data: 'provinsi',
+						},
+						{
+							data: 'kota_kabupaten',
+						},
+						{
+							data: 'lokasi_kegiatan',
+						},
+						{
+							data: 'jumlah_peserta',
+						},
+						{
+							data: 'nama_file_materi_kegiatan',
+						},
+						{
+							data: 'file_materi_kegiatan',
+							render: function (data) {
+								return `
+								<a href='${data}'>file</a>`
+							}
+						},
+						{
+							data: 'id_kegiatan',
+							render: function (data) {
+								return `
+								<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
+								<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+								<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+							}
+						},
+					]
+				});
+
+				$('#modal-filter-kegiatan').modal('hide');
+			}
+		})
+	})
 });

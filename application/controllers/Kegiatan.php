@@ -327,10 +327,10 @@ class Kegiatan extends CI_Controller
     public function filter()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $tanggal_awal = $this->input->post('tanggal_awal');
-            $tanggal_akhir = $this->input->post('tanggal_akhir');
-            $jenis_kegiatan = $this->input->post('jenis_kegiatan');
-            $status_kegiatan = $this->input->post('status_kegiatan');
+            $tanggal_awal = $this->input->post('filter_tanggal_kegiatan_mulai');
+            $tanggal_akhir = $this->input->post('filter_tanggal_kegiatan_selesai');
+            $jenis_kegiatan = $this->input->post('filter_jenis_kegiatan');
+            $status_kegiatan = $this->input->post('filter_status_kegiatan');
 
             $filter = "?";
             if ($tanggal_awal != null) {
@@ -440,7 +440,6 @@ class Kegiatan extends CI_Controller
                         'data' => []
                     );
                 }
-
                 header('Content-Type: application/json');
                 echo json_encode($callback);
             }

@@ -28,7 +28,7 @@
 										id="filter-tanggal-mulai-kegiatan" data-drops="up"
 										name="filter_tanggal_kegiatan_mulai" value=""
 										placeholder="Pilih tanggal kegiatan" required>
-									<small id="filter-tanggal-mulai-kegiatan" class="form-text text-muted">
+									<small id="filter-tanggal-mulai-kegiatan-label" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
 								</div>
@@ -40,7 +40,7 @@
 										id="filter-tanggal-selesai-kegiatan" data-drops="up"
 										name="filter_tanggal_kegiatan_selesai" value=""
 										placeholder="Pilih tanggal kegiatan" required>
-									<small id="filter-tanggal-selesai-kegiatan" class="form-text text-muted">
+									<small id="filter-tanggal-selesai-kegiatan-label" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
 								</div>
