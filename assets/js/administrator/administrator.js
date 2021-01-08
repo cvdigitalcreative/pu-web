@@ -24,7 +24,7 @@ $(document).ready(function () {
 	});
 	// end upload image kalender kegiatan js
 
-	// tanggal mulai
+	// tanggal mulai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
 			singleDatePicker: true,
@@ -36,9 +36,33 @@ $(document).ready(function () {
 		});
 	});
 
-	// tanggal selesai
+	// tanggal selesai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan_selesai"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
+
+	// tanggal mulai filter kegiatan
+	$(function () {
+		$('input[name="filter_tanggal_kegiatan_mulai"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
+
+	// tanggal selesai filter kegiatan
+	$(function () {
+		$('input[name="filter_tanggal_kegiatan_selesai"]').daterangepicker({
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -57,7 +81,7 @@ $(document).ready(function () {
 	// 
 	// ========= DATATABLE ===========
 	// 
-	
+
 	// Kalender Kegiatan Datatable
 	$('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
