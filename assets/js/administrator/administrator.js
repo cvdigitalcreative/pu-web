@@ -30,7 +30,7 @@ $(document).ready(function () {
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
-			maxYear: parseInt(moment().format('YYYY'), 10)
+			maxYear: 3000
 		}, function (start, end, label) {
 			var years = moment().diff(start, 'years');
 		});
@@ -42,7 +42,7 @@ $(document).ready(function () {
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
-			maxYear: parseInt(moment().format('YYYY'), 10)
+			maxYear: 3000
 		}, function (start, end, label) {
 			var years = moment().diff(start, 'years');
 		});
@@ -52,11 +52,12 @@ $(document).ready(function () {
 	// Custom bootstrap-select each select id
 	$('#instruktur-kegiatan').selectpicker();
 
+	// End of Custom bootstrap-select each select id
 
 	// 
 	// ========= DATATABLE ===========
 	// 
-
+	
 	// Kalender Kegiatan Datatable
 	$('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
