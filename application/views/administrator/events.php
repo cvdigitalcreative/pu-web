@@ -7,6 +7,29 @@
 
 <body id="page-top">
 
+	<!-- Modal Notification -->
+	<?php if ($this->session->flashdata('')): ?>
+	<div class="modal fade" id="notification-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Information</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="modalMessage">
+					<?= $this->session->flashdata(''); ?>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php endif ?>
+
 	<!-- Filter Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-filter-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -233,6 +256,190 @@
 		</div>
 	</div>
 	<!-- End modal tambah kegiatan -->
+
+	<!-- Edit Kegiatan Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+
+						<div class="form-group py-2">
+							<label for="editAkunKegiatan">Akun Kegiatan*</label>
+							<select class="form-control" id="edit-akun-kegiatan" name="id_akun_kegiatan" required>
+								<option selected disabled>Pilih akun kegiatan</option>
+								<?php if($akun_kegiatan != null):
+								foreach ($akun_kegiatan as $row):?>
+								<option value="<?=$row['id_akun_kegiatan']?>"><?= $row['akun_kegiatan']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editJenisKegiatan">Jenis kegiatan *</label>
+							<select class="form-control" id="edit-jenis-kegiatan" name="id_jenis_kegiatan" required>
+								<option selected disabled>Pilih jenis kegiatan</option>
+								<?php if($jenis_kegiatan != null):
+								foreach ($jenis_kegiatan as $row):?>
+								<option value="<?=$row['id_jenis_kegiatan']?>"><?= $row['jenis_kegiatan']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editBannerKegiatan">Banner Kegiatan *</label>
+							<div id="profile-container">
+								<image id="banner-image"
+									src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
+								<input id="edit-banner-kegiatan" type="file" name="edit_foto_banner_kegiatan"
+									placeholder="Photo" alt="Pilih Foto" required="" capture>
+							</div>
+						</div>
+						<div class="form-group py-2">
+							<label for="editNamaKegiatan">Nama Kegiatan *</label>
+							<input type="text" class="form-control" id="edit-nama-kegiatan" name="edit_judul_kegiatan"
+								placeholder="Contoh: Kegiatan Pelatihan" required>
+						</div>
+						<div class="form-group py-2">
+							<label for="editDeskripsiKegiatan">Deskripsi Kegiatan *</label>
+							<textarea type="text" class="form-control" id="edit-deskripsi-kegiatan"
+								name="edit_deskripsi_kegiatan"
+								placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="form-group py-2">
+									<label for="editTanggalMulaikegiatan">Tanggal Mulai *</label>
+									<input type="text" class="form-control js-daterangepicker"
+										id="edit-tanggal-mulai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan"
+										value="" placeholder="Pilih tanggal kegiatan" required>
+									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
+										Tanggal mulai kegiatan
+									</small>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group py-2">
+									<label for="editTanggalSelesaikegiatan">Tanggal Selesai *</label>
+									<input type="text" class="form-control js-daterangepicker"
+										id="edit-tanggal-selesai-kegiatan" data-drops="up"
+										name="edit_tanggal_kegiatan_selesai" value=""
+										placeholder="Pilih tanggal kegiatan" required>
+									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
+										Tanggal selesai kegiatan
+									</small>
+								</div>
+							</div>
+						</div>
+						<div class="form-group py-2">
+							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
+							<select class="form-control" id="edit-provinsi-kegiatan" name="id_provinsi"
+								onChange="getState(this.value);" required>
+								<option selected disabled>Pilih Provinsi</option>
+								<?php foreach ($provinsi as $row) : ?>
+								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
+								<?php endforeach ?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editKotaKegiatan">Kota kegiatan *</label>
+							<select class="form-control" id="edit-kota-kegiatan" name="id_kota_kabupaten" required>
+								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editLokasiKegiatan">Lokasi Kegiatan *</label>
+							<textarea type="text" class="form-control" id="edit-lokasi-kegiatan"
+								name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun"
+								required></textarea>
+						</div>
+						<div class="form-group py-2">
+							<label for="editStatusKegiatan">Status kegiatan *</label>
+							<select class="form-control" id="edit-status-kegiatan" name="status_kegiatan"
+								aria-placeholder="Pilih status kegiatan" required>
+								<option selected disabled>Pilih status kegiatan</option>
+								<?php if($status_kegiatan != null):
+								foreach ($status_kegiatan as $row):?>
+								<option value="<?=$row['id_status_kegiatan']?>"><?= $row['status_kegiatan']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editInstrukturKegiatan">Instruktur kegiatan *</label>
+							<select class="form-control selectpicker" id="edit-instruktur-kegiatan"
+								name="instruktur_kegiatan" aria-placeholder="Pilih instruktur kegiatan" multiple
+								data-live-search="true" required>
+								<option>Antonio</option>
+								<option>Banderas</option>
+								<option>Robin</option>
+								<option>Stevany</option>
+								<option>Levi</option>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editAssesorKegiatan">Assesor kegiatan *</label>
+							<select class="form-control selectpicker" id="edit-assesor-kegiatan" name="assesor_kegiatan"
+								aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
+								<option>Antonio</option>
+								<option>Banderas</option>
+								<option>Robin</option>
+								<option>Stevany</option>
+								<option>Levi</option>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editFileMateriKegiatan">Materi kegiatan</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="edit-file-materi-kegiatan"
+									name="fileMateriKegiatan">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
+								<small id="file-materi-kegiatan" class="form-text text-muted">
+									File materi adalah opsional
+								</small>
+							</div>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Simpan
+							Perubahan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit kegiatan -->
+
+	<!-- Delete kegiatan modal -->
+	<div class="modal fade bd-example-modal-lg" id="delete-kegiatan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Kegiatan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa kegiatan ini ingin anda hapus!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kegiatan -->
 
 	<!-- Import Excel Tambah Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-kegiatan" tabindex="-1" role="dialog">
