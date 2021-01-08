@@ -18,9 +18,8 @@
 					</button>
 				</div>
 				<div class="modal-body">
-          
-					<form method="POST" ac
-					tion="<?= base_url()?>Kegiatan/tambah_kegiatan_action"
+
+					<form method="POST" ac tion="<?= base_url()?>Kegiatan/tambah_kegiatan_action"
 						enctype="multipart/form-data">
 
 						<div class="form-group py-2">
@@ -120,8 +119,9 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="instrukturKegiatan">Instruktur kegiatan *</label>
-							<select class="form-control selectpicker" id="instruktur-kegiatan" name="instruktur_kegiatan"
-								aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true" required>
+							<select class="form-control selectpicker" id="instruktur-kegiatan"
+								name="instruktur_kegiatan" aria-placeholder="Pilih instruktur kegiatan" multiple
+								data-live-search="true" required>
 								<option>Antonio</option>
 								<option>Banderas</option>
 								<option>Robin</option>
@@ -155,6 +155,41 @@
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
 							Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah kegiatan -->
+
+	<!-- Import Excel Tambah Kegiatan Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Import File Excel Tambah Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan"
+									name="fileExcelTambahKegiatan">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
+								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+									Pilih file excel tambah kegiatan
+								</small>
+							</div>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Import File Excel</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -256,7 +291,8 @@
 							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
 								data-target="#modal-tambah-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Kegiatan</button>
-							<button class="btn btn-warning btn-import-kegiatan"><img class="img-profile mr-2"
+							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
+								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Kegiatan</button>
 						</div>
 						<div class="card-body">
