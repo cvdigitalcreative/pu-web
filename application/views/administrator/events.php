@@ -19,7 +19,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col">
 								<div class="form-group py-2">
@@ -48,7 +48,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="filterJenisKegiatan">Jenis kegiatan *</label>
-							<select class="form-control" id="filter-jenis-kegiatan" name="id_jenis_kegiatan" required>
+							<select class="form-control" id="filter-jenis-kegiatan" name="filter_jenis_kegiatan" required>
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if($jenis_kegiatan != null):
 								foreach ($jenis_kegiatan as $row):?>
@@ -68,7 +68,7 @@
 							</select>
 						</div>
 						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Terapkan
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan" id="btn-filter-kegiatan">Terapkan
 							Filter</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>

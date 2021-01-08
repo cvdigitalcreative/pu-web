@@ -324,6 +324,130 @@ class Kegiatan extends CI_Controller
         }
     }
 
+    public function filter()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $tanggal_awal = $this->input->post('tanggal_awal');
+            $tanggal_akhir = $this->input->post('tanggal_akhir');
+            $jenis_kegiatan = $this->input->post('jenis_kegiatan');
+            $status_kegiatan = $this->input->post('status_kegiatan');
+
+            $filter = "?";
+            if ($tanggal_awal != null) {
+                $temparr = explode('/', $tanggal_awal);
+                $tanggal_awal = implode('-', $temparr);
+                if ($filter == "?")
+                    $filter = $filter . "tanggal_awal=" . $tanggal_awal;
+                else
+                    $filter = $filter . "&tanggal_awal=" . $tanggal_awal;
+            }
+            if ($tanggal_akhir != null) {
+                $temparrselesai = explode('/', $tanggal_akhir);
+                $tanggal_akhir = implode('-', $temparrselesai);
+                if ($filter == "?")
+                    $filter = $filter . "tanggal_akhir=" . $tanggal_akhir;
+                else
+                    $filter = $filter . "&tanggal_akhir=" . $tanggal_akhir;
+            }
+            if ($jenis_kegiatan != null) {
+                if ($filter == "?")
+                    $filter = $filter . "jenis_kegiatan=" . $jenis_kegiatan;
+                else
+                    $filter = $filter . "&jenis_kegiatan=" . $jenis_kegiatan;
+            }
+            if ($status_kegiatan != null) {
+                if ($filter == "?")
+                    $filter = $filter . "status_kegiatan=" . $status_kegiatan;
+                else
+                    $filter = $filter . "&status_kegiatan=" . $status_kegiatan;
+            }
+
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_filter($filter, $this->session->userdata('token'));
+            if ($data['kegiatan'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['kegiatan']['status'] == "Success") {
+                    if (count($data['kegiatan']['data']) > 0) {
+                        $data['kegiatan'] = $data['kegiatan']['data'];
+                        $indexKegiatan = 0;
+                        $noKegiatan = 1;
+                        foreach ($data['kegiatan'] as $val) {
+
+                            $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = "-";
+                            $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = "-";
+                            $data['kegiatan'][$indexKegiatan]['no_kegiatan'] = $noKegiatan;
+                            // ======================= tanggal Kegiatan ================================
+                            $tanggal_kegiatan = $val['tanggal_kegiatan'];
+                            $temparr = explode('-', $tanggal_kegiatan);
+                            $indextglreverse = 0;
+                            for ($j = count($temparr) - 1; $j >= 0; $j--) {
+                                $arrtemptanggal[$indextglreverse] = $temparr[$j];
+                                $indextglreverse++;
+                            }
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan'] = implode('-', $arrtemptanggal);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = strtotime($val['tanggal_kegiatan']);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text']);
+
+                            // ======================= tanggal Kegiatan Selesai ================================
+                            $tanggal_kegiatan_selesai = $val['tanggal_kegiatan_selesai'];
+                            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+                            $indextglselesaireverse = 0;
+                            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
+                                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
+                                $indextglselesaireverse++;
+                            }
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai'] = implode('-', $arrtemptanggalselesai);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = strtotime($val['tanggal_kegiatan_selesai']);
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text']);
+
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_full_text'] = $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] . " - " . $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'];
+
+                            // ==================== Instruktur Kegiatan ===========================
+                            $indexInstruktur = 0;
+                            foreach ($data['kegiatan'][$indexKegiatan]['instruktur_kegiatan'] as $val2) {
+                                if ($indexInstruktur == 0) {
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = $val2['nama'];
+                                } else
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] . ", " . $val2['nama'];
+                                $indexInstruktur++;
+                            }
+
+                            // ==================== Asesor Kegiatan ===========================
+                            $indexAsesor = 0;
+                            foreach ($data['kegiatan'][$indexKegiatan]['asesor_kegiatan'] as $val2) {
+                                if ($indexAsesor == 0) {
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = $val2['nama'];
+                                } else
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['asesor_kegiatan']['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
+                                $indexAsesor++;
+                            }
+
+                            $indexKegiatan++;
+                            $noKegiatan++;
+                        }
+                        $callback = array(
+                            'data' => $data['kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else
+            redirect('pupr/login');
+    }
+
 
     public function my()
     {
@@ -469,158 +593,6 @@ class Kegiatan extends CI_Controller
                 }
             }
 
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
-    public function tanggal()
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $tanggal = $this->input->post('tanggal');
-            $null = false;
-
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_berdasarkan_tanggal($tanggal, $this->session->userdata('token'));
-            if ($data['kegiatan'] == null)
-                $null = true;
-            else {
-                if ($data['kegiatan']['status'] == "Success") {
-                    $data['kegiatan'] = $data['kegiatan']['data'];
-
-                    $indexKegiatan = 0;
-                    foreach ($data['kegiatan'] as $val) {
-                        $data['kegiatan'][$indexKegiatan]['berita_acara'] = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['berita_acara'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['berita_acara']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = $data['kegiatan'][$indexKegiatan]['berita_acara']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['berita_acara']['message']);
-                            }
-                        }
-
-                        $data['kegiatan'][$indexKegiatan]['invoice'] = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['invoice'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['invoice']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['invoice'] = $data['kegiatan'][$indexKegiatan]['invoice']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['invoice'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['invoice']['message']);
-                            }
-                        }
-
-                        $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['message']);
-                            }
-                        }
-                        $indexKegiatan++;
-                    }
-                } else {
-                    $data['kegiatan'] = null;
-                    $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
-                }
-            }
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
-    //blm done
-    public function bulan()
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $bulan = $this->input->post('bulan');
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan_perbulan($bulan, $this->session->userdata('token'));
-            if ($data['kegiatan'] == null)
-                $null = true;
-            else {
-                if ($data['kegiatan']['status'] == "Success") {
-                    $data['kegiatan'] = $data['kegiatan']['data'];
-
-                    $indexKegiatan = 0;
-                    foreach ($data['kegiatan'] as $val) {
-                        $data['kegiatan'][$indexKegiatan]['berita_acara'] = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['berita_acara'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['berita_acara']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = $data['kegiatan'][$indexKegiatan]['berita_acara']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['berita_acara']['message']);
-                            }
-                        }
-
-                        $data['kegiatan'][$indexKegiatan]['invoice'] = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['invoice'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['invoice']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['invoice'] = $data['kegiatan'][$indexKegiatan]['invoice']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['invoice'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['invoice']['message']);
-                            }
-                        }
-
-                        $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['message']);
-                            }
-                        }
-                        $indexKegiatan++;
-                    }
-                } else {
-                    $data['kegiatan'] = null;
-                    $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
-                }
-            }
             if ($null)
                 $this->load->view('error_page');
         } else
@@ -849,18 +821,18 @@ class Kegiatan extends CI_Controller
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
             $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
-            if(count($id_asesor_kegiatan) == 1)
-            $id_asesor_kegiatan = $id_asesor_kegiatan[0];
-            else{
-            $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
-            $id_asesor_kegiatan = "[". $id_asesor_kegiatan . "]";
+            if (count($id_asesor_kegiatan) == 1)
+                $id_asesor_kegiatan = $id_asesor_kegiatan[0];
+            else {
+                $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
+                $id_asesor_kegiatan = "[" . $id_asesor_kegiatan . "]";
             }
             $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
-            if(count($id_instruktur_kegiatan) == 1)
-            $id_instruktur_kegiatan = $id_instruktur_kegiatan[0];
-            else{
-            $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
-            $id_instruktur_kegiatan = "[". $id_instruktur_kegiatan . "]";
+            if (count($id_instruktur_kegiatan) == 1)
+                $id_instruktur_kegiatan = $id_instruktur_kegiatan[0];
+            else {
+                $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
+                $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan . "]";
             }
             $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
 
@@ -1128,7 +1100,8 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_kegiatan = $this->Kegiatan_model->delete_kegiatan($id_kegiatan, $this->session->userdata('token'));
-            var_dump($delete_kegiatan); die;
+            var_dump($delete_kegiatan);
+            die;
             if ($delete_kegiatan == null) {
                 $this->load->view('error_page');
             } else {
