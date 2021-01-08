@@ -36,18 +36,63 @@ class Administrasi_kegiatan extends CI_Controller
             else {
                 if ($data['administrasi_kegiatan']['status'] == "Success") {
                     $data['administrasi_kegiatan'] = $data['administrasi_kegiatan']['data'];
+                    $data['total_administrasi_kegiatan'] = count($data['administrasi_kegiatan']);
                 } else {
                     $data['administrasi_kegiatan'] = null;
+                    $data['total_administrasi_kegiatan'] = 0;
                     $this->session->set_flashdata('APImessage', $data['administrasi_kegiatan']['message']);
                 }
             }
 
             if ($null)
                 $this->load->view('error_page');
-                
+
             $this->load->view("administrator/administration", $data);
         } else
             redirect("pupr/login");
+    }
+
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['administrasi_kegiatan'] = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan($this->session->userdata('token'));
+            if ($data['administrasi_kegiatan'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['administrasi_kegiatan']['status'] == "Success") {
+                    if (count($data['administrasi_kegiatan']['data']) > 0) {
+                        $data['administrasi_kegiatan'] = $data['administrasi_kegiatan']['data'];
+
+                        $indexAdministrasiKegiatan = 0;
+                        $noAdministrasiKegiatan = 1;
+                        foreach ($data['administrasi_kegiatan'] as $val){
+                            $data['administrasi_kegiatan'][$indexAdministrasiKegiatan]['no_administrasi_kegiatan'] = $noAdministrasiKegiatan;
+
+                            $indexAdministrasiKegiatan++;
+                            $noAdministrasiKegiatan++;
+                        }
+                        $callback = array(
+                            'data' => $data['administrasi_kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
     }
 
     public function detail($id_administrasi_kegiatan)
@@ -104,10 +149,10 @@ class Administrasi_kegiatan extends CI_Controller
             }
             if ($tambah_administrasi_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_administrasi_kegiatan['message']);
-                redirect();
+                redirect("pupr/administration");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_administrasi_kegiatan['message']);
-                redirect();
+                redirect("pupr/administration");
             }
         } else {
             redirect("pupr/login");
@@ -130,17 +175,18 @@ class Administrasi_kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($edit_administrasi_kegiatan); die;
+            var_dump($edit_administrasi_kegiatan);
+            die;
 
             if ($edit_administrasi_kegiatan == null) {
                 $this->load->view('error_page');
             }
             if ($edit_administrasi_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_administrasi_kegiatan['message']);
-                redirect();
+                redirect("pupr/administration");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_administrasi_kegiatan['message']);
-                redirect();
+                redirect("pupr/administration");
             }
         } else {
             redirect("pupr/login");
@@ -156,10 +202,10 @@ class Administrasi_kegiatan extends CI_Controller
             } else {
                 if ($delete_administrasi_kegiatan['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_administrasi_kegiatan['message']);
-                    redirect();
+                    redirect("pupr/administration");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_administrasi_kegiatan['message']);
-                    redirect();
+                    redirect("pupr/administration");
                 }
             }
         } else

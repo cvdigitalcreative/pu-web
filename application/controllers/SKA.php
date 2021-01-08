@@ -36,18 +36,63 @@ class SKA extends CI_Controller
             else {
                 if ($data['ska']['status'] == "Success") {
                     $data['ska'] = $data['ska']['data'];
+                    $data['total_ska'] = count($data['ska']);
                 } else {
                     $data['ska'] = null;
+                    $data['total_ska'] = 0;
                     $this->session->set_flashdata('APImessage', $data['ska']['message']);
                 }
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
 
-            // $this->load->view("administrator/", $data);
+            $this->load->view("administrator/skkni", $data);
         } else
             redirect("pupr/login");
+    }
+
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['ska'] = $this->SKA_model->view_ska($this->session->userdata('token'));
+            if ($data['ska'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['ska']['status'] == "Success") {
+                    if (count($data['ska']['data']) > 0) {
+                        $data['ska'] = $data['ska']['data'];
+
+                        $indexska = 0;
+                        $noska = 1;
+                        foreach ($data['ska'] as $val) {
+                            $data['ska'][$indexska]['no_ska'] = $noska;
+
+                            $indexska++;
+                            $noska++;
+                        }
+                        $callback = array(
+                            'data' => $data['ska']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
     }
 
     public function detail($id_ska)
@@ -80,7 +125,7 @@ class SKA extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -115,7 +160,7 @@ class SKA extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -137,14 +182,14 @@ class SKA extends CI_Controller
             );
 
             if ($tambah_ska == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             }
         } else {
             redirect("pupr/login");
@@ -181,7 +226,7 @@ class SKA extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -207,14 +252,14 @@ class SKA extends CI_Controller
             var_dump($edit_ska);
             die;
             if ($edit_ska == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             }
         } else {
             redirect("pupr/login");
@@ -226,14 +271,14 @@ class SKA extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete_ska = $this->SKA_model->delete_ska($id_ska, $this->session->userdata('token'));
             if ($delete_ska == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_ska['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_ska['message']);
-                    redirect();
+                    redirect("pupr/skkni");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_ska['message']);
-                    redirect();
+                    redirect("pupr/skkni");
                 }
             }
         } else

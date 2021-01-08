@@ -8,48 +8,48 @@
 <body id="page-top">
 
 	<!-- Tambah Kegiatan Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-tambah-administrasi-kegiatan" tabindex="-1" role="dialog">
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-skkni" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Administrasi Kegiatan</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah SKKNI</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>Administrasi_kegiatan/tambah_administrasi_kegiatan_action"
+					<form method="POST" action="<?= base_url()?>SKA/tambah_ska_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="judulAdministrasiKegiatan">Judul Administrasi Kegiatan *</label>
-							<input type="text" class="form-control" id="judul-administrasi-kegiatan" name="judul_administrasi_kegiatan"
-								placeholder="Contoh: Administrasi kegiatan pelatihan" required>
+							<label for="judulSkkni">Judul Skkni *</label>
+							<input type="text" class="form-control" id="judul-skkni" name="judul_skkni"
+								placeholder="Contoh: SKKNI Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
-							<label for="deskripsiAdministrasiKegiatan">Deskripsi Administrasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
-								placeholder="Contoh: Ini adalah deskripsi administrasi kegiatan pelatihan" required></textarea>
+							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
+							<textarea type="text" class="form-control" id="deskripsi-skkni" name="deskripsi_skkni"
+								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileAdministrasiKegiatan">File Administrasi Kegiatan *</label>
+							<label for="fileSkkni">File Skkni *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-administrasi-kegiatan"
-									name="file_administrasi_kegiatan" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file administrasi kegiatan...</label>
-								<small id="file-administrasi-kegiatan" class="form-text text-muted">
-									Pilih file administrasi kegiatan yang sesuai!
+								<input type="file" class="custom-file-input" id="file-skkni"
+									name="file_skkni" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file skkni...</label>
+								<small id="file_skkni" class="form-text text-muted">
+									Pilih file skkni yang sesuai!
 								</small>
 							</div>
 						</div>
                         <div class="form-group py-2">
-							<label for="namaPengirimAdministrasiKegiatan">Pengirim *</label>
-							<select class="form-control" id="pengirim-administrasi-kegiatan" name="nama_pengirim_administrasi_kegiatan" required>
+							<label for="namaPengirimSkkni">Pengirim *</label>
+							<select class="form-control" id="nama-pengirim-skkni" name="nama_pengirim_skkni" required>
 								<option selected disabled>Pilih nama pengirim</option>
 							</select>
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Administrasi Kegiatan</button>
+							Skkni</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -76,7 +76,7 @@
 
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h2 font-weight-bold mb-4 mt-4">Administrasi Kegiatan</h1>
+						<h1 class="h2 font-weight-bold mb-4 mt-4">SKKNI</h1>
 					</div>
 
 					<!-- Alert -->
@@ -89,7 +89,7 @@
 							<?= $this->session->flashdata('APImessage') ?>
 						</div>
 					<?php endif; ?>
-					
+
 					<!-- Content Row -->
 					<div class="row mt-4">
 
@@ -104,8 +104,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													<?=$total_administrasi_kegiatan?>
-                        </div>
+													<?= $total_ska?></div>
 
 											</div>
 										</div>
@@ -119,19 +118,19 @@
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
 							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-administrasi-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Administrasi Kegiatan</button>
+								data-target="#modal-tambah-skkni"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add SKKNI</button>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table id="administrasi_kegiatan_table" class="display">
+								<table id="skkni_table" class="display">
 									<thead>
 										<tr>
 											<th>No</th>
-											<th>Judul Administrasi Kegiatan</th>
-											<th>Deskripsi Administrasi Kegiatan</th>
-											<th>Nama File Administrasi Kegiatan</th>
-											<th>File Administrasi Kegiatan</th>
+											<th>Judul SKKNI</th>
+											<th>Deskripsi SKKNI</th>
+											<th>Nama File SKKNI</th>
+											<th>File SKKNI</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
 										</tr>

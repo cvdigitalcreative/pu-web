@@ -139,6 +139,7 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+
             $data['jumlah_kegiatan_selesai'] = $this->Kegiatan_model->view_kegiatan_selesai($this->session->userdata('token'));
             if ($data['jumlah_kegiatan_selesai'] == null)
                 $null = true;
@@ -202,7 +203,7 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
 
             $this->load->view("administrator/events", $data);
         } else
@@ -225,6 +226,8 @@ class Kegiatan extends CI_Controller
                         $noKegiatan = 1;
                         foreach ($data['kegiatan'] as $val) {
 
+                            $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = "-";
+                            $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = "-";
                             $data['kegiatan'][$indexKegiatan]['no_kegiatan'] = $noKegiatan;
                             // ======================= tanggal Kegiatan ================================
                             $tanggal_kegiatan = $val['tanggal_kegiatan'];
@@ -367,7 +370,7 @@ class Kegiatan extends CI_Controller
                 }
             }
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -443,7 +446,7 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -519,7 +522,7 @@ class Kegiatan extends CI_Controller
                 }
             }
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -595,7 +598,7 @@ class Kegiatan extends CI_Controller
                 }
             }
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -665,7 +668,7 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -700,7 +703,7 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect("pupr/dashboard");
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -710,7 +713,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $daftar_kegiatan = $this->Kegiatan_model->daftar_kegiatan($id_kegiatan, $this->session->userdata('token'));
             if ($daftar_kegiatan == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($daftar_kegiatan['status'] == "Success") {
                     $this->session->set_flashdata('success', $daftar_kegiatan['message']);
@@ -765,7 +768,7 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
             $this->load->view('edit_profile');
         } else
             redirect("pupr/login");
@@ -847,17 +850,18 @@ class Kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($tambah_kegiatan);die;
+            var_dump($tambah_kegiatan);
+            die;
 
             if ($tambah_kegiatan == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             }
         } else {
             redirect("pupr/login");
@@ -986,7 +990,7 @@ class Kegiatan extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
             $this->load->view('edit_profile');
         } else
             redirect("pupr/login");
@@ -1050,14 +1054,14 @@ class Kegiatan extends CI_Controller
                 $this->session->userdata('token')
             );
             if ($edit_kegiatan == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_kegiatan['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_kegiatan['message']);
-                redirect();
+                redirect("pupr/events");
             }
         } else {
             redirect("pupr/login");
@@ -1075,7 +1079,7 @@ class Kegiatan extends CI_Controller
             );
 
             if ($tambah_peserta == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_peserta['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_peserta['message']);
@@ -1093,15 +1097,16 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_kegiatan = $this->Kegiatan_model->delete_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            var_dump($delete_kegiatan); die;
             if ($delete_kegiatan == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_kegiatan['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_kegiatan['message']);
-                    redirect();
+                    redirect("pupr/events");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_kegiatan['message']);
-                    redirect();
+                    redirect("pupr/events");
                 }
             }
         } else
@@ -1124,7 +1129,7 @@ class Kegiatan extends CI_Controller
             );
 
             if ($tambah_berita_acara == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_berita_acara['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_berita_acara['message']);
@@ -1152,7 +1157,7 @@ class Kegiatan extends CI_Controller
             );
 
             if ($edit_berita_acara == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_berita_acara['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_berita_acara['message']);
@@ -1185,7 +1190,7 @@ class Kegiatan extends CI_Controller
             die;
 
             if ($tambah_invoice == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_invoice['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_invoice['message']);
@@ -1217,7 +1222,7 @@ class Kegiatan extends CI_Controller
             die;
 
             if ($edit_invoice == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_invoice['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_invoice['message']);
@@ -1247,7 +1252,7 @@ class Kegiatan extends CI_Controller
             );
 
             if ($tambah_bukti_pembayaran == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_bukti_pembayaran['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_bukti_pembayaran['message']);
@@ -1275,7 +1280,7 @@ class Kegiatan extends CI_Controller
             );
 
             if ($edit_bukti_pembayaran == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_bukti_pembayaran['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_bukti_pembayaran['message']);
@@ -1296,7 +1301,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete = $this->Kegiatan_model->delete_pelatih_kegiatan($id_kegiatan, $id_tenaga_ahli, $this->session->userdata('token'));
             if ($delete == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete['message']);
@@ -1315,7 +1320,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete = $this->Kegiatan_model->delete_asesor_kegiatan($id_kegiatan, $id_tenaga_ahli, $this->session->userdata('token'));
             if ($delete == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete['message']);
@@ -1334,7 +1339,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete = $this->Kegiatan_model->delete_instruktur_kegiatan($id_kegiatan, $id_tenaga_ahli, $this->session->userdata('token'));
             if ($delete == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete['message']);
