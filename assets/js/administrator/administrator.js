@@ -1,6 +1,9 @@
-
 $(document).ready(function () {
-
+	// trigger modal notification
+	$('#notification-modal').ready(function () {
+		$('#notification-modal').modal('show')
+	})
+	
 	// upload image kalender kegiatan js
 	$("#banner-image").click(function (e) {
 		$("#banner-kegiatan").click();
@@ -83,8 +86,8 @@ $(document).ready(function () {
 	// 
 
 	// Kalender Kegiatan Datatable
- $('#kalender_kegiatan_table').DataTable({
-		"order": [0, 'asc'],
+	$('#kalender_kegiatan_table').DataTable({
+		// "order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
@@ -153,8 +156,8 @@ $(document).ready(function () {
 				data: 'id_kegiatan',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Lihat Peserta</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
@@ -443,4 +446,31 @@ $(document).ready(function () {
 			}
 		})
 	})
+
+
+	// 
+	// ========= EDIT BUTTON ON CLICK ===========
+	// 
+
+	// Each Row Table onClick Edit Button
+	$('table').on('click', '#btn-edit', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('#modal-edit-kegiatan').modal('show')
+		} 
+	})
+	// End of edit
+
+	// 
+	// ========= DELETE BUTTON ON CLICK ===========
+	// 
+
+	// Each Row Table onClick Delete Button
+	$('table').on('click', '#btn-reject', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('#delete-kegiatan').modal('show')
+		} 
+	})
+	// End of delete
 });
