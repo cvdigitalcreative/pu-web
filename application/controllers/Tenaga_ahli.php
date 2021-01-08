@@ -13,7 +13,7 @@ class Tenaga_ahli extends CI_Controller
         $this->load->model('User_model');
     }
 
-    public function seluruh($id_kategori_tenaga_ahli)
+    public function seluruh()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
@@ -30,22 +30,22 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
-            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($id_kategori_tenaga_ahli, $this->session->userdata('token'));
-            if ($data['tenaga_ahli'] == null)
-                $null = true;
-            else {
-                if ($data['tenaga_ahli']['status'] == "Success") {
-                    $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
-                } else {
-                    $data['tenaga_ahli'] = null;
-                    $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
-                }
-            }
+            // $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($id_kategori_tenaga_ahli, $this->session->userdata('token'));
+            // if ($data['tenaga_ahli'] == null)
+            //     $null = true;
+            // else {
+            //     if ($data['tenaga_ahli']['status'] == "Success") {
+            //         $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+            //     } else {
+            //         $data['tenaga_ahli'] = null;
+            //         $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
+            //     }
+            // }
 
             $this->load->view("administrator/experts", $data);
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -80,7 +80,7 @@ class Tenaga_ahli extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -115,7 +115,7 @@ class Tenaga_ahli extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -151,7 +151,7 @@ class Tenaga_ahli extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -214,7 +214,7 @@ class Tenaga_ahli extends CI_Controller
             );
 
             if ($tambah_tenaga_ahli == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($tambah_tenaga_ahli['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_tenaga_ahli['message']);
@@ -259,7 +259,7 @@ class Tenaga_ahli extends CI_Controller
             }
 
             if ($null)
-                redirect();
+                $this->load->view('error_page');
         } else
             redirect("pupr/login");
     }
@@ -323,7 +323,7 @@ class Tenaga_ahli extends CI_Controller
             );
 
             if ($edit_tenaga_ahli == null) {
-                redirect();
+                $this->load->view('error_page');
             }
             if ($edit_tenaga_ahli['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_tenaga_ahli['message']);
@@ -342,7 +342,7 @@ class Tenaga_ahli extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete_tenaga_ahli = $this->Tenaga_Ahli_model->delete_tenaga_ahli($id_tenaga_ahli, $this->session->userdata('token'));
             if ($delete_tenaga_ahli == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_tenaga_ahli['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_tenaga_ahli['message']);
@@ -361,7 +361,7 @@ class Tenaga_ahli extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $delete_jabatan_kerja = $this->Tenaga_Ahli_model->delete_jabatan_kerja($id_jabker, $this->session->userdata('token'));
             if ($delete_jabatan_kerja == null) {
-                redirect();
+                $this->load->view('error_page');
             } else {
                 if ($delete_jabatan_kerja['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_jabatan_kerja['message']);
