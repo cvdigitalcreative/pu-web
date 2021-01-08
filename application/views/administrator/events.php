@@ -19,7 +19,8 @@
 				</div>
 				<div class="modal-body">
           
-					<form method="POST" action="<?= base_url()?>Kegiatan/tambah_kegiatan_action"
+					<form method="POST" ac
+					tion="<?= base_url()?>Kegiatan/tambah_kegiatan_action"
 						enctype="multipart/form-data">
 
 						<div class="form-group py-2">
@@ -115,6 +116,28 @@
 								foreach ($status_kegiatan as $row):?>
 								<option value="<?=$row['id_status_kegiatan']?>"><?= $row['status_kegiatan']?></option>
 								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="instrukturKegiatan">Instruktur kegiatan *</label>
+							<select class="form-control selectpicker" id="instruktur-kegiatan" name="instruktur_kegiatan"
+								aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true" required>
+								<option>Antonio</option>
+								<option>Banderas</option>
+								<option>Robin</option>
+								<option>Stevany</option>
+								<option>Levi</option>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="assesorKegiatan">Assesor kegiatan *</label>
+							<select class="form-control selectpicker" id="assesor-kegiatan" name="assesor_kegiatan"
+								aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
+								<option>Antonio</option>
+								<option>Banderas</option>
+								<option>Robin</option>
+								<option>Stevany</option>
+								<option>Levi</option>
 							</select>
 						</div>
 						<div class="form-group py-2">

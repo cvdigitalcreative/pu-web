@@ -49,6 +49,14 @@ $(document).ready(function () {
 	});
 	// end input date rangepicker
 
+	// Custom bootstrap-select each select id
+	$('#instruktur-kegiatan').selectpicker();
+
+
+	// 
+	// ========= DATATABLE ===========
+	// 
+
 	// Kalender Kegiatan Datatable
 	$('#kalender_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
