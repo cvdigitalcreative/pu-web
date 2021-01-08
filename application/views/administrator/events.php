@@ -19,7 +19,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" ac tion="<?= base_url()?>Kegiatan/tambah_kegiatan_action"
+					<form method="POST" action="<?= base_url()?>Kegiatan/tambah_kegiatan_action"
 						enctype="multipart/form-data">
 
 						<div class="form-group py-2">
