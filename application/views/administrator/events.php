@@ -19,7 +19,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col">
 								<div class="form-group py-2">
@@ -48,7 +48,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="filterJenisKegiatan">Jenis kegiatan *</label>
-							<select class="form-control" id="filter-jenis-kegiatan" name="id_jenis_kegiatan" required>
+							<select class="form-control" id="filter-jenis-kegiatan" name="filter_jenis_kegiatan" required>
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if($jenis_kegiatan != null):
 								foreach ($jenis_kegiatan as $row):?>
@@ -68,7 +68,7 @@
 							</select>
 						</div>
 						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Terapkan
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan" id="btn-filter-kegiatan">Terapkan
 							Filter</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
@@ -192,31 +192,29 @@
 						<div class="form-group py-2">
 							<label for="instrukturKegiatan">Instruktur kegiatan *</label>
 							<select class="form-control selectpicker" id="instruktur-kegiatan"
-								name="instruktur_kegiatan" aria-placeholder="Pilih instruktur kegiatan" multiple
+								name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple
 								data-live-search="true" required>
-								<option>Antonio</option>
-								<option>Banderas</option>
-								<option>Robin</option>
-								<option>Stevany</option>
-								<option>Levi</option>
+								<?php if($instruktur != null):
+								foreach ($instruktur as $row):?>
+								<option value="<?=$row['id_tenaga_ahli']?>"><?= $row['nama_lengkap']?></option>
+								<?php endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="assesorKegiatan">Assesor kegiatan *</label>
-							<select class="form-control selectpicker" id="assesor-kegiatan" name="assesor_kegiatan"
+							<select class="form-control selectpicker" id="assesor-kegiatan" name="id_asesor_kegiatan[]"
 								aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
-								<option>Antonio</option>
-								<option>Banderas</option>
-								<option>Robin</option>
-								<option>Stevany</option>
-								<option>Levi</option>
+								<?php if($asesor != null):
+								foreach ($asesor as $row):?>
+								<option value="<?=$row['id_tenaga_ahli']?>"><?= $row['nama_lengkap']?></option>
+								<?php endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-materi-kegiatan"
-									name="fileMateriKegiatan">
+									name="file_materi_kegiatan">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
 								<small id="file-materi-kegiatan" class="form-text text-muted">
 									File materi adalah opsional
