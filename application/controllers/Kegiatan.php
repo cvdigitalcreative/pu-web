@@ -202,6 +202,30 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['asesor'] = $this->Common_model->view_asesor($this->session->userdata('token'));
+            if ($data['asesor'] == null)
+                $null = true;
+            else {
+                if ($data['asesor']['status'] == "Success") {
+                    $data['asesor'] = $data['asesor']['data'];
+                } else {
+                    $data['asesor'] = null;
+                    $this->session->set_flashdata('APImessage', $data['asesor']['message']);
+                }
+            }
+
+            $data['instruktur'] = $this->Common_model->view_instruktur($this->session->userdata('token'));
+            if ($data['instruktur'] == null)
+                $null = true;
+            else {
+                if ($data['instruktur']['status'] == "Success") {
+                    $data['instruktur'] = $data['instruktur']['data'];
+                } else {
+                    $data['instruktur'] = null;
+                    $this->session->set_flashdata('APImessage', $data['instruktur']['message']);
+                }
+            }
+
             if ($null)
                 $this->load->view('error_page');
 
@@ -825,9 +849,19 @@ class Kegiatan extends CI_Controller
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
             $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
-            $id_asesor_kegiatan = 0;
+            if(count($id_asesor_kegiatan) == 1)
+            $id_asesor_kegiatan = $id_asesor_kegiatan[0];
+            else{
+            $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
+            $id_asesor_kegiatan = "[". $id_asesor_kegiatan . "]";
+            }
             $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
-            $id_instruktur_kegiatan = 0;
+            if(count($id_instruktur_kegiatan) == 1)
+            $id_instruktur_kegiatan = $id_instruktur_kegiatan[0];
+            else{
+            $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
+            $id_instruktur_kegiatan = "[". $id_instruktur_kegiatan . "]";
+            }
             $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
 
             $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
@@ -849,9 +883,6 @@ class Kegiatan extends CI_Controller
                 $file_materi_kegiatan,
                 $this->session->userdata('token')
             );
-
-            var_dump($tambah_kegiatan);
-            die;
 
             if ($tambah_kegiatan == null) {
                 $this->load->view('error_page');
