@@ -41,12 +41,6 @@
 								</small>
 							</div>
 						</div>
-                        <div class="form-group py-2">
-							<label for="namaPengirimSkkni">Pengirim *</label>
-							<select class="form-control" id="nama-pengirim-skkni" name="nama_pengirim_skkni" required>
-								<option selected disabled>Pilih nama pengirim</option>
-							</select>
-						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
 							Skkni</button>
@@ -91,12 +85,6 @@
 									Pilih file skkni yang sesuai! Lewati jika tidak ingin mengganti file.
 								</small>
 							</div>
-						</div>
-                        <div class="form-group py-2">
-							<label for="namaPengirimSkkni">Pengirim *</label>
-							<select class="form-control" id="edit-nama-pengirim-skkni" name="nama_pengirim_skkni" required>
-								<option selected disabled>Pilih nama pengirim</option>
-							</select>
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
