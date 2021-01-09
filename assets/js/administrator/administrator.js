@@ -457,7 +457,9 @@ $(document).ready(function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Kegiatan/edit_kegiatan_action/${id}`)
-			$(`#modal-edit-kegiatan${id}`).modal('show')
+			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(6).text())
+			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(11).text())
+			$(`#modal-edit-kegiatan`).modal('show')
 		} 
 	})
 	// End of edit
@@ -471,7 +473,7 @@ $(document).ready(function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Kegiatan/delete_kegiatan/${id}`)
-			$(`#delete-kegiatan${id}`).modal('show')
+			$(`#delete-kegiatan`).modal('show')
 		} 
 	})
 	// End of delete
