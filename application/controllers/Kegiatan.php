@@ -859,21 +859,23 @@ class Kegiatan extends CI_Controller
             $deskripsi_kegiatan = $this->input->post('deskripsi_kegiatan');
             $tanggal_kegiatan = $this->input->post('tanggal_kegiatan');
             $temparr = explode('/', $tanggal_kegiatan);
-            $indextglreverse = 0;
-            for ($j = count($temparr) - 1; $j >= 0; $j--) {
-                $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                $indextglreverse++;
-            }
+            $tempbulan = $temparr[0];
+            $temphari = $temparr[1];
+            $temptahun = $temparr[2];
+            $arrtemptanggal[0] = $temptahun;
+            $arrtemptanggal[1] = $tempbulan;
+            $arrtemptanggal[2] = $temphari;
             $tanggal_kegiatan = implode('-', $arrtemptanggal);
 
             $tanggal_kegiatan_selesai = $this->input->post('tanggal_kegiatan_selesai');
             $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
-            $indextglselesaireverse = 0;
-            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
-                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
-                $indextglselesaireverse++;
-            }
-            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
+            $tempbulan = $temparrselesai[0];
+            $temphari = $temparrselesai[1];
+            $temptahun = $temparrselesai[2];
+            $arrtemptanggal[0] = $temptahun;
+            $arrtemptanggal[1] = $tempbulan;
+            $arrtemptanggal[2] = $temphari;
+            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggal);
             $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
             $latitude_lokasi = 0;
             $longitude_lokasi = 0;
