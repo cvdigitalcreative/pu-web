@@ -35,10 +35,8 @@ class Administrasi_kegiatan extends CI_Controller
                 $null = true;
             else {
                 if ($data['administrasi_kegiatan']['status'] == "Success") {
-                    $data['administrasi_kegiatan'] = $data['administrasi_kegiatan']['data'];
-                    $data['total_administrasi_kegiatan'] = count($data['administrasi_kegiatan']);
+                    $data['total_administrasi_kegiatan'] = count($data['administrasi_kegiatan']['data']);
                 } else {
-                    $data['administrasi_kegiatan'] = null;
                     $data['total_administrasi_kegiatan'] = 0;
                     $this->session->set_flashdata('APImessage', $data['administrasi_kegiatan']['message']);
                 }
@@ -67,7 +65,7 @@ class Administrasi_kegiatan extends CI_Controller
 
                         $indexAdministrasiKegiatan = 0;
                         $noAdministrasiKegiatan = 1;
-                        foreach ($data['administrasi_kegiatan'] as $val){
+                        foreach ($data['administrasi_kegiatan'] as $val) {
                             $data['administrasi_kegiatan'][$indexAdministrasiKegiatan]['no_administrasi_kegiatan'] = $noAdministrasiKegiatan;
 
                             $indexAdministrasiKegiatan++;
@@ -159,13 +157,15 @@ class Administrasi_kegiatan extends CI_Controller
         }
     }
 
-    //blm done
     public function edit_administrasi_kegiatan_action($id_administrasi_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
             $judul_administrasi_kegiatan = $this->input->post('judul_administrasi_kegiatan');
             $deskripsi_administrasi_kegiatan = $this->input->post('deskripsi_administrasi_kegiatan');
-            $file_administrasi_kegiatan = new \CurlFile($_FILES['file_administrasi_kegiatan']['tmp_name'], $_FILES['file_administrasi_kegiatan']['type'], $_FILES['file_administrasi_kegiatan']['name']);
+            if ($_FILES['file_administrasi_kegiatan']['size'] > 0)
+                $file_administrasi_kegiatan = new \CurlFile($_FILES['file_administrasi_kegiatan']['tmp_name'], $_FILES['file_administrasi_kegiatan']['type'], $_FILES['file_administrasi_kegiatan']['name']);
+            else
+                $file_administrasi_kegiatan = null;
 
             $edit_administrasi_kegiatan = $this->Administrasi_Kegiatan_model->edit_administrasi_kegiatan(
                 $judul_administrasi_kegiatan,
@@ -174,9 +174,6 @@ class Administrasi_kegiatan extends CI_Controller
                 $id_administrasi_kegiatan,
                 $this->session->userdata('token')
             );
-
-            var_dump($edit_administrasi_kegiatan);
-            die;
 
             if ($edit_administrasi_kegiatan == null) {
                 $this->load->view('error_page');
@@ -210,5 +207,25 @@ class Administrasi_kegiatan extends CI_Controller
             }
         } else
             redirect("pupr/login");
+    }
+
+    public function download($id_administrasi_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $administrasi = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan_detail($id_administrasi_kegiatan, $this->session->userdata('token'));
+            if ($administrasi == null)
+                $this->load->view('error_page');
+            else {
+                if ($administrasi['status'] == "Success") {
+                    $data = file_get_contents($administrasi['data']['file_administrasi_kegiatan']);
+                    force_download($administrasi['data']['file_administrasi_kegiatan'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $administrasi['message']);
+                    redirect('pupr/skkni');
+                }
+            }
+        } else
+            redirect('pupr/login');
     }
 }
