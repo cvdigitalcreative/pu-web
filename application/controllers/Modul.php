@@ -201,7 +201,7 @@ class Modul extends CI_Controller
                 $id_modul,
                 $this->session->userdata('token')
             );
-            
+
             if ($edit_modul == null) {
                 $this->load->view('error_page');
             }
@@ -234,5 +234,25 @@ class Modul extends CI_Controller
             }
         } else
             redirect("pupr/login");
+    }
+
+    public function download($id_modul)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $modul = $this->Modul_model->view_modul_detail($id_modul, $this->session->userdata('token'));
+            if ($modul == null)
+                $this->load->view('error_page');
+            else {
+                if ($modul['status'] == "Success") {
+                    $data = file_get_contents($modul['data']['file_modul']);
+                    force_download($modul['data']['file_modul'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $modul['message']);
+                    redirect('pupr/skkni');
+                }
+            }
+        } else
+            redirect('pupr/login');
     }
 }
