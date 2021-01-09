@@ -261,6 +261,9 @@ $(document).ready(function () {
 				data: 'deskripsi_modul',
 			},
 			{
+				data: 'kategori_modul',
+			},
+			{
 				data: 'nama_file_modul',
 			},
 			{
@@ -277,8 +280,8 @@ $(document).ready(function () {
 				data: 'id_modul',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
@@ -508,6 +511,14 @@ $(document).ready(function () {
 			$('#edit-deskripsi-skkni').val($(this).parent().siblings().eq(2).text())
 			$('#modal-edit-skkni').modal('show')
 		}  
+		else if ($('#modul_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Modul/edit_modul_action/${id}`)
+			$('#edit-judul-modul').val($(this).parent().siblings().eq(1).text())
+			$('#edit-deskripsi-modul').val($(this).parent().siblings().eq(2).text())
+			$('#edit-id-kategori-modul-old').val($(this).parent().siblings().eq(3).text())
+			$(`#modal-edit-modul`).modal('show')
+		} 
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Buku_saku/edit_buku_saku_action/${id}`)
@@ -533,6 +544,11 @@ $(document).ready(function () {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}SKA/delete_ska/${id}`)
 			$('#modal-delete-skkni').modal('show')
+		}
+		else if ($('#modul_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Modul/delete_modul/${id}`)
+			$('#modal-delete-modul').modal('show')
 		} 
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
