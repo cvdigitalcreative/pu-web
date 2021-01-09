@@ -21,12 +21,12 @@
 		</a>
 	</li>
 
-	<!-- Nav Item - Kalender Kegiatan -->
+	<!-- Nav Item - Kegiatan -->
 	<li class="nav-item <?=$this->uri->segment(2) == 'events' ? 'active' : ''?>">
 		<a class="nav-link <?=$this->uri->segment(2) == 'events' ? 'disabled' : ''?>"
 			href="<?=base_url('pupr/events')?>">
 			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/kegiatan-menu.svg')?>">
-			<span>Kalender Kegiatan</span>
+			<span>Kegiatan</span>
 		</a>
 	</li>
 

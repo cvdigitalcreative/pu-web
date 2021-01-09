@@ -97,7 +97,7 @@ class SKA_model extends CI_Model
             'file_ska' => $file_ska,
         ];
 
-        return $this->http_request_update($data, "/$id_ska", $token);
+        return $this->http_request_post($data, "/$id_ska", $token);
     }
 
     public function delete_SKA($id_ska, $token)

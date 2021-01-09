@@ -7,7 +7,7 @@
 
 <body id="page-top">
 
-	<!-- Tambah Kegiatan Modal -->
+	<!-- Tambah skkni Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-tambah-skkni" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -57,6 +57,82 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- edit skkni Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-skkni" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">edit SKKNI</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="judulSkkni">Judul Skkni *</label>
+							<input type="text" class="form-control" id="edit-judul-skkni" name="judul_skkni"
+								placeholder="Contoh: SKKNI Kegiatan Pelatihan" required>
+						</div>
+						<div class="form-group py-2">
+							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
+							<textarea type="text" class="form-control" id="edit-deskripsi-skkni" name="deskripsi_skkni"
+								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
+						</div>
+						<div class="form-group py-2">
+							<label for="fileSkkni">File Skkni *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="edit-file-skkni"
+									name="file_skkni">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file skkni...</label>
+								<small id="file_skkni" class="form-text text-muted">
+									Pilih file skkni yang sesuai! Lewati jika tidak ingin mengganti file.
+								</small>
+							</div>
+						</div>
+                        <div class="form-group py-2">
+							<label for="namaPengirimSkkni">Pengirim *</label>
+							<select class="form-control" id="edit-nama-pengirim-skkni" name="nama_pengirim_skkni" required>
+								<option selected disabled>Pilih nama pengirim</option>
+							</select>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Skkni</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Delete skkni modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-skkni" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus skkni Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa skkni ini ingin anda hapus!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete skkni -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
