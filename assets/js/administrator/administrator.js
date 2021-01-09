@@ -74,6 +74,30 @@ $(document).ready(function () {
 			var years = moment().diff(start, 'years');
 		});
 	});
+
+	// tanggal mulai edit kegiatan
+	$(function () {
+		$('input[name="edit_tanggal_kegiatan_mulai"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
+
+	// tanggal selesai edit kegiatan
+	$(function () {
+		$('input[name="edit_tanggal_kegiatan_selesai"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
 	// end input date rangepicker
 
 	// Custom bootstrap-select each select id
