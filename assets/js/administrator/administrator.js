@@ -456,6 +456,7 @@ $(document).ready(function () {
 	$('table').on('click', '#btn-edit', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Kegiatan/edit_kegiatan_action/${id}`)
 			$(`#modal-edit-kegiatan${id}`).modal('show')
 		} 
 	})
@@ -469,6 +470,7 @@ $(document).ready(function () {
 	$('table').on('click', '#btn-reject', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Kegiatan/delete_kegiatan/${id}`)
 			$(`#delete-kegiatan${id}`).modal('show')
 		} 
 	})

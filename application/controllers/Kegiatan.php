@@ -41,6 +41,51 @@ class Kegiatan extends CI_Controller
                     $indexKegiatan = 0;
                     foreach ($data['kegiatan'] as $val) {
 
+                        // ====================== provinsi ===============================
+                        $provinsitemp = $this->Common_model->view_provinsi($this->session->userdata('token'));
+                        if ($provinsitemp == null)
+                            $null = true;
+                        else {
+                            if ($provinsitemp['status'] == 'Success') {
+                                foreach ($provinsitemp['data'] as $val2) {
+                                    if ($val2['provinsi'] == $val['provinsi'])
+                                        $data['kegiatan'][$indexKegiatan]['id_provinsi'] = $val2['id_provinsi'];
+                                }
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
+                            }
+                        }
+
+                        // ====================== Akun Kegiatan ===============================
+                        $akuntemp = $this->Common_model->view_akun_kegiatan($this->session->userdata('token'));
+                        if ($akuntemp == null)
+                            $null = true;
+                        else {
+                            if ($akuntemp['status'] == 'Success') {
+                                foreach ($akuntemp['data'] as $val2) {
+                                    if ($val2['akun_kegiatan'] == $val['akun_kegiatan'])
+                                        $data['kegiatan'][$indexKegiatan]['id_akun_kegiatan'] = $val2['id_akun_kegiatan'];
+                                }
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
+                            }
+                        }
+
+                        // ====================== status Kegiatan ===============================
+                        $jenistemp = $this->Common_model->view_jenis_kegiatan($this->session->userdata('token'));
+                        if ($jenistemp == null)
+                            $null = true;
+                        else {
+                            if ($jenistemp['status'] == 'Success') {
+                                foreach ($jenistemp['data'] as $val2) {
+                                    if ($val2['jenis_kegiatan'] == $val['jenis_kegiatan'])
+                                        $data['kegiatan'][$indexKegiatan]['id_jenis_kegiatan'] = $val2['id_jenis_kegiatan'];
+                                }
+                            } else {
+                                $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
+                            }
+                        }
+
                         // ======================= tanggal Kegiatan ================================
                         $tanggal_kegiatan = $val['tanggal_kegiatan'];
                         $temparr = explode('-', $tanggal_kegiatan);
@@ -788,6 +833,25 @@ class Kegiatan extends CI_Controller
         }
     }
 
+    public function view_kota_edit()
+    {
+        $provinsi = $this->input->post('id_provinsi');
+        $data = $this->Common_model->view_kabupaten_kota($provinsi, $this->session->userdata('token'));
+        if ($data == null) {
+            $this->load->view('error_page');
+        } else {
+            if ($data['status'] == "Success") {
+                $data = $data['data'];
+                foreach ($data as $row) {
+                    echo '<option value="' . $row['id_kabupaten_kota'] . '">' . $row['kabupaten_kota'] . '</option>';
+                }
+            } else {
+                $data = null;
+                echo '<option value="' . '">Gagal mendapatkan kota untuk kabupaten yang dipilih</option>';
+            }
+        }
+    }
+
     public function tambah_kegiatan_action()
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -950,60 +1014,12 @@ class Kegiatan extends CI_Controller
     //     redirect('Import');
     // }
 
-
-    public function edit($id_kegiatan)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['asesor'] = $this->Common_model->view_asesor($this->session->userdata('token'));
-            if ($data['asesor'] == null)
-                $null = true;
-            else {
-                if ($data['asesor']['status'] == "Success") {
-                    $data['asesor'] = $data['asesor']['data'];
-                } else {
-                    $data['asesor'] = null;
-                    $this->session->set_flashdata("APImessage", $data['asesor']['message']);
-                }
-            }
-            $data['instruktur'] = $this->Common_model->view_instruktur($this->session->userdata('token'));
-            if ($data['instruktur'] == null)
-                $null = true;
-            else {
-                if ($data['instruktur']['status'] == "Success") {
-                    $data['instruktur'] = $data['instruktur']['data'];
-                } else {
-                    $data['instruktur'] = null;
-                    $this->session->set_flashdata("APImessage", $data['instruktur']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-            $this->load->view('edit_profile');
-        } else
-            redirect("pupr/login");
-    }
-
     public function edit_kegiatan_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $judul_kegiatan = $this->input->post('judul_kegiatan');
-            $deskripsi_kegiatan = $this->input->post('deskripsi_kegiatan');
-            $tanggal_kegiatan = $this->input->post('tanggal_kegiatan');
+            $judul_kegiatan = $this->input->post('edit_judul_kegiatan');
+            $deskripsi_kegiatan = $this->input->post('edit_deskripsi_kegiatan');
+            $tanggal_kegiatan = $this->input->post('edit_tanggal_kegiatan');
             $temparr = explode('-', $tanggal_kegiatan);
             $indextglreverse = 0;
             for ($j = count($temparr) - 1; $j >= 0; $j--) {
@@ -1012,7 +1028,7 @@ class Kegiatan extends CI_Controller
             }
             $tanggal_kegiatan = implode('-', $arrtemptanggal);
 
-            $tanggal_kegiatan_selesai = $this->input->post('tanggal_kegiatan_selesai');
+            $tanggal_kegiatan_selesai = $this->input->post('edit_tanggal_kegiatan_selesai');
             $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
             $indextglselesaireverse = 0;
             for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
@@ -1020,17 +1036,29 @@ class Kegiatan extends CI_Controller
                 $indextglselesaireverse++;
             }
             $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
-            $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
-            $latitude_lokasi = $this->input->post('latitude_lokasi');
-            $longitude_lokasi = $this->input->post('longitude_lokasi');
+            $lokasi_kegiatan = $this->input->post('edit_lokasi_kegiatan');
+            $latitude_lokasi = 0;
+            $longitude_lokasi = 0;
             $status_kegiatan = $this->input->post('status_kegiatan');
-            $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+            $foto_banner_kegiatan = new \CurlFile($_FILES['edit_foto_banner_kegiatan']['tmp_name'], $_FILES['edit_foto_banner_kegiatan']['type'], $_FILES['edit_foto_banner_kegiatan']['name']);
             $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
             $id_jenis_kegiatan = $this->input->post('id_jenis_kegiatan');
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
             $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
+            if (count($id_asesor_kegiatan) == 1)
+                $id_asesor_kegiatan = $id_asesor_kegiatan[0];
+            else {
+                $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
+                $id_asesor_kegiatan = "[" . $id_asesor_kegiatan . "]";
+            }
             $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
+            if (count($id_instruktur_kegiatan) == 1)
+                $id_instruktur_kegiatan = $id_instruktur_kegiatan[0];
+            else {
+                $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
+                $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan . "]";
+            }
             $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
 
             $id_provinsi = 0;
@@ -1055,6 +1083,7 @@ class Kegiatan extends CI_Controller
                 $id_kegiatan,
                 $this->session->userdata('token')
             );
+
             if ($edit_kegiatan == null) {
                 $this->load->view('error_page');
             }
@@ -1099,8 +1128,6 @@ class Kegiatan extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $delete_kegiatan = $this->Kegiatan_model->delete_kegiatan($id_kegiatan, $this->session->userdata('token'));
-            var_dump($delete_kegiatan);
-            die;
             if ($delete_kegiatan == null) {
                 $this->load->view('error_page');
             } else {
