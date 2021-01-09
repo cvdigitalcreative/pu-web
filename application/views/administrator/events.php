@@ -316,7 +316,7 @@
 								<div class="form-group py-2">
 									<label for="editTanggalMulaikegiatan">Tanggal Mulai *</label>
 									<input type="text" class="form-control js-daterangepicker"
-										id="edit-tanggal-mulai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan"
+										id="edit-tanggal-mulai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_mulai"
 										value="" placeholder="Pilih tanggal kegiatan" required>
 									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
 										Tanggal mulai kegiatan
@@ -494,7 +494,7 @@
 
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h2 font-weight-bold mb-4 mt-4">Kalender Kegiatan</h1>
+						<h1 class="h2 font-weight-bold mb-4 mt-4">Kegiatan</h1>
 					</div>
 
 					<!-- Alert -->
