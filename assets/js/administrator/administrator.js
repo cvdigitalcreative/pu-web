@@ -213,6 +213,9 @@ $(document).ready(function () {
 				data: 'deskripsi_ska',
 			},
 			{
+				data: 'kategori_ska',
+			},
+			{
 				data: 'nama_file_ska',
 			},
 			{
@@ -509,6 +512,7 @@ $(document).ready(function () {
 			$('form').attr('action', `${BASE_URL}SKA/edit_ska_action/${id}`)
 			$('#edit-judul-skkni').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-skkni').val($(this).parent().siblings().eq(2).text())
+			$('#edit-id-kategori-skkni-old').val($(this).parent().siblings().eq(3).text())
 			$('#modal-edit-skkni').modal('show')
 		}  
 		else if ($('#modul_table').length > 0) {

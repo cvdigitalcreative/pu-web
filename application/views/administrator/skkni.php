@@ -42,9 +42,14 @@
 							</div>
 						</div>
                         <div class="form-group py-2">
-							<label for="namaPengirimSkkni">Pengirim *</label>
-							<select class="form-control" id="nama-pengirim-skkni" name="nama_pengirim_skkni" required>
-								<option selected disabled>Pilih nama pengirim</option>
+						<label for="namaKategoriSkkni">Kategori Skkni *</label>
+							<select class="form-control" id="kategori-skkni" name="id_kategori_skkni" required>
+								<option selected disabled>Pilih kategori skkni</option>
+								<?php if ($kategori_ska != null) :
+									foreach ($kategori_ska as $row) : ?>
+										<option value="<?= $row['id_kategori_skkni'] ?>"><?= $row['kategori_skkni'] ?></option>
+								<?php endforeach;
+								endif ?>
 							</select>
 						</div>
 						<div class="menu-divider"></div>
@@ -93,11 +98,17 @@
 							</div>
 						</div>
                         <div class="form-group py-2">
-							<label for="namaPengirimSkkni">Pengirim *</label>
-							<select class="form-control" id="edit-nama-pengirim-skkni" name="nama_pengirim_skkni" required>
-								<option selected disabled>Pilih nama pengirim</option>
+							<label for="namaKategoriSkkni">Kategori Skkni *</label>
+							<select class="form-control" id="edit-kategori-skkni" name="id_kategori_skkni" required>
+								<option selected disabled>Pilih kategori skkni</option>
+								<?php if ($kategori_ska != null) :
+									foreach ($kategori_ska as $row) : ?>
+										<option value="<?= $row['id_kategori_skkni'] ?>"><?= $row['kategori_skkni'] ?></option>
+								<?php endforeach;
+								endif ?>
 							</select>
 						</div>
+						<input type="hidden" name="id_kategori_skkni_old" id="edit-id-kategori-skkni-old">
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
 							Skkni</button>
@@ -205,6 +216,7 @@
 											<th>No</th>
 											<th>Judul SKKNI</th>
 											<th>Deskripsi SKKNI</th>
+											<th>Kategori SKKNI</th>
 											<th>Nama File SKKNI</th>
 											<th>File SKKNI</th>
 											<th>Pengirim</th>
