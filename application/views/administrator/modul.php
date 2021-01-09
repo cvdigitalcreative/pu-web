@@ -7,8 +7,8 @@
 
 <body id="page-top">
 
-	<!-- Tambah Kegiatan Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-modul" tabindex="-1" role="dialog">
+	<!-- Tambah Modul Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-modul" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -18,45 +18,124 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>Modul/tambah_modul_action"
-						enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url() ?>Modul/tambah_modul_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulModul">Judul Modul *</label>
-							<input type="text" class="form-control" id="judul-modul" name="judul_modul"
-								placeholder="Contoh: Modul Kegiatan Pelatihan" required>
+							<input type="text" class="form-control" id="judul-modul" name="judul_modul" placeholder="Contoh: Modul Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiModul">Deskripsi Modul *</label>
-							<textarea type="text" class="form-control" id="deskripsi-modul" name="deskripsi_modul"
-								placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
+							<textarea type="text" class="form-control" id="deskripsi-modul" name="deskripsi_modul" placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="fileModul">File Modul *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-modul"
-									name="file_modul" required>
+								<input type="file" class="custom-file-input" id="file-modul" name="file_modul" required>
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file modul...</label>
 								<small id="file_modul" class="form-text text-muted">
 									Pilih file modul yang sesuai!
 								</small>
 							</div>
 						</div>
-                        <div class="form-group py-2">
-							<label for="namaPengirimModul">Pengirim *</label>
-							<select class="form-control" id="nama-pengirim-modul" name="nama_pengirim_modul" required>
-								<option selected disabled>Pilih nama pengirim</option>
+						<div class="form-group py-2">
+							<label for="namaPengirimModul">Kategori Modul *</label>
+							<select class="form-control" id="nama-pengirim-modul" name="id_kategori_modul" required>
+								<option selected disabled>Pilih kategori modul</option>
+								<?php if ($kategori_modul != null) :
+									foreach ($kategori_modul as $row) : ?>
+										<option value="<?= $row['id_kategori_modul'] ?>"><?= $row['kategori_modul'] ?></option>
+								<?php endforeach;
+								endif ?>
 							</select>
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
 							Modul</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<!-- Edit Modul Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-modul" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Modul</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="judulModul">Judul Modul *</label>
+							<input type="text" class="form-control" id="edit-judul-modul" name="judul_modul" placeholder="Contoh: Modul Kegiatan Pelatihan" required>
+						</div>
+						<div class="form-group py-2">
+							<label for="deskripsiModul">Deskripsi Modul *</label>
+							<textarea type="text" class="form-control" id="edit-deskripsi-modul" name="deskripsi_modul" placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
+						</div>
+						<div class="form-group py-2">
+							<label for="fileModul">File Modul *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="edit-file-modul" name="file_modul">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file modul...</label>
+								<small id="file_modul" class="form-text text-muted">
+									Pilih file modul yang sesuai!
+								</small>
+							</div>
+						</div>
+						<div class="form-group py-2">
+							<div class="kategori-modul">
+								<label for="namaPengirimModul">Kategori Modul *</label>
+								<select class="form-control" id="edit-kategori-modul" name="id_kategori_modul" required>
+									<option selected disabled>Pilih kategori modul</option>
+									<?php if ($kategori_modul != null) :
+										foreach ($kategori_modul as $row) : ?>
+											<option value="<?= $row['id_kategori_modul'] ?>"><?= $row['kategori_modul'] ?></option>
+									<?php endforeach;
+									endif ?>
+								</select>
+							</div>
+						</div>
+						<input type="hidden" name="id_kategori_modul_old" id="edit-id-kategori-modul-old">
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Modul</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Delete Modul modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-modul" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Modul Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa modul ini ingin anda hapus!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete modul -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -117,9 +196,7 @@
 
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-modul"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Modul</button>
+							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal" data-target="#modal-tambah-modul"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Modul</button>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
@@ -129,6 +206,7 @@
 											<th>No</th>
 											<th>Judul Modul</th>
 											<th>Deskripsi Modul</th>
+											<th>Kategori Modul</th>
 											<th>Nama File Modul</th>
 											<th>File Modul</th>
 											<th>Pengirim</th>
