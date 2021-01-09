@@ -39,3 +39,16 @@
         });
     }
 </script>
+
+<script>
+    function getStateEdit(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#edit-kota-kegiatan").html(data);
+            }
+        });
+    }
+</script>
