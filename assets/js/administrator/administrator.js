@@ -205,8 +205,8 @@ $(document).ready(function () {
 				data: 'id_ska',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
@@ -358,6 +358,22 @@ $(document).ready(function () {
 	});
 
 	// 
+	// ========= DETAUL BUTTON ON CLICK ===========
+	// 
+
+	// Each Row Table onClick Edit Button
+	$('table').on('click', '#btn-detail', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('#modal-edit-kegiatan').modal('show')
+		} 
+		if ($('#skkni_table').length > 0) {
+			const id = $(this).data('id')
+		} 
+	})
+	// End of default
+
+	// 
 	// ========= EDIT BUTTON ON CLICK ===========
 	// 
 
@@ -367,18 +383,30 @@ $(document).ready(function () {
 			const id = $(this).data('id')
 			$('#modal-edit-kegiatan').modal('show')
 		} 
+		else if ($('#skkni_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}SKA/edit_ska_action/${id}`)
+			$('#edit-judul-skkni').val($(this).parent().siblings().eq(1).text())
+			$('#edit-deskripsi-skkni').val($(this).parent().siblings().eq(2).text())
+			$('#modal-edit-skkni').modal('show')
+		}  
 	})
 	// End of edit
-
+	
 	// 
 	// ========= DELETE BUTTON ON CLICK ===========
 	// 
-
+	
 	// Each Row Table onClick Delete Button
 	$('table').on('click', '#btn-reject', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
 			$('#delete-kegiatan').modal('show')
+		} 
+		if ($('#skkni_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}SKA/delete_ska/${id}`)
+			$('#modal-delete-skkni').modal('show')
 		} 
 	})
 	// End of delete
