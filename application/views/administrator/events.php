@@ -51,7 +51,7 @@
 										id="filter-tanggal-mulai-kegiatan" data-drops="up"
 										name="filter_tanggal_kegiatan_mulai" value=""
 										placeholder="Pilih tanggal kegiatan" required>
-									<small id="filter-tanggal-mulai-kegiatan" class="form-text text-muted">
+									<small id="filter-tanggal-mulai-kegiatan-label" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
 								</div>
@@ -63,7 +63,7 @@
 										id="filter-tanggal-selesai-kegiatan" data-drops="up"
 										name="filter_tanggal_kegiatan_selesai" value=""
 										placeholder="Pilih tanggal kegiatan" required>
-									<small id="filter-tanggal-selesai-kegiatan" class="form-text text-muted">
+									<small id="filter-tanggal-selesai-kegiatan-label" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
 								</div>
@@ -257,8 +257,11 @@
 	</div>
 	<!-- End modal tambah kegiatan -->
 
+
+	<?php if($kegiatan != null) :
+	foreach($kegiatan as $row) :?>
 	<!-- Edit Kegiatan Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-edit-kegiatan" tabindex="-1" role="dialog">
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-kegiatan<?= $row['id_kegiatan']?>" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -269,16 +272,19 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+					<form method="POST" action="" enctype="multipart/form-data">
 
 						<div class="form-group py-2">
 							<label for="editAkunKegiatan">Akun Kegiatan*</label>
 							<select class="form-control" id="edit-akun-kegiatan" name="id_akun_kegiatan" required>
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if($akun_kegiatan != null):
-								foreach ($akun_kegiatan as $row):?>
-								<option value="<?=$row['id_akun_kegiatan']?>"><?= $row['akun_kegiatan']?></option>
-								<?php endforeach; endif?>
+								foreach ($akun_kegiatan as $row2):
+								 if($row2['id_akun_kegiatan'] == $row['id_akun_kegiatan']) :?>
+								<option value="<?=$row2['id_akun_kegiatan']?>" selected><?= $row2['akun_kegiatan']?></option>
+								<?php else:?>
+								<option value="<?=$row2['id_akun_kegiatan']?>"><?= $row2['akun_kegiatan']?></option>
+								<?php endif;endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -286,9 +292,12 @@
 							<select class="form-control" id="edit-jenis-kegiatan" name="id_jenis_kegiatan" required>
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if($jenis_kegiatan != null):
-								foreach ($jenis_kegiatan as $row):?>
-								<option value="<?=$row['id_jenis_kegiatan']?>"><?= $row['jenis_kegiatan']?></option>
-								<?php endforeach; endif?>
+								foreach ($jenis_kegiatan as $row2):
+									if($row2['id_jenis_kegiatan'] == $row['id_jenis_kegiatan']) :?>
+								<option value="<?=$row2['id_jenis_kegiatan']?>" selected><?= $row2['jenis_kegiatan']?></option>
+										<?php else: ?>
+								<option value="<?=$row2['id_jenis_kegiatan']?>"><?= $row2['jenis_kegiatan']?></option>
+								<?php endif; endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -303,13 +312,13 @@
 						<div class="form-group py-2">
 							<label for="editNamaKegiatan">Nama Kegiatan *</label>
 							<input type="text" class="form-control" id="edit-nama-kegiatan" name="edit_judul_kegiatan"
-								placeholder="Contoh: Kegiatan Pelatihan" required>
+								placeholder="Contoh: Kegiatan Pelatihan" value="<?= $row['judul_kegiatan']?>" required>
 						</div>
 						<div class="form-group py-2">
 							<label for="editDeskripsiKegiatan">Deskripsi Kegiatan *</label>
 							<textarea type="text" class="form-control" id="edit-deskripsi-kegiatan"
 								name="edit_deskripsi_kegiatan"
-								placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
+								placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required><?= $row['deskripsi_kegiatan']?></textarea>
 						</div>
 						<div class="row">
 							<div class="col">
@@ -339,24 +348,28 @@
 						<div class="form-group py-2">
 							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
 							<select class="form-control" id="edit-provinsi-kegiatan" name="id_provinsi"
-								onChange="getState(this.value);" required>
+								onChange="getStateEdit(this.value);" required>
 								<option selected disabled>Pilih Provinsi</option>
-								<?php foreach ($provinsi as $row) : ?>
-								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
-								<?php endforeach ?>
+								<?php if($provinsi != null) :
+									foreach ($provinsi as $row2) :
+										if($row['id_provinsi'] == $row2['id_provinsi']) :?>
+											<option value="<?= $row2['id_provinsi']?>" selected><?= $row2['provinsi']?></option>
+										<?php else:?>
+											<option value="<?= $row2['id_provinsi']?>"><?= $row2['provinsi']?></option>
+								<?php endif; endforeach; endif; ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="editKotaKegiatan">Kota kegiatan *</label>
 							<select class="form-control" id="edit-kota-kegiatan" name="id_kota_kabupaten" required>
-								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
+								<option disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="editLokasiKegiatan">Lokasi Kegiatan *</label>
 							<textarea type="text" class="form-control" id="edit-lokasi-kegiatan"
 								name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun"
-								required></textarea>
+								required><?= $row['lokasi_kegiatan']?></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="editStatusKegiatan">Status kegiatan *</label>
@@ -364,39 +377,56 @@
 								aria-placeholder="Pilih status kegiatan" required>
 								<option selected disabled>Pilih status kegiatan</option>
 								<?php if($status_kegiatan != null):
-								foreach ($status_kegiatan as $row):?>
-								<option value="<?=$row['id_status_kegiatan']?>"><?= $row['status_kegiatan']?></option>
-								<?php endforeach; endif?>
+								foreach ($status_kegiatan as $row2):
+								if($row['id_status_kegiatan'] == $row2['id_status_kegiatan']):?>
+								<option value="<?=$row2['id_status_kegiatan']?>" selected><?= $row2['status_kegiatan']?></option>
+								<?php else :?>
+								<option value="<?=$row2['id_status_kegiatan']?>"><?= $row2['status_kegiatan']?></option>
+								<?php endif;endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="editInstrukturKegiatan">Instruktur kegiatan *</label>
 							<select class="form-control selectpicker" id="edit-instruktur-kegiatan"
-								name="instruktur_kegiatan" aria-placeholder="Pilih instruktur kegiatan" multiple
+								name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple
 								data-live-search="true" required>
-								<option>Antonio</option>
-								<option>Banderas</option>
-								<option>Robin</option>
-								<option>Stevany</option>
-								<option>Levi</option>
+								<?php if($instruktur != null):
+								foreach ($instruktur as $row2):
+									if(count($row['instruktur_kegiatan']) > 0): 
+								 foreach($row['instruktur_kegiatan'] as $row3) :
+								 if($row3['id_tenaga_ahli'] == $row2['id_tenaga_ahli']): ?>
+								<option value="<?=$row2['id_tenaga_ahli']?>" selected><?= $row2['nama_lengkap']?></option>
+								<?php else : ?>
+								<option value="<?=$row2['id_tenaga_ahli']?>"><?= $row2['nama_lengkap']?></option>
+								<?php  endif; endforeach;?>
+								<?php else :?>
+								<option value="<?=$row2['id_tenaga_ahli']?>"><?= $row2['nama_lengkap']?></option>
+								<?php endif; endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="editAssesorKegiatan">Assesor kegiatan *</label>
-							<select class="form-control selectpicker" id="edit-assesor-kegiatan" name="assesor_kegiatan"
+							<select class="form-control selectpicker" id="edit-assesor-kegiatan" name="id_asesor_kegiatan[]"
 								aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
-								<option>Antonio</option>
-								<option>Banderas</option>
-								<option>Robin</option>
-								<option>Stevany</option>
-								<option>Levi</option>
+								<?php if($asesor != null):
+								foreach ($asesor as $row2):
+									if(count($row['asesor_kegiatan']) > 0): 
+								 foreach($row['asesor_kegiatan'] as $row3) :
+								 if($row3['id_tenaga_ahli'] == $row2['id_tenaga_ahli']): ?>
+								<option value="<?=$row2['id_tenaga_ahli']?>" selected><?= $row2['nama_lengkap']?></option>
+								<?php else : ?>
+								<option value="<?=$row2['id_tenaga_ahli']?>"><?= $row2['nama_lengkap']?></option>
+								<?php  endif; endforeach;?>
+								<?php else :?>
+								<option value="<?=$row2['id_tenaga_ahli']?>"><?= $row2['nama_lengkap']?></option>
+								<?php endif; endforeach; endif?>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="editFileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-materi-kegiatan"
-									name="fileMateriKegiatan">
+									name="file_materi_kegiatan">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
 								<small id="file-materi-kegiatan" class="form-text text-muted">
 									File materi adalah opsional
@@ -417,7 +447,7 @@
 	<!-- End modal edit kegiatan -->
 
 	<!-- Delete kegiatan modal -->
-	<div class="modal fade bd-example-modal-lg" id="delete-kegiatan" tabindex="-1" role="dialog"
+	<div class="modal fade bd-example-modal-lg" id="delete-kegiatan<?= $row['id_kegiatan']?>" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -432,7 +462,7 @@
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
-							<button class="btn btn-danger" type="submit">Hapus</button>
+							<a href="<?= base_url()?>Kegiatan/delete_kegiatan/<?= $row['id_kegiatan']?>"><button class="btn btn-danger" type="submit">Hapus</button></a>
 						</div>
 					</form>
 				</div>
@@ -440,6 +470,7 @@
 		</div>
 	</div>
 	<!-- End modal delete kegiatan -->
+	<?php endforeach; endif; ?>
 
 	<!-- Import Excel Tambah Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-kegiatan" tabindex="-1" role="dialog">
