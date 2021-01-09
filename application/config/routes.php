@@ -76,12 +76,12 @@ $route['pupr/events/add'] = "Kegiatan/tambah";
 $route['pupr/events/update/(:any)'] = "Kegiatan/edit/$1";
 
 // Route experts
-$route['pupr/experts/(:any)'] = "Tenaga_ahli/Seluruh/$1";
+$route['pupr/experts'] = "Tenaga_ahli/Seluruh";
 $route['pupr/experts/area/(:any)/(:any)'] = "Tenaga_ahli/daerah/$1/$2";
 $route['pupr/experts/detail/(:any)'] = "Tenaga_ahli/detail/$1";
 
 // Route participant
-$route['pupr/participant/(:any)'] = "Peserta/seluruh/$1";
+$route['pupr/participant'] = "Peserta/seluruh";
 $route['pupr/participant/area/(:any)'] = "Peserta/daerah/$1";
 $route['pupr/participant/detail/(:any)'] = "Peserta/detail/$1";
 

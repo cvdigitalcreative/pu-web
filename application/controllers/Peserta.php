@@ -14,7 +14,7 @@ class Peserta extends CI_Controller
         $this->load->model('User_model');
     }
 
-    public function seluruh($id_jadwal_kegiatan)
+    public function seluruh()
     {
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
@@ -31,17 +31,17 @@ class Peserta extends CI_Controller
                 }
             }
 
-            $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_jadwal_kegiatan, $this->session->userdata('token'));
-            if ($data['peserta'] == null)
-                $null = true;
-            else {
-                if ($data['peserta']['status'] == "Success") {
-                    $data['peserta'] = $data['peserta']['data'];
-                } else {
-                    $data['peserta'] = null;
-                    $this->session->set_flashdata('APImessage', $data['peserta']['message']);
-                }
-            }
+            // $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_jadwal_kegiatan, $this->session->userdata('token'));
+            // if ($data['peserta'] == null)
+            //     $null = true;
+            // else {
+            //     if ($data['peserta']['status'] == "Success") {
+            //         $data['peserta'] = $data['peserta']['data'];
+            //     } else {
+            //         $data['peserta'] = null;
+            //         $this->session->set_flashdata('APImessage', $data['peserta']['message']);
+            //     }
+            // }
             if ($null)
                 $this->load->view('error_page');
 
