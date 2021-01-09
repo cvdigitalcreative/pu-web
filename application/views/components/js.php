@@ -24,6 +24,9 @@
 <script src="<?=base_url('assets/js/daterangepicker/moment.min.js')?>"></script>
 <script src="<?=base_url('assets/js/daterangepicker/daterangepicker.js')?>"></script>
 
+<!-- bootstrap-select -->
+<script src="<?=base_url('assets/js/bootstrap-select/bootstrap-select.min.js')?>"></script>
+
 <script>
     function getState(val) {
         $.ajax({
@@ -32,6 +35,19 @@
             data: 'id_provinsi=' + val,
             success: function(data) {
                 $("#kota-kegiatan").html(data);
+            }
+        });
+    }
+</script>
+
+<script>
+    function getStateEdit(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#edit-kota-kegiatan").html(data);
             }
         });
     }

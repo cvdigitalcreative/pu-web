@@ -36,17 +36,63 @@ class SKA extends CI_Controller
             else {
                 if ($data['ska']['status'] == "Success") {
                     $data['ska'] = $data['ska']['data'];
+                    $data['total_ska'] = count($data['ska']);
                 } else {
                     $data['ska'] = null;
+                    $data['total_ska'] = 0;
                     $this->session->set_flashdata('APImessage', $data['ska']['message']);
                 }
             }
 
             if ($null)
                 $this->load->view('error_page');
-            // $this->load->view("administrator/", $data);
+
+            $this->load->view("administrator/skkni", $data);
         } else
             redirect("pupr/login");
+    }
+
+    public function dataSeluruh()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['ska'] = $this->SKA_model->view_ska($this->session->userdata('token'));
+            if ($data['ska'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['ska']['status'] == "Success") {
+                    if (count($data['ska']['data']) > 0) {
+                        $data['ska'] = $data['ska']['data'];
+
+                        $indexska = 0;
+                        $noska = 1;
+                        foreach ($data['ska'] as $val) {
+                            $data['ska'][$indexska]['no_ska'] = $noska;
+
+                            $indexska++;
+                            $noska++;
+                        }
+                        $callback = array(
+                            'data' => $data['ska']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
     }
 
     public function detail($id_ska)
@@ -122,10 +168,10 @@ class SKA extends CI_Controller
     public function tambah_ska_action()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $judul_ska = $this->input->post('judul_ska');
-            $deskripsi_ska = $this->input->post('deskripsi_ska');
+            $judul_ska = $this->input->post('judul_skkni');
+            $deskripsi_ska = $this->input->post('deskripsi_skkni');
             $id_kategori_ska = $this->input->post('id_kategori_ska');
-            $file_ska = new \CurlFile($_FILES['file_ska']['tmp_name'], $_FILES['file_ska']['type'], $_FILES['file_ska']['name']);
+            $file_ska = new \CurlFile($_FILES['file_skkni']['tmp_name'], $_FILES['file_skkni']['type'], $_FILES['file_skkni']['name']);
 
             $tambah_ska = $this->SKA_model->add_ska(
                 $judul_ska,
@@ -140,10 +186,10 @@ class SKA extends CI_Controller
             }
             if ($tambah_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             }
         } else {
             redirect("pupr/login");
@@ -189,10 +235,13 @@ class SKA extends CI_Controller
     public function edit_ska_action($id_ska)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $judul_ska = $this->input->post('judul_ska');
-            $deskripsi_ska = $this->input->post('deskripsi_ska');
-            $id_kategori_ska = $this->input->post('id_kategori_ska');
-            $file_ska = new \CurlFile($_FILES['file_ska']['tmp_name'], $_FILES['file_ska']['type'], $_FILES['file_ska']['name']);
+            $judul_ska = $this->input->post('judul_skkni');
+            $deskripsi_ska = $this->input->post('deskripsi_skkni');
+            $id_kategori_ska = $this->input->post('id_kategori_skkni');
+            if ($_FILES['file_skkni']['size'] != null)
+                $file_ska = new \CurlFile($_FILES['file_skkni']['tmp_name'], $_FILES['file_skkni']['type'], $_FILES['file_skkni']['name']);
+            else
+                $file_ska = null;
 
             $edit_ska = $this->SKA_model->edit_ska(
                 $judul_ska,
@@ -203,17 +252,15 @@ class SKA extends CI_Controller
                 $this->session->userdata('token')
             );
 
-            var_dump($edit_ska);
-            die;
             if ($edit_ska == null) {
                 $this->load->view('error_page');
             }
             if ($edit_ska['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_ska['message']);
-                redirect();
+                redirect("pupr/skkni");
             }
         } else {
             redirect("pupr/login");
@@ -229,13 +276,33 @@ class SKA extends CI_Controller
             } else {
                 if ($delete_ska['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_ska['message']);
-                    redirect();
+                    redirect("pupr/skkni");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_ska['message']);
-                    redirect();
+                    redirect("pupr/skkni");
                 }
             }
         } else
             redirect("pupr/login");
+    }
+
+    public function download($id_ska)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $SKA = $this->SKA_model->view_ska_detail($id_ska, $this->session->userdata('token'));
+            if ($SKA == null)
+                $this->load->view('error_page');
+            else {
+                if ($SKA['status'] == "Success") {
+                    $data = file_get_contents($SKA['data']['file_ska']);
+                    force_download($SKA['data']['file_ska'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $SKA['message']);
+                    redirect('pupr/skkni');
+                }
+            }
+        } else
+            redirect('pupr/login');
     }
 }
