@@ -34,149 +34,152 @@ class Kegiatan extends CI_Controller
             if ($data['kegiatan'] == null)
                 $null = true;
             else {
-                if ($data['kegiatan']['status'] == "Success") {
-                    $data['kegiatan'] = $data['kegiatan']['data'];
-                    $data['jumlah_seluruh_kegiatan'] = count($data['kegiatan']);
+                // if ($data['kegiatan']['status'] == "Success") {
+                //     $data['kegiatan'] = $data['kegiatan']['data'];
+                //     $data['jumlah_seluruh_kegiatan'] = count($data['kegiatan']);
 
-                    $indexKegiatan = 0;
-                    foreach ($data['kegiatan'] as $val) {
+                //     $indexKegiatan = 0;
+                //     foreach ($data['kegiatan'] as $val) {
 
-                        // ====================== provinsi ===============================
-                        $provinsitemp = $this->Common_model->view_provinsi($this->session->userdata('token'));
-                        if ($provinsitemp == null)
-                            $null = true;
-                        else {
-                            if ($provinsitemp['status'] == 'Success') {
-                                foreach ($provinsitemp['data'] as $val2) {
-                                    if ($val2['provinsi'] == $val['provinsi'])
-                                        $data['kegiatan'][$indexKegiatan]['id_provinsi'] = $val2['id_provinsi'];
-                                }
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
-                            }
-                        }
+                //         // ====================== provinsi ===============================
+                //         $provinsitemp = $this->Common_model->view_provinsi($this->session->userdata('token'));
+                //         if ($provinsitemp == null)
+                //             $null = true;
+                //         else {
+                //             if ($provinsitemp['status'] == 'Success') {
+                //                 foreach ($provinsitemp['data'] as $val2) {
+                //                     if ($val2['provinsi'] == $val['provinsi'])
+                //                         $data['kegiatan'][$indexKegiatan]['id_provinsi'] = $val2['id_provinsi'];
+                //                 }
+                //             } else {
+                //                 $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
+                //             }
+                //         }
 
-                        // ====================== Akun Kegiatan ===============================
-                        $akuntemp = $this->Common_model->view_akun_kegiatan($this->session->userdata('token'));
-                        if ($akuntemp == null)
-                            $null = true;
-                        else {
-                            if ($akuntemp['status'] == 'Success') {
-                                foreach ($akuntemp['data'] as $val2) {
-                                    if ($val2['akun_kegiatan'] == $val['akun_kegiatan'])
-                                        $data['kegiatan'][$indexKegiatan]['id_akun_kegiatan'] = $val2['id_akun_kegiatan'];
-                                }
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
-                            }
-                        }
+                //         // ====================== Akun Kegiatan ===============================
+                //         $akuntemp = $this->Common_model->view_akun_kegiatan($this->session->userdata('token'));
+                //         if ($akuntemp == null)
+                //             $null = true;
+                //         else {
+                //             if ($akuntemp['status'] == 'Success') {
+                //                 foreach ($akuntemp['data'] as $val2) {
+                //                     if ($val2['akun_kegiatan'] == $val['akun_kegiatan'])
+                //                         $data['kegiatan'][$indexKegiatan]['id_akun_kegiatan'] = $val2['id_akun_kegiatan'];
+                //                 }
+                //             } else {
+                //                 $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
+                //             }
+                //         }
 
-                        // ====================== status Kegiatan ===============================
-                        $jenistemp = $this->Common_model->view_jenis_kegiatan($this->session->userdata('token'));
-                        if ($jenistemp == null)
-                            $null = true;
-                        else {
-                            if ($jenistemp['status'] == 'Success') {
-                                foreach ($jenistemp['data'] as $val2) {
-                                    if ($val2['jenis_kegiatan'] == $val['jenis_kegiatan'])
-                                        $data['kegiatan'][$indexKegiatan]['id_jenis_kegiatan'] = $val2['id_jenis_kegiatan'];
-                                }
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
-                            }
-                        }
+                //         // ====================== status Kegiatan ===============================
+                //         $jenistemp = $this->Common_model->view_jenis_kegiatan($this->session->userdata('token'));
+                //         if ($jenistemp == null)
+                //             $null = true;
+                //         else {
+                //             if ($jenistemp['status'] == 'Success') {
+                //                 foreach ($jenistemp['data'] as $val2) {
+                //                     if ($val2['jenis_kegiatan'] == $val['jenis_kegiatan'])
+                //                         $data['kegiatan'][$indexKegiatan]['id_jenis_kegiatan'] = $val2['id_jenis_kegiatan'];
+                //                 }
+                //             } else {
+                //                 $data['kegiatan'][$indexKegiatan]['id_provinsi'] = null;
+                //             }
+                //         }
 
-                        // ======================= tanggal Kegiatan ================================
-                        $tanggal_kegiatan = $val['tanggal_kegiatan'];
-                        $temparr = explode('-', $tanggal_kegiatan);
-                        $indextglreverse = 0;
-                        for ($j = count($temparr) - 1; $j >= 0; $j--) {
-                            $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                            $indextglreverse++;
-                        }
-                        $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan'] = implode('-', $arrtemptanggal);
-                        $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = strtotime($val['tanggal_kegiatan']);
-                        $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text']);
+                //         // ======================= tanggal Kegiatan ================================
+                //         $tanggal_kegiatan = $val['tanggal_kegiatan'];
+                //         $temparr = explode('-', $tanggal_kegiatan);
+                //         $indextglreverse = 0;
+                //         for ($j = count($temparr) - 1; $j >= 0; $j--) {
+                //             $arrtemptanggal[$indextglreverse] = $temparr[$j];
+                //             $indextglreverse++;
+                //         }
+                //         $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan'] = implode('-', $arrtemptanggal);
+                //         $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = strtotime($val['tanggal_kegiatan']);
+                //         $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text']);
 
-                        // ======================= tanggal Kegiatan Selesai ================================
-                        $tanggal_kegiatan_selesai = $val['tanggal_kegiatan_selesai'];
-                        $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
-                        $indextglselesaireverse = 0;
-                        for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
-                            $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
-                            $indextglselesaireverse++;
-                        }
-                        $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai'] = implode('-', $arrtemptanggalselesai);
-                        $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = strtotime($val['tanggal_kegiatan_selesai']);
-                        $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text']);
+                //         // ======================= tanggal Kegiatan Selesai ================================
+                //         $tanggal_kegiatan_selesai = $val['tanggal_kegiatan_selesai'];
+                //         $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
+                //         $indextglselesaireverse = 0;
+                //         for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
+                //             $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
+                //             $indextglselesaireverse++;
+                //         }
+                //         $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai'] = implode('-', $arrtemptanggalselesai);
+                //         $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = strtotime($val['tanggal_kegiatan_selesai']);
+                //         $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text']);
 
-                        // ==================== Instruktur Kegiatan ===========================
-                        $indexInstruktur = 0;
-                        foreach ($data['kegiatan'][$indexKegiatan]['instruktur_kegiatan'] as $val2) {
-                            if ($indexInstruktur == 0) {
-                                $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = $val2['nama'];
-                            } else
-                                $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] . ", " . $val2['nama'];
-                            $indexInstruktur++;
-                        }
+                //         // ==================== Instruktur Kegiatan ===========================
+                //         $indexInstruktur = 0;
+                //         foreach ($data['kegiatan'][$indexKegiatan]['instruktur_kegiatan'] as $val2) {
+                //             if ($indexInstruktur == 0) {
+                //                 $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = $val2['nama'];
+                //             } else
+                //                 $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] . ", " . $val2['nama'];
+                //             $indexInstruktur++;
+                //         }
 
-                        // ==================== Asesor Kegiatan ===========================
-                        $indexAsesor = 0;
-                        foreach ($data['kegiatan'][$indexKegiatan]['asesor_kegiatan'] as $val2) {
-                            if ($indexAsesor == 0) {
-                                $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = $val2['nama'];
-                            } else
-                                $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['asesor_kegiatan']['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
-                            $indexAsesor++;
-                        }
-                        // ==================== pelatih Kegiatan ===========================
-                        $indexPelatih = 0;
-                        foreach ($data['kegiatan'][$indexKegiatan]['pelatih_kegiatan'] as $val2) {
-                            if ($indexPelatih == 0) {
-                                $data['kegiatan'][$indexKegiatan]['str_nama_pelatih_kegiatan'] = $val2['nama'];
-                            } else
-                                $data['kegiatan'][$indexKegiatan]['str_nama_pelatih_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_pelatih_kegiatan'] . ", " . $val2['nama'];
-                            $indexPelatih++;
-                        }
+                //         // ==================== Asesor Kegiatan ===========================
+                //         $indexAsesor = 0;
+                //         foreach ($data['kegiatan'][$indexKegiatan]['asesor_kegiatan'] as $val2) {
+                //             if ($indexAsesor == 0) {
+                //                 $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = $val2['nama'];
+                //             } else
+                //                 $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['asesor_kegiatan']['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
+                //             $indexAsesor++;
+                //         }
+                //         // ==================== pelatih Kegiatan ===========================
+                //         $indexPelatih = 0;
+                //         foreach ($data['kegiatan'][$indexKegiatan]['pelatih_kegiatan'] as $val2) {
+                //             if ($indexPelatih == 0) {
+                //                 $data['kegiatan'][$indexKegiatan]['str_nama_pelatih_kegiatan'] = $val2['nama'];
+                //             } else
+                //                 $data['kegiatan'][$indexKegiatan]['str_nama_pelatih_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_pelatih_kegiatan'] . ", " . $val2['nama'];
+                //             $indexPelatih++;
+                //         }
 
-                        $data['kegiatan'][$indexKegiatan]['berita_acara'] = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['berita_acara'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['berita_acara']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = $data['kegiatan'][$indexKegiatan]['berita_acara']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['berita_acara'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['berita_acara']['message']);
-                            }
-                        }
+                //         $data['kegiatan'][$indexKegiatan]['berita_acara'] = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
+                //         if ($data['kegiatan'][$indexKegiatan]['berita_acara'] == null)
+                //             $null = true;
+                //         else {
+                //             if ($data['kegiatan'][$indexKegiatan]['berita_acara']['status'] == "Success") {
+                //                 $data['kegiatan'][$indexKegiatan]['berita_acara'] = $data['kegiatan'][$indexKegiatan]['berita_acara']['data'];
+                //             } else {
+                //                 $data['kegiatan'][$indexKegiatan]['berita_acara'] = null;
+                //                 $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['berita_acara']['message']);
+                //             }
+                //         }
 
-                        $data['kegiatan'][$indexKegiatan]['invoice'] = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['invoice'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['invoice']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['invoice'] = $data['kegiatan'][$indexKegiatan]['invoice']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['invoice'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['invoice']['message']);
-                            }
-                        }
+                //         $data['kegiatan'][$indexKegiatan]['invoice'] = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
+                //         if ($data['kegiatan'][$indexKegiatan]['invoice'] == null)
+                //             $null = true;
+                //         else {
+                //             if ($data['kegiatan'][$indexKegiatan]['invoice']['status'] == "Success") {
+                //                 $data['kegiatan'][$indexKegiatan]['invoice'] = $data['kegiatan'][$indexKegiatan]['invoice']['data'];
+                //             } else {
+                //                 $data['kegiatan'][$indexKegiatan]['invoice'] = null;
+                //                 $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['invoice']['message']);
+                //             }
+                //         }
 
-                        $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
-                        if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] == null)
-                            $null = true;
-                        else {
-                            if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['status'] == "Success") {
-                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['data'];
-                            } else {
-                                $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = null;
-                                $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['message']);
-                            }
-                        }
-                        $indexKegiatan++;
-                    }
-                } else {
+                //         $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
+                //         if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] == null)
+                //             $null = true;
+                //         else {
+                //             if ($data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['status'] == "Success") {
+                //                 $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['data'];
+                //             } else {
+                //                 $data['kegiatan'][$indexKegiatan]['bukti_pembayaran'] = null;
+                //                 $this->session->set_flashdata('APImessage', $data['kegiatan'][$indexKegiatan]['bukti_pembayaran']['message']);
+                //             }
+                //         }
+                //         $indexKegiatan++;
+                //     }
+                // } 
+                if ($data['kegiatan']['status'] == 'Success')
+                    $data['jumlah_seluruh_kegiatan'] = count($data['kegiatan']['data']);
+                else {
                     $data['kegiatan'] = null;
                     $data['jumlah_seluruh_kegiatan'] = 0;
 
@@ -876,6 +879,7 @@ class Kegiatan extends CI_Controller
             $arrtemptanggal[1] = $tempbulan;
             $arrtemptanggal[2] = $temphari;
             $tanggal_kegiatan_selesai = implode('-', $arrtemptanggal);
+
             $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
             $latitude_lokasi = 0;
             $longitude_lokasi = 0;
@@ -1022,22 +1026,25 @@ class Kegiatan extends CI_Controller
             $judul_kegiatan = $this->input->post('edit_judul_kegiatan');
             $deskripsi_kegiatan = $this->input->post('edit_deskripsi_kegiatan');
             $tanggal_kegiatan = $this->input->post('edit_tanggal_kegiatan');
-            $temparr = explode('-', $tanggal_kegiatan);
-            $indextglreverse = 0;
-            for ($j = count($temparr) - 1; $j >= 0; $j--) {
-                $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                $indextglreverse++;
-            }
+            $temparr = explode('/', $tanggal_kegiatan);
+            $tempbulan = $temparr[0];
+            $temphari = $temparr[1];
+            $temptahun = $temparr[2];
+            $arrtemptanggal[0] = $temptahun;
+            $arrtemptanggal[1] = $tempbulan;
+            $arrtemptanggal[2] = $temphari;
             $tanggal_kegiatan = implode('-', $arrtemptanggal);
 
             $tanggal_kegiatan_selesai = $this->input->post('edit_tanggal_kegiatan_selesai');
-            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
-            $indextglselesaireverse = 0;
-            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
-                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
-                $indextglselesaireverse++;
-            }
-            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
+            $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
+            $tempbulan = $temparrselesai[0];
+            $temphari = $temparrselesai[1];
+            $temptahun = $temparrselesai[2];
+            $arrtemptanggal[0] = $temptahun;
+            $arrtemptanggal[1] = $tempbulan;
+            $arrtemptanggal[2] = $temphari;
+            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggal);
+
             $lokasi_kegiatan = $this->input->post('edit_lokasi_kegiatan');
             $latitude_lokasi = 0;
             $longitude_lokasi = 0;
