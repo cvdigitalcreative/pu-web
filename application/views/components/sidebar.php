@@ -40,13 +40,13 @@
 	</li>
 
 	<!-- Nav Item - Peserta -->
-	<li class="nav-item <?=$this->uri->segment(2) == 'participant' ? 'active' : ''?>">
+	<!-- <li class="nav-item <?=$this->uri->segment(2) == 'participant' ? 'active' : ''?>">
 		<a class="nav-link <?=$this->uri->segment(2) == 'participant' ? 'disabled' : ''?>"
 			href="<?=base_url('pupr/participant')?>">
 			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/peserta-menu.svg')?>">
 			<span>Peserta</span>
 		</a>
-	</li>
+	</li> -->
 
 	<!-- Nav Item - Buku Saku -->
 	<li class="nav-item <?=$this->uri->segment(2) == 'pocketbook' ? 'active' : ''?>">
