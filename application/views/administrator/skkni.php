@@ -41,7 +41,7 @@
 								</small>
 							</div>
 						</div>
-                        <div class="form-group py-2">
+          <div class="form-group py-2">
 						<label for="namaKategoriSkkni">Kategori Skkni *</label>
 							<select class="form-control" id="kategori-skkni" name="id_kategori_skkni" required>
 								<option selected disabled>Pilih kategori skkni</option>
@@ -97,7 +97,7 @@
 								</small>
 							</div>
 						</div>
-                        <div class="form-group py-2">
+            <div class="form-group py-2">
 							<label for="namaKategoriSkkni">Kategori Skkni *</label>
 							<select class="form-control" id="edit-kategori-skkni" name="id_kategori_skkni" required>
 								<option selected disabled>Pilih kategori skkni</option>
