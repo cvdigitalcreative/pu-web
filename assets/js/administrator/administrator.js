@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$('#notification-modal').ready(function () {
 		$('#notification-modal').modal('show')
 	})
-	
+
 	// upload image kalender kegiatan js
 	$("#banner-image").click(function (e) {
 		$("#banner-kegiatan").click();
@@ -115,6 +115,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -127,14 +128,10 @@ $(document).ready(function () {
 				data: 'no_kegiatan',
 			},
 			{
-				data: 'tanggal_kegiatan_full_text',
+				data: 'judul_kegiatan',
 			},
 			{
-				data: 'foto_banner_kegiatan',
-				render: function (data) {
-					return `
-					<img src="${data}" style="width: 200px; height: 200px; overflow: hidden;">`
-				}
+				data: 'deskripsi_kegiatan',
 			},
 			{
 				data: 'jenis_kegiatan',
@@ -143,10 +140,17 @@ $(document).ready(function () {
 				data: 'akun_kegiatan',
 			},
 			{
+				data: 'tanggal_kegiatan_full_text',
+			},
+			{
 				data: 'status_kegiatan',
 			},
 			{
-				data: 'judul_kegiatan',
+				data: 'foto_banner_kegiatan',
+				render: function (data) {
+					return `
+					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden;">`
+				}
 			},
 			{
 				data: 'str_nama_instruktur_kegiatan',
@@ -188,6 +192,11 @@ $(document).ready(function () {
 		]
 	});
 	// End of Kalender kegiatan datatable 
+
+	// Daftar Peserta by Kalender Kegiatan Datatable
+	$('#daftar_peserta_table').DataTable({
+	});
+	// End of Daftar Peserta by Kalender Kegiatan datatable 
 
 	// Tenaga Ahli Datatable
 	$('#tenaga_ahli_table').DataTable({
@@ -328,12 +337,14 @@ $(document).ready(function () {
 	});
 	// End of Mitra Terampil datatable 
 
+
 	// SKKNI Datatable
 	$('#skkni_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -385,6 +396,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -436,6 +448,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -484,6 +497,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -623,9 +637,9 @@ $(document).ready(function () {
 
 	// Each Row Table onClick Edit Button
 	$('table').on('click', '#btn-detail', function () {
-		if ($('#kalender_kegiatan_table').length > 0) {
+		if ($('#daftar_peserta_table').length > 0) {
 			const id = $(this).data('id')
-			$('#modal-edit-kegiatan').modal('show')
+			$('#modal-lihat-peserta-by-kegiatan').modal('show')
 		} 
 		if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')

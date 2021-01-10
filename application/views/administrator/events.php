@@ -428,12 +428,12 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url()?>Kegiatan/import_kegiatan_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan"
-									name="fileExcelTambahKegiatan">
+									name="file_excel_import_kegiatan" required>
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah kegiatan
@@ -452,6 +452,76 @@
 		</div>
 	</div>
 	<!-- End of Import Excel Tambah Kegiatan Modal -->
+
+	<!-- Lihat peserta Modal -->
+	<div class="modal fade" id="modal-lihat-peserta-by-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-daftar-peserta-kegiatan-custom" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Daftar Peserta Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="daftar_peserta_table" class="display">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Foto</th>
+										<th>Nama</th>
+										<th>Jenis Kelamin</th>
+										<th>Tempat & Tanggal Lahir</th>
+										<th>Status Perkawinan</th>
+										<th>Nama Perusahaan</th>
+										<th>Jabatan</th>
+										<th>Utusan</th>
+										<th>Email</th>
+										<th>Nomor Hp</th>
+										<th>Nomor Telepon Rumah</th>
+										<th>NIK</th>
+										<th>Alamat</th>
+										<th>Provinsi</th>
+										<th>Kabupaten / Kota</th>
+										<th>Kecamatan</th>
+										<th>Kelurahan</th>
+										<th>Rt</th>
+										<th>Rw</th>
+										<th>Kode POS</th>
+										<th>Kode Area</th>
+										<th>Status Rumah</th>
+										<th>Pendidikan</th>
+										<th>Aksi</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of lihat peserta Modal -->
+
+	<!-- Modal show image -->
+	<div id="show-image-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<img class="showimage img-responsive" src="" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal show image -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -562,12 +632,12 @@
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
-							<button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
+							<a href="<?= base_url()?>Kegiatan/export_kegiatan_action"><button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button></a>
 						</div>
 						<div class="">
-							<button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button>
+							<a href="<?= base_url()?>Kegiatan/download_format_excel_action"><button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
 						</div>
 						</div>
 						<div class="card-body">
@@ -576,12 +646,13 @@
 									<thead>
 										<tr>
 											<th>No</th>
-											<th>Tanggal Kegiatan</th>
-											<th>Banner Kegiatan</th>
-											<th>Jenis Kegiatan</th>
-											<th>Akun Kegiatan</th>
-											<th>Status Kegiatan</th>
 											<th>Nama Kegiatan</th>
+											<th>Deskripsi Kegiatan</th>
+											<th>Akun Kegiatan</th>
+											<th>Jenis Kegiatan</th>
+											<th>Tanggal Kegiatan</th>
+											<th>Status Kegiatan</th>
+											<th>Banner Kegiatan</th>
 											<th>Instruktur Kegiatan</th>
 											<th>Assesor Kegiatan</th>
 											<th>Provinsi Kegiatan</th>
