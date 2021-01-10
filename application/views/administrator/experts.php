@@ -464,7 +464,7 @@
 											</div>
 											<div class="row no-gutters align-items-center">
 
-												<div class="h5 mb-0 mr-3 text-gray-800">100 Tenaga Ahli</div>
+												<div class="h5 mb-0 mr-3 text-gray-800"><?= $total_tenaga_ahli?> Tenaga Ahli</div>
 
 											</div>
 										</div>
@@ -483,7 +483,7 @@
 											</div>
 											<div class="row no-gutters align-items-center">
 
-												<div class="h5 mb-0 mr-3 text-gray-800">200 Mitra Terampil</div>
+												<div class="h5 mb-0 mr-3 text-gray-800"><?= $total_tenaga_terampil?> Mitra Terampil</div>
 
 											</div>
 										</div>
@@ -498,7 +498,7 @@
 						<div class="col d-flex justify-content-between button-field">
 						<div class="">
 							<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal"
-								data-target="#modal-filter-kegiatan"><img class="img-profile mr-2"
+								data-target="#modal-filter-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
 							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
 								data-target="#modal-tambah-kegiatan"><img class="img-profile mr-2"
@@ -545,18 +545,17 @@
                                                 <th>Kabupaten / kota</th>
                                                 <th>Ketenagakerjaan</th>
                                                 <th>Keahlian</th>
-                                                <th>Sertifikat Keahlian</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                     </table>
                                 </div>
-
+								
                                 <div class="table-responsive tab-pane fade" role="tabpanel" id="mitra-terampil">
-                                    <table id="mitra_terampil_table" class="display">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
+									<table id="mitra_terampil_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
                                                 <th>Nama</th>
                                                 <th>Jenis Kelamin</th>
                                                 <th>Tempat Lahir</th>
@@ -568,14 +567,13 @@
                                                 <th>Alamat</th>
                                                 <th>Provinsi</th>
                                                 <th>Kabupaten / kota</th>
+												<th>Ketenagakerjaan</th>
                                                 <th>Keterampilan</th>
-                                                <th>Sertifikat Keterampilan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                     </table>
-                                </div>
-
+                                </div>		
                             </div>
 
 						</div>
