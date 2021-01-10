@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$('#notification-modal').ready(function () {
 		$('#notification-modal').modal('show')
 	})
-	
+
 	// upload image kalender kegiatan js
 	$("#banner-image").click(function (e) {
 		$("#banner-kegiatan").click();
@@ -127,14 +127,10 @@ $(document).ready(function () {
 				data: 'no_kegiatan',
 			},
 			{
-				data: 'tanggal_kegiatan_full_text',
+				data: 'judul_kegiatan',
 			},
 			{
-				data: 'foto_banner_kegiatan',
-				render: function (data) {
-					return `
-					<img src="${data}" style="width: 200px; height: 200px; overflow: hidden;">`
-				}
+				data: 'deskripsi_kegiatan',
 			},
 			{
 				data: 'jenis_kegiatan',
@@ -143,10 +139,17 @@ $(document).ready(function () {
 				data: 'akun_kegiatan',
 			},
 			{
+				data: 'tanggal_kegiatan_full_text',
+			},
+			{
 				data: 'status_kegiatan',
 			},
 			{
-				data: 'judul_kegiatan',
+				data: 'foto_banner_kegiatan',
+				render: function (data) {
+					return `
+					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden;">`
+				}
 			},
 			{
 				data: 'str_nama_instruktur_kegiatan',
