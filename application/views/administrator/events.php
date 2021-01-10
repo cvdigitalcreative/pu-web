@@ -566,8 +566,8 @@
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
 						</div>
 						<div class="">
-							<button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button>
+							<a href="<?= base_url()?>Kegiatan/download_format_excel_action"><button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
 						</div>
 						</div>
 						<div class="card-body">
