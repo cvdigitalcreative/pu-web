@@ -73,7 +73,6 @@ class Common_model extends CI_Model
         return $this->http_request_get("/modul", $token);
     }
 
-    //blm done
     public function view_kategori_tenaga_ahli($token)
     {
         return $this->http_request_get("/kategori-tenaga-ahli", $token);

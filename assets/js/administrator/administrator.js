@@ -304,11 +304,140 @@ $(document).ready(function () {
 
 	// Tenaga Ahli Datatable
 	$('#tenaga_ahli_table').DataTable({
-	});
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Tenaga_ahli/dataTenagaAhli`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_tenaga_ahli',
+			},
+			{
+				data: 'nama_lengkap',
+			},
+			{
+				data: 'jenis_kelamin',
+			},
+			{
+				data: 'tempat_lahir',
+			},
+			{
+				data: 'tanggal_lahir_text',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_handphone',
+			},
+			{
+				data: 'no_telpon_rumah',
+			},
+			{
+				data: 'nik',
+			},
+			{
+				data: 'alamat_rumah',
+			},
+			{
+				data: 'provinsi',
+			},
+			{
+				data: 'kabupaten_kota',
+			},
+			{
+				data: 'ketenagakerjaan',
+			},
+			{
+				data: 'keahlian',
+			},
+			{
+				data: 'id_tenaga_ahli',
+				render: function (data) {
+					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	}	
+	);
 	// End of Tenaga Ahli datatable 
 
 	// Mitra Terampil Datatable
 	$('#mitra_terampil_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Tenaga_ahli/dataTenagaTerampil`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_tenaga_ahli',
+			},
+			{
+				data: 'nama_lengkap',
+			},
+			{
+				data: 'jenis_kelamin',
+			},
+			{
+				data: 'tempat_lahir',
+			},
+			{
+				data: 'tanggal_lahir_text',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_handphone',
+			},
+			{
+				data: 'no_telpon_rumah',
+			},
+			{
+				data: 'nik',
+			},
+			{
+				data: 'alamat_rumah',
+			},
+			{
+				data: 'provinsi',
+			},
+			{
+				data: 'kabupaten_kota',
+			},
+			{
+				data: 'ketenagakerjaan',
+			},
+			{
+				data: 'keahlian',
+			},
+			{
+				data: 'id_tenaga_ahli',
+				render: function (data) {
+					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
 	});
 	// End of Mitra Terampil datatable 
 

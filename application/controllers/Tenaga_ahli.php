@@ -30,17 +30,27 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
-            // $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($id_kategori_tenaga_ahli, $this->session->userdata('token'));
-            // if ($data['tenaga_ahli'] == null)
-            //     $null = true;
-            // else {
-            //     if ($data['tenaga_ahli']['status'] == "Success") {
-            //         $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
-            //     } else {
-            //         $data['tenaga_ahli'] = null;
-            //         $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
-            //     }
-            // }
+            $data['total_tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+            if ($data['total_tenaga_ahli'] == null)
+                $null = true;
+            else {
+                if ($data['total_tenaga_ahli']['status'] == "Success")
+                    $data['total_tenaga_ahli'] = count($data['total_tenaga_ahli']['data']);
+                else
+                    $data['total_tenaga_ahli'] = 0;
+                $this->session->set_flashdata('APImessage', $data['total_tenaga_ahli']['message']);
+            }
+            $data['total_tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+            if ($data['total_tenaga_terampil'] == null)
+                $null = true;
+            else {
+                if ($data['total_tenaga_terampil']['status'] == "Success")
+                    $data['total_tenaga_terampil'] = count($data['total_tenaga_terampil']['data']);
+                else {
+                    $data['total_tenaga_terampil'] = 0;
+                    $this->session->set_flashdata('APImessage', $data['total_tenaga_terampil']['message']);
+                }
+            }
 
             $this->load->view("administrator/experts", $data);
 
@@ -48,6 +58,145 @@ class Tenaga_ahli extends CI_Controller
                 $this->load->view('error_page');
         } else
             redirect("pupr/login");
+    }
+
+    public function dataTenagaAhli()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+            if ($data['tenaga_ahli'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['tenaga_ahli']['status'] == "Success") {
+                    if (count($data['tenaga_ahli']['data']) > 0) {
+                        $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+
+                        $indexTenagaAhli = 0;
+                        $noTenagaAhli = 1;
+
+                        foreach ($data['tenaga_ahli'] as $val) {
+                            $data['tenaga_ahli'][$indexTenagaAhli]['no_tenaga_ahli'] = $noTenagaAhli;
+
+                            // ======================= tanggal lahir ================================
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = date("d F Y", $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text']);
+
+                            if ($val['is_asesor'] == true && $val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor & Instruktur";
+                            else if ($val['is_asesor'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor";
+                            else if ($val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Instruktur";
+                            else
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "-";
+
+                            $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "";
+                            $indexjabker = 0;
+                            if (count($val['jabker']) != null) {
+                                foreach ($val['jabker'] as $val2) {
+                                    if ($indexjabker == 0)
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $val2['nama_jabker'];
+                                    else
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] . ", " . $val2['nama_jabker'];
+                                    $indexjabker++;
+                                }
+                            } else {
+                                $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "-";
+                            }
+                            $indexTenagaAhli++;
+                            $noTenagaAhli++;
+                        }
+                        $callback = array(
+                            'data' => $data['tenaga_ahli']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+    public function dataTenagaTerampil()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+            if ($data['tenaga_ahli'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['tenaga_ahli']['status'] == "Success") {
+                    if (count($data['tenaga_ahli']['data']) > 0) {
+                        $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+
+                        $indexTenagaAhli = 0;
+                        $noTenagaAhli = 1;
+
+                        foreach ($data['tenaga_ahli'] as $val) {
+                            $data['tenaga_ahli'][$indexTenagaAhli]['no_tenaga_ahli'] = $noTenagaAhli;
+
+                            // ======================= tanggal lahir ================================
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = date("d F Y", $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text']);
+
+                            if ($val['is_asesor'] == true && $val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor & Instruktur";
+                            else if ($val['is_asesor'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor";
+                            else if ($val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Instruktur";
+                            else
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "-";
+
+
+                            $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "";
+                            $indexjabker = 0;
+                            if (count($val['jabker']) != null) {
+                                foreach ($val['jabker'] as $val2) {
+                                    if ($indexjabker == 0)
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $val2['nama_jabker'];
+                                    else
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] . ", " . $val2['nama_jabker'];
+                                    $indexjabker++;
+                                }
+                            } else {
+                                $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "-";
+                            }
+
+                            $indexTenagaAhli++;
+                            $noTenagaAhli++;
+                        }
+                        $callback = array(
+                            'data' => $data['tenaga_ahli']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
     }
 
     public function daerah($id_provinsi, $id_kategori_tenaga_ahli)
