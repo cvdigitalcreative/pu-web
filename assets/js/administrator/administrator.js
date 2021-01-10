@@ -189,6 +189,11 @@ $(document).ready(function () {
 	});
 	// End of Kalender kegiatan datatable 
 
+	// Daftar Peserta by Kalender Kegiatan Datatable
+	$('#daftar_peserta_table').DataTable({
+	});
+	// End of Daftar Peserta by Kalender Kegiatan datatable 
+
 	// Tenaga Ahli Datatable
 	$('#tenaga_ahli_table').DataTable({
 	});
@@ -198,6 +203,7 @@ $(document).ready(function () {
 	$('#mitra_terampil_table').DataTable({
 	});
 	// End of Mitra Terampil datatable 
+
 
 	// SKKNI Datatable
 	$('#skkni_table').DataTable({
@@ -494,9 +500,9 @@ $(document).ready(function () {
 
 	// Each Row Table onClick Edit Button
 	$('table').on('click', '#btn-detail', function () {
-		if ($('#kalender_kegiatan_table').length > 0) {
+		if ($('#daftar_peserta_table').length > 0) {
 			const id = $(this).data('id')
-			$('#modal-edit-kegiatan').modal('show')
+			$('#modal-lihat-peserta-by-kegiatan').modal('show')
 		} 
 		if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
