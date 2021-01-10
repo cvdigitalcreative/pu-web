@@ -189,6 +189,16 @@ $(document).ready(function () {
 	});
 	// End of Kalender kegiatan datatable 
 
+	// Tenaga Ahli Datatable
+	$('#tenaga_ahli_table').DataTable({
+	});
+	// End of Tenaga Ahli datatable 
+
+	// Mitra Terampil Datatable
+	$('#mitra_terampil_table').DataTable({
+	});
+	// End of Mitra Terampil datatable 
+
 	// SKKNI Datatable
 	$('#skkni_table').DataTable({
 		"order": [0, 'asc'],
