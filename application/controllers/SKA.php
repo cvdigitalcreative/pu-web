@@ -35,12 +35,23 @@ class SKA extends CI_Controller
                 $null = true;
             else {
                 if ($data['ska']['status'] == "Success") {
-                    $data['ska'] = $data['ska']['data'];
-                    $data['total_ska'] = count($data['ska']);
+                    $data['total_ska'] = count($data['ska']['data']);
                 } else {
-                    $data['ska'] = null;
                     $data['total_ska'] = 0;
                     $this->session->set_flashdata('APImessage', $data['ska']['message']);
+                }
+            }
+
+            // ===================== data for form =========================
+            $data['kategori_ska'] = $this->Common_model->view_skkni_ska($this->session->userdata('token'));
+            if ($data['kategori_ska'] == null)
+                $null = true;
+            else {
+                if ($data['kategori_ska']['status'] == "Success") {
+                    $data['kategori_ska'] = $data['kategori_ska']['data'];
+                } else {
+                    $data['kategori_ska'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kategori_ska']['message']);
                 }
             }
 
@@ -130,47 +141,12 @@ class SKA extends CI_Controller
             redirect("pupr/login");
     }
 
-    public function tambah()
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['kategori_ska'] = $this->Common_model->view_skkni_ska($this->session->userdata('token'));
-            if ($data['kategori_ska'] == null)
-                $null = true;
-            else {
-                if ($data['kategori_ska']['status'] == "Success") {
-                    $data['kategori_ska'] = $data['kategori_ska']['data'];
-                } else {
-                    $data['kategori_ska'] = null;
-                    $this->session->set_flashdata('APImessage', $data['kategori_ska']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
     public function tambah_ska_action()
     {
         if ($this->session->userdata('logged_in') == true) {
             $judul_ska = $this->input->post('judul_skkni');
             $deskripsi_ska = $this->input->post('deskripsi_skkni');
-            $id_kategori_ska = $this->input->post('id_kategori_ska');
+            $id_kategori_ska = $this->input->post('id_kategori_skkni');
             $file_ska = new \CurlFile($_FILES['file_skkni']['tmp_name'], $_FILES['file_skkni']['type'], $_FILES['file_skkni']['name']);
 
             $tambah_ska = $this->SKA_model->add_ska(
@@ -196,52 +172,27 @@ class SKA extends CI_Controller
         }
     }
 
-    public function edit()
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['kategori_ska'] = $this->Common_model->view_skkni_ska($this->session->userdata('token'));
-            if ($data['kategori_ska'] == null)
-                $null = true;
-            else {
-                if ($data['kategori_ska']['status'] == "Success") {
-                    $data['kategori_ska'] = $data['kategori_ska']['data'];
-                } else {
-                    $data['kategori_ska'] = null;
-                    $this->session->set_flashdata('APImessage', $data['kategori_ska']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
     //blm done
     public function edit_ska_action($id_ska)
     {
         if ($this->session->userdata('logged_in') == true) {
             $judul_ska = $this->input->post('judul_skkni');
             $deskripsi_ska = $this->input->post('deskripsi_skkni');
-            $id_kategori_ska = $this->input->post('id_kategori_skkni');
             if ($_FILES['file_skkni']['size'] != null)
-                $file_ska = new \CurlFile($_FILES['file_skkni']['tmp_name'], $_FILES['file_skkni']['type'], $_FILES['file_skkni']['name']);
+            $file_ska = new \CurlFile($_FILES['file_skkni']['tmp_name'], $_FILES['file_skkni']['type'], $_FILES['file_skkni']['name']);
             else
-                $file_ska = null;
+            $file_ska = null;
+
+            if ($this->input->post('id_kategori_skkni') != null)
+                $id_kategori_ska = $this->input->post('id_kategori_skkni');
+            else {
+                $id_kategori_ska = $this->input->post('id_kategori_skkni_old');
+                $kategoritemp = $this->Common_model->view_skkni_ska($this->session->userdata('token'));
+                foreach ($kategoritemp['data'] as $val) {
+                    if ($val['kategori_skkni'] == $id_kategori_ska)
+                    $id_kategori_ska = $val['id_kategori_skkni'];
+                }
+            }
 
             $edit_ska = $this->SKA_model->edit_ska(
                 $judul_ska,
