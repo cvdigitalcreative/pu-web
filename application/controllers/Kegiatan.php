@@ -945,7 +945,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $file_excel_import_kegiatan = new \CurlFile($_FILES['file_excel_import_kegiatan']['tmp_name'], $_FILES['file_excel_import_kegiatan']['type'], $_FILES['file_excel_import_kegiatan']['name']);
 
-            $import = $this->Kegiatan_model->import_kegiatan_excel($file_excel_import_kegiatan, 'haloha', $this->session->userdata('token'));
+            $import = $this->Kegiatan_model->import_kegiatan_excel($file_excel_import_kegiatan, $this->session->userdata('token'));
             if ($import == null)
                 $this->load->view('error_page');
             else {
@@ -1213,7 +1213,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $judul_kegiatan = $this->input->post('edit_judul_kegiatan');
             $deskripsi_kegiatan = $this->input->post('edit_deskripsi_kegiatan');
-            $tanggal_kegiatan = $this->input->post('edit_tanggal_kegiatan');
+            $tanggal_kegiatan = $this->input->post('edit_tanggal_kegiatan_mulai');
             $temparr = explode('/', $tanggal_kegiatan);
             $tempbulan = $temparr[0];
             $temphari = $temparr[1];
