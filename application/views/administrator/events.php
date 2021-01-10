@@ -7,29 +7,6 @@
 
 <body id="page-top">
 
-	<!-- Modal Notification -->
-	<?php if ($this->session->flashdata('')): ?>
-	<div class="modal fade" id="notification-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Information</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body" id="modalMessage">
-					<?= $this->session->flashdata(''); ?>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php endif ?>
-
 	<!-- Filter Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-filter-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -574,7 +551,8 @@
 					</div>
 
 					<div class="container-fluid mt-2 mb-4 container-background">
-						<div class="col button-field">
+						<div class="col d-flex justify-content-between button-field">
+						<div class="">
 							<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal"
 								data-target="#modal-filter-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
@@ -584,6 +562,13 @@
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Kegiatan</button>
+							<button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Kegiatan</button>
+						</div>
+						<div class="">
+							<button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button>
+						</div>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
