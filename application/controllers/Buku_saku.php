@@ -34,10 +34,8 @@ class Buku_saku extends CI_Controller
                 $null = true;
             else {
                 if ($data['buku_saku']['status'] == "Success") {
-                    $data['buku_saku'] = $data['buku_saku']['data'];
-                    $data['total_buku_saku'] = count($data['buku_saku']);
+                    $data['total_buku_saku'] = count($data['buku_saku']['data']);
                 } else {
-                    $data['buku_saku'] = null;
                     $data['total_buku_saku'] = 0;
                     $this->session->set_flashdata('APImessage', $data['buku_saku']['message']);
                 }
@@ -66,7 +64,7 @@ class Buku_saku extends CI_Controller
 
                         $indexBukuSaku = 0;
                         $noBukuSaku = 1;
-                        foreach ($data['buku_saku'] as $val){
+                        foreach ($data['buku_saku'] as $val) {
                             $data['buku_saku'][$indexBukuSaku]['no_buku_saku'] = $noBukuSaku;
 
                             $indexBukuSaku++;
@@ -164,7 +162,10 @@ class Buku_saku extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $judul_buku_saku = $this->input->post('judul_buku_saku');
             $deskripsi_buku_saku = $this->input->post('deskripsi_buku_saku');
-            $file_buku_saku = new \CurlFile($_FILES['file_buku_saku']['tmp_name'], $_FILES['file_buku_saku']['type'], $_FILES['file_buku_saku']['name']);
+            if ($_FILES['file_buku_saku']['size'] > 0)
+                $file_buku_saku = new \CurlFile($_FILES['file_buku_saku']['tmp_name'], $_FILES['file_buku_saku']['type'], $_FILES['file_buku_saku']['name']);
+            else
+                $file_buku_saku = null;
 
             $edit_buku_saku = $this->Buku_Saku_model->edit_buku_saku(
                 $judul_buku_saku,
@@ -173,8 +174,7 @@ class Buku_saku extends CI_Controller
                 $id_buku_saku,
                 $this->session->userdata('token')
             );
-            var_dump($edit_buku_saku);
-            die;
+
             if ($edit_buku_saku == null) {
                 $this->load->view('error_page');
             }

@@ -428,12 +428,12 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url()?>Kegiatan/import_kegiatan_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan"
-									name="fileExcelTambahKegiatan">
+									name="file_excel_import_kegiatan" required>
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah kegiatan
@@ -617,12 +617,12 @@
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
-							<button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
+							<a href="<?= base_url()?>Kegiatan/export_kegiatan_action"><button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button></a>
 						</div>
 						<div class="">
-							<button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button>
+							<a href="<?= base_url()?>Kegiatan/download_format_excel_action"><button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
 						</div>
 						</div>
 						<div class="card-body">

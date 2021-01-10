@@ -191,9 +191,19 @@ $(document).ready(function () {
 
 	// Daftar Peserta by Kalender Kegiatan Datatable
 	$('#daftar_peserta_table').DataTable({
-		
 	});
-	// End of KDaftar Peserta by Kalender Kegiatan datatable 
+	// End of Daftar Peserta by Kalender Kegiatan datatable 
+
+	// Tenaga Ahli Datatable
+	$('#tenaga_ahli_table').DataTable({
+	});
+	// End of Tenaga Ahli datatable 
+
+	// Mitra Terampil Datatable
+	$('#mitra_terampil_table').DataTable({
+	});
+	// End of Mitra Terampil datatable 
+
 
 	// SKKNI Datatable
 	$('#skkni_table').DataTable({
@@ -217,6 +227,9 @@ $(document).ready(function () {
 			},
 			{
 				data: 'deskripsi_ska',
+			},
+			{
+				data: 'kategori_ska',
 			},
 			{
 				data: 'nama_file_ska',
@@ -267,6 +280,9 @@ $(document).ready(function () {
 				data: 'deskripsi_modul',
 			},
 			{
+				data: 'kategori_modul',
+			},
+			{
 				data: 'nama_file_modul',
 			},
 			{
@@ -283,8 +299,8 @@ $(document).ready(function () {
 				data: 'id_modul',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
@@ -331,8 +347,8 @@ $(document).ready(function () {
 				data: 'id_buku_saku',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
@@ -379,8 +395,8 @@ $(document).ready(function () {
 				data: 'id_administrasi_kegiatan',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
@@ -512,7 +528,30 @@ $(document).ready(function () {
 			$('form').attr('action', `${BASE_URL}SKA/edit_ska_action/${id}`)
 			$('#edit-judul-skkni').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-skkni').val($(this).parent().siblings().eq(2).text())
+			$('#edit-id-kategori-skkni-old').val($(this).parent().siblings().eq(3).text())
 			$('#modal-edit-skkni').modal('show')
+		}  
+		else if ($('#modul_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Modul/edit_modul_action/${id}`)
+			$('#edit-judul-modul').val($(this).parent().siblings().eq(1).text())
+			$('#edit-deskripsi-modul').val($(this).parent().siblings().eq(2).text())
+			$('#edit-id-kategori-modul-old').val($(this).parent().siblings().eq(3).text())
+			$(`#modal-edit-modul`).modal('show')
+		} 
+		else if ($('#administrasi_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Administrasi_kegiatan/edit_administrasi_kegiatan_action/${id}`)
+			$('#edit-judul-administrasi-kegiatan').val($(this).parent().siblings().eq(1).text())
+			$('#edit-deskripsi-administrasi-kegiatan').val($(this).parent().siblings().eq(2).text())
+			$(`#modal-edit-administrasi-kegiatan`).modal('show')
+		} 
+		else if ($('#buku_saku_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Buku_saku/edit_buku_saku_action/${id}`)
+			$('#edit-judul-buku-saku').val($(this).parent().siblings().eq(1).text())
+			$('#edit-deskripsi-buku-saku').val($(this).parent().siblings().eq(2).text())
+			$('#modal-edit-buku-saku').modal('show')
 		}  
 	})
 	// End of edit
@@ -528,11 +567,26 @@ $(document).ready(function () {
 			$('form').attr('action', `${BASE_URL}Kegiatan/delete_kegiatan/${id}`)
 			$(`#delete-kegiatan`).modal('show')
 		} 
-		if ($('#skkni_table').length > 0) {
+		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}SKA/delete_ska/${id}`)
 			$('#modal-delete-skkni').modal('show')
+		}
+		else if ($('#modul_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Modul/delete_modul/${id}`)
+			$('#modal-delete-modul').modal('show')
 		} 
+		else if ($('#administrasi_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Administrasi_kegiatan/delete_administrasi_kegiatan/${id}`)
+			$('#modal-delete-administrasi-kegiatan').modal('show')
+    }
+		else if ($('#buku_saku_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Buku_saku/delete_buku_saku/${id}`)
+			$('#modal-delete-buku-saku').modal('show')
+	 } 
 	})
 	// End of delete
 });

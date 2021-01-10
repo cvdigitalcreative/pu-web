@@ -7,7 +7,7 @@
 
 <body id="page-top">
 
-	<!-- Tambah Kegiatan Modal -->
+	<!-- Tambah administrasi Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-tambah-administrasi-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -41,12 +41,6 @@
 								</small>
 							</div>
 						</div>
-                        <div class="form-group py-2">
-							<label for="namaPengirimAdministrasiKegiatan">Pengirim *</label>
-							<select class="form-control" id="pengirim-administrasi-kegiatan" name="nama_pengirim_administrasi_kegiatan" required>
-								<option selected disabled>Pilih nama pengirim</option>
-							</select>
-						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
                             Administrasi Kegiatan</button>
@@ -57,6 +51,76 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Edit administrasi Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-administrasi-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Administrasi Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="judulAdministrasiKegiatan">Judul Administrasi Kegiatan *</label>
+							<input type="text" class="form-control" id="edit-judul-administrasi-kegiatan" name="judul_administrasi_kegiatan"
+								placeholder="Contoh: Administrasi kegiatan pelatihan" required>
+						</div>
+						<div class="form-group py-2">
+							<label for="deskripsiAdministrasiKegiatan">Deskripsi Administrasi Kegiatan *</label>
+							<textarea type="text" class="form-control" id="edit-deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
+								placeholder="Contoh: Ini adalah deskripsi administrasi kegiatan pelatihan" required></textarea>
+						</div>
+						<div class="form-group py-2">
+							<label for="fileAdministrasiKegiatan">File Administrasi Kegiatan *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="edit-file-administrasi-kegiatan"
+									name="file_administrasi_kegiatan">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file administrasi kegiatan...</label>
+								<small id="file-administrasi-kegiatan" class="form-text text-muted">
+									Pilih file administrasi kegiatan yang sesuai!
+								</small>
+							</div>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+                            Administrasi Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- Delete Administrasi modal -->
+		<div class="modal fade bd-example-modal-lg" id="modal-delete-administrasi-kegiatan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus administrasi kegiatan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa administrasi kegiatan ini ingin anda hapus!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete administrasi -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
