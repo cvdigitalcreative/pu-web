@@ -37,12 +37,6 @@
 								</small>
 							</div>
 						</div>
-						<div class="form-group py-2">
-							<label for="namaPengirimBukuSaku">Pengirim *</label>
-							<select class="form-control" id="pengirim-buku-saku" name="nama_pengirim_buku_saku" required>
-								<option selected disabled>Pilih nama pengirim</option>
-							</select>
-						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
 							Buku Saku</button>
@@ -52,6 +46,71 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Edit Buku Saku Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-buku-saku" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Buku Saku</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="judulBukuSaku">Judul Buku Saku *</label>
+							<input type="text" class="form-control" id="edit-judul-buku-saku" name="judul_buku_saku" placeholder="Contoh: Buku Kegiatan Pelatihan" required>
+						</div>
+						<div class="form-group py-2">
+							<label for="deskripsiBukuSaku">Deskripsi Buku Saku *</label>
+							<textarea type="text" class="form-control" id="edit-deskripsi-buku-saku" name="deskripsi_buku_saku" placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
+						</div>
+						<div class="form-group py-2">
+							<label for="fileBukuSaku">File Buku Saku *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="edit-file-buku-saku" name="file_buku_saku">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file buku saku...</label>
+								<small id="file_buku_saku" class="form-text text-muted">
+									Pilih file buku saku yang sesuai!
+								</small>
+							</div>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Buku Saku</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Delete buku saku modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-buku-saku" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus buku saku Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa buku saku ini ingin anda hapus!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete buku saku -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">

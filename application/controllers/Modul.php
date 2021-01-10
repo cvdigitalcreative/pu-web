@@ -183,7 +183,7 @@ class Modul extends CI_Controller
             else {
                 $id_kategori_modul = $this->input->post('id_kategori_modul_old');
                 $kategoritemp = $this->Common_model->view_kategori_modul($this->session->userdata('token'));
-                foreach ($kategoritemp as $val) {
+                foreach ($kategoritemp['data'] as $val) {
                     if ($val['kategori_modul'] == $id_kategori_modul)
                         $id_kategori_modul = $val['id_kategori_modul'];
                 }
