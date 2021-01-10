@@ -1213,7 +1213,7 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $judul_kegiatan = $this->input->post('edit_judul_kegiatan');
             $deskripsi_kegiatan = $this->input->post('edit_deskripsi_kegiatan');
-            $tanggal_kegiatan = $this->input->post('edit_tanggal_kegiatan');
+            $tanggal_kegiatan = $this->input->post('edit_tanggal_kegiatan_mulai');
             $temparr = explode('/', $tanggal_kegiatan);
             $tempbulan = $temparr[0];
             $temphari = $temparr[1];
