@@ -194,7 +194,111 @@ $(document).ready(function () {
 	// End of Kalender kegiatan datatable 
 
 	// Daftar Peserta by Kalender Kegiatan Datatable
-	$('#daftar_peserta_table').DataTable({
+	var Table = $("#daftar_peserta_table").DataTable({
+		data: [],
+		retrieve: true,
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		columns: [
+			{
+				data: 'no_peserta',
+			},
+			{
+				data: 'file_foto_profile',
+				render: function (data) {
+					return `
+					<img class="image-hover" src="${data}" style="width: 75px; height: 75px; overflow: hidden;">`
+				}
+			},
+			{
+				data: 'nama',
+			},
+			{
+				data: 'jenis_kelamin',
+			},
+			{
+				data: 'tempat_tanggal_lahir',
+			},
+			{
+				data: 'status_perkawinan',
+			},
+			{
+				data: 'nama_perusahaan',
+			},
+			{
+				data: 'jabatan',
+			},
+			{
+				data: 'utusan',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_handphone',
+			},
+			{
+				data: 'no_telepon',
+			},
+			{
+				data: 'nik',
+			},
+			{
+				data: 'alamat_rumah',
+			},
+			{
+				data: 'provinsi',
+			},
+			{
+				data: 'kota_kabupaten',
+			},
+			{
+				data: 'kecamatan',
+			},
+			{
+				data: 'kelurahan',
+			},
+			{
+				data: 'rt',
+			},
+			{
+				data: 'rw',
+			},
+			{
+				data: 'kode_pos',
+			},
+			{
+				data: 'kode_area',
+			},
+			{
+				data: 'status_rumah',
+			},
+			{
+				data: 'pendidikan',
+			},
+			{
+				data: 'id_user',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		],
+		rowCallback: function (row, data) { },
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		}
 	});
 	// End of Daftar Peserta by Kalender Kegiatan datatable 
 
@@ -508,8 +612,9 @@ $(document).ready(function () {
 
 	// Each Row Table onClick Edit Button
 	$('table').on('click', '#btn-detail', function () {
-		if ($('#daftar_peserta_table').length > 0) {
+		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
+                    Table.ajax.url(`${BASE_URL}Peserta/dataPeserta/${id}`).load();
 			$('#modal-lihat-peserta-by-kegiatan').modal('show')
 		} 
 		if ($('#skkni_table').length > 0) {
