@@ -115,6 +115,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -214,6 +215,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -265,6 +267,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -316,6 +319,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -364,6 +368,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
