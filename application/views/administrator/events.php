@@ -451,12 +451,12 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url()?>Kegiatan/import_kegiatan_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan"
-									name="fileExcelTambahKegiatan">
+									name="file_excel_import_kegiatan[]">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah kegiatan

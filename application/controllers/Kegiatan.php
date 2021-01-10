@@ -941,84 +941,99 @@ class Kegiatan extends CI_Controller
     }
 
     //blm done
-    // public function import_kegiatan_action()
-    // {
-    //     include APPPATH . 'third_party/PHPExcel/PHPExcel.php';
+    public function import_kegiatan_action()
+    {
+        include APPPATH . 'third_party/PHPExcel/PHPExcel.php';
 
-    //     $config['upload_path'] = realpath('assets/docs/');
-    //     $config['allowed_types'] = 'xlsx|xls|csv';
-    //     $config['max_size'] = '10000';
-    //     $config['encrypt_name'] = true;
+        $config['upload_path'] = realpath('assets/docs/');
+        $config['allowed_types'] = 'xlsx|xls|csv';
+        $config['max_size'] = '0';
+        $config['encrypt_name'] = true;
 
-    //     $this->load->library('upload', $config);
+        $success = true;
+        $this->load->library('upload', $config);
 
-    //     if ($_FILES['userfile']['name'][0] != null) {
-    //         $index = count($_FILES['userfile']['name']);
-    //         for ($i = 0; $i < $index; $i++) {
+        if ($_FILES['file_excel_import_kegiatan']['name'][0] != null) {
+            $index = count($_FILES['file_excel_import_kegiatan']['name']);
+            for ($i = 0; $i < $index; $i++) {
 
-    //             $filename = $_FILES['userfile']['name'][$i];
-    //             if (move_uploaded_file($_FILES['userfile']['tmp_name'][$i], 'assets/docs/' . $filename)) {
+                $filename = $_FILES['file_excel_import_kegiatan']['name'][$i];
+                if (move_uploaded_file($_FILES['file_excel_import_kegiatan']['tmp_name'][$i], 'assets/docs/' . $filename)) {
 
-    //                 $excelreader     = new PHPExcel_Reader_Excel2007();
-    //                 $loadexcel         = $excelreader->load('assets/docs/' . $filename);
-    //                 $sheet             = $loadexcel->getActiveSheet()->toArray(null, true, true, true);
-    //                 $data = array();
+                    $excelreader     = new PHPExcel_Reader_Excel2007();
+                    $loadexcel         = $excelreader->load('assets/docs/' . $filename);
+                    $sheet             = $loadexcel->getActiveSheet()->toArray(null, true, true, true);
+                    $data = array();
 
-    //                 $numrow = 1;
-    //                 foreach ($sheet as $row) {
-    //                     if ($numrow > 1) {
-    //                         $tanggal_kegiatan = $row['C'];
-    //                         $temparr = explode('/', $tanggal_kegiatan);
-    //                         $indextglreverse = 0;
-    //                         for ($j = count($temparr) - 1; $j >= 0; $j--) {
-    //                             $arrtemptanggal[$indextglreverse] = $temparr[$j];
-    //                             $indextglreverse++;
-    //                         }
-    //                         $tanggal_kegiatan = implode('-', $arrtemptanggal);
+                    $numrow = 1;
+                    $uploadFailed = [];
+                    $indexUploadFailed = 0;
+                    foreach ($sheet as $row) {
+                        if ($numrow > 1 && $row['A'] != null) {
+                            $judul_kegiatan = $row['A'];
+                            $deskripsi_kegiatan = $row['B'];
+                            $tanggal_kegiatan = $row['C'];
+                            $tanggal_kegiatan_selesai = $row['D'];
+                            $lokasi_kegiatan = $row['E'];
+                            $latitude_lokasi = '-';
+                            $longitude_lokasi = '-';
+                            $status_kegiatan = $row['F'];
+                            $foto_banner_kegiatan = null;
+                            $id_akun_kegiatan = $row['G'];
+                            $id_jenis_kegiatan = $row['H'];
+                            $id_provinsi = $row['I'];
+                            $id_kota_kabupaten = $row['J'];
+                            $id_asesor_kegiatan = null;
+                            $id_instruktur_kegiatan = null;
+                            $file_materi_kegiatan = null;
 
-    //                         $tanggal_kegiatan_selesai = $row['D'];
-    //                         $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
-    //                         $indextglreverse = 0;
-    //                         for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
-    //                             $arrtemptanggalselesai[$indextglreverse] = $temparrselesai[$j];
-    //                             $indextglreverse++;
-    //                         }
-    //                         $tanggal_kegiatan_selesai = implode('-', $arrtemptanggalselesai);
+                            $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
+                                $judul_kegiatan,
+                                $deskripsi_kegiatan,
+                                $tanggal_kegiatan,
+                                $tanggal_kegiatan_selesai,
+                                $lokasi_kegiatan,
+                                $latitude_lokasi,
+                                $longitude_lokasi,
+                                $status_kegiatan,
+                                $foto_banner_kegiatan,
+                                $id_akun_kegiatan,
+                                $id_jenis_kegiatan,
+                                $id_provinsi,
+                                $id_kota_kabupaten,
+                                $id_asesor_kegiatan,
+                                $id_instruktur_kegiatan,
+                                $file_materi_kegiatan,
+                                $this->session->userdata('token')
+                            );
 
-    //                         $status_kegiatan = $row['F'];
-    //                         if($status_kegiatan == "Belum Dilaksanakan")
-    //                         $status_kegiatan = 1;
-    //                         else if($status_kegiatan == "Telah Dilaksanakan")
-    //                         $status_kegiatan = 2;
-    //                         $data = [
-    //                             "judul_kegiatan" => $row['A'],
-    //                             "deskripsi_kegiatan" => $row['B'],
-    //                             "tanggal_kegiatan" => $tanggal_kegiatan,
-    //                             "tanggal_kegiatan_selesai" => $tanggal_kegiatan_selesai,
-    //                             "lokasi_kegiatan" => $row['E'],
-    //                             "latitude_kegiatan" => 0,
-    //                             "longitude_kegiatan" => 0,
-    //                             "id_akun_kegiatan" => 0,
-    //                             "id_jenis_kegiatan" => 0,
+                            var_dump($tambah_kegiatan);
 
-    //                         ];
-    //                     }
-    //                     $numrow++;
-    //                 }
-    //                 $this->db->insert_batch('tbl_dosen', $data);
+                            if ($tambah_kegiatan['status'] != "Success") {
+                                $success = false;
+                                $uploadFailed[$indexUploadFailed] = $row['A'];
+                                $indexUploadFailed++;
+                            }
+                        }
+                        $numrow++;
+                    }
+                    unlink(realpath('assets/docs/' . $filename));
 
-    //                 unlink(realpath('assets/docs/' . $filename));
+                    if ($success)
+                        $this->session->set_flashdata('success', 'Kegiatan - kegiatan berhasil diimport');
+                        else
+                        $this->session->set_flashdata('APImessage', 'Beberapa kegiatan gagal diimport');
 
-    //                 $this->session->set_flashdata('success', 'Data has been imported from excel successfully');
-    //             } else {
-    //                 $this->session->set_flashdata('failed', 'Import data failed. ' . $this->upload->display_errors());
-    //             }
-    //         }
-    //     } else {
-    //         $this->session->set_flashdata('failed', 'You have not choose any file yet');
-    //     }
-    //     redirect('Import');
-    // }
+                } else {
+                    $this->session->set_flashdata('APImessage', 'Import kegiatan gagal, ' . $this->upload->display_errors());
+                }
+            }
+        } else {
+            $this->session->set_flashdata('APImessage', 'Anda belum memilih file excel');
+        }
+        die;
+        redirect('pupr/events');
+    }
 
     public function edit_kegiatan_action($id_kegiatan)
     {
