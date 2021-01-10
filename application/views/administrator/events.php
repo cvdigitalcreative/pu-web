@@ -508,6 +508,21 @@
 	</div>
 	<!-- End of lihat peserta Modal -->
 
+	<!-- Modal show image -->
+	<div id="show-image-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<img class="showimage img-responsive" src="" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal show image -->
+
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
@@ -631,12 +646,13 @@
 									<thead>
 										<tr>
 											<th>No</th>
-											<th>Tanggal Kegiatan</th>
-											<th>Banner Kegiatan</th>
-											<th>Jenis Kegiatan</th>
-											<th>Akun Kegiatan</th>
-											<th>Status Kegiatan</th>
 											<th>Nama Kegiatan</th>
+											<th>Deskripsi Kegiatan</th>
+											<th>Akun Kegiatan</th>
+											<th>Jenis Kegiatan</th>
+											<th>Tanggal Kegiatan</th>
+											<th>Status Kegiatan</th>
+											<th>Banner Kegiatan</th>
 											<th>Instruktur Kegiatan</th>
 											<th>Assesor Kegiatan</th>
 											<th>Provinsi Kegiatan</th>
