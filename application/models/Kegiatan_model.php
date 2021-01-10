@@ -198,6 +198,15 @@ class Kegiatan_model extends CI_Model
         return $this->http_request_post($data, "/daftar/", $token);
     }
 
+    public function import_kegiatan_excel($file_excel, $id_kegiatan, $token)
+    {
+        $data = [
+            'file_excel' => $file_excel
+        ];
+
+        return $this->http_request_post($data, "/$id_kegiatan/peserta/", $token);
+    }
+
     // ====================== Peserta Kegiatan ==================================
 
     public function view_peserta_by_status($id_kegiatan, $id_status, $token)

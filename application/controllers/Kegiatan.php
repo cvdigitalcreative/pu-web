@@ -943,96 +943,24 @@ class Kegiatan extends CI_Controller
     //blm done
     public function import_kegiatan_action()
     {
-        include APPPATH . 'third_party/PHPExcel/PHPExcel.php';
+        if ($this->session->userdata('logged_in') == true) {
+            $file_excel_import_kegiatan = new \CurlFile($_FILES['file_excel_import_kegiatan']['tmp_name'], $_FILES['file_excel_import_kegiatan']['type'], $_FILES['file_excel_import_kegiatan']['name']);
 
-        $config['upload_path'] = realpath('assets/docs/');
-        $config['allowed_types'] = 'xlsx|xls|csv';
-        $config['max_size'] = '0';
-        $config['encrypt_name'] = true;
-
-        $success = true;
-        $this->load->library('upload', $config);
-
-        if ($_FILES['file_excel_import_kegiatan']['name'][0] != null) {
-            $index = count($_FILES['file_excel_import_kegiatan']['name']);
-            for ($i = 0; $i < $index; $i++) {
-
-                $filename = $_FILES['file_excel_import_kegiatan']['name'][$i];
-                if (move_uploaded_file($_FILES['file_excel_import_kegiatan']['tmp_name'][$i], 'assets/docs/' . $filename)) {
-
-                    $excelreader     = new PHPExcel_Reader_Excel2007();
-                    $loadexcel         = $excelreader->load('assets/docs/' . $filename);
-                    $sheet             = $loadexcel->getActiveSheet()->toArray(null, true, true, true);
-                    $data = array();
-
-                    $numrow = 1;
-                    $uploadFailed = [];
-                    $indexUploadFailed = 0;
-                    foreach ($sheet as $row) {
-                        if ($numrow > 1 && $row['A'] != null) {
-                            $judul_kegiatan = $row['A'];
-                            $deskripsi_kegiatan = $row['B'];
-                            $tanggal_kegiatan = $row['C'];
-                            $tanggal_kegiatan_selesai = $row['D'];
-                            $lokasi_kegiatan = $row['E'];
-                            $latitude_lokasi = '-';
-                            $longitude_lokasi = '-';
-                            $status_kegiatan = $row['F'];
-                            $foto_banner_kegiatan = null;
-                            $id_akun_kegiatan = $row['G'];
-                            $id_jenis_kegiatan = $row['H'];
-                            $id_provinsi = $row['I'];
-                            $id_kota_kabupaten = $row['J'];
-                            $id_asesor_kegiatan = null;
-                            $id_instruktur_kegiatan = null;
-                            $file_materi_kegiatan = null;
-
-                            $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
-                                $judul_kegiatan,
-                                $deskripsi_kegiatan,
-                                $tanggal_kegiatan,
-                                $tanggal_kegiatan_selesai,
-                                $lokasi_kegiatan,
-                                $latitude_lokasi,
-                                $longitude_lokasi,
-                                $status_kegiatan,
-                                $foto_banner_kegiatan,
-                                $id_akun_kegiatan,
-                                $id_jenis_kegiatan,
-                                $id_provinsi,
-                                $id_kota_kabupaten,
-                                $id_asesor_kegiatan,
-                                $id_instruktur_kegiatan,
-                                $file_materi_kegiatan,
-                                $this->session->userdata('token')
-                            );
-
-                            var_dump($tambah_kegiatan);
-
-                            if ($tambah_kegiatan['status'] != "Success") {
-                                $success = false;
-                                $uploadFailed[$indexUploadFailed] = $row['A'];
-                                $indexUploadFailed++;
-                            }
-                        }
-                        $numrow++;
-                    }
-                    unlink(realpath('assets/docs/' . $filename));
-
-                    if ($success)
-                        $this->session->set_flashdata('success', 'Kegiatan - kegiatan berhasil diimport');
-                        else
-                        $this->session->set_flashdata('APImessage', 'Beberapa kegiatan gagal diimport');
-
+            $import = $this->Kegiatan_model->import_kegiatan_excel($file_excel_import_kegiatan, 'haloha', $this->session->userdata('token'));
+            if ($import == null)
+                $this->load->view('error_page');
+            else {
+                if ($import['status'] == 'Success') {
+                    $this->session->set_flashdata('success', $import['message']);
+                    redirect('pupr/events');
                 } else {
-                    $this->session->set_flashdata('APImessage', 'Import kegiatan gagal, ' . $this->upload->display_errors());
+                    $this->session->set_flashdata('APImessage', $import['message']);
+                    redirect('pupr/events');
                 }
             }
-        } else {
-            $this->session->set_flashdata('APImessage', 'Anda belum memilih file excel');
         }
-        die;
-        redirect('pupr/events');
+        else
+        redirect('pupr/login');
     }
 
     public function edit_kegiatan_action($id_kegiatan)

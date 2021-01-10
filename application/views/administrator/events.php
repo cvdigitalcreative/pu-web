@@ -433,7 +433,7 @@
 							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan"
-									name="file_excel_import_kegiatan[]">
+									name="file_excel_import_kegiatan" required>
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah kegiatan
