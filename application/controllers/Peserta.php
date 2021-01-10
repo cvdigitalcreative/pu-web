@@ -50,6 +50,54 @@ class Peserta extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function dataPeserta($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_kegiatan, $this->session->userdata('token'));
+            if ($data['peserta'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['peserta']['status'] == "Success") {
+                    if (count($data['peserta']['data']) > 0) {
+                        $data['peserta'] = $data['peserta']['data'];
+
+                        $indexPeserta = 0;
+                        $noPeserta = 1;
+                        foreach ($data['peserta'] as $val) {
+                            $data['peserta'][$indexPeserta]['no_peserta'] = $noPeserta;
+                            $data['peserta'][$indexPeserta]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
+                            $data['peserta'][$indexPeserta]['tanggal_lahir_text'] = date("d F Y", $data['peserta'][$indexPeserta]['tanggal_lahir_text']);
+
+                            $data['peserta'][$indexPeserta]['tempat_tanggal_lahir'] = $val['tempat_lahir'] . ', ' . $data['peserta'][$indexPeserta]['tanggal_lahir_text'];
+
+
+                            $indexPeserta++;
+                            $noPeserta++;
+                        }
+                        $callback = array(
+                            'data' => $data['peserta']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
     public function daerah($id_provinsi)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -81,7 +129,6 @@ class Peserta extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
         } else
             redirect("pupr/login");
     }
@@ -117,7 +164,6 @@ class Peserta extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
         } else
             redirect("pupr/login");
     }
@@ -275,7 +321,6 @@ class Peserta extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
         } else {
             redirect("pupr/login");
         }
@@ -518,7 +563,7 @@ class Peserta extends CI_Controller
             // }
 
             if ($null)
-            $this->load->view('error_page');
+                $this->load->view('error_page');
 
             $this->load->view("", $data);
         } else {
