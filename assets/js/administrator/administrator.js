@@ -245,7 +245,7 @@ $(document).ready(function () {
 				data: 'no_handphone',
 			},
 			{
-				data: 'no_telepon',
+				data: 'no_telpon',
 			},
 			{
 				data: 'nik',
