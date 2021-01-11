@@ -112,6 +112,38 @@
 	</div>
 	<!-- End modal delete buku saku -->
 
+<!-- Modal Notification -->
+<?php if ($this->session->flashdata('success') || $this->session->flashdata('APImessage')): ?>
+		<div class="modal fade" id="notification-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+					<?php if($this->session->flashdata('success')):?>
+						<h5 class="modal-title" id="exampleModalLabel">Information: Success</h5>
+					<?php elseif($this->session->flashdata('APImessage')):?>
+						<h5 class="modal-title" id="exampleModalLabel">Information: Error</h5>
+						<?php endif?>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body" id="modalMessage">
+					<?php if($this->session->flashdata('success')):?>
+						<?= $this->session->flashdata('success'); ?>
+					<?php elseif($this->session->flashdata('APImessage')):?>
+						<?= $this->session->flashdata('APImessage'); ?>
+						<?php endif;?>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif ?>
+	<!-- End modal notification -->
+	
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
@@ -132,17 +164,6 @@
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h2 font-weight-bold mb-4 mt-4">Buku Saku</h1>
 					</div>
-
-					<!-- Alert -->
-					<?php if ($this->session->flashdata('success')) : ?>
-						<div class="alert alert-success mb-4" role="alert">
-							<?= $this->session->flashdata('success') ?>
-						</div>
-					<?php elseif ($this->session->flashdata('APImessage')) : ?>
-						<div class="alert alert-danger mb-4" role="alert">
-							<?= $this->session->flashdata('APImessage') ?>
-						</div>
-					<?php endif; ?>
 
 					<!-- Content Row -->
 					<div class="row mt-4">

@@ -52,3 +52,11 @@
         });
     }
 </script>
+
+<?php if($this->session->flashdata('success') || $this->session->flashdata('APImessage')) : ?>
+<script>
+    $(window).on('load',function(){
+       $('#notification-modal').modal('show');
+    });
+ </script>
+ <?php endif?>
