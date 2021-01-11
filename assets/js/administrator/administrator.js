@@ -824,10 +824,10 @@ $(document).ready(function () {
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
-				url: `${BASE_URL}Buku_Saku/download/${id}`,
+				url: `${BASE_URL}Buku_saku/download/${id}`,
 				type: 'POST',
 				success: function () {
-					window.location = `${BASE_URL}Buku_Saku/download/${id}`;
+					window.location = `${BASE_URL}Buku_saku/download/${id}`;
 				}
 			})
 		}
