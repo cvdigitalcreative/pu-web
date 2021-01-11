@@ -769,6 +769,16 @@ $(document).ready(function () {
 				}
 			})
 		} 
+		else if ($('#modul_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Modul/download/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Modul/download/${id}`;
+				}
+			})
+		} 
 	})
 	// End of default
 
