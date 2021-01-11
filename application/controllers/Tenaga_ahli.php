@@ -504,4 +504,360 @@ class Tenaga_ahli extends CI_Controller
         } else
             redirect("pupr/login");
     }
+
+    public function export_tenaga_ahli_action($kategori)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            // Load plugin PHPExcel nya
+            include APPPATH . 'third_party/PHPExcel/PHPExcel.php';
+
+            // Panggil class PHPExcel nya
+            $excel = new PHPExcel();
+            // Settingan awal fil excel
+            if ($kategori == 0) {
+                $excel->getProperties()->setCreator('Administrator')
+                    ->setLastModifiedBy('Administrator')
+                    ->setTitle("Export Seluruh Tenaga Ahli & Mitra Terampil")
+                    ->setSubject("Kegiatan")
+                    ->setDescription("Data Seluruh Tenaga Ahli & Mitra Terampil")
+                    ->setKeywords("Data Seluruh Tenaga Ahli & Mitra Terampil");
+            } else if ($kategori == 1) {
+                $excel->getProperties()->setCreator('Administrator')
+                    ->setLastModifiedBy('Administrator')
+                    ->setTitle("Export Seluruh Tenaga Ahli")
+                    ->setSubject("Kegiatan")
+                    ->setDescription("Data Seluruh Tenaga Ahli")
+                    ->setKeywords("Data Seluruh Tenaga Ahli");
+            } else if ($kategori == 2) {
+                $excel->getProperties()->setCreator('Administrator')
+                    ->setLastModifiedBy('Administrator')
+                    ->setTitle("Export Seluruh Mitra Terampil")
+                    ->setSubject("Kegiatan")
+                    ->setDescription("Data Seluruh Mitra Terampil")
+                    ->setKeywords("Data Seluruh Mitra Terampil");
+            }
+
+            // Buat sebuah variabel untuk menampung pengaturan style dari header tabel
+
+            $style_header = array(
+                'font' => array(
+                    'bold' => true,
+                    'name'  => 'Times New Roman'
+                )
+            );
+            $style_col = array(
+                'font' => array('bold' => true), // Set font nya jadi bold
+                'alignment' => array(
+                    'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, // Set text jadi ditengah secara horizontal (center)
+                    'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER // Set text jadi di tengah secara vertical (middle)
+                ),
+                'borders' => array(
+                    'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+                    'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+                    'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+                    'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+                ),
+                'fill' => array(
+                    'type' => PHPExcel_Style_Fill::FILL_SOLID,
+                    'color' => array('rgb' => 'FFE033')
+                ),
+                'font'  => array(
+                    'name'  => 'Times New Roman'
+                )
+            );
+            // Buat sebuah variabel untuk menampung pengaturan style dari isi tabel
+            $style_row_center_horizontal = array(
+                'alignment' => array(
+                    'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER, // Set text jadi di tengah secara vertical (middle)
+                    'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER // Set text jadi di tengah secara Horizontal (middle)
+                ),
+                'borders' => array(
+                    'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+                    'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+                    'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+                    'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+                ),
+                'font'  => array(
+                    'name'  => 'Times New Roman'
+                )
+            );
+
+            $style_row_not_center_horizontal = array(
+                'alignment' => array(
+                    'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER, // Set text jadi di tengah secara vertical (middle)
+                ),
+                'borders' => array(
+                    'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+                    'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+                    'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+                    'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+                ),
+                'font'  => array(
+                    'name'  => 'Times New Roman'
+                )
+            );
+
+            if ($kategori == 0)
+                $excel->setActiveSheetIndex(0)->setCellValue('A1', "Data Seluruh Tenaga Ahli & Mitra Terampil " . date('d M Y')); // Set kolom A1
+            else if ($kategori == 1)
+                $excel->setActiveSheetIndex(0)->setCellValue('A1', "Data Seluruh Tenaga Ahli " . date('d M Y')); // Set kolom A1
+            else if ($kategori == 2)
+                $excel->setActiveSheetIndex(0)->setCellValue('A1', "Data Seluruh Mitra Terampil " . date('d M Y')); // Set kolom A1
+            $excel->getActiveSheet()->mergeCells('A1:N1'); // Set Merge Cell pada kolom A1 sampai L1
+            $excel->getActiveSheet()->getStyle('1')->getFont()->setBold(TRUE); // Set bold kolom A1
+            $excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(15); // Set font size 15 untuk kolom A1
+            $excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // Set text center untuk kolom A1
+            $excel->getActiveSheet()->getStyle('A1')->applyFromArray($style_header); //set font face
+            // Buat header tabel nya pada baris ke 3
+            $excel->setActiveSheetIndex(0)->setCellValue('A3', "NO");
+            $excel->setActiveSheetIndex(0)->setCellValue('B3', "NAMA");
+            $excel->setActiveSheetIndex(0)->setCellValue('C3', "JENIS KELAMIN");
+            $excel->setActiveSheetIndex(0)->setCellValue('D3', "TEMPAT LAHIR");
+            $excel->setActiveSheetIndex(0)->setCellValue('E3', "TANGGAL LAHIR");
+            $excel->setActiveSheetIndex(0)->setCellValue('F3', "EMAIL");
+            $excel->setActiveSheetIndex(0)->setCellValue('G3', "NOMOR HANDPHONE");
+            $excel->setActiveSheetIndex(0)->setCellValue('H3', "NOMOR RUMAH");
+            $excel->setActiveSheetIndex(0)->setCellValue('I3', "NIK");
+            $excel->setActiveSheetIndex(0)->setCellValue('J3', "ALAMAT");
+            $excel->setActiveSheetIndex(0)->setCellValue('K3', "PROVINSI");
+            $excel->setActiveSheetIndex(0)->setCellValue('L3', "KOTA/KABUPATEN");
+            $excel->setActiveSheetIndex(0)->setCellValue('M3', "KETENAGAKERJAAN");
+            $excel->setActiveSheetIndex(0)->setCellValue('N3', "KEAHLIAN");
+            // Apply style header yang telah kita buat tadi ke masing-masing kolom header
+            $excel->getActiveSheet()->getStyle('A3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('B3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('C3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('D3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('E3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('F3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('G3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('H3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('I3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('J3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('K3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('L3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('M3')->applyFromArray($style_col);
+            $excel->getActiveSheet()->getStyle('N3')->applyFromArray($style_col);
+
+
+
+            //get data
+            if ($kategori == 0) {
+                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+                if ($data['tenaga_ahli']['status'] == "Success") {
+                    $indexTambah = count($data['tenaga_ahli']['data']) - 1;
+                    $data['tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+                    if ($data['tenaga_terampil']['status'] == "Success") {
+                        if ($data['tenaga_terampil']['data'] != null) {
+                            $data['tenaga_ahli']['data'] = array_merge($data['tenaga_ahli']['data'], $data['tenaga_terampil']['data']);
+                        }
+                    }
+
+                    if (count($data['tenaga_ahli']['data']) > 0) {
+                        $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+                        $indexTenagaAhli = 0;
+                        $noTenagaAhli = 1;
+                        foreach ($data['tenaga_ahli'] as $val) {
+                            $data['tenaga_ahli'][$indexTenagaAhli]['no_tenaga_ahli'] = $noTenagaAhli;
+
+                            // ======================= tanggal lahir ================================
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = date("d F Y", $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text']);
+
+                            if ($val['is_asesor'] == true && $val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor & Instruktur";
+                            else if ($val['is_asesor'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor";
+                            else if ($val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Instruktur";
+                            else
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "-";
+
+
+                            $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "";
+                            $indexjabker = 0;
+                            if (count($val['jabker']) != null) {
+                                foreach ($val['jabker'] as $val2) {
+                                    if ($indexjabker == 0)
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $val2['nama_jabker'];
+                                    else
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] . ", " . $val2['nama_jabker'];
+                                    $indexjabker++;
+                                }
+                            } else {
+                                $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "-";
+                            }
+
+                            $indexTenagaAhli++;
+                            $noTenagaAhli++;
+                        }
+                    } else {
+                        $data['tenaga_ahli'] = null;
+                    }
+                }
+            } else if ($kategori == 1) {
+                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+                if ($data['tenaga_ahli']['status'] == "Success") {
+                    if (count($data['tenaga_ahli']['data']) > 0) {
+                        $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+                        $indexTenagaAhli = 0;
+                        $noTenagaAhli = 1;
+                        foreach ($data['tenaga_ahli'] as $val) {
+                            $data['tenaga_ahli'][$indexTenagaAhli]['no_tenaga_ahli'] = $noTenagaAhli;
+
+                            // ======================= tanggal lahir ================================
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = date("d F Y", $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text']);
+
+                            if ($val['is_asesor'] == true && $val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor & Instruktur";
+                            else if ($val['is_asesor'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor";
+                            else if ($val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Instruktur";
+                            else
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "-";
+
+
+                            $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "";
+                            $indexjabker = 0;
+                            if (count($val['jabker']) != null) {
+                                foreach ($val['jabker'] as $val2) {
+                                    if ($indexjabker == 0)
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $val2['nama_jabker'];
+                                    else
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] . ", " . $val2['nama_jabker'];
+                                    $indexjabker++;
+                                }
+                            } else {
+                                $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "-";
+                            }
+
+                            $indexTenagaAhli++;
+                            $noTenagaAhli++;
+                        }
+                    } else {
+                        $data['tenaga_ahli'] = null;
+                    }
+                }
+            } else if ($kategori == 2) {
+                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+                if ($data['tenaga_ahli']['status'] == "Success") {
+                    if (count($data['tenaga_ahli']['data']) > 0) {
+                        $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+                        $indexTenagaAhli = 0;
+                        $noTenagaAhli = 1;
+                        foreach ($data['tenaga_ahli'] as $val) {
+                            $data['tenaga_ahli'][$indexTenagaAhli]['no_tenaga_ahli'] = $noTenagaAhli;
+
+                            // ======================= tanggal lahir ================================
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
+                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = date("d F Y", $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text']);
+
+                            if ($val['is_asesor'] == true && $val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor & Instruktur";
+                            else if ($val['is_asesor'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor";
+                            else if ($val['is_instruktur'] == true)
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Instruktur";
+                            else
+                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "-";
+
+
+                            $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "";
+                            $indexjabker = 0;
+                            if (count($val['jabker']) != null) {
+                                foreach ($val['jabker'] as $val2) {
+                                    if ($indexjabker == 0)
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $val2['nama_jabker'];
+                                    else
+                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] . ", " . $val2['nama_jabker'];
+                                    $indexjabker++;
+                                }
+                            } else {
+                                $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "-";
+                            }
+
+                            $indexTenagaAhli++;
+                            $noTenagaAhli++;
+                        }
+                    } else {
+                        $data['tenaga_ahli'] = null;
+                    }
+                }
+            }
+            
+            $no = 1; // Untuk penomoran tabel, di awal set dengan 1
+            $numrow = 4; // Set baris pertama untuk isi tabel adalah baris ke 4
+            if ($data['tenaga_ahli'] != null) {
+                foreach ($data['tenaga_ahli'] as $val) { // Lakukan looping
+                    $excel->setActiveSheetIndex(0)->setCellValue('A' . $numrow, $no);
+                    $excel->setActiveSheetIndex(0)->setCellValue('B' . $numrow, $val['nama_lengkap']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('C' . $numrow, $val['jenis_kelamin']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('D' . $numrow, $val['tempat_lahir']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('E' . $numrow, $val['tanggal_lahir_text']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('F' . $numrow, $val['email']);
+                    $excel->getActiveSheet()->setCellValueExplicit('G' . $numrow, $val['no_handphone'],  PHPExcel_Cell_DataType::TYPE_STRING);
+                    $excel->getActiveSheet()->setCellValueExplicit('H' . $numrow, $val['no_telpon_rumah'],  PHPExcel_Cell_DataType::TYPE_STRING);
+                    $excel->getActiveSheet()->setCellValueExplicit('I' . $numrow, $val['nik'],  PHPExcel_Cell_DataType::TYPE_STRING);
+                    $excel->setActiveSheetIndex(0)->setCellValue('J' . $numrow, $val['alamat_rumah']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('K' . $numrow, $val['provinsi']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('L' . $numrow, $val['kabupaten_kota']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('M' . $numrow, $val['ketenagakerjaan']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('N' . $numrow, $val['keahlian']);
+
+                    // Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
+                    $excel->getActiveSheet()->getStyle('A' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('B' . $numrow)->applyFromArray($style_row_not_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('C' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('D' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('E' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('F' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('G' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('H' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('I' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('J' . $numrow)->applyFromArray($style_row_not_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('K' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('L' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('M' . $numrow)->applyFromArray($style_row_center_horizontal);
+                    $excel->getActiveSheet()->getStyle('N' . $numrow)->applyFromArray($style_row_not_center_horizontal);
+                    
+                    $no++; // Tambah 1 setiap kali looping
+                    $numrow++; // Tambah 1 setiap kali looping
+                }
+                // Set width kolom
+                foreach (range('B', 'N') as $columnID) {
+                    $excel->getActiveSheet()->getColumnDimension($columnID)
+                        ->setAutoSize(true);
+                }
+            } else {
+                $excel->setActiveSheetIndex(0)->setCellValue('A4', "Tidak ada kegiatan"); // Set kolom A4
+                $excel->getActiveSheet()->mergeCells('A4:N4'); // Set Merge Cell pada kolom A4 sampai L4
+                $excel->getActiveSheet()->getStyle('A4')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // Set text center untuk kolom A1
+                foreach (range('B', 'N') as $columnID) {
+                    $excel->getActiveSheet()->getColumnDimension($columnID)
+                        ->setAutoSize(true);
+                }
+            }
+            // Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
+            $excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
+            // Set orientasi kertas jadi LANDSCAPE
+            $excel->getActiveSheet()->getPageSetup()->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
+            // Set judul file excel nya
+            $excel->getActiveSheet(0)->setTitle("Data Tenaga");
+            $excel->setActiveSheetIndex(0);
+            // Proses file excel
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            if ($kategori == 0)
+                header('Content-Disposition: attachment; filename="Data Seluruh Tenaga Ahli & Mitra Terampil.xlsx"'); // Set nama file excel nya
+            else if ($kategori == 1)
+                header('Content-Disposition: attachment; filename="Data Seluruh Tenaga Ahli.xlsx"'); // Set nama file excel nya
+            else if ($kategori == 2)
+                header('Content-Disposition: attachment; filename="Data Seluruh Mitra Terampil.xlsx"'); // Set nama file excel nya
+            header('Cache-Control: max-age=0');
+            $write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+            $write->save('php://output');
+        } else
+            redirect('pupr/login');
+    }
 }

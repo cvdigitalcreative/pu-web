@@ -448,6 +448,34 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- export Excel Tenaga Ahli Modal -->
+	<div class="modal fade bd-example-modal-sm" id="modal-export-tenaga-ahli" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Export Tenaga Ahli</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+						<div class="col mb-2">
+						<a class="btn btn-success btn-block" href="" id="btn-export-seluruh-tenaga-ahli"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Seluruh</a>
+						</div>
+						<div class="col mb-2">
+						<a class="btn btn-success btn-block" href="" id="btn-export-tenaga-ahli"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tenaga Ahli</a>
+						</div>
+						<div class="col mb-2">
+						<a class="btn btn-success btn-block" href="" id="btn-export-mitra-terampil"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Mitra Terampil</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- End of Import Excel Tambah Kegiatan Modal -->
 
 	<!-- Page Wrapper -->
@@ -544,7 +572,8 @@
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
-							<button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
+							<button class="btn btn-success btn-import-kegiatan" data-toggle="modal"
+								data-target="#modal-export-tenaga-ahli" ><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
 						</div>
 						<div class="">

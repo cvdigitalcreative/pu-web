@@ -935,17 +935,34 @@ $(document).ready(function () {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Administrasi_kegiatan/delete_administrasi_kegiatan/${id}`)
 			$('#modal-delete-administrasi-kegiatan').modal('show')
-    }
+		}
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Buku_saku/delete_buku_saku/${id}`)
 			$('#modal-delete-buku-saku').modal('show')
-	 } 
+		} 
 		else if ($('#tenaga_ahli_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Tenaga_ahli/delete_tenaga_ahli/${id}`)
 			$('#modal-delete-tenaga-ahli').modal('show')
-	 } 
+		} 
 	})
 	// End of delete
+	
+	// 
+	// ========= EXPORT TENAGA AHLI ONCLICK ===========
+	// 
+	
+	$('#btn-export-seluruh-tenaga-ahli').on('click', function () {
+		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/0`)
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+	$('#btn-export-tenaga-ahli').on('click', function () {
+		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/1`)
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+	$('#btn-export-mitra-terampil').on('click', function () {
+		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/2`)
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
 });
