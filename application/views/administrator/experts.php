@@ -432,7 +432,8 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>Tenaga_ahli/import_tenaga_ahli_action" enctype="multipart/form-data">
+					<!-- <form method="POST" action="<?= base_url()?>Tenaga_ahli/import_tenaga_ahli_action" enctype="multipart/form-data"> -->
+					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Mitra Terampil</label>
 							<div class="custom-file">
@@ -577,7 +578,7 @@
 								data-target="#modal-tambah-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
-								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
+								data-target="#modal-import-excel-tambah-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
 							<button class="btn btn-success btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-export-tenaga-ahli" ><img class="img-profile mr-2"
