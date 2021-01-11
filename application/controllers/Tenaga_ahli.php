@@ -951,4 +951,25 @@ class Tenaga_ahli extends CI_Controller
         } else
             redirect('pupr/login');
     }
+
+    public function import_tenaga_ahli_action()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $file_excel_tambah_tenaga = new \CurlFile($_FILES['file_excel_tambah_tenaga']['tmp_name'], $_FILES['file_excel_tambah_tenaga']['type'], $_FILES['file_excel_tambah_tenaga']['name']);
+
+            $import = $this->Tenaga_Ahli_model->import_tenaga_ahli($file_excel_tambah_tenaga, $this->session->userdata('token'));
+            if ($import == null)
+                $this->load->view('error_page');
+            else {
+                if ($import['status'] == 'Success') {
+                    $this->session->set_flashdata('success', $import['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $import['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
 }
