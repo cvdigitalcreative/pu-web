@@ -485,8 +485,18 @@ $(document).ready(function () {
 			const id = $(this).data('id')
 			$('#modal-edit-kegiatan').modal('show')
 		} 
-		if ($('#skkni_table').length > 0) {
+		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
+		} 
+		else if ($('#modul_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Modul/download/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Modul/download/${id}`;
+				}
+			})
 		} 
 	})
 	// End of default
