@@ -465,8 +465,8 @@
 				</div>
 				<div class="modal-body">
 						<div class="col">
-							<a href="<?= base_url()?>Kegiatan/export_kegiatan_action"><button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</button></a>
+							<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</a>
 						</div>
 					<div class="card-body">
 						<div class="">

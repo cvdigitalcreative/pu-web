@@ -765,11 +765,13 @@ $(document).ready(function () {
 	// ========= DETAUL BUTTON ON CLICK ===========
 	// 
 
+	var id_kegiatan;
 	// Each Row Table onClick Edit Button
 	$('table').on('click', '#btn-detail', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
-                    Table.ajax.url(`${BASE_URL}Peserta/dataPeserta/${id}`).load();
+			id_kegiatan = $(this).data('id')
+			Table.ajax.url(`${BASE_URL}Peserta/dataPeserta/${id}`).load();
 			$('#modal-lihat-peserta-by-kegiatan').modal('show')
 		} 
 		else if ($('#skkni_table').length > 0) {
@@ -894,4 +896,12 @@ $(document).ready(function () {
 	 } 
 	})
 	// End of delete
+	$('#btn-export-peserta').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`,
+			success: function () {
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`;
+			}
+	})
+	})
 });
