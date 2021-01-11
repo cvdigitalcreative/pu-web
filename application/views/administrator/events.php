@@ -642,8 +642,8 @@
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
-							<a href="<?= base_url()?>Kegiatan/export_kegiatan_action"><button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button></a>
+							<a href="" class="btn btn-success btn-import-kegiatan" id="btn-export-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</a>
 						</div>
 						<div class="">
 							<a href="<?= base_url()?>Kegiatan/download_format_excel_action"><button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
