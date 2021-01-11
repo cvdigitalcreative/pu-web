@@ -794,9 +794,40 @@ $(document).ready(function () {
 			}
 		})
 	});
-
 	
+	// ========= FILTER TENAGA AHLI ON CLICK ===========
+	$('#btn-filter-tenaga-ahli').click(function () {
+		event.preventDefault();
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/filter/1`,
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				'filter_provinsi_tenaga_ahli': $('#filter-provinsi-tenaga-ahli').val(),
+				'filter_jabatan_kerja_tenaga_ahli': $('#filter-jabatan-kerja-tenaga-ahli').val(),
+			},
+			success: function (hasil) {
+				console.log(hasil);
 
+				
+			}
+		})
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/filter/2`,
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				'filter_provinsi_tenaga_ahli': $('#filter-provinsi-tenaga-ahli').val(),
+				'filter_jabatan_kerja_tenaga_ahli': $('#filter-jabatan-kerja-tenaga-ahli').val(),
+			},
+			success: function (hasil) {
+				console.log(hasil);
+
+				
+			}
+		})
+		$('#modal-filter-tenaga-ahli').modal('hide');
+	});
 
 	// 
 	// ========= DETAUL BUTTON ON CLICK ===========

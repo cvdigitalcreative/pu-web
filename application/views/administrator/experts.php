@@ -24,6 +24,9 @@
 							<label for="filterTenagaAhliProvinsi">Provinsi *</label>
 							<select class="form-control" id="filter-provinsi-tenaga-ahli" name="filter_provinsi_tenaga_ahli" required>
 								<option selected disabled>Pilih Provinsi</option>
+								<?php foreach ($provinsi as $row) : ?>
+								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
+								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -31,6 +34,10 @@
 							<select class="form-control" id="filter-jabatan-kerja-tenaga-ahli" name="filter_jabatan_kerja_tenaga_ahli"
 								aria-placeholder="Pilih status kegiatan" required>
 								<option selected disabled>Pilih Jabatan Kerja</option>
+								<?php if($jabker != null):
+								foreach ($jabker as $row):?>
+								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
+								<?php endforeach; endif?>
 							</select>
 						</div>
 						<div class="menu-divider"></div>
