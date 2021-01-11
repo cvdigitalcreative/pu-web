@@ -208,4 +208,24 @@ class Buku_saku extends CI_Controller
         } else
             redirect("pupr/login");
     }
+
+    public function download($id_buku_saku)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $buku_saku = $this->Buku_Saku_model->view_buku_saku_detail($id_buku_saku, $this->session->userdata('token'));
+            if ($buku_saku == null)
+                $this->load->view('error_page');
+            else {
+                if ($buku_saku['status'] == "Success") {
+                    $data = file_get_contents($buku_saku['data']['file_buku_saku']);
+                    force_download($buku_saku['data']['file_buku_saku'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $buku_saku['message']);
+                    redirect('pupr/skkni');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
 }
