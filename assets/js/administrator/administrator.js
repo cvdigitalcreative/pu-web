@@ -968,15 +968,33 @@ $(document).ready(function () {
 	// 
 	
 	$('#btn-export-seluruh-tenaga-ahli').on('click', function () {
-		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/0`)
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`;
+			}
+		})
 		$('#modal-export-tenaga-ahli').modal('hide')
 	})
 	$('#btn-export-tenaga-ahli').on('click', function () {
-		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/1`)
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`;
+			}
+		})
 		$('#modal-export-tenaga-ahli').modal('hide')
 	})
 	$('#btn-export-mitra-terampil').on('click', function () {
-		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/2`)
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`;
+			}
+		})
 		$('#modal-export-tenaga-ahli').modal('hide')
 	})
 
