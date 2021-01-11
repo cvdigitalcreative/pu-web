@@ -150,7 +150,7 @@ class Authentication extends CI_Controller
 
     public function change_password_action($id_forgot_password)
     {
-        $new_password = $this->input->post('new_password');
+        $new_password = hash('sha256', $this->input->post('new_password'));
 
         $change_password = $this->User_model->change_password($id_forgot_password, $new_password);
 
