@@ -115,7 +115,9 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		retrieve: true,
-
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -201,6 +203,9 @@ $(document).ready(function () {
 		retrieve: true,
 		processing: true,
 		serverSide: false,
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -283,14 +288,14 @@ $(document).ready(function () {
 			{
 				data: 'pendidikan',
 			},
-			{
-				data: 'id_user',
-				render: function (data) {
-					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-				}
-			},
+			// {
+			// 	data: 'id_user',
+			// 	render: function (data) {
+			// 		return `
+			// 		<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+			// 		<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+			// 	}
+			// },
 		],
 		rowCallback: function (row, data) { },
 		"order": [0, 'asc'],
@@ -309,6 +314,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -379,6 +387,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -449,6 +460,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -501,6 +515,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -553,6 +570,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -602,6 +622,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
+		scrollY: true,
+        scrollX: true,
+        scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
