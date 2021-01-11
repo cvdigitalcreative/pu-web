@@ -92,10 +92,10 @@ class Authentication extends CI_Controller
         else {
             if ($verification['status'] == "Success") {
                 $this->session->set_flashdata('success', $verification['message']);
-                redirect();
+                redirect('pupr/login');
             } else {
                 $this->session->set_flashdata('APImessage', $verification['message']);
-                redirect();
+                redirect('pupr/register');
             }
         }
     }
@@ -162,7 +162,7 @@ class Authentication extends CI_Controller
                 redirect("pupr/login");
             } else {
                 $this->session->set_flashdata('APImessage', $change_password['message']);
-                redirect("pupr/password/reset/$id_forgot_password");
+                redirect("pupr/password/forgot");
             }
         }
     }
