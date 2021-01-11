@@ -132,6 +132,15 @@ $(document).ready(function () {
 				data: 'no_kegiatan',
 			},
 			{
+				data: 'id_kegiatan',
+				render: function (data) {
+					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Lihat Peserta</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+			{
 				data: 'judul_kegiatan',
 			},
 			{
@@ -184,15 +193,6 @@ $(document).ready(function () {
 					<a href='${data}' target="__blank">file</a>`
 				}
 			},
-			{
-				data: 'id_kegiatan',
-				render: function (data) {
-					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Lihat Peserta</button>
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-				}
-			},
 		]
 	});
 	// End of Kalender kegiatan datatable 
@@ -203,7 +203,7 @@ $(document).ready(function () {
 		retrieve: true,
 		processing: true,
 		serverSide: false,
-		scrollY: true,
+		scrollY: "400px",
         scrollX: true,
         scrollCollapse: true,
 		// sDom: 'lrtip',
@@ -372,7 +372,6 @@ $(document).ready(function () {
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -445,7 +444,6 @@ $(document).ready(function () {
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -460,9 +458,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		scrollY: true,
-        scrollX: true,
-        scrollCollapse: true,
+		// scrollY: true,
+        // scrollX: true,
+        // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -502,7 +500,6 @@ $(document).ready(function () {
 				data: 'id_ska',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -515,9 +512,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		scrollY: true,
-        scrollX: true,
-        scrollCollapse: true,
+		// scrollY: true,
+        // scrollX: true,
+        // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -557,7 +554,6 @@ $(document).ready(function () {
 				data: 'id_modul',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -570,9 +566,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		scrollY: true,
-        scrollX: true,
-        scrollCollapse: true,
+		// scrollY: true,
+        // scrollX: true,
+        // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -609,7 +605,6 @@ $(document).ready(function () {
 				data: 'id_buku_saku',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -622,9 +617,9 @@ $(document).ready(function () {
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		scrollY: true,
-        scrollX: true,
-        scrollCollapse: true,
+		// scrollY: true,
+        // scrollX: true,
+        // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -661,7 +656,6 @@ $(document).ready(function () {
 				data: 'id_administrasi_kegiatan',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
