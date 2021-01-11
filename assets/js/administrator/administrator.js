@@ -746,8 +746,18 @@ $(document).ready(function () {
                     Table.ajax.url(`${BASE_URL}Peserta/dataPeserta/${id}`).load();
 			$('#modal-lihat-peserta-by-kegiatan').modal('show')
 		} 
-		if ($('#skkni_table').length > 0) {
+		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
+		} 
+		else if ($('#administrasi_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Administrasi_kegiatan/download/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Administrasi_kegiatan/download/${id}`;
+				}
+			})
 		} 
 	})
 	// End of default
