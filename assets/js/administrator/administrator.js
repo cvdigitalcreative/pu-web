@@ -749,10 +749,10 @@ $(document).ready(function () {
 		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
-				url: `${BASE_URL}/SKA/download/${id}`,
+				url: `${BASE_URL}SKA/download/${id}`,
 				type: 'POST',
 				success: function () {
-					window.location = `${BASE_URL}/SKA/download/${id}`;
+					window.location = `${BASE_URL}SKA/download/${id}`;
 				}
 			})
 		} 
