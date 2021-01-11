@@ -464,8 +464,12 @@
 					</button>
 				</div>
 				<div class="modal-body">
+						<div class="col">
+							<a href="<?= base_url()?>Kegiatan/export_kegiatan_action"><button class="btn btn-success btn-import-kegiatan"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</button></a>
+						</div>
 					<div class="card-body">
-						<div class="table-responsive">
+						<div class="">
 							<table id="daftar_peserta_table" class="display">
 								<thead>
 									<tr>
@@ -493,7 +497,7 @@
 										<th>Kode Area</th>
 										<th>Status Rumah</th>
 										<th>Pendidikan</th>
-										<th>Aksi</th>
+										<!-- <th>Aksi</th> -->
 									</tr>
 								</thead>
 							</table>
@@ -647,7 +651,7 @@
 						</div>
 						</div>
 						<div class="card-body">
-							<div class="table-responsive">
+							<div class="">
 								<table id="kalender_kegiatan_table" class="display">
 									<thead>
 										<tr>
@@ -670,7 +674,6 @@
 											<th>Aksi</th>
 										</tr>
 									</thead>
-
 								</table>
 							</div>
 						</div>
