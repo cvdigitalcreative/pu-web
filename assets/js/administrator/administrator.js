@@ -950,6 +950,10 @@ $(document).ready(function () {
 		}
 	})
 	// End of delete
+
+	// 
+	// ========= EXPORT PESERTA ONCLICK ===========
+	// 
 	$('#btn-export-peserta').on('click', function () {
 		$.ajax({
 			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`,
@@ -992,5 +996,19 @@ $(document).ready(function () {
 			}
 		})
 		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+
+	// 
+	// ========= EXPORT KEGIATAN ONCLICK ===========
+	// 
+
+	$('#btn-export-kegiatan').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Kegiatan/export_kegiatan_action`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Kegiatan/export_kegiatan_action`;
+			}
+		})
 	})
 });
