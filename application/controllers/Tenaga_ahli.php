@@ -52,6 +52,57 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
+            // ====================== data for form =======================
+            $data['jenis_kelamin'] = $this->Common_model->view_jenis_kelamin($this->session->userdata('token'));
+            if ($data['jenis_kelamin'] == null)
+                $null = true;
+            else {
+                if ($data['jenis_kelamin']['status'] == "Success")
+                    $data['jenis_kelamin'] = $data['jenis_kelamin']['data'];
+                else {
+                    $data['jenis_kelamin'] = null;
+                    $this->session->set_flashdata('APImessage', $data['jenis_kelamin']['message']);
+                }
+            }
+
+            $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
+            if ($data['provinsi'] == null)
+                $null = true;
+            else {
+                if ($data['provinsi']['status'] == "Success")
+                    $data['provinsi'] = $data['provinsi']['data'];
+                else {
+                    $data['provinsi'] = null;
+                    $this->session->set_flashdata('APImessage', $data['provinsi']['message']);
+                }
+            }
+
+            $data['jabker'] = $this->Common_model->view_jabker($this->session->userdata('token'));
+            if ($data['jabker'] == null)
+                $null = true;
+            else {
+                if ($data['jabker']['status'] == "Success")
+                    $data['jabker'] = $data['jabker']['data'];
+                else {
+                    $data['jabker'] = null;
+                    $this->session->set_flashdata('APImessage', $data['jabker']['message']);
+                }
+            }
+
+            $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
+            if ($data['kategori_tenaga_ahli'] == null)
+                $null = true;
+            else {
+                if ($data['kategori_tenaga_ahli']['status'] == "Success")
+                    $data['kategori_tenaga_ahli'] = $data['kategori_tenaga_ahli']['data'];
+                else {
+                    $data['kategori_tenaga_ahli'] = null;
+                    $this->session->set_flashdata('APImessage', $data['kategori_tenaga_ahli']['message']);
+                }
+            }
+
+
+
             $this->load->view("administrator/experts", $data);
 
             if ($null)
@@ -269,69 +320,34 @@ class Tenaga_ahli extends CI_Controller
             redirect("pupr/login");
     }
 
-    //blm done
-    public function tambah()
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
-            if ($data['kategori_tenaga_ahli'] == null)
-                $null = true;
-            else {
-                if ($data['kategori_tenaga_ahli']['status'] == "Success") {
-                    $data['kategori_tenaga_ahli'] = $data['kategori_tenaga_ahli']['data'];
-                } else {
-                    $data['kategori_tenaga_ahli'] = null;
-                    $this->session->set_flashdata('APImessage', $data['kategori_tenaga_ahli']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
     public function tambah_tenaga_ahli_action()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $nama_lengkap = $this->input->post('nama_lengkap');
-            $tempat_lahir = $this->input->post('tempat_lahir');
-            $tanggal_lahir = $this->input->post('tanggal_lahir');
-            $temparr = explode('-', $tanggal_lahir);
-            $indextglreverse = 0;
-            for ($j = count($temparr) - 1; $j >= 0; $j--) {
-                $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                $indextglreverse++;
-            }
+            $nama_lengkap = $this->input->post('nama_lengkap_tenaga_ahli');
+            $tempat_lahir = $this->input->post('tempat_lahir_tenaga_ahli');
+            $tanggal_lahir = $this->input->post('tanggal_lahir_tenaga_ahli');
+            $temparr = explode('/', $tanggal_lahir);
+            $tempbulan = $temparr[0];
+            $temphari = $temparr[1];
+            $temptahun = $temparr[2];
+            $arrtemptanggal[0] = $temptahun;
+            $arrtemptanggal[1] = $tempbulan;
+            $arrtemptanggal[2] = $temphari;
             $tanggal_lahir = implode('-', $arrtemptanggal);
-            $id_jenis_kelamin = $this->input->post('id_jenis_kelamin');
-            $nik = $this->input->post('nik');
-            $email = $this->input->post('email');
-            $alamat_rumah = $this->input->post('alamat_rumah');
-            $id_provinsi = $this->input->post('id_provinsi');
-            $id_kabupaten_kota = $this->input->post('id_kabupaten_kota');
-            $no_telepon_rumah = $this->input->post('no_telepon_rumah');
-            $no_handphone = $this->input->post('no_handphone');
-            $id_jabker = $this->input->post('id_jabker');
+            $id_jenis_kelamin = $this->input->post('id_jenis_kelamin_tenaga_ahli');
+            $nik = $this->input->post('nik_tenaga_ahli');
+            $email = $this->input->post('email_tenaga_ahli');
+            $alamat_rumah = $this->input->post('alamat_tenaga_ahli');
+            $id_provinsi = $this->input->post('id_provinsi_tenaga_ahli');
+            $id_kabupaten_kota = $this->input->post('id_kota_kabupaten_tenaga_ahli');
+            $no_telepon_rumah = $this->input->post('nomor_rumah_tenaga_ahli');
+            $no_handphone = $this->input->post('nomor_handphone_tenaga_ahli');
+            $id_jabker = $this->input->post('id_jabatan_kerja_tenaga_ahli');
             if (count($id_jabker) == 1)
-                $id_jabker = $id_jabker['0'];
+                $id_jabker = $id_jabker[0];
             else
                 $id_jabker = '[' . implode(',', $id_jabker) . ']';
-            $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
+            $id_kategori_tenaga_ahli = $this->input->post('kategori_tenaga_ahli');
             $is_instruktur = $this->input->post('is_instruktur');
             if ($is_instruktur == 1)
                 $is_instruktur = true;
@@ -367,85 +383,50 @@ class Tenaga_ahli extends CI_Controller
             }
             if ($tambah_tenaga_ahli['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_tenaga_ahli['message']);
-                redirect();
+                redirect('pupr/experts');
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_tenaga_ahli['message']);
-                redirect();
+                redirect('pupr/experts');
             }
         } else {
             redirect("pupr/login");
         }
     }
 
-    //blm done
-    public function edit()
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['kategori_tenaga_ahli'] = $this->Common_model->view_kategori_tenaga_ahli($this->session->userdata('token'));
-            if ($data['kategori_tenaga_ahli'] == null)
-                $null = true;
-            else {
-                if ($data['kategori_tenaga_ahli']['status'] == "Success") {
-                    $data['kategori_tenaga_ahli'] = $data['kategori_tenaga_ahli']['data'];
-                } else {
-                    $data['kategori_tenaga_ahli'] = null;
-                    $this->session->set_flashdata('APImessage', $data['kategori_tenaga_ahli']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
     public function edit_tenaga_ahli_action($id_tenaga_ahli)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $nama_lengkap = $this->input->post('nama_lengkap');
-            $tempat_lahir = $this->input->post('tempat_lahir');
-            $tanggal_lahir = $this->input->post('tanggal_lahir');
-            $temparr = explode('-', $tanggal_lahir);
-            $indextglreverse = 0;
-            for ($j = count($temparr) - 1; $j >= 0; $j--) {
-                $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                $indextglreverse++;
-            }
+            $nama_lengkap = $this->input->post('edit_nama_lengkap_tenaga_ahli');
+            $tempat_lahir = $this->input->post('edit_tempat_lahir_tenaga_ahli');
+            $tanggal_lahir = $this->input->post('edit_tanggal_lahir_tenaga_ahli');
+            $temparr = explode('/', $tanggal_lahir);
+            $tempbulan = $temparr[0];
+            $temphari = $temparr[1];
+            $temptahun = $temparr[2];
+            $arrtemptanggal[0] = $temptahun;
+            $arrtemptanggal[1] = $tempbulan;
+            $arrtemptanggal[2] = $temphari;
             $tanggal_lahir = implode('-', $arrtemptanggal);
-            $id_jenis_kelamin = $this->input->post('id_jenis_kelamin');
-            $nik = $this->input->post('nik');
-            $email = $this->input->post('email');
-            $alamat_rumah = $this->input->post('alamat_rumah');
-            $id_provinsi = $this->input->post('id_provinsi');
-            $id_kabupaten_kota = $this->input->post('id_kabupaten_kota');
-            $no_telepon_rumah = $this->input->post('no_telepon_rumah');
-            $no_handphone = $this->input->post('no_handphone');
-            $id_jabker = $this->input->post('id_jabker');
+            $id_jenis_kelamin = $this->input->post('edit_id_jenis_kelamin_tenaga_ahli');
+            $nik = $this->input->post('edit_nik_tenaga_ahli');
+            $email = $this->input->post('edit_email_tenaga_ahli');
+            $alamat_rumah = $this->input->post('edit_alamat_tenaga_ahli');
+            $id_provinsi = $this->input->post('edit_id_provinsi_tenaga_ahli');
+            $id_kabupaten_kota = $this->input->post('edit_id_kota_kabupaten_tenaga_ahli');
+            $no_telepon_rumah = $this->input->post('edit_nomor_rumah_tenaga_ahli');
+            $no_handphone = $this->input->post('edit_nomor_handphone_tenaga_ahli');
+            $id_jabker = $this->input->post('edit_id_jabatan_kerja_tenaga_ahli');
             if (count($id_jabker) == 1)
-                $id_jabker = $id_jabker['0'];
+                $id_jabker = $id_jabker[0];
             else
                 $id_jabker = '[' . implode(',', $id_jabker) . ']';
-            $id_kategori_tenaga_ahli = $this->input->post('id_kategori_tenaga_ahli');
-            $is_instruktur = $this->input->post('is_instruktur');
+            $id_kategori_tenaga_ahli = $this->input->post('edit_kategori_tenaga_ahli');
+            $is_instruktur = $this->input->post('edit_is_instruktur');
             if ($is_instruktur == 1)
                 $is_instruktur = true;
             else
                 $is_instruktur = false;
-            $is_asesor = $this->input->post('is_asesor');
+            $is_asesor = $this->input->post('edit_is_asesor');
             if ($is_asesor == 1)
                 $is_asesor = true;
             else
@@ -476,10 +457,10 @@ class Tenaga_ahli extends CI_Controller
             }
             if ($edit_tenaga_ahli['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_tenaga_ahli['message']);
-                redirect();
+                redirect('pupr/experts');
             } else {
                 $this->session->set_flashdata('APImessage', $edit_tenaga_ahli['message']);
-                redirect();
+                redirect('pupr/experts');
             }
         } else {
             redirect("pupr/login");
@@ -495,10 +476,10 @@ class Tenaga_ahli extends CI_Controller
             } else {
                 if ($delete_tenaga_ahli['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_tenaga_ahli['message']);
-                    redirect();
+                    redirect('pupr/experts');
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_tenaga_ahli['message']);
-                    redirect();
+                    redirect('pupr/experts');
                 }
             }
         } else

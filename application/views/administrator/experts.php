@@ -57,76 +57,63 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>"
+					<form method="POST" action="<?= base_url()?>Tenaga_ahli/tambah_tenaga_ahli_action"
 						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaTenagaAhli">Nama Lengkap *</label>
+							<input type="text" class="form-control" id="nama-tenaga-ahli" name="nama_lengkap_tenaga_ahli"
+								placeholder="Contoh: Andi Setiawan" required>
+						</div>
 
 						<div class="form-group py-2">
-							<label for="akunKegiatan">Akun Kegiatan*</label>
-							<select class="form-control" id="akun-kegiatan" name="id_akun_kegiatan" required>
-								<option selected disabled>Pilih akun kegiatan</option>
-								<?php if($akun_kegiatan != null):
-								foreach ($akun_kegiatan as $row):?>
-								<option value="<?=$row['id_akun_kegiatan']?>"><?= $row['akun_kegiatan']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="jenisKegiatan">Jenis kegiatan *</label>
-							<select class="form-control" id="jenis-kegiatan" name="id_jenis_kegiatan" required>
-								<option selected disabled>Pilih jenis kegiatan</option>
-								<?php if($jenis_kegiatan != null):
-								foreach ($jenis_kegiatan as $row):?>
-								<option value="<?=$row['id_jenis_kegiatan']?>"><?= $row['jenis_kegiatan']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="bannerKegiatan">Banner Kegiatan *</label>
-							<div id="profile-container">
-								<image id="banner-image"
-									src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
-								<input id="banner-kegiatan" type="file" name="foto_banner_kegiatan" id="bannerKegiatan"
-									placeholder="Photo" alt="Pilih Foto" required="" capture>
-							</div>
-						</div>
-						<div class="form-group py-2">
-							<label for="namaKegiatan">Nama Kegiatan *</label>
-							<input type="text" class="form-control" id="nama-kegiatan" name="judul_kegiatan"
-								placeholder="Contoh: Kegiatan Pelatihan" required>
-						</div>
-						<div class="form-group py-2">
-							<label for="deskripsiKegiatan">Deskripsi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="deskripsi-kegiatan" name="deskripsi_kegiatan"
-								placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
-						</div>
-						<div class="row">
-							<div class="col">
-								<div class="form-group py-2">
-									<label for="tanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="tanggal-mulai-kegiatan" data-drops="up" name="tanggal_kegiatan" value=""
-										placeholder="Pilih tanggal kegiatan" required>
-									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
-										Tanggal mulai kegiatan
-									</small>
+							<div class="row">
+								<div class="col">
+							<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
+									<input type="text" class="form-control" id="tempat-lahir-tenaga-ahli" name="tempat_lahir_tenaga_ahli"
+										placeholder="Contoh: Jakarta" required>
 								</div>
-							</div>
-							<div class="col">
-								<div class="form-group py-2">
-									<label for="tanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="tanggal-selesai-kegiatan" data-drops="up" name="tanggal_kegiatan_selesai"
-										value="" placeholder="Pilih tanggal kegiatan" required>
-									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
-										Tanggal selesai kegiatan
-									</small>
+								<div class="col">
+							<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
+										<input type="text" class="form-control js-daterangepicker"
+											id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli" value=""
+											placeholder="Pilih tanggal lahir" required>
 								</div>
 							</div>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="provinsiKegiatan">Provinsi kegiatan *</label>
-							<select class="form-control" id="provinsi-kegiatan" name="id_provinsi"
-								onChange="getState(this.value);" required>
+							<label for="jenisKelamin">Jenis Kelamin *</label>
+							<select class="form-control" id="jenis-kelamin-tenaga-ahli" name="id_jenis_kelamin_tenaga_ahli" required>
+								<option selected disabled>Pilih jenis kelamin</option>
+								<?php if($jenis_kelamin != null):
+								foreach ($jenis_kelamin as $row):?>
+								<option value="<?=$row['id_jenis_kelamin']?>"><?= $row['jenis_kelamin']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="nikTenagaAhli">NIK *</label>
+							<input type="text" class="form-control" id="nik-tenaga-ahli" name="nik_tenaga_ahli"
+								placeholder="Contoh: 1234567898765432" required>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="emailTenagaAhli">Email *</label>
+							<input type="email" class="form-control" id="email-tenaga-ahli" name="email_tenaga_ahli"
+								placeholder="Contoh: andisetiawan@email.com" required>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="alamatTenagaAhli">Alamat *</label>
+							<textarea type="text" class="form-control" id="alamat-tenaga-ahli" name="alamat_tenaga_ahli"
+								placeholder="Contoh: Jl. Jendral Sudirman No.123" required></textarea>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="provinsiTenagaAhli">Provinsi *</label>
+							<select class="form-control" id="provinsi-tenaga-ahli" name="id_provinsi_tenaga_ahli"
+								onChange="getStateTenagaAhli(this.value);" required>
 								<option selected disabled>Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
 								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
@@ -134,63 +121,93 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaKegiatan">Kota kegiatan *</label>
-							<select class="form-control" id="kota-kegiatan" name="id_kota_kabupaten" required>
+							<label for="kotaTenagaAhli">Kota *</label>
+							<select class="form-control" id="kota-tenaga-ahli" name="id_kota_kabupaten_tenaga_ahli" required>
 								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
 						</div>
-						<div class="form-group py-2">
-							<label for="lokasiKegiatan">Lokasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="lokasi-kegiatan" name="lokasi_kegiatan"
-								placeholder="Contoh: Jalan demang lebar daun" required></textarea>
+
+						<div class="row">
+							<div class="col">
+								<div class="form-group py-2">
+									<label for="nomorHandphone">Nomor Handphone *</label>
+									<input type="text" class="form-control" id="nomor-handphone-tenaga-ahli" name="nomor_handphone_tenaga_ahli"
+										placeholder="Contoh: +6282112341234" required>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group py-2">
+									<label for="nomorRumah">Nomor Rumah *</label>
+									<input type="text" class="form-control" id="nomor-rumah-tenaga-ahli" name="nomor_rumah_tenaga_ahli"
+										placeholder="Contoh: +6271112345" required>
+								</div>
+							</div>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="statusKegiatan">Status kegiatan *</label>
-							<select class="form-control" id="status-kegiatan" name="status_kegiatan"
-								aria-placeholder="Pilih status kegiatan" required>
-								<option selected disabled>Pilih status kegiatan</option>
-								<?php if($status_kegiatan != null):
-								foreach ($status_kegiatan as $row):?>
-								<option value="<?=$row['id_status_kegiatan']?>"><?= $row['status_kegiatan']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="instrukturKegiatan">Instruktur kegiatan *</label>
-							<select class="form-control selectpicker" id="instruktur-kegiatan"
-								name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple
+							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
+							<select class="form-control selectpicker" id="jabatan-kerja-tenaga-ahli"
+								name="id_jabatan_kerja_tenaga_ahli[]" aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
 								data-live-search="true" required>
-								<?php if($instruktur != null):
-								foreach ($instruktur as $row):?>
-								<option value="<?=$row['id_tenaga_ahli']?>"><?= $row['nama_lengkap']?></option>
+								<?php if($jabker != null):
+								foreach ($jabker as $row):?>
+								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
 								<?php endforeach; endif?>
 							</select>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="assesorKegiatan">Assesor kegiatan *</label>
-							<select class="form-control selectpicker" id="assesor-kegiatan" name="id_asesor_kegiatan[]"
-								aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
-								<?php if($asesor != null):
-								foreach ($asesor as $row):?>
-								<option value="<?=$row['id_tenaga_ahli']?>"><?= $row['nama_lengkap']?></option>
-								<?php endforeach; endif?>
-							</select>
+							<label for="KategoriTenagaAhli">Kategori *</label>
+								<?php if($kategori_tenaga_ahli != null):
+								$index = 0;
+								foreach ($kategori_tenaga_ahli as $row):
+									if($index == 0) :?>
+									<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli" required>
+										</div>
+									</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
+								</div>
+								<?php else : ?>
+									<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli">
+										</div>
+									</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
+									</div>
+								<?php endif; $index++; endforeach; endif?>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="fileMateriKegiatan">Materi kegiatan</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-materi-kegiatan"
-									name="file_materi_kegiatan">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
-								<small id="file-materi-kegiatan" class="form-text text-muted">
-									File materi adalah opsional
-								</small>
+							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="hidden" name="is_asesor" value=0>
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="is_asesor">
+									</div>
+								</div>
+							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Asesor" readonly style="background-color: white;">
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="hidden" name="is_instruktur" value=0>
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="is_instruktur">
+									</div>
+								</div>
+							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
 							</div>
 						</div>
 
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-							Kegiatan</button>
+							Tenaga</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -200,155 +217,169 @@
 	</div>
 	<!-- End modal tambah tenaga ahli -->
 
-	<!-- Edit Kegiatan Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-edit-kegiatan" tabindex="-1" role="dialog">
+		<!-- Edit Tenaga Ahli -->
+		<div class="modal fade bd-example-modal-lg" id="modal-edit-tenaga-ahli" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Kegiatan</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Tenaga Ahli</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="" enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url()?>Tenaga_ahli/edit_tenaga_ahli_action"
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaTenagaAhli">Nama Lengkap *</label>
+							<input type="text" class="form-control" id="edit-nama-tenaga-ahli" name="edit_nama_lengkap_tenaga_ahli"
+								placeholder="Contoh: Andi Setiawan" required>
+						</div>
 
 						<div class="form-group py-2">
-							<label for="editAkunKegiatan">Akun Kegiatan*</label>
-							<select class="form-control" id="edit-akun-kegiatan" name="id_akun_kegiatan" required>
-								<option selected disabled>Pilih akun kegiatan</option>
-								<?php if($akun_kegiatan != null):
-								foreach ($akun_kegiatan as $row2): ?>
-								<option value="<?=$row2['id_akun_kegiatan']?>"><?= $row2['akun_kegiatan']?></option>
-								<?php endforeach; endif;?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="editJenisKegiatan">Jenis kegiatan *</label>
-							<select class="form-control" id="edit-jenis-kegiatan" name="id_jenis_kegiatan" required>
-								<option selected disabled>Pilih jenis kegiatan</option>
-								<?php if($jenis_kegiatan != null):
-								foreach ($jenis_kegiatan as $row2):?>
-								<option value="<?=$row2['id_jenis_kegiatan']?>"><?= $row2['jenis_kegiatan']?></option>
-								<?php endforeach; endif;?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="editBannerKegiatan">Banner Kegiatan *</label>
-							<div id="profile-container">
-								<image id="banner-image"
-									src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
-								<input id="edit-banner-kegiatan" type="file" name="edit_foto_banner_kegiatan"
-									placeholder="Photo" alt="Pilih Foto" required="" capture>
+							<div class="row">
+								<div class="col">
+							<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
+									<input type="text" class="form-control" id="edit-tempat-lahir-tenaga-ahli" name="edit_tempat_lahir_tenaga_ahli"
+										placeholder="Contoh: Jakarta" required>
+								</div>
+								<div class="col">
+							<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
+										<input type="text" class="form-control js-daterangepicker"
+											id="edit-tanggal-lahir-tenaga-ahli" data-drops="up" name="edit_tanggal_lahir_tenaga_ahli" value=""
+											placeholder="Pilih tanggal lahir" required>
+								</div>
 							</div>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="editNamaKegiatan">Nama Kegiatan *</label>
-							<input type="text" class="form-control" id="edit-nama-kegiatan" name="edit_judul_kegiatan"
-								placeholder="Contoh: Kegiatan Pelatihan" required>
+							<label for="jenisKelamin">Jenis Kelamin *</label>
+							<select class="form-control" id="edit-jenis-kelamin-tenaga-ahli" name="edit_id_jenis_kelamin_tenaga_ahli" required>
+								<option selected disabled>Pilih jenis kelamin</option>
+								<?php if($jenis_kelamin != null):
+								foreach ($jenis_kelamin as $row):?>
+								<option value="<?=$row['id_jenis_kelamin']?>"><?= $row['jenis_kelamin']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="nikTenagaAhli">NIK *</label>
+							<input type="text" class="form-control" id="edit-nik-tenaga-ahli" name="edit_nik_tenaga_ahli"
+								placeholder="Contoh: 1234567898765432" required>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="emailTenagaAhli">Email *</label>
+							<input type="email" class="form-control" id="edit-email-tenaga-ahli" name="edit_email_tenaga_ahli"
+								placeholder="Contoh: andisetiawan@email.com" required>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="alamatTenagaAhli">Alamat *</label>
+							<textarea type="text" class="form-control" id="edit-alamat-tenaga-ahli" name="edit_alamat_tenaga_ahli"
+								placeholder="Contoh: Jl. Jendral Sudirman No.123" required></textarea>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="provinsiTenagaAhli">Provinsi *</label>
+							<select class="form-control" id="edit-provinsi-tenaga-ahli" name="edit_id_provinsi_tenaga_ahli"
+								onChange="getStateEditTenagaAhli(this.value);" required>
+								<option selected disabled>Pilih Provinsi</option>
+								<?php foreach ($provinsi as $row) : ?>
+								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
+								<?php endforeach ?>
+							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="editDeskripsiKegiatan">Deskripsi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="edit-deskripsi-kegiatan"
-								name="edit_deskripsi_kegiatan"
-								placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
+							<label for="kotaTenagaAhli">Kota *</label>
+							<select class="form-control" id="edit-kota-tenaga-ahli" name="edit_id_kota_kabupaten_tenaga_ahli" required>
+								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
+							</select>
 						</div>
+
 						<div class="row">
 							<div class="col">
 								<div class="form-group py-2">
-									<label for="editTanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="edit-tanggal-mulai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_mulai"
-										value="" placeholder="Pilih tanggal kegiatan" required>
-									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
-										Tanggal mulai kegiatan
-									</small>
+									<label for="nomorHandphone">Nomor Handphone *</label>
+									<input type="text" class="form-control" id="edit-nomor-handphone-tenaga-ahli" name="edit_nomor_handphone_tenaga_ahli"
+										placeholder="Contoh: +6282112341234" required>
 								</div>
 							</div>
 							<div class="col">
 								<div class="form-group py-2">
-									<label for="editTanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="edit-tanggal-selesai-kegiatan" data-drops="up"
-										name="edit_tanggal_kegiatan_selesai" value=""
-										placeholder="Pilih tanggal kegiatan" required>
-									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
-										Tanggal selesai kegiatan
-									</small>
+									<label for="nomorRumah">Nomor Rumah *</label>
+									<input type="text" class="form-control" id="edit-nomor-rumah-tenaga-ahli" name="edit_nomor_rumah_tenaga_ahli"
+										placeholder="Contoh: +6271112345" required>
 								</div>
 							</div>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
-							<select class="form-control" id="edit-provinsi-kegiatan" name="id_provinsi"
-								onChange="getStateEdit(this.value);" required>
-								<option selected disabled>Pilih Provinsi</option>
-								<?php if($provinsi != null) :
-									foreach ($provinsi as $row2) :?>
-											<option value="<?= $row2['id_provinsi']?>"><?= $row2['provinsi']?></option>
-									<?php endforeach; endif;?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="editKotaKegiatan">Kota kegiatan *</label>
-							<select class="form-control" id="edit-kota-kegiatan" name="id_kota_kabupaten" required>
-								<option disabled>Mohon pilih Provinsi terlebih dahulu</option>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="editLokasiKegiatan">Lokasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="edit-lokasi-kegiatan"
-								name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun"
-								required></textarea>
-						</div>
-						<div class="form-group py-2">
-							<label for="editStatusKegiatan">Status kegiatan *</label>
-							<select class="form-control" id="edit-status-kegiatan" name="status_kegiatan"
-								aria-placeholder="Pilih status kegiatan" required>
-								<option selected disabled>Pilih status kegiatan</option>
-								<?php if($status_kegiatan != null):
-								foreach ($status_kegiatan as $row2):?>
-								<option value="<?=$row2['id_status_kegiatan']?>"><?= $row2['status_kegiatan']?></option>
-								<?php endforeach; endif;?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="editInstrukturKegiatan">Instruktur kegiatan *</label>
-							<select class="form-control selectpicker" id="edit-instruktur-kegiatan"
-								name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple
+							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
+							<select class="form-control selectpicker" id="edit-jabatan-kerja-tenaga-ahli"
+								name="edit_id_jabatan_kerja_tenaga_ahli[]" aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
 								data-live-search="true" required>
-								<?php if($instruktur != null):
-								foreach ($instruktur as $row2):?>
-								<option value="<?=$row2['id_tenaga_ahli']?>"><?= $row2['nama_lengkap']?></option>
+								<?php if($jabker != null):
+								foreach ($jabker as $row):?>
+								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
 								<?php endforeach; endif?>
 							</select>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="editAssesorKegiatan">Assesor kegiatan *</label>
-							<select class="form-control selectpicker" id="edit-assesor-kegiatan" name="id_asesor_kegiatan[]"
-								aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
-								<?php if($asesor != null):
-								foreach ($asesor as $row2):?>
-								<option value="<?=$row2['id_tenaga_ahli']?>"><?= $row2['nama_lengkap']?></option>
-								<?php endforeach; endif?>
-							</select>
+							<label for="KategoriTenagaAhli">Kategori *</label>
+								<?php if($kategori_tenaga_ahli != null):
+								$index = 0;
+								foreach ($kategori_tenaga_ahli as $row):
+									if($index == 0) :?>
+									<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli" required>
+										</div>
+									</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
+								</div>
+								<?php else : ?>
+									<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<div class="input-group-text">
+											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli">
+										</div>
+									</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
+									</div>
+								<?php endif; $index++; endforeach; endif?>
 						</div>
+
 						<div class="form-group py-2">
-							<label for="editFileMateriKegiatan">Materi kegiatan</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="edit-file-materi-kegiatan"
-									name="file_materi_kegiatan">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
-								<small id="file-materi-kegiatan" class="form-text text-muted">
-									File materi adalah opsional
-								</small>
+							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="hidden" name="edit_is_asesor" value=0>
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="edit_is_asesor">
+									</div>
+								</div>
+							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Asesor" readonly style="background-color: white;">
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="hidden" name="edit_is_instruktur" value=0>
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="edit_is_instruktur">
+									</div>
+								</div>
+							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
 							</div>
 						</div>
 
 						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Simpan
-							Perubahan</button>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Tenaga</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -356,21 +387,21 @@
 			</div>
 		</div>
 	</div>
-	<!-- End modal edit kegiatan -->
+	<!-- End modal tambah tenaga ahli -->
 
-	<!-- Delete kegiatan modal -->
-	<div class="modal fade bd-example-modal-lg" id="delete-kegiatan" tabindex="-1" role="dialog"
+	<!-- Delete Tenaga Ahli modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-tenaga-ahli" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Kegiatan Ini?</h5>
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus tenaga Ini?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					Pastikan dengan benar bahwa kegiatan ini ingin anda hapus!
+					Pastikan dengan benar bahwa tenaga ini ingin anda hapus!
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
@@ -381,7 +412,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- End modal delete kegiatan -->
+	<!-- End modal delete modul -->
 
 	<!-- Import Excel Tambah Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-kegiatan" tabindex="-1" role="dialog">
@@ -508,7 +539,7 @@
 								data-target="#modal-filter-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
 							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-kegiatan"><img class="img-profile mr-2"
+								data-target="#modal-tambah-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"

@@ -52,3 +52,29 @@
         });
     }
 </script>
+
+<script>
+    function getStateTenagaAhli(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#kota-tenaga-ahli").html(data);
+            }
+        });
+    }
+</script>
+
+<script>
+    function getStateEditTenagaAhli(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#edit-kota-tenaga-ahli").html(data);
+            }
+        });
+    }
+</script>

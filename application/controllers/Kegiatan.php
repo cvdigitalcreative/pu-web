@@ -836,25 +836,6 @@ class Kegiatan extends CI_Controller
         }
     }
 
-    public function view_kota_edit()
-    {
-        $provinsi = $this->input->post('id_provinsi');
-        $data = $this->Common_model->view_kabupaten_kota($provinsi, $this->session->userdata('token'));
-        if ($data == null) {
-            $this->load->view('error_page');
-        } else {
-            if ($data['status'] == "Success") {
-                $data = $data['data'];
-                foreach ($data as $row) {
-                    echo '<option value="' . $row['id_kabupaten_kota'] . '">' . $row['kabupaten_kota'] . '</option>';
-                }
-            } else {
-                $data = null;
-                echo '<option value="' . '">Gagal mendapatkan kota untuk kabupaten yang dipilih</option>';
-            }
-        }
-    }
-
     public function tambah_kegiatan_action()
     {
         if ($this->session->userdata('logged_in') == true) {
