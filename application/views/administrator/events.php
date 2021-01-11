@@ -453,6 +453,76 @@
 	</div>
 	<!-- End of Import Excel Tambah Kegiatan Modal -->
 
+	<!-- Lihat peserta Modal -->
+	<div class="modal fade" id="modal-lihat-peserta-by-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-daftar-peserta-kegiatan-custom" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Daftar Peserta Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table id="daftar_peserta_table" class="display">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Foto</th>
+										<th>Nama</th>
+										<th>Jenis Kelamin</th>
+										<th>Tempat & Tanggal Lahir</th>
+										<th>Status Perkawinan</th>
+										<th>Nama Perusahaan</th>
+										<th>Jabatan</th>
+										<th>Utusan</th>
+										<th>Email</th>
+										<th>Nomor Hp</th>
+										<th>Nomor Telepon Rumah</th>
+										<th>NIK</th>
+										<th>Alamat</th>
+										<th>Provinsi</th>
+										<th>Kabupaten / Kota</th>
+										<th>Kecamatan</th>
+										<th>Kelurahan</th>
+										<th>Rt</th>
+										<th>Rw</th>
+										<th>Kode POS</th>
+										<th>Kode Area</th>
+										<th>Status Rumah</th>
+										<th>Pendidikan</th>
+										<th>Aksi</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of lihat peserta Modal -->
+
+	<!-- Modal show image -->
+	<div id="show-image-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<img class="showimage img-responsive" src="" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal show image -->
+
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
@@ -576,12 +646,13 @@
 									<thead>
 										<tr>
 											<th>No</th>
-											<th>Tanggal Kegiatan</th>
-											<th>Banner Kegiatan</th>
-											<th>Jenis Kegiatan</th>
-											<th>Akun Kegiatan</th>
-											<th>Status Kegiatan</th>
 											<th>Nama Kegiatan</th>
+											<th>Deskripsi Kegiatan</th>
+											<th>Akun Kegiatan</th>
+											<th>Jenis Kegiatan</th>
+											<th>Tanggal Kegiatan</th>
+											<th>Status Kegiatan</th>
+											<th>Banner Kegiatan</th>
 											<th>Instruktur Kegiatan</th>
 											<th>Assesor Kegiatan</th>
 											<th>Provinsi Kegiatan</th>

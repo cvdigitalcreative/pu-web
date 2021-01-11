@@ -80,3 +80,28 @@
 
 /* end of upload image kegiatan */
 
+/* Custom modal full screen */
+.modal-daftar-peserta-kegiatan-custom {
+    max-width: 100%;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 100vh;
+    display: flex;
+}
+
+/* show bigger image when hover */
+.image-hover {
+    /* padding: 50px; */
+    transition: transform .2s;
+    margin: 0 auto;
+  }
+  
+  .image-hover:hover {
+    -ms-transform: scale(2.0); /* IE 9 */
+    -webkit-transform: scale(2.0); /* Safari 3-8 */
+    transform: scale(2.0); 
+  }
+  /* End of show bigger image when hover */

@@ -3,7 +3,7 @@ $(document).ready(function () {
 	$('#notification-modal').ready(function () {
 		$('#notification-modal').modal('show')
 	})
-	
+
 	// upload image kalender kegiatan js
 	$("#banner-image").click(function (e) {
 		$("#banner-kegiatan").click();
@@ -117,6 +117,7 @@ $(document).ready(function () {
 		retrieve: true,
 
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -129,14 +130,10 @@ $(document).ready(function () {
 				data: 'no_kegiatan',
 			},
 			{
-				data: 'tanggal_kegiatan_full_text',
+				data: 'judul_kegiatan',
 			},
 			{
-				data: 'foto_banner_kegiatan',
-				render: function (data) {
-					return `
-					<img src="${data}" style="width: 200px; height: 200px; overflow: hidden;">`
-				}
+				data: 'deskripsi_kegiatan',
 			},
 			{
 				data: 'jenis_kegiatan',
@@ -145,10 +142,17 @@ $(document).ready(function () {
 				data: 'akun_kegiatan',
 			},
 			{
+				data: 'tanggal_kegiatan_full_text',
+			},
+			{
 				data: 'status_kegiatan',
 			},
 			{
-				data: 'judul_kegiatan',
+				data: 'foto_banner_kegiatan',
+				render: function (data) {
+					return `
+					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden;">`
+				}
 			},
 			{
 				data: 'str_nama_instruktur_kegiatan',
@@ -191,15 +195,254 @@ $(document).ready(function () {
 	});
 	// End of Kalender kegiatan datatable 
 
+	// Daftar Peserta by Kalender Kegiatan Datatable
+	var Table = $("#daftar_peserta_table").DataTable({
+		data: [],
+		retrieve: true,
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		columns: [
+			{
+				data: 'no_peserta',
+			},
+			{
+				data: 'file_foto_profile',
+				render: function (data) {
+					return `
+					<img class="image-hover" src="${data}" style="width: 75px; height: 75px; overflow: hidden;">`
+				}
+			},
+			{
+				data: 'nama',
+			},
+			{
+				data: 'jenis_kelamin',
+			},
+			{
+				data: 'tempat_tanggal_lahir',
+			},
+			{
+				data: 'status_perkawinan',
+			},
+			{
+				data: 'nama_perusahaan',
+			},
+			{
+				data: 'jabatan',
+			},
+			{
+				data: 'utusan',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_handphone',
+			},
+			{
+				data: 'no_telepon',
+			},
+			{
+				data: 'nik',
+			},
+			{
+				data: 'alamat_rumah',
+			},
+			{
+				data: 'provinsi',
+			},
+			{
+				data: 'kota_kabupaten',
+			},
+			{
+				data: 'kecamatan',
+			},
+			{
+				data: 'kelurahan',
+			},
+			{
+				data: 'rt',
+			},
+			{
+				data: 'rw',
+			},
+			{
+				data: 'kode_pos',
+			},
+			{
+				data: 'kode_area',
+			},
+			{
+				data: 'status_rumah',
+			},
+			{
+				data: 'pendidikan',
+			},
+			{
+				data: 'id_user',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		],
+		rowCallback: function (row, data) { },
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		}
+	});
+	// End of Daftar Peserta by Kalender Kegiatan datatable 
+
 	// Tenaga Ahli Datatable
 	$('#tenaga_ahli_table').DataTable({
-	});
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Tenaga_ahli/dataTenagaAhli`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_tenaga_ahli',
+			},
+			{
+				data: 'nama_lengkap',
+			},
+			{
+				data: 'jenis_kelamin',
+			},
+			{
+				data: 'tempat_lahir',
+			},
+			{
+				data: 'tanggal_lahir_text',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_handphone',
+			},
+			{
+				data: 'no_telpon_rumah',
+			},
+			{
+				data: 'nik',
+			},
+			{
+				data: 'alamat_rumah',
+			},
+			{
+				data: 'provinsi',
+			},
+			{
+				data: 'kabupaten_kota',
+			},
+			{
+				data: 'ketenagakerjaan',
+			},
+			{
+				data: 'keahlian',
+			},
+			{
+				data: 'id_tenaga_ahli',
+				render: function (data) {
+					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	}	
+	);
 	// End of Tenaga Ahli datatable 
 
 	// Mitra Terampil Datatable
 	$('#mitra_terampil_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// sDom: 'lrtip',
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Tenaga_ahli/dataTenagaTerampil`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_tenaga_ahli',
+			},
+			{
+				data: 'nama_lengkap',
+			},
+			{
+				data: 'jenis_kelamin',
+			},
+			{
+				data: 'tempat_lahir',
+			},
+			{
+				data: 'tanggal_lahir_text',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_handphone',
+			},
+			{
+				data: 'no_telpon_rumah',
+			},
+			{
+				data: 'nik',
+			},
+			{
+				data: 'alamat_rumah',
+			},
+			{
+				data: 'provinsi',
+			},
+			{
+				data: 'kabupaten_kota',
+			},
+			{
+				data: 'ketenagakerjaan',
+			},
+			{
+				data: 'keahlian',
+			},
+			{
+				data: 'id_tenaga_ahli',
+				render: function (data) {
+					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
 	});
 	// End of Mitra Terampil datatable 
+
 
 	// SKKNI Datatable
 	$('#skkni_table').DataTable({
@@ -207,6 +450,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -258,6 +502,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -309,6 +554,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -357,6 +603,7 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// sDom: 'lrtip',
+		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
 		},
@@ -499,7 +746,8 @@ $(document).ready(function () {
 	$('table').on('click', '#btn-detail', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
-			$('#modal-edit-kegiatan').modal('show')
+                    Table.ajax.url(`${BASE_URL}Peserta/dataPeserta/${id}`).load();
+			$('#modal-lihat-peserta-by-kegiatan').modal('show')
 		} 
 		if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
