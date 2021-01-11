@@ -343,7 +343,7 @@ class Kegiatan extends CI_Controller
                                 if ($indexAsesor == 0) {
                                     $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = $val2['nama'];
                                 } else
-                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['asesor_kegiatan']['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
+                                    $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
                                 $indexAsesor++;
                             }
 
