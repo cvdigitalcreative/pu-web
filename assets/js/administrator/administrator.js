@@ -98,12 +98,51 @@ $(document).ready(function () {
 			var years = moment().diff(start, 'years');
 		});
 	});
+
+	// tanggal lahir tenaga ahli
+	$(function () {
+		$('input[name="tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
+
+	// edit tanggal lahir tenaga ahli
+	$(function () {
+		$('input[name="edit_tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
 	// end input date rangepicker
 
 	// Custom bootstrap-select each select id
 	$('#instruktur-kegiatan').selectpicker();
 
 	// End of Custom bootstrap-select each select id
+
+
+	// $('#provinsi-tenaga-ahli').change(function () {
+	// 	provinsi = $('#provinsi-tenaga-ahli').val();
+	// 	console.log(provinsi);
+	// 	$.ajax({
+    //         type: "POST",
+	// 		url: `${BASE_URL}Kegiatan/view_kota`,
+	// 		cache: false,
+    //         data: 'id_provinsi=' + provinsi,
+	// 		success: function (result) {
+    //             $("kota-tenaga-ahli").html(result);
+    //         }
+    //     });
+	// })
 
 	// 
 	// ========= DATATABLE ===========
@@ -372,7 +411,6 @@ $(document).ready(function () {
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -445,7 +483,6 @@ $(document).ready(function () {
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -860,6 +897,18 @@ $(document).ready(function () {
 			$('#edit-deskripsi-buku-saku').val($(this).parent().siblings().eq(2).text())
 			$('#modal-edit-buku-saku').modal('show')
 		}  
+		else if ($('#tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/edit_tenaga_ahli_action/${id}`)
+			$('#edit-nama-tenaga-ahli').val($(this).parent().siblings().eq(1).text())
+			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
+			$('#edit-nik-tenaga-ahli').val($(this).parent().siblings().eq(8).text())
+			$('#edit-email-tenaga-ahli').val($(this).parent().siblings().eq(5).text())
+			$('#edit-alamat-tenaga-ahli').val($(this).parent().siblings().eq(9).text())
+			$('#edit-nomor-handphone-tenaga-ahli').val($(this).parent().siblings().eq(6).text())
+			$('#edit-nomor-rumah-tenaga-ahli').val($(this).parent().siblings().eq(7).text())
+			$('#modal-edit-tenaga-ahli').modal('show')
+		}  
 	})
 	// End of edit
 	
@@ -888,12 +937,17 @@ $(document).ready(function () {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Administrasi_kegiatan/delete_administrasi_kegiatan/${id}`)
 			$('#modal-delete-administrasi-kegiatan').modal('show')
-    }
+		}
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Buku_saku/delete_buku_saku/${id}`)
 			$('#modal-delete-buku-saku').modal('show')
-	 } 
+		} 
+		else if ($('#tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/delete_tenaga_ahli/${id}`)
+			$('#modal-delete-tenaga-ahli').modal('show')
+		} 
 	})
 	// End of delete
 	$('#btn-export-peserta').on('click', function () {
@@ -903,5 +957,21 @@ $(document).ready(function () {
 				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`;
 			}
 	})
+	
+	// 
+	// ========= EXPORT TENAGA AHLI ONCLICK ===========
+	// 
+	
+	$('#btn-export-seluruh-tenaga-ahli').on('click', function () {
+		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/0`)
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+	$('#btn-export-tenaga-ahli').on('click', function () {
+		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/1`)
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+	$('#btn-export-mitra-terampil').on('click', function () {
+		$('a').attr('href', `${BASE_URL}Tenaga_Ahli/export_tenaga_ahli_action/2`)
+		$('#modal-export-tenaga-ahli').modal('hide')
 	})
 });
