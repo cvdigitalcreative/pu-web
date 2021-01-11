@@ -959,6 +959,18 @@ $(document).ready(function () {
 		})
 	});
 	
+	// ========= DOWNLOAD FORMAT TENAGA AHLI ONCLICK ===========
+	// 
+	// 
+	$('#btn-download-format-tenaga-ahli').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/download_format_excel_action`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/download_format_excel_action`;
+			}
+		})
+	})
 	// 
 	// ========= EXPORT TENAGA AHLI ONCLICK ===========
 	// 

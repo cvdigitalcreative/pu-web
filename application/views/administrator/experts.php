@@ -577,8 +577,8 @@
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
 						</div>
 						<div class="">
-							<button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button>
+							<a class="btn btn-danger btn-import-kegiatan" href="" id="btn-download-format-tenaga-ahli"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</a>
 						</div>
 						</div>
 						<div class="card-body">

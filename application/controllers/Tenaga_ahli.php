@@ -860,4 +860,13 @@ class Tenaga_ahli extends CI_Controller
         } else
             redirect('pupr/login');
     }
+
+    public function download_format_excel_action()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            force_download('./assets/docs/Format Tenaga Ahli.xlsx', NULL);
+        } else
+            redirect('pupr/login');
+    }
 }
