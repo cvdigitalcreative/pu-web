@@ -98,12 +98,51 @@ $(document).ready(function () {
 			var years = moment().diff(start, 'years');
 		});
 	});
+
+	// tanggal lahir tenaga ahli
+	$(function () {
+		$('input[name="tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
+
+	// edit tanggal lahir tenaga ahli
+	$(function () {
+		$('input[name="edit_tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
 	// end input date rangepicker
 
 	// Custom bootstrap-select each select id
 	$('#instruktur-kegiatan').selectpicker();
 
 	// End of Custom bootstrap-select each select id
+
+
+	// $('#provinsi-tenaga-ahli').change(function () {
+	// 	provinsi = $('#provinsi-tenaga-ahli').val();
+	// 	console.log(provinsi);
+	// 	$.ajax({
+	//         type: "POST",
+	// 		url: `${BASE_URL}Kegiatan/view_kota`,
+	// 		cache: false,
+	//         data: 'id_provinsi=' + provinsi,
+	// 		success: function (result) {
+	//             $("kota-tenaga-ahli").html(result);
+	//         }
+	//     });
+	// })
 
 	// 
 	// ========= DATATABLE ===========
@@ -116,8 +155,8 @@ $(document).ready(function () {
 		serverSide: false,
 		retrieve: true,
 		scrollY: true,
-        scrollX: true,
-        scrollCollapse: true,
+		scrollX: true,
+		scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -204,8 +243,8 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		scrollY: "400px",
-        scrollX: true,
-        scrollCollapse: true,
+    scrollX: true,
+    scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -315,8 +354,8 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		scrollY: true,
-        scrollX: true,
-        scrollCollapse: true,
+		scrollX: true,
+		scrollCollapse: true,
 		// sDom: 'lrtip',
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -377,7 +416,7 @@ $(document).ready(function () {
 				}
 			},
 		]
-	}	
+	}
 	);
 	// End of Tenaga Ahli datatable 
 
@@ -387,8 +426,8 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		scrollY: true,
-        scrollX: true,
-        scrollCollapse: true,
+		scrollX: true,
+		scrollCollapse: true,
 		// sDom: 'lrtip',
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -459,8 +498,8 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// scrollY: true,
-        // scrollX: true,
-        // scrollCollapse: true,
+    // scrollX: true,
+    // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -513,8 +552,8 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// scrollY: true,
-        // scrollX: true,
-        // scrollCollapse: true,
+    // scrollX: true,
+    // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -567,8 +606,8 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// scrollY: true,
-        // scrollX: true,
-        // scrollCollapse: true,
+    // scrollX: true,
+    // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -618,8 +657,8 @@ $(document).ready(function () {
 		processing: true,
 		serverSide: false,
 		// scrollY: true,
-        // scrollX: true,
-        // scrollCollapse: true,
+    // scrollX: true,
+    // scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -759,13 +798,15 @@ $(document).ready(function () {
 	// ========= DETAUL BUTTON ON CLICK ===========
 	// 
 
+	var id_kegiatan;
 	// Each Row Table onClick Edit Button
 	$('table').on('click', '#btn-detail', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
-                    Table.ajax.url(`${BASE_URL}Peserta/dataPeserta/${id}`).load();
+			id_kegiatan = $(this).data('id')
+			Table.ajax.url(`${BASE_URL}Peserta/dataPeserta/${id}`).load();
 			$('#modal-lihat-peserta-by-kegiatan').modal('show')
-		} 
+		}
 		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
@@ -775,17 +816,17 @@ $(document).ready(function () {
 					window.location = `${BASE_URL}SKA/download/${id}`;
 				}
 			})
-		} 
+		}
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
-				url: `${BASE_URL}Buku_Saku/download/${id}`,
+				url: `${BASE_URL}Buku_saku/download/${id}`,
 				type: 'POST',
 				success: function () {
-					window.location = `${BASE_URL}Buku_Saku/download/${id}`;
+					window.location = `${BASE_URL}Buku_saku/download/${id}`;
 				}
 			})
-		} 
+		}
 		else if ($('#modul_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
@@ -795,7 +836,7 @@ $(document).ready(function () {
 					window.location = `${BASE_URL}Modul/download/${id}`;
 				}
 			})
-		} 
+		}
 		else if ($('#administrasi_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
@@ -805,7 +846,7 @@ $(document).ready(function () {
 					window.location = `${BASE_URL}Administrasi_kegiatan/download/${id}`;
 				}
 			})
-		} 
+		}
 	})
 	// End of default
 
@@ -821,7 +862,7 @@ $(document).ready(function () {
 			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(6).text())
 			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(11).text())
 			$(`#modal-edit-kegiatan`).modal('show')
-		} 
+		}
 		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}SKA/edit_ska_action/${id}`)
@@ -829,7 +870,7 @@ $(document).ready(function () {
 			$('#edit-deskripsi-skkni').val($(this).parent().siblings().eq(2).text())
 			$('#edit-id-kategori-skkni-old').val($(this).parent().siblings().eq(3).text())
 			$('#modal-edit-skkni').modal('show')
-		}  
+		}
 		else if ($('#modul_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Modul/edit_modul_action/${id}`)
@@ -837,21 +878,33 @@ $(document).ready(function () {
 			$('#edit-deskripsi-modul').val($(this).parent().siblings().eq(2).text())
 			$('#edit-id-kategori-modul-old').val($(this).parent().siblings().eq(3).text())
 			$(`#modal-edit-modul`).modal('show')
-		} 
+		}
 		else if ($('#administrasi_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Administrasi_kegiatan/edit_administrasi_kegiatan_action/${id}`)
 			$('#edit-judul-administrasi-kegiatan').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-administrasi-kegiatan').val($(this).parent().siblings().eq(2).text())
 			$(`#modal-edit-administrasi-kegiatan`).modal('show')
-		} 
+		}
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Buku_saku/edit_buku_saku_action/${id}`)
 			$('#edit-judul-buku-saku').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-buku-saku').val($(this).parent().siblings().eq(2).text())
 			$('#modal-edit-buku-saku').modal('show')
-		}  
+		}
+		else if ($('#tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/edit_tenaga_ahli_action/${id}`)
+			$('#edit-nama-tenaga-ahli').val($(this).parent().siblings().eq(1).text())
+			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
+			$('#edit-nik-tenaga-ahli').val($(this).parent().siblings().eq(8).text())
+			$('#edit-email-tenaga-ahli').val($(this).parent().siblings().eq(5).text())
+			$('#edit-alamat-tenaga-ahli').val($(this).parent().siblings().eq(9).text())
+			$('#edit-nomor-handphone-tenaga-ahli').val($(this).parent().siblings().eq(6).text())
+			$('#edit-nomor-rumah-tenaga-ahli').val($(this).parent().siblings().eq(7).text())
+			$('#modal-edit-tenaga-ahli').modal('show')
+		}
 	})
 	// End of edit
 	
@@ -865,7 +918,7 @@ $(document).ready(function () {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Kegiatan/delete_kegiatan/${id}`)
 			$(`#delete-kegiatan`).modal('show')
-		} 
+		}
 		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}SKA/delete_ska/${id}`)
@@ -875,17 +928,83 @@ $(document).ready(function () {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Modul/delete_modul/${id}`)
 			$('#modal-delete-modul').modal('show')
-		} 
+		}
 		else if ($('#administrasi_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Administrasi_kegiatan/delete_administrasi_kegiatan/${id}`)
 			$('#modal-delete-administrasi-kegiatan').modal('show')
-    }
+		}
 		else if ($('#buku_saku_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Buku_saku/delete_buku_saku/${id}`)
 			$('#modal-delete-buku-saku').modal('show')
-	 } 
+		}
+		else if ($('#tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/delete_tenaga_ahli/${id}`)
+			$('#modal-delete-tenaga-ahli').modal('show')
+		}
 	})
 	// End of delete
+
+	// 
+	// ========= EXPORT PESERTA ONCLICK ===========
+	// 
+	$('#btn-export-peserta').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`,
+			success: function () {
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`;
+			}
+		})
+	});
+	
+	// 
+	// ========= EXPORT TENAGA AHLI ONCLICK ===========
+	// 
+	
+	$('#btn-export-seluruh-tenaga-ahli').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`;
+			}
+		})
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+	$('#btn-export-tenaga-ahli').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`;
+			}
+		})
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+	$('#btn-export-mitra-terampil').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`;
+			}
+		})
+		$('#modal-export-tenaga-ahli').modal('hide')
+	})
+
+	// 
+	// ========= EXPORT KEGIATAN ONCLICK ===========
+	// 
+
+	$('#btn-export-kegiatan').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Kegiatan/export_kegiatan_action`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Kegiatan/export_kegiatan_action`;
+			}
+		})
+	})
 });
