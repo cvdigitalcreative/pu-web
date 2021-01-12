@@ -24,6 +24,9 @@
 							<label for="filterTenagaAhliProvinsi">Provinsi *</label>
 							<select class="form-control" id="filter-provinsi-tenaga-ahli" name="filter_provinsi_tenaga_ahli" required>
 								<option selected disabled>Pilih Provinsi</option>
+								<?php foreach ($provinsi as $row) : ?>
+								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
+								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -31,6 +34,10 @@
 							<select class="form-control" id="filter-jabatan-kerja-tenaga-ahli" name="filter_jabatan_kerja_tenaga_ahli"
 								aria-placeholder="Pilih status kegiatan" required>
 								<option selected disabled>Pilih Jabatan Kerja</option>
+								<?php if($jabker != null):
+								foreach ($jabker as $row):?>
+								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
+								<?php endforeach; endif?>
 							</select>
 						</div>
 						<div class="menu-divider"></div>
@@ -414,26 +421,27 @@
 	</div>
 	<!-- End modal delete modul -->
 
-	<!-- Import Excel Tambah Kegiatan Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-kegiatan" tabindex="-1" role="dialog">
+	<!-- Import Excel Tambah Tenaga Ahli Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-tenaga-ahli" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Import File Excel Tambah Kegiatan</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Import File Excel tambah Tenaga Ahli & Mitra Terampil</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>" enctype="multipart/form-data">
+					<!-- <form method="POST" action="<?= base_url()?>Tenaga_ahli/import_tenaga_ahli_action" enctype="multipart/form-data"> -->
+					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
+							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Mitra Terampil</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan"
-									name="fileExcelTambahKegiatan">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
+									name="file_excel_tambah_tenaga">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
-								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
-									Pilih file excel tambah kegiatan
+								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
+									Pilih file excel tambah tenaga ahli & mitra terampil
 								</small>
 							</div>
 						</div>
@@ -570,15 +578,15 @@
 								data-target="#modal-tambah-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
-								data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2"
+								data-target="#modal-import-excel-tambah-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
 							<button class="btn btn-success btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-export-tenaga-ahli" ><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
 						</div>
 						<div class="">
-							<button class="btn btn-danger btn-import-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button>
+							<a class="btn btn-danger btn-import-kegiatan" href="" id="btn-download-format-tenaga-ahli"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</a>
 						</div>
 						</div>
 						<div class="card-body">

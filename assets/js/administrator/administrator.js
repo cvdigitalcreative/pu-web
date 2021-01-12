@@ -794,9 +794,40 @@ $(document).ready(function () {
 			}
 		})
 	});
-
 	
+	// ========= FILTER TENAGA AHLI ON CLICK ===========
+	$('#btn-filter-tenaga-ahli').click(function () {
+		event.preventDefault();
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/filter/1`,
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				'filter_provinsi_tenaga_ahli': $('#filter-provinsi-tenaga-ahli').val(),
+				'filter_jabatan_kerja_tenaga_ahli': $('#filter-jabatan-kerja-tenaga-ahli').val(),
+			},
+			success: function (hasil) {
+				console.log(hasil);
 
+				
+			}
+		})
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/filter/2`,
+			dataType: 'JSON',
+			method: 'POST',
+			data: {
+				'filter_provinsi_tenaga_ahli': $('#filter-provinsi-tenaga-ahli').val(),
+				'filter_jabatan_kerja_tenaga_ahli': $('#filter-jabatan-kerja-tenaga-ahli').val(),
+			},
+			success: function (hasil) {
+				console.log(hasil);
+
+				
+			}
+		})
+		$('#modal-filter-tenaga-ahli').modal('hide');
+	});
 
 	// 
 	// ========= DETAUL BUTTON ON CLICK ===========
@@ -963,6 +994,18 @@ $(document).ready(function () {
 		})
 	});
 	
+	// ========= DOWNLOAD FORMAT TENAGA AHLI ONCLICK ===========
+	// 
+	// 
+	$('#btn-download-format-tenaga-ahli').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Tenaga_ahli/download_format_excel_action`,
+			type: 'POST',
+			success: function () {
+				window.location = `${BASE_URL}Tenaga_ahli/download_format_excel_action`;
+			}
+		})
+	})
 	// 
 	// ========= EXPORT TENAGA AHLI ONCLICK ===========
 	// 
