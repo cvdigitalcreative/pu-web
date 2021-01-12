@@ -539,6 +539,7 @@ $(document).ready(function () {
 				data: 'id_ska',
 				render: function (data) {
 					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -593,6 +594,7 @@ $(document).ready(function () {
 				data: 'id_modul',
 				render: function (data) {
 					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -644,6 +646,7 @@ $(document).ready(function () {
 				data: 'id_buku_saku',
 				render: function (data) {
 					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -695,6 +698,7 @@ $(document).ready(function () {
 				data: 'id_administrasi_kegiatan',
 				render: function (data) {
 					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
