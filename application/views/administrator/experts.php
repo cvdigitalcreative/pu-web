@@ -602,7 +602,7 @@
                             </div>
 
                             <div class="tab-content">
-                                <div class="table-responsive tab-pane fade active show" role="tabpanel" id="tenaga-ahli">
+                                <div class="tab-pane fade active show" role="tabpanel" id="tenaga-ahli">
                                     <table id="tenaga_ahli_table" class="display">
                                         <thead>
                                             <tr>
@@ -626,7 +626,7 @@
                                     </table>
                                 </div>
 								
-                                <div class="table-responsive tab-pane fade" role="tabpanel" id="mitra-terampil">
+                                <div class="tab-pane fade" role="tabpanel" id="mitra-terampil">
 									<table id="mitra_terampil_table" class="display">
 										<thead>
 											<tr>

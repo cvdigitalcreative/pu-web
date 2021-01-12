@@ -656,6 +656,7 @@
 									<thead>
 										<tr>
 											<th>No</th>
+											<th>Aksi</th>
 											<th>Nama Kegiatan</th>
 											<th>Deskripsi Kegiatan</th>
 											<th>Akun Kegiatan</th>
@@ -671,7 +672,6 @@
 											<th>Jumlah Peserta</th>
 											<th>Nama Materi Kegiatan</th>
 											<th>File Materi Kegiatan</th>
-											<th>Aksi</th>
 										</tr>
 									</thead>
 								</table>
