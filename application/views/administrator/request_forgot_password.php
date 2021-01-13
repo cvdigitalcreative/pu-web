@@ -56,7 +56,7 @@
 							<div class="form-group mt-4">
 								<input type="text" class="form-control input" id="forgotPasswordEmailNoTelepon"
 									aria-describedby="emailHelp" placeholder="Email / no.telepon"
-									name="email_no_telepon">
+									name="email_no_telepon" required>
 							</div>
 							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Kirim</button>
 						</form>
