@@ -55,7 +55,7 @@
 							method="POST" enctype="multipart/form-data">
 							<div class="form-group mt-4">
 								<input type="password" class="form-control input" id="settingNewPassword"
-									aria-describedby="passwordHelp" placeholder="Password baru" name="new_password">
+									aria-describedby="passwordHelp" placeholder="Password baru" name="new_password" required>
 							</div>
 							<button type="submit" class="btn btn-block mt-4 btn-primary btn-masuk">Kirim</button>
 						</form>
