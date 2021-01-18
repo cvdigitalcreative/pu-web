@@ -116,7 +116,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													<?= $total_feedback ?></div>
+													100</div>
 
 											</div>
 										</div>
