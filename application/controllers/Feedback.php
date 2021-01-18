@@ -18,6 +18,7 @@ class Feedback extends CI_Controller
             $null = false;
             //================= User detail for navbar =======================
             $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            
             if ($data['header']['detail_user'] == null)
                 $null = true;
             else {
@@ -29,17 +30,17 @@ class Feedback extends CI_Controller
                 }
             }
 
-            $data['feedback'] = $this->Feedback_model->view_unanswered_feedback($this->session->userdata('token'));
-            if ($data['feedback'] == null)
-                $null = true;
-            else {
-                if ($data['feedback']['status'] == "Success") {
-                    $data['total_feedback'] = count($data['feedback']['data']);
-                } else {
-                    $data['total_feedback'] = 0;
-                    $this->session->set_flashdata('APImessage', $data['feedback']['message']);
-                }
-            }
+            // $data['feedback'] = $this->Feedback_model->view_unanswered_feedback($this->session->userdata('token'));
+            // if ($data['feedback'] == null)
+            //     $null = true;
+            // else {
+            //     if ($data['feedback']['status'] == "Success") {
+            //         $data['total_feedback'] = count($data['feedback']['data']);
+            //     } else {
+            //         $data['total_feedback'] = 0;
+            //         $this->session->set_flashdata('APImessage', $data['feedback']['message']);
+            //     }
+            // }
 
             if ($null)
                 $this->load->view('error_page');
