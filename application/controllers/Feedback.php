@@ -29,22 +29,22 @@ class Feedback extends CI_Controller
                 }
             }
 
-            $data['buku_saku'] = $this->Feedback_model->view_buku_saku($this->session->userdata('token'));
-            if ($data['buku_saku'] == null)
+            $data['feedback'] = $this->Feedback_model->view_unanswered_feedback($this->session->userdata('token'));
+            if ($data['feedback'] == null)
                 $null = true;
             else {
-                if ($data['buku_saku']['status'] == "Success") {
-                    $data['total_buku_saku'] = count($data['buku_saku']['data']);
+                if ($data['feedback']['status'] == "Success") {
+                    $data['total_feedback'] = count($data['feedback']['data']);
                 } else {
-                    $data['total_buku_saku'] = 0;
-                    $this->session->set_flashdata('APImessage', $data['buku_saku']['message']);
+                    $data['total_feedback'] = 0;
+                    $this->session->set_flashdata('APImessage', $data['feedback']['message']);
                 }
             }
 
             if ($null)
                 $this->load->view('error_page');
 
-            $this->load->view('administrator/pocketbook', $data);
+            $this->load->view('administrator/feedback', $data);
         } else
             redirect("pupr/login");
     }
@@ -52,26 +52,26 @@ class Feedback extends CI_Controller
     public function dataSeluruh()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['buku_saku'] = $this->Buku_Saku_model->view_buku_saku($this->session->userdata('token'));
-            if ($data['buku_saku'] == null) {
+            $data['feedback'] = $this->Feedback_model->view_unanswered_feedback($this->session->userdata('token'));
+            if ($data['feedback'] == null) {
                 $callback = array(
                     'data' => []
                 );
             } else {
-                if ($data['buku_saku']['status'] == "Success") {
-                    if (count($data['buku_saku']['data']) > 0) {
-                        $data['buku_saku'] = $data['buku_saku']['data'];
+                if ($data['feedback']['status'] == "Success") {
+                    if (count($data['feedback']['data']) > 0) {
+                        $data['feedback'] = $data['feedback']['data'];
 
-                        $indexBukuSaku = 0;
-                        $noBukuSaku = 1;
-                        foreach ($data['buku_saku'] as $val) {
-                            $data['buku_saku'][$indexBukuSaku]['no_buku_saku'] = $noBukuSaku;
+                        $indexFeedback = 0;
+                        $noFeedback = 1;
+                        foreach ($data['feedback'] as $val) {
+                            $data['feedback'][$indexFeedback]['no_feedback'] = $noFeedback;
 
-                            $indexBukuSaku++;
-                            $noBukuSaku++;
+                            $indexFeedback++;
+                            $noFeedback++;
                         }
                         $callback = array(
-                            'data' => $data['buku_saku']
+                            'data' => $data['feedback']
                         );
                     } else {
                         $callback = array(
@@ -92,140 +92,49 @@ class Feedback extends CI_Controller
         }
     }
 
-    public function detail($id_buku_saku)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['buku_saku'] = $this->Buku_Saku_model->view_buku_saku_detail($id_buku_saku, $this->session->userdata('token'));
-            if ($data['buku_saku'] == null)
-                $null = true;
-            else {
-                if ($data['buku_saku']['status'] == "Success") {
-                    $data['buku_saku'] = $data['buku_saku']['data'];
-                } else {
-                    $data['buku_saku'] = null;
-                    $this->session->set_flashdata('APImessage', $data['buku_saku']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
-    public function tambah_buku_saku_action()
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $judul_buku_saku = $this->input->post('judul_buku_saku');
-            $deskripsi_buku_saku = $this->input->post('deskripsi_buku_saku');
-            $file_buku_saku = new \CurlFile($_FILES['file_buku_saku']['tmp_name'], $_FILES['file_buku_saku']['type'], $_FILES['file_buku_saku']['name']);
-
-            $tambah_buku_saku = $this->Buku_Saku_model->add_buku_saku(
-                $judul_buku_saku,
-                $deskripsi_buku_saku,
-                $file_buku_saku,
-                $this->session->userdata('token')
-            );
-
-            if ($tambah_buku_saku == null) {
-                $this->load->view('error_page');
-            }
-            if ($tambah_buku_saku['status'] == "Success") {
-                $this->session->set_flashdata('success', $tambah_buku_saku['message']);
-                redirect("pupr/pocketbook");
-            } else {
-                $this->session->set_flashdata('APImessage', $tambah_buku_saku['message']);
-                redirect("pupr/pocketbook");
-            }
-        } else {
-            redirect("pupr/login");
-        }
-    }
-
     //blm done
-    public function edit_buku_saku_action($id_buku_saku)
+    public function jawab_feedback($id_feedback)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $judul_buku_saku = $this->input->post('judul_buku_saku');
-            $deskripsi_buku_saku = $this->input->post('deskripsi_buku_saku');
-            if ($_FILES['file_buku_saku']['size'] > 0)
-                $file_buku_saku = new \CurlFile($_FILES['file_buku_saku']['tmp_name'], $_FILES['file_buku_saku']['type'], $_FILES['file_buku_saku']['name']);
-            else
-                $file_buku_saku = null;
+            $jawaban = $this->input->post('jawaban');
 
-            $edit_buku_saku = $this->Buku_Saku_model->edit_buku_saku(
-                $judul_buku_saku,
-                $deskripsi_buku_saku,
-                $file_buku_saku,
-                $id_buku_saku,
+            $jawab_feedback = $this->Feedback_model->reply_feedback(
+                $jawaban,
+                $id_feedback,
                 $this->session->userdata('token')
             );
 
-            if ($edit_buku_saku == null) {
+            if ($jawab_feedback == null) {
                 $this->load->view('error_page');
             }
-            if ($edit_buku_saku['status'] == "Success") {
-                $this->session->set_flashdata('success', $edit_buku_saku['message']);
-                redirect("pupr/pocketbook");
+            if ($jawab_feedback['status'] == "Success") {
+                $this->session->set_flashdata('success', $jawab_feedback['message']);
+                redirect("pupr/feedback");
             } else {
-                $this->session->set_flashdata('APImessage', $edit_buku_saku['message']);
-                redirect("pupr/pocketbook");
+                $this->session->set_flashdata('APImessage', $jawab_feedback['message']);
+                redirect("pupr/feedback");
             }
         } else {
             redirect("pupr/login");
         }
     }
 
-    public function delete_buku_saku($id_buku_saku)
+    public function delete_feedback($id_feedback)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $delete_buku_saku = $this->Buku_Saku_model->delete_buku_saku($id_buku_saku, $this->session->userdata('token'));
-            if ($delete_buku_saku == null) {
+            $delete_feedback = $this->Feedback_model->delete_feedback($id_feedback, $this->session->userdata('token'));
+            if ($delete_feedback == null) {
                 $this->load->view('error_page');
             } else {
-                if ($delete_buku_saku['status'] == "Success") {
-                    $this->session->set_flashdata('success', $delete_buku_saku['message']);
-                    redirect("pupr/pocketbook");
+                if ($delete_feedback['status'] == "Success") {
+                    $this->session->set_flashdata('success', $delete_feedback['message']);
+                    redirect("pupr/feedback");
                 } else {
-                    $this->session->set_flashdata('APImessage', $delete_buku_saku['message']);
-                    redirect("pupr/pocketbook");
+                    $this->session->set_flashdata('APImessage', $delete_feedback['message']);
+                    redirect("pupr/feedback");
                 }
             }
         } else
             redirect("pupr/login");
-    }
-
-    public function download($id_buku_saku)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $this->load->helper('download');
-            $buku_saku = $this->Buku_Saku_model->view_buku_saku_detail($id_buku_saku, $this->session->userdata('token'));
-            if ($buku_saku == null)
-                $this->load->view('error_page');
-            else {
-                if ($buku_saku['status'] == "Success") {
-                    $data = file_get_contents($buku_saku['data']['file_buku_saku']);
-                    force_download($buku_saku['data']['file_buku_saku'], $data);
-                } else {
-                    $this->session->flashdata('APImessage', $buku_saku['message']);
-                    redirect('pupr/skkni');
-                }
-            }
-        } else
-            redirect('pupr/login');
     }
 }

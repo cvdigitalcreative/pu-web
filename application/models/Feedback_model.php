@@ -84,7 +84,7 @@ class Feedback_model extends CI_Model
         return $this->http_request_delete("/$id_feedback", $token);
     }
 
-    public function reply_feedback($id_feedback, $jawaban, $token)
+    public function reply_feedback($jawaban, $id_feedback, $token)
     {
         $data = [
             'jawaban' => $jawaban
