@@ -110,4 +110,6 @@ $route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
 $route['pupr/profile'] = "User/profile";
 $route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
 
+//route feedback
+$route['pupr/feedback'] = "Feedback/seluruh";
 

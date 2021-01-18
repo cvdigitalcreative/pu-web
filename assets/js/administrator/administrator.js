@@ -706,6 +706,12 @@ $(document).ready(function () {
 		]
 	});
 
+	// Feedback Datatable
+	$('#feedback_table').DataTable({
+
+	});
+
+
 	$('#btn-filter-kegiatan').click(function () {
 		event.preventDefault();
 		$.ajax({
