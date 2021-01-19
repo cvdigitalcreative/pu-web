@@ -10,7 +10,7 @@ class Administrasi_kegiatan extends CI_Controller
         parent::__construct();
         $this->load->model('Administrasi_Kegiatan_model');
         $this->load->model('User_model');
-        
+
         if ($this->session->userdata('id_role') == 3) {
             $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
             redirect('pupr/login');
@@ -49,8 +49,8 @@ class Administrasi_kegiatan extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
-            $this->load->view("administrator/administration", $data);
+            else
+                $this->load->view("administrator/administration", $data);
         } else
             redirect("pupr/login");
     }
@@ -96,41 +96,6 @@ class Administrasi_kegiatan extends CI_Controller
         } else {
             redirect('pupr/login');
         }
-    }
-
-    public function detail($id_administrasi_kegiatan)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['administrasi_kegiatan'] = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan_detail($id_administrasi_kegiatan, $this->session->userdata('token'));
-            if ($data['administrasi_kegiatan'] == null)
-                $null = true;
-            else {
-                if ($data['administrasi_kegiatan']['status'] == "Success") {
-                    $data['administrasi_kegiatan'] = $data['administrasi_kegiatan']['data'];
-                } else {
-                    $data['administrasi_kegiatan'] = null;
-                    $this->session->set_flashdata('APImessage', $data['administrasi_kegiatan']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
     }
 
     public function tambah_administrasi_kegiatan_action()

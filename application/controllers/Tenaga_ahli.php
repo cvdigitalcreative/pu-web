@@ -106,12 +106,10 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
-
-
-            $this->load->view("administrator/experts", $data);
-
             if ($null)
                 $this->load->view('error_page');
+            else
+                $this->load->view("administrator/experts", $data);
         } else
             redirect("pupr/login");
     }

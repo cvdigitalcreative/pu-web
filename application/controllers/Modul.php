@@ -63,7 +63,8 @@ class Modul extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-            $this->load->view("administrator/modul", $data);
+            else
+                $this->load->view("administrator/modul", $data);
         } else
             redirect("pupr/login");
     }
