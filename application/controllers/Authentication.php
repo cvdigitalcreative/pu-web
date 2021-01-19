@@ -31,14 +31,22 @@ class Authentication extends CI_Controller
                 $this->load->view('error_page');
             else {
                 if ($login['status'] == "Success") {
-                    $this->session->set_flashdata('success', $login['message']);
+                    if ($login['data']['id_role'] != 3) {
+                        $this->session->set_flashdata('success', $login['message']);
+                        
+                        // ============ set userdata =============
+                        $this->session->set_userdata('logged_in', true);
+                        $this->session->set_userdata('token', $login['data']['id_token']);
+                        $this->session->set_userdata('id_user', $login['data']['id_user']);
+                        $this->session->set_userdata('nama', $login['data']['nama']);
+                        $this->session->set_userdata('role', $login['data']['id_role']);
+                        redirect("pupr/dashboard");
+                    }
+                    else{
+                        $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
+                        redirect('pupr/login');
 
-                    // ============ set userdata =============
-                    $this->session->set_userdata('logged_in', true);
-                    $this->session->set_userdata('token', $login['data']['id_token']);
-                    $this->session->set_userdata('nama', $login['data']['nama']);
-                    $this->session->set_userdata('role', $login['data']['id_role']);
-                    redirect("pupr/dashboard");
+                    }
                 } else {
                     $this->session->set_flashdata('APImessage', $login['message']);
                     redirect('pupr/login');
