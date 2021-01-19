@@ -296,7 +296,7 @@
                                         <div class="mt-3">
                                             <h4><?= $user['nama'] ?><span class="badge-status-user badge-info ml-1"><?= $user['status_user'] ?></span></h4>
                                             <p class="text-secondary mb-1"><?= $user['role'] ?></p>
-                                            <p class="text-muted font-size-sm"><?= $user['kota_kabupaten'] ?>, <?= $user['provinsi'] ?></p>
+                                            <p class="text-muted text-capitalize font-size-sm"><?= $user['alamat_card'] ?></p>
                                             <button class="btn btn-block btn-outline-info btn-modal-edit-profile" type="button" data-toggle="modal" data-target="#modal-edit-profile" aria-expanded="false" aria-controls="collapseExample">
                                                 Edit Profile
                                             </button>

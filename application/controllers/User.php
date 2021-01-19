@@ -92,6 +92,9 @@ class User extends CI_Controller
                     }
 
                     $data['user']['alamat_lengkap'] = strtolower($data['user']['alamat_lengkap']);
+                    
+                    $data['user']['alamat_card'] = $data['user']['kota_kabupaten'] . ', ' . $data['user']['provinsi'];
+                    $data['user']['alamat_card'] = strtolower($data['user']['alamat_card']);
 
                     $data['user']['tahun_lulus_date'] = $data['user']['tahun_lulus'];
                     $temparrtgl = explode('-', $data['user']['tahun_lulus_date']);
