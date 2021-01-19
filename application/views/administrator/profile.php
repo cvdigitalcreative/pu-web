@@ -389,7 +389,7 @@
                                             <div class="col-sm-3">
                                                 <h6 class="mb-0">Alamat</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary text-capitalize text-justify">
+                                            <div class="col-sm-9 text-secondary text-capitalize">
                                                 <?= $user['alamat_lengkap'] ?>
                                             </div>
                                         </div>
