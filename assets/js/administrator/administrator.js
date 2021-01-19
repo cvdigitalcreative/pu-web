@@ -43,11 +43,6 @@ $(document).ready(function () {
 		fasterPreview(this);
 	});
 
-	$('#modal-edit-profile').on('hidden.bs.modal', function () {
-		$(this).find('form').trigger('reset');
-		$(this).find("input,image-profile,textarea").val('').end();
-		$("#banner-image-profile, #banner-profile").val('')
-	});
 	// end upload image profile kegiatan js
 
 	// tanggal mulai add kegiatan
