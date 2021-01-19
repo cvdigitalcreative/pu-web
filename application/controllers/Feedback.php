@@ -23,7 +23,6 @@ class Feedback extends CI_Controller
             $null = false;
             //================= User detail for navbar =======================
             $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            
             if ($data['header']['detail_user'] == null)
                 $null = true;
             else {
@@ -49,8 +48,8 @@ class Feedback extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
-            $this->load->view('administrator/feedback', $data);
+            else
+                $this->load->view('administrator/feedback', $data);
         } else
             redirect("pupr/login");
     }

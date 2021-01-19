@@ -105,4 +105,17 @@
     -webkit-transform: scale(2.0); /* Safari 3-8 */
     transform: scale(2.0); 
   }
+
   /* End of show bigger image when hover */
+  
+  .badge-status-user{
+      background-color: #36b9cc;
+      font-size: 10px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      padding-left: 4px;
+      padding-right: 4px;
+      border: 1px solid #36b9cc;
+      border-radius: 15px;
+      margin-top: -3px;
+  }

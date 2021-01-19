@@ -37,9 +37,64 @@ class User extends CI_Controller
             if ($data['user'] == null)
                 $null = true;
             else {
-                if ($data['user']['status'] == "Success")
+                if ($data['user']['status'] == "Success") {
                     $data['user'] = $data['user']['data'];
-                else {
+                    $data['user']['alamat_lengkap'] = '-';
+                    if ($data['user']['alamat_rumah'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_rumah'];
+                        else
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ' ' . $data['user']['alamat_rumah'];
+                    }
+                    if ($data['user']['rt'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = 'RT. ' . $data['user']['rt'];
+                        else {
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ' RT.' . $data['user']['rt'];
+                        }
+                    }
+                    if ($data['user']['rw'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = 'RW. ' . $data['user']['rw'];
+                        else
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ' RW.' . $data['user']['rw'];
+                    }
+                    if ($data['user']['kelurahan'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = 'Kelurahan ' . $data['user']['kelurahan'];
+                        else
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ', Kelurahan ' . $data['user']['kelurahan'];
+                    }
+                    if ($data['user']['kecamatan'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = 'Kecamatan ' . $data['user']['kecamatan'];
+                        else
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ', Kecamatan ' . $data['user']['kecamatan'];
+                    }
+                    if ($data['user']['kota_kabupaten'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = $data['user']['kota_kabupaten'];
+                        else
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ', ' . $data['user']['kota_kabupaten'];
+                    }
+                    if ($data['user']['provinsi'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = $data['user']['provinsi'];
+                        else
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ', ' . $data['user']['provinsi'];
+                    }
+                    if ($data['user']['kode_pos'] != '-') {
+                        if ($data['user']['alamat_lengkap'] == '-')
+                            $data['user']['alamat_lengkap'] = $data['user']['kode_pos'];
+                        else
+                            $data['user']['alamat_lengkap'] = $data['user']['alamat_lengkap'] . ', ' . $data['user']['kode_pos'];
+                    }
+
+                    $data['user']['alamat_lengkap'] = strtolower($data['user']['alamat_lengkap']);
+
+                    $tahun_lulus = strtotime($data['user']['tahun_lulus']);
+                    $data['user']['tahun_lulus'] = date('d M Y', $tahun_lulus);
+                } else {
                     $data['user'] = null;
                     $this->session->set_flashdata("APImessage", $data['user']['message']);
                 }
@@ -47,6 +102,8 @@ class User extends CI_Controller
 
             if ($null) {
                 $this->load->view('error_page');
+            } else {
+                $this->load->view('administrator/profile', $data);
             }
         } else
             redirect("pupr/login");

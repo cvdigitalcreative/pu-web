@@ -281,8 +281,8 @@ class Kegiatan extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
-            $this->load->view("administrator/events", $data);
+            else
+                $this->load->view("administrator/events", $data);
         } else
             redirect("pupr/login");
     }
@@ -817,7 +817,6 @@ class Kegiatan extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-            $this->load->view('edit_profile');
         } else
             redirect("pupr/login");
     }
