@@ -70,7 +70,7 @@
                         <div class="form-group py-2">
                             <div class="row mr-2">
                                 <div class="col">
-                                    <label for="kotaKegiatan">RT./RW.</label>
+                                    <label for="kotaKegiatan">RT./RW. *</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
@@ -189,20 +189,48 @@
                         <div class="menu-divider"></div>
                         <h4 class="form-data-pendidikan-title">Data Pendidikan</h4>
                         <hr>
-                        <div class="form-group py-2">
-                            <label for="Jenis Kelamin">Pendidikan Terakhir *</label>
-                            <select class="form-control" id="profile-pendidikan" name="id_pendidikan" required>
-                                <?php if ($pendidikan != null) : ?>
-                                    <?php foreach ($pendidikan as $row) : ?>
-                                        <?php if ($user['pendidikan'] == $row['pendidikan']) : ?>
-                                            <option value="<?= $row['id_pendidikan'] ?>" selected><?= $row['pendidikan'] ?></option>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group py-2">
+                                    <label for="Jenis Kelamin">Pendidikan Terakhir *</label>
+                                    <select class="form-control" id="profile-pendidikan" name="id_pendidikan" required>
+                                        <?php if ($pendidikan != null) : ?>
+                                            <?php foreach ($pendidikan as $row) : ?>
+                                                <?php if ($user['pendidikan'] == $row['pendidikan']) : ?>
+                                                    <option value="<?= $row['id_pendidikan'] ?>" selected><?= $row['pendidikan'] ?></option>
+                                                <?php else : ?>
+                                                    <option value="<?= $row['id_pendidikan'] ?>"><?= $row['pendidikan'] ?></option>
+                                        <?php endif;
+                                            endforeach;
+                                        endif; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group py-2">
+                                    <label for="Jenis Kelamin">Kompetensi *</label>
+                                    <select class="form-control" id="profile-kompetensi" name="id_kompetensi" required>
+                                        <?php if ($user['kompetensi'] == '-') : ?>
+                                            <option value="0" selected>-</option>
                                         <?php else : ?>
-                                            <option value="<?= $row['id_pendidikan'] ?>"><?= $row['pendidikan'] ?></option>
-                                <?php endif;
-                                    endforeach;
-                                endif; ?>
-                            </select>
+                                            <option value="0">-</option>
+                                        <?php endif ?>
+                                        <?php if ($user['kompetensi'] == 'Kompeten') : ?>
+                                            <option value="1" selected>Kompeten</option>
+                                        <?php else : ?>
+                                            <option value="1">Kompeten</option>
+                                        <?php endif ?>
+                                        <?php if ($user['kompetensi'] == 'Tidak Kompeten') : ?>
+                                            <option value="2" selected>Tidak Kompeten</option>
+                                        <?php else : ?>
+                                            <option value="2">Tidak Kompeten</option>
+                                        <?php endif ?>
+
+                                    </select>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group py-2">
@@ -276,7 +304,7 @@
                         </div>
                     <?php elseif ($this->session->flashdata('APImessage')) : ?>
                         <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
-                            <?= $this->session->flashdata('success'); ?>
+                            <?= $this->session->flashdata('APImessage'); ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -296,8 +324,8 @@
                                         <div class="mt-3">
                                             <h4><?= $user['nama'] ?><span class="badge-status-user badge-info ml-1"><?= $user['status_user'] ?></span></h4>
                                             <p class="text-secondary mb-1"><?= $user['role'] ?></p>
-                                            <p class="text-muted text-capitalize font-size-sm"><?= $user['alamat_card'] ?></p>
-                                            <button class="btn btn-block btn-outline-info btn-modal-edit-profile" type="button" data-toggle="modal" data-target="#modal-edit-profile" aria-expanded="false" aria-controls="collapseExample">
+                                            <small class="text-muted text-capitalize font-size-sm mt-1"><?= $user['alamat_card'] ?></small>
+                                            <button class="btn btn-block btn-outline-info btn-modal-edit-profile mt-3" type="button" data-toggle="modal" data-target="#modal-edit-profile" aria-expanded="false" aria-controls="collapseExample">
                                                 Edit Profile
                                             </button>
                                         </div>
