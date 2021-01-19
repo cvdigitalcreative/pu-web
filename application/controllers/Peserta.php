@@ -13,6 +13,11 @@ class Peserta extends CI_Controller
         $this->load->model('Common_model');
         $this->load->model('Kegiatan_model');
         $this->load->model('User_model');
+
+        if ($this->session->userdata('id_role') == 3) {
+            $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
+            redirect('pupr/login');
+        }
     }
 
     public function dataPeserta($id_kegiatan)
