@@ -78,3 +78,40 @@
         });
     }
 </script>
+<script>
+    function getStateProfile(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#profile-kota").html(data);
+            }
+        });
+    }
+</script>
+<script>
+    function getKecamatanProfile(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>User/view_kecamatan",
+            data: 'id_kota_kabupaten=' + val,
+            success: function(data) {
+                $("#profile-kecamatan").html(data);
+            }
+        });
+    }
+</script>
+
+<script>
+    function getKelurahanProfile(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>User/view_kelurahan",
+            data: 'id_kecamatan=' + val,
+            success: function(data) {
+                $("#profile-kelurahan").html(data);
+            }
+        });
+    }
+</script>

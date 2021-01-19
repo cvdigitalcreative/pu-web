@@ -27,6 +27,29 @@ $(document).ready(function () {
 	});
 	// end upload image kalender kegiatan js
 
+	// upload image profile kegiatan js
+	$("#banner-image-profile").click(function (e) {
+		$("#banner-profile").click();
+	});
+
+	function fasterPreview(uploader) {
+		if (uploader.files && uploader.files[0]) {
+			$('#banner-image-profile').attr('src',
+				window.URL.createObjectURL(uploader.files[0]));
+		}
+	}
+
+	$("#banner-profile").change(function () {
+		fasterPreview(this);
+	});
+
+	$('#modal-edit-profile').on('hidden.bs.modal', function () {
+		$(this).find('form').trigger('reset');
+		$(this).find("input,image-profile,textarea").val('').end();
+		$("#banner-image-profile, #banner-profile").val('')
+	});
+	// end upload image profile kegiatan js
+
 	// tanggal mulai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
@@ -114,6 +137,18 @@ $(document).ready(function () {
 	// edit tanggal lahir tenaga ahli
 	$(function () {
 		$('input[name="edit_tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
+
+	// edit profile
+	$(function () {
+		$('input[name="profile_tahun_lulus"]').daterangepicker({
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -1060,4 +1095,9 @@ $(document).ready(function () {
 			}
 		})
 	})
+
+
+	
 });
+
+
