@@ -1070,6 +1070,15 @@ class Kegiatan extends CI_Controller
             redirect('pupr/login');
     }
 
+    public function download_format_peserta_excel_action()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            force_download('./assets/docs/Format Peserta.xlsx', NULL);
+        } else
+            redirect('pupr/login');
+    }
+
     public function edit_kegiatan_action($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {

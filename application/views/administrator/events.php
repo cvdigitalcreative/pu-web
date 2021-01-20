@@ -504,6 +504,8 @@
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</a>
 							<button class="btn btn-warning btn-import-kegiatan" id="btn-import-peserta-kegiatan"><img class="img-profile mr-2"
 								src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Peserta</button>
+							<a href="<?= base_url()?>Kegiatan/download_format_peserta_excel_action"><button class="btn btn-danger btn-import-kegiatan float-right"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
 						</div>
 					<div class="card-body">
 						<div class="">
