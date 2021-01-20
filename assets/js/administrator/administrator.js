@@ -738,9 +738,55 @@ $(document).ready(function () {
 
 	// Feedback Datatable
 	$('#feedback_table').DataTable({
-
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Feedback/dataSeluruh`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_feedback',
+			},
+			{
+				data: 'judul_feedback',
+			},
+			{
+				data: 'deskripsi_feedback',
+			},
+			{
+				data: 'pengirim',
+			},
+			{
+				data: 'id_feedback',
+				render: function (data) {
+					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Detail</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		],
+		columnDefs: [
+			{
+				targets: 1,
+				width: "400px",
+			},	
+			{
+				targets: 2,
+				width: "600px",
+				className: "truncate"
+			}
+		]
 	});
-
 
 	$('#btn-filter-kegiatan').click(function () {
 		event.preventDefault();
@@ -918,6 +964,14 @@ $(document).ready(function () {
 				}
 			})
 		}
+		else if ($('#feedback_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Feedback/jawab_feedback/${id}`)
+			$('#judul-feedback').val($(this).parent().siblings().eq(1).text())
+			$('#pertanyaan-feedback').val($(this).parent().siblings().eq(2).text())
+			$('#pengirim-feedback').val($(this).parent().siblings().eq(3).text())
+			$(`#modal-reply-feedback`).modal('show')
+		}
 	})
 	// End of default
 
@@ -1015,6 +1069,11 @@ $(document).ready(function () {
 			$('form').attr('action', `${BASE_URL}Tenaga_ahli/delete_tenaga_ahli/${id}`)
 			$('#modal-delete-tenaga-ahli').modal('show')
 		}
+		else if ($('#feedback_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Feedback/delete_feedback/${id}`)
+			$('#modal-delete-feedback').modal('show')
+		}
 	})
 	// End of delete
 
@@ -1091,7 +1150,16 @@ $(document).ready(function () {
 		})
 	})
 
-
+	//text area jawaban feedback autosize
+	var textarea = document.getElementById('jawaban-feedback');
+	textarea.addEventListener('keydown', autosize);	 
+	function autosize(){
+	  var el = this;
+	  setTimeout(function(){
+		el.style.cssText = 'height:auto; padding:0';
+		el.style.cssText = 'height:' + el.scrollHeight + 'px';
+	  },0);
+	}
 	
 });
 
