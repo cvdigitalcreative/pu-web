@@ -249,7 +249,7 @@ class User extends CI_Controller
             $no_handphone = $this->input->post('nomor_handphone');
             $id_status_rumah = $this->input->post('id_status_rumah');
             $id_pendidikan = $this->input->post('id_pendidikan');
-            $id_kompetensi = 0;
+            $id_kompetensi = $this->input->post('id_kompetensi');
             $nama_universitas = $this->input->post('nama_universitas');
             $jurusan = $this->input->post('jurusan');
             $temptahunlulus = explode('/', $this->input->post('profile_tahun_lulus'));
