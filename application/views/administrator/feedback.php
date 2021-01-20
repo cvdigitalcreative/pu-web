@@ -12,7 +12,7 @@
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Balas Feedback</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Detail Feedback</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -20,17 +20,25 @@
 				<div class="modal-body">
 					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="judulModul">Pertanyaaan</label>
-							<textarea type="text" class="form-control" id="pertanyaan-feedback" name="deskripsi_modul" rows=7 required disabled>Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.</textarea>
+							<label for="namaTenagaAhli">Pengirim</label>
+							<input type="text" class="form-control" id="pengirim-feedback" name="judul_feedback" placeholder="Contoh: Andi Setiawan" readonly required>
+						</div>
+						<div class="form-group py-2">
+							<label for="namaTenagaAhli">Judul</label>
+							<textarea type="text" class="form-control" id="judul-feedback" rows=2 required disabled></textarea>
+						</div>
+						<div class="form-group py-2">
+							<label for="judulModul">Deskripsi</label>
+							<textarea type="text" class="form-control" id="pertanyaan-feedback" name="deskripsi_modul" rows=5 required disabled></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="judulModul">Jawaban *</label>
-							<textarea type="text" class="form-control" id="jawaban-feedback" name="deskripsi_modul" placeholder="Masukkan jawaban Anda disini" required></textarea>
+							<textarea type="text" class="form-control" id="jawaban-feedback" name="jawaban" placeholder="Masukkan jawaban Anda disini" required></textarea>
 						</div>
-						
+
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Kirim Jawaban
-							</button>
+						</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>
 				</div>
@@ -39,8 +47,7 @@
 	</div>
 
 	<!-- Delete Modul modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-delete-feedback" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-feedback" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -116,7 +123,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													100</div>
+													<?= $total_feedback ?></div>
 
 											</div>
 										</div>
@@ -138,11 +145,9 @@
 											<th>Judul Feedback</th>
 											<th>Deskripsi Feedback</th>
 											<th>Pengirim</th>
-											<th>Jawaban</th>
 											<th>Aksi</th>
 										</tr>
 									</thead>
-
 								</table>
 							</div>
 						</div>
