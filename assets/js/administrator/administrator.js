@@ -1076,7 +1076,7 @@ $(document).ready(function () {
 		}
 	})
 	// End of delete
-
+	
 	// 
 	// ========= EXPORT PESERTA ONCLICK ===========
 	// 
@@ -1087,6 +1087,15 @@ $(document).ready(function () {
 				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`;
 			}
 		})
+	});
+	
+	// 
+	// ========= IMPORT PESERTA ONCLICK ===========
+	// 
+	$('#btn-import-peserta-kegiatan').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Kegiatan/import_peserta_kegiatan_action/${id_kegiatan}`)
+		$('#modal-lihat-peserta-by-kegiatan').modal('hide');
+		$('#modal-import-excel-tambah-peserta-kegiatan').modal('show');
 	});
 	
 	// ========= DOWNLOAD FORMAT TENAGA AHLI ONCLICK ===========
