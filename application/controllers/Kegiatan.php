@@ -803,6 +803,27 @@ class Kegiatan extends CI_Controller
             redirect('pupr/login');
     }
 
+    public function import_peserta_kegiatan_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $file_excel_import_peserta_kegiatan = new \CurlFile($_FILES['file_excel_import_peserta_kegiatan']['tmp_name'], $_FILES['file_excel_import_peserta_kegiatan']['type'], $_FILES['file_excel_import_peserta_kegiatan']['name']);
+
+            $import = $this->Kegiatan_model->import_peserta_kegiatan_excel($file_excel_import_peserta_kegiatan, $id_kegiatan, $this->session->userdata('token'));
+            if ($import == null)
+                $this->load->view('error_page');
+            else {
+                if ($import['status'] == 'Success') {
+                    $this->session->set_flashdata('success', $import['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $import['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
     public function export_kegiatan_action()
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -1045,6 +1066,15 @@ class Kegiatan extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $this->load->helper('download');
             force_download('./assets/docs/Format Kegiatan.xlsx', NULL);
+        } else
+            redirect('pupr/login');
+    }
+
+    public function download_format_peserta_excel_action()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            force_download('./assets/docs/Format Peserta.xlsx', NULL);
         } else
             redirect('pupr/login');
     }

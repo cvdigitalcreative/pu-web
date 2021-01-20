@@ -451,7 +451,42 @@
 			</div>
 		</div>
 	</div>
-	<!-- End of Import Excel Tambah Kegiatan Modal -->
+	<!-- End of import Excel Tambah Kegiatan Modal -->
+	<!-- Import Excel Tambah Peserta Kegiatan Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-peserta-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Import File Excel Tambah Peserta Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="<?= base_url()?>Kegiatan/import_kegiatan_action" enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="fileMateriKegiatan">File Excel Tambah Peserta Kegiatan</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan"
+									name="file_excel_import_peserta_kegiatan" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
+								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+									Pilih file excel tambah peserta kegiatan
+								</small>
+							</div>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Import File
+							Excel</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of import Excel Tambah Peserta Kegiatan Modal -->
 
 	<!-- Lihat peserta Modal -->
 	<div class="modal fade" id="modal-lihat-peserta-by-kegiatan" tabindex="-1" role="dialog">
@@ -467,6 +502,10 @@
 						<div class="col">
 							<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</a>
+							<button class="btn btn-warning btn-import-kegiatan" id="btn-import-peserta-kegiatan"><img class="img-profile mr-2"
+								src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Peserta</button>
+							<a href="<?= base_url()?>Kegiatan/download_format_peserta_excel_action"><button class="btn btn-danger btn-import-kegiatan float-right"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
 						</div>
 					<div class="card-body">
 						<div class="">
