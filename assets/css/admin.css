@@ -140,38 +140,6 @@
 
 /* end of upload image profile */
 
-/* upload image profile */
-
-#banner-peserta
-{
-    display: none;
-}
-
-#banner-image-peserta
-{
-    cursor: pointer;
-}
-
-#peserta-picture-container {
-    width: 230px;
-    height: 230px;
-    object-fit: cover;
-    overflow: hidden;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 14px;
-    -ms-border-radius: 14px;
-    -o-border-radius: 14px;
-    border-radius:50%;
-    border: 2px solid#846d6d;
-}
-
-#peserta-picture-container img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-/* end of upload image profile */
 
 /* Custom modal full screen */
 .modal-daftar-peserta-kegiatan-custom {
