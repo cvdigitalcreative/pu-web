@@ -121,16 +121,14 @@
 							<label for="provinsiTenagaAhli">Provinsi *</label>
 							<select class="form-control" id="provinsi-tenaga-ahli" name="id_provinsi_tenaga_ahli"
 								onChange="getStateTenagaAhli(this.value);" required>
-								<option selected disabled>Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
 								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
 								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaTenagaAhli">Kota *</label>
+							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
 							<select class="form-control" id="kota-tenaga-ahli" name="id_kota_kabupaten_tenaga_ahli" required>
-								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
 						</div>
 
@@ -209,6 +207,18 @@
 									</div>
 								</div>
 							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
+							</div>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
+									name="file_tenaga_ahli">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
+									Pilih file tenaga ahli
+								</small>
 							</div>
 						</div>
 
@@ -293,16 +303,14 @@
 							<label for="provinsiTenagaAhli">Provinsi *</label>
 							<select class="form-control" id="edit-provinsi-tenaga-ahli" name="edit_id_provinsi_tenaga_ahli"
 								onChange="getStateEditTenagaAhli(this.value);" required>
-								<option selected disabled>Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
 								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
 								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaTenagaAhli">Kota *</label>
+							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
 							<select class="form-control" id="edit-kota-tenaga-ahli" name="edit_id_kota_kabupaten_tenaga_ahli" required>
-								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
 						</div>
 
@@ -327,7 +335,7 @@
 							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
 							<select class="form-control selectpicker" id="edit-jabatan-kerja-tenaga-ahli"
 								name="edit_id_jabatan_kerja_tenaga_ahli[]" aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
-								data-live-search="true" required>
+								data-live-search="true">
 								<?php if($jabker != null):
 								foreach ($jabker as $row):?>
 								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
@@ -381,6 +389,17 @@
 									</div>
 								</div>
 							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
+							</div>
+						</div>
+						<div class="form-group py-2">
+							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="edit-file-tenaga-ahli"
+									name="file_tenaga_ahli">
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+								<small id="edit-file-tenaga-ahli" class="form-text text-muted">
+									Pilih file tenaga ahli
+								</small>
 							</div>
 						</div>
 
@@ -620,17 +639,18 @@
                                                 <th>Kabupaten / kota</th>
                                                 <th>Ketenagakerjaan</th>
                                                 <th>Keahlian</th>
+                                                <th>File Tenaga Ahli</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                     </table>
                                 </div>
 								
-                                <div class="tab-pane fade" role="tabpanel" id="mitra-terampil">
-									<table id="mitra_terampil_table" class="display">
-										<thead>
-											<tr>
-												<th>No</th>
+                                <div class="tab-pane fade show" role="tabpanel" id="mitra-terampil">
+								<table id="mitra_terampil_table" class="display">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Jenis Kelamin</th>
                                                 <th>Tempat Lahir</th>
@@ -642,8 +662,9 @@
                                                 <th>Alamat</th>
                                                 <th>Provinsi</th>
                                                 <th>Kabupaten / kota</th>
-												<th>Ketenagakerjaan</th>
+                                                <th>Ketenagakerjaan</th>
                                                 <th>Keterampilan</th>
+                                                <th>File Tenaga Ahli</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

@@ -438,11 +438,25 @@ $(document).ready(function () {
 				data: 'keahlian',
 			},
 			{
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_tenaga_ahli != '-') {
+						return `
+					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
+				}
+			},
+			{
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					// <button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+
 				}
 			},
 		]
@@ -510,16 +524,31 @@ $(document).ready(function () {
 				data: 'keahlian',
 			},
 			{
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_tenaga_ahli != '-') {
+						return `
+					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
+				}
+			},
+			{
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					// <button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 				}
 			},
 		]
-	});
+	}
+	);
 	// End of Mitra Terampil datatable 
+
 
 
 	// SKKNI Datatable
@@ -961,6 +990,26 @@ $(document).ready(function () {
 				type: 'POST',
 				success: function () {
 					window.location = `${BASE_URL}Administrasi_kegiatan/download/${id}`;
+				}
+			})
+		}
+		else if ($('#tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Tenaga_ahli/download/${id}`;
+				}
+			})
+		}
+		else if ($('#tenaga_terampil_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Tenaga_ahli/download/${id}`;
 				}
 			})
 		}

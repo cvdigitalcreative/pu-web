@@ -686,9 +686,13 @@ class Kegiatan extends CI_Controller
             $this->load->view('error_page');
         } else {
             if ($data['status'] == "Success") {
-                $data = $data['data'];
-                foreach ($data as $row) {
-                    echo '<option value="' . $row['id_kabupaten_kota'] . '">' . $row['kabupaten_kota'] . '</option>';
+                if (count($data['data']) > 0) {
+                    $data = $data['data'];
+                    foreach ($data as $row) {
+                        echo '<option value="' . $row['id_kabupaten_kota'] . '">' . $row['kabupaten_kota'] . '</option>';
+                    }
+                }else{
+                    echo '<option value="0' . '" selected>Tidak ada Kota yang terdaftar</option>';
                 }
             } else {
                 $data = null;
