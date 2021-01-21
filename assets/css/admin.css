@@ -34,11 +34,6 @@
     color: #2b2b2b;
     font-weight: 800;
 }
-.btn-modal-edit-profile {
-    height: 44px !important;
-    border-radius: 30px !important;
-    font-weight: 800;
-}
 
 .btn-import-kegiatan {
     height: 40px !important;
@@ -51,6 +46,32 @@
     margin-right: 16px;
     border-radius: 14px;
     background-color: #DEDEDE;
+}
+
+.btn-profile {
+    height: 44px !important;
+    color: #FFC928;
+    border: 2px solid #FFC928;
+    border-radius: 30px;
+    font-weight: 800;
+}
+
+.btn-profile:hover {
+    height: 44px !important;
+    color: #FFF;
+    background-color: #FFC928;
+    border: none;
+    border-radius: 30px;
+    font-weight: 800;
+}
+
+.btn-profile:active {
+    height: 44px !important;
+    color: #FFF;
+    background-color: #FFC928;
+    border: none;
+    border-radius: 30px;
+    font-weight: 800;
 }
 
 /* upload image kegiatan */
@@ -98,8 +119,8 @@
 }
 
 #profile-picture-container {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     object-fit: cover;
     overflow: hidden;
     -webkit-border-radius: 14px;
@@ -107,7 +128,8 @@
     -ms-border-radius: 14px;
     -o-border-radius: 14px;
     border-radius:50%;
-    border: 2px solid#858796;
+    border: 2px solid#846d6d;
+    margin-bottom: 20px;
 }
 
 #profile-picture-container img {
@@ -131,8 +153,8 @@
 }
 
 #peserta-picture-container {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     object-fit: cover;
     overflow: hidden;
     -webkit-border-radius: 14px;
@@ -140,7 +162,7 @@
     -ms-border-radius: 14px;
     -o-border-radius: 14px;
     border-radius:50%;
-    border: 2px solid#858796;
+    border: 2px solid#846d6d;
 }
 
 #peserta-picture-container img {
@@ -180,13 +202,13 @@
   /* End of show bigger image when hover */
   
   .badge-status-user{
-      background-color: #36b9cc;
+      background-color: #FFC928;
       font-size: 10px;
       padding-top: 1px;
       padding-bottom: 1px;
       padding-left: 4px;
       padding-right: 4px;
-      border: 1px solid #36b9cc;
+      border: 1px solid #FFC928;
       border-radius: 15px;
       margin-top: -3px;
   }
@@ -200,4 +222,42 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .custom-radio-button-form input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+  
+  .custom-radio-button-form input[type="radio"] {
+    opacity: 0.01;
+    z-index: 100;
+    visibility: hidden;
+  }
+  
+  .custom-radio-button-form .radio-custom input[type="radio"]:checked+label,
+  .Checked+label {
+    background-color: #846d6d;
+    color: white;
+  }
+  
+  .custom-radio-button-form .radio-custom label {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid #846d6d;
+    color: #846d6d;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 90;
+    display: inline-block;
+  }
+  
+  .custom-radio-button-form .radio-custom label:hover {
+    background: #f0f0f0;
   }
