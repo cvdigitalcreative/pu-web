@@ -250,9 +250,14 @@ $(document).ready(function () {
 			{
 				data: 'foto_banner_kegiatan',
 				render: function (data) {
-					return `
+					if (data != '-') {
+						return `
 					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden; object-fit: cover;">`
 				}
+				else {
+						return `
+Tidak ada poster kegiatan`					}
+					}
 			},
 			{
 				data: 'str_nama_instruktur_kegiatan',
@@ -273,13 +278,15 @@ $(document).ready(function () {
 				data: 'jumlah_peserta',
 			},
 			{
-				data: 'nama_file_materi_kegiatan',
-			},
-			{
-				data: 'file_materi_kegiatan',
-				render: function (data) {
-					return `
-					<a href='${data}' target="__blank">file</a>`
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_materi_kegiatan != '-') {
+						return `
+					<a href='${row.file_materi_kegiatan}' target="__blank">${row.nama_file_materi_kegiatan}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
 				}
 			},
 		]
@@ -463,11 +470,25 @@ $(document).ready(function () {
 				data: 'keahlian',
 			},
 			{
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_tenaga_ahli != '-') {
+						return `
+					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
+				}
+			},
+			{
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					// <button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+
 				}
 			},
 		]
@@ -535,16 +556,31 @@ $(document).ready(function () {
 				data: 'keahlian',
 			},
 			{
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_tenaga_ahli != '-') {
+						return `
+					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
+				}
+			},
+			{
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					// <button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 				}
 			},
 		]
-	});
+	}
+	);
 	// End of Mitra Terampil datatable 
+
 
 
 	// SKKNI Datatable
@@ -578,13 +614,15 @@ $(document).ready(function () {
 				data: 'kategori_ska',
 			},
 			{
-				data: 'nama_file_ska',
-			},
-			{
-				data: 'file_ska',
-				render: function (data) {
-					return `
-					<a href='${data}' target="__blank">file</a>`
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_ska != '-') {
+						return `
+					<a href='${row.file_ska}' target="__blank">${row.nama_file_ska}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
 				}
 			},
 			{
@@ -592,11 +630,18 @@ $(document).ready(function () {
 			},
 			{
 				data: 'id_ska',
-				render: function (data) {
-					return `
+				render: function (data, type, row) {
+					if (row.file_ska != '-') {
+						return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
+					else {
+						return `
+						<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+						<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
 				}
 			},
 		]
@@ -633,13 +678,15 @@ $(document).ready(function () {
 				data: 'kategori_modul',
 			},
 			{
-				data: 'nama_file_modul',
-			},
-			{
-				data: 'file_modul',
-				render: function (data) {
-					return `
-					<a href='${data}' target="__blank">file</a>`
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_modul != '-') {
+						return `
+					<a href='${row.file_modul}' target="__blank">${row.nama_file_modul}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
 				}
 			},
 			{
@@ -647,11 +694,18 @@ $(document).ready(function () {
 			},
 			{
 				data: 'id_modul',
-				render: function (data) {
-					return `
+				render: function (data, type, row) {
+					if (row.file_modul != '-') {
+						return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
+					else {
+						return `
+						<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+						<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
 				}
 			},
 		]
@@ -685,13 +739,15 @@ $(document).ready(function () {
 				data: 'deskripsi_buku_saku',
 			},
 			{
-				data: 'nama_file_buku_saku',
-			},
-			{
-				data: 'file_buku_saku',
-				render: function (data) {
-					return `
-					<a href='${data}' target="__blank">file</a>`
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_buku_saku != '-') {
+						return `
+					<a href='${row.file_buku_saku}' target="__blank">${row.nama_file_buku_saku}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
 				}
 			},
 			{
@@ -699,11 +755,18 @@ $(document).ready(function () {
 			},
 			{
 				data: 'id_buku_saku',
-				render: function (data) {
-					return `
+				render: function (data, type, row) {
+					if (row.file_buku_saku != '-') {
+						return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
+					else {
+						return `
+						<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+						<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
 				}
 			},
 		]
@@ -737,13 +800,15 @@ $(document).ready(function () {
 				data: 'deskripsi_administrasi_kegiatan',
 			},
 			{
-				data: 'nama_file_administrasi_kegiatan',
-			},
-			{
-				data: 'file_administrasi_kegiatan',
-				render: function (data) {
-					return `
-					<a href='${data}' target="__blank">file</a>`
+				data: 'null',
+				render: function (data, type, row) {
+					if (row.file_administrasi_kegiatan != '-') {
+						return `
+					<a href='${row.file_administrasi_kegiatan}' target="__blank">${row.nama_file_administrasi_kegiatan}</a>`
+					}
+					else {
+						return `
+					Tidak ada file`}
 				}
 			},
 			{
@@ -751,11 +816,18 @@ $(document).ready(function () {
 			},
 			{
 				data: 'id_administrasi_kegiatan',
-				render: function (data) {
-					return `
+				render: function (data, type, row) {
+					if (row.file_administrasi_kegiatan != '-') {
+						return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
+					else {
+						return `
+						<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+						<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					}
 				}
 			},
 		]
@@ -986,6 +1058,26 @@ $(document).ready(function () {
 				type: 'POST',
 				success: function () {
 					window.location = `${BASE_URL}Administrasi_kegiatan/download/${id}`;
+				}
+			})
+		}
+		else if ($('#tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Tenaga_ahli/download/${id}`;
+				}
+			})
+		}
+		else if ($('#tenaga_terampil_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Tenaga_ahli/download/${id}`;
 				}
 			})
 		}

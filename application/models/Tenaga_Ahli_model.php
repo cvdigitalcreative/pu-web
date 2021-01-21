@@ -81,6 +81,7 @@ class Tenaga_Ahli_model extends CI_Model
         $id_kategori_tenaga_ahli,
         $is_instruktur,
         $is_asesor,
+        $file_tenaga_ahli,
         $token
     ) {
         $data = [
@@ -98,7 +99,8 @@ class Tenaga_Ahli_model extends CI_Model
             'id_jabker' => $id_jabker,
             'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
             'is_instruktur' => $is_instruktur,
-            'is_asesor' => $is_asesor
+            'is_asesor' => $is_asesor,
+            'file_tenaga_ahli' => $file_tenaga_ahli
         ];
 
         return $this->http_request_post($data, "/", $token);
@@ -120,6 +122,7 @@ class Tenaga_Ahli_model extends CI_Model
         $id_kategori_tenaga_ahli,
         $is_instruktur,
         $is_asesor,
+        $file_tenaga_ahli,
         $id_tenaga_ahli,
         $token
     ) {
@@ -138,11 +141,9 @@ class Tenaga_Ahli_model extends CI_Model
             'id_jabker' => $id_jabker,
             'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
             'is_instruktur' => $is_instruktur,
-            'is_asesor' => $is_asesor
+            'is_asesor' => $is_asesor,
+            'file_tenaga_ahli' => $file_tenaga_ahli
         ];
-
-
-        $data = http_build_query($data);
 
         return $this->http_request_update($data, "/$id_tenaga_ahli", $token);
     }

@@ -223,7 +223,6 @@
 											<th>Judul SKKNI</th>
 											<th>Deskripsi SKKNI</th>
 											<th>Kategori SKKNI</th>
-											<th>Nama File SKKNI</th>
 											<th>File SKKNI</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>

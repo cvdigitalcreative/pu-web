@@ -336,6 +336,26 @@ class Tenaga_ahli extends CI_Controller
             redirect('pupr/login');
     }
 
+    public function download($id_tenaga_ahli)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $tenaga_ahli = $this->Tenaga_Ahli_model->view_detail_tenaga_ahli($id_tenaga_ahli, $this->session->userdata('token'));
+            if ($tenaga_ahli == null)
+                $this->load->view('error_page');
+            else {
+                if ($tenaga_ahli['status'] == "Success") {
+                    $data = file_get_contents($tenaga_ahli['data']['file_tenaga_ahli']);
+                    force_download($tenaga_ahli['data']['file_tenaga_ahli'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $tenaga_ahli['message']);
+                    redirect('pupr/tenaga_ahli');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
     public function daerah($id_provinsi, $id_kategori_tenaga_ahli)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -445,6 +465,9 @@ class Tenaga_ahli extends CI_Controller
             else
                 $is_asesor = false;
 
+            $file_tenaga_ahli = new \CurlFile($_FILES['file_tenaga_ahli']['tmp_name'], $_FILES['file_tenaga_ahli']['type'], $_FILES['file_tenaga_ahli']['name']);
+
+
             $tambah_tenaga_ahli = $this->Tenaga_Ahli_model->add_tenaga_ahli(
                 $nama_lengkap,
                 $tempat_lahir,
@@ -461,6 +484,7 @@ class Tenaga_ahli extends CI_Controller
                 $id_kategori_tenaga_ahli,
                 $is_instruktur,
                 $is_asesor,
+                $file_tenaga_ahli,
                 $this->session->userdata('token')
             );
 
@@ -502,10 +526,12 @@ class Tenaga_ahli extends CI_Controller
             $no_telepon_rumah = $this->input->post('edit_nomor_rumah_tenaga_ahli');
             $no_handphone = $this->input->post('edit_nomor_handphone_tenaga_ahli');
             $id_jabker = $this->input->post('edit_id_jabatan_kerja_tenaga_ahli');
-            if (count($id_jabker) == 1)
+            if($id_jabker != null){
+                if (count($id_jabker) == 1)
                 $id_jabker = $id_jabker[0];
-            else
+                else
                 $id_jabker = '[' . implode(',', $id_jabker) . ']';
+            }
             $id_kategori_tenaga_ahli = $this->input->post('edit_kategori_tenaga_ahli');
             $is_instruktur = $this->input->post('edit_is_instruktur');
             if ($is_instruktur == 1)
@@ -517,6 +543,11 @@ class Tenaga_ahli extends CI_Controller
                 $is_asesor = true;
             else
                 $is_asesor = false;
+
+            if ($_FILES['file_tenaga_ahli']['size'] != 0)
+                $file_tenaga_ahli = new \CurlFile($_FILES['file_tenaga_ahli']['tmp_name'], $_FILES['file_tenaga_ahli']['type'], $_FILES['file_tenaga_ahli']['name']);
+            else
+            $file_tenaga_ahli = null;
 
             $edit_tenaga_ahli = $this->Tenaga_Ahli_model->edit_tenaga_ahli(
                 $nama_lengkap,
@@ -534,6 +565,7 @@ class Tenaga_ahli extends CI_Controller
                 $id_kategori_tenaga_ahli,
                 $is_instruktur,
                 $is_asesor,
+                $file_tenaga_ahli,
                 $id_tenaga_ahli,
                 $this->session->userdata('token')
             );

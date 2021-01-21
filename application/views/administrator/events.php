@@ -663,7 +663,6 @@
 											<th>Kota Kegiatan</th>
 											<th>Lokasi Kegiatan</th>
 											<th>Jumlah Peserta</th>
-											<th>Nama Materi Kegiatan</th>
 											<th>File Materi Kegiatan</th>
 										</tr>
 									</thead>

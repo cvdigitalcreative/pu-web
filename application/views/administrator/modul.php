@@ -214,7 +214,6 @@
 											<th>Judul Modul</th>
 											<th>Deskripsi Modul</th>
 											<th>Kategori Modul</th>
-											<th>Nama File Modul</th>
 											<th>File Modul</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
