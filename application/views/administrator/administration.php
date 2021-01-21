@@ -200,7 +200,6 @@
 											<th>No</th>
 											<th>Judul Administrasi Kegiatan</th>
 											<th>Deskripsi Administrasi Kegiatan</th>
-											<th>Nama File Administrasi Kegiatan</th>
 											<th>File Administrasi Kegiatan</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
