@@ -7,9 +7,9 @@
 
 <body id="page-top">
 
-    <!-- Tambah Kegiatan Modal -->
+    <!-- Edit Profile Modal -->
     <div class="modal fade bd-example-modal-lg" id="modal-edit-profile" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="exampleModalCenterTitle">Edit Profile</h4>
@@ -272,7 +272,7 @@
             </div>
         </div>
     </div>
-    <!-- End modal tambah kegiatan -->
+    <!-- End modal Edit Profile -->
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -312,6 +312,7 @@
                     <?php endif ?>
 
                     <div class="row gutters-sm">
+                        <!-- Profile card -->
                         <div class="col-md-4 mb-3">
                             <div class="card">
                                 <div class="card-body">
@@ -332,6 +333,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- End of Profile Card -->
+
+                            <!-- Company Card -->
                             <div class="card mt-3">
                                 <div class="card-body">
                                     <h5 class="mb-2">Data Perusahaan</h5>
@@ -344,6 +348,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- End of Company Card -->
+
+                            <!-- Education card -->
                             <div class="collapse" id="collapseDetail">
                                 <div class="card mt-3">
                                     <div class="card-body">
@@ -361,8 +368,10 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- End of education card -->
                         </div>
+
+                        <!-- Profile card detail -->
                         <div class="col-md-8">
                             <div class="card mb-3">
                                 <div class="card-body">
@@ -422,6 +431,8 @@
                                             </div>
                                         </div>
                                         <hr>
+
+                                        <!-- Profile card detail collapse -->
                                         <div class="collapse" id="collapseDetail">
                                             <div class="row">
                                                 <div class="col-sm-3">
@@ -460,6 +471,7 @@
                                             </div>
                                             <hr>
                                         </div>
+                                        <!-- End of Profile card detail collapse -->
                                     </div>
                                     <div class="px-3">
                                         <div class="row mt-2">
@@ -471,20 +483,19 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- End of profile card detail -->
                     </div>
-
+                    <!-- End of row gutters -->
                 </div>
+                <!-- /.container-fluid -->
             </div>
+            <!-- End of Main Content -->
+        <?php $this->load->view("components/footer.php") ?>
         </div>
-    </div>
-    <!-- /.container-fluid -->
-    </div>
-    <!-- End of Main Content -->
-    <?php $this->load->view("components/footer.php") ?>
-    </div>
-    <!-- End of Content Wrapper -->
+        <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+
 
     <!-- Scroll to Top Button-->
     <?php $this->load->view("components/scrolltotop.php") ?>

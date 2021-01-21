@@ -1,4 +1,12 @@
 $(document).ready(function () {
+
+	$('body').on('hidden.bs.modal', function () {
+		if($('.modal.show').length > 0)
+		{
+			$('body').addClass('modal-open');
+		}
+	});
+	
 	// trigger modal notification
 	$('#notification-modal').ready(function () {
 		$('#notification-modal').modal('show')
@@ -44,6 +52,30 @@ $(document).ready(function () {
 	});
 
 	// end upload image profile kegiatan js
+
+	// upload image tambah peserta js
+	$("#banner-image-peserta").click(function (e) {
+		$("#banner-peserta").click();
+	});
+
+	function fasterPreview(uploader) {
+		if (uploader.files && uploader.files[0]) {
+			$('#banner-image-peserta').attr('src',
+				window.URL.createObjectURL(uploader.files[0]));
+			$('#banner-image-peserta').attr('style', "width: 100%; height: 100%;");
+		}
+	}
+
+	$("#banner-peserta").change(function () {
+		fasterPreview(this);
+	});
+
+	$('#modal-tambah-peserta').on('hidden.bs.modal', function () {
+		$(this).find('form').trigger('reset');
+		$(this).find("input,image,textarea").val('').end();
+		$("#banner-image-profile, #banner-profile").val('')
+	});
+	// end upload image tambah peserta js
 
 	// tanggal mulai add kegiatan
 	$(function () {
@@ -231,7 +263,7 @@ $(document).ready(function () {
 				data: 'foto_banner_kegiatan',
 				render: function (data) {
 					return `
-					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden;">`
+					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden; object-fit: cover;">`
 				}
 			},
 			{
@@ -287,8 +319,13 @@ $(document).ready(function () {
 			{
 				data: 'file_foto_profile',
 				render: function (data) {
-					return `
+					if (data == '-') {
+						return `
+					<img class="image-hover" src="${BASE_URL}assets/image/pupr-profile-user.svg" style="width: 75px; height: 75px; overflow: hidden;">`
+					}else {
+						return `
 					<img class="image-hover" src="${data}" style="width: 75px; height: 75px; overflow: hidden;">`
+					}
 				}
 			},
 			{
@@ -1096,6 +1133,15 @@ $(document).ready(function () {
 		$('form').attr('action', `${BASE_URL}Kegiatan/import_peserta_kegiatan_action/${id_kegiatan}`)
 		$('#modal-lihat-peserta-by-kegiatan').modal('hide');
 		$('#modal-import-excel-tambah-peserta-kegiatan').modal('show');
+	});
+
+	// 
+	// ========= TAMBAH PESERTA ONCLICK ===========
+	// 
+	$('#btn-add-peserta-kegiatan').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Peserta/tambah_peserta_action/${id_kegiatan}`)
+		$('#modal-lihat-peserta-by-kegiatan').modal('hide');
+		$('#modal-tambah-peserta').modal('show');
 	});
 	
 	// ========= DOWNLOAD FORMAT TENAGA AHLI ONCLICK ===========
