@@ -1,4 +1,12 @@
 $(document).ready(function () {
+
+	$('body').on('hidden.bs.modal', function () {
+		if($('.modal.show').length > 0)
+		{
+			$('body').addClass('modal-open');
+		}
+	});
+	
 	// trigger modal notification
 	$('#notification-modal').ready(function () {
 		$('#notification-modal').modal('show')
@@ -9,7 +17,7 @@ $(document).ready(function () {
 		$("#banner-kegiatan").click();
 	});
 
-	function fasterPreview(uploader) {
+	function fasterPreviewKegiatan(uploader) {
 		if (uploader.files && uploader.files[0]) {
 			$('#banner-image').attr('src',
 				window.URL.createObjectURL(uploader.files[0]));
@@ -17,7 +25,7 @@ $(document).ready(function () {
 	}
 
 	$("#banner-kegiatan").change(function () {
-		fasterPreview(this);
+		fasterPreviewKegiatan(this);
 	});
 
 	$('#modal-tambah-kegiatan').on('hidden.bs.modal', function () {
@@ -32,7 +40,7 @@ $(document).ready(function () {
 		$("#banner-profile").click();
 	});
 
-	function fasterPreview(uploader) {
+	function fasterPreviewProfile(uploader) {
 		if (uploader.files && uploader.files[0]) {
 			$('#banner-image-profile').attr('src',
 				window.URL.createObjectURL(uploader.files[0]));
@@ -40,7 +48,7 @@ $(document).ready(function () {
 	}
 
 	$("#banner-profile").change(function () {
-		fasterPreview(this);
+		fasterPreviewProfile(this);
 	});
 
 	// end upload image profile kegiatan js
@@ -152,6 +160,18 @@ $(document).ready(function () {
 			var years = moment().diff(start, 'years');
 		});
 	});
+
+	// tanggal lahir profile
+	$(function () {
+		$('input[name="profile_tanggal_lahir"]').daterangepicker({
+			singleDatePicker: true,
+			showDropdowns: true,
+			minYear: 1900,
+			maxYear: 3000
+		}, function (start, end, label) {
+			var years = moment().diff(start, 'years');
+		});
+	});
 	// end input date rangepicker
 
 	// Custom bootstrap-select each select id
@@ -231,7 +251,7 @@ $(document).ready(function () {
 				data: 'foto_banner_kegiatan',
 				render: function (data) {
 					return `
-					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden;">`
+					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden; object-fit: cover;">`
 				}
 			},
 			{
@@ -287,8 +307,13 @@ $(document).ready(function () {
 			{
 				data: 'file_foto_profile',
 				render: function (data) {
-					return `
+					if (data == '-') {
+						return `
+					<img class="image-hover" src="${BASE_URL}assets/image/pupr-profile-user.svg" style="width: 75px; height: 75px; overflow: hidden;">`
+					}else {
+						return `
 					<img class="image-hover" src="${data}" style="width: 75px; height: 75px; overflow: hidden;">`
+					}
 				}
 			},
 			{
@@ -1097,6 +1122,7 @@ $(document).ready(function () {
 		$('#modal-lihat-peserta-by-kegiatan').modal('hide');
 		$('#modal-import-excel-tambah-peserta-kegiatan').modal('show');
 	});
+
 	
 	// ========= DOWNLOAD FORMAT TENAGA AHLI ONCLICK ===========
 	// 

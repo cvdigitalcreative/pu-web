@@ -92,7 +92,7 @@ class User extends CI_Controller
                     }
 
                     $data['user']['alamat_lengkap'] = strtolower($data['user']['alamat_lengkap']);
-                    
+
                     $data['user']['alamat_card'] = $data['user']['kota_kabupaten'] . ', ' . $data['user']['provinsi'];
                     $data['user']['alamat_card'] = strtolower($data['user']['alamat_card']);
 
@@ -238,9 +238,17 @@ class User extends CI_Controller
             $id_status_perkawinan = $this->input->post('id_status_perkawinan');
             $nama_perusahaan = $this->input->post('nama_perusahaan');
             $jabatan = $this->input->post('jabatan');
-            $utusan = '-';
+            $utusan = $this->input->post('utusan');;
             $alamat_rumah = $this->input->post('alamat');
-            $tanggal_lahir = date('Y-m-d');
+            $tempat_lahir = $this->input->post('tempat_lahir');
+            $temptanggallahir = explode('/', $this->input->post('profile_tanggal_lahir'));
+            $tempbulan = $temptanggallahir[0];
+            $temphari = $temptanggallahir[1];
+            $temptahun = $temptanggallahir[2];
+            $temptanggallahir[0] = $temptahun;
+            $temptanggallahir[1] = $tempbulan;
+            $temptanggallahir[2] = $temphari;
+            $tanggal_lahir = implode('-', $temptanggallahir);
             $nik = $this->input->post('nik');
             $rt = $this->input->post('rt');
             $rw = $this->input->post('rw');
@@ -264,6 +272,8 @@ class User extends CI_Controller
                 $file_foto_profil = null;
             else
                 $file_foto_profil = new \CurlFile($_FILES['file_foto_profile']['tmp_name'], $_FILES['file_foto_profile']['type'], $_FILES['file_foto_profile']['name']);
+            
+                $npwp = $this->input->post('npwp');
 
             $edit_profile = $this->User_model->edit_user_detail(
                 $nama,
@@ -279,6 +289,7 @@ class User extends CI_Controller
                 $jabatan,
                 $utusan,
                 $alamat_rumah,
+                $tempat_lahir,
                 $tanggal_lahir,
                 $nik,
                 $rt,
@@ -292,6 +303,7 @@ class User extends CI_Controller
                 $nama_universitas,
                 $jurusan,
                 $tahun_lulus,
+                $npwp,
                 $file_foto_profil,
                 $this->session->userdata('token')
             );

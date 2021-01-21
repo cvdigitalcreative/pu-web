@@ -108,6 +108,7 @@ class User_model extends CI_Model
         $jabatan,
         $utusan,
         $alamat_rumah,
+        $tempat_lahir,
         $tanggal_lahir,
         $nik,
         $rt,
@@ -121,6 +122,7 @@ class User_model extends CI_Model
         $nama_universitas,
         $jurusan,
         $tahun_lulus,
+        $npwp,
         $file_foto_profil,
         $token
     ) {
@@ -139,6 +141,7 @@ class User_model extends CI_Model
             'jabatan' => $jabatan,
             'utusan' => $utusan,
             'alamat_rumah' => $alamat_rumah,
+            'tempat_lahir' => $tempat_lahir,
             'tanggal_lahir' => $tanggal_lahir,
             'nik' => $nik,
             'rt' => $rt,
@@ -152,6 +155,7 @@ class User_model extends CI_Model
             'nama_universitas' => $nama_universitas,
             'jurusan' => $jurusan,
             'tahun_lulus' => $tahun_lulus,
+            'npwp' => $npwp,
             'file_foto_profil' => $file_foto_profil
         ];
 
