@@ -53,30 +53,6 @@ $(document).ready(function () {
 
 	// end upload image profile kegiatan js
 
-	// upload image tambah peserta js
-	$("#banner-image-peserta").click(function (e) {
-		$("#banner-peserta").click();
-	});
-
-	function fasterPreviewPeserta(uploader) {
-		if (uploader.files && uploader.files[0]) {
-			$('#banner-image-peserta').attr('src',
-				window.URL.createObjectURL(uploader.files[0]));
-			$('#banner-image-peserta').attr('style', "width: 100%; height: 100%;");
-		}
-	}
-
-	$("#banner-peserta").change(function () {
-		fasterPreviewPeserta(this);
-	});
-
-	$('#modal-tambah-peserta').on('hidden.bs.modal', function () {
-		$(this).find('form').trigger('reset');
-		$(this).find("input,image,textarea").val('').end();
-		$("#banner-image-peserta, #banner-peserta").val('')
-	});
-	// end upload image tambah peserta js
-
 	// tanggal mulai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
@@ -1147,14 +1123,6 @@ $(document).ready(function () {
 		$('#modal-import-excel-tambah-peserta-kegiatan').modal('show');
 	});
 
-	// 
-	// ========= TAMBAH PESERTA ONCLICK ===========
-	// 
-	$('#btn-add-peserta-kegiatan').on('click', function () {
-		$('form').attr('action', `${BASE_URL}Peserta/tambah_peserta_action/${id_kegiatan}`)
-		$('#modal-lihat-peserta-by-kegiatan').modal('hide');
-		$('#modal-tambah-peserta').modal('show');
-	});
 	
 	// ========= DOWNLOAD FORMAT TENAGA AHLI ONCLICK ===========
 	// 
