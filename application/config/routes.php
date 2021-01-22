@@ -116,3 +116,9 @@ $route['pupr/feedback'] = "Feedback/seluruh";
 //route Profile
 $route['pupr/profile'] = "User/profile";
 
+//route privacy & policy
+$route['privacy-policy'] = "Common/privacy";
+
+//route terms & condition
+$route['terms-and-conditions'] = "Common/terms";
+
