@@ -27,7 +27,7 @@
                                     <label for="profileFotoProfil">Foto Profile *</label>
                                     <center>
                                         <div id="profile-picture-container">
-                                            <image id="banner-image-profile" src="<?= $user['file_foto_profile']?>"/>
+                                            <image id="banner-image-profile" src="<?= $user['file_foto_profile'] ?>" />
                                             <input id="banner-profile" type="file" name="file_foto_profile" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .png, .jpeg" capture>
                                         </div>
                                         <p class="text-secondary mt-2"><small>Klik gambar untuk mengganti foto profile</small></p>
@@ -65,7 +65,7 @@
                                     <div class="col">
                                         <div class="form-group py-2">
                                             <label for="profileTempatLahir">Tempat Lahir *</label>
-                                            <input type="text" class="form-control" id="profile-tempat-lahir" name="tempat_lahir" placeholder="Contoh: Jakarta" required>
+                                            <input type="text" class="form-control" id="profile-tempat-lahir" name="tempat_lahir" value="<?= $user['tempat_lahir']?>" placeholder="Contoh: Jakarta" required>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -466,19 +466,10 @@
                                         <hr>
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                <h6 class="mb-0">NIK</h6>
+                                                <h6 class="mb-0">Tempat Tanggal Lahir</h6>
                                             </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <?= $user['nik'] ?>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h6 class="mb-0">NPWP</h6>
-                                            </div>
-                                            <div class="col-sm-9 text-secondary">
-                                                <?= $user['npwp'] ?>
+                                            <div class="col-sm-9 text-secondary text-capitalize">
+                                                <?= $user['tempat_tanggal_lahir'] ?>
                                             </div>
                                         </div>
                                         <hr>
@@ -530,7 +521,26 @@
                                                 </div>
                                             </div>
                                             <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">NIK</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <?= $user['nik'] ?>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">NPWP</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <?= $user['npwp'] ?>
+                                                </div>
+                                            </div>
+                                            <hr>
                                         </div>
+
                                         <!-- End of Profile card detail collapse -->
                                     </div>
                                     <div class="px-3">
