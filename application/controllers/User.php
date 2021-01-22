@@ -105,6 +105,8 @@ class User extends CI_Controller
                     $data['user']['tahun_lulus_date'] = implode('-', $temparrtgl);
                     $tahun_lulus = strtotime($data['user']['tahun_lulus']);
                     $data['user']['tahun_lulus'] = date('d M Y', $tahun_lulus);
+
+                    $data['user']['tempat_tanggal_lahir'] = $data['user']['tempat_lahir'] . ', ' . date("d F Y", strtotime($data['user']['tanggal_lahir']));
                 } else {
                     $data['user'] = null;
                     $this->session->set_flashdata("APImessage", $data['user']['message']);
