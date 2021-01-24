@@ -108,6 +108,8 @@ class User_model extends CI_Model
         $jabatan,
         $utusan,
         $alamat_rumah,
+        $tempat_lahir,
+        $tanggal_lahir,
         $nik,
         $rt,
         $rw,
@@ -116,9 +118,11 @@ class User_model extends CI_Model
         $no_handphone,
         $id_status_rumah,
         $id_pendidikan,
-        $id_jabker,
         $id_kompetensi,
-        // $no_sertifikat,
+        $nama_universitas,
+        $jurusan,
+        $tahun_lulus,
+        $npwp,
         $file_foto_profil,
         $token
     ) {
@@ -137,6 +141,8 @@ class User_model extends CI_Model
             'jabatan' => $jabatan,
             'utusan' => $utusan,
             'alamat_rumah' => $alamat_rumah,
+            'tempat_lahir' => $tempat_lahir,
+            'tanggal_lahir' => $tanggal_lahir,
             'nik' => $nik,
             'rt' => $rt,
             'rw' => $rw,
@@ -145,9 +151,11 @@ class User_model extends CI_Model
             'no_handphone' => $no_handphone,
             'id_status_rumah' => $id_status_rumah,
             'id_pendidikan' => $id_pendidikan,
-            'id_jabker' => $id_jabker,
             'id_kompetensi' => $id_kompetensi,
-            // 'no_sertifikat' => $no_sertifikat,
+            'nama_universitas' => $nama_universitas,
+            'jurusan' => $jurusan,
+            'tahun_lulus' => $tahun_lulus,
+            'npwp' => $npwp,
             'file_foto_profil' => $file_foto_profil
         ];
 
@@ -174,7 +182,8 @@ class User_model extends CI_Model
         return $this->http_request_update($data, "/forgot-password/change-password/$id_forgot_password");
     }
 
-    public function request_token($id_user){
+    public function request_token($id_user)
+    {
         return $this->http_request_post(null, "/request-token/$id_user");
     }
 }

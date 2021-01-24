@@ -11,6 +11,11 @@ class Modul extends CI_Controller
         $this->load->model('Modul_model');
         $this->load->model('Common_model');
         $this->load->model('User_model');
+
+        if ($this->session->userdata('id_role') == 3) {
+            $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
+            redirect('pupr/login');
+        }
     }
 
     public function seluruh()
@@ -58,7 +63,8 @@ class Modul extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-            $this->load->view("administrator/modul", $data);
+            else
+                $this->load->view("administrator/modul", $data);
         } else
             redirect("pupr/login");
     }

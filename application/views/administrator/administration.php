@@ -145,12 +145,18 @@
 
 					<!-- Alert -->
 					<?php if ($this->session->flashdata('success')) : ?>
-						<div class="alert alert-success mb-4" role="alert">
+						<div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
 							<?= $this->session->flashdata('success') ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 						</div>
 					<?php elseif ($this->session->flashdata('APImessage')) : ?>
-						<div class="alert alert-danger mb-4" role="alert">
+						<div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
 							<?= $this->session->flashdata('APImessage') ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 						</div>
 					<?php endif; ?>
 					
@@ -194,7 +200,6 @@
 											<th>No</th>
 											<th>Judul Administrasi Kegiatan</th>
 											<th>Deskripsi Administrasi Kegiatan</th>
-											<th>Nama File Administrasi Kegiatan</th>
 											<th>File Administrasi Kegiatan</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>

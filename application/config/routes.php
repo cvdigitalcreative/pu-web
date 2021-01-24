@@ -60,6 +60,7 @@ $route['pupr/login'] = 'Authentication/login' ;
 $route['pupr/register'] = 'Authentication/register' ;
 $route['pupr/password/forgot'] = 'Authentication/forgot_password' ;
 $route['pupr/password/reset/(:any)'] = 'Authentication/change_password/$1' ;
+$route['pupr/email/verification/(:any)'] = 'Authentication/email_verification/$1' ;
 
 // Route dashboard
 $route['pupr/dashboard'] = 'Dashboard/dashboard' ;
@@ -109,4 +110,15 @@ $route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
 $route['pupr/profile'] = "User/profile";
 $route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
 
+//route feedback
+$route['pupr/feedback'] = "Feedback/seluruh";
+
+//route Profile
+$route['pupr/profile'] = "User/profile";
+
+//route privacy & policy
+$route['privacy-policy'] = "Common/privacy";
+
+//route terms & condition
+$route['terms-and-conditions'] = "Common/terms";
 

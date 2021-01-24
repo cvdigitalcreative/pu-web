@@ -97,7 +97,7 @@
 								</small>
 							</div>
 						</div>
-            <div class="form-group py-2">
+           				<div class="form-group py-2">
 							<label for="namaKategoriSkkni">Kategori Skkni *</label>
 							<select class="form-control" id="edit-kategori-skkni" name="id_kategori_skkni" required>
 								<option selected disabled>Pilih kategori skkni</option>
@@ -168,12 +168,18 @@
 
 					<!-- Alert -->
 					<?php if ($this->session->flashdata('success')) : ?>
-						<div class="alert alert-success mb-4" role="alert">
+						<div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
 							<?= $this->session->flashdata('success') ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 						</div>
 					<?php elseif ($this->session->flashdata('APImessage')) : ?>
-						<div class="alert alert-danger mb-4" role="alert">
+						<div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
 							<?= $this->session->flashdata('APImessage') ?>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
 						</div>
 					<?php endif; ?>
 
@@ -217,7 +223,6 @@
 											<th>Judul SKKNI</th>
 											<th>Deskripsi SKKNI</th>
 											<th>Kategori SKKNI</th>
-											<th>Nama File SKKNI</th>
 											<th>File SKKNI</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>

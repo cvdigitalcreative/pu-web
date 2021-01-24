@@ -11,6 +11,11 @@ class SKA extends CI_Controller
         $this->load->model('SKA_model');
         $this->load->model('Common_model');
         $this->load->model('User_model');
+
+        if ($this->session->userdata('id_role') == 3) {
+            $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
+            redirect('pupr/login');
+        }
     }
 
     public function seluruh()
@@ -57,8 +62,9 @@ class SKA extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
-            $this->load->view("administrator/skkni", $data);
+            else {
+                $this->load->view("administrator/skkni", $data);
+            }
         } else
             redirect("pupr/login");
     }
@@ -179,9 +185,9 @@ class SKA extends CI_Controller
             $judul_ska = $this->input->post('judul_skkni');
             $deskripsi_ska = $this->input->post('deskripsi_skkni');
             if ($_FILES['file_skkni']['size'] != null)
-            $file_ska = new \CurlFile($_FILES['file_skkni']['tmp_name'], $_FILES['file_skkni']['type'], $_FILES['file_skkni']['name']);
+                $file_ska = new \CurlFile($_FILES['file_skkni']['tmp_name'], $_FILES['file_skkni']['type'], $_FILES['file_skkni']['name']);
             else
-            $file_ska = null;
+                $file_ska = null;
 
             if ($this->input->post('id_kategori_skkni') != null)
                 $id_kategori_ska = $this->input->post('id_kategori_skkni');
@@ -190,7 +196,7 @@ class SKA extends CI_Controller
                 $kategoritemp = $this->Common_model->view_skkni_ska($this->session->userdata('token'));
                 foreach ($kategoritemp['data'] as $val) {
                     if ($val['kategori_skkni'] == $id_kategori_ska)
-                    $id_kategori_ska = $val['id_kategori_skkni'];
+                        $id_kategori_ska = $val['id_kategori_skkni'];
                 }
             }
 

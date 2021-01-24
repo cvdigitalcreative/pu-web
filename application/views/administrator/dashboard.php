@@ -33,6 +33,7 @@
 
 						<div class="col-xl-3 col-md-6 mb-4">
 							<div class="card border-left-primary h-100 p-2 card-recap">
+
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
@@ -46,7 +47,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 					</div>
 

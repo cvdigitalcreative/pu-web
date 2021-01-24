@@ -31,14 +31,22 @@ class Authentication extends CI_Controller
                 $this->load->view('error_page');
             else {
                 if ($login['status'] == "Success") {
-                    $this->session->set_flashdata('success', $login['message']);
+                    if ($login['data']['id_role'] != 3) {
+                        $this->session->set_flashdata('success', $login['message']);
+                        
+                        // ============ set userdata =============
+                        $this->session->set_userdata('logged_in', true);
+                        $this->session->set_userdata('token', $login['data']['id_token']);
+                        $this->session->set_userdata('id_user', $login['data']['id_user']);
+                        $this->session->set_userdata('nama', $login['data']['nama']);
+                        $this->session->set_userdata('role', $login['data']['id_role']);
+                        redirect("pupr/dashboard");
+                    }
+                    else{
+                        $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
+                        redirect('pupr/login');
 
-                    // ============ set userdata =============
-                    $this->session->set_userdata('logged_in', true);
-                    $this->session->set_userdata('token', $login['data']['id_token']);
-                    $this->session->set_userdata('nama', $login['data']['nama']);
-                    $this->session->set_userdata('role', $login['data']['id_role']);
-                    redirect("pupr/dashboard");
+                    }
                 } else {
                     $this->session->set_flashdata('APImessage', $login['message']);
                     redirect('pupr/login');
@@ -92,10 +100,10 @@ class Authentication extends CI_Controller
         else {
             if ($verification['status'] == "Success") {
                 $this->session->set_flashdata('success', $verification['message']);
-                redirect();
+                redirect('pupr/login');
             } else {
                 $this->session->set_flashdata('APImessage', $verification['message']);
-                redirect();
+                redirect('pupr/register');
             }
         }
     }
@@ -150,7 +158,7 @@ class Authentication extends CI_Controller
 
     public function change_password_action($id_forgot_password)
     {
-        $new_password = $this->input->post('new_password');
+        $new_password = hash('sha256', $this->input->post('new_password'));
 
         $change_password = $this->User_model->change_password($id_forgot_password, $new_password);
 
@@ -162,7 +170,7 @@ class Authentication extends CI_Controller
                 redirect("pupr/login");
             } else {
                 $this->session->set_flashdata('APImessage', $change_password['message']);
-                redirect("pupr/password/reset/$id_forgot_password");
+                redirect("pupr/password/forgot");
             }
         }
     }

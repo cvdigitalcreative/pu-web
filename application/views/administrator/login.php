@@ -52,11 +52,11 @@
 							<div class="form-group mt-4">
 								<input type="text" class="form-control input" id="exampleInputEmail1"
 									aria-describedby="emailHelp" placeholder="Email / no.telepon"
-									name="email_no_telepon">
+									name="email_no_telepon" required>
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control input" id="exampleInputPassword1"
-									placeholder="Kata sandi" name="password">
+									placeholder="Kata sandi" name="password" required>
 							</div>
 							<div class="form-check">
 								<div class="d-flex justify-content-between">

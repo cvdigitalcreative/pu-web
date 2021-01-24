@@ -10,6 +10,11 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->load->model('dashboard_model');
         $this->load->model('User_model');
+
+        if ($this->session->userdata('id_role') == 3) {
+            $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
+            redirect('pupr/login');
+        }
     }
 
     //blm done
@@ -44,8 +49,8 @@ class Dashboard extends CI_Controller
 
             if ($null)
                 $this->load->view('error_page');
-
-            $this->load->view('administrator/dashboard', $data);
+            else
+                $this->load->view('administrator/dashboard', $data);
         } else
             redirect("pupr/login");
     }
