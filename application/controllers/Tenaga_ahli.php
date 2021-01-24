@@ -117,7 +117,27 @@ class Tenaga_ahli extends CI_Controller
     public function dataTenagaAhli()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+            $provinsi = $this->input->post('filter_id_provinsi_tenaga_ahli');
+            $jabatan_kerja = $this->input->post('filter_jabatan_kerja_tenaga_ahli');
+            $is_asesor = $this->input->post('filter_is_asesor_tenaga_ahli');
+            $is_instruktur = $this->input->post('filter_is_instruktur_tenaga_ahli');
+
+            $filter = "?id_kategori_tenaga_ahli=1";
+            if ($provinsi != null) {
+                $filter = $filter . "&id_provinsi=" . $provinsi;
+            }
+            if ($jabatan_kerja != null) {
+                $filter = $filter . "&id_jabker=" . $jabatan_kerja;
+            }
+            if ($is_asesor != 0) {
+                $filter = $filter . "&is_asesor=" . $is_asesor;
+            }
+            if ($is_instruktur != 0) {
+                $filter = $filter . "&is_instruktur=" . $is_instruktur;
+            }
+            
+
+            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($filter, $this->session->userdata('token'));
             if ($data['tenaga_ahli'] == null) {
                 $callback = array(
                     'data' => []
@@ -186,7 +206,26 @@ class Tenaga_ahli extends CI_Controller
     public function dataTenagaTerampil()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+            $provinsi = $this->input->post('filter_id_provinsi_tenaga_ahli');
+            $jabatan_kerja = $this->input->post('filter_jabatan_kerja_tenaga_ahli');
+            $is_asesor = $this->input->post('filter_is_asesor_tenaga_ahli');
+            $is_instruktur = $this->input->post('filter_is_instruktur_tenaga_ahli');
+
+            $filter = "?id_kategori_tenaga_ahli=2";
+            if ($provinsi != null) {
+                $filter = $filter . "&id_provinsi=" . $provinsi;
+            }
+            if ($jabatan_kerja != null) {
+                $filter = $filter . "&id_jabker=" . $jabatan_kerja;
+            }
+            if ($is_asesor != 0) {
+                $filter = $filter . "&is_asesor=" . $is_asesor;
+            }
+            if ($is_instruktur != 0) {
+                $filter = $filter . "&is_instruktur=" . $is_instruktur;
+            }
+
+            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($filter, $this->session->userdata('token'));
             if ($data['tenaga_ahli'] == null) {
                 $callback = array(
                     'data' => []
@@ -252,88 +291,6 @@ class Tenaga_ahli extends CI_Controller
         } else {
             redirect('pupr/login');
         }
-    }
-
-    public function filter($kategori)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $provinsi = $this->input->post('filter_provinsi_tenaga_ahli');
-            $jabatan_kerja = $this->input->post('filter_jabatan_kerja_tenaga_ahli');
-            $jabatan_kerja = 22;
-
-            $filter = "";
-            if ($provinsi != null) {
-                $filter = $filter . "&id_provinsi=" . $provinsi;
-            }
-            if ($jabatan_kerja != null) {
-                $filter = $filter . "&id_jabker=" . $jabatan_kerja;
-            }
-
-            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_tenaga_ahli_filter($kategori, $filter, $this->session->userdata('token'));
-            if ($data['tenaga_ahli'] == null) {
-                $callback = array(
-                    'data' => []
-                );
-            } else {
-                if ($data['tenaga_ahli']['status'] == "Success") {
-                    if (count($data['tenaga_ahli']['data']) > 0) {
-                        $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
-
-                        $indexTenagaAhli = 0;
-                        $noTenagaAhli = 1;
-
-                        foreach ($data['tenaga_ahli'] as $val) {
-                            $data['tenaga_ahli'][$indexTenagaAhli]['no_tenaga_ahli'] = $noTenagaAhli;
-
-                            // ======================= tanggal lahir ================================
-                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
-                            $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text'] = date("d F Y", $data['tenaga_ahli'][$indexTenagaAhli]['tanggal_lahir_text']);
-
-                            if ($val['is_asesor'] == true && $val['is_instruktur'] == true)
-                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor & Instruktur";
-                            else if ($val['is_asesor'] == true)
-                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Asesor";
-                            else if ($val['is_instruktur'] == true)
-                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "Instruktur";
-                            else
-                                $data['tenaga_ahli'][$indexTenagaAhli]['ketenagakerjaan'] = "-";
-
-
-                            $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "";
-                            $indexjabker = 0;
-                            if (count($val['jabker']) != null) {
-                                foreach ($val['jabker'] as $val2) {
-                                    if ($indexjabker == 0)
-                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $val2['nama_jabker'];
-                                    else
-                                        $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] . ", " . $val2['nama_jabker'];
-                                    $indexjabker++;
-                                }
-                            } else {
-                                $data['tenaga_ahli'][$indexTenagaAhli]['keahlian'] = "-";
-                            }
-
-                            $indexTenagaAhli++;
-                            $noTenagaAhli++;
-                        }
-                        $callback = array(
-                            'data' => $data['tenaga_ahli']
-                        );
-                    } else {
-                        $callback = array(
-                            'data' => []
-                        );
-                    }
-                } else {
-                    $callback = array(
-                        'data' => []
-                    );
-                }
-                header('Content-Type: application/json');
-                echo json_encode($callback);
-            }
-        } else
-            redirect('pupr/login');
     }
 
     public function download($id_tenaga_ahli)

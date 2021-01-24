@@ -450,176 +450,206 @@ Tidak ada poster kegiatan`					}
 	});
 	// End of Daftar Peserta by Kalender Kegiatan datatable 
 
+	fill_datatable_tenaga_ahli();
 	// Tenaga Ahli Datatable
-	$('#tenaga_ahli_table').DataTable({
-		"order": [0, 'asc'],
-		processing: true,
-		serverSide: false,
-		scrollY: true,
-		scrollX: true,
-		scrollCollapse: true,
-		// sDom: 'lrtip',
-		language: {
-			emptyTable: "Data tidak ditemukan!",
-		},
-		ajax: {
-			url: `${BASE_URL}Tenaga_ahli/dataTenagaAhli`,
-			type: "GET",
-		},
-		columns: [
-			{
-				data: 'no_tenaga_ahli',
+	function fill_datatable_tenaga_ahli(
+		filter_id_provinsi_tenaga_ahli = null,
+		filter_jabatan_kerja_tenaga_ahli = null,
+		filter_is_asesor_tenaga_ahli = null,
+		filter_is_instruktur_tenaga_ahli = null
+	) {
+		$('#tenaga_ahli_table').DataTable({
+			"order": [0, 'asc'],
+			processing: true,
+			serverSide: false,
+			scrollY: true,
+			scrollX: true,
+			scrollCollapse: true,
+			// sDom: 'lrtip',
+			language: {
+				emptyTable: "Data tidak ditemukan!",
 			},
-			{
-				data: 'nama_lengkap',
-			},
-			{
-				data: 'jenis_kelamin',
-			},
-			{
-				data: 'tempat_lahir',
-			},
-			{
-				data: 'tanggal_lahir_text',
-			},
-			{
-				data: 'email',
-			},
-			{
-				data: 'no_handphone',
-			},
-			{
-				data: 'no_telpon_rumah',
-			},
-			{
-				data: 'nik',
-			},
-			{
-				data: 'alamat_rumah',
-			},
-			{
-				data: 'provinsi',
-			},
-			{
-				data: 'kabupaten_kota',
-			},
-			{
-				data: 'ketenagakerjaan',
-			},
-			{
-				data: 'keahlian',
-			},
-			{
-				data: 'null',
-				render: function (data, type, row) {
-					if (row.file_tenaga_ahli != '-') {
-						return `
-					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
-					}
-					else {
-						return `
-					Tidak ada file`}
+			ajax: {
+				url: `${BASE_URL}Tenaga_ahli/dataTenagaAhli`,
+				dataType: 'JSON',
+				method: 'POST',
+				data: {
+					'filter_id_provinsi_tenaga_ahli': filter_id_provinsi_tenaga_ahli,
+		"filter_jabatan_kerja_tenaga_ahli": filter_jabatan_kerja_tenaga_ahli,
+		'filter_is_asesor_tenaga_ahli': filter_is_asesor_tenaga_ahli,
+		'filter_is_instruktur_tenaga_ahli': filter_is_instruktur_tenaga_ahli
 				}
 			},
-			{
-				data: 'id_tenaga_ahli',
-				render: function (data) {
-					return `
+			columns: [
+				{
+					data: 'no_tenaga_ahli',
+				},
+				{
+					data: 'nama_lengkap',
+				},
+				{
+					data: 'jenis_kelamin',
+				},
+				{
+					data: 'tempat_lahir',
+				},
+				{
+					data: 'tanggal_lahir_text',
+				},
+				{
+					data: 'email',
+				},
+				{
+					data: 'no_handphone',
+				},
+				{
+					data: 'no_telpon_rumah',
+				},
+				{
+					data: 'nik',
+				},
+				{
+					data: 'alamat_rumah',
+				},
+				{
+					data: 'provinsi',
+				},
+				{
+					data: 'kabupaten_kota',
+				},
+				{
+					data: 'ketenagakerjaan',
+				},
+				{
+					data: 'keahlian',
+				},
+				{
+					data: 'null',
+					render: function (data, type, row) {
+						if (row.file_tenaga_ahli != '-') {
+							return `
+					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
+						}
+						else {
+							return `
+					Tidak ada file`}
+					}
+				},
+				{
+					data: 'id_tenaga_ahli',
+					render: function (data) {
+						return `
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>
 					<button id='btn-export' type='submit' class='btn btn-primary btn-block' data-id='${data}'>Export Data</button>
 					<button id='btn-download' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download CV</button>`
 
-				}
-			},
-		]
+					}
+				},
+			]
+		}
+		)
 	}
-	);
 	// End of Tenaga Ahli datatable 
 
+	fill_datatable_mitra_terampil();
 	// Mitra Terampil Datatable
-	$('#mitra_terampil_table').DataTable({
-		"order": [0, 'asc'],
-		processing: true,
-		serverSide: false,
-		scrollY: true,
-		scrollX: true,
-		scrollCollapse: true,
-		// sDom: 'lrtip',
-		language: {
-			emptyTable: "Data tidak ditemukan!",
-		},
-		ajax: {
-			url: `${BASE_URL}Tenaga_ahli/dataTenagaTerampil`,
-			type: "GET",
-		},
-		columns: [
-			{
-				data: 'no_tenaga_ahli',
+	function fill_datatable_mitra_terampil(
+		filter_id_provinsi_tenaga_ahli = null,
+		filter_jabatan_kerja_tenaga_ahli = null,
+		filter_is_asesor_tenaga_ahli = null,
+		filter_is_instruktur_tenaga_ahli = null
+	) {
+		$('#mitra_terampil_table').DataTable({
+			"order": [0, 'asc'],
+			processing: true,
+			serverSide: false,
+			scrollY: true,
+			scrollX: true,
+			scrollCollapse: true,
+			// sDom: 'lrtip',
+			language: {
+				emptyTable: "Data tidak ditemukan!",
 			},
-			{
-				data: 'nama_lengkap',
-			},
-			{
-				data: 'jenis_kelamin',
-			},
-			{
-				data: 'tempat_lahir',
-			},
-			{
-				data: 'tanggal_lahir_text',
-			},
-			{
-				data: 'email',
-			},
-			{
-				data: 'no_handphone',
-			},
-			{
-				data: 'no_telpon_rumah',
-			},
-			{
-				data: 'nik',
-			},
-			{
-				data: 'alamat_rumah',
-			},
-			{
-				data: 'provinsi',
-			},
-			{
-				data: 'kabupaten_kota',
-			},
-			{
-				data: 'ketenagakerjaan',
-			},
-			{
-				data: 'keahlian',
-			},
-			{
-				data: 'null',
-				render: function (data, type, row) {
-					if (row.file_tenaga_ahli != '-') {
-						return `
-					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
-					}
-					else {
-						return `
-					Tidak ada file`}
+			ajax: {
+				url: `${BASE_URL}Tenaga_ahli/dataTenagaTerampil`,
+				dataType: 'JSON',
+				method: 'POST',
+				data: {
+					'filter_id_provinsi_tenaga_ahli': filter_id_provinsi_tenaga_ahli,
+		"filter_jabatan_kerja_tenaga_ahli": filter_jabatan_kerja_tenaga_ahli,
+		'filter_is_asesor_tenaga_ahli': filter_is_asesor_tenaga_ahli,
+		'filter_is_instruktur_tenaga_ahli': filter_is_instruktur_tenaga_ahli
 				}
 			},
-			{
-				data: 'id_tenaga_ahli',
-				render: function (data) {
-					return `
+			columns: [
+				{
+					data: 'no_tenaga_ahli',
+				},
+				{
+					data: 'nama_lengkap',
+				},
+				{
+					data: 'jenis_kelamin',
+				},
+				{
+					data: 'tempat_lahir',
+				},
+				{
+					data: 'tanggal_lahir_text',
+				},
+				{
+					data: 'email',
+				},
+				{
+					data: 'no_handphone',
+				},
+				{
+					data: 'no_telpon_rumah',
+				},
+				{
+					data: 'nik',
+				},
+				{
+					data: 'alamat_rumah',
+				},
+				{
+					data: 'provinsi',
+				},
+				{
+					data: 'kabupaten_kota',
+				},
+				{
+					data: 'ketenagakerjaan',
+				},
+				{
+					data: 'keahlian',
+				},
+				{
+					data: 'null',
+					render: function (data, type, row) {
+						if (row.file_tenaga_ahli != '-') {
+							return `
+					<a href='${row.file_tenaga_ahli}' target="__blank">${row.nama_file_tenaga_ahli}</a>`
+						}
+						else {
+							return `
+					Tidak ada file`}
+					}
+				},
+				{
+					data: 'id_tenaga_ahli',
+					render: function (data) {
+						return `
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-					// <button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
-				}
-			},
-		]
+						// <button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+					}
+				},
+			]
+		}
+		)
 	}
-	);
 	// End of Mitra Terampil datatable 
 
 
@@ -1011,35 +1041,25 @@ Tidak ada poster kegiatan`					}
 	
 	// ========= FILTER TENAGA AHLI ON CLICK ===========
 	$('#btn-filter-tenaga-ahli').click(function () {
-		event.preventDefault();
-		$.ajax({
-			url: `${BASE_URL}Tenaga_ahli/filter/1`,
-			dataType: 'JSON',
-			method: 'POST',
-			data: {
-				'filter_provinsi_tenaga_ahli': $('#filter-provinsi-tenaga-ahli').val(),
-				'filter_jabatan_kerja_tenaga_ahli': $('#filter-jabatan-kerja-tenaga-ahli').val(),
-			},
-			success: function (hasil) {
-				console.log(hasil);
+		var checkedAsesor = 0;
+		if (document.getElementById('filter-is-asesor-tenaga-ahli').checked) {
+			checkedAsesor = 1
+		}
+		var checkedInstruktur = 0;
+		if (document.getElementById('filter-is-instruktur-tenaga-ahli').checked) {
+			checkedInstruktur = 1
+		}
 
-				
-			}
-		})
-		$.ajax({
-			url: `${BASE_URL}Tenaga_ahli/filter/2`,
-			dataType: 'JSON',
-			method: 'POST',
-			data: {
-				'filter_provinsi_tenaga_ahli': $('#filter-provinsi-tenaga-ahli').val(),
-				'filter_jabatan_kerja_tenaga_ahli': $('#filter-jabatan-kerja-tenaga-ahli').val(),
-			},
-			success: function (hasil) {
-				console.log(hasil);
-
-				
-			}
-		})
+		$('#tenaga_ahli_table').DataTable().destroy();
+		fill_datatable_tenaga_ahli($('#filter-id-provinsi-tenaga-ahli').val(),
+			$('#filter-jabatan-kerja-tenaga-ahli').val(),
+			checkedAsesor,
+			checkedInstruktur)		
+		$('#mitra_terampil_table').DataTable().destroy();
+		fill_datatable_mitra_terampil($('#filter-id-provinsi-tenaga-ahli').val(),
+			$('#filter-jabatan-kerja-tenaga-ahli').val(),
+			checkedAsesor,
+			checkedInstruktur)		
 		$('#modal-filter-tenaga-ahli').modal('hide');
 	});
 

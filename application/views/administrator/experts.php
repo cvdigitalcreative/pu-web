@@ -19,10 +19,10 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="" enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="filterTenagaAhliProvinsi">Provinsi *</label>
-							<select class="form-control" id="filter-provinsi-tenaga-ahli" name="filter_provinsi_tenaga_ahli" required>
+					<div class="form-group py-2">
+							<label for="provinsiTenagaAhli">Provinsi *</label>
+							<select class="form-control" id="filter-id-provinsi-tenaga-ahli" name="filter_id_provinsi_tenaga_ahli"
+								>
 								<option selected disabled>Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
 								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
@@ -32,7 +32,7 @@
 						<div class="form-group py-2">
 							<label for="filterJabkerTenagaAhli">Jabatan Kerja *</label>
 							<select class="form-control" id="filter-jabatan-kerja-tenaga-ahli" name="filter_jabatan_kerja_tenaga_ahli"
-								aria-placeholder="Pilih status kegiatan" required>
+								aria-placeholder="Pilih status kegiatan">
 								<option selected disabled>Pilih Jabatan Kerja</option>
 								<?php if($jabker != null):
 								foreach ($jabker as $row):?>
@@ -40,12 +40,32 @@
 								<?php endforeach; endif?>
 							</select>
 						</div>
+						<div class="form-group py-2">
+							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="checkbox" id="filter-is-asesor-tenaga-ahli" aria-label="Checkbox for following text input" name="filter_is_asesor_tenaga_ahli">
+									</div>
+								</div>
+							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Asesor" readonly style="background-color: white;">
+							</div>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="checkbox" id="filter-is-instruktur-tenaga-ahli" aria-label="Checkbox for following text input" name="filter_is_instruktur_tenaga_ahli">
+									</div>
+								</div>
+							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
+							</div>
+						</div>
+
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan" id="btn-filter-tenaga-ahli">Terapkan
 							Filter</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
-					</form>
 				</div>
 			</div>
 		</div>
