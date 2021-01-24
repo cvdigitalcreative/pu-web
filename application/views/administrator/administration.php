@@ -27,7 +27,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiAdministrasiKegiatan">Deskripsi Administrasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
+							<textarea type="text" data-autoresize class="form-control" id="deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
 								placeholder="Contoh: Ini adalah deskripsi administrasi kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
@@ -72,7 +72,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiAdministrasiKegiatan">Deskripsi Administrasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="edit-deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
+							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
 								placeholder="Contoh: Ini adalah deskripsi administrasi kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">

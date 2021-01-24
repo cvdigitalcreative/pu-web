@@ -113,7 +113,7 @@
 
 						<div class="form-group py-2">
 							<label for="alamatTenagaAhli">Alamat *</label>
-							<textarea type="text" class="form-control" id="alamat-tenaga-ahli" name="alamat_tenaga_ahli"
+							<textarea type="text" data-autoresize class="form-control" id="alamat-tenaga-ahli" name="alamat_tenaga_ahli"
 								placeholder="Contoh: Jl. Jendral Sudirman No.123" required></textarea>
 						</div>
 
@@ -295,7 +295,7 @@
 
 						<div class="form-group py-2">
 							<label for="alamatTenagaAhli">Alamat *</label>
-							<textarea type="text" class="form-control" id="edit-alamat-tenaga-ahli" name="edit_alamat_tenaga_ahli"
+							<textarea type="text" data-autoresize class="form-control" id="edit-alamat-tenaga-ahli" name="edit_alamat_tenaga_ahli"
 								placeholder="Contoh: Jl. Jendral Sudirman No.123" required></textarea>
 						</div>
 

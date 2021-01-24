@@ -25,7 +25,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiBukuSaku">Deskripsi Buku Saku *</label>
-							<textarea type="text" class="form-control" id="deskripsi-buku-saku" name="deskripsi_buku_saku" placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="deskripsi-buku-saku" name="deskripsi_buku_saku" placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="fileBukuSaku">File Buku Saku *</label>
@@ -65,7 +65,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiBukuSaku">Deskripsi Buku Saku *</label>
-							<textarea type="text" class="form-control" id="edit-deskripsi-buku-saku" name="deskripsi_buku_saku" placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-buku-saku" name="deskripsi_buku_saku" placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="fileBukuSaku">File Buku Saku *</label>

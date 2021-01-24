@@ -27,7 +27,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
-							<textarea type="text" class="form-control" id="deskripsi-skkni" name="deskripsi_skkni"
+							<textarea type="text" data-autoresize class="form-control" id="deskripsi-skkni" name="deskripsi_skkni"
 								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
@@ -83,7 +83,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
-							<textarea type="text" class="form-control" id="edit-deskripsi-skkni" name="deskripsi_skkni"
+							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-skkni" name="deskripsi_skkni"
 								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">

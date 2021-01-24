@@ -25,7 +25,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiModul">Deskripsi Modul *</label>
-							<textarea type="text" class="form-control" id="deskripsi-modul" name="deskripsi_modul" placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="deskripsi-modul" name="deskripsi_modul" placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="fileModul">File Modul *</label>
@@ -76,7 +76,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiModul">Deskripsi Modul *</label>
-							<textarea type="text" class="form-control" id="edit-deskripsi-modul" name="deskripsi_modul" placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-modul" name="deskripsi_modul" placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="fileModul">File Modul *</label>
