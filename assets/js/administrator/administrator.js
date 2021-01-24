@@ -216,103 +216,124 @@ $(document).ready(function () {
 	// ========= DATATABLE ===========
 	// 
 
+	fill_datatable();
+	
+
 	// Kalender Kegiatan Datatable
-	var TableKegiatan = $('#kalender_kegiatan_table').DataTable({
-		// "order": [0, 'asc'],
-		processing: true,
-		serverSide: false,
-		retrieve: true,
-		scrollY: true,
-		scrollX: true,
-		scrollCollapse: true,
-		// sDom: 'lrtip',
-		pagingType: "full_numbers",
-		language: {
-			emptyTable: "Data tidak ditemukan!",
-		},
-		ajax: {
-			url: `${BASE_URL}Kegiatan/dataSeluruh`,
-			type: "GET",
-		},
-		columns: [
-			{
-				data: 'no_kegiatan',
+	function fill_datatable(filter_tanggal_kegiatan_mulai = null,
+		filter_tanggal_kegiatan_selesai = null,
+		filter_jenis_kegiatan = null,
+		filter_status_kegiatan = null,
+		filter_id_provinsi = null,
+		filter_id_kabupaten_kota = null
+	) {
+		var TableKegiatan = $('#kalender_kegiatan_table').DataTable({
+			// "order": [0, 'asc'],
+			processing: true,
+			serverSide: false,
+			retrieve: true,
+			scrollY: true,
+			scrollX: true,
+			scrollCollapse: true,
+			// sDom: 'lrtip',
+			pagingType: "full_numbers",
+			language: {
+				emptyTable: "Data tidak ditemukan!",
 			},
-			{
-				data: 'id_kegiatan',
-				render: function (data) {
-					return `
+			ajax: {
+				url: `${BASE_URL}Kegiatan/dataSeluruh`,
+				dataType: 'JSON',
+				method: 'POST',
+				data: {
+					'filter_tanggal_kegiatan_mulai': filter_tanggal_kegiatan_mulai,
+					'filter_tanggal_kegiatan_selesai': filter_tanggal_kegiatan_selesai,
+					'filter_jenis_kegiatan': filter_jenis_kegiatan,
+					'filter_status_kegiatan': filter_status_kegiatan,
+					'filter_id_provinsi': filter_id_provinsi,
+					'filter_id_kabupaten_kota': filter_id_kabupaten_kota
+				}
+			},
+			columns: [
+				{
+					data: 'no_kegiatan',
+				},
+				{
+					data: 'id_kegiatan',
+					render: function (data) {
+						return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Lihat Peserta</button>
 					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${data}'>Ganti Status</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-				}
-			},
-			{
-				data: 'judul_kegiatan',
-			},
-			{
-				data: 'deskripsi_kegiatan',
-			},
-			{
-				data: 'status_kegiatan',
-			},
-			{
-				data: 'jenis_kegiatan',
-			},
-			{
-				data: 'akun_kegiatan',
-			},
-			{
-				data: 'tanggal_kegiatan_full_text',
-			},
-			{
-				data: 'foto_banner_kegiatan',
-				render: function (data) {
-					if (data != '-') {
-						return `
+					}
+				},
+				{
+					data: 'judul_kegiatan',
+				},
+				{
+					data: 'deskripsi_kegiatan',
+				},
+				{
+					data: 'status_kegiatan',
+				},
+				{
+					data: 'jenis_kegiatan',
+				},
+				{
+					data: 'akun_kegiatan',
+				},
+				{
+					data: 'tanggal_kegiatan_full_text',
+				},
+				{
+					data: 'foto_banner_kegiatan',
+					render: function (data) {
+						if (data != '-') {
+							return `
 					<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden; object-fit: cover;">`
-				}
-				else {
-						return `
+						}
+						else {
+							return `
 Tidak ada poster kegiatan`					}
 					}
-			},
-			{
-				data: 'str_nama_instruktur_kegiatan',
-			},
-			{
-				data: 'str_nama_asesor_kegiatan',
-			},
-			{
-				data: 'provinsi',
-			},
-			{
-				data: 'kota_kabupaten',
-			},
-			{
-				data: 'lokasi_kegiatan',
-			},
-			{
-				data: 'jumlah_peserta',
-			},
-			{
-				data: 'null',
-				render: function (data, type, row) {
-					if (row.file_materi_kegiatan != '-') {
-						return `
+				},
+				{
+					data: 'str_nama_instruktur_kegiatan',
+				},
+				{
+					data: 'str_nama_asesor_kegiatan',
+				},
+				{
+					data: 'provinsi',
+				},
+				{
+					data: 'kota_kabupaten',
+				},
+				{
+					data: 'lokasi_kegiatan',
+				},
+				{
+					data: 'jumlah_peserta',
+				},
+				{
+					data: 'null',
+					render: function (data, type, row) {
+						if (row.file_materi_kegiatan != '-') {
+							return `
 					<a href='${row.file_materi_kegiatan}' target="__blank">${row.nama_file_materi_kegiatan}</a>`
-					}
-					else {
-						return `
+						}
+						else {
+							return `
 					Tidak ada file`}
-				}
-			},
-		]
-	});
+					}
+				},
+			]
+		})
+	}
 	// End of Kalender kegiatan datatable 
 
 	// Daftar Peserta by Kalender Kegiatan Datatable
+
 	var Table = $("#daftar_peserta_table").DataTable({
 		data: [],
 		retrieve: true,
@@ -977,92 +998,14 @@ Tidak ada poster kegiatan`					}
 	});
 
 	$('#btn-filter-kegiatan').click(function () {
-		event.preventDefault();
-		$.ajax({
-			url: `${BASE_URL}Kegiatan/filter`,
-			dataType: 'JSON',
-			method: 'POST',
-			data: {
-				'filter_tanggal_kegiatan_mulai': $('#filter-tanggal-mulai-kegiatan').val(),
-				'filter_tanggal_kegiatan_selesai': $('#filter-tanggal-selesai-kegiatan').val(),
-				'filter_jenis_kegiatan': $('#filter-jenis-kegiatan').val(),
-				'filter_status_kegiatan': $('#filter-status-kegiatan').val()
-			},
-			success: function (hasil) {
-				console.log(hasil);
-
-				$('#kalender_kegiatan_table').DataTable().clear().destroy();
-				// reinitiate
-				$('#kalender_kegiatan_table').DataTable({
-					data: hasil,
-					columns: [
-						{
-							data: 'no_kegiatan',
-						},
-						{
-							data: 'tanggal_kegiatan_full_text',
-						},
-						{
-							data: 'foto_banner_kegiatan',
-							render: function (data) {
-								return `
-								<img src="${data}" style="width: 200px; height: 200px; overflow: hidden;">`
-							}
-						},
-						{
-							data: 'jenis_kegiatan',
-						},
-						{
-							data: 'akun_kegiatan',
-						},
-						{
-							data: 'status_kegiatan',
-						},
-						{
-							data: 'judul_kegiatan',
-						},
-						{
-							data: 'str_nama_instruktur_kegiatan',
-						},
-						{
-							data: 'str_nama_asesor_kegiatan',
-						},
-						{
-							data: 'provinsi',
-						},
-						{
-							data: 'kota_kabupaten',
-						},
-						{
-							data: 'lokasi_kegiatan',
-						},
-						{
-							data: 'jumlah_peserta',
-						},
-						{
-							data: 'nama_file_materi_kegiatan',
-						},
-						{
-							data: 'file_materi_kegiatan',
-							render: function (data) {
-								return `
-								<a href='${data}'>file</a>`
-							}
-						},
-						{
-							data: 'id_kegiatan',
-							render: function (data) {
-								return `
-								<button id='btn-edit' type='submit' class='btn btn-success btn-block' data-id='${data}'>Detail</button>
-								<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Edit</button>
-								<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-							}
-						},
-					]
-				});
-				$('#modal-filter-kegiatan').modal('hide');
-			}
-		})
+		$('#kalender_kegiatan_table').DataTable().destroy();
+		fill_datatable($('#filter-tanggal-mulai-kegiatan').val(),
+			$('#filter-tanggal-selesai-kegiatan').val(),
+			$('#filter-jenis-kegiatan').val(),
+			$('#filter-status-kegiatan').val(),
+			$('#filter-id-provinsi').val(),
+			$('#filter-id-kabupaten-kota').val())
+		$('#modal-filter-kegiatan').modal('hide');
 	});
 	
 	// ========= FILTER TENAGA AHLI ON CLICK ===========

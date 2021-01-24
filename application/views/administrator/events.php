@@ -19,12 +19,12 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="" enctype="multipart/form-data">
+					<form method="POST" id='filter-kegiatan-form' enctype="multipart/form-data">
 						<div class="row">
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="filterTanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-mulai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-mulai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan">
 									<small id="filter-tanggal-mulai-kegiatan-label" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -33,7 +33,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="filterTanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-selesai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-selesai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan">
 									<small id="filter-tanggal-selesai-kegiatan-label" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -42,7 +42,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="filterJenisKegiatan">Jenis kegiatan *</label>
-							<select class="form-control" id="filter-jenis-kegiatan" name="filter_jenis_kegiatan" required>
+							<select class="form-control" id="filter-jenis-kegiatan" name="filter_jenis_kegiatan">
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if ($jenis_kegiatan != null) :
 									foreach ($jenis_kegiatan as $row) : ?>
@@ -53,7 +53,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="filterStatusKegiatan">Status kegiatan *</label>
-							<select class="form-control" id="filter-status-kegiatan" name="filter_status_kegiatan" aria-placeholder="Pilih status kegiatan" required>
+							<select class="form-control" id="filter-status-kegiatan" name="filter_status_kegiatan" aria-placeholder="Pilih status kegiatan">
 								<option selected disabled>Pilih status kegiatan</option>
 								<?php if ($status_kegiatan != null) :
 									foreach ($status_kegiatan as $row) : ?>
@@ -62,8 +62,23 @@
 								endif ?>
 							</select>
 						</div>
+						<div class="form-group py-2">
+							<label for="provinsiKegiatan">Provinsi kegiatan *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
+							<select class="form-control" id="filter-id-provinsi" name="filter_id_provinsi" onChange="getStateFilterKegiatan(this.value);">
+								<option selected disabled>Pilih Provinsi</option>
+								<?php foreach ($provinsi as $row) : ?>
+									<option value="<?= $row['id_provinsi'] ?>"><?= $row['provinsi'] ?></option>
+								<?php endforeach ?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="kotaKegiatan">Kota kegiatan *</label>
+							<select class="form-control" id="filter-id-kabupaten-kota" name="filter_id_kabupaten_kota">
+								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
+							</select>
+						</div>
 						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan" id="btn-filter-kegiatan">Terapkan
+						<button type="button" class="btn btn-block btn-primary btn-modal-add-kegiatan" id="btn-filter-kegiatan">Terapkan
 							Filter</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>

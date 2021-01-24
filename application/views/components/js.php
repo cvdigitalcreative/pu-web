@@ -59,6 +59,19 @@
 </script>
 
 <script>
+    function getStateFilterKegiatan(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#filter-id-kabupaten-kota").html(data);
+            }
+        });
+    }
+</script>
+
+<script>
     function getStateTenagaAhli(val) {
         $.ajax({
             type: "POST",
