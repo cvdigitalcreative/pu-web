@@ -64,8 +64,13 @@
 				</div>
 				<div class="modal-body">
 
+					<?php if(isset($_GET['redirect']) && $_GET['redirect'] == 'events') : ?>
+					<form method="POST" action="<?= base_url()?>Tenaga_ahli/tambah_tenaga_ahli_action/events"
+						enctype="multipart/form-data">
+					<?php else : ?>
 					<form method="POST" action="<?= base_url()?>Tenaga_ahli/tambah_tenaga_ahli_action"
 						enctype="multipart/form-data">
+						<?php endif?>
 						<div class="form-group py-2">
 							<label for="namaTenagaAhli">Nama Lengkap *</label>
 							<input type="text" class="form-control" id="nama-tenaga-ahli" name="nama_lengkap_tenaga_ahli"

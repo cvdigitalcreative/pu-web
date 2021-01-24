@@ -426,7 +426,7 @@ class Tenaga_ahli extends CI_Controller
             redirect("pupr/login");
     }
 
-    public function tambah_tenaga_ahli_action()
+    public function tambah_tenaga_ahli_action($redirect = null)
     {
         if ($this->session->userdata('logged_in') == true) {
             $nama_lengkap = $this->input->post('nama_lengkap_tenaga_ahli');
@@ -493,10 +493,16 @@ class Tenaga_ahli extends CI_Controller
             }
             if ($tambah_tenaga_ahli['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_tenaga_ahli['message']);
-                redirect('pupr/experts');
+                if ($redirect == 'events')
+                    redirect('pupr/events');
+                else
+                    redirect('pupr/experts');
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_tenaga_ahli['message']);
-                redirect('pupr/experts');
+                if ($redirect == 'events')
+                    redirect('pupr/experts?redirect=events');
+                else
+                    redirect('pupr/experts');
             }
         } else {
             redirect("pupr/login");
@@ -526,11 +532,11 @@ class Tenaga_ahli extends CI_Controller
             $no_telepon_rumah = $this->input->post('edit_nomor_rumah_tenaga_ahli');
             $no_handphone = $this->input->post('edit_nomor_handphone_tenaga_ahli');
             $id_jabker = $this->input->post('edit_id_jabatan_kerja_tenaga_ahli');
-            if($id_jabker != null){
+            if ($id_jabker != null) {
                 if (count($id_jabker) == 1)
-                $id_jabker = $id_jabker[0];
+                    $id_jabker = $id_jabker[0];
                 else
-                $id_jabker = '[' . implode(',', $id_jabker) . ']';
+                    $id_jabker = '[' . implode(',', $id_jabker) . ']';
             }
             $id_kategori_tenaga_ahli = $this->input->post('edit_kategori_tenaga_ahli');
             $is_instruktur = $this->input->post('edit_is_instruktur');
@@ -547,7 +553,7 @@ class Tenaga_ahli extends CI_Controller
             if ($_FILES['file_tenaga_ahli']['size'] != 0)
                 $file_tenaga_ahli = new \CurlFile($_FILES['file_tenaga_ahli']['tmp_name'], $_FILES['file_tenaga_ahli']['type'], $_FILES['file_tenaga_ahli']['name']);
             else
-            $file_tenaga_ahli = null;
+                $file_tenaga_ahli = null;
 
             $edit_tenaga_ahli = $this->Tenaga_Ahli_model->edit_tenaga_ahli(
                 $nama_lengkap,
