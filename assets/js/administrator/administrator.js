@@ -53,6 +53,24 @@ $(document).ready(function () {
 
 	// end upload image profile kegiatan js
 
+	// upload image edit-berita kegiatan js
+	$("#banner-image-edit-berita").click(function (e) {
+		$("#banner-edit-berita").click();
+	});
+
+	function fasterPreviewBerita(uploader) {
+		if (uploader.files && uploader.files[0]) {
+			$('#banner-image-edit-berita').attr('src',
+				window.URL.createObjectURL(uploader.files[0]));
+		}
+	}
+
+	$("#banner-edit-berita").change(function () {
+		fasterPreviewBerita(this);
+	});
+
+	// end upload image profile kegiatan js
+
 	// tanggal mulai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
@@ -886,6 +904,78 @@ Tidak ada poster kegiatan`					}
 		]
 	});
 
+	// Berita Datatable
+	$('#berita_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Berita/dataSeluruh`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_berita',
+			},
+			{
+				data: 'judul_berita',
+			},
+			{
+				data: 'deskripsi_berita',
+			},
+			{
+				data: 'file_gambar_berita',
+				render: function (data) {
+					if (data != '-') {
+						return `
+							<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden; object-fit: cover;">`
+					}
+				else {
+					return `
+						Tidak ada gambar berita`
+					}
+				}
+			},
+			{
+				data: 'created_date_text',
+			},
+			{
+				data: 'updated_date_text',
+			},
+			{
+				data: 'pengirim',
+			},
+				
+			{
+				data: 'id_berita',
+				render: function (data) {
+					return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Detail</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		],
+		columnDefs: [
+			{
+				targets: 1,
+				className: "truncate-judul-berita"
+			},	
+			{
+				targets: 2,
+				className: "truncate-berita"
+			},
+		]
+	});
+
 	$('#btn-filter-kegiatan').click(function () {
 		event.preventDefault();
 		$.ajax({
@@ -1090,9 +1180,19 @@ Tidak ada poster kegiatan`					}
 			$('#pengirim-feedback').val($(this).parent().siblings().eq(3).text())
 			$(`#modal-reply-feedback`).modal('show')
 		}
+		else if ($('#berita_table').length > 0) {
+			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			var data = $('#berita_table').DataTable().row(currentRow).data();
+			$('#banner-image-detail-berita').attr('src', data['file_gambar_berita']);
+			document.getElementById("detail-judul-berita").innerHTML = data['judul_berita'];
+			document.getElementById("detail-judul-berita").classList.add('text-secondary', 'text-justify')
+			document.getElementById("detail-deskripsi-berita").innerHTML = data['deskripsi_berita'];
+			document.getElementById("detail-deskripsi-berita").classList.add('text-secondary', 'text-justify')
+			$('#modal-detail-berita').modal('show')
+		}
 	})
-	// End of default
-
+	// End of default 
 	// 
 	// ========= UPDATE BUTTON ON CLICK ===========
 	// 
@@ -1162,6 +1262,16 @@ Tidak ada poster kegiatan`					}
 			$('#edit-nomor-rumah-tenaga-ahli').val($(this).parent().siblings().eq(7).text())
 			$('#modal-edit-tenaga-ahli').modal('show')
 		}
+		else if ($('#berita_table').length > 0) {
+			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			$('form').attr('action', `${BASE_URL}Berita/edit_berita_action/${id}`)
+			var data = $('#berita_table').DataTable().row(currentRow).data();
+			$('#banner-image-edit-berita').attr('src', data['file_gambar_berita'])
+			$('#edit-judul-berita').val($(this).parent().siblings().eq(1).text())
+			$('#edit-deskripsi-berita').val($(this).parent().siblings().eq(2).text())
+			$('#modal-edit-berita').modal('show')
+		}
 	})
 	// End of edit
 	
@@ -1205,6 +1315,11 @@ Tidak ada poster kegiatan`					}
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Feedback/delete_feedback/${id}`)
 			$('#modal-delete-feedback').modal('show')
+		}
+		else if ($('#berita_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Berita/delete_berita/${id}`)
+			$('#modal-delete-berita').modal('show')
 		}
 	})
 	// End of delete
@@ -1292,16 +1407,14 @@ Tidak ada poster kegiatan`					}
 		})
 	})
 
-	//text area jawaban feedback autosize
-	var textarea = document.getElementById('jawaban-feedback');
-	textarea.addEventListener('keydown', autosize);	 
-	function autosize(){
-	  var el = this;
-	  setTimeout(function(){
-		el.style.cssText = 'height:auto; padding:0';
-		el.style.cssText = 'height:' + el.scrollHeight + 'px';
-	  },0);
-	}
+	jQuery.each(jQuery('textarea[data-autoresize]'), function() {
+		var offset = this.offsetHeight - this.clientHeight;
+	   
+		var resizeTextarea = function(el) {
+		  jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+		};
+		jQuery(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
+	  });
 	
 });
 
