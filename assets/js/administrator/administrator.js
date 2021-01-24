@@ -1407,6 +1407,10 @@ Tidak ada poster kegiatan`					}
 		})
 	})
 
+	$('#btn-tambah-instruktur-asesor-kegiatan').on('click', function () {
+		window.location.replace(`${BASE_URL}pupr/experts?redirect=events&show=1`); 
+	})
+
 	jQuery.each(jQuery('textarea[data-autoresize]'), function() {
 		var offset = this.offsetHeight - this.clientHeight;
 	   

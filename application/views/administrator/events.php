@@ -210,7 +210,7 @@
 						</div>
 
 						<div>
-							<a class="btn btn-block btn-primary" href="#" role="button">
+							<a class="btn btn-block btn-primary" id="btn-tambah-instruktur-asesor-kegiatan" role="button">
 								<img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
 								Tambah Instruktur & Assesor
 							</a>
