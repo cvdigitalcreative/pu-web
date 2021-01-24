@@ -81,11 +81,19 @@
 			<span>Modul</span>
 		</a>
 	</li>
-	<!-- Nav Item - Modul -->
+	<!-- Nav Item - feedback -->
 	<li class="nav-item <?=$this->uri->segment(2) == 'feedback' ? 'active' : ''?>">
 		<a class="nav-link <?=$this->uri->segment(2) == 'feedback' ? 'disabled' : ''?>" href="<?=base_url('pupr/feedback')?>">
 			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/modul-menu.svg')?>">
 			<span>Feedback</span>
+		</a>
+	</li>
+
+	<!-- Nav Item - news -->
+	<li class="nav-item <?=$this->uri->segment(2) == 'news' ? 'active' : ''?>">
+		<a class="nav-link <?=$this->uri->segment(2) == 'news' ? 'disabled' : ''?>" href="<?=base_url('pupr/news')?>">
+			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/surat-menu.svg')?>">
+			<span>Berita</span>
 		</a>
 	</li>
 

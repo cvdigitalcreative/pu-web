@@ -25,15 +25,15 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="namaTenagaAhli">Judul</label>
-							<textarea type="text" class="form-control" id="judul-feedback" rows=2 required disabled></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="judul-feedback" rows=2 required disabled></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="judulModul">Deskripsi</label>
-							<textarea type="text" class="form-control" id="pertanyaan-feedback" name="deskripsi_modul" rows=5 required disabled></textarea>
+							<textarea type="text" class="form-control" style="overflow-y: scroll;" id="pertanyaan-feedback" name="deskripsi_modul" rows=5  required readonly></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="judulModul">Jawaban *</label>
-							<textarea type="text" class="form-control" id="jawaban-feedback" name="jawaban" placeholder="Masukkan jawaban Anda disini" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="jawaban-feedback" name="jawaban" placeholder="Masukkan jawaban Anda disini" required></textarea>
 						</div>
 
 						<div class="menu-divider"></div>

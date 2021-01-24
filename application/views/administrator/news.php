@@ -7,109 +7,124 @@
 
 <body id="page-top">
 
-	<!-- Tambah administrasi Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-tambah-administrasi-kegiatan" tabindex="-1" role="dialog">
+	<!-- Tambah Modul Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-berita" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Administrasi Kegiatan</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Berita</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>Administrasi_kegiatan/tambah_administrasi_kegiatan_action"
-						enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url() ?>Berita/tambah_berita_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="judulAdministrasiKegiatan">Judul Administrasi Kegiatan *</label>
-							<input type="text" class="form-control" id="judul-administrasi-kegiatan" name="judul_administrasi_kegiatan"
-								placeholder="Contoh: Administrasi kegiatan pelatihan" required>
-						</div>
-						<div class="form-group py-2">
-							<label for="deskripsiAdministrasiKegiatan">Deskripsi Administrasi Kegiatan *</label>
-							<textarea type="text" data-autoresize class="form-control" id="deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
-								placeholder="Contoh: Ini adalah deskripsi administrasi kegiatan pelatihan" required></textarea>
-						</div>
-						<div class="form-group py-2">
-							<label for="fileAdministrasiKegiatan">File Administrasi Kegiatan *</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-administrasi-kegiatan"
-									name="file_administrasi_kegiatan" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file administrasi kegiatan...</label>
-								<small id="file-administrasi-kegiatan" class="form-text text-muted">
-									Pilih file administrasi kegiatan yang sesuai!
-								</small>
+							<label for="bannerKegiatan">File Gambar *</label>
+							<div id="profile-container">
+								<image id="banner-image" src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
+								<input id="banner-kegiatan" type="file" name="file_gambar_berita" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" required="" capture>
 							</div>
+						</div>
+						<div class="form-group py-2">
+							<label for="judulBerita">Judul *</label>
+							<input type="text" class="form-control" id="judul-berita" name="judul_berita" placeholder="Masukkan judul berita yang akan diterbitkan" required>
+						</div>
+						<div class="form-group py-2">
+							<label for="deskripsiBerita">Deskripsi *</label>
+							<textarea type="text" data-autoresize rows="4" class="form-control" id="deskripsi-berita" name="deskripsi_berita" placeholder="Masukkan deskripsi / isi berita yang akan diterbitkan" required></textarea>
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Administrasi Kegiatan</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
+							Berita</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Edit administrasi Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-edit-administrasi-kegiatan" tabindex="-1" role="dialog">
+	<!-- Detail Berita Modal -->
+	<div class="modal fade bd-example-modal-md" id="modal-detail-berita" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-md modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Detail Berita</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+				<div id="detail-berita-container">
+					<image id="banner-image-detail-berita" src="" />
+				</div>
+					<div class="form-group py-2">
+						<label for="judulBerita">Judul</label>
+						<div id="detail-judul-berita">
+						</div>
+					</div>
+					<div class="form-group py-2">
+						<label for="deskripsiBerita">Deskripsi</label>
+						<div id="detail-deskripsi-berita">
+						</div>
+					</div>
+					<hr>
+					<div class="menu-divider"></div>
+					<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Tutup</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Edit Berita Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-berita" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Administrasi Kegiatan</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Berita</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action=""
-						enctype="multipart/form-data">
+					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="judulAdministrasiKegiatan">Judul Administrasi Kegiatan *</label>
-							<input type="text" class="form-control" id="edit-judul-administrasi-kegiatan" name="judul_administrasi_kegiatan"
-								placeholder="Contoh: Administrasi kegiatan pelatihan" required>
-						</div>
-						<div class="form-group py-2">
-							<label for="deskripsiAdministrasiKegiatan">Deskripsi Administrasi Kegiatan *</label>
-							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-administrasi-kegiatan" name="deskripsi_administrasi_kegiatan"
-								placeholder="Contoh: Ini adalah deskripsi administrasi kegiatan pelatihan" required></textarea>
-						</div>
-						<div class="form-group py-2">
-							<label for="fileAdministrasiKegiatan">File Administrasi Kegiatan *</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="edit-file-administrasi-kegiatan"
-									name="file_administrasi_kegiatan">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file administrasi kegiatan...</label>
-								<small id="file-administrasi-kegiatan" class="form-text text-muted">
-									Pilih file administrasi kegiatan yang sesuai!
-								</small>
+							<label for="bannerKegiatan">File Gambar *</label>
+							<div id="profile-container">
+								<image id="banner-image-edit-berita" src="" />
+								<input id="banner-edit-berita" type="file" name="file_gambar_berita" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" capture>
 							</div>
+						</div>
+						<div class="form-group py-2">
+							<label for="judulBerita">Judul *</label>
+							<input type="text" class="form-control" id="edit-judul-berita" name="judul_berita" placeholder="Masukkan judul berita yang akan diterbitkan" required>
+						</div>
+						<div class="form-group py-2">
+							<label for="deskripsiBerita">Deskripsi *</label>
+							<textarea type="text" data-autoresize rows="4" class="form-control" id="edit-deskripsi-berita" name="deskripsi_berita" placeholder="Masukkan deskripsi / isi berita yang akan diterbitkan" required></textarea>
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
-                            Administrasi Kegiatan</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
+							Berita</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 
-		<!-- Delete Administrasi modal -->
-		<div class="modal fade bd-example-modal-lg" id="modal-delete-administrasi-kegiatan" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<!-- Delete Modul modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-berita" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus administrasi kegiatan Ini?</h5>
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Berita Ini?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					Pastikan dengan benar bahwa administrasi kegiatan ini ingin anda hapus!
+					Pastikan dengan benar bahwa berita ini ingin anda hapus!
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
@@ -120,7 +135,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- End modal delete administrasi -->
+	<!-- End modal delete modul -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -140,7 +155,7 @@
 
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h2 font-weight-bold mb-4 mt-4">Administrasi Kegiatan</h1>
+						<h1 class="h2 font-weight-bold mb-4 mt-4">Berita</h1>
 					</div>
 
 					<!-- Alert -->
@@ -159,7 +174,8 @@
 							</button>
 						</div>
 					<?php endif; ?>
-					
+
+
 					<!-- Content Row -->
 					<div class="row mt-4">
 
@@ -174,8 +190,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													<?=$total_administrasi_kegiatan?>
-                        </div>
+													<?= $total_berita ?></div>
 
 											</div>
 										</div>
@@ -188,24 +203,23 @@
 
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-administrasi-kegiatan"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Administrasi Kegiatan</button>
+							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal" data-target="#modal-tambah-berita"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Berita</button>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table id="administrasi_kegiatan_table" class="display">
+								<table id="berita_table" class="display">
 									<thead>
 										<tr>
 											<th>No</th>
-											<th>Judul Administrasi Kegiatan</th>
-											<th>Deskripsi Administrasi Kegiatan</th>
-											<th>File Administrasi Kegiatan</th>
+											<th>Judul Berita</th>
+											<th>Deskripsi Berita</th>
+											<th>File Gambar Berita</th>
+											<th>Tanggal Dibuat</th>
+											<th>Tanggal Update Terakhir</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
 										</tr>
 									</thead>
-
 								</table>
 							</div>
 						</div>

@@ -151,7 +151,7 @@
                         <h4 class="form-data-pendidikan-title">Data Tempat Tinggal</h4>
                         <div class="form-group py-2">
                             <label for="deskripsiKegiatan">Alamat *</label>
-                            <textarea type="text" rows="3" class="form-control" id="profile-alamat" name="alamat" placeholder="Contoh: Jl. Sudirman No. 1234" required><?= $user['alamat_rumah'] ?></textarea>
+                            <textarea type="text" data-autoresize rows="3" class="form-control" id="profile-alamat" name="alamat" placeholder="Contoh: Jl. Sudirman No. 1234" required><?= $user['alamat_rumah'] ?></textarea>
                         </div>
                         <div class="form-group py-2">
                             <div class="row mr-2">

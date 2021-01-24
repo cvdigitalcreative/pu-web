@@ -156,7 +156,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="deskripsiKegiatan">Deskripsi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="deskripsi-kegiatan" name="deskripsi_kegiatan" placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="deskripsi-kegiatan" name="deskripsi_kegiatan" placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="row">
 							<div class="col">
@@ -195,7 +195,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="lokasiKegiatan">Lokasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="lokasi-kegiatan" name="lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="lokasi-kegiatan" name="lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="statusKegiatan">Status kegiatan *</label>
@@ -299,7 +299,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="editDeskripsiKegiatan">Deskripsi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="edit-deskripsi-kegiatan" name="edit_deskripsi_kegiatan" placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-kegiatan" name="edit_deskripsi_kegiatan" placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="row">
 							<div class="col">
@@ -340,7 +340,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="editLokasiKegiatan">Lokasi Kegiatan *</label>
-							<textarea type="text" class="form-control" id="edit-lokasi-kegiatan" name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="edit-lokasi-kegiatan" name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
 						</div>
 						<div class="form-group py-2">
 							<label for="editStatusKegiatan">Status kegiatan *</label>
