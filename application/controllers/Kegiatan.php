@@ -1174,8 +1174,7 @@ class Kegiatan extends CI_Controller
     public function ganti_status_kegiatan($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $status_kegiatan = $this->input->post('id_status_kegiatan');
-            $update = $this->Kegiatan_model->update_status_kegiatan($status_kegiatan, $id_kegiatan, $this->session->userdata('token'));
+            $update = $this->Kegiatan_model->update_status_kegiatan($id_kegiatan, $this->session->userdata('token'));
             if ($update == null) {
                 $this->load->view('error_page');
             } else {

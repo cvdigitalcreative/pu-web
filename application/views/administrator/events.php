@@ -77,29 +77,19 @@
 	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Ganti Status Kegiatan</h4>
+			<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Update Status Kegiatan Ini?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-
-					<form method="POST" action="" enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="filterJenisKegiatan">Status Kegiatan *</label>
-							<select class="form-control" id="filter-jenis-kegiatan" name="id_status_kegiatan" required>
-								<option selected disabled>Pilih status kegiatan</option>
-								<?php if ($status_kegiatan != null) :
-									foreach ($status_kegiatan as $row) : ?>
-										<option value="<?= $row['id_status_kegiatan'] ?>"><?= $row['status_kegiatan'] ?></option>
-								<?php endforeach;
-								endif ?>
-							</select>
+					Pastikan dengan benar bahwa Anda ingin mengubah status kegiatan ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-warning" type="submit">Update</button>
 						</div>
-						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan" id="btn-filter-kegiatan">Ganti Status Kegiatan</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
 					</form>
 				</div>
 			</div>
