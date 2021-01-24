@@ -691,7 +691,7 @@ class Kegiatan extends CI_Controller
                     foreach ($data as $row) {
                         echo '<option value="' . $row['id_kabupaten_kota'] . '">' . $row['kabupaten_kota'] . '</option>';
                     }
-                }else{
+                } else {
                     echo '<option value="0' . '" selected>Tidak ada Kota yang terdaftar</option>';
                 }
             } else {
@@ -1171,29 +1171,24 @@ class Kegiatan extends CI_Controller
         }
     }
 
-    public function tambah_peserta_action($id_kegiatan)
+    public function ganti_status_kegiatan($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $file_excel = new \CurlFile($_FILES['file_excel']['tmp_name'], $_FILES['file_excel']['type'], $_FILES['file_excel']['name']);
-            $tambah_peserta = $this->Kegiatan_model->tambah_peserta(
-                $file_excel,
-                $id_kegiatan,
-                $this->session->userdata('token')
-            );
-
-            if ($tambah_peserta == null) {
+            $status_kegiatan = $this->input->post('id_status_kegiatan');
+            $update = $this->Kegiatan_model->update_status_kegiatan($status_kegiatan, $id_kegiatan, $this->session->userdata('token'));
+            if ($update == null) {
                 $this->load->view('error_page');
-            }
-            if ($tambah_peserta['status'] == "Success") {
-                $this->session->set_flashdata('success', $tambah_peserta['message']);
-                redirect();
             } else {
-                $this->session->set_flashdata('APImessage', $tambah_peserta['message']);
-                redirect();
+                if ($update['status'] == "Success") {
+                    $this->session->set_flashdata('success', $update['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $update['message']);
+                    redirect('pupr/events');
+                }
             }
-        } else {
-            redirect("pupr/login");
-        }
+        } else
+            redirect('pupr/login');
     }
 
     public function delete_kegiatan($id_kegiatan)

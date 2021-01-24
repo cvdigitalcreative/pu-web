@@ -225,6 +225,7 @@ $(document).ready(function () {
 				render: function (data) {
 					return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Lihat Peserta</button>
+					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${data}'>Ganti Status</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
@@ -1009,7 +1010,7 @@ Tidak ada poster kegiatan`					}
 	});
 
 	// 
-	// ========= DETAUL BUTTON ON CLICK ===========
+	// ========= DETAIL BUTTON ON CLICK ===========
 	// 
 
 	var id_kegiatan;
@@ -1093,9 +1094,23 @@ Tidak ada poster kegiatan`					}
 	// End of default
 
 	// 
+	// ========= UPDATE BUTTON ON CLICK ===========
+	// 
+	// Each Row Table onClick Edit Button
+	$('table').on('click', '#btn-update', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Kegiatan/ganti_status_kegiatan/${id}`)
+			$(`#modal-ganti-status-kegiatan`).modal('show')
+		}
+	})
+	// End of edit
+
+	
+	// 
 	// ========= EDIT BUTTON ON CLICK ===========
 	// 
-
+	
 	// Each Row Table onClick Edit Button
 	$('table').on('click', '#btn-edit', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
