@@ -154,12 +154,7 @@ class Kegiatan_model extends CI_Model
         return $this->http_request_delete("/$id_kegiatan", $token);
     }
 
-    public function view_kegiatan($token)
-    {
-        return $this->http_request_get("/", $token);
-    }
-
-    public function view_kegiatan_filter($filter, $token)
+    public function view_kegiatan($filter, $token)
     {
         return $this->http_request_get("/$filter", $token);
     }
