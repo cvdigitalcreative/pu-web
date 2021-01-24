@@ -215,6 +215,11 @@ class Kegiatan_model extends CI_Model
         return $this->http_request_post($data, "/$id_kegiatan/peserta/", $token);
     }
 
+    public function update_status_kegiatan($status_kegiatan, $id_kegiatan, $token)
+    {
+        return $this->http_request_update(null, "/$id_kegiatan/status/$status_kegiatan", $token);
+    }
+
     // ====================== Peserta Kegiatan ==================================
 
     public function view_peserta_by_status($id_kegiatan, $id_status, $token)
