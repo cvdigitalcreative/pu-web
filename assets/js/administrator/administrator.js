@@ -255,6 +255,9 @@ $(document).ready(function () {
 				data: 'deskripsi_kegiatan',
 			},
 			{
+				data: 'status_kegiatan',
+			},
+			{
 				data: 'jenis_kegiatan',
 			},
 			{
@@ -262,9 +265,6 @@ $(document).ready(function () {
 			},
 			{
 				data: 'tanggal_kegiatan_full_text',
-			},
-			{
-				data: 'status_kegiatan',
 			},
 			{
 				data: 'foto_banner_kegiatan',
