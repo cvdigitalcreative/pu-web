@@ -174,6 +174,14 @@
 								endif ?>
 							</select>
 						</div>
+
+						<div>
+							<a class="btn btn-block btn-primary" href="#" role="button">
+								<img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
+								Tambah Instruktur & Assesor
+							</a>
+						</div>
+						
 						<div class="form-group py-2">
 							<label for="instrukturKegiatan">Instruktur kegiatan *</label>
 							<select class="form-control selectpicker" id="instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true" required>
@@ -652,10 +660,10 @@
 											<th>Aksi</th>
 											<th>Nama Kegiatan</th>
 											<th>Deskripsi Kegiatan</th>
+											<th>Status Kegiatan</th>
 											<th>Akun Kegiatan</th>
 											<th>Jenis Kegiatan</th>
 											<th>Tanggal Kegiatan</th>
-											<th>Status Kegiatan</th>
 											<th>Banner Kegiatan</th>
 											<th>Instruktur Kegiatan</th>
 											<th>Assesor Kegiatan</th>
