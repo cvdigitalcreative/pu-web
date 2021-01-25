@@ -1029,6 +1029,220 @@ Tidak ada poster kegiatan`					}
 		]
 	});
 
+	$('#akun_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataAkunKegiatan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_akun_kegiatan',
+			},
+			{
+				data: 'akun_kegiatan',
+			},
+			
+				
+			{
+				data: 'id_akun_kegiatan',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('#jenis_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataJenisKegiatan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_jenis_kegiatan',
+			},
+			{
+				data: 'jenis_kegiatan',
+			},
+			
+				
+			{
+				data: 'id_jenis_kegiatan',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+	$('#provinsi_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataProvinsiKegiatan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_provinsi',
+			},
+			{
+				data: 'provinsi',
+			},
+			
+				
+			{
+				data: 'id_provinsi',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+	$('#kota_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataKotaKegiatan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_kota',
+			},
+			{
+				data: 'kabupaten_kota',
+			},
+			
+				
+			{
+				data: 'id_kabupaten_kota',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+	$('#status_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataStatusKegiatan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_status_kegiatan',
+			},
+			{
+				data: 'status_kegiatan',
+			},
+			
+				
+			{
+				data: 'id_status_kegiatan',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+	$('#jabatan_kerja_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+    // scrollX: true,
+    // scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataJabker`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_jabker',
+			},
+			{
+				data: 'jabker',
+			},
+			
+				
+			{
+				data: 'id_jabker',
+				render: function (data) {
+					return `
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	
+
 	$('#btn-filter-kegiatan').click(function () {
 		$('#kalender_kegiatan_table').DataTable().destroy();
 		fill_datatable($('#filter-tanggal-mulai-kegiatan').val(),
