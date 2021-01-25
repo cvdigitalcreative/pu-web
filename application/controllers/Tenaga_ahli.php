@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Tenaga_ahli extends CI_Controller
 {
 
@@ -35,7 +34,7 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
-            $data['total_tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+            $data['total_tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=1", $this->session->userdata('token'));
             if ($data['total_tenaga_ahli'] == null)
                 $null = true;
             else {
@@ -45,7 +44,7 @@ class Tenaga_ahli extends CI_Controller
                     $data['total_tenaga_ahli'] = 0;
                 $this->session->set_flashdata('APImessage', $data['total_tenaga_ahli']['message']);
             }
-            $data['total_tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+            $data['total_tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=2", $this->session->userdata('token'));
             if ($data['total_tenaga_terampil'] == null)
                 $null = true;
             else {
@@ -135,7 +134,7 @@ class Tenaga_ahli extends CI_Controller
             if ($is_instruktur != 0) {
                 $filter = $filter . "&is_instruktur=" . $is_instruktur;
             }
-            
+
 
             $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($filter, $this->session->userdata('token'));
             if ($data['tenaga_ahli'] == null) {
@@ -967,6 +966,53 @@ class Tenaga_ahli extends CI_Controller
                     redirect('pupr/events');
                 }
             }
+        } else
+            redirect('pupr/login');
+    }
+
+    public function cv_tenaga_ahli($id_tenaga_ahli)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_detail_tenaga_ahli($id_tenaga_ahli, $this->session->userdata('token'));
+            if ($data['tenaga_ahli'] == null) {
+                $null = true;
+            } else {
+                if ($data['tenaga_ahli']['status'] == "Success") {
+                    $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+                    $data['tenaga_ahli']['tanggal_lahir_text'] = date('d F Y', strtotime($data['tenaga_ahli']['tanggal_lahir']));
+                    $data['tenaga_ahli']['tanggal_lahir_text'] = date('d F Y', strtotime($data['tenaga_ahli']['tanggal_lahir']));
+
+
+                    $data['tenaga_ahli']['alamat_lengkap'] = '-';
+                    if ($data['tenaga_ahli']['alamat_rumah'] != '-') {
+                        if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_rumah'];
+                        else
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ' ' . $data['tenaga_ahli']['alamat_rumah'];
+                    }
+                    if ($data['tenaga_ahli']['kabupaten_kota'] != '-') {
+                        if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['kabupaten_kota'];
+                        else
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['kabupaten_kota'];
+                    }
+                    if ($data['tenaga_ahli']['provinsi'] != '-') {
+                        if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['provinsi'];
+                        else
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['provinsi'];
+                    }
+                    
+                    $data['tenaga_ahli']['alamat_lengkap'] = strtolower($data['tenaga_ahli']['alamat_lengkap']);
+                } else {
+                    $data['tenaga_ahli'] = null;
+                }
+            }
+            $this->load->library('pdf');
+            $this->pdf->load_view('administrator/CV', $data, $data['tenaga_ahli']['nama_lengkap']);
+
+
         } else
             redirect('pupr/login');
     }

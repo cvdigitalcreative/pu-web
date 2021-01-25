@@ -641,9 +641,10 @@ Tidak ada poster kegiatan`					}
 					data: 'id_tenaga_ahli',
 					render: function (data) {
 						return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-						// <button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download File</button>
+						<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+						<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>
+						<button id='btn-export' type='submit' class='btn btn-primary btn-block' data-id='${data}'>Export Data</button>
+						<button id='btn-download' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download CV</button>`
 					}
 				},
 			]
@@ -1380,6 +1381,34 @@ Tidak ada poster kegiatan`					}
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Kegiatan/ganti_status_kegiatan/${id}`)
 			$(`#modal-ganti-status-kegiatan`).modal('show')
+		}
+	})
+	// End of edit
+
+	// 
+	// ========= DOWNLOAD BUTTON ON CLICK ===========
+	// 
+	// Each Row Table onClick Edit Button
+	$('table').on('click', '#btn-download', function () {
+		if ($('#tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`;
+				}
+			})
+		}
+		else if ($('#mitra_terampil_table').length > 0) {
+			const id = $(this).data('id')
+			$.ajax({
+				url: `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`,
+				type: 'POST',
+				success: function () {
+					window.location = `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`;
+				}
+			})
 		}
 	})
 	// End of edit
