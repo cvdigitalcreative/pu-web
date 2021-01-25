@@ -7,51 +7,6 @@
 
 <body id="page-top">
 
-	<!-- Filter Tenaga Ahli Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-filter-tenaga-ahli" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Filter Tenaga Ahli</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-
-					<form method="POST" action="" enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="filterTenagaAhliProvinsi">Provinsi *</label>
-							<select class="form-control" id="filter-provinsi-tenaga-ahli" name="filter_provinsi_tenaga_ahli" required>
-								<option selected disabled>Pilih Provinsi</option>
-								<?php foreach ($provinsi as $row) : ?>
-								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
-								<?php endforeach ?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="filterJabkerTenagaAhli">Jabatan Kerja *</label>
-							<select class="form-control" id="filter-jabatan-kerja-tenaga-ahli" name="filter_jabatan_kerja_tenaga_ahli"
-								aria-placeholder="Pilih status kegiatan" required>
-								<option selected disabled>Pilih Jabatan Kerja</option>
-								<?php if($jabker != null):
-								foreach ($jabker as $row):?>
-								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan" id="btn-filter-tenaga-ahli">Terapkan
-							Filter</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal filter tenaga ahli -->
-
 	<!-- Tambah Tenaga Ahli -->
 	<div class="modal fade bd-example-modal-lg" id="modal-tambah-tenaga-ahli" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -68,29 +23,30 @@
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaTenagaAhli">Nama Lengkap *</label>
-							<input type="text" class="form-control" id="nama-tenaga-ahli" name="nama_lengkap_tenaga_ahli"
-								placeholder="Contoh: Andi Setiawan" required>
+							<input type="text" class="form-control" id="nama-tenaga-ahli"
+								name="nama_lengkap_tenaga_ahli" placeholder="Contoh: Andi Setiawan" required>
 						</div>
 
 						<div class="form-group py-2">
 							<div class="row">
 								<div class="col">
-							<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
-									<input type="text" class="form-control" id="tempat-lahir-tenaga-ahli" name="tempat_lahir_tenaga_ahli"
-										placeholder="Contoh: Jakarta" required>
+									<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
+									<input type="text" class="form-control" id="tempat-lahir-tenaga-ahli"
+										name="tempat_lahir_tenaga_ahli" placeholder="Contoh: Jakarta" required>
 								</div>
 								<div class="col">
-							<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
-										<input type="text" class="form-control js-daterangepicker"
-											id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli" value=""
-											placeholder="Pilih tanggal lahir" required>
+									<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
+									<input type="text" class="form-control js-daterangepicker"
+										id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli"
+										value="" placeholder="Pilih tanggal lahir" required>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group py-2">
 							<label for="jenisKelamin">Jenis Kelamin *</label>
-							<select class="form-control" id="jenis-kelamin-tenaga-ahli" name="id_jenis_kelamin_tenaga_ahli" required>
+							<select class="form-control" id="jenis-kelamin-tenaga-ahli"
+								name="id_jenis_kelamin_tenaga_ahli" required>
 								<option selected disabled>Pilih jenis kelamin</option>
 								<?php if($jenis_kelamin != null):
 								foreach ($jenis_kelamin as $row):?>
@@ -113,8 +69,9 @@
 
 						<div class="form-group py-2">
 							<label for="alamatTenagaAhli">Alamat *</label>
-							<textarea type="text" data-autoresize class="form-control" id="alamat-tenaga-ahli" name="alamat_tenaga_ahli"
-								placeholder="Contoh: Jl. Jendral Sudirman No.123" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="alamat-tenaga-ahli"
+								name="alamat_tenaga_ahli" placeholder="Contoh: Jl. Jendral Sudirman No.123"
+								required></textarea>
 						</div>
 
 						<div class="form-group py-2">
@@ -127,8 +84,10 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
-							<select class="form-control" id="kota-tenaga-ahli" name="id_kota_kabupaten_tenaga_ahli" required>
+							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih
+										Provinsi terlebih dahulu</small></span></label>
+							<select class="form-control" id="kota-tenaga-ahli" name="id_kota_kabupaten_tenaga_ahli"
+								required>
 							</select>
 						</div>
 
@@ -136,15 +95,16 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="nomorHandphone">Nomor Handphone *</label>
-									<input type="text" class="form-control" id="nomor-handphone-tenaga-ahli" name="nomor_handphone_tenaga_ahli"
-										placeholder="Contoh: +6282112341234" required>
+									<input type="text" class="form-control" id="nomor-handphone-tenaga-ahli"
+										name="nomor_handphone_tenaga_ahli" placeholder="Contoh: +6282112341234"
+										required>
 								</div>
 							</div>
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="nomorRumah">Nomor Rumah *</label>
-									<input type="text" class="form-control" id="nomor-rumah-tenaga-ahli" name="nomor_rumah_tenaga_ahli"
-										placeholder="Contoh: +6271112345" required>
+									<input type="text" class="form-control" id="nomor-rumah-tenaga-ahli"
+										name="nomor_rumah_tenaga_ahli" placeholder="Contoh: +6271112345" required>
 								</div>
 							</div>
 						</div>
@@ -152,7 +112,8 @@
 						<div class="form-group py-2">
 							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
 							<select class="form-control selectpicker" id="jabatan-kerja-tenaga-ahli"
-								name="id_jabatan_kerja_tenaga_ahli[]" aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
+								name="id_jabatan_kerja_tenaga_ahli[]"
+								aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
 								data-live-search="true" required>
 								<?php if($jabker != null):
 								foreach ($jabker as $row):?>
@@ -163,28 +124,35 @@
 
 						<div class="form-group py-2">
 							<label for="KategoriTenagaAhli">Kategori *</label>
-								<?php if($kategori_tenaga_ahli != null):
+							<?php if($kategori_tenaga_ahli != null):
 								$index = 0;
 								foreach ($kategori_tenaga_ahli as $row):
 									if($index == 0) :?>
-									<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli" required>
-										</div>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="radio" aria-label="Checkbox for following text input"
+											value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli"
+											required>
 									</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
 								</div>
-								<?php else : ?>
-									<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli">
-										</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="<?= $row['kategori_tenaga_ahli']?>" readonly
+									style="background-color: white;">
+							</div>
+							<?php else : ?>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="radio" aria-label="Checkbox for following text input"
+											value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli">
 									</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
-									</div>
-								<?php endif; $index++; endforeach; endif?>
+								</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="<?= $row['kategori_tenaga_ahli']?>" readonly
+									style="background-color: white;">
+							</div>
+							<?php endif; $index++; endforeach; endif?>
 						</div>
 
 						<div class="form-group py-2">
@@ -193,20 +161,24 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text">
 										<input type="hidden" name="is_asesor" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="is_asesor">
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
+											name="is_asesor">
 									</div>
 								</div>
-							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Asesor" readonly style="background-color: white;">
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="Asesor" readonly style="background-color: white;">
 							</div>
 
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<div class="input-group-text">
 										<input type="hidden" name="is_instruktur" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="is_instruktur">
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
+											name="is_instruktur">
 									</div>
 								</div>
-							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="Instruktur" readonly style="background-color: white;">
 							</div>
 						</div>
 
@@ -234,8 +206,8 @@
 	</div>
 	<!-- End modal tambah tenaga ahli -->
 
-		<!-- Edit Tenaga Ahli -->
-		<div class="modal fade bd-example-modal-lg" id="modal-edit-tenaga-ahli" tabindex="-1" role="dialog">
+	<!-- Edit Tenaga Ahli -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-tenaga-ahli" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -250,29 +222,31 @@
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaTenagaAhli">Nama Lengkap *</label>
-							<input type="text" class="form-control" id="edit-nama-tenaga-ahli" name="edit_nama_lengkap_tenaga_ahli"
-								placeholder="Contoh: Andi Setiawan" required>
+							<input type="text" class="form-control" id="edit-nama-tenaga-ahli"
+								name="edit_nama_lengkap_tenaga_ahli" placeholder="Contoh: Andi Setiawan" required>
 						</div>
 
 						<div class="form-group py-2">
 							<div class="row">
 								<div class="col">
-							<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
-									<input type="text" class="form-control" id="edit-tempat-lahir-tenaga-ahli" name="edit_tempat_lahir_tenaga_ahli"
-										placeholder="Contoh: Jakarta" required>
+									<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
+									<input type="text" class="form-control" id="edit-tempat-lahir-tenaga-ahli"
+										name="edit_tempat_lahir_tenaga_ahli" placeholder="Contoh: Jakarta" required>
 								</div>
 								<div class="col">
-							<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
-										<input type="text" class="form-control js-daterangepicker"
-											id="edit-tanggal-lahir-tenaga-ahli" data-drops="up" name="edit_tanggal_lahir_tenaga_ahli" value=""
-											placeholder="Pilih tanggal lahir" required>
+									<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
+									<input type="text" class="form-control js-daterangepicker"
+										id="edit-tanggal-lahir-tenaga-ahli" data-drops="up"
+										name="edit_tanggal_lahir_tenaga_ahli" value="" placeholder="Pilih tanggal lahir"
+										required>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group py-2">
 							<label for="jenisKelamin">Jenis Kelamin *</label>
-							<select class="form-control" id="edit-jenis-kelamin-tenaga-ahli" name="edit_id_jenis_kelamin_tenaga_ahli" required>
+							<select class="form-control" id="edit-jenis-kelamin-tenaga-ahli"
+								name="edit_id_jenis_kelamin_tenaga_ahli" required>
 								<option selected disabled>Pilih jenis kelamin</option>
 								<?php if($jenis_kelamin != null):
 								foreach ($jenis_kelamin as $row):?>
@@ -283,34 +257,38 @@
 
 						<div class="form-group py-2">
 							<label for="nikTenagaAhli">NIK *</label>
-							<input type="text" class="form-control" id="edit-nik-tenaga-ahli" name="edit_nik_tenaga_ahli"
-								placeholder="Contoh: 1234567898765432" required>
+							<input type="text" class="form-control" id="edit-nik-tenaga-ahli"
+								name="edit_nik_tenaga_ahli" placeholder="Contoh: 1234567898765432" required>
 						</div>
 
 						<div class="form-group py-2">
 							<label for="emailTenagaAhli">Email *</label>
-							<input type="email" class="form-control" id="edit-email-tenaga-ahli" name="edit_email_tenaga_ahli"
-								placeholder="Contoh: andisetiawan@email.com" required>
+							<input type="email" class="form-control" id="edit-email-tenaga-ahli"
+								name="edit_email_tenaga_ahli" placeholder="Contoh: andisetiawan@email.com" required>
 						</div>
 
 						<div class="form-group py-2">
 							<label for="alamatTenagaAhli">Alamat *</label>
-							<textarea type="text" data-autoresize class="form-control" id="edit-alamat-tenaga-ahli" name="edit_alamat_tenaga_ahli"
-								placeholder="Contoh: Jl. Jendral Sudirman No.123" required></textarea>
+							<textarea type="text" data-autoresize class="form-control" id="edit-alamat-tenaga-ahli"
+								name="edit_alamat_tenaga_ahli" placeholder="Contoh: Jl. Jendral Sudirman No.123"
+								required></textarea>
 						</div>
 
 						<div class="form-group py-2">
 							<label for="provinsiTenagaAhli">Provinsi *</label>
-							<select class="form-control" id="edit-provinsi-tenaga-ahli" name="edit_id_provinsi_tenaga_ahli"
-								onChange="getStateEditTenagaAhli(this.value);" required>
+							<select class="form-control" id="edit-provinsi-tenaga-ahli"
+								name="edit_id_provinsi_tenaga_ahli" onChange="getStateEditTenagaAhli(this.value);"
+								required>
 								<?php foreach ($provinsi as $row) : ?>
 								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
 								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
-							<select class="form-control" id="edit-kota-tenaga-ahli" name="edit_id_kota_kabupaten_tenaga_ahli" required>
+							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih
+										Provinsi terlebih dahulu</small></span></label>
+							<select class="form-control" id="edit-kota-tenaga-ahli"
+								name="edit_id_kota_kabupaten_tenaga_ahli" required>
 							</select>
 						</div>
 
@@ -318,15 +296,16 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="nomorHandphone">Nomor Handphone *</label>
-									<input type="text" class="form-control" id="edit-nomor-handphone-tenaga-ahli" name="edit_nomor_handphone_tenaga_ahli"
-										placeholder="Contoh: +6282112341234" required>
+									<input type="text" class="form-control" id="edit-nomor-handphone-tenaga-ahli"
+										name="edit_nomor_handphone_tenaga_ahli" placeholder="Contoh: +6282112341234"
+										required>
 								</div>
 							</div>
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="nomorRumah">Nomor Rumah *</label>
-									<input type="text" class="form-control" id="edit-nomor-rumah-tenaga-ahli" name="edit_nomor_rumah_tenaga_ahli"
-										placeholder="Contoh: +6271112345" required>
+									<input type="text" class="form-control" id="edit-nomor-rumah-tenaga-ahli"
+										name="edit_nomor_rumah_tenaga_ahli" placeholder="Contoh: +6271112345" required>
 								</div>
 							</div>
 						</div>
@@ -334,7 +313,8 @@
 						<div class="form-group py-2">
 							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
 							<select class="form-control selectpicker" id="edit-jabatan-kerja-tenaga-ahli"
-								name="edit_id_jabatan_kerja_tenaga_ahli[]" aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
+								name="edit_id_jabatan_kerja_tenaga_ahli[]"
+								aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
 								data-live-search="true">
 								<?php if($jabker != null):
 								foreach ($jabker as $row):?>
@@ -345,28 +325,36 @@
 
 						<div class="form-group py-2">
 							<label for="KategoriTenagaAhli">Kategori *</label>
-								<?php if($kategori_tenaga_ahli != null):
+							<?php if($kategori_tenaga_ahli != null):
 								$index = 0;
 								foreach ($kategori_tenaga_ahli as $row):
 									if($index == 0) :?>
-									<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli" required>
-										</div>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="radio" aria-label="Checkbox for following text input"
+											value="<?= $row['id_kategori_tenaga_ahli']?>"
+											name="edit_kategori_tenaga_ahli" required>
 									</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
 								</div>
-								<?php else : ?>
-									<div class="input-group mb-3">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli">
-										</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="<?= $row['kategori_tenaga_ahli']?>" readonly
+									style="background-color: white;">
+							</div>
+							<?php else : ?>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text">
+										<input type="radio" aria-label="Checkbox for following text input"
+											value="<?= $row['id_kategori_tenaga_ahli']?>"
+											name="edit_kategori_tenaga_ahli">
 									</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
-									</div>
-								<?php endif; $index++; endforeach; endif?>
+								</div>
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="<?= $row['kategori_tenaga_ahli']?>" readonly
+									style="background-color: white;">
+							</div>
+							<?php endif; $index++; endforeach; endif?>
 						</div>
 
 						<div class="form-group py-2">
@@ -375,20 +363,24 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text">
 										<input type="hidden" name="edit_is_asesor" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="edit_is_asesor">
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
+											name="edit_is_asesor">
 									</div>
 								</div>
-							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Asesor" readonly style="background-color: white;">
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="Asesor" readonly style="background-color: white;">
 							</div>
 
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<div class="input-group-text">
 										<input type="hidden" name="edit_is_instruktur" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1" name="edit_is_instruktur">
+										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
+											name="edit_is_instruktur">
 									</div>
 								</div>
-							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
+								<input type="text" class="form-control" aria-label="Text input with checkbox"
+									value="Instruktur" readonly style="background-color: white;">
 							</div>
 						</div>
 						<div class="form-group py-2">
@@ -440,71 +432,6 @@
 	</div>
 	<!-- End modal delete modul -->
 
-	<!-- Import Excel Tambah Tenaga Ahli Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-tenaga-ahli" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Import File Excel tambah Tenaga Ahli & Mitra Terampil</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<!-- <form method="POST" action="<?= base_url()?>Tenaga_ahli/import_tenaga_ahli_action" enctype="multipart/form-data"> -->
-					<form method="POST" action="" enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Mitra Terampil</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
-									name="file_excel_tambah_tenaga">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
-								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
-									Pilih file excel tambah tenaga ahli & mitra terampil
-								</small>
-							</div>
-						</div>
-
-						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Import File
-							Excel</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- export Excel Tenaga Ahli Modal -->
-	<div class="modal fade bd-example-modal-sm" id="modal-export-tenaga-ahli" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Export Tenaga Ahli</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-						<div class="col mb-2">
-						<a class="btn btn-success btn-block" href="" id="btn-export-seluruh-tenaga-ahli"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Seluruh</a>
-						</div>
-						<div class="col mb-2">
-						<a class="btn btn-success btn-block" href="" id="btn-export-tenaga-ahli"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tenaga Ahli</a>
-						</div>
-						<div class="col mb-2">
-						<a class="btn btn-success btn-block" href="" id="btn-export-mitra-terampil"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Mitra Terampil</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End of Import Excel Tambah Kegiatan Modal -->
-
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 
@@ -523,24 +450,24 @@
 
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h2 font-weight-bold mb-4 mt-4">Tenaga Ahli dan Mitra</h1>
+						<h1 class="h2 font-weight-bold mb-4 mt-4">Master Data</h1>
 					</div>
 
 					<!-- Alert -->
 					<?php if ($this->session->flashdata('success')) : ?>
-						<div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
-							<?= $this->session->flashdata('success') ?>
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
+					<div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+						<?= $this->session->flashdata('success') ?>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
 					<?php elseif ($this->session->flashdata('APImessage')) : ?>
-						<div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
-							<?= $this->session->flashdata('APImessage') ?>
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
+					<div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+						<?= $this->session->flashdata('APImessage') ?>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
 					<?php endif; ?>
 
 
@@ -589,88 +516,130 @@
 
 					<div class="container-fluid mt-2 mb-4 container-background">
 						<div class="col d-flex justify-content-between button-field">
-						<div class="">
-							<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal"
-								data-target="#modal-filter-tenaga-ahli"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-tenaga-ahli"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
-							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
-								data-target="#modal-import-excel-tambah-tenaga-ahli"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
-							<button class="btn btn-success btn-import-kegiatan" data-toggle="modal"
-								data-target="#modal-export-tenaga-ahli" ><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
-						</div>
-						<div class="">
-							<a class="btn btn-danger btn-import-kegiatan" href="" id="btn-download-format-tenaga-ahli"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</a>
-						</div>
+							<div class="">
+								<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal"
+									data-target="#modal-filter-tenaga-ahli"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
+								<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
+									data-target="#modal-tambah-tenaga-ahli"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
+								<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
+									data-target="#modal-import-excel-tambah-tenaga-ahli"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
+								<button class="btn btn-success btn-import-kegiatan" data-toggle="modal"
+									data-target="#modal-export-tenaga-ahli"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
+							</div>
+							<div class="">
+								<a class="btn btn-danger btn-import-kegiatan" href=""
+									id="btn-download-format-tenaga-ahli"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format
+									Excel</a>
+							</div>
 						</div>
 						<div class="card-body">
-                            <div class="pb-4 pt-2">
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#tenaga-ahli" role="tab" data-toggle="tab">Tenaga Ahli</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#mitra-terampil" role="tab" data-toggle="tab">Mitra Terampil</a>
-                                    </li>
-                                </ul>
-                            </div>
+							<div class="pb-4 pt-2">
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="nav-item">
+										<a class="nav-link active" href="#akun-kegiatan" role="tab"
+											data-toggle="tab">Akun Kegiatan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jenis-kegiatan" role="tab" data-toggle="tab">Jenis
+											Kegiatan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#provinsi-kegiatan" role="tab"
+											data-toggle="tab">Provinsi Kegiatan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#kota-kegiatan" role="tab" data-toggle="tab">Kota
+											Kegiatan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#status-kegiatan" role="tab" data-toggle="tab">Status
+											Kegiatan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Jabatan
+											Kerja</a>
+									</li>
+								</ul>
+							</div>
 
-                            <div class="tab-content">
-                                <div class="tab-pane fade active show" role="tabpanel" id="tenaga-ahli">
-                                    <table id="tenaga_ahli_table" class="display">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>Tempat Lahir</th>
-                                                <th>Tanggal lahir</th>
-                                                <th>Email</th>
-                                                <th>Nomor HP</th>
-                                                <th>Nomor Telepon Rumah</th>
-                                                <th>NIK</th>
-                                                <th>Alamat</th>
-                                                <th>Provinsi</th>
-                                                <th>Kabupaten / kota</th>
-                                                <th>Ketenagakerjaan</th>
-                                                <th>Keahlian</th>
-                                                <th>File Tenaga Ahli</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-								
-                                <div class="tab-pane fade show" role="tabpanel" id="mitra-terampil">
-								<table id="mitra_terampil_table" class="display">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Nama</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>Tempat Lahir</th>
-                                                <th>Tanggal lahir</th>
-                                                <th>Email</th>
-                                                <th>Nomor HP</th>
-                                                <th>Nomor Telepon Rumah</th>
-                                                <th>NIK</th>
-                                                <th>Alamat</th>
-                                                <th>Provinsi</th>
-                                                <th>Kabupaten / kota</th>
-                                                <th>Ketenagakerjaan</th>
-                                                <th>Keterampilan</th>
-                                                <th>File Tenaga Ahli</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>		
-                            </div>
+							<div class="tab-content">
+								<div class="tab-pane fade active show" role="tabpanel" id="akun-kegiatan">
+									<table id="akun_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Akun Kegiatan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="jenis-kegiatan">
+									<table id="jenis_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Jenis Kegiatan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="provinsi-kegiatan">
+									<table id="provinsi_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Provinsi</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="kota-kegiatan">
+									<table id="kota_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Kota</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="status-kegiatan">
+									<table id="status_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Status</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="jabatan-kerja">
+									<table id="jabatan_kerja_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Jabatan Kerja</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
 
 						</div>
 					</div>
