@@ -110,4 +110,8 @@ class Common_model extends CI_Model
     {
         return $this->http_request_get("/jenis-kegiatan", $token);
     }
+    
+    public function view_status_pns($token){
+        return $this->http_request_get("/status-pns", $token);
+    }
 }
