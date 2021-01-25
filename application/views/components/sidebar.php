@@ -97,6 +97,15 @@
 		</a>
 	</li>
 
+	<!-- Nav Item - Master Data -->
+	<li class="nav-item <?=$this->uri->segment(2) == 'administration' ? 'active' : ''?>">
+		<a class="nav-link <?=$this->uri->segment(2) == 'administration' ? 'disabled' : ''?>"
+			href="<?=base_url('pupr/administration')?>">
+			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/administrasi-menu.svg')?>">
+			<span>Master Data</span>
+		</a>
+	</li>
+
 	<!-- Divider -->
 	<hr class="sidebar-divider d-none d-md-block">
 
