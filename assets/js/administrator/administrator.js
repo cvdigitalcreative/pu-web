@@ -509,6 +509,15 @@ Tidak ada poster kegiatan`					}
 					data: 'nik',
 				},
 				{
+					data: 'npwp',
+				},
+				{
+					data: 'pendidikan',
+				},
+				{
+					data: 'status_pns',
+				},
+				{
 					data: 'alamat_rumah',
 				},
 				{
@@ -609,6 +618,15 @@ Tidak ada poster kegiatan`					}
 				},
 				{
 					data: 'nik',
+				},
+				{
+					data: 'npwp',
+				},
+				{
+					data: 'pendidikan',
+				},
+				{
+					data: 'status_pns',
 				},
 				{
 					data: 'alamat_rumah',
@@ -1464,9 +1482,10 @@ Tidak ada poster kegiatan`					}
 			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
 			$('#edit-nik-tenaga-ahli').val($(this).parent().siblings().eq(8).text())
 			$('#edit-email-tenaga-ahli').val($(this).parent().siblings().eq(5).text())
-			$('#edit-alamat-tenaga-ahli').val($(this).parent().siblings().eq(9).text())
+			$('#edit-alamat-tenaga-ahli').val($(this).parent().siblings().eq(12).text())
 			$('#edit-nomor-handphone-tenaga-ahli').val($(this).parent().siblings().eq(6).text())
 			$('#edit-nomor-rumah-tenaga-ahli').val($(this).parent().siblings().eq(7).text())
+			$('#edit-npwp-tenaga-ahli').val($(this).parent().siblings().eq(9).text())
 			$('#modal-edit-tenaga-ahli').modal('show')
 		}
 		else if ($('#berita_table').length > 0) {

@@ -173,7 +173,11 @@
 								</div>
 							</div>
 						</div>
-
+						<div class="form-group py-2">
+									<label for="nomorHandphone">NPWP *</label>
+									<input type="text" class="form-control" id="npwp-tenaga-ahli" name="npwp_tenaga_ahli"
+										placeholder="Contoh: 0203094902939043" required>
+								</div>
 						<div class="form-group py-2">
 							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
 							<select class="form-control selectpicker" id="jabatan-kerja-tenaga-ahli"
@@ -233,6 +237,29 @@
 								</div>
 							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
 							</div>
+						</div>
+
+						<div class="form-group py-2">
+							<label for="filterJabkerTenagaAhli">Status PNS *</label>
+							<select class="form-control" id="status-pns-tenaga-ahli" name="id_status_pns_tenaga_ahli"
+								aria-placeholder="Pilih status PNS">
+								<option selected disabled>Pilih Status PNS</option>
+								<?php if($status_pns != null):
+								foreach ($status_pns as $row):?>
+								<option value="<?=$row['id_status_pns']?>"><?= $row['status_pns']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="filterJabkerTenagaAhli">Pendidikan Terakhir *</label>
+							<select class="form-control" id="pendidikan-tenaga-ahli" name="id_pendidikan_tenaga_ahli"
+								aria-placeholder="Pilih pendidikan terakhir">
+								<option selected disabled>Pilih pendidikan terakhir</option>
+								<?php if($pendidikan != null):
+								foreach ($pendidikan as $row):?>
+								<option value="<?=$row['id_pendidikan']?>"><?= $row['pendidikan']?></option>
+								<?php endforeach; endif?>
+							</select>
 						</div>
 
 						<div class="form-group py-2">
@@ -355,7 +382,11 @@
 								</div>
 							</div>
 						</div>
-
+						<div class="form-group py-2">
+									<label for="nomorHandphone">NPWP *</label>
+									<input type="text" class="form-control" id="edit-npwp-tenaga-ahli" name="edit_npwp_tenaga_ahli"
+										placeholder="Contoh: 0203094902939043" required>
+								</div>
 						<div class="form-group py-2">
 							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
 							<select class="form-control selectpicker" id="edit-jabatan-kerja-tenaga-ahli"
@@ -416,6 +447,29 @@
 							<input type="text" class="form-control" aria-label="Text input with checkbox" value="Instruktur" readonly style="background-color: white;">
 							</div>
 						</div>
+						<div class="form-group py-2">
+							<label for="filterJabkerTenagaAhli">Status PNS *</label>
+							<select class="form-control" id="edit-status-pns-tenaga-ahli" name="edit_id_status_pns_tenaga_ahli"
+								aria-placeholder="Pilih status PNS">
+								<option selected disabled>Pilih Status PNS</option>
+								<?php if($status_pns != null):
+								foreach ($status_pns as $row):?>
+								<option value="<?=$row['id_status_pns']?>"><?= $row['status_pns']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="filterJabkerTenagaAhli">Pendidikan Terakhir *</label>
+							<select class="form-control" id="edit-pendidikan-tenaga-ahli" name="edit_id_pendidikan_tenaga_ahli"
+								aria-placeholder="Pilih pendidikan terakhir">
+								<option selected disabled>Pilih pendidikan terakhir</option>
+								<?php if($pendidikan != null):
+								foreach ($pendidikan as $row):?>
+								<option value="<?=$row['id_pendidikan']?>"><?= $row['pendidikan']?></option>
+								<?php endforeach; endif?>
+							</select>
+						</div>
+
 						<div class="form-group py-2">
 							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
 							<div class="custom-file">
@@ -659,6 +713,9 @@
                                                 <th>Nomor HP</th>
                                                 <th>Nomor Telepon Rumah</th>
                                                 <th>NIK</th>
+                                                <th>NPWP</th>
+                                                <th>Pendidikan</th>
+                                                <th>Status PNS</th>
                                                 <th>Alamat</th>
                                                 <th>Provinsi</th>
                                                 <th>Kabupaten / kota</th>
@@ -684,6 +741,9 @@
                                                 <th>Nomor HP</th>
                                                 <th>Nomor Telepon Rumah</th>
                                                 <th>NIK</th>
+                                                <th>NPWP</th>
+                                                <th>Pendidikan</th>
+                                                <th>Status PNS</th>
                                                 <th>Alamat</th>
                                                 <th>Provinsi</th>
                                                 <th>Kabupaten / kota</th>

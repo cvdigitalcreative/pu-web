@@ -82,6 +82,9 @@ class Tenaga_Ahli_model extends CI_Model
         $is_instruktur,
         $is_asesor,
         $file_tenaga_ahli,
+        $status_pns,
+        $npwp,
+        $pendidikan,
         $token
     ) {
         $data = [
@@ -100,7 +103,10 @@ class Tenaga_Ahli_model extends CI_Model
             'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
             'is_instruktur' => $is_instruktur,
             'is_asesor' => $is_asesor,
-            'file_tenaga_ahli' => $file_tenaga_ahli
+            'file_tenaga_ahli' => $file_tenaga_ahli,
+            'id_status_pns' => $status_pns,
+            'npwp' => $npwp,
+            'id_pendidikan' => $pendidikan
         ];
 
         return $this->http_request_post($data, "/", $token);
@@ -123,6 +129,9 @@ class Tenaga_Ahli_model extends CI_Model
         $is_instruktur,
         $is_asesor,
         $file_tenaga_ahli,
+        $status_pns,
+        $npwp,
+        $pendidikan,
         $id_tenaga_ahli,
         $token
     ) {
@@ -142,7 +151,10 @@ class Tenaga_Ahli_model extends CI_Model
             'id_kategori_tenaga_ahli' => $id_kategori_tenaga_ahli,
             'is_instruktur' => $is_instruktur,
             'is_asesor' => $is_asesor,
-            'file_tenaga_ahli' => $file_tenaga_ahli
+            'file_tenaga_ahli' => $file_tenaga_ahli,
+            'id_status_pns' => $status_pns,
+            'npwp' => $npwp,
+            'id_pendidikan' => $pendidikan
         ];
 
         return $this->http_request_update($data, "/$id_tenaga_ahli", $token);

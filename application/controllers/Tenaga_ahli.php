@@ -105,6 +105,30 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
+            $data['status_pns'] = $this->Common_model->view_status_pns($this->session->userdata('token'));
+            if ($data['status_pns'] == null)
+                $null = true;
+            else {
+                if ($data['status_pns']['status'] == "Success")
+                    $data['status_pns'] = $data['status_pns']['data'];
+                else {
+                    $data['status_pns'] = null;
+                    $this->session->set_flashdata('APImessage', $data['status_pns']['message']);
+                }
+            }
+
+            $data['pendidikan'] = $this->Common_model->view_pendidikan($this->session->userdata('token'));
+            if ($data['pendidikan'] == null)
+                $null = true;
+            else {
+                if ($data['pendidikan']['status'] == "Success")
+                    $data['pendidikan'] = $data['pendidikan']['data'];
+                else {
+                    $data['pendidikan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['pendidikan']['message']);
+                }
+            }
+
             if ($null)
                 $this->load->view('error_page');
             else
@@ -312,76 +336,6 @@ class Tenaga_ahli extends CI_Controller
             redirect('pupr/login');
     }
 
-    public function daerah($id_provinsi, $id_kategori_tenaga_ahli)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_tenaga_ahli_by_provinsi($id_provinsi, $id_kategori_tenaga_ahli, $this->session->userdata('token'));
-            if ($data['tenaga_ahli'] == null)
-                $null = true;
-            else {
-                if ($data['tenaga_ahli']['status'] == "Success") {
-                    $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
-                } else {
-                    $data['tenaga_ahli'] = null;
-                    $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
-    public function detail($id_tenaga_ahli)
-    {
-        if ($this->session->userdata('logged_in') == true) {
-            $null = false;
-            //================= User detail for navbar =======================
-            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
-            if ($data['header']['detail_user'] == null)
-                $null = true;
-            else {
-                if ($data['header']['detail_user']['status'] == "Success") {
-                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
-                } else {
-                    $data['header']['detail_user'] = null;
-                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
-                }
-            }
-
-            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_detail_tenaga_ahli($id_tenaga_ahli, $this->session->userdata('token'));
-            if ($data['tenaga_ahli'] == null)
-                $null = true;
-            else {
-                if ($data['tenaga_ahli']['status'] == "Success") {
-                    $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
-                } else {
-                    $data['tenaga_ahli'] = null;
-                    $this->session->set_flashdata('APImessage', $data['tenaga_ahli']['message']);
-                }
-            }
-
-            if ($null)
-                $this->load->view('error_page');
-        } else
-            redirect("pupr/login");
-    }
-
     public function tambah_tenaga_ahli_action($redirect = null)
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -422,7 +376,9 @@ class Tenaga_ahli extends CI_Controller
                 $is_asesor = false;
 
             $file_tenaga_ahli = new \CurlFile($_FILES['file_tenaga_ahli']['tmp_name'], $_FILES['file_tenaga_ahli']['type'], $_FILES['file_tenaga_ahli']['name']);
-
+            $status_pns = $this->input->post('id_status_pns_tenaga_ahli');
+            $npwp = $this->input->post('npwp_tenaga_ahli');
+            $pendidikan = $this->input->post('id_pendidikan_tenaga_ahli');
 
             $tambah_tenaga_ahli = $this->Tenaga_Ahli_model->add_tenaga_ahli(
                 $nama_lengkap,
@@ -441,6 +397,9 @@ class Tenaga_ahli extends CI_Controller
                 $is_instruktur,
                 $is_asesor,
                 $file_tenaga_ahli,
+                $status_pns,
+                $npwp,
+                $pendidikan,
                 $this->session->userdata('token')
             );
 
@@ -511,6 +470,10 @@ class Tenaga_ahli extends CI_Controller
             else
                 $file_tenaga_ahli = null;
 
+                $status_pns = $this->input->post('edit_id_status_pns_tenaga_ahli');
+                $npwp = $this->input->post('edit_npwp_tenaga_ahli');
+                $pendidikan = $this->input->post('edit_id_pendidikan_tenaga_ahli');
+
             $edit_tenaga_ahli = $this->Tenaga_Ahli_model->edit_tenaga_ahli(
                 $nama_lengkap,
                 $tempat_lahir,
@@ -528,6 +491,9 @@ class Tenaga_ahli extends CI_Controller
                 $is_instruktur,
                 $is_asesor,
                 $file_tenaga_ahli,
+                $status_pns,
+                $npwp,
+                $pendidikan,
                 $id_tenaga_ahli,
                 $this->session->userdata('token')
             );
