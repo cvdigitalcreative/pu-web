@@ -35,7 +35,7 @@ class Tenaga_ahli extends CI_Controller
                 }
             }
 
-            $data['total_tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+            $data['total_tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=1", $this->session->userdata('token'));
             if ($data['total_tenaga_ahli'] == null)
                 $null = true;
             else {
@@ -45,7 +45,7 @@ class Tenaga_ahli extends CI_Controller
                     $data['total_tenaga_ahli'] = 0;
                 $this->session->set_flashdata('APImessage', $data['total_tenaga_ahli']['message']);
             }
-            $data['total_tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+            $data['total_tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=2", $this->session->userdata('token'));
             if ($data['total_tenaga_terampil'] == null)
                 $null = true;
             else {
@@ -135,7 +135,7 @@ class Tenaga_ahli extends CI_Controller
             if ($is_instruktur != 0) {
                 $filter = $filter . "&is_instruktur=" . $is_instruktur;
             }
-            
+
 
             $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli($filter, $this->session->userdata('token'));
             if ($data['tenaga_ahli'] == null) {
@@ -965,6 +965,25 @@ class Tenaga_ahli extends CI_Controller
                 } else {
                     $this->session->set_flashdata('APImessage', $import['message']);
                     redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
+    public function cv_tenaga_ahli($id_tenaga_ahli)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+            $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_detail_tenaga_ahli($id_tenaga_ahli, $this->session->userdata('token'));
+            if ($data['tenaga_ahli'] == null) {
+                $null = true;
+            } else {
+                if ($data['tenaga_ahli']['status'] == "Success") {
+                    $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
+                }
+                else{
+                    $data['tenaga_ahli'] = null;
                 }
             }
         } else
