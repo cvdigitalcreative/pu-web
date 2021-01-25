@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
 class Tenaga_ahli extends CI_Controller
 {
 
@@ -981,11 +980,39 @@ class Tenaga_ahli extends CI_Controller
             } else {
                 if ($data['tenaga_ahli']['status'] == "Success") {
                     $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
-                }
-                else{
+                    $data['tenaga_ahli']['tanggal_lahir_text'] = date('d F Y', strtotime($data['tenaga_ahli']['tanggal_lahir']));
+                    $data['tenaga_ahli']['tanggal_lahir_text'] = date('d F Y', strtotime($data['tenaga_ahli']['tanggal_lahir']));
+
+
+                    $data['tenaga_ahli']['alamat_lengkap'] = '-';
+                    if ($data['tenaga_ahli']['alamat_rumah'] != '-') {
+                        if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_rumah'];
+                        else
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ' ' . $data['tenaga_ahli']['alamat_rumah'];
+                    }
+                    if ($data['tenaga_ahli']['kabupaten_kota'] != '-') {
+                        if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['kabupaten_kota'];
+                        else
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['kabupaten_kota'];
+                    }
+                    if ($data['tenaga_ahli']['provinsi'] != '-') {
+                        if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['provinsi'];
+                        else
+                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['provinsi'];
+                    }
+                    
+                    $data['tenaga_ahli']['alamat_lengkap'] = strtolower($data['tenaga_ahli']['alamat_lengkap']);
+                } else {
                     $data['tenaga_ahli'] = null;
                 }
             }
+            $this->load->library('pdf');
+            $this->pdf->load_view('administrator/CV', $data, $data['tenaga_ahli']['nama_lengkap']);
+
+
         } else
             redirect('pupr/login');
     }
