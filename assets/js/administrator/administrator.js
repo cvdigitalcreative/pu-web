@@ -550,7 +550,6 @@ Tidak ada poster kegiatan`					}
 						return `
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>
-					<button id='btn-export' type='submit' class='btn btn-primary btn-block' data-id='${data}'>Export Data</button>
 					<button id='btn-download' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download CV</button>`
 
 					}
