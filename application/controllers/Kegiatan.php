@@ -1127,6 +1127,48 @@ class Kegiatan extends CI_Controller
             redirect('pupr/login');
     }
 
+    public function update_status_kegiatan_VVA_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $file_excel = new \CurlFile($_FILES['file_excel']['tmp_name'], $_FILES['file_excel']['type'], $_FILES['file_excel']['name']);
+
+            $update = $this->Kegiatan_model->update_status_kegiatan_VVA($file_excel, $id_kegiatan, $this->session->userdata('token'));
+            if ($update == null)
+                $this->load->view('error_page');
+            else {
+                if ($update['status'] == 'Success') {
+                    $this->session->set_flashdata('success', $update['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $update['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
+    public function update_status_kegiatan_asesment_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $file_excel = new \CurlFile($_FILES['file_excel']['tmp_name'], $_FILES['file_excel']['type'], $_FILES['file_excel']['name']);
+
+            $update = $this->Kegiatan_model->update_status_kegiatan_asesment($file_excel, $id_kegiatan, $this->session->userdata('token'));
+            if ($update == null)
+                $this->load->view('error_page');
+            else {
+                if ($update['status'] == 'Success') {
+                    $this->session->set_flashdata('success', $update['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $update['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
     public function delete_kegiatan($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
