@@ -134,6 +134,45 @@
     }
 </script>
 
+<script>
+    function getStateMasterKotaKecamatan(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#master-kota-kecamatan").html(data);
+            }
+        });
+    }
+</script>
+
+<script>
+    function getStateMasterKotaKelurahan(val) {
+        $.ajax({
+            type: "POST",
+            url: "<?=base_url()?>Kegiatan/view_kota",
+            data: 'id_provinsi=' + val,
+            success: function(data) {
+                $("#master-kota-kelurahan").html(data);
+            }
+        });
+    }
+</script>
+
+    <script>
+        function getStateMasterKecamatanKelurahan(val) {
+            $.ajax({
+                type: "POST",
+                url: "<?=base_url()?>User/view_kecamatan",
+                data: 'id_kota_kabupaten=' + val,
+                success: function(data) {
+                    $("#master-kecamatan-kelurahan").html(data);
+                }
+            });
+        }
+    </script>
+    
 <?php if(isset($_GET['redirect']) && $_GET['redirect'] == 'events' && isset($_GET['show'])) : ?>
 <script>
 $('#modal-tambah-tenaga-ahli').modal('show')
