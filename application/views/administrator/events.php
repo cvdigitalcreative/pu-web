@@ -92,7 +92,7 @@
 	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
-			<div class="modal-header">
+				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalCenterTitle">Update Status Kegiatan Ini?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -186,32 +186,19 @@
 						<div class="form-group py-2">
 							<label for="provinsiKegiatan">Provinsi kegiatan *</label>
 							<select class="form-control" id="provinsi-kegiatan" name="id_provinsi" onChange="getState(this.value);" required>
-								<option selected disabled>Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
 									<option value="<?= $row['id_provinsi'] ?>"><?= $row['provinsi'] ?></option>
 								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaKegiatan">Kota kegiatan *</label>
+							<label for="kotaKegiatan">Kota kegiatan *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
 							<select class="form-control" id="kota-kegiatan" name="id_kota_kabupaten" required>
-								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="lokasiKegiatan">Lokasi Kegiatan *</label>
 							<textarea type="text" data-autoresize class="form-control" id="lokasi-kegiatan" name="lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
-						</div>
-						<div class="form-group py-2">
-							<label for="statusKegiatan">Status kegiatan *</label>
-							<select class="form-control" id="status-kegiatan" name="status_kegiatan" aria-placeholder="Pilih status kegiatan" required>
-								<option selected disabled>Pilih status kegiatan</option>
-								<?php if ($status_kegiatan != null) :
-									foreach ($status_kegiatan as $row) : ?>
-										<option value="<?= $row['id_status_kegiatan'] ?>"><?= $row['status_kegiatan'] ?></option>
-								<?php endforeach;
-								endif ?>
-							</select>
 						</div>
 
 						<div>
@@ -220,7 +207,7 @@
 								Tambah Instruktur & Assesor
 							</a>
 						</div>
-						
+
 						<div class="form-group py-2">
 							<label for="instrukturKegiatan">Instruktur kegiatan *</label>
 							<select class="form-control selectpicker" id="instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true" required>
@@ -302,8 +289,11 @@
 						<div class="form-group py-2">
 							<label for="editBannerKegiatan">Banner Kegiatan *</label>
 							<div id="profile-container">
-								<image id="banner-image" src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
-								<input id="edit-banner-kegiatan" type="file" name="edit_foto_banner_kegiatan" placeholder="Photo" alt="Pilih Foto" required="" capture>
+								<image id="banner-image-edit" />
+								<input id="edit-banner-kegiatan" type="file" name="edit_foto_banner_kegiatan" placeholder="Photo" alt="Pilih Foto" capture>
+							</div>
+							<div class="d-flex flex-column">
+								<small class="text-secondary text-center pt-2">Klik gambar untuk mengganti foto banner kegiatan</small>
 							</div>
 						</div>
 						<div class="form-group py-2">
@@ -337,7 +327,6 @@
 						<div class="form-group py-2">
 							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
 							<select class="form-control" id="edit-provinsi-kegiatan" name="id_provinsi" onChange="getStateEdit(this.value);" required>
-								<option selected disabled>Pilih Provinsi</option>
 								<?php if ($provinsi != null) :
 									foreach ($provinsi as $row2) : ?>
 										<option value="<?= $row2['id_provinsi'] ?>"><?= $row2['provinsi'] ?></option>
@@ -346,26 +335,15 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="editKotaKegiatan">Kota kegiatan *</label>
+							<label for="editKotaKegiatan">Kota kegiatan *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
 							<select class="form-control" id="edit-kota-kegiatan" name="id_kota_kabupaten" required>
-								<option disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
 						</div>
 						<div class="form-group py-2">
 							<label for="editLokasiKegiatan">Lokasi Kegiatan *</label>
 							<textarea type="text" data-autoresize class="form-control" id="edit-lokasi-kegiatan" name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
 						</div>
-						<div class="form-group py-2">
-							<label for="editStatusKegiatan">Status kegiatan *</label>
-							<select class="form-control" id="edit-status-kegiatan" name="status_kegiatan" aria-placeholder="Pilih status kegiatan" required>
-								<option selected disabled>Pilih status kegiatan</option>
-								<?php if ($status_kegiatan != null) :
-									foreach ($status_kegiatan as $row2) : ?>
-										<option value="<?= $row2['id_status_kegiatan'] ?>"><?= $row2['status_kegiatan'] ?></option>
-								<?php endforeach;
-								endif; ?>
-							</select>
-						</div>
+
 						<div class="form-group py-2">
 							<label for="editInstrukturKegiatan">Instruktur kegiatan *</label>
 							<select class="form-control selectpicker" id="edit-instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true" required>
