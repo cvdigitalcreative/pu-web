@@ -7,196 +7,29 @@
 
 <body id="page-top">
 
-	<!-- Tambah Tenaga Ahli -->
-	<div class="modal fade bd-example-modal-lg" id="modal-tambah-tenaga-ahli" tabindex="-1" role="dialog">
+	<!-- Tambah Akun Kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-akun-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Tenaga Ahli</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Akun Kegiatan</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Tenaga_ahli/tambah_tenaga_ahli_action"
+					<form method="POST" action=""
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="namaTenagaAhli">Nama Lengkap *</label>
-							<input type="text" class="form-control" id="nama-tenaga-ahli"
-								name="nama_lengkap_tenaga_ahli" placeholder="Contoh: Andi Setiawan" required>
-						</div>
-
-						<div class="form-group py-2">
-							<div class="row">
-								<div class="col">
-									<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
-									<input type="text" class="form-control" id="tempat-lahir-tenaga-ahli"
-										name="tempat_lahir_tenaga_ahli" placeholder="Contoh: Jakarta" required>
-								</div>
-								<div class="col">
-									<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli"
-										value="" placeholder="Pilih tanggal lahir" required>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="jenisKelamin">Jenis Kelamin *</label>
-							<select class="form-control" id="jenis-kelamin-tenaga-ahli"
-								name="id_jenis_kelamin_tenaga_ahli" required>
-								<option selected disabled>Pilih jenis kelamin</option>
-								<?php if($jenis_kelamin != null):
-								foreach ($jenis_kelamin as $row):?>
-								<option value="<?=$row['id_jenis_kelamin']?>"><?= $row['jenis_kelamin']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="nikTenagaAhli">NIK *</label>
-							<input type="text" class="form-control" id="nik-tenaga-ahli" name="nik_tenaga_ahli"
-								placeholder="Contoh: 1234567898765432" required>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="emailTenagaAhli">Email *</label>
-							<input type="email" class="form-control" id="email-tenaga-ahli" name="email_tenaga_ahli"
-								placeholder="Contoh: andisetiawan@email.com" required>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="alamatTenagaAhli">Alamat *</label>
-							<textarea type="text" data-autoresize class="form-control" id="alamat-tenaga-ahli"
-								name="alamat_tenaga_ahli" placeholder="Contoh: Jl. Jendral Sudirman No.123"
-								required></textarea>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="provinsiTenagaAhli">Provinsi *</label>
-							<select class="form-control" id="provinsi-tenaga-ahli" name="id_provinsi_tenaga_ahli"
-								onChange="getStateTenagaAhli(this.value);" required>
-								<?php foreach ($provinsi as $row) : ?>
-								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
-								<?php endforeach ?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih
-										Provinsi terlebih dahulu</small></span></label>
-							<select class="form-control" id="kota-tenaga-ahli" name="id_kota_kabupaten_tenaga_ahli"
-								required>
-							</select>
-						</div>
-
-						<div class="row">
-							<div class="col">
-								<div class="form-group py-2">
-									<label for="nomorHandphone">Nomor Handphone *</label>
-									<input type="text" class="form-control" id="nomor-handphone-tenaga-ahli"
-										name="nomor_handphone_tenaga_ahli" placeholder="Contoh: +6282112341234"
-										required>
-								</div>
-							</div>
-							<div class="col">
-								<div class="form-group py-2">
-									<label for="nomorRumah">Nomor Rumah *</label>
-									<input type="text" class="form-control" id="nomor-rumah-tenaga-ahli"
-										name="nomor_rumah_tenaga_ahli" placeholder="Contoh: +6271112345" required>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
-							<select class="form-control selectpicker" id="jabatan-kerja-tenaga-ahli"
-								name="id_jabatan_kerja_tenaga_ahli[]"
-								aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
-								data-live-search="true" required>
-								<?php if($jabker != null):
-								foreach ($jabker as $row):?>
-								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="KategoriTenagaAhli">Kategori *</label>
-							<?php if($kategori_tenaga_ahli != null):
-								$index = 0;
-								foreach ($kategori_tenaga_ahli as $row):
-									if($index == 0) :?>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="radio" aria-label="Checkbox for following text input"
-											value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli"
-											required>
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="<?= $row['kategori_tenaga_ahli']?>" readonly
-									style="background-color: white;">
-							</div>
-							<?php else : ?>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="radio" aria-label="Checkbox for following text input"
-											value="<?= $row['id_kategori_tenaga_ahli']?>" name="kategori_tenaga_ahli">
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="<?= $row['kategori_tenaga_ahli']?>" readonly
-									style="background-color: white;">
-							</div>
-							<?php endif; $index++; endforeach; endif?>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="hidden" name="is_asesor" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
-											name="is_asesor">
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="Asesor" readonly style="background-color: white;">
-							</div>
-
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="hidden" name="is_instruktur" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
-											name="is_instruktur">
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="Instruktur" readonly style="background-color: white;">
-							</div>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
-									name="file_tenaga_ahli">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
-								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
-									Pilih file tenaga ahli
-								</small>
-							</div>
+							<label for="namaAkunKegiatan">Nama Akun Kegiatan *</label>
+							<input type="text" class="form-control" id="nama-akun-kegiatan"
+								name="nama_akun_kegiatan" placeholder="Contoh: Vokasi" required>
 						</div>
 
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-							Tenaga</button>
+							Akun Kegiatan</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -204,200 +37,31 @@
 			</div>
 		</div>
 	</div>
-	<!-- End modal tambah tenaga ahli -->
+	<!-- End modal tambah Akun Kegiatan -->
 
-	<!-- Edit Tenaga Ahli -->
-	<div class="modal fade bd-example-modal-lg" id="modal-edit-tenaga-ahli" tabindex="-1" role="dialog">
+	<!-- Edit Akun Kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-akun-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Tenaga Ahli</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Akun Kegiatan</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Tenaga_ahli/edit_tenaga_ahli_action"
+					<form method="POST" action=""
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="namaTenagaAhli">Nama Lengkap *</label>
-							<input type="text" class="form-control" id="edit-nama-tenaga-ahli"
-								name="edit_nama_lengkap_tenaga_ahli" placeholder="Contoh: Andi Setiawan" required>
-						</div>
-
-						<div class="form-group py-2">
-							<div class="row">
-								<div class="col">
-									<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
-									<input type="text" class="form-control" id="edit-tempat-lahir-tenaga-ahli"
-										name="edit_tempat_lahir_tenaga_ahli" placeholder="Contoh: Jakarta" required>
-								</div>
-								<div class="col">
-									<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
-									<input type="text" class="form-control js-daterangepicker"
-										id="edit-tanggal-lahir-tenaga-ahli" data-drops="up"
-										name="edit_tanggal_lahir_tenaga_ahli" value="" placeholder="Pilih tanggal lahir"
-										required>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="jenisKelamin">Jenis Kelamin *</label>
-							<select class="form-control" id="edit-jenis-kelamin-tenaga-ahli"
-								name="edit_id_jenis_kelamin_tenaga_ahli" required>
-								<option selected disabled>Pilih jenis kelamin</option>
-								<?php if($jenis_kelamin != null):
-								foreach ($jenis_kelamin as $row):?>
-								<option value="<?=$row['id_jenis_kelamin']?>"><?= $row['jenis_kelamin']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="nikTenagaAhli">NIK *</label>
-							<input type="text" class="form-control" id="edit-nik-tenaga-ahli"
-								name="edit_nik_tenaga_ahli" placeholder="Contoh: 1234567898765432" required>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="emailTenagaAhli">Email *</label>
-							<input type="email" class="form-control" id="edit-email-tenaga-ahli"
-								name="edit_email_tenaga_ahli" placeholder="Contoh: andisetiawan@email.com" required>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="alamatTenagaAhli">Alamat *</label>
-							<textarea type="text" data-autoresize class="form-control" id="edit-alamat-tenaga-ahli"
-								name="edit_alamat_tenaga_ahli" placeholder="Contoh: Jl. Jendral Sudirman No.123"
-								required></textarea>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="provinsiTenagaAhli">Provinsi *</label>
-							<select class="form-control" id="edit-provinsi-tenaga-ahli"
-								name="edit_id_provinsi_tenaga_ahli" onChange="getStateEditTenagaAhli(this.value);"
-								required>
-								<?php foreach ($provinsi as $row) : ?>
-								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
-								<?php endforeach ?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih
-										Provinsi terlebih dahulu</small></span></label>
-							<select class="form-control" id="edit-kota-tenaga-ahli"
-								name="edit_id_kota_kabupaten_tenaga_ahli" required>
-							</select>
-						</div>
-
-						<div class="row">
-							<div class="col">
-								<div class="form-group py-2">
-									<label for="nomorHandphone">Nomor Handphone *</label>
-									<input type="text" class="form-control" id="edit-nomor-handphone-tenaga-ahli"
-										name="edit_nomor_handphone_tenaga_ahli" placeholder="Contoh: +6282112341234"
-										required>
-								</div>
-							</div>
-							<div class="col">
-								<div class="form-group py-2">
-									<label for="nomorRumah">Nomor Rumah *</label>
-									<input type="text" class="form-control" id="edit-nomor-rumah-tenaga-ahli"
-										name="edit_nomor_rumah_tenaga_ahli" placeholder="Contoh: +6271112345" required>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
-							<select class="form-control selectpicker" id="edit-jabatan-kerja-tenaga-ahli"
-								name="edit_id_jabatan_kerja_tenaga_ahli[]"
-								aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
-								data-live-search="true">
-								<?php if($jabker != null):
-								foreach ($jabker as $row):?>
-								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
-								<?php endforeach; endif?>
-							</select>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="KategoriTenagaAhli">Kategori *</label>
-							<?php if($kategori_tenaga_ahli != null):
-								$index = 0;
-								foreach ($kategori_tenaga_ahli as $row):
-									if($index == 0) :?>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="radio" aria-label="Checkbox for following text input"
-											value="<?= $row['id_kategori_tenaga_ahli']?>"
-											name="edit_kategori_tenaga_ahli" required>
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="<?= $row['kategori_tenaga_ahli']?>" readonly
-									style="background-color: white;">
-							</div>
-							<?php else : ?>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="radio" aria-label="Checkbox for following text input"
-											value="<?= $row['id_kategori_tenaga_ahli']?>"
-											name="edit_kategori_tenaga_ahli">
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="<?= $row['kategori_tenaga_ahli']?>" readonly
-									style="background-color: white;">
-							</div>
-							<?php endif; $index++; endforeach; endif?>
-						</div>
-
-						<div class="form-group py-2">
-							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="hidden" name="edit_is_asesor" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
-											name="edit_is_asesor">
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="Asesor" readonly style="background-color: white;">
-							</div>
-
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<div class="input-group-text">
-										<input type="hidden" name="edit_is_instruktur" value=0>
-										<input type="checkbox" aria-label="Checkbox for following text input" value="1"
-											name="edit_is_instruktur">
-									</div>
-								</div>
-								<input type="text" class="form-control" aria-label="Text input with checkbox"
-									value="Instruktur" readonly style="background-color: white;">
-							</div>
-						</div>
-						<div class="form-group py-2">
-							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="edit-file-tenaga-ahli"
-									name="file_tenaga_ahli">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
-								<small id="edit-file-tenaga-ahli" class="form-text text-muted">
-									Pilih file tenaga ahli
-								</small>
-							</div>
+							<label for="namaAkunKegiatan">Nama Akun Kegiatan *</label>
+							<input type="text" class="form-control" id="edit-nama-akun-kegiatan"
+								name="edit_nama_akun_kegiatan" placeholder="Contoh: Vokasi SMA" required>
 						</div>
 
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
-							Tenaga</button>
+							Akun kegiatan</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -405,21 +69,1295 @@
 			</div>
 		</div>
 	</div>
-	<!-- End modal tambah tenaga ahli -->
+	<!-- End modal edit akun kegiatan -->
 
-	<!-- Delete Tenaga Ahli modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-delete-tenaga-ahli" tabindex="-1" role="dialog"
+	<!-- Modal Delete akun kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-akun-kegiatan" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus tenaga Ini?</h5>
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Akun Kegiatan Ini?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					Pastikan dengan benar bahwa tenaga ini ingin anda hapus!
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete akun kegiatan -->
+
+
+
+	<!-- Tambah Jenis Kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-jenis-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Jenis Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaJenisKegiatan">Nama Jenis Kegiatan *</label>
+							<input type="text" class="form-control" id="nama-jenis-kegiatan"
+								name="nama_jenis_kegiatan" placeholder="Contoh: Pelatihan" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Jenis Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah jenis Kegiatan -->
+
+	<!-- Edit jenis Kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-jenis-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Jenis Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaJenisKegiatan">Nama Jenis Kegiatan *</label>
+							<input type="text" class="form-control" id="edit-nama-jenis-kegiatan"
+								name="edit_nama_jenis_kegiatan" placeholder="Contoh: Vokasi SMA" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Jenis kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit jenis kegiatan -->
+
+	<!-- Modal Delete jenis kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-jenis-kegiatan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Jenis Kegiatan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete jenis kegiatan -->
+
+
+
+	<!-- Tambah Provinsi -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-provinsi" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Provinsi</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaProvinsi">Nama Provinsi *</label>
+							<input type="text" class="form-control" id="nama-provinsi"
+								name="nama_provinsi" placeholder="Contoh: Sumatera Selatan" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Provinsi</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah provinsi -->
+
+	<!-- Edit provinsi -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-provinsi" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Provinsi</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaProvinsi">Nama Provinsi *</label>
+							<input type="text" class="form-control" id="edit-provinsi"
+								name="edit_provinsi" placeholder="Contoh: Sumatera Selatan" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Provinsi</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit provinsi -->
+
+	<!-- Modal Delete provinsi -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-provinsi" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Provinsi Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete provinsi -->
+
+
+
+	<!-- Tambah Kabupaten Kota -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-kabupaten-kota" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Kabupaten Kota</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKabupatenKota">Nama Kabupaten Kota *</label>
+							<input type="text" class="form-control" id="nama-kabupaten-kota"
+								name="nama_kabupaten_kota" placeholder="Contoh: Kabupaten Banyuasin" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Kabupaten Kota</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah kabupaten kota -->
+
+	<!-- Edit Kabupaten Kota -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-kabupaten-kota" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Kabupaten Kota</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKabupatenKota">Nama Kabupaten Kota *</label>
+							<input type="text" class="form-control" id="edit-kabupaten-kota"
+								name="edit_kabupaten_kota" placeholder="Contoh: Kabupaten Banyuasin" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Kabupaten Kota</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit kabupaten Kota -->
+
+	<!-- Modal Delete kabupaten kota -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-kabupaten-kota" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Kabupaten Kota Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kabupaten kota -->
+
+
+
+	<!-- Tambah Kecamatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-kecamatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Kecamatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKecamatan">Nama Kecamatan *</label>
+							<input type="text" class="form-control" id="nama-kecamatan"
+								name="nama_kecamatan" placeholder="Contoh: Alang-alang Lebar" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Kecamatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah kecamatan -->
+
+	<!-- Edit Kecamatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-kecamatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Kecamatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKecamatan">Nama Kecamatan *</label>
+							<input type="text" class="form-control" id="edit-kecamatan"
+								name="edit_kecamatan" placeholder="Contoh: Demang Lebar Daun" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Kecamatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit Kecamatan -->
+
+	<!-- Modal Delete kecamatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-kecamatan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Kecamatan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kecamatan -->
+
+
+
+	<!-- Tambah kelurahan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-kelurahan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah kelurahan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKelurahan">Nama kelurahan *</label>
+							<input type="text" class="form-control" id="nama-kelurahan"
+								name="nama_kelurahan" placeholder="Contoh: Karya Baru" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							kelurahan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah kelurahan -->
+
+	<!-- Edit kelurahan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-kelurahan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit kelurahan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKelurahan">Nama kelurahan *</label>
+							<input type="text" class="form-control" id="edit-kelurahan"
+								name="edit_kelurahan" placeholder="Contoh: Karya Baru" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							kelurahan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit kelurahan -->
+
+	<!-- Modal Delete kelurahan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-kelurahan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus kelurahan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kelurahan -->
+
+
+	
+	<!-- Tambah status Kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-status-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Status Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaStatusKegiatan">Nama Status Kegiatan *</label>
+							<input type="text" class="form-control" id="nama-status-kegiatan"
+								name="nama_status_kegiatan" placeholder="Contoh: Belum Dilaksanakan" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Status Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah status kegiatan -->
+
+	<!-- Edit status kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-status-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit status kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namastatus">Nama status kegiatan *</label>
+							<input type="text" class="form-control" id="edit-status-kegiatan"
+								name="edit_status_kegiatan" placeholder="Contoh: Belum Dilaksanakan" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							status</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit status kegiatan -->
+
+	<!-- Modal Delete status kegiatan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-status-kegiatan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus status kegiatan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete status kegiatan -->
+
+
+
+	<!-- Tambah status peserta -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-status-peserta" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Status Peserta</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaStatusPeserta">Nama Status peserta *</label>
+							<input type="text" class="form-control" id="nama-status-peserta"
+								name="nama_status_peserta" placeholder="Contoh: Lulus Administrasi VVA" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Status Peserta</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah status peserta -->
+
+	<!-- Edit status peserta -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-status-peserta" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit status peserta</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaStatusPeserta">Nama Status Peserta *</label>
+							<input type="text" class="form-control" id="edit-status-peserta"
+								name="edit_status_peserta" placeholder="Contoh: Lulus administrasi VVA" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Status Peserta</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit status peserta -->
+
+	<!-- Modal Delete status peserta -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-status-peserta" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus status peserta Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete status peserta -->
+
+
+
+	<!-- Tambah status kategori ahli -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-kategori-ahli" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Kategori Ahli</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKategoriAhli">Nama Kategori Ahli *</label>
+							<input type="text" class="form-control" id="nama-kategori-ahli"
+								name="nama_kategori_ahli" placeholder="Contoh: Ahli bangunan dan jalan" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Kategori Ahli</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah kategori ahli -->
+
+	<!-- Edit kategori ahli -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-kategori-ahli" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Kategori Ahli</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaKategoriAhli">Nama Kategori Ahli *</label>
+							<input type="text" class="form-control" id="edit-kategori-ahli"
+								name="edit_kateogori_ahli" placeholder="Contoh: Ahli jalan dan jembatan" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Kategori Ahli</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit kategori ahli -->
+
+	<!-- Modal Delete kategori ahli -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-kategori-ahli" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Kategori Ahli Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kategori ahli -->
+
+
+
+	<!-- Tambah status jataban kerja -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-jabatan-kerja" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Jabatan Kerja</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaJabatanKerja">Nama Jabatan Kerja *</label>
+							<input type="text" class="form-control" id="nama-jabatan-kerja"
+								name="nama_jabatan_kerja" placeholder="Contoh: Instruktur" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Jabatan Kerja</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah Jabatan Kerja -->
+
+	<!-- Edit Jabatan Kerja -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-jabatan-kerja" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Jabatan Kerja</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaJabatanKerja">Nama Jabatan Kerja *</label>
+							<input type="text" class="form-control" id="edit-jabatan-kerja"
+								name="edit_jabatan_kerja" placeholder="Contoh: Instruktur" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Jabatan Kerja</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit jabatan kerja -->
+
+	<!-- Modal Delete jabatan kerja -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-jabatan-kerja" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Jabatan Kerja Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kajabatan kerja -->
+
+
+
+	<!-- Tambah status perkawinan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-status-perkawinan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Status Perkawinan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaStatusPerkawinan">Nama Status Perkawinan *</label>
+							<input type="text" class="form-control" id="nama-status-perkawinan"
+								name="nama_status_perkawinan" placeholder="Contoh: Menikah" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Status Perkawinan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah status perkawinan -->
+
+	<!-- Edit status perkawinan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-status-perkawinan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Status Perkawinan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaStatusPerkawinan">Nama Status Perkawinan *</label>
+							<input type="text" class="form-control" id="edit-status-perkawinan"
+								name="edit_status_perkawinan" placeholder="Contoh: Menikah" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Status Perkawinan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit status perkawinan -->
+
+	<!-- Modal Delete status perkawinan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-status-perkawinan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Status Perkawinan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete status perkawinan -->
+
+
+
+	<!-- Tambah status rumah -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-status-rumah" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Status Rumah</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaStatusRumah">Nama Status Rumah *</label>
+							<input type="text" class="form-control" id="nama-status-rumah"
+								name="nama_status_rumah" placeholder="Contoh: Milik Sendiri" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Status Rumah</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah status rumah -->
+
+	<!-- Edit status rumah -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-status-rumah" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Status Rumah</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaStatusRumah">Nama Status Rumah *</label>
+							<input type="text" class="form-control" id="edit-status-rumah"
+								name="edit_status_rumah" placeholder="Contoh: Milik Sendiri" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Status Rumah</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit status rumah -->
+
+	<!-- Modal Delete status rumah -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-status-rumah" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Status Rumah Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete status -->
+
+
+
+	<!-- Tambah Pendidikan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-pendidikan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Pendidikan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaPendidikan">Nama Pendidikan *</label>
+							<input type="text" class="form-control" id="nama-pendidikan"
+								name="nama_pendidikan" placeholder="Contoh: S1" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Pendidikan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah pendidikan -->
+
+	<!-- Edit pendidikan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-pendidikan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Pendidikan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaPendidikan">Nama Pendidikan *</label>
+							<input type="text" class="form-control" id="edit-pendidikan"
+								name="edit_pendidikan" placeholder="Contoh: S1" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Pendidikan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal Pendidikan -->
+
+	<!-- Modal Delete Pendidikan -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-pendidikan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Pendidikan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal pendidikan -->
+
+
+
+	<!-- Tambah skkni -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-skkni" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah SKKNI</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaSkkni">Nama SKKNI *</label>
+							<input type="text" class="form-control" id="nama-skkni"
+								name="nama_skkni" placeholder="Contoh: SKKNI" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							SKKNI</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah skkni -->
+
+	<!-- Edit skkni -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-skkni" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit SKKNI</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaSkkni">Nama SKKNI *</label>
+							<input type="text" class="form-control" id="edit-skkni"
+								name="edit_skkni" placeholder="Contoh: SKKNI" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							SKKNI</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit skkni -->
+
+	<!-- Modal Delete skkni -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-pendidikan" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus SKKNI Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete skkni -->
+
+
+
+	<!-- Tambah modul -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-modul" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Modul</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaModul">Nama Modul *</label>
+							<input type="text" class="form-control" id="nama-modul"
+								name="nama_modul" placeholder="Contoh: Modul" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Modul</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah modul -->
+
+	<!-- Edit modul -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-modul" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Modul</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaModul">Nama Modul *</label>
+							<input type="text" class="form-control" id="edit-modul"
+								name="edit_modul" placeholder="Contoh: Modul" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							Modul</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit modul -->
+
+	<!-- Modal Delete modul -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-modul" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Modul Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
@@ -431,6 +1369,97 @@
 		</div>
 	</div>
 	<!-- End modal delete modul -->
+
+
+
+	<!-- Tambah pns -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-pns" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah PNS</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaPns">Nama PNS *</label>
+							<input type="text" class="form-control" id="nama-pns"
+								name="nama_pns" placeholder="Contoh: PNS" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+							Pns</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal tambah pns -->
+
+	<!-- Edit pns -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-pns" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Pns</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form method="POST" action=""
+						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="namaPns">Nama Pns *</label>
+							<input type="text" class="form-control" id="edit-pns"
+								name="edit_pns" placeholder="Contoh: PNS" required>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+							PNS</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+							data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal edit pns -->
+
+	<!-- Modal Delete pns -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-pns" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus PNS Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa anda ingin menghapus data ini!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete pns -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -470,71 +1499,72 @@
 					</div>
 					<?php endif; ?>
 
-
-					<!-- Content Row -->
-					<div class="row mt-4">
-
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card h-100 p-2 card-recap">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div class="h5 font-weight-bold text-black text-uppercase mb-2">
-												Total Jumlah
-											</div>
-											<div class="row no-gutters align-items-center">
-
-												<div class="h5 mb-0 mr-3 text-gray-800">100 Tenaga Ahli</div>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card h-100 p-2 card-recap">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div class="h5 font-weight-bold text-black text-uppercase mb-2">
-												Total Jumlah
-											</div>
-											<div class="row no-gutters align-items-center">
-
-												<div class="h5 mb-0 mr-3 text-gray-800">100 Mitra Terampil</div>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-
 					<div class="container-fluid mt-2 mb-4 container-background">
 						<div class="col d-flex justify-content-between button-field">
 							<div class="">
-								<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal"
-									data-target="#modal-filter-tenaga-ahli"><img class="img-profile mr-2"
-										src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
-								<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-									data-target="#modal-tambah-tenaga-ahli"><img class="img-profile mr-2"
-										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
-								<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
-									data-target="#modal-import-excel-tambah-tenaga-ahli"><img class="img-profile mr-2"
-										src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
-								<button class="btn btn-success btn-import-kegiatan" data-toggle="modal"
-									data-target="#modal-export-tenaga-ahli"><img class="img-profile mr-2"
-										src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</button>
-							</div>
-							<div class="">
-								<a class="btn btn-danger btn-import-kegiatan" href=""
-									id="btn-download-format-tenaga-ahli"><img class="img-profile mr-2"
-										src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format
-									Excel</a>
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-akun-kegiatan"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Akun</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-jenis-kegiatan"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jenis</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-provinsi"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Provinsi</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-kabupaten-kota"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kab Kota</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-kecamatan"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kecamatan</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-kelurahan"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kelurahan</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-status-kegiatan"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Kegiatan</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-status-peserta"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Peserta</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-kategori-ahli"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kategori Ahli</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-jabatan-kerja"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jabker</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-status-perkawinan"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Perkawinan</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-status-rumah"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Rumah</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-pendidikan"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Pendidikan</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-skkni"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">SKKNI</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-modul"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Modul</button>
+
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
+									data-target="#modal-tambah-pns"><img class="img-profile mr-2"
+										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">PNS</button>
 							</div>
 						</div>
 						<div class="card-body">
@@ -550,19 +1580,56 @@
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="#provinsi-kegiatan" role="tab"
-											data-toggle="tab">Provinsi Kegiatan</a>
+											data-toggle="tab">Provinsi</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#kota-kegiatan" role="tab" data-toggle="tab">Kota
-											Kegiatan</a>
+										<a class="nav-link" href="#kota-kegiatan" role="tab" data-toggle="tab">Kabupaten
+											Kota</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#kota-kegiatan" role="tab"
+											data-toggle="tab">Kecamatan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#kota-kegiatan" role="tab"
+											data-toggle="tab">Kelurahan</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="#status-kegiatan" role="tab" data-toggle="tab">Status
 											Kegiatan</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Jabatan
-											Kerja</a>
+										<a class="nav-link" href="#status-kegiatan" role="tab" data-toggle="tab">Status
+											Peserta Kegiatan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#status-kegiatan" role="tab"
+											data-toggle="tab">Kategori Tenaga Ahli</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab"
+											data-toggle="tab">Jabker</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Status
+											Perkawinan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Status
+											Rumah</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab"
+											data-toggle="tab">Pendidikan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">SKKNI</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Modul</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">PNS</a>
 									</li>
 								</ul>
 							</div>
@@ -616,12 +1683,72 @@
 									</table>
 								</div>
 
+								<div class="tab-pane fade show" role="tabpanel" id="kecamatan-kegiatan">
+									<table id="kecamatan_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Kecamatan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="kelurahan-kegiatan">
+									<table id="kelurahan_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Kelurahan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="kelurahan-kegiatan">
+									<table id="kelurahan_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Kelurahan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
 								<div class="tab-pane fade show" role="tabpanel" id="status-kegiatan">
 									<table id="status_kegiatan_table" class="display">
 										<thead>
 											<tr>
 												<th>No</th>
-												<th>Nama Status</th>
+												<th>Nama Status Kegiatan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="status-peserta-kegiatan">
+									<table id="status_peserta_kegiatan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Status Peserta Kegiatan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="kategori-tenaga-ahli">
+									<table id="kategori_tenaga_ahli_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Kategori Tenaga Ahli</th>
 												<th>Aksi</th>
 											</tr>
 										</thead>
@@ -639,6 +1766,79 @@
 										</thead>
 									</table>
 								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="status-perkawinan">
+									<table id="status_perkawinan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Status Perkawinan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="status-rumah">
+									<table id="status_rumah_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Status Rumah</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="nama-pendidikan">
+									<table id="pendidikan_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Pendidikan</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="nama-skkni">
+									<table id="skkni_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama SKKNI</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="nama-modul">
+									<table id="modul_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama Modul</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="nama-pns">
+									<table id="pns_table" class="display">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Nama PNS</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
 							</div>
 
 						</div>

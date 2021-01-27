@@ -524,7 +524,7 @@
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Import File Excel tambah Tenaga Ahli & Mitra Terampil</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Import File Excel tambah Tenaga Ahli & Tenaga Terampil</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -533,13 +533,13 @@
 					<!-- <form method="POST" action="<?= base_url()?>Tenaga_ahli/import_tenaga_ahli_action" enctype="multipart/form-data"> -->
 					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Mitra Terampil</label>
+							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Tenaga Terampil</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
 									name="file_excel_tambah_tenaga">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
-									Pilih file excel tambah tenaga ahli & mitra terampil
+									Pilih file excel tambah tenaga ahli & Tenaga terampil
 								</small>
 							</div>
 						</div>
@@ -576,7 +576,7 @@
 						</div>
 						<div class="col mb-2">
 						<a class="btn btn-success btn-block" href="" id="btn-export-mitra-terampil"><img class="img-profile mr-2"
-									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Mitra Terampil</a>
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tenaga Terampil</a>
 					</div>
 				</div>
 			</div>
@@ -602,7 +602,7 @@
 
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h2 font-weight-bold mb-4 mt-4">Tenaga Ahli dan Mitra</h1>
+						<h1 class="h2 font-weight-bold mb-4 mt-4">Tenaga Ahli dan Tenaga Terampil</h1>
 					</div>
 
 					<!-- Alert -->
@@ -655,7 +655,7 @@
 											</div>
 											<div class="row no-gutters align-items-center">
 
-												<div class="h5 mb-0 mr-3 text-gray-800"><?= $total_tenaga_terampil?> Mitra Terampil</div>
+												<div class="h5 mb-0 mr-3 text-gray-800"><?= $total_tenaga_terampil?> Tenaga Terampil</div>
 
 											</div>
 										</div>
@@ -694,7 +694,7 @@
                                         <a class="nav-link active" href="#tenaga-ahli" role="tab" data-toggle="tab">Tenaga Ahli</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#mitra-terampil" role="tab" data-toggle="tab">Mitra Terampil</a>
+                                        <a class="nav-link" href="#mitra-terampil" role="tab" data-toggle="tab">Tenaga Terampil</a>
                                     </li>
                                 </ul>
                             </div>
