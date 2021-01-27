@@ -152,7 +152,7 @@
 							<label for="bannerKegiatan">Banner Kegiatan *</label>
 							<div id="profile-container">
 								<image id="banner-image" src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
-								<input id="banner-kegiatan" type="file" name="foto_banner_kegiatan" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" required="" capture>
+								<input id="banner-kegiatan" type="file" name="foto_banner_kegiatan" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" required="" capture>
 							</div>
 						</div>
 						<div class="form-group py-2">
@@ -290,7 +290,7 @@
 							<label for="editBannerKegiatan">Banner Kegiatan *</label>
 							<div id="profile-container">
 								<image id="banner-image-edit" />
-								<input id="edit-banner-kegiatan" type="file" name="edit_foto_banner_kegiatan" placeholder="Photo" alt="Pilih Foto" capture>
+								<input id="edit-banner-kegiatan" type="file" name="edit_foto_banner_kegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" capture>
 							</div>
 							<div class="d-flex flex-column">
 								<small class="text-secondary text-center pt-2">Klik gambar untuk mengganti foto banner kegiatan</small>
@@ -425,7 +425,7 @@
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel_import_kegiatan" required>
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel_import_kegiatan" accept=".xlsx, .xls, .csv" required>
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah kegiatan
@@ -443,6 +443,144 @@
 		</div>
 	</div>
 	<!-- End of import Excel Tambah Kegiatan Modal -->
+
+	<!-- Update Status Kegiatan VVA Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan-vva" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">VVA</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+						<a class="btn btn-success btn-import-kegiatan float-right mb-4" href="" id="btn-export-peserta-vva"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta Kegiatan</a>
+						<div class="form-group pt-2">
+							<label for="fileMateriKegiatan">File Excel VVA *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel" accept=".xlsx, .xls, .csv" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
+								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+									Pilih file excel VVA yang ingin diupload
+								</small>
+							</div>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Ganti Status Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Update Status Kegiatan VVA Modal -->
+
+	<!-- Update Status Kegiatan asesment Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan-asesment" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Asesment</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+						<a class="btn btn-success btn-import-kegiatan float-right mb-4" href="" id="btn-export-peserta-asesment"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta Kegiatan</a>
+						<div class="form-group pt-2">
+							<label for="fileMateriKegiatan">File Excel Asesment *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel" accept=".xlsx, .xls, .csv" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
+								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+									Pilih file excel asesment yang ingin diupload
+								</small>
+							</div>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Ganti Status Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Update Status Kegiatan asesment Modal -->
+
+	<!-- Update Status Kegiatan berita acara Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan-berita-acara" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Berita Acara</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="editNamaKegiatan">Deskripsi Berita Acara *</label>
+							<input type="text" class="form-control" id="deskripsi-berita-acara" name="deskripsi_berita_acara" placeholder="Contoh: Berita Acara Kegiatan" required>
+						</div>
+						<div class="form-group pt-2">
+							<label for="fileMateriKegiatan">File Berita Acara *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_berita_acara" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+									Pilih file berita acara yang ingin diupload
+								</small>
+							</div>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Ganti Status Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Update Status Kegiatan berita acara Modal -->
+
+	<!-- Update Status Kegiatan Invoice Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan-invoice" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Invoice</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="editNamaKegiatan">Deskripsi Invoice *</label>
+							<input type="text" class="form-control" id="deskripsi-invoice" name="deskripsi_invoice" placeholder="Contoh: Invoice Kegiatan" required>
+						</div>
+						<div class="form-group pt-2">
+							<label for="fileMateriKegiatan">File Invoice *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_invoice" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+									Pilih file invoice yang ingin diupload
+								</small>
+							</div>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Ganti Status Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Update Status Kegiatan berita acara Modal -->
 
 	<!-- Import Excel Tambah Peserta Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-peserta-kegiatan" tabindex="-1" role="dialog">

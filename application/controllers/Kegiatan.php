@@ -576,7 +576,7 @@ class Kegiatan extends CI_Controller
             $excel->getActiveSheet()->getStyle('L3')->applyFromArray($style_col);
 
             //get data
-            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan($this->session->userdata('token'));
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan( null, $this->session->userdata('token'));
             if ($data['kegiatan']['status'] == "Success") {
                 if (count($data['kegiatan']['data']) > 0) {
                     $data['kegiatan'] = $data['kegiatan']['data'];
@@ -917,10 +917,10 @@ class Kegiatan extends CI_Controller
             }
             if ($tambah_berita_acara['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_berita_acara['message']);
-                redirect();
+                redirect('pupr/events');
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_berita_acara['message']);
-                redirect();
+                redirect('pupr/events');
             }
         } else {
             redirect("pupr/login");
@@ -970,18 +970,16 @@ class Kegiatan extends CI_Controller
                 $id_kegiatan,
                 $this->session->userdata('token')
             );
-            var_dump($tambah_invoice);
-            die;
 
             if ($tambah_invoice == null) {
                 $this->load->view('error_page');
             }
             if ($tambah_invoice['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_invoice['message']);
-                redirect();
+                redirect("pupr/events");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_invoice['message']);
-                redirect();
+                redirect("pupr/events");
             }
         } else {
             redirect("pupr/login");

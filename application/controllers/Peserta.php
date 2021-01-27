@@ -580,7 +580,7 @@ class Peserta extends CI_Controller
             redirect('pupr/login');
     }
 
-    public function export_peserta_asessment($id_kegiatan)
+    public function export_peserta_asesment($id_kegiatan)
     {
         include_once APPPATH . 'third_party/PHPExcel/PHPExcel.php';
         include APPPATH . 'third_party/PHPExcel/PHPExcel/IOFactory.php';
