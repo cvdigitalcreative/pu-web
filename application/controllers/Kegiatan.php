@@ -760,20 +760,6 @@ class Kegiatan extends CI_Controller
             $id_jenis_kegiatan = $this->input->post('id_jenis_kegiatan');
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
-            $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
-            if (count($id_asesor_kegiatan) == 1)
-                $id_asesor_kegiatan = $id_asesor_kegiatan[0];
-            else {
-                $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
-                $id_asesor_kegiatan = "[" . $id_asesor_kegiatan . "]";
-            }
-            $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
-            if (count($id_instruktur_kegiatan) == 1)
-                $id_instruktur_kegiatan = $id_instruktur_kegiatan[0];
-            else {
-                $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
-                $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan . "]";
-            }
             if ($_FILES['file_materi_kegiatan']['size'] == 0)
                 $file_materi_kegiatan = null;
             else
@@ -795,8 +781,6 @@ class Kegiatan extends CI_Controller
                 $id_jenis_kegiatan,
                 $id_provinsi,
                 $id_kota_kabupaten,
-                $id_asesor_kegiatan,
-                $id_instruktur_kegiatan,
                 $file_materi_kegiatan,
                 $id_kegiatan,
                 $this->session->userdata('token')

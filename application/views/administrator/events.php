@@ -346,27 +346,6 @@
 							<label for="editLokasiKegiatan">Lokasi Kegiatan *</label>
 							<textarea type="text" data-autoresize class="form-control" id="edit-lokasi-kegiatan" name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
 						</div>
-
-						<div class="form-group py-2">
-							<label for="editInstrukturKegiatan">Instruktur kegiatan *</label>
-							<select class="form-control selectpicker" id="edit-instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true" required>
-								<?php if ($instruktur != null) :
-									foreach ($instruktur as $row2) : ?>
-										<option value="<?= $row2['id_tenaga_ahli'] ?>"><?= $row2['nama_lengkap'] ?></option>
-								<?php endforeach;
-								endif ?>
-							</select>
-						</div>
-						<div class="form-group py-2">
-							<label for="editAssesorKegiatan">Assesor kegiatan *</label>
-							<select class="form-control selectpicker" id="edit-assesor-kegiatan" name="id_asesor_kegiatan[]" aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
-								<?php if ($asesor != null) :
-									foreach ($asesor as $row2) : ?>
-										<option value="<?= $row2['id_tenaga_ahli'] ?>"><?= $row2['nama_lengkap'] ?></option>
-								<?php endforeach;
-								endif ?>
-							</select>
-						</div>
 						<div class="form-group py-2">
 							<label for="editFileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
