@@ -35,7 +35,7 @@
 		<a class="nav-link <?=$this->uri->segment(2) == 'experts' ? 'disabled' : ''?>"
 			href="<?=base_url('pupr/experts/')?>">
 			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/ahli-menu.svg')?>">
-			<span>Tenaga Ahli & Mitra</span>
+			<span>Tenaga Ahli & Terampil</span>
 		</a>
 	</li>
 
