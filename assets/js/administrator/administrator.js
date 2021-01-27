@@ -1,8 +1,7 @@
 $(document).ready(function () {
 
 	$('body').on('hidden.bs.modal', function () {
-		if($('.modal.show').length > 0)
-		{
+		if ($('.modal.show').length > 0) {
 			$('body').addClass('modal-open');
 		}
 	});
@@ -340,8 +339,8 @@ Tidak ada poster kegiatan`					}
 		processing: true,
 		serverSide: false,
 		scrollY: "400px",
-    scrollX: true,
-    scrollCollapse: true,
+		scrollX: true,
+		scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -357,7 +356,7 @@ Tidak ada poster kegiatan`					}
 					if (data == '-') {
 						return `
 					<img class="image-hover" src="${BASE_URL}assets/image/pupr-profile-user.svg" style="width: 75px; height: 75px; overflow: hidden;">`
-					}else {
+					} else {
 						return `
 					<img class="image-hover" src="${data}" style="width: 75px; height: 75px; overflow: hidden;">`
 					}
@@ -475,9 +474,9 @@ Tidak ada poster kegiatan`					}
 				method: 'POST',
 				data: {
 					'filter_id_provinsi_tenaga_ahli': filter_id_provinsi_tenaga_ahli,
-		"filter_jabatan_kerja_tenaga_ahli": filter_jabatan_kerja_tenaga_ahli,
-		'filter_is_asesor_tenaga_ahli': filter_is_asesor_tenaga_ahli,
-		'filter_is_instruktur_tenaga_ahli': filter_is_instruktur_tenaga_ahli
+					"filter_jabatan_kerja_tenaga_ahli": filter_jabatan_kerja_tenaga_ahli,
+					'filter_is_asesor_tenaga_ahli': filter_is_asesor_tenaga_ahli,
+					'filter_is_instruktur_tenaga_ahli': filter_is_instruktur_tenaga_ahli
 				}
 			},
 			columns: [
@@ -585,9 +584,9 @@ Tidak ada poster kegiatan`					}
 				method: 'POST',
 				data: {
 					'filter_id_provinsi_tenaga_ahli': filter_id_provinsi_tenaga_ahli,
-		"filter_jabatan_kerja_tenaga_ahli": filter_jabatan_kerja_tenaga_ahli,
-		'filter_is_asesor_tenaga_ahli': filter_is_asesor_tenaga_ahli,
-		'filter_is_instruktur_tenaga_ahli': filter_is_instruktur_tenaga_ahli
+					"filter_jabatan_kerja_tenaga_ahli": filter_jabatan_kerja_tenaga_ahli,
+					'filter_is_asesor_tenaga_ahli': filter_is_asesor_tenaga_ahli,
+					'filter_is_instruktur_tenaga_ahli': filter_is_instruktur_tenaga_ahli
 				}
 			},
 			columns: [
@@ -677,10 +676,6 @@ Tidak ada poster kegiatan`					}
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -741,10 +736,6 @@ Tidak ada poster kegiatan`					}
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -805,10 +796,6 @@ Tidak ada poster kegiatan`					}
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -867,8 +854,8 @@ Tidak ada poster kegiatan`					}
 		processing: true,
 		serverSide: false,
 		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
+		// scrollX: true,
+		// scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -928,8 +915,8 @@ Tidak ada poster kegiatan`					}
 		processing: true,
 		serverSide: false,
 		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
+		// scrollX: true,
+		// scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -965,7 +952,7 @@ Tidak ada poster kegiatan`					}
 			{
 				targets: 1,
 				width: "400px",
-			},	
+			},
 			{
 				targets: 2,
 				width: "600px",
@@ -980,8 +967,8 @@ Tidak ada poster kegiatan`					}
 		processing: true,
 		serverSide: false,
 		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
+		// scrollX: true,
+		// scrollCollapse: true,
 		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
@@ -1008,8 +995,8 @@ Tidak ada poster kegiatan`					}
 						return `
 							<img class="image-hover" src="${data}" style="width: 100px; height: 100px; overflow: hidden; object-fit: cover;">`
 					}
-				else {
-					return `
+					else {
+						return `
 						Tidak ada gambar berita`
 					}
 				}
@@ -1038,7 +1025,7 @@ Tidak ada poster kegiatan`					}
 			{
 				targets: 1,
 				className: "truncate-judul-berita"
-			},	
+			},
 			{
 				targets: 2,
 				className: "truncate-berita"
@@ -1046,14 +1033,12 @@ Tidak ada poster kegiatan`					}
 		]
 	});
 
+	// ====================================== MASTER DATA DATATABLES =================================
+	//Akun Kegiatan
 	$('#akun_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -1075,21 +1060,35 @@ Tidak ada poster kegiatan`					}
 				data: 'id_akun_kegiatan',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-edit-akun-kegiatan-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-akun-kegiatan-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
 		]
 	})
 
+	$('table').on('click', '#btn-edit-akun-kegiatan-master', function () {
+		if ($('#akun_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_akun_kegiatan_action/${id}`)
+			$('#edit-nama-akun-kegiatan').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-akun-kegiatan').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-akun-kegiatan-master', function () {
+		if ($('#akun_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_akun_kegiatan_action/${id}`)
+			$('#modal-delete-akun-kegiatan').modal('show')
+		}
+	})
+	
+
+	//Jenis Kegiatan
 	$('#jenis_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -1111,20 +1110,34 @@ Tidak ada poster kegiatan`					}
 				data: 'id_jenis_kegiatan',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-edit-jenis-kegiatan-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-jenis-kegiatan-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
 		]
 	})
+
+	$('table').on('click', '#btn-edit-jenis-kegiatan-master', function () {
+		if ($('#jenis_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_jenis_kegiatan_action/${id}`)
+			$('#edit-nama-jenis-kegiatan').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-jenis-kegiatan').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-jenis-kegiatan-master', function () {
+		if ($('#jenis_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_jenis_kegiatan_action/${id}`)
+			$('#modal-delete-jenis-kegiatan').modal('show')
+		}
+	})
+
+	// Provinsi Kegiatan
 	$('#provinsi_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -1146,55 +1159,46 @@ Tidak ada poster kegiatan`					}
 				data: 'id_provinsi',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-edit-provinsi-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-provinsi-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
 		]
 	})
+
+	$('table').on('click', '#btn-edit-provinsi-master', function () {
+		if ($('#provinsi_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_provinsi_action/${id}`)
+			$('#edit-provinsi').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-provinsi').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-provinsi-master', function () {
+		if ($('#provinsi_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_provinsi_action/${id}`)
+			$('#modal-delete-provinsi').modal('show')
+		}
+	})
+
+	// Kabupaten Kota Kegiatan
 	$('#kota_kegiatan_table').DataTable({
-		"order": [0, 'asc'],
-		processing: true,
-		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
-		pagingType: "full_numbers",
-		language: {
-			emptyTable: "Data tidak ditemukan!",
-		},
-		ajax: {
-			url: `${BASE_URL}Master/dataKotaKegiatan`,
-			type: "GET",
-		},
-		columns: [
-			{
-				data: 'no_kota',
-			},
-			{
-				data: 'kabupaten_kota',
-			},
-			
-				
-			{
-				data: 'id_kabupaten_kota',
-				render: function (data) {
-					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-				}
-			},
-		]
 	})
+
+	// Kecamatan Kegiatan
+	$('#kecamatan_kegiatan_table').DataTable({
+	})
+
+	// Kecamatan Kegiatan
+	$('#kelurahan_kegiatan_table').DataTable({
+	})
+
+	// status kegiatan table
 	$('#status_kegiatan_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -1216,20 +1220,131 @@ Tidak ada poster kegiatan`					}
 				data: 'id_status_kegiatan',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-edit-status-kegiatan-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-status-kegiatan-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
 		]
 	})
+
+	$('table').on('click', '#btn-edit-status-kegiatan-master', function () {
+		if ($('#status_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_status_kegiatan_action/${id}`)
+			$('#edit-status-kegiatan').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-status-kegiatan').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-status-kegiatan-master', function () {
+		if ($('#status_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_status_kegiatan_action/${id}`)
+			$('#modal-delete-status-kegiatan').modal('show')
+		}
+	})
+
+	// status peserta kegiatan
+	$('#status_peserta_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataStatusPeserta`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_status_peserta',
+			},
+			{
+				data: 'status_peserta_kegiatan',
+			},
+			
+				
+			{
+				data: 'id_status_peserta_kegiatan',
+				render: function (data) {
+					return `
+					<button id='btn-edit-status-peserta-kegiatan-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-status-peserta-kegiatan-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-status-peserta-kegiatan-master', function () {
+		if ($('#status_peserta_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_status_peserta_action/${id}`)
+			$('#edit-status-peserta').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-status-peserta').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-status-peserta-kegiatan-master', function () {
+		if ($('#status_peserta_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_status_peserta_action/${id}`)
+			$('#modal-delete-status-peserta').modal('show')
+		}
+	})
+
+	//kategori tenaga ahli
+	$('#kategori_tenaga_ahli_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataKategoriTenagaAhli`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_kategori_tenaga_ahli',
+			},
+			{
+				data: 'kategori_tenaga_ahli',
+			},
+			
+				
+			{
+				data: 'id_kategori_tenaga_ahli',
+				render: function (data) {
+					return `
+					<button id='btn-edit-kategori-tenaga-ahli-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-kategori-tenaga-ahli-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-kategori-tenaga-ahli-master', function () {
+		if ($('#kategori_tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_kategori_tenaga_ahli_action/${id}`)
+			$('#edit-kategori-ahli').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-kategori-ahli').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-kategori-tenaga-ahli-master', function () {
+		if ($('#kategori_tenaga_ahli_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_kategori_tenaga_ahli_action/${id}`)
+			$('#modal-delete-kategori-ahli').modal('show')
+		}
+	})
+	//jabker
 	$('#jabatan_kerja_table').DataTable({
 		"order": [0, 'asc'],
 		processing: true,
 		serverSide: false,
-		// scrollY: true,
-    // scrollX: true,
-    // scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -1251,12 +1366,320 @@ Tidak ada poster kegiatan`					}
 				data: 'id_jabker',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-edit-jabker-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-jabker-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
 		]
 	})
+
+	$('table').on('click', '#btn-edit-jabker-master', function () {
+		if ($('#jabatan_kerja_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_jabker_action/${id}`)
+			$('#edit-jabatan-kerja').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-jabatan-kerja').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-jabker-master', function () {
+		if ($('#jabatan_kerja_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_jabker_action/${id}`)
+			$('#modal-delete-jabatan-kerja').modal('show')
+		}
+	})
+
+	$('#status_perkawinan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataStatusPerkawinan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_status_perkawinan',
+			},
+			{
+				data: 'status_perkawinan',
+			},
+			
+				
+			{
+				data: 'id_status_perkawinan',
+				render: function (data) {
+					return `
+					<button id='btn-edit-status-perkawinan-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-status-perkawinan-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-status-perkawinan-master', function () {
+		if ($('#status_perkawinan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_status_perkawinan_action/${id}`)
+			$('#edit-status-perkawinan').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-status-perkawinan').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-status-perkawinan-master', function () {
+		if ($('#status_perkawinan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_status_perkawinan_action/${id}`)
+			$('#modal-delete-status-perkawinan').modal('show')
+		}
+	})
+	
+
+	$('#status_rumah_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataStatusRumah`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_status_rumah',
+			},
+			{
+				data: 'status_rumah',
+			},
+			
+				
+			{
+				data: 'id_status_rumah',
+				render: function (data) {
+					return `
+					<button id='btn-edit-status-rumah-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-status-rumah-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-status-rumah-master', function () {
+		if ($('#status_rumah_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_status_rumah_action/${id}`)
+			$('#edit-status-rumah').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-status-rumah').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-status-rumah-master', function () {
+		if ($('#status_rumah_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_status_rumah_action/${id}`)
+			$('#modal-delete-status-rumah').modal('show')
+		}
+	})
+
+	
+
+	$('#pendidikan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataPendidikan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_pendidikan',
+			},
+			{
+				data: 'pendidikan',
+			},
+			
+				
+			{
+				data: 'id_pendidikan',
+				render: function (data) {
+					return `
+					<button id='btn-edit-pendidikan-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-pendidikan-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+	$('table').on('click', '#btn-edit-pendidikan-master', function () {
+		if ($('#pendidikan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_pendidikan_action/${id}`)
+			$('#edit-pendidikan').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-pendidikan').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-pendidikan-master', function () {
+		if ($('#pendidikan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_pendidikan_action/${id}`)
+			$('#modal-delete-pendidikan').modal('show')
+		}
+	})
+
+	$('#skkni_master_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataSKKNISKA`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_skkni_ska',
+			},
+			{
+				data: 'kategori_skkni',
+			},
+			
+				
+			{
+				data: 'id_kategori_skkni',
+				render: function (data) {
+					return `
+					<button id='btn-edit-skkni-ska-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-skkni-ska-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-skkni-ska-master', function () {
+		if ($('#skkni_master_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_skkni_ska_action/${id}`)
+			$('#edit-skkni').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-skkni').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-skkni-ska-master', function () {
+		if ($('#skkni_master_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_skkni_ska_action/${id}`)
+			$('#modal-delete-skkni').modal('show')
+		}
+	})
+
+
+	$('#kategori_modul_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataKategoriModul`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_kategori_modul',
+			},
+			{
+				data: 'kategori_modul',
+			},
+			
+				
+			{
+				data: 'id_kategori_modul',
+				render: function (data) {
+					return `
+					<button id='btn-edit-kategori-modul-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-kategori-modul-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-kategori-modul-master', function () {
+		if ($('#kategori_modul_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_kategori_modul_action/${id}`)
+			$('#edit-modul').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-modul').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-kategori-modul-master', function () {
+		if ($('#kategori_modul_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_kategori_modul_action/${id}`)
+			$('#modal-delete-modul').modal('show')
+		}
+	})
+
+	$('#pns_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataStatusPNS`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_status_pns',
+			},
+			{
+				data: 'status_pns',
+			},
+			
+				
+			{
+				data: 'id_status_pns',
+				render: function (data) {
+					return `
+					<button id='btn-edit-status-pns-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-status-pns-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-status-pns-master', function () {
+		if ($('#pns_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_status_pns_action/${id}`)
+			$('#edit-pns').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-pns').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-status-pns-master', function () {
+		if ($('#pns_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_status_pns_action/${id}`)
+			$('#modal-delete-pns').modal('show')
+		}
+	})
+
 
 	
 

@@ -157,7 +157,7 @@ class Master extends CI_Controller
     public function edit_status_perkawinan_action($id_status_perkawinan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $status_perkawinan = $this->input->post('nama_status_perkawinan');
+            $status_perkawinan = $this->input->post('edit_status_perkawinan');
             $edit = $this->Common_model->edit_status_perkawinan($status_perkawinan, $id_status_perkawinan, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -193,7 +193,7 @@ class Master extends CI_Controller
             redirect('pupr/login');
     }
 
-    // =========================== Status Perkawinan ============================
+    // =========================== Status Rumah ============================
     public function dataStatusRumah()
     {
         if ($this->session->userdata('logged_in') == true) {
@@ -260,7 +260,7 @@ class Master extends CI_Controller
     public function edit_status_rumah_action($id_status_rumah)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $status_rumah = $this->input->post('nama_status_rumah');
+            $status_rumah = $this->input->post('edit_status_rumah');
             $edit = $this->Common_model->edit_status_rumah($status_rumah, $id_status_rumah, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -363,7 +363,7 @@ class Master extends CI_Controller
     public function edit_pendidikan_action($id_pendidikan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $pendidikan = $this->input->post('nama_pendidikan');
+            $pendidikan = $this->input->post('edit_pendidikan');
             $edit = $this->Common_model->edit_pendidikan($pendidikan, $id_pendidikan, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -446,7 +446,7 @@ class Master extends CI_Controller
     public function tambah_jabker_action()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $jabker = $this->input->post('nama_jabker');
+            $jabker = $this->input->post('nama_jabatan_kerja');
             $add = $this->Common_model->add_jabker($jabker, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
@@ -466,7 +466,7 @@ class Master extends CI_Controller
     public function edit_jabker_action($id_jabker)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $jabker = $this->input->post('nama_jabker');
+            $jabker = $this->input->post('edit_jabatan_kerja');
             $edit = $this->Common_model->edit_jabker($jabker, $id_jabker, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -569,7 +569,7 @@ class Master extends CI_Controller
     public function edit_provinsi_action($id_provinsi)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $provinsi = $this->input->post('nama_provinsi');
+            $provinsi = $this->input->post('edit_nama_provinsi');
             $edit = $this->Common_model->edit_provinsi($provinsi, $id_provinsi, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -609,28 +609,26 @@ class Master extends CI_Controller
     public function dataKotaKegiatan()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
-            if ($data['provinsi'] == null) {
+            $data['kabupaten_kota'] = $this->Common_model->view_kabupaten_kota_all($this->session->userdata('token'));
+            if ($data['kabupaten_kota'] == null) {
                 $callback = array(
                     'data' => []
                 );
             } else {
-                if ($data['provinsi']['status'] == "Success") {
-                    if (count($data['provinsi']['data']) > 0) {
-                        $data['provinsi'] = $data['provinsi']['data'];
+                if ($data['kabupaten_kota']['status'] == "Success") {
+                    if (count($data['kabupaten_kota']['data']) > 0) {
+                        $data['kabupaten_kota'] = $data['kabupaten_kota']['data'];
 
-                        $no_kota = 1;
-                        $index_kota = 0;
-                        foreach ($data['provinsi'] as $val) {
-                            foreach ($this->Common_model->view_kabupaten_kota($val['id_provinsi'], $this->session->userdata('token'))['data'] as $val2) {
-                                $data['kota'][$index_kota] = $val2;
-                                $data['kota'][$index_kota]['no_kota'] = $no_kota;
-                                $index_kota++;
-                                $no_kota++;
-                            }
+                        $indexjenis = 0;
+                        $nojenis = 1;
+                        foreach ($data['kabupaten_kota'] as $val) {
+                            $data['kabupaten_kota'][$indexjenis]['no_kabupaten_kota'] = $nojenis;
+
+                            $indexjenis++;
+                            $nojenis++;
                         }
                         $callback = array(
-                            'data' => $data['kota']
+                            'data' => $data['kabupaten_kota']
                         );
                     } else {
                         $callback = array(
@@ -978,7 +976,7 @@ class Master extends CI_Controller
     public function tambah_skkni_ska_action()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $skkni_ska = $this->input->post('nama_skkni_ska');
+            $skkni_ska = $this->input->post('nama_skkni');
             $add = $this->Common_model->add_skkni_ska($skkni_ska, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
@@ -998,7 +996,7 @@ class Master extends CI_Controller
     public function edit_skkni_ska_action($id_skkni_ska)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $skkni_ska = $this->input->post('nama_skkni_ska');
+            $skkni_ska = $this->input->post('edit_skkni');
             $edit = $this->Common_model->edit_skkni_ska($skkni_ska, $id_skkni_ska, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -1081,7 +1079,7 @@ class Master extends CI_Controller
     public function tambah_kategori_modul_action()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $kategori_modul = $this->input->post('nama_kategori_modul');
+            $kategori_modul = $this->input->post('nama_modul');
             $add = $this->Common_model->add_kategori_modul($kategori_modul, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
@@ -1101,7 +1099,7 @@ class Master extends CI_Controller
     public function edit_kategori_modul_action($id_kategori_modul)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $kategori_modul = $this->input->post('nama_kategori_modul');
+            $kategori_modul = $this->input->post('edit_modul');
             $edit = $this->Common_model->edit_kategori_modul($kategori_modul, $id_kategori_modul, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -1184,7 +1182,7 @@ class Master extends CI_Controller
     public function tambah_kategori_tenaga_ahli_action()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $kategori_tenaga_ahli = $this->input->post('nama_kategori_tenaga_ahli');
+            $kategori_tenaga_ahli = $this->input->post('nama_kategori_ahli');
             $add = $this->Common_model->add_kategori_tenaga_ahli($kategori_tenaga_ahli, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
@@ -1204,7 +1202,7 @@ class Master extends CI_Controller
     public function edit_kategori_tenaga_ahli_action($id_kategori_tenaga_ahli)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $kategori_tenaga_ahli = $this->input->post('nama_kategori_tenaga_ahli');
+            $kategori_tenaga_ahli = $this->input->post('edit_kategori_ahli');
             $edit = $this->Common_model->edit_kategori_tenaga_ahli($kategori_tenaga_ahli, $id_kategori_tenaga_ahli, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -1254,13 +1252,13 @@ class Master extends CI_Controller
                     if (count($data['status_peserta']['data']) > 0) {
                         $data['status_peserta'] = $data['status_peserta']['data'];
 
-                        $indexstatus_peserta = 0;
-                        $nostatus_peserta = 1;
+                        $indexStatusPerkawinan = 0;
+                        $noStatusPerkawinan = 1;
                         foreach ($data['status_peserta'] as $val) {
-                            $data['status_peserta'][$indexstatus_peserta]['no_status_peserta'] = $nostatus_peserta;
+                            $data['status_peserta'][$indexStatusPerkawinan]['no_status_peserta'] = $noStatusPerkawinan;
 
-                            $indexstatus_peserta++;
-                            $nostatus_peserta++;
+                            $indexStatusPerkawinan++;
+                            $noStatusPerkawinan++;
                         }
                         $callback = array(
                             'data' => $data['status_peserta']
@@ -1284,11 +1282,12 @@ class Master extends CI_Controller
         }
     }
 
+
     public function tambah_status_peserta_action()
     {
         if ($this->session->userdata('logged_in') == true) {
             $status_peserta = $this->input->post('nama_status_peserta');
-            $add = $this->Common_model->add_status_peserta($status_peserta, $this->session->userdata('token'));
+            $add = $this->Common_model->add_status_peserta_kegiatan($status_peserta, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
             else {
@@ -1307,8 +1306,8 @@ class Master extends CI_Controller
     public function edit_status_peserta_action($id_status_peserta)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $status_peserta = $this->input->post('nama_status_peserta');
-            $edit = $this->Common_model->edit_status_peserta($status_peserta, $id_status_peserta, $this->session->userdata('token'));
+            $status_peserta = $this->input->post('edit_status_peserta');
+            $edit = $this->Common_model->edit_status_peserta_kegiatan($status_peserta, $id_status_peserta, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
             else {
@@ -1327,7 +1326,7 @@ class Master extends CI_Controller
     public function delete_status_peserta_action($id_status_peserta)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $delete = $this->Common_model->delete_status_peserta($id_status_peserta, $this->session->userdata('token'));
+            $delete = $this->Common_model->delete_status_peserta_kegiatan($id_status_peserta, $this->session->userdata('token'));
             if ($delete == null)
                 $this->load->view('error_page');
             else {
@@ -1410,7 +1409,7 @@ class Master extends CI_Controller
     public function edit_status_kegiatan_action($id_status_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $status_kegiatan = $this->input->post('nama_status_kegiatan');
+            $status_kegiatan = $this->input->post('edit_status_kegiatan');
             $edit = $this->Common_model->edit_status_kegiatan($status_kegiatan, $id_status_kegiatan, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -1513,7 +1512,7 @@ class Master extends CI_Controller
     public function edit_akun_kegiatan_action($id_akun_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $akun_kegiatan = $this->input->post('nama_akun_kegiatan');
+            $akun_kegiatan = $this->input->post('edit_nama_akun_kegiatan');
             $edit = $this->Common_model->edit_akun_kegiatan($akun_kegiatan, $id_akun_kegiatan, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -1616,7 +1615,7 @@ class Master extends CI_Controller
     public function edit_jenis_kegiatan_action($id_jenis_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $jenis_kegiatan = $this->input->post('nama_jenis_kegiatan');
+            $jenis_kegiatan = $this->input->post('edit_nama_jenis_kegiatan');
             $edit = $this->Common_model->edit_jenis_kegiatan($jenis_kegiatan, $id_jenis_kegiatan, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -1699,7 +1698,7 @@ class Master extends CI_Controller
     public function tambah_status_pns_action()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $status_pns = $this->input->post('nama_status_pns');
+            $status_pns = $this->input->post('nama_pns');
             $add = $this->Common_model->add_status_pns($status_pns, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
@@ -1719,7 +1718,7 @@ class Master extends CI_Controller
     public function edit_status_pns_action($id_status_pns)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $status_pns = $this->input->post('nama_status_pns');
+            $status_pns = $this->input->post('edit_pns');
             $edit = $this->Common_model->edit_status_pns($status_pns, $id_status_pns, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
