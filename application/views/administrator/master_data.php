@@ -19,7 +19,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>/Master/tambah_akun_kegiatan_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaAkunKegiatan">Nama Akun Kegiatan *</label>
@@ -110,7 +110,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_jenis_kegiatan_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaJenisKegiatan">Nama Jenis Kegiatan *</label>
@@ -201,7 +201,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_provinsi_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaProvinsi">Nama Provinsi *</label>
@@ -238,7 +238,7 @@
 						<div class="form-group py-2">
 							<label for="namaProvinsi">Nama Provinsi *</label>
 							<input type="text" class="form-control" id="edit-provinsi"
-								name="edit_provinsi" placeholder="Contoh: Sumatera Selatan" required>
+								name="edit_nama_provinsi" placeholder="Contoh: Sumatera Selatan" required>
 						</div>
 
 						<div class="menu-divider"></div>
@@ -565,7 +565,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_status_kegiatan_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaStatusKegiatan">Nama Status Kegiatan *</label>
@@ -656,7 +656,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_status_peserta_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaStatusPeserta">Nama Status peserta *</label>
@@ -747,7 +747,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_kategori_tenaga_ahli_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaKategoriAhli">Nama Kategori Ahli *</label>
@@ -784,7 +784,7 @@
 						<div class="form-group py-2">
 							<label for="namaKategoriAhli">Nama Kategori Ahli *</label>
 							<input type="text" class="form-control" id="edit-kategori-ahli"
-								name="edit_kateogori_ahli" placeholder="Contoh: Ahli jalan dan jembatan" required>
+								name="edit_kategori_ahli" placeholder="Contoh: Ahli jalan dan jembatan" required>
 						</div>
 
 						<div class="menu-divider"></div>
@@ -838,7 +838,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_jabker_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaJabatanKerja">Nama Jabatan Kerja *</label>
@@ -929,7 +929,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_status_perkawinan_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaStatusPerkawinan">Nama Status Perkawinan *</label>
@@ -1020,7 +1020,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_status_rumah_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaStatusRumah">Nama Status Rumah *</label>
@@ -1111,7 +1111,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_pendidikan_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaPendidikan">Nama Pendidikan *</label>
@@ -1202,7 +1202,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_skkni_ska_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaSkkni">Nama SKKNI *</label>
@@ -1255,7 +1255,7 @@
 	<!-- End modal edit skkni -->
 
 	<!-- Modal Delete skkni -->
-	<div class="modal fade bd-example-modal-lg" id="modal-delete-pendidikan" tabindex="-1" role="dialog"
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-skkni" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -1293,7 +1293,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_kategori_modul_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaModul">Nama Modul *</label>
@@ -1384,7 +1384,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_status_pns_action"
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaPns">Nama PNS *</label>
@@ -1587,11 +1587,11 @@
 											Kota</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#kota-kegiatan" role="tab"
+										<a class="nav-link" href="#kecamatan-kegiatan" role="tab"
 											data-toggle="tab">Kecamatan</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#kota-kegiatan" role="tab"
+										<a class="nav-link" href="#kelurahan-kegiatan" role="tab"
 											data-toggle="tab">Kelurahan</a>
 									</li>
 									<li class="nav-item">
@@ -1599,11 +1599,11 @@
 											Kegiatan</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#status-kegiatan" role="tab" data-toggle="tab">Status
+										<a class="nav-link" href="#status-peserta-kegiatan" role="tab" data-toggle="tab">Status
 											Peserta Kegiatan</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#status-kegiatan" role="tab"
+										<a class="nav-link" href="#kategori-tenaga-ahli" role="tab"
 											data-toggle="tab">Kategori Tenaga Ahli</a>
 									</li>
 									<li class="nav-item">
@@ -1611,25 +1611,25 @@
 											data-toggle="tab">Jabker</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Status
+										<a class="nav-link" href="#status-perkawinan" role="tab" data-toggle="tab">Status
 											Perkawinan</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Status
+										<a class="nav-link" href="#status-rumah" role="tab" data-toggle="tab">Status
 											Rumah</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#jabatan-kerja" role="tab"
+										<a class="nav-link" href="#master-pendidikan" role="tab"
 											data-toggle="tab">Pendidikan</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">SKKNI</a>
+										<a class="nav-link" href="#master-skkni" role="tab" data-toggle="tab">SKKNI</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">Modul</a>
+										<a class="nav-link" href="#master-modul" role="tab" data-toggle="tab">Modul</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#jabatan-kerja" role="tab" data-toggle="tab">PNS</a>
+										<a class="nav-link" href="#master-pns" role="tab" data-toggle="tab">PNS</a>
 									</li>
 								</ul>
 							</div>
@@ -1689,18 +1689,6 @@
 											<tr>
 												<th>No</th>
 												<th>Nama Kecamatan</th>
-												<th>Aksi</th>
-											</tr>
-										</thead>
-									</table>
-								</div>
-
-								<div class="tab-pane fade show" role="tabpanel" id="kelurahan-kegiatan">
-									<table id="kelurahan_kegiatan_table" class="display">
-										<thead>
-											<tr>
-												<th>No</th>
-												<th>Nama Kelurahan</th>
 												<th>Aksi</th>
 											</tr>
 										</thead>
@@ -1791,7 +1779,7 @@
 									</table>
 								</div>
 
-								<div class="tab-pane fade show" role="tabpanel" id="nama-pendidikan">
+								<div class="tab-pane fade show" role="tabpanel" id="master-pendidikan">
 									<table id="pendidikan_table" class="display">
 										<thead>
 											<tr>
@@ -1803,8 +1791,8 @@
 									</table>
 								</div>
 
-								<div class="tab-pane fade show" role="tabpanel" id="nama-skkni">
-									<table id="skkni_table" class="display">
+								<div class="tab-pane fade show" role="tabpanel" id="master-skkni">
+									<table id="skkni_master_table" class="display">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1815,8 +1803,8 @@
 									</table>
 								</div>
 
-								<div class="tab-pane fade show" role="tabpanel" id="nama-modul">
-									<table id="modul_table" class="display">
+								<div class="tab-pane fade show" role="tabpanel" id="master-modul">
+									<table id="kategori_modul_table" class="display">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1827,7 +1815,7 @@
 									</table>
 								</div>
 
-								<div class="tab-pane fade show" role="tabpanel" id="nama-pns">
+								<div class="tab-pane fade show" role="tabpanel" id="master-pns">
 									<table id="pns_table" class="display">
 										<thead>
 											<tr>

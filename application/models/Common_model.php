@@ -120,7 +120,7 @@ class Common_model extends CI_Model
 
     public function delete_status_rumah($id_status_rumah, $token)
     {
-        return $this->http_request_delete("/status_rumah/$id_status_rumah", $token);
+        return $this->http_request_delete("/status-rumah/$id_status_rumah", $token);
     }
 
     // ================================ Pendidikan ================================
@@ -210,6 +210,11 @@ class Common_model extends CI_Model
         return $this->http_request_get("/kabupaten-kota/$id_provinsi", $token);
     }
 
+    public function view_kabupaten_kota_all($token)
+    {
+        return $this->http_request_get("/kabupaten-kota", $token);
+    }
+
     public function add_kabupaten_kota($nama_kabupaten_kota, $id_provinsi, $token)
     {
         $data = [
@@ -237,6 +242,11 @@ class Common_model extends CI_Model
         return $this->http_request_get("/kecamatan/$id_kabupaten_kota", $token);
     }
 
+    public function view_kecamatan_all($token)
+    {
+        return $this->http_request_get("/kecamatan", $token);
+    }
+
     public function add_kecamatan($nama_kecamatan, $id_kabupaten_kota, $token)
     {
         $data = [
@@ -262,6 +272,11 @@ class Common_model extends CI_Model
     public function view_kelurahan_desa($id_kecamatan, $token)
     {
         return $this->http_request_get("/kelurahan-desa/$id_kecamatan", $token);
+    }
+    
+    public function view_kelurahan_desa_all($token)
+    {
+        return $this->http_request_get("/kelurahan-desa", $token);
     }
 
     public function add_kelurahan_desa($nama_kelurahan_desa, $id_kecamatan, $token)
@@ -318,25 +333,25 @@ class Common_model extends CI_Model
         return $this->http_request_get("/modul", $token);
     }
 
-    public function add_modul($nama_modul, $token)
+    public function add_kategori_modul($nama_kategori_modul, $token)
     {
         $data = [
-            'modul' => $nama_modul
+            'modul' => $nama_kategori_modul
         ];
         return $this->http_request_post($data, "/modul", $token);
     }
 
-    public function edit_modul($nama_modul, $id_modul, $token)
+    public function edit_kategori_modul($nama_kategori_modul, $id_kategori_modul, $token)
     {
         $data = [
-            'modul' => $nama_modul
+            'modul' => $nama_kategori_modul
         ];
-        return $this->http_request_update($data, "/modul/$id_modul", $token);
+        return $this->http_request_update($data, "/modul/$id_kategori_modul", $token);
     }
 
-    public function delete_modul($id_modul, $token)
+    public function delete_kategori_modul($id_kategori_modul, $token)
     {
-        return $this->http_request_delete("/modul/$id_modul", $token);
+        return $this->http_request_delete("/modul/$id_kategori_modul", $token);
     }
 
     //============================== Kategori Tenaga Ahli =================================
@@ -388,9 +403,9 @@ class Common_model extends CI_Model
         return $this->http_request_update($data, "/status-peserta-kegiatan/$id_status_peserta_kegiatan", $token);
     }
 
-    public function delete_status_pekerja_kegiatan($id_status_pekerja_kegiatan, $token)
+    public function delete_status_peserta_kegiatan($id_status_peserta_kegiatan, $token)
     {
-        return $this->http_request_delete("/status-pekerja-kegiatan/$id_status_pekerja_kegiatan", $token);
+        return $this->http_request_delete("/status-peserta-kegiatan/$id_status_peserta_kegiatan", $token);
     }
 
     // =============================== Status Kegiatan ========================================
