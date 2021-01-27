@@ -689,9 +689,9 @@ class Tenaga_ahli extends CI_Controller
 
             //get data
             if ($kategori == 0) {
-                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=1", $this->session->userdata('token'));
                 if ($data['tenaga_ahli']['status'] == "Success") {
-                    $data['tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+                    $data['tenaga_terampil'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=2", $this->session->userdata('token'));
                     if ($data['tenaga_terampil']['status'] == "Success") {
                         if ($data['tenaga_terampil']['data'] != null) {
                             $data['tenaga_ahli']['data'] = array_merge($data['tenaga_ahli']['data'], $data['tenaga_terampil']['data']);
@@ -741,7 +741,7 @@ class Tenaga_ahli extends CI_Controller
                     }
                 }
             } else if ($kategori == 1) {
-                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(1, $this->session->userdata('token'));
+                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=1", $this->session->userdata('token'));
                 if ($data['tenaga_ahli']['status'] == "Success") {
                     if (count($data['tenaga_ahli']['data']) > 0) {
                         $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
@@ -786,7 +786,7 @@ class Tenaga_ahli extends CI_Controller
                     }
                 }
             } else if ($kategori == 2) {
-                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli(2, $this->session->userdata('token'));
+                $data['tenaga_ahli'] = $this->Tenaga_Ahli_model->view_seluruh_tenaga_ahli("?id_kategori_tenaga_ahli=2", $this->session->userdata('token'));
                 if ($data['tenaga_ahli']['status'] == "Success") {
                     if (count($data['tenaga_ahli']['data']) > 0) {
                         $data['tenaga_ahli'] = $data['tenaga_ahli']['data'];
