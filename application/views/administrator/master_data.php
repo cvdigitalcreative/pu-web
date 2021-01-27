@@ -292,8 +292,18 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_kabupaten_kota_action"
 						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
+							<select class="form-control" id="provinsi-kabupaten-kota" name="id_provinsi" required>
+								<?php if ($provinsi != null) :
+									foreach ($provinsi as $row2) : ?>
+										<option value="<?= $row2['id_provinsi'] ?>"><?= $row2['provinsi'] ?></option>
+								<?php endforeach;
+								endif; ?>
+							</select>
+						</div>
 						<div class="form-group py-2">
 							<label for="namaKabupatenKota">Nama Kabupaten Kota *</label>
 							<input type="text" class="form-control" id="nama-kabupaten-kota"
@@ -323,7 +333,6 @@
 					</button>
 				</div>
 				<div class="modal-body">
-
 					<form method="POST" action=""
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
@@ -382,9 +391,23 @@
 					</button>
 				</div>
 				<div class="modal-body">
-
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_kecamatan_action"
 						enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="editProvinsiKegiatan">Provinsi *</label>
+							<select class="form-control" id="edit-provinsi-kegiatan" name="id_provinsi" onChange="getStateMasterKotaKecamatan(this.value);" required>
+								<?php if ($provinsi != null) :
+									foreach ($provinsi as $row2) : ?>
+										<option value="<?= $row2['id_provinsi'] ?>"><?= $row2['provinsi'] ?></option>
+								<?php endforeach;
+								endif; ?>
+							</select>
+						</div>
+						<div class="form-group py-2">
+							<label for="editKotaKegiatan">Kabupaten Kota *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
+							<select class="form-control" id="master-kota-kecamatan" name="id_kabupaten_kota" required>
+							</select>
+						</div>
 						<div class="form-group py-2">
 							<label for="namaKecamatan">Nama Kecamatan *</label>
 							<input type="text" class="form-control" id="nama-kecamatan"
@@ -474,8 +497,28 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action=""
+					<form method="POST" action="<?= base_url()?>Master/tambah_kelurahan_desa_action"
 						enctype="multipart/form-data">
+						<div class="form-group py-2">
+                            <label for="profileProvinsi">Provinsi *</label>
+                            <select class="form-control" id="master-provinsi-kelurahan" name="id_provinsi" onChange="getStateMasterKotaKelurahan(this.value);" required>
+                                <?php if ($provinsi != null) : ?>
+                                    <?php foreach ($provinsi as $row) : ?>
+                                        <option value="<?= $row['id_provinsi'] ?>"><?= $row['provinsi'] ?></option>
+                                <?php endforeach;
+                                endif; ?>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="kotaKegiatan">Kota/Kabupaten *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
+                            <select class="form-control" id="master-kota-kelurahan" name="id_kota_kabupaten" onChange="getStateMasterKecamatanKelurahan(this.value);" required>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="kotaKegiatan">Kecamatan *<span class="ml-3 text-secondary"><small>Mohon pilih Kota/Kabupaten terlebih dahulu</small></span></label>
+                            <select class="form-control" id="master-kecamatan-kelurahan" name="id_kecamatan" onChange="getKelurahanProfile(this.value);" required>
+                            </select>
+                        </div>
 						<div class="form-group py-2">
 							<label for="namaKelurahan">Nama kelurahan *</label>
 							<input type="text" class="form-control" id="nama-kelurahan"

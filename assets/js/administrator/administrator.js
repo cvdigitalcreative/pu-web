@@ -1210,14 +1210,150 @@ Tidak ada poster kegiatan`					}
 
 	// Kabupaten Kota Kegiatan
 	$('#kota_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataKotaKegiatan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_kabupaten_kota',
+			},
+			{
+				data: 'kabupaten_kota',
+			},
+			
+				
+			{
+				data: 'id_kabupaten_kota',
+				render: function (data) {
+					return `
+					<button id='btn-edit-kabupaten-kota-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-kabupaten-kota-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
 	})
+
+	$('table').on('click', '#btn-edit-kabupaten-kota-master', function () {
+		if ($('#kota_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_kabupaten_kota_action/${id}`)
+			$('#edit-kabupaten-kota').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-kabupaten-kota').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-kabupaten-kota-master', function () {
+		if ($('#kota_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_kabupaten_kota_action/${id}`)
+			$('#modal-delete-kabupaten-kota').modal('show')
+		}
+	})
+
 
 	// Kecamatan Kegiatan
 	$('#kecamatan_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataKecamatan`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_kecamatan',
+			},
+			{
+				data: 'kecamatan',
+			},
+			
+				
+			{
+				data: 'id_kecamatan',
+				render: function (data) {
+					return `
+					<button id='btn-edit-kecamatan-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-kecamatan-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-kecamatan-master', function () {
+		if ($('#kecamatan_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_kecamatan_action/${id}`)
+			$('#edit-kecamatan').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-kecamatan').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-kecamatan-master', function () {
+		if ($('#kecamatan_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_kecamatan_action/${id}`)
+			$('#modal-delete-kecamatan').modal('show')
+		}
 	})
 
 	// Kecamatan Kegiatan
 	$('#kelurahan_kegiatan_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Master/dataKelurahanDesa`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_kelurahan_desa',
+			},
+			{
+				data: 'kelurahan_desa',
+			},
+			
+				
+			{
+				data: 'id_kelurahan_desa',
+				render: function (data) {
+					return `
+					<button id='btn-edit-kelurahan-desa-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-kelurahan-desa-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		]
+	})
+
+	$('table').on('click', '#btn-edit-kelurahan-desa-master', function () {
+		if ($('#kelurahan_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/edit_kelurahan_desa_action/${id}`)
+			$('#edit-kelurahan').val($(this).parent().siblings().eq(1).text())
+			$('#modal-edit-kelurahan').modal('show')
+		}
+	})
+	$('table').on('click', '#btn-reject-kelurahan-desa-master', function () {
+		if ($('#kelurahan_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Master/delete_kelurahan_desa_action/${id}`)
+			$('#modal-delete-kelurahan').modal('show')
+		}
 	})
 
 	// status kegiatan table

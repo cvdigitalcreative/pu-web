@@ -29,58 +29,18 @@ class Master extends CI_Controller
                 }
             }
 
-            // $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
-            // if ($data['provinsi'] == null)
-            //     $null = true;
-            // else {
-            //     if ($data['provinsi']['status'] = "Success") {
-            //         $data['provinsi'] = $data['provinsi']['data'];
-
-            //         $indexTempKota = 0;
-            //         $indexKota = 0;
-            //         $indexTempKecamatan = 0;
-            //         $indexKecamatan = 0;
-            //         $indexTempKelurahan = 0;
-            //         $indexKelurahan = 0;
-            //         foreach ($data['provinsi'] as $val) {
-            //             $dataKotaTemp[$indexTempKota] = $this->Common_model->view_kabupaten_kota($val['id_provinsi'], $this->session->userdata('token'));
-            //             if ($dataKotaTemp[$indexTempKota] == null)
-            //                 $null = true;
-            //             else {
-            //                 if ($dataKotaTemp[$indexTempKota]['status'] == "Success") {
-            //                     $dataKotaTemp[$indexTempKota] = $dataKotaTemp[$indexTempKota]['data'];
-            //                     foreach ($dataKotaTemp[$indexTempKota] as $val2) {
-            //                         $data['kota'][$indexKota] = $val2;
-            //                         $indexKota++;
-            //                     }
-            //                     foreach ($data['kota'] as $val2) {
-            //                         $dataKecamatanTemp[$indexTempKecamatan] = $this->Common_model->view_kecamatan($val2['id_kabupaten_kota'], $this->session->userdata('token'));
-            //                         if ($dataKecamatanTemp[$indexTempKecamatan] == null)
-            //                             $null = true;
-            //                         else {
-            //                             if ($dataKecamatanTemp[$indexTempKecamatan]['status'] == "Success") {
-            //                                 $dataKecamatanTemp[$indexTempKecamatan] = $dataKecamatanTemp[$indexTempKecamatan]['data'];
-            //                                 foreach ($dataKecamatanTemp[$indexTempKecamatan] as $val3) {
-            //                                     $data['kecamatan'][$indexKecamatan] = $val3;
-            //                                     $indexKecamatan++;
-            //                                 }
-            //                                 foreach ($data['kota'] as $val2) {
-            //                                 }
-            //                             } else {
-            //                                 $dataKecamatanTemp[$indexTempKecamatan] = null;
-            //                             }
-            //                         }
-            //                         $indexTempKecamatan++;
-            //                     }
-            //                 } else {
-            //                     $dataKotaTemp[$indexTempKota] = null;
-            //                 }
-            //             }
-            //             $indexTempKota++;
-            //         }
-            //     } else {
-            //     }
-            // }
+            // ========================= Data untuk form =============================
+            $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
+            if ($data['provinsi'] == null)
+                $null = true;
+            else {
+                if ($data['provinsi']['status'] == "Success") {
+                    $data['provinsi'] = $data['provinsi']['data'];
+                } else {
+                    $data['provinsi'] = null;
+                    $this->session->set_flashdata('APImessage', $data['provinsi']['message']);
+                }
+            }
 
             if ($null)
                 $this->load->view('error_page');
@@ -673,7 +633,7 @@ class Master extends CI_Controller
     public function edit_kabupaten_kota_action($id_kabupaten_kota)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $kabupaten_kota = $this->input->post('nama_kabupaten_kota');
+            $kabupaten_kota = $this->input->post('edit_kabupaten_kota');
             $edit = $this->Common_model->edit_kabupaten_kota($kabupaten_kota, $id_kabupaten_kota, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -713,29 +673,24 @@ class Master extends CI_Controller
     public function dataKecamatan()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
-            if ($data['provinsi'] == null) {
+            $data['kecamatan'] = $this->Common_model->view_kecamatan_all($this->session->userdata('token'));
+            if ($data['kecamatan'] == null) {
                 $callback = array(
                     'data' => []
                 );
             } else {
-                if ($data['provinsi']['status'] == "Success") {
-                    if (count($data['provinsi']['data']) > 0) {
-                        $data['provinsi'] = $data['provinsi']['data'];
+                if ($data['kecamatan']['status'] == "Success") {
+                    if (count($data['kecamatan']['data']) > 0) {
+                        $data['kecamatan'] = $data['kecamatan']['data'];
 
-                        $no_kecamatan = 1;
-                        $index_kecamatan = 0;
-                        foreach ($data['provinsi'] as $val) {
-                            foreach ($this->Common_model->view_kabupaten_kota($val['id_provinsi'], $this->session->userdata('token'))['data'] as $val2) {
-                                foreach ($this->Common_model->view_kecamatan($val2['id_kabupaten_kota'], $this->session->userdata('token'))['data'] as $val3) {
-                                    $data['kecamatan'][$index_kecamatan] = $val3;
-                                    $data['kecamatan'][$index_kecamatan]['no_kecamatan'] = $no_kecamatan;
-                                }
-                                $index_kecamatan++;
-                                $no_kecamatan++;
-                            }
+                        $indexjenis = 0;
+                        $nojenis = 1;
+                        foreach ($data['kecamatan'] as $val) {
+                            $data['kecamatan'][$indexjenis]['no_kecamatan'] = $nojenis;
+
+                            $indexjenis++;
+                            $nojenis++;
                         }
-
                         $callback = array(
                             'data' => $data['kecamatan']
                         );
@@ -782,7 +737,7 @@ class Master extends CI_Controller
     public function edit_kecamatan_action($id_kecamatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $kecamatan = $this->input->post('nama_kecamatan');
+            $kecamatan = $this->input->post('edit_kecamatan');
             $edit = $this->Common_model->edit_kecamatan($kecamatan, $id_kecamatan, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
@@ -822,31 +777,24 @@ class Master extends CI_Controller
     public function dataKelurahanDesa()
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['provinsi'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
-            if ($data['provinsi'] == null) {
+            $data['kelurahan_desa'] = $this->Common_model->view_kelurahan_desa_all($this->session->userdata('token'));
+            if ($data['kelurahan_desa'] == null) {
                 $callback = array(
                     'data' => []
                 );
             } else {
-                if ($data['provinsi']['status'] == "Success") {
-                    if (count($data['provinsi']['data']) > 0) {
-                        $data['provinsi'] = $data['provinsi']['data'];
+                if ($data['kelurahan_desa']['status'] == "Success") {
+                    if (count($data['kelurahan_desa']['data']) > 0) {
+                        $data['kelurahan_desa'] = $data['kelurahan_desa']['data'];
 
-                        $no_kelurahan_desa = 1;
-                        $index_kelurahan_desa = 0;
-                        foreach ($data['provinsi'] as $val) {
-                            foreach ($this->Common_model->view_kabupaten_kota($val['id_provinsi'], $this->session->userdata('token'))['data'] as $val2) {
-                                foreach ($this->Common_model->view_kecamatan($val2['id_kabupaten_kota'], $this->session->userdata('token'))['data'] as $val3) {
-                                    foreach ($this->Common_model->view_kelurahan_desa($val3['id_kecamatan'], $this->session->userdata('token'))['data'] as $val4) {
-                                        $data['kelurahan_desa'][$index_kelurahan_desa] = $val4;
-                                        $data['kelurahan_desa'][$index_kelurahan_desa]['no_kelurahan_desa'] = $no_kelurahan_desa;
-                                    }
-                                    $index_kelurahan_desa++;
-                                    $no_kelurahan_desa++;
-                                }
-                            }
+                        $indexjenis = 0;
+                        $nojenis = 1;
+                        foreach ($data['kelurahan_desa'] as $val) {
+                            $data['kelurahan_desa'][$indexjenis]['no_kelurahan_desa'] = $nojenis;
+
+                            $indexjenis++;
+                            $nojenis++;
                         }
-
                         $callback = array(
                             'data' => $data['kelurahan_desa']
                         );
@@ -873,7 +821,7 @@ class Master extends CI_Controller
     {
         if ($this->session->userdata('logged_in') == true) {
             $id_kecamatan = $this->input->post('id_kecamatan');
-            $kelurahan_desa = $this->input->post('nama_kelurahan_desa');
+            $kelurahan_desa = $this->input->post('nama_kelurahan');
             $add = $this->Common_model->add_kelurahan_desa($kelurahan_desa, $id_kecamatan, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
@@ -893,7 +841,7 @@ class Master extends CI_Controller
     public function edit_kelurahan_desa_action($id_kelurahan_desa)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $kelurahan_desa = $this->input->post('nama_kelurahan_desa');
+            $kelurahan_desa = $this->input->post('edit_kelurahan');
             $edit = $this->Common_model->edit_kelurahan_desa($kelurahan_desa, $id_kelurahan_desa, $this->session->userdata('token'));
             if ($edit == null)
                 $this->load->view('error_page');
