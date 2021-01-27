@@ -297,3 +297,15 @@
   .custom-radio-button-form .radio-custom label:hover {
     background: #f0f0f0;
   }
+
+/* Add new kegiaan  */
+.btn-move-input-experts {
+    color: #fff !important;
+    cursor: pointer;
+    border-radius: 100px;
+    margin-top: 20px;
+}
+
+.btn-move-input-experts:hover {
+    cursor: pointer;
+}

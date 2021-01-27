@@ -160,8 +160,8 @@
 							<input type="text" class="form-control" id="nama-kegiatan" name="judul_kegiatan" placeholder="Contoh: Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
-							<label for="deskripsiKegiatan">Deskripsi Kegiatan *</label>
-							<textarea type="text" data-autoresize class="form-control" id="deskripsi-kegiatan" name="deskripsi_kegiatan" placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan" required></textarea>
+							<label for="deskripsiKegiatan">Deskripsi Kegiatan</label>
+							<textarea type="text" data-autoresize class="form-control" id="deskripsi-kegiatan" name="deskripsi_kegiatan" placeholder="Contoh: Ini adalah deskripsi kegiatan pelatihan"></textarea>
 						</div>
 						<div class="row">
 							<div class="col">
@@ -202,15 +202,18 @@
 						</div>
 
 						<div>
-							<a class="btn btn-block btn-primary" id="btn-tambah-instruktur-asesor-kegiatan" role="button">
+							<a class="btn btn-block btn-primary btn-move-input-experts" id="btn-tambah-instruktur-asesor-kegiatan" role="button">
 								<img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
 								Tambah Instruktur & Assesor
 							</a>
+							<small id="file-materi-kegiatan" class="form-text text-muted mb-4">
+								Klik untuk menambahkan instruktur dan assesor baru.
+							</small>
 						</div>
 
 						<div class="form-group py-2">
-							<label for="instrukturKegiatan">Instruktur kegiatan *</label>
-							<select class="form-control selectpicker" id="instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true" required>
+							<label for="instrukturKegiatan">Instruktur kegiatan</label>
+							<select class="form-control selectpicker" id="instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true">
 								<?php if ($instruktur != null) :
 									foreach ($instruktur as $row) : ?>
 										<option value="<?= $row['id_tenaga_ahli'] ?>"><?= $row['nama_lengkap'] ?></option>
@@ -219,8 +222,8 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="assesorKegiatan">Assesor kegiatan *</label>
-							<select class="form-control selectpicker" id="assesor-kegiatan" name="id_asesor_kegiatan[]" aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true" required>
+							<label for="assesorKegiatan">Assesor kegiatan</label>
+							<select class="form-control selectpicker" id="assesor-kegiatan" name="id_asesor_kegiatan[]" aria-placeholder="Pilih assesor kegiatan" multiple data-live-search="true">
 								<?php if ($asesor != null) :
 									foreach ($asesor as $row) : ?>
 										<option value="<?= $row['id_tenaga_ahli'] ?>"><?= $row['nama_lengkap'] ?></option>
