@@ -274,13 +274,23 @@ $(document).ready(function () {
 					data: 'no_kegiatan',
 				},
 				{
-					data: 'id_kegiatan',
-					render: function (data) {
-						return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${data}'>Lihat Peserta</button>
-					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${data}'>Ganti Status</button>
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					data: 'null',
+					render: function (data, type, row) {
+						if (row.id_status_kegiatan != 2) {
+							return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
+					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}'>Ganti Status</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>`
+				}
+				else {
+							return `
+					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
+					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}' disabled>Selesai Dilaksanakan</button>
+					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>`
+							
+						}
 					}
 				},
 				{
@@ -1836,8 +1846,40 @@ Tidak ada poster kegiatan`					}
 	$('table').on('click', '#btn-update', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
-			$('form').attr('action', `${BASE_URL}Kegiatan/ganti_status_kegiatan/${id}`)
-			$(`#modal-ganti-status-kegiatan`).modal('show')
+			var currentRow = $(this).closest("tr");
+			var data = $('#kalender_kegiatan_table').DataTable().row(currentRow).data();
+			if (data['id_status_kegiatan'] == 1) {
+				$('#btn-export-peserta-vva').on('click', function () {
+					$.ajax({
+						url: `${BASE_URL}Peserta/export_peserta_VVA/${id}`,
+						success: function () {
+							window.location = `${BASE_URL}Peserta/export_peserta_VVA/${id}`;
+						}
+					})
+				});
+				$('form').attr('action', `${BASE_URL}Kegiatan/update_status_kegiatan_VVA_action/${id}`)
+				$(`#modal-ganti-status-kegiatan-vva`).modal('show')
+			}
+			if (data['id_status_kegiatan'] == 3) {
+				$('#btn-export-peserta-asesment').on('click', function () {
+					$.ajax({
+						url: `${BASE_URL}Peserta/export_peserta_asesment/${id}`,
+						success: function () {
+							window.location = `${BASE_URL}Peserta/export_peserta_asesment/${id}`;
+						}
+					})
+				});
+				$('form').attr('action', `${BASE_URL}Kegiatan/update_status_kegiatan_asesment_action/${id}`)
+				$(`#modal-ganti-status-kegiatan-asesment`).modal('show')
+			}
+			if (data['id_status_kegiatan'] == 4) {
+				$('form').attr('action', `${BASE_URL}Kegiatan/tambah_berita_acara_action/${id}`)
+				$(`#modal-ganti-status-kegiatan-berita-acara`).modal('show')
+			}
+			if (data['id_status_kegiatan'] == 5) {
+				$('form').attr('action', `${BASE_URL}Kegiatan/tambah_invoice_action/${id}`)
+				$(`#modal-ganti-status-kegiatan-invoice`).modal('show')
+			}
 		}
 	})
 	// End of edit
