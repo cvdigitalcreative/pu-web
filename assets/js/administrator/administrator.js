@@ -34,6 +34,23 @@ $(document).ready(function () {
 	});
 	// end upload image kalender kegiatan js
 
+	// upload image edit kalender kegiatan js
+	$("#banner-image-edit").click(function (e) {
+		$("#edit-banner-kegiatan").click();
+	});
+
+	function fasterPreviewEditKegiatan(uploader) {
+		if (uploader.files && uploader.files[0]) {
+			$('#banner-image-edit').attr('src',
+				window.URL.createObjectURL(uploader.files[0]));
+		}
+	}
+
+	$("#edit-banner-kegiatan").change(function () {
+		fasterPreviewEditKegiatan(this);
+	});
+	// end upload image kalender kegiatan js
+
 	// upload image profile kegiatan js
 	$("#banner-image-profile").click(function (e) {
 		$("#banner-profile").click();
@@ -1862,9 +1879,16 @@ Tidak ada poster kegiatan`					}
 	$('table').on('click', '#btn-edit', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			var data = $('#kalender_kegiatan_table').DataTable().row(currentRow).data();
 			$('form').attr('action', `${BASE_URL}Kegiatan/edit_kegiatan_action/${id}`)
-			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(6).text())
-			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(11).text())
+			$('#edit-akun-kegiatan').val(data['id_akun_kegiatan'])
+			$('#edit-jenis-kegiatan').val(data['id_jenis_kegiatan'])
+			$('#edit-provinsi-kegiatan').val(data['id_provinsi'])
+			$('#banner-image-edit').attr('src', data['foto_banner_kegiatan'])
+			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(1).text())
+			$('#edit-deskripsi-kegiatan').val($(this).parent().siblings().eq(2).text())
+			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(12).text())
 			$(`#modal-edit-kegiatan`).modal('show')
 		}
 		else if ($('#skkni_table').length > 0) {
