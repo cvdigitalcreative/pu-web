@@ -108,6 +108,17 @@
 
 /* upload image profile */
 
+#edit-banner-kegiatan
+{
+    display: none;
+}
+
+#banner-image-edit
+{
+    cursor: pointer;
+}
+/* upload image profile */
+
 #banner-profile
 {
     display: none;
