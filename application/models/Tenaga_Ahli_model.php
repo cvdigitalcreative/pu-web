@@ -184,4 +184,12 @@ class Tenaga_Ahli_model extends CI_Model
     {
         return $this->http_request_delete("/jabatan-kerja-ahli/$id_jabker", $token);
     }
+
+    public function import_tenaga_ahli($file, $token)
+    {
+        $data = [
+            'file_excel' => $file
+        ];
+        return $this->http_request_post($data, "/import/", $token);
+    }
 }
