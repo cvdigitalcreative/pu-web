@@ -1134,4 +1134,84 @@ class Kegiatan extends CI_Controller
         } else
             redirect("pupr/login");
     }
+
+    public function dataAsesor($id_kegiatan){
+        if ($this->session->userdata('logged_in') == true) {
+            $data['asesor'] = $this->Kegiatan_model->view_asesor($id_kegiatan, $this->session->userdata('token'));
+            if ($data['asesor'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['asesor']['status'] == "Success") {
+                    if (count($data['asesor']['data']) > 0) {
+                        $data['asesor'] = $data['asesor']['data'];
+
+                        $indexBukuSaku = 0;
+                        $noBukuSaku = 1;
+                        foreach ($data['asesor'] as $val) {
+                            $data['asesor'][$indexBukuSaku]['no_asesor'] = $noBukuSaku;
+
+                            $indexBukuSaku++;
+                            $noBukuSaku++;
+                        }
+                        $callback = array(
+                            'data' => $data['asesor']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        }
+    }
+
+    public function dataInstruktur($id_kegiatan){
+        if ($this->session->userdata('logged_in') == true) {
+            $data['instruktur'] = $this->Kegiatan_model->view_instruktur($id_kegiatan, $this->session->userdata('token'));
+            if ($data['instruktur'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['instruktur']['status'] == "Success") {
+                    if (count($data['instruktur']['data']) > 0) {
+                        $data['instruktur'] = $data['instruktur']['data'];
+
+                        $indexBukuSaku = 0;
+                        $noBukuSaku = 1;
+                        foreach ($data['instruktur'] as $val) {
+                            $data['instruktur'][$indexBukuSaku]['no_instruktur'] = $noBukuSaku;
+
+                            $indexBukuSaku++;
+                            $noBukuSaku++;
+                        }
+                        $callback = array(
+                            'data' => $data['instruktur']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        }
+    }
 }
