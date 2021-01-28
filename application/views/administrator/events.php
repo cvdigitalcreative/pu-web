@@ -132,10 +132,11 @@
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if ($akun_kegiatan != null) :
 									foreach ($akun_kegiatan as $row) :
-									if($row['akun_kegiatan'] != "-") : ?>
-									
-										<option value="<?= $row['id_akun_kegiatan'] ?>"><?= $row['akun_kegiatan'] ?></option>
-								<?php endif; endforeach;
+										if ($row['akun_kegiatan'] != "-") : ?>
+
+											<option value="<?= $row['id_akun_kegiatan'] ?>"><?= $row['akun_kegiatan'] ?></option>
+								<?php endif;
+									endforeach;
 								endif ?>
 							</select>
 						</div>
@@ -144,10 +145,11 @@
 							<select class="form-control" id="jenis-kegiatan" name="id_jenis_kegiatan" required>
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if ($jenis_kegiatan != null) :
-									foreach ($jenis_kegiatan as $row) : 
-									if($row['jenis_kegiatan'] != "-") :?>
-										<option value="<?= $row['id_jenis_kegiatan'] ?>"><?= $row['jenis_kegiatan'] ?></option>
-								<?php endif; endforeach;
+									foreach ($jenis_kegiatan as $row) :
+										if ($row['jenis_kegiatan'] != "-") : ?>
+											<option value="<?= $row['id_jenis_kegiatan'] ?>"><?= $row['jenis_kegiatan'] ?></option>
+								<?php endif;
+									endforeach;
 								endif ?>
 							</select>
 						</div>
@@ -189,10 +191,11 @@
 						<div class="form-group py-2">
 							<label for="provinsiKegiatan">Provinsi kegiatan *</label>
 							<select class="form-control" id="provinsi-kegiatan" name="id_provinsi" onChange="getState(this.value);" required>
-								<?php foreach ($provinsi as $row) : 
-									if($row['provinsi'] != "-") : ?>
-									<option value="<?= $row['id_provinsi'] ?>"><?= $row['provinsi'] ?></option>
-								<?php endif; endforeach;?>
+								<?php foreach ($provinsi as $row) :
+									if ($row['provinsi'] != "-") : ?>
+										<option value="<?= $row['id_provinsi'] ?>"><?= $row['provinsi'] ?></option>
+								<?php endif;
+								endforeach; ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -679,6 +682,15 @@
 					</div>
 
 					<div class="card-body">
+						<ul class="nav nav-tabs" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link active" href="#instruktur-kegiatan" role="tab" data-toggle="tab">Instruktur / Narasumber</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#assesor-kegiatan" role="tab" data-toggle="tab">Asesor</a>
+							</li>
+						</ul>
+						
 						<div class="tab-content">
 							<div class="tab-pane fade active show" role="tabpanel" id="instruktur-kegiatan">
 								<table id="daftar_instruktur_table" class="display" style="width:100%">
