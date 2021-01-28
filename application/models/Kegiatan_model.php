@@ -365,4 +365,36 @@ class Kegiatan_model extends CI_Model
     {
         return $this->http_request_delete("/$id_jadwal_kegiatan/instruktur/$id_tenaga_ahli", $token);
     }
+
+    // ========================== Asesor / instruktur Kegiatan ===========================
+
+    public function view_asesor($id_kegiatan, $token)
+    {
+        return $this->http_request_get("/$id_kegiatan/asesor/", $token);
+    }
+
+    public function view_instruktur($id_kegiatan, $token)
+    {
+        return $this->http_request_get("/$id_kegiatan/instruktur/", $token);
+    }
+
+    public function add_asesor($id_tenaga_ahli, $id_kegiatan, $token)
+    {
+        return $this->http_request_post(null, "/$id_kegiatan/asesor/$id_tenaga_ahli", $token);
+    }
+
+    public function add_instruktur($id_tenaga_ahli, $id_kegiatan, $token)
+    {
+        return $this->http_request_post(null, "/$id_kegiatan/instruktur/$id_tenaga_ahli", $token);
+    }
+
+    public function delete_asesor($id_tenaga_ahli, $id_kegiatan, $token)
+    {
+        return $this->http_request_delete("/$id_kegiatan/asesor/$id_tenaga_ahli", $token);
+    }
+
+    public function delete_instruktur($id_tenaga_ahli, $id_kegiatan, $token)
+    {
+        return $this->http_request_delete("/$id_kegiatan/instruktur/$id_tenaga_ahli", $token);
+    }
 }
