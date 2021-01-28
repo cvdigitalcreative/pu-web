@@ -399,6 +399,54 @@
 	</div>
 	<!-- End modal delete kegiatan -->
 
+	<!-- Delete kegiatan modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-instruktur-kegiatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Instruktur Kegiatan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa instruktur kegiatan ingin anda hapus!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kegiatan -->
+
+	<!-- Delete kegiatan modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-asesor-kegiatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Asesor Kegiatan Ini?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Pastikan dengan benar bahwa asesor kegiatan ingin anda hapus!
+					<form>
+						<div class="modal-footer">
+							<button class="btn btn-light" data-dismiss="modal">Batal</button>
+							<button class="btn btn-danger" type="submit">Hapus</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End modal delete kegiatan -->
+
 	<!-- Import Excel Tambah Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -605,6 +653,72 @@
 	</div>
 	<!-- End of import Excel Tambah Peserta Kegiatan Modal -->
 
+	<!-- Tambah Instruktur Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-instruktur-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Instruktur Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+					<div class="form-group py-2">
+							<label for="filterStatusKegiatan">Instruktur Kegiatan *</label>
+							<select class="form-control" id="filter-status-kegiatan" name="id_tenaga_ahli" aria-placeholder="Pilih Instruktur">
+								<?php if ($instruktur != null) :
+									foreach ($instruktur as $row) : ?>
+										<option value="<?= $row['id_tenaga_ahli'] ?>"><?= $row['nama_lengkap'] ?></option>
+								<?php endforeach;
+								endif ?>
+							</select>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah Instruktur</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of import Excel Tambah Peserta Kegiatan Modal -->
+
+	<!-- Tambah Instruktur Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-tambah-asesor-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asesor Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+					<div class="form-group py-2">
+							<label for="filterStatusKegiatan">Asesor Kegiatan *</label>
+							<select class="form-control" id="filter-status-kegiatan" name="id_tenaga_ahli" aria-placeholder="Pilih Asesor">
+								<?php if ($asesor != null) :
+									foreach ($asesor as $row) : ?>
+										<option value="<?= $row['id_tenaga_ahli'] ?>"><?= $row['nama_lengkap'] ?></option>
+								<?php endforeach;
+								endif ?>
+							</select>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah Asesor</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of import Excel Tambah Peserta Kegiatan Modal -->
+
 	<!-- Lihat peserta Modal -->
 	<div class="modal fade" id="modal-lihat-peserta-by-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-dialog-centered modal-daftar-peserta-kegiatan-custom" role="document">
@@ -674,11 +788,8 @@
 				<div class="modal-body">
 
 					<div class="col">
-						<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</a>
-						<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Instruktur / Narasumber</a>
-						<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Assesor</a>
-						<button class="btn btn-warning btn-import-kegiatan" id="btn-import-peserta-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Peserta</button>
-						<a href="<?= base_url() ?>Kegiatan/download_format_peserta_excel_action"><button class="btn btn-danger btn-import-kegiatan float-right"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
+						<button class="btn btn-success btn-import-kegiatan" id="btn-add-instruktur-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Instruktur / Narasumber</button>
+						<button class="btn btn-success btn-import-kegiatan" id="btn-add-asesor-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Assesor</button>
 					</div>
 
 					<div class="card-body">
@@ -698,6 +809,9 @@
 										<tr>
 											<th>No</th>
 											<th>Nama Instruktur / Narasumber</th>
+											<th>Email</th>
+											<th>No Telepon</th>
+											<th>No Handphone</th>
 											<th>Aksi</th>
 										</tr>
 									</thead>
@@ -705,11 +819,14 @@
 							</div>
 
 							<div class="tab-pane fade show" role="tabpanel" id="list-assesor-kegiatan">
-								<table id="daftar_assesor_table" class="display" style="width:100%">
+								<table id="daftar_assesor_table" class="display" style="width: 100%;">
 									<thead>
 										<tr>
 											<th>No</th>
 											<th>Nama Assesor</th>
+											<th>Email</th>
+											<th>No Telepon</th>
+											<th>No Handphone</th>
 											<th>Aksi</th>
 										</tr>
 									</thead>
