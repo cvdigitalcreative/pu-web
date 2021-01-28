@@ -279,6 +279,7 @@ $(document).ready(function () {
 						if (row.id_status_kegiatan != 2) {
 							return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
+					<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
 					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}'>Ganti Status</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>`
@@ -1963,6 +1964,18 @@ Tidak ada poster kegiatan`					}
 		}
 	})
 	// End of default 
+
+
+	// 
+	// ========= UPDATE BUTTON ON CLICK ===========
+	// 
+	$('table').on('click', '#btn-detail-experts', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			$(`#modal-lihat-instruktur-assesor-by-kegiatan`).modal('show')
+		}
+	})
+
+
 	// 
 	// ========= UPDATE BUTTON ON CLICK ===========
 	// 

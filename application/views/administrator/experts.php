@@ -265,13 +265,13 @@
 						</div>
 
 						<div class="form-group py-2">
-							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
+							<label for="fileTenagaAhli">File Tenaga Ahli</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
-									name="file_tenaga_ahli" required>
+									name="file_tenaga_ahli">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
 								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
-									Pilih file tenaga ahli
+									File tenaga ahli adalah opsional
 								</small>
 							</div>
 						</div>
