@@ -131,9 +131,11 @@
 							<select class="form-control" id="akun-kegiatan" name="id_akun_kegiatan" required>
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if ($akun_kegiatan != null) :
-									foreach ($akun_kegiatan as $row) : ?>
+									foreach ($akun_kegiatan as $row) :
+									if($row['akun_kegiatan'] != "-") : ?>
+									
 										<option value="<?= $row['id_akun_kegiatan'] ?>"><?= $row['akun_kegiatan'] ?></option>
-								<?php endforeach;
+								<?php endif; endforeach;
 								endif ?>
 							</select>
 						</div>
@@ -142,17 +144,18 @@
 							<select class="form-control" id="jenis-kegiatan" name="id_jenis_kegiatan" required>
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if ($jenis_kegiatan != null) :
-									foreach ($jenis_kegiatan as $row) : ?>
+									foreach ($jenis_kegiatan as $row) : 
+									if($row['jenis_kegiatan'] != "-") :?>
 										<option value="<?= $row['id_jenis_kegiatan'] ?>"><?= $row['jenis_kegiatan'] ?></option>
-								<?php endforeach;
+								<?php endif; endforeach;
 								endif ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="bannerKegiatan">Banner Kegiatan *</label>
+							<label for="bannerKegiatan">Banner Kegiatan</label>
 							<div id="profile-container">
 								<image id="banner-image" src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
-								<input id="banner-kegiatan" type="file" name="foto_banner_kegiatan" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" required="" capture>
+								<input id="banner-kegiatan" type="file" name="foto_banner_kegiatan" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" capture>
 							</div>
 						</div>
 						<div class="form-group py-2">
@@ -186,9 +189,10 @@
 						<div class="form-group py-2">
 							<label for="provinsiKegiatan">Provinsi kegiatan *</label>
 							<select class="form-control" id="provinsi-kegiatan" name="id_provinsi" onChange="getState(this.value);" required>
-								<?php foreach ($provinsi as $row) : ?>
+								<?php foreach ($provinsi as $row) : 
+									if($row['provinsi'] != "-") : ?>
 									<option value="<?= $row['id_provinsi'] ?>"><?= $row['provinsi'] ?></option>
-								<?php endforeach ?>
+								<?php endif; endforeach;?>
 							</select>
 						</div>
 						<div class="form-group py-2">
@@ -624,7 +628,6 @@
 										<th>Nama</th>
 										<th>Jenis Kelamin</th>
 										<th>Tempat & Tanggal Lahir</th>
-										<th>Status Perkawinan</th>
 										<th>Nama Perusahaan</th>
 										<th>Jabatan</th>
 										<th>Utusan</th>
@@ -637,11 +640,8 @@
 										<th>Kabupaten / Kota</th>
 										<th>Kecamatan</th>
 										<th>Kelurahan</th>
-										<th>Rt</th>
-										<th>Rw</th>
 										<th>Kode POS</th>
 										<th>Kode Area</th>
-										<th>Status Rumah</th>
 										<th>Pendidikan</th>
 										<!-- <th>Aksi</th> -->
 									</tr>

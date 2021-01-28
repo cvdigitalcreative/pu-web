@@ -370,26 +370,42 @@ class Kegiatan extends CI_Controller
             $latitude_lokasi = 0;
             $longitude_lokasi = 0;
             $status_kegiatan = 1;
-            $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+            if ($_FILES['foto_banner_kegiatan']['size'] != 0)
+                $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+            else
+                $foto_banner_kegiatan = null;
             $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
             $id_jenis_kegiatan = $this->input->post('id_jenis_kegiatan');
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
             $id_asesor_kegiatan = $this->input->post('id_asesor_kegiatan');
-            if (count($id_asesor_kegiatan) == 1)
-                $id_asesor_kegiatan = $id_asesor_kegiatan[0];
-            else {
-                $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
-                $id_asesor_kegiatan = "[" . $id_asesor_kegiatan . "]";
-            }
+            if ($id_asesor_kegiatan != null) {
+                if (count($id_asesor_kegiatan) == 1)
+                    $id_asesor_kegiatan = "[" . $id_asesor_kegiatan[0] . "]";
+                else {
+                    $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
+                    $id_asesor_kegiatan = "[" . $id_asesor_kegiatan . "]";
+                }
+            } else
+                $id_asesor_kegiatan = "[]";
+
+
             $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
-            if (count($id_instruktur_kegiatan) == 1)
-                $id_instruktur_kegiatan = $id_instruktur_kegiatan[0];
-            else {
-                $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
-                $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan . "]";
-            }
-            $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
+            if ($id_instruktur_kegiatan != null) {
+                if (count($id_instruktur_kegiatan) == 1)
+                    $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan[0] . "]";
+                else {
+                    $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
+                    $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan . "]";
+                }
+            } else
+                $id_instruktur_kegiatan = "[]";
+
+
+            if ($_FILES['file_materi_kegiatan']['size'] != 0)
+                $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
+            else
+                $file_materi_kegiatan = null;
 
             $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
                 $judul_kegiatan,
@@ -576,7 +592,7 @@ class Kegiatan extends CI_Controller
             $excel->getActiveSheet()->getStyle('L3')->applyFromArray($style_col);
 
             //get data
-            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan( null, $this->session->userdata('token'));
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan(null, $this->session->userdata('token'));
             if ($data['kegiatan']['status'] == "Success") {
                 if (count($data['kegiatan']['data']) > 0) {
                     $data['kegiatan'] = $data['kegiatan']['data'];
