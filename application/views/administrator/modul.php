@@ -79,7 +79,7 @@
 							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-modul" name="deskripsi_modul" placeholder="Contoh: Ini adalah deskripsi modul kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileModul">File Modul *</label>
+							<label for="fileModul">File Modul</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-modul" name="file_modul">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file modul...</label>

@@ -23,7 +23,7 @@
 						<div class="row">
 							<div class="col">
 								<div class="form-group py-2">
-									<label for="filterTanggalMulaikegiatan">Tanggal Mulai *</label>
+									<label for="filterTanggalMulaikegiatan">Tanggal Mulai</label>
 									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-mulai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan">
 									<small id="filter-tanggal-mulai-kegiatan-label" class="form-text text-muted">
 										Tanggal mulai kegiatan
@@ -32,7 +32,7 @@
 							</div>
 							<div class="col">
 								<div class="form-group py-2">
-									<label for="filterTanggalSelesaikegiatan">Tanggal Selesai *</label>
+									<label for="filterTanggalSelesaikegiatan">Tanggal Selesai</label>
 									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-selesai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan">
 									<small id="filter-tanggal-selesai-kegiatan-label" class="form-text text-muted">
 										Tanggal selesai kegiatan
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="form-group py-2">
-							<label for="filterJenisKegiatan">Jenis kegiatan *</label>
+							<label for="filterJenisKegiatan">Jenis kegiatan</label>
 							<select class="form-control" id="filter-jenis-kegiatan" name="filter_jenis_kegiatan">
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if ($jenis_kegiatan != null) :
@@ -52,7 +52,7 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="filterStatusKegiatan">Status kegiatan *</label>
+							<label for="filterStatusKegiatan">Status kegiatan</label>
 							<select class="form-control" id="filter-status-kegiatan" name="filter_status_kegiatan" aria-placeholder="Pilih status kegiatan">
 								<option selected disabled>Pilih status kegiatan</option>
 								<?php if ($status_kegiatan != null) :
@@ -63,7 +63,7 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="provinsiKegiatan">Provinsi kegiatan *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
+							<label for="provinsiKegiatan">Provinsi kegiatan<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
 							<select class="form-control" id="filter-id-provinsi" name="filter_id_provinsi" onChange="getStateFilterKegiatan(this.value);">
 								<option selected disabled>Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
@@ -72,7 +72,7 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaKegiatan">Kota kegiatan *</label>
+							<label for="kotaKegiatan">Kota kegiatan</label>
 							<select class="form-control" id="filter-id-kabupaten-kota" name="filter_id_kabupaten_kota">
 								<option selected disabled>Mohon pilih Provinsi terlebih dahulu</option>
 							</select>
@@ -87,30 +87,6 @@
 		</div>
 	</div>
 	<!-- End modal filter kegiatan -->
-
-	<!-- Update Status Kegiatan Modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Update Status Kegiatan Ini?</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					Pastikan dengan benar bahwa Anda ingin mengubah status kegiatan ini!
-					<form>
-						<div class="modal-footer">
-							<button class="btn btn-light" data-dismiss="modal">Batal</button>
-							<button class="btn btn-warning" type="submit">Update</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal update status kegiatan -->
 
 	<!-- Tambah Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan" tabindex="-1" role="dialog">
@@ -275,7 +251,7 @@
 					<form method="POST" action="" enctype="multipart/form-data">
 
 						<div class="form-group py-2">
-							<label for="editAkunKegiatan">Akun Kegiatan*</label>
+							<label for="editAkunKegiatan">Akun Kegiatan *</label>
 							<select class="form-control" id="edit-akun-kegiatan" name="id_akun_kegiatan" required>
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if ($akun_kegiatan != null) :
@@ -297,7 +273,7 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="editBannerKegiatan">Banner Kegiatan *</label>
+							<label for="editBannerKegiatan">Banner Kegiatan</label>
 							<div id="profile-container">
 								<image id="banner-image-edit" />
 								<input id="edit-banner-kegiatan" type="file" name="edit_foto_banner_kegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" capture>
@@ -634,8 +610,8 @@
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">File Excel Tambah Peserta Kegiatan</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel_import_peserta_kegiatan" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel_import_peserta_kegiatan" accept=".xlsx, .xls, .csv"" required>
+								<label class=" custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah peserta kegiatan
 								</small>
@@ -665,8 +641,8 @@
 				</div>
 				<div class="modal-body">
 					<form method="POST" action="" enctype="multipart/form-data">
-					<div class="form-group py-2">
-							<label for="filterStatusKegiatan">Instruktur Kegiatan *</label>
+						<div class="form-group py-2">
+							<label for="filterStatusKegiatan">Instruktur Kegiatan</label>
 							<select class="form-control" id="filter-status-kegiatan" name="id_tenaga_ahli" aria-placeholder="Pilih Instruktur">
 								<?php if ($instruktur != null) :
 									foreach ($instruktur as $row) : ?>
@@ -698,8 +674,8 @@
 				</div>
 				<div class="modal-body">
 					<form method="POST" action="" enctype="multipart/form-data">
-					<div class="form-group py-2">
-							<label for="filterStatusKegiatan">Asesor Kegiatan *</label>
+						<div class="form-group py-2">
+							<label for="filterStatusKegiatan">Asesor Kegiatan</label>
 							<select class="form-control" id="filter-status-kegiatan" name="id_tenaga_ahli" aria-placeholder="Pilih Asesor">
 								<?php if ($asesor != null) :
 									foreach ($asesor as $row) : ?>
@@ -754,12 +730,12 @@
 										<th>Nomor Telepon Rumah</th>
 										<th>Nomor Handphone</th>
 										<th>Pendidikan</th>
-=										<th>Jurusan</th>
-=										<th>Universitas/ST/Institute</th>
-=										<th>Tanggal Lulus Pendidikan</th>
-=										<th>Jabatan Kerja</th>
-=										<th>Kompeten</th>
-=										<th>No Sertifikat</th>
+										<th>Jurusan</th>
+										<th>Universitas/ST/Institute</th>
+										<th>Tanggal Lulus Pendidikan</th>
+										<th>Jabatan Kerja</th>
+										<th>Kompeten</th>
+										<th>No Sertifikat</th>
 										<!-- <th>Aksi</th> -->
 									</tr>
 								</thead>

@@ -23,7 +23,7 @@
 							<label for="bannerKegiatan">File Gambar *</label>
 							<div id="profile-container">
 								<image id="banner-image" src="<?= base_url('assets/icons/pupr-add-image-icon.svg') ?>" />
-								<input id="banner-kegiatan" type="file" name="file_gambar_berita" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" required="" capture>
+								<input id="banner-kegiatan" type="file" name="file_gambar_berita" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" required="" capture>
 							</div>
 						</div>
 						<div class="form-group py-2">
@@ -89,7 +89,7 @@
 				<div class="modal-body">
 					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="bannerKegiatan">File Gambar *</label>
+							<label for="bannerKegiatan">File Gambar</label>
 							<div id="profile-container">
 								<image id="banner-image-edit-berita" src="" />
 								<input id="banner-edit-berita" type="file" name="file_gambar_berita" id="bannerKegiatan" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .jpeg, .png" capture>

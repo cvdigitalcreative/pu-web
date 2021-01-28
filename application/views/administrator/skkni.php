@@ -87,7 +87,7 @@
 								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileSkkni">File Skkni *</label>
+							<label for="fileSkkni">File Skkni</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-skkni"
 									name="file_skkni">
