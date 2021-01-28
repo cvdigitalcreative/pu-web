@@ -40,7 +40,7 @@ class Modul extends CI_Controller
                 $null = true;
             else {
                 if ($data['modul']['status'] == "Success") {
-                    $data['total_modul'] = count($data['modul']);
+                    $data['total_modul'] = count($data['modul']['data']);
                 } else {
                     $data['total_modul'] = 0;
                     $this->session->set_flashdata('APImessage', $data['modul']['message']);
