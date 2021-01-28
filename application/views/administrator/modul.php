@@ -101,7 +101,6 @@
 								</select>
 							</div>
 						</div>
-						<input type="hidden" name="id_kategori_modul_old" id="edit-id-kategori-modul-old">
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
 							Modul</button>

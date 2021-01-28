@@ -108,7 +108,6 @@
 								endif ?>
 							</select>
 						</div>
-						<input type="hidden" name="id_kategori_skkni_old" id="edit-id-kategori-skkni-old">
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
 							Skkni</button>

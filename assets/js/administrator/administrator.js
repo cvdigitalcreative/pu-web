@@ -2181,17 +2181,21 @@ Tidak ada poster kegiatan`					}
 		else if ($('#skkni_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}SKA/edit_ska_action/${id}`)
+			var currentRow = $(this).closest("tr");
+			var data = $('#skkni_table').DataTable().row(currentRow).data();
 			$('#edit-judul-skkni').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-skkni').val($(this).parent().siblings().eq(2).text())
-			$('#edit-id-kategori-skkni-old').val($(this).parent().siblings().eq(3).text())
+			$('#edit-kategori-skkni').val(data['id_kategori_ska'])
 			$('#modal-edit-skkni').modal('show')
 		}
 		else if ($('#modul_table').length > 0) {
 			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			var data = $('#modul_table').DataTable().row(currentRow).data();
 			$('form').attr('action', `${BASE_URL}Modul/edit_modul_action/${id}`)
 			$('#edit-judul-modul').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-modul').val($(this).parent().siblings().eq(2).text())
-			$('#edit-id-kategori-modul-old').val($(this).parent().siblings().eq(3).text())
+			$('#edit-kategori-modul').val(data['id_kategori_modul'])
 			$(`#modal-edit-modul`).modal('show')
 		}
 		else if ($('#administrasi_kegiatan_table').length > 0) {
