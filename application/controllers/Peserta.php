@@ -583,7 +583,6 @@ class Peserta extends CI_Controller
     public function export_peserta_asesment($id_kegiatan)
     {
         include_once APPPATH . 'third_party/PHPExcel/PHPExcel.php';
-        include APPPATH . 'third_party/PHPExcel/PHPExcel/IOFactory.php';
 
 
         $file = "./assets/docs/Template Asesment.xlsx";
@@ -709,8 +708,6 @@ class Peserta extends CI_Controller
     public function export_peserta_VVA($id_kegiatan)
     {
         include_once APPPATH . 'third_party/PHPExcel/PHPExcel.php';
-        include APPPATH . 'third_party/PHPExcel/PHPExcel/IOFactory.php';
-
 
         $file = "./assets/docs/Template VVA.xlsx";
 
