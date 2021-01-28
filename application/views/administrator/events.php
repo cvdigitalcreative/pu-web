@@ -698,6 +698,9 @@
 										<tr>
 											<th>No</th>
 											<th>Nama Instruktur / Narasumber</th>
+											<th>Email</th>
+											<th>No Telepon</th>
+											<th>No Handphone</th>
 											<th>Aksi</th>
 										</tr>
 									</thead>
@@ -705,11 +708,14 @@
 							</div>
 
 							<div class="tab-pane fade show" role="tabpanel" id="list-assesor-kegiatan">
-								<table id="daftar_assesor_table" class="display" style="width:100%">
+								<table id="daftar_assesor_table" class="display" style="width: 100%;">
 									<thead>
 										<tr>
 											<th>No</th>
 											<th>Nama Assesor</th>
+											<th>Email</th>
+											<th>No Telepon</th>
+											<th>No Handphone</th>
 											<th>Aksi</th>
 										</tr>
 									</thead>

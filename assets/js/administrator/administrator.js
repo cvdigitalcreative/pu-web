@@ -473,10 +473,9 @@ Tidak ada poster kegiatan`					}
 		retrieve: true,
 		processing: true,
 		serverSide: false,
-		scrollY: "400px",
+		scrollY: true,
 		scrollX: true,
 		scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -487,6 +486,15 @@ Tidak ada poster kegiatan`					}
 			},
 			{
 				data: 'nama',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_telepon',
+			},
+			{
+				data: 'no_handphone',
 			},
 			{
 				data: 'id_tenaga_ahli',
@@ -514,10 +522,9 @@ Tidak ada poster kegiatan`					}
 		retrieve: true,
 		processing: true,
 		serverSide: false,
-		scrollY: "400px",
+		scrollY: true,
 		scrollX: true,
 		scrollCollapse: true,
-		// sDom: 'lrtip',
 		pagingType: "full_numbers",
 		language: {
 			emptyTable: "Data tidak ditemukan!",
@@ -528,6 +535,15 @@ Tidak ada poster kegiatan`					}
 			},
 			{
 				data: 'nama',
+			},
+			{
+				data: 'email',
+			},
+			{
+				data: 'no_telepon',
+			},
+			{
+				data: 'no_handphone',
 			},
 			{
 				data: 'id_tenaga_ahli',
