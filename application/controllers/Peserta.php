@@ -430,7 +430,7 @@ class Peserta extends CI_Controller
             }
 
             $no = 1; // Untuk penomoran tabel, di awal set dengan 1
-            $numrow = 4; // Set baris pertama untuk isi tabel adalah baris ke 4
+            $numrow = 6; // Set baris pertama untuk isi tabel adalah baris ke 4
             if ($data['peserta'] != null) {
                 foreach ($data['peserta'] as $val) { // Lakukan looping
                     $excel->setActiveSheetIndex(0)->setCellValue('A' . $numrow, $no);
@@ -439,27 +439,21 @@ class Peserta extends CI_Controller
                     $excel->setActiveSheetIndex(0)->setCellValue('D' . $numrow, $val['tanggal_lahir']);
                     $excel->setActiveSheetIndex(0)->setCellValue('E' . $numrow, $val['jenis_kelamin']);
                     $excel->getActiveSheet()->setCellValueExplicit('F' . $numrow, $val['nik'],  PHPExcel_Cell_DataType::TYPE_STRING);
-                    $excel->setActiveSheetIndex(0)->setCellValue('G' . $numrow, $val['nama_perusahaan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('H' . $numrow, $val['jabatan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('I' . $numrow, $val['email']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('J' . $numrow, $val['utusan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('K' . $numrow, $data['kegiatan']['judul_kegiatan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('L' . $numrow, $val['alamat_rumah']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('M' . $numrow, $val['provinsi']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('N' . $numrow, $val['kota_kabupaten']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('O' . $numrow, $val['kecamatan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('P' . $numrow, $val['kelurahan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('Q' . $numrow, $val['kode_pos']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('R' . $numrow, $val['kode_area']);
-                    $excel->getActiveSheet()->setCellValueExplicit('S' . $numrow, $val['no_telpon'],  PHPExcel_Cell_DataType::TYPE_STRING);
-                    $excel->getActiveSheet()->setCellValueExplicit('T' . $numrow, $val['no_handphone'],  PHPExcel_Cell_DataType::TYPE_STRING);
-                    $excel->setActiveSheetIndex(0)->setCellValue('U' . $numrow, $val['pendidikan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('V' . $numrow, $val['jurusan']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('W' . $numrow, $val['nama_universitas']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('X' . $numrow, $val['tahun_lulus']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('Y' . $numrow, $val['str_nama_jabker']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('Z' . $numrow, $val['kompetensi']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('AA' . $numrow, '-');
+                    $excel->setActiveSheetIndex(0)->setCellValue('G' . $numrow, $val['email']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('H' . $numrow, $val['utusan']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('I' . $numrow, $data['kegiatan']['judul_kegiatan']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('J' . $numrow, $val['alamat_rumah']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('K' . $numrow, $val['provinsi']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('L' . $numrow, $val['kota_kabupaten']);
+                    $excel->getActiveSheet()->setCellValueExplicit('M' . $numrow, $val['no_telpon'],  PHPExcel_Cell_DataType::TYPE_STRING);
+                    $excel->getActiveSheet()->setCellValueExplicit('N' . $numrow, $val['no_handphone'],  PHPExcel_Cell_DataType::TYPE_STRING);
+                    $excel->setActiveSheetIndex(0)->setCellValue('O' . $numrow, $val['pendidikan']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('P' . $numrow, $val['jurusan']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('Q' . $numrow, $val['nama_universitas']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('R' . $numrow, $val['tahun_lulus']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('S' . $numrow, $val['str_nama_jabker']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('T' . $numrow, $val['kompetensi']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('U' . $numrow, '-');
 
                     // Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
                     $excel->getActiveSheet()->getStyle('A' . $numrow)->applyFromArray($style_row_center_horizontal);
@@ -483,29 +477,14 @@ class Peserta extends CI_Controller
                     $excel->getActiveSheet()->getStyle('S' . $numrow)->applyFromArray($style_row_center_horizontal);
                     $excel->getActiveSheet()->getStyle('T' . $numrow)->applyFromArray($style_row_center_horizontal);
                     $excel->getActiveSheet()->getStyle('U' . $numrow)->applyFromArray($style_row_center_horizontal);
-                    $excel->getActiveSheet()->getStyle('V' . $numrow)->applyFromArray($style_row_center_horizontal);
-                    $excel->getActiveSheet()->getStyle('W' . $numrow)->applyFromArray($style_row_center_horizontal);
-                    $excel->getActiveSheet()->getStyle('X' . $numrow)->applyFromArray($style_row_center_horizontal);
-                    $excel->getActiveSheet()->getStyle('Y' . $numrow)->applyFromArray($style_row_center_horizontal);
-                    $excel->getActiveSheet()->getStyle('Z' . $numrow)->applyFromArray($style_row_center_horizontal);
-                    $excel->getActiveSheet()->getStyle('AA' . $numrow)->applyFromArray($style_row_center_horizontal);
-
+                   
                     $no++; // Tambah 1 setiap kali looping
                     $numrow++; // Tambah 1 setiap kali looping
-                }
-                // Set width kolom
-                foreach (range('B', 'Z') as $columnID) {
-                    $excel->getActiveSheet()->getColumnDimension($columnID)
-                        ->setAutoSize(true);
-                }
+                }        
             } else {
                 $excel->setActiveSheetIndex(0)->setCellValue('A4', "Tidak ada Peserta Kegiatan"); // Set kolom A4
-                $excel->getActiveSheet()->mergeCells('A4:AA4'); // Set Merge Cell pada kolom A4 sampai L4
+                $excel->getActiveSheet()->mergeCells('A4:U4'); // Set Merge Cell pada kolom A4 sampai L4
                 $excel->getActiveSheet()->getStyle('A4')->applyFromArray($style_row_center_horizontal);
-                foreach (range('B', 'Z') as $columnID) {
-                    $excel->getActiveSheet()->getColumnDimension($columnID)
-                        ->setAutoSize(true);
-                }
             }
             // Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
             $excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
