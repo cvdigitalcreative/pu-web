@@ -375,7 +375,12 @@ class Tenaga_ahli extends CI_Controller
             else
                 $is_asesor = false;
 
-            $file_tenaga_ahli = new \CurlFile($_FILES['file_tenaga_ahli']['tmp_name'], $_FILES['file_tenaga_ahli']['type'], $_FILES['file_tenaga_ahli']['name']);
+            if ($_FILES['file_tenaga_ahli']['size'] != 0)
+                $file_tenaga_ahli = new \CurlFile($_FILES['file_tenaga_ahli']['tmp_name'], $_FILES['file_tenaga_ahli']['type'], $_FILES['file_tenaga_ahli']['name']);
+            else
+                $file_tenaga_ahli = null;
+
+                
             $status_pns = $this->input->post('id_status_pns_tenaga_ahli');
             $npwp = $this->input->post('npwp_tenaga_ahli');
             $pendidikan = $this->input->post('id_pendidikan_tenaga_ahli');
@@ -470,9 +475,9 @@ class Tenaga_ahli extends CI_Controller
             else
                 $file_tenaga_ahli = null;
 
-                $status_pns = $this->input->post('edit_id_status_pns_tenaga_ahli');
-                $npwp = $this->input->post('edit_npwp_tenaga_ahli');
-                $pendidikan = $this->input->post('edit_id_pendidikan_tenaga_ahli');
+            $status_pns = $this->input->post('edit_id_status_pns_tenaga_ahli');
+            $npwp = $this->input->post('edit_npwp_tenaga_ahli');
+            $pendidikan = $this->input->post('edit_id_pendidikan_tenaga_ahli');
 
             $edit_tenaga_ahli = $this->Tenaga_Ahli_model->edit_tenaga_ahli(
                 $nama_lengkap,
@@ -953,23 +958,23 @@ class Tenaga_ahli extends CI_Controller
                     $data['tenaga_ahli']['alamat_lengkap'] = '-';
                     if ($data['tenaga_ahli']['alamat_rumah'] != '-') {
                         if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
-                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_rumah'];
+                            $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_rumah'];
                         else
-                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ' ' . $data['tenaga_ahli']['alamat_rumah'];
+                            $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ' ' . $data['tenaga_ahli']['alamat_rumah'];
                     }
                     if ($data['tenaga_ahli']['kabupaten_kota'] != '-') {
                         if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
-                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['kabupaten_kota'];
+                            $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['kabupaten_kota'];
                         else
-                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['kabupaten_kota'];
+                            $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['kabupaten_kota'];
                     }
                     if ($data['tenaga_ahli']['provinsi'] != '-') {
                         if ($data['tenaga_ahli']['alamat_lengkap'] == '-')
-                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['provinsi'];
+                            $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['provinsi'];
                         else
-                        $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['provinsi'];
+                            $data['tenaga_ahli']['alamat_lengkap'] = $data['tenaga_ahli']['alamat_lengkap'] . ', ' . $data['tenaga_ahli']['provinsi'];
                     }
-                    
+
                     $data['tenaga_ahli']['alamat_lengkap'] = strtolower($data['tenaga_ahli']['alamat_lengkap']);
                 } else {
                     $data['tenaga_ahli'] = null;
@@ -977,8 +982,6 @@ class Tenaga_ahli extends CI_Controller
             }
             $this->load->library('pdf');
             $this->pdf->load_view('administrator/CV', $data, $data['tenaga_ahli']['nama_lengkap']);
-
-
         } else
             redirect('pupr/login');
     }
