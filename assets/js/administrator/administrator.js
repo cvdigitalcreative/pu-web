@@ -399,9 +399,6 @@ Tidak ada poster kegiatan`					}
 				data: 'tempat_tanggal_lahir',
 			},
 			{
-				data: 'status_perkawinan',
-			},
-			{
 				data: 'nama_perusahaan',
 			},
 			{
@@ -448,9 +445,6 @@ Tidak ada poster kegiatan`					}
 			},
 			{
 				data: 'kode_area',
-			},
-			{
-				data: 'status_rumah',
 			},
 			{
 				data: 'pendidikan',

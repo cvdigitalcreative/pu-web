@@ -624,7 +624,6 @@
 										<th>Nama</th>
 										<th>Jenis Kelamin</th>
 										<th>Tempat & Tanggal Lahir</th>
-										<th>Status Perkawinan</th>
 										<th>Nama Perusahaan</th>
 										<th>Jabatan</th>
 										<th>Utusan</th>
@@ -641,7 +640,6 @@
 										<th>Rw</th>
 										<th>Kode POS</th>
 										<th>Kode Area</th>
-										<th>Status Rumah</th>
 										<th>Pendidikan</th>
 										<!-- <th>Aksi</th> -->
 									</tr>
