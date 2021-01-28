@@ -40,8 +40,23 @@ class Peserta extends CI_Controller
                             $data['peserta'][$indexPeserta]['tanggal_lahir_text'] = strtotime($val['tanggal_lahir']);
                             $data['peserta'][$indexPeserta]['tanggal_lahir_text'] = date("d F Y", $data['peserta'][$indexPeserta]['tanggal_lahir_text']);
 
+                            $data['peserta'][$indexPeserta]['str_tahun_lulus'] = date("d F Y", strtotime($val['tahun_lulus']));
+
                             $data['peserta'][$indexPeserta]['tempat_tanggal_lahir'] = $val['tempat_lahir'] . ', ' . $data['peserta'][$indexPeserta]['tanggal_lahir_text'];
 
+                            $index = 1;
+                            if (count($data['peserta'][$indexPeserta]['jabker']) != 0) {
+                                foreach ($data['peserta'][$indexPeserta]['jabker'] as $val2) {
+                                    if ($index != count($data['peserta'][$indexPeserta]['jabker'])) {
+                                        $data['peserta'][$indexPeserta]['str_nama_jabker'] = $index . '. ' . $val2['nama_jabker'] . '<br>';
+                                    } else {
+                                        $data['peserta'][$indexPeserta]['str_nama_jabker'] = $index . '. ' . $val2['nama_jabker'];
+                                    }
+                                    $index++;
+                                }
+                            } else {
+                                $data['peserta'][$indexPeserta]['str_nama_jabker'] = "-";
+                            }
 
                             $indexPeserta++;
                             $noPeserta++;
@@ -477,10 +492,10 @@ class Peserta extends CI_Controller
                     $excel->getActiveSheet()->getStyle('S' . $numrow)->applyFromArray($style_row_center_horizontal);
                     $excel->getActiveSheet()->getStyle('T' . $numrow)->applyFromArray($style_row_center_horizontal);
                     $excel->getActiveSheet()->getStyle('U' . $numrow)->applyFromArray($style_row_center_horizontal);
-                   
+
                     $no++; // Tambah 1 setiap kali looping
                     $numrow++; // Tambah 1 setiap kali looping
-                }        
+                }
             } else {
                 $excel->setActiveSheetIndex(0)->setCellValue('A4', "Tidak ada Peserta Kegiatan"); // Set kolom A4
                 $excel->getActiveSheet()->mergeCells('A4:U4'); // Set Merge Cell pada kolom A4 sampai L4

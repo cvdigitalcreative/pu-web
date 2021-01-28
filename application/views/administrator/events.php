@@ -743,23 +743,23 @@
 										<th>No</th>
 										<th>Foto</th>
 										<th>Nama</th>
-										<th>Jenis Kelamin</th>
 										<th>Tempat & Tanggal Lahir</th>
-										<th>Nama Perusahaan</th>
-										<th>Jabatan</th>
-										<th>Utusan</th>
-										<th>Email</th>
-										<th>Nomor Hp</th>
-										<th>Nomor Telepon Rumah</th>
+										<th>Jenis Kelamin</th>
 										<th>NIK</th>
+										<th>Email</th>
+										<th>Utusan</th>
 										<th>Alamat</th>
 										<th>Provinsi</th>
-										<th>Kabupaten / Kota</th>
-										<th>Kecamatan</th>
-										<th>Kelurahan</th>
-										<th>Kode POS</th>
-										<th>Kode Area</th>
+										<th>Kabupaten/Kota</th>
+										<th>Nomor Telepon Rumah</th>
+										<th>Nomor Handphone</th>
 										<th>Pendidikan</th>
+=										<th>Jurusan</th>
+=										<th>Universitas/ST/Institute</th>
+=										<th>Tanggal Lulus Pendidikan</th>
+=										<th>Jabatan Kerja</th>
+=										<th>Kompeten</th>
+=										<th>No Sertifikat</th>
 										<!-- <th>Aksi</th> -->
 									</tr>
 								</thead>
