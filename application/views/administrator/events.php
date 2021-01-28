@@ -682,17 +682,17 @@
 					</div>
 
 					<div class="card-body">
-						<ul class="nav nav-tabs" role="tablist">
+						<ul class="nav nav-tabs pt-2 pb-4" role="tablist">
 							<li class="nav-item">
-								<a class="nav-link active" href="#instruktur-kegiatan" role="tab" data-toggle="tab">Instruktur / Narasumber</a>
+								<a class="nav-link active" href="#list-instruktur-kegiatan" role="tab" data-toggle="tab">Instruktur / Narasumber</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#assesor-kegiatan" role="tab" data-toggle="tab">Asesor</a>
+								<a class="nav-link" href="#list-assesor-kegiatan" role="tab" data-toggle="tab">Asesor</a>
 							</li>
 						</ul>
 						
 						<div class="tab-content">
-							<div class="tab-pane fade active show" role="tabpanel" id="instruktur-kegiatan">
+							<div class="tab-pane fade active show" role="tabpanel" id="list-instruktur-kegiatan">
 								<table id="daftar_instruktur_table" class="display" style="width:100%">
 									<thead>
 										<tr>
@@ -704,7 +704,7 @@
 								</table>
 							</div>
 
-							<div class="tab-pane fade show" role="tabpanel" id="assesor-kegiatan">
+							<div class="tab-pane fade show" role="tabpanel" id="list-assesor-kegiatan">
 								<table id="daftar_assesor_table" class="display" style="width:100%">
 									<thead>
 										<tr>
