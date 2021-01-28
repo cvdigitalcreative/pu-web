@@ -532,8 +532,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<!-- <form method="POST" action="<?= base_url()?>Tenaga_ahli/import_tenaga_ahli_action" enctype="multipart/form-data"> -->
-					<form method="POST" action="" enctype="multipart/form-data">
+					<form method="POST" action="<?= base_url()?>Tenaga_ahli/import_tenaga_ahli_action" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Tenaga Terampil</label>
 							<div class="custom-file">

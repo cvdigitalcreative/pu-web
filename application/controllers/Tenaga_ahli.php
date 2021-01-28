@@ -931,10 +931,10 @@ class Tenaga_ahli extends CI_Controller
             else {
                 if ($import['status'] == 'Success') {
                     $this->session->set_flashdata('success', $import['message']);
-                    redirect('pupr/events');
+                    redirect('pupr/experts');
                 } else {
                     $this->session->set_flashdata('APImessage', $import['message']);
-                    redirect('pupr/events');
+                    redirect('pupr/experts');
                 }
             }
         } else
