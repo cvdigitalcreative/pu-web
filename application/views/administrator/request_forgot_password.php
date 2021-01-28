@@ -11,7 +11,7 @@
 	<div class="">
 		<div class="row">
 
-			<div class="col left">
+			<div class="col left login-content-left">
 				<div class="row d-flex flex-column justify-content-center align-items-center">
 					<div class="align-items-center">
 						<img class="img-fluids image-ilustrasi" width="284.58" height="320"
@@ -27,7 +27,7 @@
 			<div class="col right">
 
 				<div class="row d-flex flex-column justify-content-center align-items-center">
-					<div class="col-5">
+					<div class="col-5 login-content-right">
 
 						<div class="mb-4">
 							<img style="vertical-align:middle" src="<?= base_url('assets/image/pupr-logo.svg') ?>"
