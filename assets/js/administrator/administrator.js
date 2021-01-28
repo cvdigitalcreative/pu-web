@@ -500,8 +500,7 @@ Tidak ada poster kegiatan`					}
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-reject-instruktur-kegiatan' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
 		],
@@ -515,6 +514,15 @@ Tidak ada poster kegiatan`					}
 			emptyTable: "Data tidak ditemukan!",
 		}
 	});
+
+	$('table').on('click', '#btn-reject-instruktur-kegiatan', function () {
+		if ($('#daftar_instruktur_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Kegiatan/delete_instruktur_kegiatan_action/${id}/${id_kegiatan}`)
+			$('#modal-lihat-instruktur-assesor-by-kegiatan').modal('hide')
+			$('#modal-delete-instruktur-kegiatan').modal('show')
+		}
+	})
 
 
 	var TableAsesor = $("#daftar_assesor_table").DataTable({
@@ -549,8 +557,7 @@ Tidak ada poster kegiatan`					}
 				data: 'id_tenaga_ahli',
 				render: function (data) {
 					return `
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-reject-asesor-kegiatan' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
 				}
 			},
 		],
@@ -564,6 +571,15 @@ Tidak ada poster kegiatan`					}
 			emptyTable: "Data tidak ditemukan!",
 		}
 	});
+
+	$('table').on('click', '#btn-reject-asesor-kegiatan', function () {
+		if ($('#daftar_assesor_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Kegiatan/delete_asesor_kegiatan_action/${id}/${id_kegiatan}`)
+			$('#modal-lihat-instruktur-assesor-by-kegiatan').modal('hide')
+			$('#modal-delete-asesor-kegiatan').modal('show')
+		}
+	})
 	// End of Daftar Peserta by Kalender Kegiatan datatable 
 
 	fill_datatable_tenaga_ahli();
@@ -2355,6 +2371,20 @@ Tidak ada poster kegiatan`					}
 	$('#btn-tambah-instruktur-asesor-kegiatan').on('click', function () {
 		window.location.replace(`${BASE_URL}pupr/experts?redirect=events&show=1`); 
 	})
+
+	$('#btn-add-instruktur-kegiatan').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Kegiatan/add_instruktur_kegiatan_action/${id_kegiatan}`)
+		$('#modal-lihat-instruktur-assesor-by-kegiatan').modal('hide')
+		$('#modal-tambah-instruktur-kegiatan').modal('show')
+	})
+	
+	$('#btn-add-asesor-kegiatan').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Kegiatan/add_asesor_kegiatan_action/${id_kegiatan}`)
+		$('#modal-lihat-instruktur-assesor-by-kegiatan').modal('hide')
+		$('#modal-tambah-asesor-kegiatan').modal('show')
+	})
+
+
 
 	jQuery.each(jQuery('textarea[data-autoresize]'), function() {
 		var offset = this.offsetHeight - this.clientHeight;

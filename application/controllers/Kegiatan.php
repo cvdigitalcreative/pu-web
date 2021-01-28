@@ -1214,4 +1214,81 @@ class Kegiatan extends CI_Controller
             }
         }
     }
+
+    public function add_instruktur_kegiatan_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $id_tenaga_ahli = $this->input->post('id_tenaga_ahli');
+            $tambah = $this->Kegiatan_model->add_instruktur($id_tenaga_ahli, $id_kegiatan, $this->session->userdata('token'));
+            if ($tambah == null) {
+                $this->load->view('error_page');
+            } else {
+                if ($tambah['status'] == "Success") {
+                    $this->session->set_flashdata('success', $tambah['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $tambah['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect("pupr/login");
+    }
+
+    public function add_asesor_kegiatan_action($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $id_tenaga_ahli = $this->input->post('id_tenaga_ahli');
+            $tambah = $this->Kegiatan_model->add_asesor($id_tenaga_ahli, $id_kegiatan, $this->session->userdata('token'));
+            if ($tambah == null) {
+                $this->load->view('error_page');
+            } else {
+                if ($tambah['status'] == "Success") {
+                    $this->session->set_flashdata('success', $tambah['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $tambah['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect("pupr/login");
+    }
+    public function delete_instruktur_kegiatan_action($id_tenaga_ahli, $id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $tambah = $this->Kegiatan_model->delete_instruktur($id_tenaga_ahli, $id_kegiatan, $this->session->userdata('token'));
+            if ($tambah == null) {
+                $this->load->view('error_page');
+            } else {
+                if ($tambah['status'] == "Success") {
+                    $this->session->set_flashdata('success', $tambah['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $tambah['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect("pupr/login");
+    }
+
+    public function delete_asesor_kegiatan_action($id_tenaga_ahli, $id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $tambah = $this->Kegiatan_model->delete_asesor($id_tenaga_ahli, $id_kegiatan, $this->session->userdata('token'));
+            if ($tambah == null) {
+                $this->load->view('error_page');
+            } else {
+                if ($tambah['status'] == "Success") {
+                    $this->session->set_flashdata('success', $tambah['message']);
+                    redirect('pupr/events');
+                } else {
+                    $this->session->set_flashdata('APImessage', $tambah['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect("pupr/login");
+    }
 }
