@@ -282,7 +282,7 @@ class Common_model extends CI_Model
     public function add_kelurahan_desa($nama_kelurahan_desa, $id_kecamatan, $token)
     {
         $data = [
-            'kelurahan_desa' => $nama_kelurahan_desa
+            'kelurahan' => $nama_kelurahan_desa
         ];
         return $this->http_request_post($data, "/kelurahan-desa/$id_kecamatan", $token);
     }
@@ -290,7 +290,7 @@ class Common_model extends CI_Model
     public function edit_kelurahan_desa($nama_kelurahan_desa, $id_kelurahan_desa, $token)
     {
         $data = [
-            'kelurahan_desa' => $nama_kelurahan_desa
+            'kelurahan' => $nama_kelurahan_desa
         ];
         return $this->http_request_update($data, "/kelurahan-desa/$id_kelurahan_desa", $token);
     }

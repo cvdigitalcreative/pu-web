@@ -76,7 +76,7 @@
 								placeholder="Contoh: Ini adalah deskripsi administrasi kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileAdministrasiKegiatan">File Administrasi Kegiatan *</label>
+							<label for="fileAdministrasiKegiatan">File Administrasi Kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-administrasi-kegiatan"
 									name="file_administrasi_kegiatan">

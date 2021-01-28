@@ -20,7 +20,7 @@
 				<div class="modal-body">
 
 					<div class="form-group py-2">
-							<label for="provinsiTenagaAhli">Provinsi *</label>
+							<label for="provinsiTenagaAhli">Provinsi</label>
 							<select class="form-control" id="filter-id-provinsi-tenaga-ahli" name="filter_id_provinsi_tenaga_ahli"
 								>
 								<option selected value=<?= null?>>Pilih Provinsi</option>
@@ -30,7 +30,7 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="filterJabkerTenagaAhli">Jabatan Kerja *</label>
+							<label for="filterJabkerTenagaAhli">Jabatan Kerja</label>
 							<select class="form-control" id="filter-jabatan-kerja-tenaga-ahli" name="filter_jabatan_kerja_tenaga_ahli"
 								aria-placeholder="Pilih status kegiatan">
 								<option selected value=<?= null?>>Pilih Jabatan Kerja</option>
@@ -41,7 +41,7 @@
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
+							<label for="KategoriTenagaAhli">Ketenagakerjaan</label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<div class="input-group-text">
@@ -390,7 +390,7 @@
 										placeholder="Contoh: 0203094902939043" required>
 								</div>
 						<div class="form-group py-2">
-							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
+							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja</label>
 							<select class="form-control selectpicker" id="edit-jabatan-kerja-tenaga-ahli"
 								name="edit_id_jabatan_kerja_tenaga_ahli[]" aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
 								data-live-search="true">
@@ -473,7 +473,7 @@
 						</div>
 
 						<div class="form-group py-2">
-							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
+							<label for="fileTenagaAhli">File Tenaga Ahli</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-tenaga-ahli"
 									name="file_tenaga_ahli">
@@ -537,7 +537,7 @@
 							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Tenaga Terampil</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
-									name="file_excel_tambah_tenaga">
+									name="file_excel_tambah_tenaga" accept=".xlsx, .xls, .csv">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
 								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
 									Pilih file excel tambah tenaga ahli & Tenaga terampil

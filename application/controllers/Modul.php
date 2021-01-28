@@ -183,17 +183,7 @@ class Modul extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $judul_modul = $this->input->post('judul_modul');
             $deskripsi_modul = $this->input->post('deskripsi_modul');
-            echo $this->input->post('id_kategori_modul_old');
-            if ($this->input->post('id_kategori_modul') != null)
-                $id_kategori_modul = $this->input->post('id_kategori_modul');
-            else {
-                $id_kategori_modul = $this->input->post('id_kategori_modul_old');
-                $kategoritemp = $this->Common_model->view_kategori_modul($this->session->userdata('token'));
-                foreach ($kategoritemp['data'] as $val) {
-                    if ($val['kategori_modul'] == $id_kategori_modul)
-                        $id_kategori_modul = $val['id_kategori_modul'];
-                }
-            }
+            $id_kategori_modul = $this->input->post('id_kategori_modul');
             if ($_FILES['file_modul']['size'] > 0)
                 $file_modul = new \CurlFile($_FILES['file_modul']['tmp_name'], $_FILES['file_modul']['type'], $_FILES['file_modul']['name']);
             else

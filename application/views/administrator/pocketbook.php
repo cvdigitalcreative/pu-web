@@ -68,7 +68,7 @@
 							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-buku-saku" name="deskripsi_buku_saku" placeholder="Contoh: Ini adalah deskripsi buku saku kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileBukuSaku">File Buku Saku *</label>
+							<label for="fileBukuSaku">File Buku Saku</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-buku-saku" name="file_buku_saku">
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file buku saku...</label>
