@@ -286,6 +286,7 @@ $(document).ready(function () {
 				else {
 							return `
 					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
+					<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
 					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}' disabled>Selesai Dilaksanakan</button>
 					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
 					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>`
@@ -301,6 +302,9 @@ $(document).ready(function () {
 				},
 				{
 					data: 'status_kegiatan',
+				},
+				{
+					data: 'jumlah_peserta',
 				},
 				{
 					data: 'jenis_kegiatan',
@@ -337,9 +341,6 @@ Tidak ada poster kegiatan`					}
 				},
 				{
 					data: 'lokasi_kegiatan',
-				},
-				{
-					data: 'jumlah_peserta',
 				},
 				{
 					data: 'null',

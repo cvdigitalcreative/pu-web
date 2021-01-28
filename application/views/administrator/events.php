@@ -658,6 +658,65 @@
 	</div>
 	<!-- End of lihat peserta Modal -->
 
+	<!-- Lihat instruktur assesor Modal -->
+	<div class="modal fade" id="modal-lihat-instruktur-assesor-by-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-dialog-centered modal-daftar-peserta-kegiatan-custom" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Daftar Instruktur / Narasumber & Assesor Kegiatan</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="col">
+						<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</a>
+						<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Instruktur / Narasumber</a>
+						<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Assesor</a>
+						<button class="btn btn-warning btn-import-kegiatan" id="btn-import-peserta-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Peserta</button>
+						<a href="<?= base_url() ?>Kegiatan/download_format_peserta_excel_action"><button class="btn btn-danger btn-import-kegiatan float-right"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
+					</div>
+
+					<div class="card-body">
+						<div class="tab-content">
+							<div class="tab-pane fade active show" role="tabpanel" id="instruktur-kegiatan">
+								<table id="daftar_instruktur_table" class="display" style="width:100%">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>Nama Instruktur / Narasumber</th>
+											<th>Aksi</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+
+							<div class="tab-pane fade show" role="tabpanel" id="assesor-kegiatan">
+								<table id="daftar_assesor_table" class="display" style="width:100%">
+									<thead>
+										<tr>
+											<th>No</th>
+											<th>Nama Assesor</th>
+											<th>Aksi</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- End of Lihat instruktur assesor Modal -->
+
 	<!-- Modal show image -->
 	<div id="show-image-modal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -798,6 +857,7 @@
 											<th>Nama Kegiatan</th>
 											<th>Deskripsi Kegiatan</th>
 											<th>Status Kegiatan</th>
+											<th>Jumlah Peserta</th>
 											<th>Akun Kegiatan</th>
 											<th>Jenis Kegiatan</th>
 											<th>Tanggal Kegiatan</th>
@@ -807,7 +867,6 @@
 											<th>Provinsi Kegiatan</th>
 											<th>Kota Kegiatan</th>
 											<th>Lokasi Kegiatan</th>
-											<th>Jumlah Peserta</th>
 											<th>File Materi Kegiatan</th>
 										</tr>
 									</thead>
