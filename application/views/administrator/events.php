@@ -204,16 +204,16 @@
 						<div>
 							<a class="btn btn-block btn-primary btn-move-input-experts" id="btn-tambah-instruktur-asesor-kegiatan" role="button">
 								<img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-								Tambah Instruktur & Assesor
+								Tambah Instruktur / Narasumber & Assesor
 							</a>
 							<small id="file-materi-kegiatan" class="form-text text-muted mb-4">
-								Klik untuk menambahkan instruktur dan assesor baru.
+								Klik untuk menambahkan instruktur / narasumber dan assesor baru.
 							</small>
 						</div>
 
 						<div class="form-group py-2">
-							<label for="instrukturKegiatan">Instruktur kegiatan</label>
-							<select class="form-control selectpicker" id="instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur kegiatan" multiple data-live-search="true">
+							<label for="instrukturKegiatan">Instruktur / Narasumber kegiatan</label>
+							<select class="form-control selectpicker" id="instruktur-kegiatan" name="id_instruktur_kegiatan[]" aria-placeholder="Pilih instruktur / narasumber kegiatan" multiple data-live-search="true">
 								<?php if ($instruktur != null) :
 									foreach ($instruktur as $row) : ?>
 										<option value="<?= $row['id_tenaga_ahli'] ?>"><?= $row['nama_lengkap'] ?></option>
@@ -802,7 +802,7 @@
 											<th>Jenis Kegiatan</th>
 											<th>Tanggal Kegiatan</th>
 											<th>Banner Kegiatan</th>
-											<th>Instruktur Kegiatan</th>
+											<th>Instruktur / Narasumber Kegiatan</th>
 											<th>Assesor Kegiatan</th>
 											<th>Provinsi Kegiatan</th>
 											<th>Kota Kegiatan</th>
