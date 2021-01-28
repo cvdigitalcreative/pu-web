@@ -370,7 +370,10 @@ class Kegiatan extends CI_Controller
             $latitude_lokasi = 0;
             $longitude_lokasi = 0;
             $status_kegiatan = 1;
-            $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+            if ($_FILES['foto_banner_kegiatan']['size'] != 0)
+                $foto_banner_kegiatan = new \CurlFile($_FILES['foto_banner_kegiatan']['tmp_name'], $_FILES['foto_banner_kegiatan']['type'], $_FILES['foto_banner_kegiatan']['name']);
+            else
+                $foto_banner_kegiatan = null;
             $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
             $id_jenis_kegiatan = $this->input->post('id_jenis_kegiatan');
             $id_provinsi = $this->input->post('id_provinsi');
@@ -383,20 +386,26 @@ class Kegiatan extends CI_Controller
                     $id_asesor_kegiatan = (string)implode(',', $id_asesor_kegiatan);
                     $id_asesor_kegiatan = "[" . $id_asesor_kegiatan . "]";
                 }
-            }
+            } else
+                $id_asesor_kegiatan = "[]";
+
+
             $id_instruktur_kegiatan = $this->input->post('id_instruktur_kegiatan');
             if ($id_instruktur_kegiatan != null) {
                 if (count($id_instruktur_kegiatan) == 1)
-                $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan[0] . "]";
+                    $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan[0] . "]";
                 else {
                     $id_instruktur_kegiatan = (string)implode(',', $id_instruktur_kegiatan);
                     $id_instruktur_kegiatan = "[" . $id_instruktur_kegiatan . "]";
                 }
-            }            
-            if($_FILES['file_materi_kegiatan']['size'] != 0)
-            $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
+            } else
+                $id_instruktur_kegiatan = "[]";
+
+
+            if ($_FILES['file_materi_kegiatan']['size'] != 0)
+                $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
             else
-            $file_materi_kegiatan = null;
+                $file_materi_kegiatan = null;
 
             $tambah_kegiatan = $this->Kegiatan_model->add_kegiatan(
                 $judul_kegiatan,
@@ -417,7 +426,7 @@ class Kegiatan extends CI_Controller
                 $file_materi_kegiatan,
                 $this->session->userdata('token')
             );
-            
+
             if ($tambah_kegiatan == null) {
                 $this->load->view('error_page');
             }
