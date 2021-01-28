@@ -1984,26 +1984,12 @@ Tidak ada poster kegiatan`					}
 			var currentRow = $(this).closest("tr");
 			var data = $('#kalender_kegiatan_table').DataTable().row(currentRow).data();
 			if (data['id_status_kegiatan'] == 1) {
-				$('#btn-export-peserta-vva').on('click', function () {
-					$.ajax({
-						url: `${BASE_URL}Peserta/export_peserta_VVA/${id}`,
-						success: function () {
-							window.location = `${BASE_URL}Peserta/export_peserta_VVA/${id}`;
-						}
-					})
-				});
+				$('#btn-export-peserta-vva').attr('href', `${BASE_URL}Peserta/export_peserta_VVA/${id}`)
 				$('form').attr('action', `${BASE_URL}Kegiatan/update_status_kegiatan_VVA_action/${id}`)
 				$(`#modal-ganti-status-kegiatan-vva`).modal('show')
 			}
 			if (data['id_status_kegiatan'] == 3) {
-				$('#btn-export-peserta-asesment').on('click', function () {
-					$.ajax({
-						url: `${BASE_URL}Peserta/export_peserta_asesment/${id}`,
-						success: function () {
-							window.location = `${BASE_URL}Peserta/export_peserta_asesment/${id}`;
-						}
-					})
-				});
+				$('#btn-export-peserta-asesment').attr('href', `${BASE_URL}Peserta/export_peserta_asesment/${id}`)
 				$('form').attr('action', `${BASE_URL}Kegiatan/update_status_kegiatan_asesment_action/${id}`)
 				$(`#modal-ganti-status-kegiatan-asesment`).modal('show')
 			}
