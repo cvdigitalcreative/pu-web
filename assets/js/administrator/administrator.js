@@ -395,31 +395,19 @@ Tidak ada poster kegiatan`					}
 				data: 'nama',
 			},
 			{
-				data: 'jenis_kelamin',
-			},
-			{
 				data: 'tempat_tanggal_lahir',
 			},
 			{
-				data: 'nama_perusahaan',
+				data: 'jenis_kelamin',
 			},
 			{
-				data: 'jabatan',
-			},
-			{
-				data: 'utusan',
+				data: 'nik',
 			},
 			{
 				data: 'email',
 			},
 			{
-				data: 'no_handphone',
-			},
-			{
-				data: 'no_telpon',
-			},
-			{
-				data: 'nik',
+				data: 'utusan',
 			},
 			{
 				data: 'alamat_rumah',
@@ -431,19 +419,33 @@ Tidak ada poster kegiatan`					}
 				data: 'kota_kabupaten',
 			},
 			{
-				data: 'kecamatan',
+				data: 'no_telpon',
 			},
 			{
-				data: 'kelurahan',
-			},
-			{
-				data: 'kode_pos',
-			},
-			{
-				data: 'kode_area',
+				data: 'no_handphone',
 			},
 			{
 				data: 'pendidikan',
+			},
+			{
+				data: 'jurusan',
+			},
+			{
+				data: 'nama_universitas',
+			},
+			{
+				data: 'str_tahun_lulus',
+			},
+			{
+				data: 'str_nama_jabker',
+			},
+			{
+				data: 'kompetensi',
+			},
+			{
+				render: function () {
+					return "-"
+				}
 			},
 			// {
 			// 	data: 'id_user',
