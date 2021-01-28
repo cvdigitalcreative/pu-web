@@ -23,7 +23,7 @@
 							<label for="provinsiTenagaAhli">Provinsi *</label>
 							<select class="form-control" id="filter-id-provinsi-tenaga-ahli" name="filter_id_provinsi_tenaga_ahli"
 								>
-								<option selected disabled>Pilih Provinsi</option>
+								<option selected value=<?= null?>>Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
 								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
 								<?php endforeach ?>
@@ -33,7 +33,7 @@
 							<label for="filterJabkerTenagaAhli">Jabatan Kerja *</label>
 							<select class="form-control" id="filter-jabatan-kerja-tenaga-ahli" name="filter_jabatan_kerja_tenaga_ahli"
 								aria-placeholder="Pilih status kegiatan">
-								<option selected disabled>Pilih Jabatan Kerja</option>
+								<option selected value=<?= null?>>Pilih Jabatan Kerja</option>
 								<?php if($jabker != null):
 								foreach ($jabker as $row):?>
 								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
@@ -100,23 +100,23 @@
 						<div class="form-group py-2">
 							<div class="row">
 								<div class="col">
-							<label for="tempatLahirTenagaAhli">Tempat Lahir *</label>
+							<label for="tempatLahirTenagaAhli">Tempat Lahir</label>
 									<input type="text" class="form-control" id="tempat-lahir-tenaga-ahli" name="tempat_lahir_tenaga_ahli"
-										placeholder="Contoh: Jakarta" required>
+										placeholder="Contoh: Jakarta">
 								</div>
 								<div class="col">
-							<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
+							<label for="tanggalLahirTenagaAhli">Tanggal Lahir</label>
 										<input type="text" class="form-control js-daterangepicker"
 											id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli" value=""
-											placeholder="Pilih tanggal lahir" required>
+											placeholder="Pilih tanggal lahir">
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group py-2">
-							<label for="jenisKelamin">Jenis Kelamin *</label>
-							<select class="form-control" id="jenis-kelamin-tenaga-ahli" name="id_jenis_kelamin_tenaga_ahli" required>
-								<option selected disabled>Pilih jenis kelamin</option>
+							<label for="jenisKelamin">Jenis Kelamin</label>
+							<select class="form-control" id="jenis-kelamin-tenaga-ahli" name="id_jenis_kelamin_tenaga_ahli">
+								<option selected value="<?= null?>">Pilih jenis kelamin</option>
 								<?php if($jenis_kelamin != null):
 								foreach ($jenis_kelamin as $row):?>
 								<option value="<?=$row['id_jenis_kelamin']?>"><?= $row['jenis_kelamin']?></option>
@@ -131,9 +131,9 @@
 						</div>
 
 						<div class="form-group py-2">
-							<label for="emailTenagaAhli">Email *</label>
+							<label for="emailTenagaAhli">Email</label>
 							<input type="email" class="form-control" id="email-tenaga-ahli" name="email_tenaga_ahli"
-								placeholder="Contoh: andisetiawan@email.com" required>
+								placeholder="Contoh: andisetiawan@email.com">
 						</div>
 
 						<div class="form-group py-2">
@@ -143,33 +143,35 @@
 						</div>
 
 						<div class="form-group py-2">
-							<label for="provinsiTenagaAhli">Provinsi *</label>
+							<label for="provinsiTenagaAhli">Provinsi</label>
+
 							<select class="form-control" id="provinsi-tenaga-ahli" name="id_provinsi_tenaga_ahli"
-								onChange="getStateTenagaAhli(this.value);" required>
+								onChange="getStateTenagaAhli(this.value);">
+							<option selected value="<?= null?>">Pilih Provinsi</option>
 								<?php foreach ($provinsi as $row) : ?>
 								<option value="<?= $row['id_provinsi']?>"><?= $row['provinsi']?></option>
 								<?php endforeach ?>
 							</select>
 						</div>
 						<div class="form-group py-2">
-							<label for="kotaTenagaAhli">Kota *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
-							<select class="form-control" id="kota-tenaga-ahli" name="id_kota_kabupaten_tenaga_ahli" required>
+							<label for="kotaTenagaAhli">Kota <span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
+							<select class="form-control" id="kota-tenaga-ahli" name="id_kota_kabupaten_tenaga_ahli">
 							</select>
 						</div>
 
 						<div class="row">
 							<div class="col">
 								<div class="form-group py-2">
-									<label for="nomorHandphone">Nomor Handphone *</label>
+									<label for="nomorHandphone">Nomor Handphone</label>
 									<input type="text" class="form-control" id="nomor-handphone-tenaga-ahli" name="nomor_handphone_tenaga_ahli"
-										placeholder="Contoh: +6282112341234" required>
+										placeholder="Contoh: +6282112341234">
 								</div>
 							</div>
 							<div class="col">
 								<div class="form-group py-2">
-									<label for="nomorRumah">Nomor Rumah *</label>
+									<label for="nomorRumah">Nomor Rumah</label>
 									<input type="text" class="form-control" id="nomor-rumah-tenaga-ahli" name="nomor_rumah_tenaga_ahli"
-										placeholder="Contoh: +6271112345" required>
+										placeholder="Contoh: +6271112345">
 								</div>
 							</div>
 						</div>
@@ -217,7 +219,7 @@
 						</div>
 
 						<div class="form-group py-2">
-							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
+							<label for="KategoriTenagaAhli">Ketenagakerjaan</label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<div class="input-group-text">
@@ -242,7 +244,7 @@
 						<div class="form-group py-2">
 							<label for="filterJabkerTenagaAhli">Status PNS *</label>
 							<select class="form-control" id="status-pns-tenaga-ahli" name="id_status_pns_tenaga_ahli"
-								aria-placeholder="Pilih status PNS">
+								aria-placeholder="Pilih status PNS" required>
 								<option selected disabled>Pilih Status PNS</option>
 								<?php if($status_pns != null):
 								foreach ($status_pns as $row):?>
@@ -253,7 +255,7 @@
 						<div class="form-group py-2">
 							<label for="filterJabkerTenagaAhli">Pendidikan Terakhir *</label>
 							<select class="form-control" id="pendidikan-tenaga-ahli" name="id_pendidikan_tenaga_ahli"
-								aria-placeholder="Pilih pendidikan terakhir">
+								aria-placeholder="Pilih pendidikan terakhir" required>
 								<option selected disabled>Pilih pendidikan terakhir</option>
 								<?php if($pendidikan != null):
 								foreach ($pendidikan as $row):?>
@@ -266,7 +268,7 @@
 							<label for="fileTenagaAhli">File Tenaga Ahli *</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
-									name="file_tenaga_ahli">
+									name="file_tenaga_ahli" required>
 								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
 								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
 									Pilih file tenaga ahli
@@ -286,8 +288,8 @@
 	</div>
 	<!-- End modal tambah tenaga ahli -->
 
-		<!-- Edit Tenaga Ahli -->
-		<div class="modal fade bd-example-modal-lg" id="modal-edit-tenaga-ahli" tabindex="-1" role="dialog">
+<!-- Edit Tenaga Ahli -->
+<div class="modal fade bd-example-modal-lg" id="modal-edit-tenaga-ahli" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -341,7 +343,7 @@
 
 						<div class="form-group py-2">
 							<label for="emailTenagaAhli">Email *</label>
-							<input type="email" class="form-control" id="edit-email-tenaga-ahli" name="edit_email_tenaga_ahli"
+							<input type="text" class="form-control" id="edit-email-tenaga-ahli" name="edit_email_tenaga_ahli"
 								placeholder="Contoh: andisetiawan@email.com" required>
 						</div>
 
@@ -450,7 +452,7 @@
 						<div class="form-group py-2">
 							<label for="filterJabkerTenagaAhli">Status PNS *</label>
 							<select class="form-control" id="edit-status-pns-tenaga-ahli" name="edit_id_status_pns_tenaga_ahli"
-								aria-placeholder="Pilih status PNS">
+								aria-placeholder="Pilih status PNS" required>
 								<option selected disabled>Pilih Status PNS</option>
 								<?php if($status_pns != null):
 								foreach ($status_pns as $row):?>
@@ -461,7 +463,7 @@
 						<div class="form-group py-2">
 							<label for="filterJabkerTenagaAhli">Pendidikan Terakhir *</label>
 							<select class="form-control" id="edit-pendidikan-tenaga-ahli" name="edit_id_pendidikan_tenaga_ahli"
-								aria-placeholder="Pilih pendidikan terakhir">
+								aria-placeholder="Pilih pendidikan terakhir" required>
 								<option selected disabled>Pilih pendidikan terakhir</option>
 								<?php if($pendidikan != null):
 								foreach ($pendidikan as $row):?>
