@@ -435,12 +435,6 @@ Tidak ada poster kegiatan`					}
 				data: 'kelurahan',
 			},
 			{
-				data: 'rt',
-			},
-			{
-				data: 'rw',
-			},
-			{
 				data: 'kode_pos',
 			},
 			{

@@ -636,8 +636,6 @@
 										<th>Kabupaten / Kota</th>
 										<th>Kecamatan</th>
 										<th>Kelurahan</th>
-										<th>Rt</th>
-										<th>Rw</th>
 										<th>Kode POS</th>
 										<th>Kode Area</th>
 										<th>Pendidikan</th>
