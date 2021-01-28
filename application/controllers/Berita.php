@@ -119,10 +119,10 @@ class Berita extends CI_Controller
             }
             if ($tambah_berita['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_berita['message']);
-                redirect();
+                redirect("pupr/news");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_berita['message']);
-                redirect();
+                redirect("pupr/news");
             }
         } else {
             redirect("pupr/login");
