@@ -1679,7 +1679,7 @@
 
 							<div class="tab-content">
 								<div class="tab-pane fade active show" role="tabpanel" id="akun-kegiatan">
-									<table id="akun_kegiatan_table" class="display">
+									<table id="akun_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1691,7 +1691,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="jenis-kegiatan">
-									<table id="jenis_kegiatan_table" class="display">
+									<table id="jenis_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1703,7 +1703,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="provinsi-kegiatan">
-									<table id="provinsi_kegiatan_table" class="display">
+									<table id="provinsi_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1715,7 +1715,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="kota-kegiatan">
-									<table id="kota_kegiatan_table" class="display">
+									<table id="kota_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1727,7 +1727,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="kecamatan-kegiatan">
-									<table id="kecamatan_kegiatan_table" class="display">
+									<table id="kecamatan_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1739,7 +1739,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="kelurahan-kegiatan">
-									<table id="kelurahan_kegiatan_table" class="display">
+									<table id="kelurahan_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1751,7 +1751,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="status-kegiatan">
-									<table id="status_kegiatan_table" class="display">
+									<table id="status_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1763,7 +1763,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="status-peserta-kegiatan">
-									<table id="status_peserta_kegiatan_table" class="display">
+									<table id="status_peserta_kegiatan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1775,7 +1775,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="kategori-tenaga-ahli">
-									<table id="kategori_tenaga_ahli_table" class="display">
+									<table id="kategori_tenaga_ahli_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1787,7 +1787,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="jabatan-kerja">
-									<table id="jabatan_kerja_table" class="display">
+									<table id="jabatan_kerja_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1799,7 +1799,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="status-perkawinan">
-									<table id="status_perkawinan_table" class="display">
+									<table id="status_perkawinan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1811,7 +1811,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="status-rumah">
-									<table id="status_rumah_table" class="display">
+									<table id="status_rumah_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1823,7 +1823,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="master-pendidikan">
-									<table id="pendidikan_table" class="display">
+									<table id="pendidikan_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1835,7 +1835,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="master-skkni">
-									<table id="skkni_master_table" class="display">
+									<table id="skkni_master_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1847,7 +1847,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="master-modul">
-									<table id="kategori_modul_table" class="display">
+									<table id="kategori_modul_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
@@ -1859,7 +1859,7 @@
 								</div>
 
 								<div class="tab-pane fade show" role="tabpanel" id="master-pns">
-									<table id="pns_table" class="display">
+									<table id="pns_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
