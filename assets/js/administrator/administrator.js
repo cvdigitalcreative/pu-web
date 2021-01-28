@@ -2101,8 +2101,12 @@ Tidak ada poster kegiatan`					}
 		else if ($('#tenaga_ahli_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Tenaga_ahli/edit_tenaga_ahli_action/${id}`)
+			var currentRow = $(this).closest("tr");
+			var data = $('#tenaga_ahli_table').DataTable().row(currentRow).data();
 			$('#edit-nama-tenaga-ahli').val($(this).parent().siblings().eq(1).text())
 			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
+			$('#edit-status-pns-tenaga-ahli').val(data['id_status_pns'])
+			$('#edit-pendidikan-tenaga-ahli').val(data['id_pendidikan'])
 			$('#edit-nik-tenaga-ahli').val($(this).parent().siblings().eq(8).text())
 			$('#edit-email-tenaga-ahli').val($(this).parent().siblings().eq(5).text())
 			$('#edit-alamat-tenaga-ahli').val($(this).parent().siblings().eq(12).text())
