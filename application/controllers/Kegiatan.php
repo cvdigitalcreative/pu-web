@@ -774,15 +774,12 @@ class Kegiatan extends CI_Controller
                 $foto_banner_kegiatan = new \CurlFile($_FILES['edit_foto_banner_kegiatan']['tmp_name'], $_FILES['edit_foto_banner_kegiatan']['type'], $_FILES['edit_foto_banner_kegiatan']['name']);
             $id_akun_kegiatan = $this->input->post('id_akun_kegiatan');
             $id_jenis_kegiatan = $this->input->post('id_jenis_kegiatan');
-            $id_provinsi = $this->input->post('id_provinsi');
-            $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
+            $id_provinsi = $this->input->post('edit_id_provinsi');
+            $id_kota_kabupaten = $this->input->post('edit_id_kota_kabupaten');
             if ($_FILES['file_materi_kegiatan']['size'] == 0)
                 $file_materi_kegiatan = null;
             else
                 $file_materi_kegiatan = new \CurlFile($_FILES['file_materi_kegiatan']['tmp_name'], $_FILES['file_materi_kegiatan']['type'], $_FILES['file_materi_kegiatan']['name']);
-
-            $id_provinsi = 0;
-            $id_kota_kabupaten = 0;
             $edit_kegiatan = $this->Kegiatan_model->edit_kegiatan(
                 $judul_kegiatan,
                 $deskripsi_kegiatan,

@@ -312,7 +312,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
-							<select class="form-control" id="edit-provinsi-kegiatan" name="id_provinsi" onChange="getStateEdit(this.value);" required>
+							<select class="form-control" id="edit-provinsi-kegiatan" name="edit_id_provinsi" onChange="getStateEdit(this.value);" required>
 								<?php if ($provinsi != null) :
 									foreach ($provinsi as $row2) : ?>
 										<option value="<?= $row2['id_provinsi'] ?>"><?= $row2['provinsi'] ?></option>
@@ -322,7 +322,7 @@
 						</div>
 						<div class="form-group py-2">
 							<label for="editKotaKegiatan">Kota kegiatan *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
-							<select class="form-control" id="edit-kota-kegiatan" name="id_kota_kabupaten" required>
+							<select class="form-control" id="edit-kota-kegiatan" name="edit_id_kota_kabupaten" required>
 							</select>
 						</div>
 						<div class="form-group py-2">
