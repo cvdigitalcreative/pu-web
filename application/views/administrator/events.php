@@ -831,7 +831,7 @@
 							</div>
 
 							<div class="tab-pane fade show" role="tabpanel" id="list-assesor-kegiatan">
-								<table id="daftar_assesor_table" class="display" style="width: 100%;">
+								<table id="daftar_assesor_table" class="display" style="width:100%">
 									<thead>
 										<tr>
 											<th>No</th>
