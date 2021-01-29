@@ -497,9 +497,9 @@ class Peserta extends CI_Controller
                     $numrow++; // Tambah 1 setiap kali looping
                 }
             } else {
-                $excel->setActiveSheetIndex(0)->setCellValue('A4', "Tidak ada Peserta Kegiatan"); // Set kolom A4
-                $excel->getActiveSheet()->mergeCells('A4:U4'); // Set Merge Cell pada kolom A4 sampai L4
-                $excel->getActiveSheet()->getStyle('A4')->applyFromArray($style_row_center_horizontal);
+                $excel->setActiveSheetIndex(0)->setCellValue('A6', "Tidak ada Peserta Kegiatan"); // Set kolom A4
+                $excel->getActiveSheet()->mergeCells('A6:U6'); // Set Merge Cell pada kolom A4 sampai L4
+                $excel->getActiveSheet()->getStyle('A6')->applyFromArray($style_row_center_horizontal);
             }
             // Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
             $excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);

@@ -504,7 +504,7 @@ class Kegiatan extends CI_Controller
             $style_header = array(
                 'font' => array(
                     'bold' => true,
-                    'name'  => 'Times New Roman'
+                    'name'  => 'Calibri'
                 )
             );
             $style_col = array(
@@ -524,7 +524,7 @@ class Kegiatan extends CI_Controller
                     'color' => array('rgb' => 'FFE033')
                 ),
                 'font'  => array(
-                    'name'  => 'Times New Roman'
+                    'name'  => 'Calibri'
                 )
             );
             // Buat sebuah variabel untuk menampung pengaturan style dari isi tabel
@@ -540,7 +540,7 @@ class Kegiatan extends CI_Controller
                     'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
                 ),
                 'font'  => array(
-                    'name'  => 'Times New Roman'
+                    'name'  => 'Calibri'
                 )
             );
 
@@ -555,7 +555,7 @@ class Kegiatan extends CI_Controller
                     'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
                 ),
                 'font'  => array(
-                    'name'  => 'Times New Roman'
+                    'name'  => 'Calibri'
                 )
             );
             $excel->setActiveSheetIndex(0)->setCellValue('A1', "DATA KEGIATAN " . date('d M Y')); // Set kolom A1
@@ -1038,10 +1038,10 @@ class Kegiatan extends CI_Controller
             }
             if ($tambah_bukti_pembayaran['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_bukti_pembayaran['message']);
-                redirect();
+                redirect('pupr/events');
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_bukti_pembayaran['message']);
-                redirect();
+                redirect('pupr/events');
             }
         } else {
             redirect("pupr/login");
@@ -1135,7 +1135,8 @@ class Kegiatan extends CI_Controller
             redirect("pupr/login");
     }
 
-    public function dataAsesor($id_kegiatan){
+    public function dataAsesor($id_kegiatan)
+    {
         if ($this->session->userdata('logged_in') == true) {
             $data['asesor'] = $this->Kegiatan_model->view_asesor($id_kegiatan, $this->session->userdata('token'));
             if ($data['asesor'] == null) {
@@ -1175,7 +1176,8 @@ class Kegiatan extends CI_Controller
         }
     }
 
-    public function dataInstruktur($id_kegiatan){
+    public function dataInstruktur($id_kegiatan)
+    {
         if ($this->session->userdata('logged_in') == true) {
             $data['instruktur'] = $this->Kegiatan_model->view_instruktur($id_kegiatan, $this->session->userdata('token'));
             if ($data['instruktur'] == null) {

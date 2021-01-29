@@ -2125,6 +2125,10 @@ Tidak ada poster kegiatan`					}
 				$('form').attr('action', `${BASE_URL}Kegiatan/tambah_invoice_action/${id}`)
 				$(`#modal-ganti-status-kegiatan-invoice`).modal('show')
 			}
+			if (data['id_status_kegiatan'] == 6) {
+				$('form').attr('action', `${BASE_URL}Kegiatan/tambah_bukti_pembayaran_action/${id}`)
+				$(`#modal-ganti-status-kegiatan-bukti-pembayaran`).modal('show')
+			}
 		}
 	})
 	// End of edit
