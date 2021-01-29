@@ -2252,6 +2252,7 @@ Tidak ada poster kegiatan`					}
 			$('form').attr('action', `${BASE_URL}Kegiatan/edit_kegiatan_action/${id}`)
 			$('#edit-akun-kegiatan').val(data['id_akun_kegiatan'])
 			$('#edit-jenis-kegiatan').val(data['id_jenis_kegiatan'])
+			$('#edit-status-kegiatan').val(data['id_status_kegiatan'])
 			$('#banner-image-edit').attr('src', data['foto_banner_kegiatan'])
 			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-kegiatan').val($(this).parent().siblings().eq(2).text())

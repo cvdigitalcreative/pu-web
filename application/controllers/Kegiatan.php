@@ -767,7 +767,7 @@ class Kegiatan extends CI_Controller
             $lokasi_kegiatan = $this->input->post('edit_lokasi_kegiatan');
             $latitude_lokasi = 0;
             $longitude_lokasi = 0;
-            $status_kegiatan = 1;
+            $status_kegiatan = $this->input->post('id_status_kegiatan');
             if ($_FILES['edit_foto_banner_kegiatan']['size'] == 0)
                 $foto_banner_kegiatan = null;
             else
