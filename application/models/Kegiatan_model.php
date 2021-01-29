@@ -205,7 +205,7 @@ class Kegiatan_model extends CI_Model
 
         return $this->http_request_post($data, "/$id_kegiatan/peserta/", $token);
     }
-    
+
     public function update_status_kegiatan($id_kegiatan, $token)
     {
         return $this->http_request_update(null, "/$id_kegiatan/status/", $token);
@@ -396,5 +396,10 @@ class Kegiatan_model extends CI_Model
     public function delete_instruktur($id_tenaga_ahli, $id_kegiatan, $token)
     {
         return $this->http_request_delete("/$id_kegiatan/instruktur/$id_tenaga_ahli", $token);
+    }
+
+    public function view_peserta_kegiatan($id_kegiatan, $token)
+    {
+        return $this->http_request_get("/peserta/?id_jadwal_kegiatan=$id_kegiatan", $token);
     }
 }
