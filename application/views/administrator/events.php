@@ -7,6 +7,34 @@
 
 <body id="page-top">
 
+	<!-- Daftar File Modal -->
+	<div class="modal fade bd-example-modal-sm" id="modal-daftar-file-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Daftar File Kegiatan</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+						<div class="col mb-2">
+						<button class="btn btn-primary btn-block btn-download-file-kegiatan"  id="btn-daftar-file-kegiatan-berita-acara"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Berita Acara</button>
+						</div>
+						<div class="col mb-2">
+						<button class="btn btn-primary btn-block btn-download-file-kegiatan" href="" id="btn-daftar-file-kegiatan-invoice"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Invoice</button>
+						</div>
+						<div class="col mb-2">
+						<button class="btn btn-primary btn-block btn-download-file-kegiatan" href="" id="btn-daftar-file-kegiatan-bukti-pembayaran"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Bukti Pembayaran</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Import Excel Tambah Kegiatan Modal -->
 	<!-- Filter Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-filter-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">

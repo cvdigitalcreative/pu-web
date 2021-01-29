@@ -41,6 +41,11 @@
     border-radius: 14px;
 }
 
+.btn-download-file-kegiatan {
+    height: 40px !important;
+    border-radius: 14px;
+}
+
 .btn-filter-kegiatan {
     height: 40px !important;
     margin-right: 16px;
