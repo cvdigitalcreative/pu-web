@@ -31,8 +31,8 @@
 							<label for="fileBukuSaku">File Buku Saku *</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-buku-saku" name="file_buku_saku" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file buku saku...</label>
-								<small id="file_buku_saku" class="form-text text-muted">
+								<label class="custom-file-label" id="custom-file-label-file-buku-saku" for="file-buku-saku">Pilih file buku saku...</label>
+								<small id="file-buku-saku" class="form-text text-muted">
 									Pilih file buku saku yang sesuai!
 								</small>
 							</div>
@@ -71,8 +71,8 @@
 							<label for="fileBukuSaku">File Buku Saku</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-buku-saku" name="file_buku_saku">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file buku saku...</label>
-								<small id="file_buku_saku" class="form-text text-muted">
+								<label class="custom-file-label" id="custom-file-label-edit-file-buku-saku" for="edit-file-buku-saku">Pilih file buku saku...</label>
+								<small id="edit-file-buku-saku" class="form-text text-muted">
 									Pilih file buku saku yang sesuai!
 								</small>
 							</div>

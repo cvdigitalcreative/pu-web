@@ -2403,6 +2403,152 @@ Tidak ada poster kegiatan`					}
 		};
 		jQuery(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
 	  });
+
+	
+	
+	// ======================== Change label name after upload file modul =========================
+	  $('#file-modul').on('change',function(){
+		//get the file name
+		var fileName = $('#file-modul')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-modul').html(fileName);
+	  })
+	
+	  $('#edit-file-modul').on('change',function(){
+		//get the file name
+		var fileName = $('#edit-file-modul')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-edit-file-modul').html(fileName);
+	})
+	
+	// ======================== Change label name after upload file administrasi =========================
+	  $('#file-administrasi-kegiatan').on('change',function(){
+		//get the file name
+		var fileName = $('#file-administrasi-kegiatan')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-administrasi-kegiatan').html(fileName);
+	  })
+	
+	  $('#edit-file-administrasi-kegiatan').on('change',function(){
+		//get the file name
+		var fileName = $('#edit-file-administrasi-kegiatan')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-edit-file-administrasi-kegiatan').html(fileName);
+	  })
+	
+	// ======================== Change label name after upload file administrasi =========================
+	  $('#file-materi-kegiatan').on('change',function(){
+		//get the file name
+		var fileName = $('#file-materi-kegiatan')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-materi-kegiatan').html(fileName);
+	  })
+	
+	  $('#edit-file-materi-kegiatan').on('change',function(){
+		//get the file name
+		var fileName = $('#edit-file-materi-kegiatan')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-edit-file-materi-kegiatan').html(fileName);
+	  })
+	
+	  $('#file-excel-tambah-kegiatan').on('change',function(){
+		//get the file name
+		var fileName = $('#file-excel-tambah-kegiatan')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-excel-tambah-kegiatan').html(fileName);
+	})
+	  $('#file-excel-vva-ganti-status').on('change',function(){
+		//get the file name
+		var fileName = $('#file-excel-vva-ganti-status')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-excel-vva-ganti-status').html(fileName);
+	})
+	  $('#file-excel-asesment-ganti-status').on('change',function(){
+		//get the file name
+		var fileName = $('#file-excel-asesment-ganti-status')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-excel-asesment-ganti-status').html(fileName);
+	  })
+	
+	  $('#file-berita-acara-ganti-status').on('change',function(){
+		//get the file name
+		var fileName = $('#file-berita-acara-ganti-status')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-berita-acara-ganti-status').html(fileName);
+	  })
+	
+	  $('#file-invoice-ganti-status').on('change',function(){
+		//get the file name
+		var fileName = $('#file-invoice-ganti-status')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-invoice-ganti-status').html(fileName);
+	  })
+	
+	  $('#file-bukti-pembayaran-ganti-status').on('change',function(){
+		//get the file name
+		var fileName = $('#file-bukti-pembayaran-ganti-status')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-bukti-pembayaran-ganti-status').html(fileName);
+	  })
+	
+	  $('#file-import-excel-tambah-peserta-kegiatan').on('change',function(){
+		//get the file name
+		var fileName = $('#file-import-excel-tambah-peserta-kegiatan')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-import-excel-tambah-peserta-kegiatan').html(fileName);
+	  })
+	
+	// ======================== Change label name after upload TEnaga ahli =========================
+	$('#file-excel-tambah-tenaga').on('change',function(){
+		//get the file name
+		var fileName = $('#file-excel-tambah-tenaga')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-excel-tambah-tenaga').html(fileName);
+	  })
+	
+	  $('#edit-file-tenaga-ahli').on('change',function(){
+		//get the file name
+		var fileName = $('#edit-file-tenaga-ahli')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-edit-file-tenaga-ahli').html(fileName);
+	  })
+	
+	  $('#file-excel-import-tenaga-ahli').on('change',function(){
+		//get the file name
+		var fileName = $('#file-excel-import-tenaga-ahli')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-excel-import-tenaga-ahli').html(fileName);
+	  })
+	
+	// ======================== Change label name after upload Buku Saku =========================
+	$('#file-buku-saku').on('change',function(){
+		//get the file name
+		var fileName = $('#file-buku-saku')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-buku-saku').html(fileName);
+	  })
+	
+	  $('#edit-file-buku-saku').on('change',function(){
+		//get the file name
+		var fileName = $('#edit-file-buku-saku')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-edit-file-buku-saku').html(fileName);
+	  })
+	
+	// ======================== Change label name after upload SKKNI =========================
+	$('#file-skkni').on('change',function(){
+		//get the file name
+		var fileName = $('#file-skkni')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-file-skkni').html(fileName);
+	  })
+	
+	  $('#edit-file-skkni').on('change',function(){
+		//get the file name
+		var fileName = $('#edit-file-skkni')[0].files[0].name;
+		//replace the "Choose a file" label
+		$(this).next('#custom-file-label-edit-file-skkni').html(fileName);
+	  })
 	
 });
 

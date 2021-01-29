@@ -269,7 +269,7 @@
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
 									name="file_tenaga_ahli">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+								<label class="custom-file-label" id="custom-file-label-file-excel-tambah-tenaga" for="file-excel-tambah-tenaga">Pilih file...</label>
 								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
 									File tenaga ahli adalah opsional
 								</small>
@@ -477,7 +477,7 @@
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-tenaga-ahli"
 									name="file_tenaga_ahli">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+								<label class="custom-file-label" id="custom-file-label-edit-file-tenaga-ahli" for="edit-file-tenaga-ahli">Pilih file...</label>
 								<small id="edit-file-tenaga-ahli" class="form-text text-muted">
 									Pilih file tenaga ahli
 								</small>
@@ -536,10 +536,10 @@
 						<div class="form-group py-2">
 							<label for="fileExcelTambahTenaga">File Excel Tambah Tenaga Ahli & Tenaga Terampil</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-tenaga"
+								<input type="file" class="custom-file-input" id="file-excel-import-tenaga-ahli"
 									name="file_excel_tambah_tenaga" accept=".xlsx, .xls, .csv">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
-								<small id="file-excel-tambah-tenaga" class="form-text text-muted">
+								<label class="custom-file-label" id="custom-file-label-file-excel-import-tenaga-ahli" for="file-excel-import-tenaga-ahli">Pilih file excel...</label>
+								<small id="file-excel-import-tenaga-ahli" class="form-text text-muted">
 									Pilih file excel tambah tenaga ahli & Tenaga terampil
 								</small>
 							</div>

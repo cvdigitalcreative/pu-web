@@ -189,7 +189,7 @@
 								<img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
 								Tambah Instruktur / Narasumber & Assesor
 							</a>
-							<small id="file-materi-kegiatan" class="form-text text-muted mb-4">
+							<small id="asesor-instruktur-label" class="form-text text-muted mb-4">
 								Klik untuk menambahkan instruktur / narasumber dan assesor baru.
 							</small>
 						</div>
@@ -218,7 +218,7 @@
 							<label for="fileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-materi-kegiatan" name="file_materi_kegiatan">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
+								<label class="custom-file-label" id="custom-file-label-file-materi-kegiatan" for="file-materi-kegiatan">Pilih file materi...</label>
 								<small id="file-materi-kegiatan" class="form-text text-muted">
 									File materi adalah opsional
 								</small>
@@ -333,8 +333,8 @@
 							<label for="editFileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-materi-kegiatan" name="file_materi_kegiatan">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file materi...</label>
-								<small id="file-materi-kegiatan" class="form-text text-muted">
+								<label class="custom-file-label" id="custom-file-label-edit-file-materi-kegiatan" for="edit-file-materi-kegiatan">Pilih file materi...</label>
+								<small id="edit-file-materi-kegiatan" class="form-text text-muted">
 									File materi adalah opsional
 								</small>
 							</div>
@@ -439,7 +439,7 @@
 							<label for="fileMateriKegiatan">File Excel Tambah Kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel_import_kegiatan" accept=".xlsx, .xls, .csv" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
+								<label class="custom-file-label" id="custom-file-label-file-excel-tambah-kegiatan" for="file-excel-tambah-kegiatan">Pilih file excel...</label>
 								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah kegiatan
 								</small>
@@ -473,9 +473,9 @@
 						<div class="form-group pt-2">
 							<label for="fileMateriKegiatan">File Excel VVA *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel" accept=".xlsx, .xls, .csv" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
-								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+								<input type="file" class="custom-file-input" id="file-excel-vva-ganti-status" name="file_excel" accept=".xlsx, .xls, .csv" required>
+								<label class="custom-file-label" id="custom-file-label-file-excel-vva-ganti-status" for="file-excel-vva-ganti-status">Pilih file excel...</label>
+								<small id="file-excel-vva-ganti-status" class="form-text text-muted">
 									Pilih file excel VVA yang ingin diupload
 								</small>
 							</div>
@@ -506,9 +506,9 @@
 						<div class="form-group pt-2">
 							<label for="fileMateriKegiatan">File Excel Asesment *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel" accept=".xlsx, .xls, .csv" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
-								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+								<input type="file" class="custom-file-input" id="file-excel-asesment-ganti-status" name="file_excel" accept=".xlsx, .xls, .csv" required>
+								<label class="custom-file-label" id="custom-file-label-file-excel-asesment-ganti-status" for="file-excel-asesment-ganti-status">Pilih file excel...</label>
+								<small id="file-excel-asesment-ganti-status" class="form-text text-muted">
 									Pilih file excel asesment yang ingin diupload
 								</small>
 							</div>
@@ -542,9 +542,9 @@
 						<div class="form-group pt-2">
 							<label for="fileMateriKegiatan">File Berita Acara *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_berita_acara" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
-								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+								<input type="file" class="custom-file-input" id="file-berita-acara-ganti-status" name="file_berita_acara" required>
+								<label class="custom-file-label" id="custom-file-label-file-berita-acara-ganti-status" for="file-berita-acara-ganti-status">Pilih file...</label>
+								<small id="file-berita-acara-ganti-status" class="form-text text-muted">
 									Pilih file berita acara yang ingin diupload
 								</small>
 							</div>
@@ -578,9 +578,9 @@
 						<div class="form-group pt-2">
 							<label for="fileMateriKegiatan">File Invoice *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_invoice" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
-								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+								<input type="file" class="custom-file-input" id="file-invoice-ganti-status" name="file_invoice" required>
+								<label class="custom-file-label" id="custom-file-label-file-invoice-ganti-status" for="file-invoice-ganti-status">Pilih file...</label>
+								<small id="file-invoice-ganti-status" class="form-text text-muted">
 									Pilih file invoice yang ingin diupload
 								</small>
 							</div>
@@ -614,9 +614,9 @@
 						<div class="form-group pt-2">
 							<label for="fileMateriKegiatan">File Bukti Pembayaran *</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_bukti_pembayaran" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
-								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+								<input type="file" class="custom-file-input" id="file-bukti-pembayaran-ganti-status" name="file_bukti_pembayaran" required>
+								<label class="custom-file-label" id="custom-file-label-file-bukti-pembayaran-ganti-status" for="file-bukti-pembayaran-ganti-status">Pilih file...</label>
+								<small id="file-bukti-pembayaran-ganti-status" class="form-text text-muted">
 									Pilih file bukti pembayaran yang ingin diupload
 								</small>
 							</div>
@@ -646,9 +646,9 @@
 						<div class="form-group py-2">
 							<label for="fileMateriKegiatan">File Excel Tambah Peserta Kegiatan</label>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_excel_import_peserta_kegiatan" accept=".xlsx, .xls, .csv"" required>
-								<label class=" custom-file-label" for="validatedCustomFile">Pilih file excel...</label>
-								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+								<input type="file" class="custom-file-input" id="file-import-excel-tambah-peserta-kegiatan" name="file_excel_import_peserta_kegiatan" accept=".xlsx, .xls, .csv"" required>
+								<label class="custom-file-label" id="custom-file-label-file-import-excel-tambah-peserta-kegiatan" for="file-import-excel-tambah-peserta-kegiatan">Pilih file excel...</label>
+								<small id="file-import-excel-tambah-peserta-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah peserta kegiatan
 								</small>
 							</div>
@@ -800,8 +800,8 @@
 				<div class="modal-body">
 
 					<div class="col">
-						<button class="btn btn-success btn-import-kegiatan" id="btn-add-instruktur-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Instruktur / Narasumber</button>
-						<button class="btn btn-success btn-import-kegiatan" id="btn-add-asesor-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Tambah Assesor</button>
+						<button class="btn btn-primary btn-add-kegiatan" id="btn-add-instruktur-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah Instruktur / Narasumber</button>
+						<button class="btn btn-primary btn-add-kegiatan" id="btn-add-asesor-kegiatan"><img class="img- mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah Assesor</button>
 					</div>
 
 					<div class="card-body">

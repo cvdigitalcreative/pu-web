@@ -35,8 +35,8 @@
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-skkni"
 									name="file_skkni" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file skkni...</label>
-								<small id="file_skkni" class="form-text text-muted">
+								<label class="custom-file-label" id="custom-file-label-file-skkni" for="file-skkni">Pilih file skkni...</label>
+								<small id="file-skkni" class="form-text text-muted">
 									Pilih file skkni yang sesuai!
 								</small>
 							</div>
@@ -91,8 +91,8 @@
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-skkni"
 									name="file_skkni">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file skkni...</label>
-								<small id="file_skkni" class="form-text text-muted">
+								<label class="custom-file-label" id="custom-file-label-edit-file-skkni" for="edit-file-skkni">Pilih file skkni...</label>
+								<small id="edit-file-skkni" class="form-text text-muted">
 									Pilih file skkni yang sesuai! Lewati jika tidak ingin mengganti file.
 								</small>
 							</div>
