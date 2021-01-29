@@ -132,24 +132,89 @@
 							</div>
 						</div>
 
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card h-100 p-2 card-recap">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="h5 font-weight-bold text-black text-uppercase mb-2">
+												Belum Dijawab
+											</div>
+											<div class="row no-gutters align-items-center">
+
+												<div class="h5 mb-0 mr-3 text-gray-800">
+													<?= $total_feedback ?></div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xl-3 col-md-6 mb-4">
+							<div class="card h-100 p-2 card-recap">
+								<div class="card-body">
+									<div class="row no-gutters align-items-center">
+										<div class="col mr-2">
+											<div class="h5 font-weight-bold text-black text-uppercase mb-2">
+												Sudah Dijawab
+											</div>
+											<div class="row no-gutters align-items-center">
+
+												<div class="h5 mb-0 mr-3 text-gray-800">
+													<?= $total_feedback ?></div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 
 					<div class="container-fluid mt-2 container-background">
 
 						<div class="card-body">
-							<div class="table-responsive">
-								<table id="feedback_table" class="display">
-									<thead>
-										<tr>
-											<th>No</th>
-											<th>Judul Kotak Saran</th>
-											<th>Deskripsi Kotak Saran</th>
-											<th>Pengirim</th>
-											<th>Aksi</th>
-										</tr>
-									</thead>
-								</table>
+							<ul class="nav nav-tabs pt-2 pb-4" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" href="#list-feedback-unanswered" role="tab" data-toggle="tab">Belum Dijawab</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#list-feedback-answered" role="tab" data-toggle="tab">Sudah Dijawab</a>
+								</li>
+							</ul>
+
+							<div class="tab-content">
+								<div class="tab-pane fade active show" role="tabpanel" id="list-feedback-unanswered">
+									<table id="feedback_table" class="display" style="width:100%">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Judul Kotak Saran</th>
+												<th>Deskripsi Kotak Saran</th>
+												<th>Pengirim</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+
+								<div class="tab-pane fade show" role="tabpanel" id="list-assesor-kegiatan">
+									<table id="" class="display" style="width:100%">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Judul Kotak Saran</th>
+												<th>Deskripsi Kotak Saran</th>
+												<th>Pengirim</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
 							</div>
+
 						</div>
 					</div>
 
