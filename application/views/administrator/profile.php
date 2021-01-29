@@ -496,28 +496,10 @@
                                             <hr>
                                             <div class="row">
                                                 <div class="col-sm-3">
-                                                    <h6 class="mb-0">Status Kepemilikan Rumah</h6>
-                                                </div>
-                                                <div class="col-sm-9 text-secondary">
-                                                    <?= $user['status_rumah'] ?>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-sm-3">
                                                     <h6 class="mb-0">Jenis Kelamin</h6>
                                                 </div>
                                                 <div class="col-sm-9 text-secondary">
                                                     <?= $user['jenis_kelamin'] ?>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <h6 class="mb-0">Status Pernikahan</h6>
-                                                </div>
-                                                <div class="col-sm-9 text-secondary">
-                                                    <?= $user['status_perkawinan'] ?>
                                                 </div>
                                             </div>
                                             <hr>
@@ -529,17 +511,6 @@
                                                     <?= $user['nik'] ?>
                                                 </div>
                                             </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <h6 class="mb-0">NPWP</h6>
-                                                </div>
-                                                <div class="col-sm-9 text-secondary">
-                                                    <?= $user['npwp'] ?>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                        </div>
 
                                         <!-- End of Profile card detail collapse -->
                                     </div>

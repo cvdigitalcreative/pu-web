@@ -106,6 +106,9 @@ class User extends CI_Controller
                     $tahun_lulus = strtotime($data['user']['tahun_lulus']);
                     $data['user']['tahun_lulus'] = date('d M Y', $tahun_lulus);
 
+                    if($data['user']['tempat_lahir'] == "")
+                    $data['user']['tempat_lahir'] = "-";
+
                     $data['user']['tempat_tanggal_lahir'] = $data['user']['tempat_lahir'] . ', ' . date("d F Y", strtotime($data['user']['tanggal_lahir']));
                 } else {
                     $data['user'] = null;
