@@ -2202,9 +2202,14 @@ Tidak ada poster kegiatan`					}
 		else if ($('#feedback_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Feedback/jawab_feedback/${id}`)
-			$('#judul-feedback').val($(this).parent().siblings().eq(1).text())
-			$('#pertanyaan-feedback').val($(this).parent().siblings().eq(2).text())
-			$('#pengirim-feedback').val($(this).parent().siblings().eq(3).text())
+			var currentRow = $(this).closest("tr");
+			var data = $('#feedback_table').DataTable().row(currentRow).data();
+			document.getElementById("pengirim-feedback").innerHTML = data['pengirim'];
+			document.getElementById("pengirim-feedback").classList.add('text-secondary', 'text-justify')
+			document.getElementById("judul-feedback").innerHTML = data['judul_feedback'];
+			document.getElementById("judul-feedback").classList.add('text-secondary', 'text-justify')
+			document.getElementById("deskripsi-feedback").innerHTML = data['deskripsi_feedback'];
+			document.getElementById("deskripsi-feedback").classList.add('text-secondary', 'text-justify')
 			$(`#modal-reply-feedback`).modal('show')
 		}
 		else if ($('#berita_table').length > 0) {
