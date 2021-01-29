@@ -1586,14 +1586,6 @@
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jabker</button>
 
 								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-status-perkawinan"><img class="img-profile mr-2"
-										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Perkawinan</button>
-
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-status-rumah"><img class="img-profile mr-2"
-										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Rumah</button>
-
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
 									data-target="#modal-tambah-pendidikan"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Pendidikan</button>
 
@@ -1652,14 +1644,6 @@
 									<li class="nav-item">
 										<a class="nav-link" href="#jabatan-kerja" role="tab"
 											data-toggle="tab">Jabker</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#status-perkawinan" role="tab" data-toggle="tab">Status
-											Perkawinan</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#status-rumah" role="tab" data-toggle="tab">Status
-											Rumah</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="#master-pendidikan" role="tab"
@@ -1792,30 +1776,6 @@
 											<tr>
 												<th>No</th>
 												<th>Nama Jabatan Kerja</th>
-												<th>Aksi</th>
-											</tr>
-										</thead>
-									</table>
-								</div>
-
-								<div class="tab-pane fade show" role="tabpanel" id="status-perkawinan">
-									<table id="status_perkawinan_table" class="display" style="width:100%">
-										<thead>
-											<tr>
-												<th>No</th>
-												<th>Nama Status Perkawinan</th>
-												<th>Aksi</th>
-											</tr>
-										</thead>
-									</table>
-								</div>
-
-								<div class="tab-pane fade show" role="tabpanel" id="status-rumah">
-									<table id="status_rumah_table" class="display" style="width:100%">
-										<thead>
-											<tr>
-												<th>No</th>
-												<th>Nama Status Rumah</th>
 												<th>Aksi</th>
 											</tr>
 										</thead>
