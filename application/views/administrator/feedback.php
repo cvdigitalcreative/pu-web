@@ -12,7 +12,7 @@
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Detail Feedback</h4>
+					<h4 class="modal-title" id="exampleModalCenterTitle">Detail Kotak Saran</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -51,13 +51,13 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Feedback Ini?</h5>
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Kotak Saran Ini?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					Pastikan dengan benar bahwa feedback ini ingin anda hapus!
+					Pastikan dengan benar bahwa kotak saran ini ingin anda hapus!
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
@@ -88,7 +88,7 @@
 
 					<!-- Page Heading -->
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h2 font-weight-bold mb-4 mt-4">Feedback</h1>
+						<h1 class="h2 font-weight-bold mb-4 mt-4">Kotak Saran</h1>
 					</div>
 
 					<!-- Alert -->
@@ -142,8 +142,8 @@
 									<thead>
 										<tr>
 											<th>No</th>
-											<th>Judul Feedback</th>
-											<th>Deskripsi Feedback</th>
+											<th>Judul Kotak Saran</th>
+											<th>Deskripsi Kotak Saran</th>
 											<th>Pengirim</th>
 											<th>Aksi</th>
 										</tr>
