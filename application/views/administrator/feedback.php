@@ -46,6 +46,41 @@
 		</div>
 	</div>
 
+	<!-- Edit Modul Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-edit-jawaban-feedback" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Detail Kotak Saran</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+						<div class="form-group py-2">
+							<label for="namaTenagaAhli">Pengirim</label>
+							<div id="answered-pengirim-feedback" class="text-secondary"></div>
+						</div>
+						<div class="form-group py-2">
+							<label for="namaTenagaAhli">Judul</label>
+							<div id="answered-judul-feedback"></div>
+						</div>
+						<div class="form-group py-2">
+							<label for="judulModul">Deskripsi</label>
+							<div id="answered-deskripsi-feedback"></div>
+						</div>
+						<div class="form-group py-2">
+							<label for="judulModul">Jawaban *</label>
+							<div id="answered-jawaban-feedback"></div>
+						</div>
+
+						<div class="menu-divider"></div>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Delete Modul modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-delete-feedback" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
@@ -200,13 +235,14 @@
 									</table>
 								</div>
 
-								<div class="tab-pane fade show" role="tabpanel" id="list-assesor-kegiatan">
-									<table id="" class="display" style="width:100%">
+								<div class="tab-pane fade show" role="tabpanel" id="list-feedback-answered">
+									<table id="feedback_answered_table" class="display" style="width:100%">
 										<thead>
 											<tr>
 												<th>No</th>
 												<th>Judul Kotak Saran</th>
 												<th>Deskripsi Kotak Saran</th>
+												<th>Jawaban</th>
 												<th>Pengirim</th>
 												<th>Aksi</th>
 											</tr>
