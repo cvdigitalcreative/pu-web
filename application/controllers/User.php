@@ -106,8 +106,8 @@ class User extends CI_Controller
                     $tahun_lulus = strtotime($data['user']['tahun_lulus']);
                     $data['user']['tahun_lulus'] = date('d M Y', $tahun_lulus);
 
-                    if($data['user']['tempat_lahir'] == "")
-                    $data['user']['tempat_lahir'] = "-";
+                    if ($data['user']['tempat_lahir'] == "")
+                        $data['user']['tempat_lahir'] = "-";
 
                     $data['user']['tempat_tanggal_lahir'] = $data['user']['tempat_lahir'] . ', ' . date("d F Y", strtotime($data['user']['tanggal_lahir']));
                 } else {
@@ -277,8 +277,8 @@ class User extends CI_Controller
                 $file_foto_profil = null;
             else
                 $file_foto_profil = new \CurlFile($_FILES['file_foto_profile']['tmp_name'], $_FILES['file_foto_profile']['type'], $_FILES['file_foto_profile']['name']);
-            
-                $npwp = $this->input->post('npwp');
+
+            $npwp = $this->input->post('npwp');
 
             $edit_profile = $this->User_model->edit_user_detail(
                 $nama,
@@ -326,5 +326,29 @@ class User extends CI_Controller
         } else {
             redirect("pupr/login");
         }
+    }
+
+    public function change_password_action()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $old_password = hash('sha256', $this->input->post('old_password'));
+            $new_password = hash('sha256', $this->input->post('new_password'));
+
+            $change_password = $this->User_model->change_password_user($old_password, $new_password, $this->session->userdata('token'));
+
+            if ($change_password == null)
+                $this->load->view('error_page');
+            else {
+                if ($change_password['status'] == "Success") {
+                    $this->session->set_flashdata('success', $change_password['message']);
+                    redirect("pupr/profile");
+                } else {
+                    $this->session->set_flashdata('APImessage', $change_password['message']);
+                    redirect("pupr/profile");
+                }
+            }
+        }
+        else
+        redirect('pupr/login');
     }
 }

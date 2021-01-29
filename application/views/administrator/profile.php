@@ -289,14 +289,14 @@
                 </div>
                 <div class="modal-body">
 
-                    <form method="POST" action="" enctype="multipart/form-data">
+                    <form method="POST" action="<?= base_url()?>User/change_password_action" enctype="multipart/form-data">
                         <div class="form-group py-2">
                             <label for="profileTempatLahir">Password Lama *</label>
-                            <input type="password" class="form-control" id="profile-password-lama" name="password_lama" placeholder="Contoh: Masukkan password lama anda" required>
+                            <input type="password" class="form-control" id="profile-password-lama" name="old_password" placeholder="Contoh: Masukkan password lama anda" required>
                         </div>
                         <div class="form-group py-2">
                             <label for="profileTempatLahir">Password Baru *</label>
-                            <input type="password" class="form-control" id="profile-password-baru" name="password_baru" placeholder="Contoh: Masukkan password baru anda" required>
+                            <input type="password" class="form-control" id="profile-password-baru" name="new_password" placeholder="Contoh: Masukkan password baru anda" required>
                         </div>
 
                         <div class="menu-divider"></div>
