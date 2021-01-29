@@ -85,7 +85,7 @@
 	<li class="nav-item <?=$this->uri->segment(2) == 'feedback' ? 'active' : ''?>">
 		<a class="nav-link <?=$this->uri->segment(2) == 'feedback' ? 'disabled' : ''?>" href="<?=base_url('pupr/feedback')?>">
 			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/modul-menu.svg')?>">
-			<span>Feedback</span>
+			<span>Kotak Saran</span>
 		</a>
 	</li>
 
