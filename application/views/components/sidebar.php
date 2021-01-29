@@ -33,7 +33,7 @@
 	<!-- Nav Item - Tenaga Ahli & Mitra -->
 	<li class="nav-item <?=$this->uri->segment(2) == 'experts' ? 'active' : ''?>">
 		<a class="nav-link <?=$this->uri->segment(2) == 'experts' ? 'disabled' : ''?>"
-			href="<?=base_url('pupr/experts/')?>">
+			href="<?=base_url('pupr/experts')?>">
 			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/ahli-menu.svg')?>">
 			<span>Tenaga Ahli & Terampil</span>
 		</a>

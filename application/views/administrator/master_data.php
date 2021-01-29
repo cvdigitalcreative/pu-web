@@ -19,8 +19,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>/Master/tambah_akun_kegiatan_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaAkunKegiatan">Nama Akun Kegiatan *</label>
 							<input type="text" class="form-control" id="nama-akun-kegiatan"
@@ -110,8 +109,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_jenis_kegiatan_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaJenisKegiatan">Nama Jenis Kegiatan *</label>
 							<input type="text" class="form-control" id="nama-jenis-kegiatan"
@@ -201,8 +199,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_provinsi_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaProvinsi">Nama Provinsi *</label>
 							<input type="text" class="form-control" id="nama-provinsi"
@@ -292,8 +289,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_kabupaten_kota_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
 							<select class="form-control" id="provinsi-kabupaten-kota" name="id_provinsi" required>
@@ -391,8 +387,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>Master/tambah_kecamatan_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="editProvinsiKegiatan">Provinsi *</label>
 							<select class="form-control" id="edit-provinsi-kegiatan" name="id_provinsi" onChange="getStateMasterKotaKecamatan(this.value);" required>
@@ -497,8 +492,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_kelurahan_desa_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
                             <label for="profileProvinsi">Provinsi *</label>
                             <select class="form-control" id="master-provinsi-kelurahan" name="id_provinsi" onChange="getStateMasterKotaKelurahan(this.value);" required>
@@ -608,8 +602,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_status_kegiatan_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaStatusKegiatan">Nama Status Kegiatan *</label>
 							<input type="text" class="form-control" id="nama-status-kegiatan"
@@ -699,8 +692,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_status_peserta_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaStatusPeserta">Nama Status peserta *</label>
 							<input type="text" class="form-control" id="nama-status-peserta"
@@ -790,8 +782,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_kategori_tenaga_ahli_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaKategoriAhli">Nama Kategori Ahli *</label>
 							<input type="text" class="form-control" id="nama-kategori-ahli"
@@ -881,8 +872,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_jabker_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaJabatanKerja">Nama Jabatan Kerja *</label>
 							<input type="text" class="form-control" id="nama-jabatan-kerja"
@@ -960,188 +950,6 @@
 
 
 
-	<!-- Tambah status perkawinan -->
-	<div class="modal fade bd-example-modal-lg" id="modal-tambah-status-perkawinan" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Status Perkawinan</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-
-					<form method="POST" action="<?= base_url()?>Master/tambah_status_perkawinan_action"
-						enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="namaStatusPerkawinan">Nama Status Perkawinan *</label>
-							<input type="text" class="form-control" id="nama-status-perkawinan"
-								name="nama_status_perkawinan" placeholder="Contoh: Menikah" required>
-						</div>
-
-						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-							Status Perkawinan</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal tambah status perkawinan -->
-
-	<!-- Edit status perkawinan -->
-	<div class="modal fade bd-example-modal-lg" id="modal-edit-status-perkawinan" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Status Perkawinan</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-
-					<form method="POST" action=""
-						enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="namaStatusPerkawinan">Nama Status Perkawinan *</label>
-							<input type="text" class="form-control" id="edit-status-perkawinan"
-								name="edit_status_perkawinan" placeholder="Contoh: Menikah" required>
-						</div>
-
-						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
-							Status Perkawinan</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal edit status perkawinan -->
-
-	<!-- Modal Delete status perkawinan -->
-	<div class="modal fade bd-example-modal-lg" id="modal-delete-status-perkawinan" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Status Perkawinan Ini?</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					Pastikan dengan benar bahwa anda ingin menghapus data ini!
-					<form>
-						<div class="modal-footer">
-							<button class="btn btn-light" data-dismiss="modal">Batal</button>
-							<button class="btn btn-danger" type="submit">Hapus</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal delete status perkawinan -->
-
-
-
-	<!-- Tambah status rumah -->
-	<div class="modal fade bd-example-modal-lg" id="modal-tambah-status-rumah" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Tambah Status Rumah</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-
-					<form method="POST" action="<?= base_url()?>Master/tambah_status_rumah_action"
-						enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="namaStatusRumah">Nama Status Rumah *</label>
-							<input type="text" class="form-control" id="nama-status-rumah"
-								name="nama_status_rumah" placeholder="Contoh: Milik Sendiri" required>
-						</div>
-
-						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-							Status Rumah</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal tambah status rumah -->
-
-	<!-- Edit status rumah -->
-	<div class="modal fade bd-example-modal-lg" id="modal-edit-status-rumah" tabindex="-1" role="dialog">
-		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="exampleModalCenterTitle">Edit Status Rumah</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-
-					<form method="POST" action=""
-						enctype="multipart/form-data">
-						<div class="form-group py-2">
-							<label for="namaStatusRumah">Nama Status Rumah *</label>
-							<input type="text" class="form-control" id="edit-status-rumah"
-								name="edit_status_rumah" placeholder="Contoh: Milik Sendiri" required>
-						</div>
-
-						<div class="menu-divider"></div>
-						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
-							Status Rumah</button>
-						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-							data-dismiss="modal">Batal</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal edit status rumah -->
-
-	<!-- Modal Delete status rumah -->
-	<div class="modal fade bd-example-modal-lg" id="modal-delete-status-rumah" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus Status Rumah Ini?</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					Pastikan dengan benar bahwa anda ingin menghapus data ini!
-					<form>
-						<div class="modal-footer">
-							<button class="btn btn-light" data-dismiss="modal">Batal</button>
-							<button class="btn btn-danger" type="submit">Hapus</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End modal delete status -->
-
-
-
 	<!-- Tambah Pendidikan -->
 	<div class="modal fade bd-example-modal-lg" id="modal-tambah-pendidikan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -1154,8 +962,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_pendidikan_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaPendidikan">Nama Pendidikan *</label>
 							<input type="text" class="form-control" id="nama-pendidikan"
@@ -1245,8 +1052,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_skkni_ska_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaSkkni">Nama SKKNI *</label>
 							<input type="text" class="form-control" id="nama-skkni"
@@ -1336,8 +1142,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_kategori_modul_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaModul">Nama Modul *</label>
 							<input type="text" class="form-control" id="nama-modul"
@@ -1427,8 +1232,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url()?>Master/tambah_status_pns_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaPns">Nama PNS *</label>
 							<input type="text" class="form-control" id="nama-pns"
@@ -1545,60 +1349,46 @@
 					<div class="container-fluid mt-2 mb-4 container-background">
 						<div class="col d-flex justify-content-between button-field">
 							<div class="">
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-akun-kegiatan"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-akun-kegiatan-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Akun</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-jenis-kegiatan"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-jenis-kegiatan-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jenis</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-provinsi"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-provinsi-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Provinsi</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-kabupaten-kota"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kabupaten-kota-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kab Kota</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-kecamatan"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kecamatan-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kecamatan</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-kelurahan"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kelurahan-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kelurahan</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-status-kegiatan"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-status-kegiatan-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Kegiatan</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-status-peserta"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-status-peserta-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Status Peserta</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-kategori-ahli"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kategori-ahli-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Kategori Ahli</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-jabatan-kerja"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-jabatan-kerja-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jabker</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-pendidikan"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-pendidikan-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Pendidikan</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-skkni"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-skkni-ska-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">SKKNI</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-modul"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-modul-kegiatan-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Modul</button>
 
-								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" data-toggle="modal"
-									data-target="#modal-tambah-pns"><img class="img-profile mr-2"
+								<button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-pns-master"><img class="img-profile mr-2"
 										src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">PNS</button>
 							</div>
 						</div>

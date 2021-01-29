@@ -18,7 +18,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url() ?>Berita/tambah_berita_action" enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="bannerKegiatan">File Gambar *</label>
 							<div id="profile-container">
@@ -203,7 +203,7 @@
 
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal" data-target="#modal-tambah-berita"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Berita</button>
+							<button class="btn btn-primary btn-add-kegiatan" id="btn-add-berita"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Berita</button>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
