@@ -435,6 +435,11 @@ class Peserta extends CI_Controller
                             $data['peserta'][$indexPeserta]['str_nama_jabker'] = "-";
                         }
 
+                        if ($val['jenis_kelamin'] == "Laki-laki")
+                            $data['peserta'][$indexPeserta]['jenis_kelamin'] = 'L';
+                        elseif ($val['jenis_kelamin'] == "Perempuan")
+                            $data['peserta'][$indexPeserta]['jenis_kelamin'] = 'P';
+
                         $indexPeserta++;
                         $noPeserta++;
                     }
@@ -457,11 +462,11 @@ class Peserta extends CI_Controller
                     $excel->setActiveSheetIndex(0)->setCellValue('H' . $numrow, $val['utusan']);
                     $excel->setActiveSheetIndex(0)->setCellValue('I' . $numrow, $data['kegiatan']['judul_kegiatan']);
                     $excel->setActiveSheetIndex(0)->setCellValue('J' . $numrow, $val['alamat_rumah']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('K' . $numrow, $val['provinsi']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('L' . $numrow, $val['kota_kabupaten']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('K' . $numrow, $val['id_provinsi']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('L' . $numrow, $val['id_kota_kabupaten']);
                     $excel->getActiveSheet()->setCellValueExplicit('M' . $numrow, $val['no_telpon'],  PHPExcel_Cell_DataType::TYPE_STRING);
                     $excel->getActiveSheet()->setCellValueExplicit('N' . $numrow, $val['no_handphone'],  PHPExcel_Cell_DataType::TYPE_STRING);
-                    $excel->setActiveSheetIndex(0)->setCellValue('O' . $numrow, $val['pendidikan']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('O' . $numrow, $val['id_pendidikan']);
                     $excel->setActiveSheetIndex(0)->setCellValue('P' . $numrow, $val['jurusan']);
                     $excel->setActiveSheetIndex(0)->setCellValue('Q' . $numrow, $val['nama_universitas']);
                     $excel->setActiveSheetIndex(0)->setCellValue('R' . $numrow, $val['tahun_lulus']);

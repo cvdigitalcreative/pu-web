@@ -75,34 +75,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group py-2">
-                                    <label for="profileEmail">Status Pernikahan *</label>
-                                    <div class="custom-radio-button-form d-flex">
-                                        <?php if ($status_perkawinan != null) :
-                                            foreach ($status_perkawinan as $val) :
-                                                if ($val['id_status_perkawinan'] != 0) :
-                                                    if ($val['status_perkawinan'] == $user['status_perkawinan']) : ?>
-                                                        <div class="radio-custom pr-3">
-                                                            <input type="radio" value="1" id="sp-<?= $val['id_status_perkawinan'] ?>" name="id_status_perkawinan" checked />
-                                                            <label for="sp-<?= $val['id_status_perkawinan'] ?>"><?= $val['status_perkawinan'] ?></label>
-                                                        </div>
-                                                    <?php else : ?>
-                                                        <div class="radio-custom pr-3">
-                                                            <input type="radio" value="1" id="sp-<?= $val['id_status_perkawinan'] ?>" name="id_status_perkawinan" />
-                                                            <label for="sp-<?= $val['id_status_perkawinan'] ?>"><?= $val['status_perkawinan'] ?></label>
-                                                        </div>
-                                        <?php endif;
-                                                endif;
-                                            endforeach;
-                                        endif ?>
-                                    </div>
-                                </div>
+
+                                <?php if ($status_perkawinan != null) :
+                                    foreach ($status_perkawinan as $val) :
+                                        if ($val['status_perkawinan'] == $user['status_perkawinan']) : ?>
+                                            <input type="hidden" name="id_status_perkawinan" value=<?= $val['id_status_perkawinan'] ?>>
+                                <?php endif;
+                                    endforeach;
+                                endif ?>
                             </div>
                         </div>
 
 
                         <div class="menu-divider"></div>
-                        <h4>Data Pekerjaan</h4>
+                        <h4 class="form-data-pendidikan-title">Data Pekerjaan</h4>
                         <div class="form-group py-2">
                             <label for="profileNomorTelepon">Nama Perusahaan *</label>
                             <input type="text" class="form-control" value="<?= $user['nama_perusahaan'] ?>" id="profile-nama-perusahaan" name="nama_perusahaan" placeholder="Contoh: PT. Digital Creative" required>
@@ -111,14 +97,9 @@
                             <label for="profileNomorTelepon">Jabatan *</label>
                             <input type="text" class="form-control" value="<?= $user['jabatan'] ?>" id="profile-jabatan" name="jabatan" placeholder="Contoh: Human Resource Manager" required>
                         </div>
-                        <div class="form-group py-2">
-                            <label for="profileUtusan">Utusan *</label>
-                            <input type="text" class="form-control" value="<?= $user['utusan'] ?>" id="profile-utusan" name="utusan" placeholder="Contoh: Pengawas" required>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="profileUtusan">NPWP *</label>
-                            <input type="text" class="form-control" value="<?= $user['npwp'] ?>" id="profile-npwp" name="npwp" placeholder="Contoh: 093748264738123" required>
-                        </div>
+
+                        <input type="hidden" class="form-control" value="<?= $user['utusan'] ?>" name="utusan" required>
+                        <input type="hidden" class="form-control" value="<?= $user['npwp'] ?>" name="npwp" required>
 
                         <div class="menu-divider"></div>
                         <h4 class="form-data-pendidikan-title">Data Kontak</h4>
@@ -227,28 +208,14 @@
                             <select class="form-control" id="profile-kelurahan" name="id_kelurahan" required>
                             </select>
                         </div>
-                        <div class="form-group py-2">
-                            <label for="profileEmail">Status Kepemilikan Rumah *</label>
-                            <div class="custom-radio-button-form d-flex">
-                                <?php if ($status_rumah != null) :
-                                    foreach ($status_rumah as $val) :
-                                        if ($val['id_status_rumah'] != 0) :
-                                            if ($val['status_rumah'] == $user['status_rumah']) : ?>
-                                                <div class="radio-custom pr-3">
-                                                    <input type="radio" value="1" id="sr-<?= $val['id_status_rumah'] ?>" name="id_status_rumah" checked />
-                                                    <label for="sr-<?= $val['id_status_rumah'] ?>"><?= $val['status_rumah'] ?></label>
-                                                </div>
-                                            <?php else : ?>
-                                                <div class="radio-custom pr-3">
-                                                    <input type="radio" value="1" id="sr-<?= $val['id_status_rumah'] ?>" name="id_status_rumah" />
-                                                    <label for="sr-<?= $val['id_status_rumah'] ?>"><?= $val['status_rumah'] ?></label>
-                                                </div>
-                                <?php endif;
-                                        endif;
-                                    endforeach;
-                                endif ?>
-                            </div>
-                        </div>
+
+                        <?php if ($status_rumah != null) :
+                            foreach ($status_rumah as $val) :
+                                if ($val['status_rumah'] == $user['status_rumah']) : ?>
+                                    <input type="hidden" name="id_status_rumah" value=<?= $val['id_status_rumah'] ?>>
+                        <?php endif;
+                            endforeach;
+                        endif ?>
 
                         <div class="menu-divider"></div>
                         <h4 class="form-data-pendidikan-title">Data Pendidikan</h4>
@@ -269,29 +236,14 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-group py-2">
-                                    <label for="Jenis Kelamin">Kompetensi *</label>
-                                    <select class="form-control" id="profile-kompetensi" name="id_kompetensi" required>
-                                        <?php if ($user['kompetensi'] == '-') : ?>
-                                            <option value="0" selected>-</option>
-                                        <?php else : ?>
-                                            <option value="0">-</option>
-                                        <?php endif ?>
-                                        <?php if ($user['kompetensi'] == 'Kompeten') : ?>
-                                            <option value="1" selected>Kompeten</option>
-                                        <?php else : ?>
-                                            <option value="1">Kompeten</option>
-                                        <?php endif ?>
-                                        <?php if ($user['kompetensi'] == 'Tidak Kompeten') : ?>
-                                            <option value="2" selected>Tidak Kompeten</option>
-                                        <?php else : ?>
-                                            <option value="2">Tidak Kompeten</option>
-                                        <?php endif ?>
 
-                                    </select>
-                                </div>
-                            </div>
+                            <?php if ($user['kompetensi'] == '-') : ?>
+                                <input type="hidden" value="0" name="id_kompetensi">-</option>
+                            <?php elseif ($user['kompetensi'] == 'Kompeten') : ?>
+                                <input type="hidden" value="1" name="id_kompetensi">-</option>
+                            <?php elseif ($user['kompetensi'] == 'Tidak Kompeten') : ?>
+                                <input type="hidden" value="2" name="id_kompetensi">-</option>
+                            <?php endif ?>
                         </div>
 
                         <div class="row">
@@ -337,14 +289,14 @@
                 </div>
                 <div class="modal-body">
 
-                    <form method="POST" action="" enctype="multipart/form-data">
+                    <form method="POST" action="<?= base_url()?>User/change_password_action" enctype="multipart/form-data">
                         <div class="form-group py-2">
                             <label for="profileTempatLahir">Password Lama *</label>
-                            <input type="password" class="form-control" id="profile-password-lama" name="password_lama" placeholder="Contoh: Masukkan password lama anda" required>
+                            <input type="password" class="form-control" id="profile-password-lama" name="old_password" placeholder="Contoh: Masukkan password lama anda" required>
                         </div>
                         <div class="form-group py-2">
                             <label for="profileTempatLahir">Password Baru *</label>
-                            <input type="password" class="form-control" id="profile-password-baru" name="password_baru" placeholder="Contoh: Masukkan password baru anda" required>
+                            <input type="password" class="form-control" id="profile-password-baru" name="new_password" placeholder="Contoh: Masukkan password baru anda" required>
                         </div>
 
                         <div class="menu-divider"></div>
