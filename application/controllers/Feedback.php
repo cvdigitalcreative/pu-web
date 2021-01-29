@@ -97,6 +97,49 @@ class Feedback extends CI_Controller
         }
     }
 
+    public function dataAnswered()
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['feedback'] = $this->Feedback_model->view_answered_feedback($this->session->userdata('token'));
+            if ($data['feedback'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['feedback']['status'] == "Success") {
+                    if (count($data['feedback']['data']) > 0) {
+                        $data['feedback'] = $data['feedback']['data'];
+
+                        $indexFeedback = 0;
+                        $noFeedback = 1;
+                        foreach ($data['feedback'] as $val) {
+                            $data['feedback'][$indexFeedback]['no_feedback'] = $noFeedback;
+
+                            $indexFeedback++;
+                            $noFeedback++;
+                        }
+                        $callback = array(
+                            'data' => $data['feedback']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
     //blm done
     public function jawab_feedback($id_feedback)
     {

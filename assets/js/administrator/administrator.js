@@ -1095,6 +1095,83 @@ Tidak ada poster kegiatan`					}
 		]
 	});
 
+	// Feedback Answered Datatable
+	$('#feedback_answered_table').DataTable({
+		"order": [0, 'asc'],
+		processing: true,
+		serverSide: false,
+		// scrollY: true,
+		// scrollX: true,
+		// scrollCollapse: true,
+		// sDom: 'lrtip',
+		pagingType: "full_numbers",
+		language: {
+			emptyTable: "Data tidak ditemukan!",
+		},
+		ajax: {
+			url: `${BASE_URL}Feedback/dataAnswered`,
+			type: "GET",
+		},
+		columns: [
+			{
+				data: 'no_feedback',
+			},
+			{
+				data: 'judul_feedback',
+			},
+			{
+				data: 'deskripsi_feedback',
+			},
+			{
+				data: 'jawaban',
+			},
+			{
+				data: 'pengirim',
+			},
+			{
+				data: 'id_feedback',
+				render: function (data) {
+					return `
+					<button id='btn-detail-answered' type='submit' class='btn btn-info btn-block' data-id='${data}'>Detail</button>
+					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+				}
+			},
+		],
+		columnDefs: [
+			{
+				targets: 1,
+				width: "400px",
+			},
+			{
+				targets: 2,
+				width: "600px",
+				className: "truncate"
+			},
+			{
+				targets: 3,
+				width: "600px",
+				className: "truncate"
+			}
+		]
+	});
+
+	$('table').on('click', '#btn-detail-answered', function () {
+		if ($('#feedback_answered_table').length > 0) {
+			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			var data = $('#feedback_answered_table').DataTable().row(currentRow).data();
+			document.getElementById("answered-pengirim-feedback").innerHTML = data['pengirim'];
+			document.getElementById("answered-pengirim-feedback").classList.add('text-secondary', 'text-justify')
+			document.getElementById("answered-judul-feedback").innerHTML = data['judul_feedback'];
+			document.getElementById("answered-judul-feedback").classList.add('text-secondary', 'text-justify')
+			document.getElementById("answered-deskripsi-feedback").innerHTML = data['deskripsi_feedback'];
+			document.getElementById("answered-deskripsi-feedback").classList.add('text-secondary', 'text-justify')
+			document.getElementById("answered-jawaban-feedback").innerHTML = data['jawaban'];
+			document.getElementById("answered-jawaban-feedback").classList.add('text-secondary', 'text-justify')
+			$(`#modal-edit-jawaban-feedback`).modal('show')
+		}
+	})
+
 	// Berita Datatable
 	$('#berita_table').DataTable({
 		"order": [0, 'asc'],
