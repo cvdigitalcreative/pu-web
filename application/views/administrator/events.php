@@ -311,7 +311,7 @@
 							</div>
 						</div>
 						<div class="form-group py-2">
-							<label for="editProvinsiKegiatan">Provinsi kegiatan *</label>
+							<label for="editProvinsiKegiatan">Provinsi kegiatan *<span class="ml-3 text-secondary"><small>Mohon pilih ulang provinsi</small></span></label>
 							<select class="form-control" id="edit-provinsi-kegiatan" name="edit_id_provinsi" onChange="getStateEdit(this.value);" required>
 								<?php if ($provinsi != null) :
 									foreach ($provinsi as $row2) : ?>
