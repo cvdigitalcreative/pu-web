@@ -23,7 +23,7 @@ class Peserta extends CI_Controller
     public function dataPeserta($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_kegiatan, $this->session->userdata('token'));
+            $data['peserta'] = $this->Kegiatan_model->view_peserta_kegiatan($id_kegiatan, $this->session->userdata('token'));
             if ($data['peserta'] == null) {
                 $callback = array(
                     'data' => []
@@ -408,7 +408,7 @@ class Peserta extends CI_Controller
             $excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(14); // Set font size 15 untuk kolom A1
 
             //get data
-            $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_kegiatan, $this->session->userdata('token'));
+            $data['peserta'] = $this->Kegiatan_model->view_peserta_kegiatan($id_kegiatan, $this->session->userdata('token'));
             if ($data['peserta']['status'] == "Success") {
                 if (count($data['peserta']['data']) > 0) {
                     $data['peserta'] = $data['peserta']['data'];
@@ -547,7 +547,7 @@ class Peserta extends CI_Controller
             )
         );
 
-        $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_kegiatan, $this->session->userdata('token'));
+        $data['peserta'] = $this->Kegiatan_model->view_peserta_kegiatan($id_kegiatan, $this->session->userdata('token'));
         if ($data['peserta']['status'] == "Success") {
             if (count($data['peserta']['data']) > 0) {
                 $data['peserta'] = $data['peserta']['data'];
@@ -671,7 +671,7 @@ class Peserta extends CI_Controller
             )
         );
 
-        $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_kegiatan, $this->session->userdata('token'));
+        $data['peserta'] = $this->Kegiatan_model->view_peserta_kegiatan($id_kegiatan, $this->session->userdata('token'));
         if ($data['peserta']['status'] == "Success") {
             if (count($data['peserta']['data']) > 0) {
                 $data['peserta'] = $data['peserta']['data'];
