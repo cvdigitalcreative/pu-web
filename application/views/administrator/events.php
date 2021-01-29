@@ -360,11 +360,11 @@
 						<div class="form-group py-2">
 							<label for="editStatusKegiatan">Status kegiatan *</label>
 							<select class="form-control" id="edit-status-kegiatan" name="id_status_kegiatan" required>
-								<option selected disabled>Pilih status kegiatan</option>
 								<?php if ($status_kegiatan != null) :
-									foreach ($status_kegiatan as $row2) : ?>
+									foreach ($status_kegiatan as $row2) :
+									if($row2['id_status_kegiatan'] == 1 || $row2['id_status_kegiatan'] == 2): ?>
 										<option value="<?= $row2['id_status_kegiatan'] ?>"><?= $row2['status_kegiatan'] ?></option>
-								<?php endforeach;
+								<?php endif; endforeach;
 								endif; ?>
 							</select>
 						</div>
