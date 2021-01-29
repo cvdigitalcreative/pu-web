@@ -1038,10 +1038,10 @@ class Kegiatan extends CI_Controller
             }
             if ($tambah_bukti_pembayaran['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_bukti_pembayaran['message']);
-                redirect();
+                redirect('pupr/events');
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_bukti_pembayaran['message']);
-                redirect();
+                redirect('pupr/events');
             }
         } else {
             redirect("pupr/login");

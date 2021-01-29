@@ -595,6 +595,42 @@
 	</div>
 	<!-- End of Update Status Kegiatan berita acara Modal -->
 
+	<!-- Update Status Kegiatan bukti pembayaran Modal -->
+	<div class="modal fade bd-example-modal-lg" id="modal-ganti-status-kegiatan-bukti-pembayaran" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalCenterTitle">Bukti Pembayaran</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" enctype="multipart/form-data">
+						<div class="form-group py-2">
+							<label for="editNamaKegiatan">Deskripsi Bukti Pembayaran *</label>
+							<input type="text" class="form-control" id="deskripsi-bukti-pembayaran" name="deskripsi_bukti_pembayaran" placeholder="Contoh: Bukti Pembayaran Kegiatan" required>
+						</div>
+						<div class="form-group pt-2">
+							<label for="fileMateriKegiatan">File Bukti Pembayaran *</label>
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="file-excel-tambah-kegiatan" name="file_bukti_pembayaran" required>
+								<label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+								<small id="file-excel-tambah-kegiatan" class="form-text text-muted">
+									Pilih file bukti pembayaran yang ingin diupload
+								</small>
+							</div>
+						</div>
+						<div class="menu-divider"></div>
+						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Ganti Status Kegiatan</button>
+						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Update Status Kegiatan berita acara Modal -->
+
 	<!-- Import Excel Tambah Peserta Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-import-excel-tambah-peserta-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -777,7 +813,7 @@
 								<a class="nav-link" href="#list-assesor-kegiatan" role="tab" data-toggle="tab">Asesor</a>
 							</li>
 						</ul>
-						
+
 						<div class="tab-content">
 							<div class="tab-pane fade active show" role="tabpanel" id="list-instruktur-kegiatan">
 								<table id="daftar_instruktur_table" class="display" style="width:100%">
