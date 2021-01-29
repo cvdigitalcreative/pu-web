@@ -65,7 +65,7 @@
                                     <div class="col">
                                         <div class="form-group py-2">
                                             <label for="profileTempatLahir">Tempat Lahir *</label>
-                                            <input type="text" class="form-control" id="profile-tempat-lahir" name="tempat_lahir" value="<?= $user['tempat_lahir']?>" placeholder="Contoh: Jakarta" required>
+                                            <input type="text" class="form-control" id="profile-tempat-lahir" name="tempat_lahir" value="<?= $user['tempat_lahir'] ?>" placeholder="Contoh: Jakarta" required>
                                         </div>
                                     </div>
                                     <div class="col">
@@ -325,6 +325,39 @@
     </div>
     <!-- End modal Edit Profile -->
 
+    <!-- Edit Profile Modal -->
+    <div class="modal fade bd-example-modal-md" id="modal-ganti-password-profile" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Ganti Password</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" action="" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label for="profileTempatLahir">Password Lama *</label>
+                            <input type="password" class="form-control" id="profile-password-lama" name="password_lama" placeholder="Contoh: Masukkan password lama anda" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="profileTempatLahir">Password Baru *</label>
+                            <input type="password" class="form-control" id="profile-password-baru" name="password_baru" placeholder="Contoh: Masukkan password baru anda" required>
+                        </div>
+
+                        <div class="menu-divider"></div>
+                        <button class="btn btn-block btn-warning btn-modal-add-kegiatan" type="submit" data-toggle="collapse" data-target="#collapseExample" id="btn-edit-profile" aria-expanded="false" aria-controls="collapseExample">
+                            Ganti Password
+                        </button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -379,6 +412,9 @@
                                             <small class="text-muted text-capitalize font-size-sm mt-1"><?= $user['alamat_card'] ?></small>
                                             <button class="btn btn-block btn-profile mt-3 mb-3" type="button" data-toggle="modal" data-target="#modal-edit-profile" aria-expanded="false" aria-controls="collapseExample">
                                                 Edit Profile
+                                            </button>
+                                            <button class="btn btn-block btn-profile mt-3 mb-3" type="button" id="btn-ganti-password-profile" data-toggle="modal" data-target="#modal-ganti-password-profile" aria-expanded="false" aria-controls="collapseExample">
+                                                Ganti Password
                                             </button>
                                         </div>
                                     </div>
@@ -511,6 +547,7 @@
                                                     <?= $user['nik'] ?>
                                                 </div>
                                             </div>
+                                        </div>
 
                                         <!-- End of Profile card detail collapse -->
                                     </div>
