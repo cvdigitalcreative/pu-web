@@ -31,7 +31,7 @@
 							<label for="fileModul">File Modul *</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-modul" name="file_modul" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file modul...</label>
+								<label class="custom-file-label" id="custom-file-label-file-modul" for="file-modul">Pilih file modul...</label>
 								<small id="file_modul" class="form-text text-muted">
 									Pilih file modul yang sesuai!
 								</small>
@@ -82,7 +82,7 @@
 							<label for="fileModul">File Modul</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-modul" name="file_modul">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file modul...</label>
+								<label class="custom-file-label" id="custom-file-label-edit-file-modul" for="edit-file-modul">Pilih file modul...</label>
 								<small id="file_modul" class="form-text text-muted">
 									Pilih file modul yang sesuai!
 								</small>
@@ -112,8 +112,7 @@
 	</div>
 
 	<!-- Delete Modul modal -->
-	<div class="modal fade bd-example-modal-lg" id="modal-delete-modul" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade bd-example-modal-lg" id="modal-delete-modul" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">

@@ -35,7 +35,7 @@
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-administrasi-kegiatan"
 									name="file_administrasi_kegiatan" required>
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file administrasi kegiatan...</label>
+								<label class="custom-file-label" id="custom-file-label-file-administrasi-kegiatan" for="file-administrasi-kegiatan">Pilih file administrasi kegiatan...</label>
 								<small id="file-administrasi-kegiatan" class="form-text text-muted">
 									Pilih file administrasi kegiatan yang sesuai!
 								</small>
@@ -80,7 +80,7 @@
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-administrasi-kegiatan"
 									name="file_administrasi_kegiatan">
-								<label class="custom-file-label" for="validatedCustomFile">Pilih file administrasi kegiatan...</label>
+								<label class="custom-file-label" id="custom-file-label-edit-file-administrasi-kegiatan" for="edit-file-administrasi-kegiatan">Pilih file administrasi kegiatan...</label>
 								<small id="file-administrasi-kegiatan" class="form-text text-muted">
 									Pilih file administrasi kegiatan yang sesuai!
 								</small>
