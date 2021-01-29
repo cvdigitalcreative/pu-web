@@ -252,18 +252,14 @@ class Kegiatan extends CI_Controller
 
                             // ==================== Instruktur Kegiatan ===========================
                             $indexInstruktur = 0;
-                            $data['kegiatan'][$indexKegiatan]['str_id_instruktur_kegiatan'] = '[';
                             foreach ($data['kegiatan'][$indexKegiatan]['instruktur_kegiatan'] as $val2) {
                                 if ($indexInstruktur == 0) {
                                     $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = $val2['nama'];
-                                    $data['kegiatan'][$indexKegiatan]['str_id_instruktur_kegiatan'] = $data['kegiatan'][$indexKegiatan]['str_id_instruktur_kegiatan'] . '"' . $val2['id_tenaga_ahli'] . '"';
                                 } else {
                                     $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_instruktur_kegiatan'] . ", " . $val2['nama'];
-                                    $data['kegiatan'][$indexKegiatan]['str_id_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_id_instruktur_kegiatan'] . ', "' . $val2['id_tenaga_ahli'] . '"';
                                 }
                                 $indexInstruktur++;
                             }
-                            $data['kegiatan'][$indexKegiatan]['str_id_instruktur_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_id_instruktur_kegiatan'] . ']';
                             // ==================== Asesor Kegiatan ===========================
                             $indexAsesor = 0;
                             foreach ($data['kegiatan'][$indexKegiatan]['asesor_kegiatan'] as $val2) {
@@ -273,6 +269,40 @@ class Kegiatan extends CI_Controller
                                     $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
                                 $indexAsesor++;
                             }
+
+                            // ==================== File Berita Acara ===========================
+                            $file_berita = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
+                            if ($file_berita == null)
+                                $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = null;
+                            else {
+                                if ($file_berita['status'] == "Success" && count($file_berita['data']) > 0)
+                                    $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = $file_berita['data'];
+                                else
+                                    $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = null;
+                            }
+
+                            // ==================== File invoice ===========================
+                            $file_invoice = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
+                            if ($file_invoice == null)
+                                $data['kegiatan'][$indexKegiatan]['file_invoice'] = null;
+                            else {
+                                if ($file_invoice['status'] == "Success" && count($file_invoice['data']) > 0)
+                                    $data['kegiatan'][$indexKegiatan]['file_invoice'] = $file_invoice['data'];
+                                else
+                                    $data['kegiatan'][$indexKegiatan]['file_invoice'] = null;
+                            }
+
+                            // ==================== File Bukti pembayaran ===========================
+                            $file_bukti_pembayaran = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
+                            if ($file_bukti_pembayaran == null)
+                                $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = null;
+                            else {
+                                if ($file_bukti_pembayaran['status'] == "Success" && count($file_bukti_pembayaran['data']) > 0)
+                                    $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = $file_bukti_pembayaran['data'];
+                                else
+                                    $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = null;
+                            }
+
 
                             $indexKegiatan++;
                             $noKegiatan++;
@@ -767,7 +797,7 @@ class Kegiatan extends CI_Controller
             $lokasi_kegiatan = $this->input->post('edit_lokasi_kegiatan');
             $latitude_lokasi = 0;
             $longitude_lokasi = 0;
-            $status_kegiatan = 1;
+            $status_kegiatan = $this->input->post('id_status_kegiatan');
             if ($_FILES['edit_foto_banner_kegiatan']['size'] == 0)
                 $foto_banner_kegiatan = null;
             else
@@ -1289,5 +1319,65 @@ class Kegiatan extends CI_Controller
             }
         } else
             redirect("pupr/login");
+    }
+
+    public function download_file_berita_acara($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $file_berita_acara = $this->Kegiatan_model->view_berita_acara($id_kegiatan, $this->session->userdata('token'));
+            if ($file_berita_acara == null)
+                $this->load->view('error_page');
+            else {
+                if ($file_berita_acara['status'] == "Success") {
+                    $data = file_get_contents($file_berita_acara['data'][0]['file_berita_acara']);
+                    force_download($file_berita_acara['data'][0]['file_berita_acara'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $file_berita_acara['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
+    public function download_file_invoice($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $file_invoice = $this->Kegiatan_model->view_invoice($id_kegiatan, $this->session->userdata('token'));
+            if ($file_invoice == null)
+                $this->load->view('error_page');
+            else {
+                if ($file_invoice['status'] == "Success") {
+                    $data = file_get_contents($file_invoice['data'][0]['file_invoice']);
+                    force_download($file_invoice['data'][0]['file_invoice'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $file_invoice['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
+    public function download_file_bukti_pembayaran($id_kegiatan)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $this->load->helper('download');
+            $file_bukti_pembayaran = $this->Kegiatan_model->view_bukti_pembayaran($id_kegiatan, $this->session->userdata('token'));
+            if ($file_bukti_pembayaran == null)
+                $this->load->view('error_page');
+            else {
+                if ($file_bukti_pembayaran['status'] == "Success") {
+                    $data = file_get_contents($file_bukti_pembayaran['data'][0]['file_bukti_pembayaran']);
+                    force_download($file_bukti_pembayaran['data'][0]['file_bukti_pembayaran'], $data);
+                } else {
+                    $this->session->flashdata('APImessage', $file_bukti_pembayaran['message']);
+                    redirect('pupr/events');
+                }
+            }
+        } else
+            redirect('pupr/login');
     }
 }

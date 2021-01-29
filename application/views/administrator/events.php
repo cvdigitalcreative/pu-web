@@ -7,6 +7,34 @@
 
 <body id="page-top">
 
+	<!-- Daftar File Modal -->
+	<div class="modal fade bd-example-modal-sm" id="modal-daftar-file-kegiatan" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle">Daftar File Kegiatan</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+						<div class="col mb-2">
+						<button class="btn btn-primary btn-block btn-download-file-kegiatan"  id="btn-daftar-file-kegiatan-berita-acara"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Berita Acara</button>
+						</div>
+						<div class="col mb-2">
+						<button class="btn btn-primary btn-block btn-download-file-kegiatan" href="" id="btn-daftar-file-kegiatan-invoice"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Invoice</button>
+						</div>
+						<div class="col mb-2">
+						<button class="btn btn-primary btn-block btn-download-file-kegiatan" href="" id="btn-daftar-file-kegiatan-bukti-pembayaran"><img class="img-profile mr-2"
+									src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Bukti Pembayaran</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Import Excel Tambah Kegiatan Modal -->
 	<!-- Filter Kegiatan Modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-filter-kegiatan" tabindex="-1" role="dialog">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -330,6 +358,17 @@
 							<textarea type="text" data-autoresize class="form-control" id="edit-lokasi-kegiatan" name="edit_lokasi_kegiatan" placeholder="Contoh: Jalan demang lebar daun" required></textarea>
 						</div>
 						<div class="form-group py-2">
+							<label for="editStatusKegiatan">Status kegiatan *</label>
+							<select class="form-control" id="edit-status-kegiatan" name="id_status_kegiatan" required>
+								<option selected disabled>Pilih status kegiatan</option>
+								<?php if ($status_kegiatan != null) :
+									foreach ($status_kegiatan as $row2) : ?>
+										<option value="<?= $row2['id_status_kegiatan'] ?>"><?= $row2['status_kegiatan'] ?></option>
+								<?php endforeach;
+								endif; ?>
+							</select>
+						</div>
+						<div class="form-group py-2">
 							<label for="editFileMateriKegiatan">Materi kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-materi-kegiatan" name="file_materi_kegiatan">
@@ -647,7 +686,7 @@
 							<label for="fileMateriKegiatan">File Excel Tambah Peserta Kegiatan</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-import-excel-tambah-peserta-kegiatan" name="file_excel_import_peserta_kegiatan" accept=".xlsx, .xls, .csv"" required>
-								<label class="custom-file-label" id="custom-file-label-file-import-excel-tambah-peserta-kegiatan" for="file-import-excel-tambah-peserta-kegiatan">Pilih file excel...</label>
+								<label class=" custom-file-label" id="custom-file-label-file-import-excel-tambah-peserta-kegiatan" for="file-import-excel-tambah-peserta-kegiatan">Pilih file excel...</label>
 								<small id="file-import-excel-tambah-peserta-kegiatan" class="form-text text-muted">
 									Pilih file excel tambah peserta kegiatan
 								</small>

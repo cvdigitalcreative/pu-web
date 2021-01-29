@@ -277,20 +277,23 @@ $(document).ready(function () {
 					data: 'null',
 					render: function (data, type, row) {
 						if (row.id_status_kegiatan != 2) {
-							return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
-					<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
-					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}'>Ganti Status</button>
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>`
+						return `
+							<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
+							<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
+							<button id='btn-detail-file-kegiatan' type='submit' class='btn btn-secondary btn-block' data-id='${row.id_kegiatan}'>Lihat Daftar File</button>
+							<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}'>Ganti Status</button>
+							<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
+							<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>
+							`
 				}
 				else {
-							return `
-					<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
-					<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
-					<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}' disabled>Selesai Dilaksanakan</button>
-					<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
-					<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>`
+						return `
+							<button id='btn-detail' type='submit' class='btn btn-info btn-block' data-id='${row.id_kegiatan}'>Lihat Peserta</button>
+							<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
+							<button id='btn-detail-file-kegiatan' type='submit' class='btn btn-secondary btn-block' data-id='${row.id_kegiatan}'>Lihat Daftar File</button>
+							<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}' disabled>Selesai Dilaksanakan</button>
+							<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
+							<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>`
 							
 						}
 					}
@@ -358,6 +361,64 @@ Tidak ada poster kegiatan`					}
 			]
 		})
 	}
+
+	$('table').on('click', '#btn-detail-file-kegiatan', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			$('form').attr('action', `${BASE_URL}Berita/edit_berita_action/${id}`)
+			var data = $('#kalender_kegiatan_table').DataTable().row(currentRow).data();
+			
+			if (data['file_berita_acara'] == null) {
+				document.getElementById('btn-daftar-file-kegiatan-berita-acara').disabled = true
+			}
+			else {
+				document.getElementById('btn-daftar-file-kegiatan-berita-acara').disabled = false
+				$('#btn-daftar-file-kegiatan-berita-acara').on('click', function () {
+					$.ajax({
+						url: `${BASE_URL}Kegiatan/download_file_berita_acara/${id}`,
+						type: 'GET',
+						success: function () {
+							window.location = `${BASE_URL}Kegiatan/download_file_berita_acara/${id}`;
+						}
+					})
+				})
+			}
+
+			if (data['file_invoice'] == null) {
+				document.getElementById('btn-daftar-file-kegiatan-invoice').disabled = true
+			}
+			else {
+				document.getElementById('btn-daftar-file-kegiatan-invoice').disabled = false
+				$('#btn-daftar-file-kegiatan-invoice').on('click', function () {
+					$.ajax({
+						url: `${BASE_URL}Kegiatan/download_file_invoice/${id}`,
+						type: 'GET',
+						success: function () {
+							window.location = `${BASE_URL}Kegiatan/download_file_invoice/${id}`;
+						}
+					})
+				})
+			}
+
+			if (data['file_bukti_pembayaran'] == null) {
+				document.getElementById('btn-daftar-file-kegiatan-bukti-pembayaran').disabled = true
+			}
+			else {
+				document.getElementById('btn-daftar-file-kegiatan-bukti-pembayaran').disabled = false
+				$('#btn-daftar-file-kegiatan-bukti-pembayaran').on('click', function () {
+					$.ajax({
+						url: `${BASE_URL}Kegiatan/download_file_bukti_pembayaran/${id}`,
+						type: 'GET',
+						success: function () {
+							window.location = `${BASE_URL}Kegiatan/download_file_bukti_pembayaran/${id}`;
+						}
+					})
+				})
+			}
+			$('#modal-daftar-file-kegiatan').modal('show')
+		}
+	})
 	// End of Kalender kegiatan datatable 
 
 	// Daftar Peserta by Kalender Kegiatan Datatable
@@ -2141,9 +2202,14 @@ Tidak ada poster kegiatan`					}
 		else if ($('#feedback_table').length > 0) {
 			const id = $(this).data('id')
 			$('form').attr('action', `${BASE_URL}Feedback/jawab_feedback/${id}`)
-			$('#judul-feedback').val($(this).parent().siblings().eq(1).text())
-			$('#pertanyaan-feedback').val($(this).parent().siblings().eq(2).text())
-			$('#pengirim-feedback').val($(this).parent().siblings().eq(3).text())
+			var currentRow = $(this).closest("tr");
+			var data = $('#feedback_table').DataTable().row(currentRow).data();
+			document.getElementById("pengirim-feedback").innerHTML = data['pengirim'];
+			document.getElementById("pengirim-feedback").classList.add('text-secondary', 'text-justify')
+			document.getElementById("judul-feedback").innerHTML = data['judul_feedback'];
+			document.getElementById("judul-feedback").classList.add('text-secondary', 'text-justify')
+			document.getElementById("deskripsi-feedback").innerHTML = data['deskripsi_feedback'];
+			document.getElementById("deskripsi-feedback").classList.add('text-secondary', 'text-justify')
 			$(`#modal-reply-feedback`).modal('show')
 		}
 		else if ($('#berita_table').length > 0) {
@@ -2252,6 +2318,7 @@ Tidak ada poster kegiatan`					}
 			$('form').attr('action', `${BASE_URL}Kegiatan/edit_kegiatan_action/${id}`)
 			$('#edit-akun-kegiatan').val(data['id_akun_kegiatan'])
 			$('#edit-jenis-kegiatan').val(data['id_jenis_kegiatan'])
+			$('#edit-status-kegiatan').val(data['id_status_kegiatan'])
 			$('#banner-image-edit').attr('src', data['foto_banner_kegiatan'])
 			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(1).text())
 			$('#edit-deskripsi-kegiatan').val($(this).parent().siblings().eq(2).text())

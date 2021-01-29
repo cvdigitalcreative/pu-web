@@ -21,15 +21,15 @@
 					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaTenagaAhli">Pengirim</label>
-							<input type="text" class="form-control" id="pengirim-feedback" name="judul_feedback" placeholder="Contoh: Andi Setiawan" readonly required>
+							<div id="pengirim-feedback"></div>
 						</div>
 						<div class="form-group py-2">
 							<label for="namaTenagaAhli">Judul</label>
-							<textarea type="text" data-autoresize class="form-control" id="judul-feedback" rows=2 required disabled></textarea>
+							<div id="judul-feedback"></div>
 						</div>
 						<div class="form-group py-2">
 							<label for="judulModul">Deskripsi</label>
-							<textarea type="text" class="form-control" style="overflow-y: scroll;" id="pertanyaan-feedback" name="deskripsi_modul" rows=5  required readonly></textarea>
+							<div id="deskripsi-feedback"></div>
 						</div>
 						<div class="form-group py-2">
 							<label for="judulModul">Jawaban *</label>
@@ -70,7 +70,7 @@
 							<div id="answered-deskripsi-feedback"></div>
 						</div>
 						<div class="form-group py-2">
-							<label for="judulModul">Jawaban *</label>
+							<label for="judulModul">Jawaban</label>
 							<div id="answered-jawaban-feedback"></div>
 						</div>
 

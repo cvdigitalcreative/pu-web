@@ -19,6 +19,11 @@
     border-radius: 14px;
 }
 
+.custom-file-label {
+    overflow: hidden;
+    object-fit: cover;
+}
+
 .btn-modal-add-kegiatan {
     height: 44px !important;
     border-radius: 30px;
@@ -38,6 +43,11 @@
 .btn-import-kegiatan {
     height: 40px !important;
     margin-left: 16px;
+    border-radius: 14px;
+}
+
+.btn-download-file-kegiatan {
+    height: 40px !important;
     border-radius: 14px;
 }
 
