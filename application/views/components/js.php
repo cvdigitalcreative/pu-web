@@ -173,8 +173,3 @@
         }
     </script>
     
-<?php if(isset($_GET['redirect']) && $_GET['redirect'] == 'events' && isset($_GET['show'])) : ?>
-<script>
-$('#modal-tambah-tenaga-ahli').modal('show')
-</script>
-<?php endif?>

@@ -18,8 +18,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url()?>Administrasi_kegiatan/tambah_administrasi_kegiatan_action"
-						enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulAdministrasiKegiatan">Judul Administrasi Kegiatan *</label>
 							<input type="text" class="form-control" id="judul-administrasi-kegiatan" name="judul_administrasi_kegiatan"
@@ -188,8 +187,7 @@
 
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-administrasi-kegiatan"><img class="img-profile mr-2"
+							<button class="btn btn-primary btn-add-kegiatan" id="btn-add-administrasi-kegiatan"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Administrasi Kegiatan</button>
 						</div>
 						<div class="card-body">

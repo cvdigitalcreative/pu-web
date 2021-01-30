@@ -128,7 +128,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form method="POST" action="<?= base_url() ?>Kegiatan/tambah_kegiatan_action" enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 
 						<div class="form-group py-2">
 							<label for="akunKegiatan">Akun Kegiatan*</label>
@@ -1019,7 +1019,7 @@
 						<div class="col d-flex justify-content-between button-field">
 							<div class="">
 								<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal" data-target="#modal-filter-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
-								<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal" data-target="#modal-tambah-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
+								<button class="btn btn-primary btn-add-kegiatan" id="btn-tambah-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
 								<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal" data-target="#modal-import-excel-tambah-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import</button>
 								<a href="" class="btn btn-success btn-import-kegiatan" id="btn-export-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export</a>
 							</div>

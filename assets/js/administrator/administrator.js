@@ -366,7 +366,6 @@ Tidak ada poster kegiatan`					}
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
 			var currentRow = $(this).closest("tr");
-			$('form').attr('action', `${BASE_URL}Berita/edit_berita_action/${id}`)
 			var data = $('#kalender_kegiatan_table').DataTable().row(currentRow).data();
 			
 			if (data['file_berita_acara'] == null) {
@@ -2694,6 +2693,136 @@ Tidak ada poster kegiatan`					}
 		$(this).next('#custom-file-label-edit-file-skkni').html(fileName);
 	  })
 	
+	// ================================ btn add call modal ===============================
+	// ======================================== Administrasi Kegiatan =================================
+	$('#btn-add-administrasi-kegiatan').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Administrasi_kegiatan/tambah_administrasi_kegiatan_action`)
+		$('#modal-tambah-administrasi-kegiatan').modal('show');
+	})
+
+	// ================================== Kegiatan ==========================================
+	$('#btn-tambah-kegiatan').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Kegiatan/tambah_kegiatan_action`)
+		$('#modal-tambah-kegiatan').modal('show');
+	})
+
+	// ============================== master data ======================================
+	$('#btn-add-akun-kegiatan-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_akun_kegiatan_action`)
+		$('#modal-tambah-akun-kegiatan').modal('show');
+	})
+
+	$('#btn-add-jenis-kegiatan-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_jenis_kegiatan_action`)
+		$('#modal-tambah-jenis-kegiatan').modal('show');
+	})
+
+	$('#btn-add-provinsi-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_provinsi_action`)
+		$('#modal-tambah-provinsi').modal('show');
+	})
+
+	$('#btn-add-kabupaten-kota-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_kabupaten_kota_action`)
+		$('#modal-tambah-kabupaten-kota').modal('show');
+	})
+
+	$('#btn-add-kecamatan-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_kecamatan_action`)
+		$('#modal-tambah-kecamatan').modal('show');
+	})
+
+	$('#btn-add-kelurahan-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_kelurahan_desa_action`)
+		$('#modal-tambah-kelurahan').modal('show');
+	})
+
+	$('#btn-add-status-kegiatan-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_status_kegiatan_action`)
+		$('#modal-tambah-status-kegiatan').modal('show');
+	})
+
+	$('#btn-add-status-peserta-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_status_peserta_action`)
+		$('#modal-tambah-status-peserta').modal('show');
+	})
+
+	$('#btn-add-kategori-ahli-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_kategori_tenaga_ahli_action`)
+		$('#modal-tambah-kategori-ahli').modal('show');
+	})
+
+	$('#btn-add-jabatan-kerja-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_jabker_action`)
+		$('#modal-tambah-jabatan-kerja').modal('show');
+	})
+
+	$('#btn-add-pendidikan-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_pendidikan_action`)
+		$('#modal-tambah-pendidikan').modal('show');
+	})
+
+	$('#btn-add-skkni-ska-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_skkni_ska_action`)
+		$('#modal-tambah-skkni').modal('show');
+	})
+	
+	$('#btn-add-modul-kegiatan-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_kategori_modul_action`)
+		$('#modal-tambah-modul').modal('show');
+	})
+
+	$('#btn-add-pns-master').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Master/tambah_status_pns_action`)
+		$('#modal-tambah-pns').modal('show');
+	})
+	
+	
+	// ================================= Tenaga Ahli ===================================
+	if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {
+		$('#btn-add-tenaga-ahli').on('click', function () {
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/tambah_tenaga_ahli_action/events`)
+			$('#modal-tambah-tenaga-ahli').modal('show');
+		})
+	}
+	
+	else if (window.location.href == `${BASE_URL}pupr/experts?redirect=events&show=1`) {
+		$('form').attr('action', `${BASE_URL}Tenaga_ahli/tambah_tenaga_ahli_action/events`)
+		$('#modal-tambah-tenaga-ahli').modal('show');
+		$('#btn-add-tenaga-ahli').on('click', function () {
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/tambah_tenaga_ahli_action/events`)
+			$('#modal-tambah-tenaga-ahli').modal('show');
+		})
+	}
+	
+	else if (window.location.href == `${BASE_URL}pupr/experts` || window.location.href == `${BASE_URL}pupr/experts/`) {
+		$('#btn-add-tenaga-ahli').on('click', function () {
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/tambah_tenaga_ahli_action`)
+			$('#modal-tambah-tenaga-ahli').modal('show');
+		})
+	}
+	
+	// ================================= Modul ===================================
+	$('#btn-add-modul').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Modul/tambah_modul_action`)
+		$('#modal-tambah-modul').modal('show');
+	})
+
+	// ================================= Modul ===================================
+	$('#btn-add-berita').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Berita/tambah_berita_action`)
+		$('#modal-tambah-berita').modal('show');
+	})
+
+	// ================================= Buku Saku ===================================
+	$('#btn-add-buku-saku').on('click', function () {
+		$('form').attr('action', `${BASE_URL}Buku_saku/tambah_buku_saku_action`)
+		$('#modal-tambah-buku-saku').modal('show');
+	})
+
+	// ================================= Buku Saku ===================================
+	$('#btn-add-ska').on('click', function () {
+		$('form').attr('action', `${BASE_URL}SKA/tambah_ska_action`)
+		$('#modal-tambah-skkni').modal('show');
+	})
 });
-
-

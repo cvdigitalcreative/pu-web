@@ -83,14 +83,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-
-					<?php if(isset($_GET['redirect']) && $_GET['redirect'] == 'events') : ?>
-					<form method="POST" action="<?= base_url()?>Tenaga_ahli/tambah_tenaga_ahli_action/events"
-						enctype="multipart/form-data">
-					<?php else : ?>
-					<form method="POST" action="<?= base_url()?>Tenaga_ahli/tambah_tenaga_ahli_action"
-						enctype="multipart/form-data">
-						<?php endif?>
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="namaTenagaAhli">Nama Lengkap *</label>
 							<input type="text" class="form-control" id="nama-tenaga-ahli" name="nama_lengkap_tenaga_ahli"
@@ -673,8 +666,7 @@
 							<button class="btn btn-light btn-filter-kegiatan" data-toggle="modal"
 								data-target="#modal-filter-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-filter-icon.svg') ?>">Filter</button>
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal"
-								data-target="#modal-tambah-tenaga-ahli"><img class="img-profile mr-2"
+							<button class="btn btn-primary btn-add-kegiatan" id="btn-add-tenaga-ahli"><img class="img-profile mr-2"
 									src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Tambah</button>
 							<button class="btn btn-warning btn-import-kegiatan" data-toggle="modal"
 								data-target="#modal-import-excel-tambah-tenaga-ahli"><img class="img-profile mr-2"

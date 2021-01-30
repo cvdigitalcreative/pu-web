@@ -18,7 +18,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form method="POST" action="<?= base_url() ?>Buku_saku/tambah_buku_saku_action" enctype="multipart/form-data">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="judulBukuSaku">Judul Buku Saku *</label>
 							<input type="text" class="form-control" id="judul-buku-saku" name="judul_buku_saku" placeholder="Contoh: Buku Kegiatan Pelatihan" required>
@@ -177,7 +177,7 @@
 
 					<div class="container-fluid mt-2 container-background">
 						<div class="col button-field">
-							<button class="btn btn-primary btn-add-kegiatan" data-toggle="modal" data-target="#modal-tambah-buku-saku"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Buku Saku</button>
+							<button class="btn btn-primary btn-add-kegiatan" id="btn-add-buku-saku"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Add Buku Saku</button>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
