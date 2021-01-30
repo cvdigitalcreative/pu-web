@@ -421,19 +421,19 @@ class Peserta extends CI_Controller
 
                         $data['peserta'][$indexPeserta]['tempat_tanggal_lahir'] = $val['tempat_lahir'] . ', ' . $data['peserta'][$indexPeserta]['tanggal_lahir_text'];
 
-                        $index = 1;
-                        if (count($data['peserta'][$indexPeserta]['jabker']) != 0) {
-                            foreach ($data['peserta'][$indexPeserta]['jabker'] as $val2) {
-                                if ($index != count($data['peserta'][$indexPeserta]['jabker'])) {
-                                    $data['peserta'][$indexPeserta]['str_nama_jabker'] = $index . '. ' . $val2['nama_jabker'] . '<br>';
-                                } else {
-                                    $data['peserta'][$indexPeserta]['str_nama_jabker'] = $index . '. ' . $val2['nama_jabker'];
-                                }
-                                $index++;
-                            }
-                        } else {
-                            $data['peserta'][$indexPeserta]['str_nama_jabker'] = "-";
-                        }
+                        // $index = 1;
+                        // if (count($data['peserta'][$indexPeserta]['jabker']) != 0) {
+                        //     foreach ($data['peserta'][$indexPeserta]['jabker'] as $val2) {
+                        //         if ($index != count($data['peserta'][$indexPeserta]['jabker'])) {
+                        //             $data['peserta'][$indexPeserta]['str_nama_jabker'] = $index . '. ' . $val2['nama_jabker'] . '<br>';
+                        //         } else {
+                        //             $data['peserta'][$indexPeserta]['str_nama_jabker'] = $index . '. ' . $val2['nama_jabker'];
+                        //         }
+                        //         $index++;
+                        //     }
+                        // } else {
+                        //     $data['peserta'][$indexPeserta]['str_nama_jabker'] = "-";
+                        // }
 
                         if ($val['jenis_kelamin'] == "Laki-laki")
                             $data['peserta'][$indexPeserta]['jenis_kelamin'] = 'L';
@@ -466,11 +466,11 @@ class Peserta extends CI_Controller
                     $excel->setActiveSheetIndex(0)->setCellValue('L' . $numrow, $val['id_kota_kabupaten']);
                     $excel->getActiveSheet()->setCellValueExplicit('M' . $numrow, $val['no_telpon'],  PHPExcel_Cell_DataType::TYPE_STRING);
                     $excel->getActiveSheet()->setCellValueExplicit('N' . $numrow, $val['no_handphone'],  PHPExcel_Cell_DataType::TYPE_STRING);
-                    $excel->setActiveSheetIndex(0)->setCellValue('O' . $numrow, $val['id_pendidikan']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('O' . $numrow, $val['pendidikan']);
                     $excel->setActiveSheetIndex(0)->setCellValue('P' . $numrow, $val['jurusan']);
                     $excel->setActiveSheetIndex(0)->setCellValue('Q' . $numrow, $val['nama_universitas']);
                     $excel->setActiveSheetIndex(0)->setCellValue('R' . $numrow, $val['tahun_lulus']);
-                    $excel->setActiveSheetIndex(0)->setCellValue('S' . $numrow, $val['str_nama_jabker']);
+                    $excel->setActiveSheetIndex(0)->setCellValue('S' . $numrow, '-');
                     $excel->setActiveSheetIndex(0)->setCellValue('T' . $numrow, $val['kompetensi']);
                     $excel->setActiveSheetIndex(0)->setCellValue('U' . $numrow, '-');
 
