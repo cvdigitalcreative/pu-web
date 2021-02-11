@@ -282,6 +282,7 @@ $(document).ready(function () {
 							<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
 							<button id='btn-detail-file-kegiatan' type='submit' class='btn btn-secondary btn-block' data-id='${row.id_kegiatan}'>Lihat Daftar File</button>
 							<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}'>Ganti Status</button>
+							<button id='btn-selesaikan-kegiatan' type='submit' class='btn btn-selesaikan-kegiatan btn-block' data-id='${row.id_kegiatan}'>Selesaikan Kegiatan</button>
 							<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
 							<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>
 							`
@@ -417,6 +418,15 @@ Tidak ada poster kegiatan`					}
 			}
 			$('#modal-daftar-file-kegiatan').modal('show')
 		}
+	})
+
+	$('table').on('click', '#btn-selesaikan-kegiatan', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}`)
+			$('#modal-selesaikan-kegiatan').modal('show')
+		}
+		
 	})
 	// End of Kalender kegiatan datatable 
 

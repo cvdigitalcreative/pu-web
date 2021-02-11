@@ -319,3 +319,14 @@
 .btn-move-input-experts:hover {
     cursor: pointer;
 }
+
+.btn-selesaikan-kegiatan{
+    background-color:#ffa742;
+    border-color: #ffa742;
+    color: white;
+}
+
+.btn-selesaikan-kegiatan:hover{
+    color: white;
+    background-color:#f5901d;
+}
