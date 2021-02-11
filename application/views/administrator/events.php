@@ -897,7 +897,7 @@
 	</div>
 	<!-- End of Lihat instruktur assesor Modal -->
 
-	<!-- Delete kegiatan modal -->
+	<!-- Selesaikan kegiatan modal -->
 	<div class="modal fade bd-example-modal-lg" id="modal-selesaikan-kegiatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -919,7 +919,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- End modal delete kegiatan -->
+	<!-- End modal selesaikan kegiatan -->
 
 	<!-- Modal show image -->
 	<div id="show-image-modal" class="modal fade" role="dialog">
