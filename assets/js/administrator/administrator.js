@@ -2450,11 +2450,19 @@ Tidak ada poster kegiatan`					}
 	// 
 	// ========= EXPORT PESERTA ONCLICK ===========
 	// 
-	$('#btn-export-peserta').on('click', function () {
+	$('#btn-export-peserta-seluruh').on('click', function () {
 		$.ajax({
-			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`,
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`,
 			success: function () {
-				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`;
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`;
+			}
+		})
+	});
+	$('#btn-export-peserta-filter').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`,
+			success: function () {
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`;
 			}
 		})
 	});

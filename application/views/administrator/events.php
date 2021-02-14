@@ -782,7 +782,15 @@
 				</div>
 				<div class="modal-body">
 					<div class="col">
-						<a class="btn btn-success btn-import-kegiatan" href="" id="btn-export-peserta"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta</a>
+						<button class="btn btn-success btn-import-kegiatan dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Export Peserta
+						</button>
+
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" id="btn-export-peserta-seluruh">Seluruh Peserta</a>
+							<a class="dropdown-item" id="btn-export-peserta-filter">Filter Peserta</a>
+						</div>
+
 						<button class="btn btn-warning btn-import-kegiatan" id="btn-import-peserta-kegiatan"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-import-icon.svg') ?>">Import Peserta</button>
 						<a href="<?= base_url() ?>Kegiatan/download_format_peserta_excel_action"><button class="btn btn-danger btn-import-kegiatan float-right"><img class="img-profile mr-2" src="<?= base_url('assets/icons/pupr-download-icon.svg') ?>">Download Format Excel</button></a>
 					</div>
