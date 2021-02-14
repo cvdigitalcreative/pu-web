@@ -100,7 +100,7 @@
 								<div class="col">
 							<label for="tanggalLahirTenagaAhli">Tanggal Lahir</label>
 										<input type="text" class="form-control js-daterangepicker"
-											id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli" value=""
+											id="tanggal-lahir-tenaga-ahli" data-drops="down" name="tanggal_lahir_tenaga_ahli" value=""
 											placeholder="Pilih tanggal lahir">
 								</div>
 							</div>
@@ -120,7 +120,8 @@
 						<div class="form-group py-2">
 							<label for="nikTenagaAhli">NIK *</label>
 							<input type="text" class="form-control" id="nik-tenaga-ahli" name="nik_tenaga_ahli"
-								placeholder="Contoh: 1234567898765432" required>
+								placeholder="Contoh: 1234567890123456" required>
+							<small>Jumlah digit NIK 16 digit tidak boleh lebih atau kurang</small>
 						</div>
 
 						<div class="form-group py-2">
