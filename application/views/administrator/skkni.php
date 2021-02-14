@@ -20,30 +20,30 @@
 				<div class="modal-body">
 					<form method="POST" enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="judulSkkni">Judul Skkni *</label>
+							<label for="judulSkkni">Judul SKKNI *</label>
 							<input type="text" class="form-control" id="judul-skkni" name="judul_skkni"
 								placeholder="Contoh: SKKNI Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
-							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
+							<label for="deskripsiSkkni">Deskripsi SKKNI *</label>
 							<textarea type="text" data-autoresize class="form-control" id="deskripsi-skkni" name="deskripsi_skkni"
 								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileSkkni">File Skkni *</label>
+							<label for="fileSkkni">File SKKNI *</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="file-skkni"
 									name="file_skkni" required>
-								<label class="custom-file-label" id="custom-file-label-file-skkni" for="file-skkni">Pilih file skkni...</label>
+								<label class="custom-file-label" id="custom-file-label-file-skkni" for="file-skkni">Pilih file SKKNI...</label>
 								<small id="file-skkni" class="form-text text-muted">
-									Pilih file skkni yang sesuai!
+									Pilih file SKKNI yang sesuai!
 								</small>
 							</div>
 						</div>
           <div class="form-group py-2">
-						<label for="namaKategoriSkkni">Kategori Skkni *</label>
+						<label for="namaKategoriSkkni">Kategori SKKNI *</label>
 							<select class="form-control" id="kategori-skkni" name="id_kategori_skkni" required>
-								<option selected disabled>Pilih kategori skkni</option>
+								<option selected disabled>Pilih kategori SKKNI</option>
 								<?php if ($kategori_ska != null) :
 									foreach ($kategori_ska as $row) : ?>
 										<option value="<?= $row['id_kategori_skkni'] ?>"><?= $row['kategori_skkni'] ?></option>
@@ -53,7 +53,7 @@
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-							Skkni</button>
+						SKKNI</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -76,30 +76,30 @@
 					<form method="POST" action=""
 						enctype="multipart/form-data">
 						<div class="form-group py-2">
-							<label for="judulSkkni">Judul Skkni *</label>
+							<label for="judulSkkni">Judul SKKNI *</label>
 							<input type="text" class="form-control" id="edit-judul-skkni" name="judul_skkni"
 								placeholder="Contoh: SKKNI Kegiatan Pelatihan" required>
 						</div>
 						<div class="form-group py-2">
-							<label for="deskripsiSkkni">Deskripsi Skkni *</label>
+							<label for="deskripsiSkkni">Deskripsi SKKNI *</label>
 							<textarea type="text" data-autoresize class="form-control" id="edit-deskripsi-skkni" name="deskripsi_skkni"
 								placeholder="Contoh: Ini adalah deskripsi skkni kegiatan pelatihan" required></textarea>
 						</div>
 						<div class="form-group py-2">
-							<label for="fileSkkni">File Skkni</label>
+							<label for="fileSkkni">File SKKNI</label>
 							<div class="custom-file">
 								<input type="file" class="custom-file-input" id="edit-file-skkni"
 									name="file_skkni">
-								<label class="custom-file-label" id="custom-file-label-edit-file-skkni" for="edit-file-skkni">Pilih file skkni...</label>
+								<label class="custom-file-label" id="custom-file-label-edit-file-skkni" for="edit-file-skkni">Pilih file SKKNI...</label>
 								<small id="edit-file-skkni" class="form-text text-muted">
-									Pilih file skkni yang sesuai! Lewati jika tidak ingin mengganti file.
+									Pilih file SKKNI yang sesuai! Lewati jika tidak ingin mengganti file.
 								</small>
 							</div>
 						</div>
            				<div class="form-group py-2">
-							<label for="namaKategoriSkkni">Kategori Skkni *</label>
+							<label for="namaKategoriSkkni">Kategori SKKNI *</label>
 							<select class="form-control" id="edit-kategori-skkni" name="id_kategori_skkni" required>
-								<option selected disabled>Pilih kategori skkni</option>
+								<option selected disabled>Pilih kategori SKKNI</option>
 								<?php if ($kategori_ska != null) :
 									foreach ($kategori_ska as $row) : ?>
 										<option value="<?= $row['id_kategori_skkni'] ?>"><?= $row['kategori_skkni'] ?></option>
@@ -109,7 +109,7 @@
 						</div>
 						<div class="menu-divider"></div>
 						<button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
-							Skkni</button>
+						SKKNI</button>
 						<button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
 							data-dismiss="modal">Batal</button>
 					</form>
@@ -124,13 +124,13 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus skkni Ini?</h5>
+					<h5 class="modal-title" id="exampleModalCenterTitle">Hapus SKKNI Ini?</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					Pastikan dengan benar bahwa skkni ini ingin anda hapus!
+					Pastikan dengan benar bahwa SKKNI ini ingin anda hapus!
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
