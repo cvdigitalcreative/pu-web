@@ -819,7 +819,7 @@
 										<th>Jabatan Kerja</th>
 										<th>Kompeten</th>
 										<th>No Sertifikat</th>
-										<!-- <th>Aksi</th> -->
+										<th>Aksi</th>
 									</tr>
 								</thead>
 							</table>
@@ -943,6 +943,263 @@
 		</div>
 	</div>
 	<!-- End modal show image -->
+
+	    <!-- Edit Profile Modal -->
+		<div class="modal fade bd-example-modal-lg" id="modal-edit-profile-peserta-kegiatan" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Edit Data Peserta Kegiatan</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <h4>Data Diri</h4>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="form-group pt-2">
+                                    <label for="profileFotoProfil">Foto Peserta *</label>
+                                    <center>
+                                        <div id="profile-picture-container">
+                                            <image id="banner-image-profile"/>
+                                            <input id="banner-profile" type="file" name="file_foto_profile" placeholder="Photo" alt="Pilih Foto" accept=".jpg, .png, .jpeg" capture>
+                                        </div>
+                                        <p class="text-secondary mt-2"><small>Klik gambar untuk mengganti foto peserta</small></p>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group py-2">
+                                    <label for="profileNama">Nama *</label>
+                                    <input type="text" class="form-control" id="edit-profile-nama" name="nama" placeholder="Contoh: Budi Gunawan" required>
+                                </div>
+                                <div class="form-group py-2">
+                                    <label for="profileEmail">Jenis Kelamin *</label>
+                                    <div class="custom-radio-button-form d-flex">
+                                        <?php if ($jenis_kelamin != null) :
+                                            foreach ($jenis_kelamin as $val) :
+                                                if ($val['id_jenis_kelamin'] != 0) :?>
+                                                        <div class="radio-custom pr-3">
+                                                            <input type="radio" value="<?= $val['id_jenis_kelamin'] ?>" id="jk-<?= $val['id_jenis_kelamin'] ?>" name="id_jenis_kelamin" />
+                                                            <label for="jk-<?= $val['id_jenis_kelamin'] ?>"><?= $val['jenis_kelamin'] ?></label>
+                                                        </div>
+                                        <?php endif;
+                                            endforeach;
+                                        endif ?>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label for="profileTempatLahir">Tempat Lahir *</label>
+                                            <input type="text" class="form-control" id="edit-profile-tempat-lahir" name="tempat_lahir" placeholder="Contoh: Jakarta" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label for="profileTanggalLahir">Tanggal Lahir *</label>
+                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="down" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <input type="hidden" name="status_perkawinan" id="edit-profile-status-perkawinan">
+
+                            </div>
+                        </div>
+
+
+                        <div class="menu-divider"></div>
+                        <h4 class="form-data-pendidikan-title">Data Pekerjaan</h4>
+                        <div class="form-group py-2">
+                            <label for="profileNomorTelepon">Nama Perusahaan *</label>
+                            <input type="text" class="form-control" id="edit-profile-nama-perusahaan" name="nama_perusahaan" placeholder="Contoh: PT. Digital Creative" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="profileNomorTelepon">Jabatan *</label>
+                            <input type="text" class="form-control" id="edit-profile-jabatan" name="jabatan" placeholder="Contoh: Human Resource Manager" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="profileNomorTelepon">Utusan *</label>
+                            <input type="text" class="form-control" id="edit-profile-utusan" name="utusan" placeholder="Contoh: DPRD SUMSEL" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="profileNomorTelepon">NPWP *</label>
+                            <input type="text" class="form-control" id="edit-profile-npwp" name="npwp" placeholder="Contoh: 14567653267885" required>
+                        </div>
+
+                        <div class="menu-divider"></div>
+                        <h4 class="form-data-pendidikan-title">Data Kontak</h4>
+                        <div class="form-group py-2">
+                            <label for="profileEmail">Email *</label>
+                            <input type="email" class="form-control" id="edit-profile-email" name="email" placeholder="Contoh: Budi@email.com" required>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group py-2">
+                                    <label for="profileNomorTelepon">Nomor Telepon *</label>
+                                    <input type="text" class="form-control" id="edit-profile-nomor-telepon" name="nomor_telepon" placeholder="Contoh: +68119324945" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group py-2">
+                                    <label for="profileNomorHandphone">Nomor Handphone *</label>
+                                    <input type="text" class="form-control" id="edit-profile-nomor-handphone" name="nomor_handphone" placeholder="Contoh: +6282112341234" required>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="deskripsiKegiatan">Nomor Induk Kependudukan *</label>
+                            <input type="text" class="form-control" id="edit-profile-nik" name="nik" placeholder="Contoh: 248430234247924" required>
+                        </div>
+
+
+                        <div class="menu-divider"></div>
+                        <h4 class="form-data-pendidikan-title">Data Tempat Tinggal</h4>
+                        <div class="form-group py-2">
+                            <label for="deskripsiKegiatan">Alamat *</label>
+                            <textarea type="text" data-autoresize rows="3" class="form-control" id="edit-profile-alamat" name="alamat" placeholder="Contoh: Jl. Sudirman No. 1234" required></textarea>
+                        </div>
+                        <div class="form-group py-2">
+                            <div class="row mr-2">
+                                <div class="col">
+                                    <label for="kotaKegiatan">RT./RW. *</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                RT.
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" id="edit-profile-rt" name="rt" placeholder="Contoh: 123" style="background-color: white;" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label for="kotaKegiatan">Kode Pos/Area *</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                Kode Pos
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" id="edit-profile-kode-pos" name="kode_pos" placeholder="Contoh: 30132"  style="background-color: white;" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mr-2">
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                RW.
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" id="edit-profile-rw" name="rw" placeholder="Contoh: 321" style="background-color: white;" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                Kode Area
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" id="edit-profile-kode-area" name="kode_area" placeholder="Contoh: 0711" style="background-color: white;" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group py-2">
+                            <label for="profileProvinsi">Provinsi *</label>
+                            <select class="form-control" id="profile-provinsi" name="id_provinsi" onChange="getStateProfile(this.value);" required>
+                                <?php if ($provinsi != null) : ?>
+                                    <?php foreach ($provinsi as $row) : ?>
+                                        <option value="<?= $row['id_provinsi'] ?>"><?= $row['provinsi'] ?></option>
+                                <?php endforeach;
+                                endif; ?>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="kotaKegiatan">Kota/Kabupaten *<span class="ml-3 text-secondary"><small>Mohon pilih Provinsi terlebih dahulu</small></span></label>
+                            <select class="form-control" id="profile-kota" name="id_kota_kabupaten" onChange="getKecamatanProfile(this.value);" required>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="kotaKegiatan">Kecamatan *<span class="ml-3 text-secondary"><small>Mohon pilih Kota/Kabupaten terlebih dahulu</small></span></label>
+                            <select class="form-control" id="profile-kecamatan" name="id_kecamatan" onChange="getKelurahanProfile(this.value);" required>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="kotaKegiatan">Kelurahan *<span class="ml-3 text-secondary"><small>Mohon pilih Kecamatan terlebih dahulu</small></span></label>
+                            <select class="form-control" id="profile-kelurahan" name="id_kelurahan" required>
+                            </select>
+                        </div>
+
+                        <input type="hidden" name="id_status_rumah" id="edit-profile-status-rumah">
+
+
+                        <div class="menu-divider"></div>
+                        <h4 class="form-data-pendidikan-title">Data Pendidikan</h4>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group py-2">
+                                    <label for="Jenis Kelamin">Pendidikan Terakhir *</label>
+                                    <select class="form-control" id="edit-profile-pendidikan" name="id_pendidikan" required>
+                                        <?php if ($pendidikan != null) : ?>
+                                            <?php foreach ($pendidikan as $row) : ?>
+                                                    <option value="<?= $row['id_pendidikan'] ?>"><?= $row['pendidikan'] ?></option>
+                                        <?php endforeach;
+                                        endif; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group py-2">
+                                    <label for="Jenis Kelamin">Kompeten *</label>
+                                    <select class="form-control" id="edit-profile-kompetensi" name="id_kompetensi" required>
+                                        <option value="0">-</option>
+                                        <option value="1">Kompeten</option>
+                                        <option value="2">Tidak Kompeten</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group py-2">
+                                    <label for="profileNomorTelepon">Jurusan *</label>
+                                    <input type="text" class="form-control" id="edit-profile-jurusan" name="jurusan" placeholder="Contoh: Teknik Perminyakan" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group py-2">
+                                    <label for="profileNomorTelepon">Nama Universitas *</label>
+                                    <input type="text" class="form-control" id="edit-profile-nama-universitas" name="nama_universitas" placeholder="Contoh: Institut Teknologi Bandung" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="filterTanggalSelesaikegiatan">Tahun Lulus *</label>
+                            <input type="text" class="form-control js-daterangepicker" id="profile-tahun-lulus" data-drops="up" name="profile_tahun_lulus" placeholder="Pilih tahun lulus" required>
+                        </div>
+
+                        <div class="menu-divider"></div>
+                        <button class="btn btn-block btn-warning btn-modal-add-kegiatan" type="submit" data-toggle="collapse" data-target="#collapseExample" id="btn-edit-profile" aria-expanded="false" aria-controls="collapseExample">
+                            Edit Peserta Kegiatan
+                        </button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan" data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal Edit Profile -->
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">

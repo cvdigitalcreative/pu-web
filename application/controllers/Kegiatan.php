@@ -136,6 +136,53 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['jenis_kelamin'] = $this->Common_model->view_jenis_kelamin($this->session->userdata('token'));
+            if ($data['jenis_kelamin'] == null)
+                $null = true;
+            else {
+                if ($data['jenis_kelamin']['status'] == "Success") {
+                    $data['jenis_kelamin'] = $data['jenis_kelamin']['data'];
+                } else {
+                    $data['jenis_kelamin'] = null;
+                    $this->session->set_flashdata('APImessage', $data['jenis_kelamin']['message']);
+                }
+            }
+
+            $data['status_perkawinan'] = $this->Common_model->view_status_perkawinan($this->session->userdata('token'));
+            if ($data['status_perkawinan'] == null)
+                $null = true;
+            else {
+                if ($data['status_perkawinan']['status'] == "Success") {
+                    $data['status_perkawinan'] = $data['status_perkawinan']['data'];
+                } else {
+                    $data['status_perkawinan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['status_perkawinan']['message']);
+                }
+            }
+
+            $data['status_rumah'] = $this->Common_model->view_status_rumah($this->session->userdata('token'));
+            if ($data['status_rumah'] == null)
+                $null = true;
+            else {
+                if ($data['status_rumah']['status'] == "Success") {
+                    $data['status_rumah'] = $data['status_rumah']['data'];
+                } else {
+                    $data['status_rumah'] = null;
+                    $this->session->set_flashdata('APImessage', $data['status_rumah']['message']);
+                }
+            }
+            $data['pendidikan'] = $this->Common_model->view_pendidikan($this->session->userdata('token'));
+            if ($data['pendidikan'] == null)
+                $null = true;
+            else {
+                if ($data['pendidikan']['status'] == "Success") {
+                    $data['pendidikan'] = $data['pendidikan']['data'];
+                } else {
+                    $data['pendidikan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['pendidikan']['message']);
+                }
+            }
+
             if ($null)
                 $this->load->view('error_page');
             else
