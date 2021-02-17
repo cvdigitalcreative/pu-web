@@ -517,14 +517,13 @@ Tidak ada poster kegiatan`					}
 					return "-"
 				}
 			},
-			// {
-			// 	data: 'id_user',
-			// 	render: function (data) {
-			// 		return `
-			// 		<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-			// 		<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-			// 	}
-			// },
+			{
+				data: 'id_user',
+				render: function (data) {
+					return `
+					<button id='btn-edit-peserta-kegiatan' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit Peserta</button>`
+				}
+			},
 		],
 		rowCallback: function (row, data) { },
 		"order": [0, 'asc'],
@@ -2397,7 +2396,62 @@ Tidak ada poster kegiatan`					}
 		}
 	})
 	// End of edit
-	
+
+	$('table').on('click', '#btn-edit-peserta-kegiatan', function () {
+		if ($('#daftar_peserta_table').length > 0) {
+			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			var data = $('#daftar_peserta_table').DataTable().row(currentRow).data();
+			$('form').attr('action', `${BASE_URL}Peserta/edit_peserta_action/${id}`)
+			
+			$('#edit-profile-nama').val($(this).parent().siblings().eq(2).text())
+			
+			if (data['jenis_kelamin'] == "Laki-laki") {
+				document.getElementById("jk-1").checked = true;
+				document.getElementById("jk-2").checked = false;
+			}
+			else if (data['jenis_kelamin'] == "Perempuan") {
+				document.getElementById("jk-1").checked = false;
+				document.getElementById("jk-2").checked = true;
+			}
+			else if (data['jenis_kelamin'] == '-') {
+				document.getElementById("jk-1").checked = false;
+				document.getElementById("jk-2").checked = false;
+			}
+
+			if (data['file_foto_profile'] == '-') {
+				$('#banner-image-profile').attr('src', `${BASE_URL}assets/icons/pupr-add-image-icon.svg`)
+			}
+			else {
+				$('#banner-image-profile').val($(this).parent().siblings().eq(1).text())
+			}
+
+			$('#edit-profile-tempat-lahir').val(data['tempat_lahir'])
+			$('#edit-profile-status-perkawinan').val(data['status_perkawinan'])
+			$('#edit-profile-nama-perusahaan').val(data['nama_perusahaan'])
+			$('#edit-profile-jabatan').val(data['jabatan'])
+			$('#edit-profile-utusan').val($(this).parent().siblings().eq(7).text())
+			$('#edit-profile-npwp').val(data['npwp'])
+			$('#edit-profile-email').val($(this).parent().siblings().eq(6).text())
+			$('#edit-profile-nomor-telepon').val($(this).parent().siblings().eq(11).text())
+			$('#edit-profile-nomor-handphone').val($(this).parent().siblings().eq(12).text())
+			$('#edit-profile-nik').val($(this).parent().siblings().eq(5).text())
+			$('#edit-profile-alamat').val($(this).parent().siblings().eq(8).text())
+			$('#edit-profile-rt').val(data['rt'])
+			$('#edit-profile-rw').val(data['rw'])
+			$('#edit-profile-kode-pos').val(data['kode_pos'])
+			$('#edit-profile-kode-area').val(data['kode_area'])
+			$('#edit-profile-status-rumah').val(data['status_rumah'])
+			$('#edit-profile-jurusan').val($(this).parent().siblings().eq(14).text())
+			$('#edit-profile-nama-universitas').val($(this).parent().siblings().eq(15).text())
+
+
+			
+			$('#edit-profile-nama').val($(this).parent().siblings().eq(2).text())
+			$('#modal-lihat-peserta-by-kegiatan').modal('hide')
+			$('#modal-edit-profile-peserta-kegiatan').modal('show')
+		}
+	})
 	// 
 	// ========= DELETE BUTTON ON CLICK ===========
 	// 
@@ -2450,11 +2504,19 @@ Tidak ada poster kegiatan`					}
 	// 
 	// ========= EXPORT PESERTA ONCLICK ===========
 	// 
-	$('#btn-export-peserta').on('click', function () {
+	$('#btn-export-peserta-seluruh').on('click', function () {
 		$.ajax({
-			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`,
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`,
 			success: function () {
-				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`;
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`;
+			}
+		})
+	});
+	$('#btn-export-peserta-filter').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`,
+			success: function () {
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`;
 			}
 		})
 	});

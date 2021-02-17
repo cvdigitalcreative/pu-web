@@ -23,7 +23,7 @@ class Peserta extends CI_Controller
     public function dataPeserta($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
-            $data['peserta'] = $this->Kegiatan_model->view_peserta_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_kegiatan, $this->session->userdata('token'));
             if ($data['peserta'] == null) {
                 $callback = array(
                     'data' => []
@@ -231,29 +231,89 @@ class Peserta extends CI_Controller
         if ($this->session->userdata('logged_in') == true) {
             $nama = $this->input->post('nama');
             $email = $this->input->post('email');
-            $no_telpon = $this->input->post('no_telpon');
+            $no_telpon = $this->input->post('nomor_telepon');
             $id_provinsi = $this->input->post('id_provinsi');
             $id_kota_kabupaten = $this->input->post('id_kota_kabupaten');
             $id_kecamatan = $this->input->post('id_kecamatan');
             $id_kelurahan = $this->input->post('id_kelurahan');
             $id_jenis_kelamin = $this->input->post('id_jenis_kelamin');
-            $id_status_perkawinan = $this->input->post('id_status_perkawinan');
+            $id_status_perkawinan = $this->input->post('status_perkawinan');
+            $temp_status_perkawinan = $this->Common_model->view_status_perkawinan($this->session->userdata('token'));
+            if ($temp_status_perkawinan != null) {
+                if ($temp_status_perkawinan['status'] == 'Success') {
+                    if ($temp_status_perkawinan['data'] != null) {
+                        foreach ($temp_status_perkawinan['data'] as $val) {
+                            if ($val['status_perkawinan'] == $id_status_perkawinan) {
+                                $id_status_perkawinan = $val['id_status_perkawinan'];
+                            }
+                        }
+                    } else
+                        $id_status_perkawinan = 0;
+                } else
+                    $id_status_perkawinan = 0;
+            }
+
             $nama_perusahaan = $this->input->post('nama_perusahaan');
             $jabatan = $this->input->post('jabatan');
             $utusan = $this->input->post('utusan');
-            $alamat_rumah = $this->input->post('alamat_rumah');
+            $alamat_rumah = $this->input->post('alamat');
+            $tempat_lahir = $this->input->post('tempat_lahir');
+            $tanggal_lahir = $this->input->post('profile_tanggal_lahir');
+
+            $temparr = explode('/', $tanggal_lahir);
+            $hari = $temparr[1];
+            $bulan = $temparr[0];
+            $tahun = $temparr[2];
+            $temparr[0] = $tahun;
+            $temparr[1] = $bulan;
+            $temparr[2] = $hari;
+            $tanggal_lahir = implode('-', $temparr);
+
             $nik = $this->input->post('nik');
             $rt = $this->input->post('rt');
             $rw = $this->input->post('rw');
             $kode_pos = $this->input->post('kode_pos');
             $kode_area = $this->input->post('kode_area');
-            $no_handphone = $this->input->post('no_handphone');
+            $no_handphone = $this->input->post('nomor_handphone');
             $id_status_rumah = $this->input->post('id_status_rumah');
+
+            $temp_status_rumah = $this->Common_model->view_status_rumah($this->session->userdata('token'));
+            if ($temp_status_rumah != null) {
+                if ($temp_status_rumah['status'] == 'Success') {
+                    if ($temp_status_rumah['data'] != null) {
+                        foreach ($temp_status_rumah['data'] as $val) {
+                            if ($val['status_rumah'] == $id_status_rumah) {
+                                $id_status_rumah = $val['id_status_rumah'];
+                            }
+                        }
+                    } else
+                        $id_status_rumah = 0;
+                } else
+                    $id_status_rumah = 0;
+            }
+
             $id_pendidikan = $this->input->post('id_pendidikan');
             $id_jabker = $this->input->post('id_jabker');
             $id_kompetensi = $this->input->post('id_kompetensi');
+            $nama_universitas = $this->input->post('nama_universitas');
+            $jurusan = $this->input->post('jurusan');
+            $tahun_lulus = $this->input->post('profile_tahun_lulus');
+            
+            $temparrlulus = explode('/', $tahun_lulus);
+            $hari = $temparrlulus[1];
+            $bulan = $temparrlulus[0];
+            $tahun = $temparrlulus[2];
+            $temparrlulus[0] = $tahun;
+            $temparrlulus[1] = $bulan;
+            $temparrlulus[2] = $hari;
+            $tahun_lulus = implode('-', $temparrlulus);
+
+            $npwp = $this->input->post('npwp');
             // $no_sertifikat = $this->input->post('no_sertifikat');
-            $file_foto_profil = new \CurlFile($_FILES['file_foto_profil']['tmp_name'], $_FILES['file_foto_profil']['type'], $_FILES['file_foto_profil']['name']);
+            if ($_FILES["file_foto_profile"]['size'] != 0)
+                $file_foto_profil = new \CurlFile($_FILES['file_foto_profile']['tmp_name'], $_FILES['file_foto_profile']['type'], $_FILES['file_foto_profile']['name']);
+            else
+                $file_foto_profil = null;
 
             $edit_peserta = $this->Peserta_model->edit_peserta(
                 $nama,
@@ -269,6 +329,8 @@ class Peserta extends CI_Controller
                 $jabatan,
                 $utusan,
                 $alamat_rumah,
+                $tempat_lahir,
+                $tanggal_lahir,
                 $nik,
                 $rt,
                 $rw,
@@ -279,8 +341,12 @@ class Peserta extends CI_Controller
                 $id_pendidikan,
                 $id_jabker,
                 $id_kompetensi,
+                $nama_universitas,
+                $jurusan,
+                $tahun_lulus,
                 // $no_sertifikat,
                 $file_foto_profil,
+                $npwp,
                 $id_user,
                 $this->session->userdata('token')
             );
@@ -290,10 +356,10 @@ class Peserta extends CI_Controller
             }
             if ($edit_peserta['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_peserta['message']);
-                redirect();
+                redirect('pupr/events');
             } else {
                 $this->session->set_flashdata('APImessage', $edit_peserta['message']);
-                redirect();
+                redirect('pupr/events');
             }
         } else {
             redirect("pupr/login");
@@ -346,7 +412,7 @@ class Peserta extends CI_Controller
             redirect("pupr/login");
     }
 
-    public function export_peserta_action($id_kegiatan)
+    public function export_peserta_action($id_kegiatan, $kategori)
     {
         if ($this->session->userdata('logged_in') == true) {
             // Load plugin PHPExcel nya
@@ -408,7 +474,11 @@ class Peserta extends CI_Controller
             $excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(14); // Set font size 15 untuk kolom A1
 
             //get data
-            $data['peserta'] = $this->Kegiatan_model->view_peserta_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            if ($kategori == 1)
+                $data['peserta'] = $this->Peserta_model->view_seluruh_peserta($id_kegiatan, $this->session->userdata('token'));
+            else if ($kategori == 2)
+                $data['peserta'] = $this->Kegiatan_model->view_peserta_kegiatan($id_kegiatan, $this->session->userdata('token'));
+
             if ($data['peserta']['status'] == "Success") {
                 if (count($data['peserta']['data']) > 0) {
                     $data['peserta'] = $data['peserta']['data'];
