@@ -961,7 +961,7 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="form-group pt-2">
-                                    <label for="profileFotoProfil">Foto Peserta *</label>
+                                    <label for="profileFotoProfil">Foto Peserta</label>
                                     <center>
                                         <div id="profile-picture-container">
                                             <image id="banner-image-profile"/>
