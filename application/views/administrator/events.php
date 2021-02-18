@@ -1054,9 +1054,10 @@
 
                         </div>
                         <div class="form-group py-2">
-                            <label for="deskripsiKegiatan">Nomor Induk Kependudukan *</label>
-                            <input type="text" class="form-control" id="edit-profile-nik" name="nik" placeholder="Contoh: 248430234247924" required>
-                        </div>
+                            <label for="deskripsiKegiatan">NIK *</label>
+                            <input type="text" class="form-control" id="edit-profile-nik" pattern="[0-9]{16}" name="nik" placeholder="Contoh: 248430234247924" required>
+							<small>Jumlah digit NIK 16 digit tidak boleh lebih atau kurang</small>
+						</div>
 
 
                         <div class="menu-divider"></div>

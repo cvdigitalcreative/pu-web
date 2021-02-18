@@ -119,7 +119,7 @@
 
 						<div class="form-group py-2">
 							<label for="nikTenagaAhli">NIK *</label>
-							<input type="text" class="form-control" id="nik-tenaga-ahli" name="nik_tenaga_ahli"
+							<input type="text" class="form-control" id="nik-tenaga-ahli" pattern="[0-9]{16}" name="nik_tenaga_ahli"
 								placeholder="Contoh: 1234567890123456" required>
 							<small>Jumlah digit NIK 16 digit tidak boleh lebih atau kurang</small>
 						</div>
@@ -331,8 +331,9 @@
 
 						<div class="form-group py-2">
 							<label for="nikTenagaAhli">NIK *</label>
-							<input type="text" class="form-control" id="edit-nik-tenaga-ahli" name="edit_nik_tenaga_ahli"
+							<input type="text" class="form-control" id="edit-nik-tenaga-ahli" pattern="[0-9]{16}" name="edit_nik_tenaga_ahli"
 								placeholder="Contoh: 1234567898765432" required>
+							<small>Jumlah digit NIK 16 digit tidak boleh lebih atau kurang</small>
 						</div>
 
 						<div class="form-group py-2">
