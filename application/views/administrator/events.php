@@ -52,7 +52,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="filterTanggalMulaikegiatan">Tanggal Mulai</label>
-									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-mulai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan">
+									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-mulai-kegiatan" data-drops="down" name="filter_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly>
 									<small id="filter-tanggal-mulai-kegiatan-label" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -61,7 +61,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="filterTanggalSelesaikegiatan">Tanggal Selesai</label>
-									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-selesai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan">
+									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-selesai-kegiatan" data-drops="down" name="filter_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly>
 									<small id="filter-tanggal-selesai-kegiatan-label" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -176,7 +176,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="tanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="tanggal-mulai-kegiatan" data-drops="up" name="tanggal_kegiatan" value="" placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="tanggal-mulai-kegiatan" data-drops="up" name="tanggal_kegiatan" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -185,7 +185,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="tanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="tanggal-selesai-kegiatan" data-drops="up" name="tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="tanggal-selesai-kegiatan" data-drops="up" name="tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -322,7 +322,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="editTanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-mulai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-mulai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -331,7 +331,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="editTanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-selesai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" required>
+									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-selesai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -920,7 +920,7 @@
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
-							<button class="btn btn-selensaikan-kegiata" type="submit">Selesaikan Kegiatan</button>
+							<button class="btn btn-selesaikan-kegiatan" type="submit">Selesaikan Kegiatan</button>
 						</div>
 					</form>
 				</div>
@@ -1001,7 +1001,7 @@
                                     <div class="col">
                                         <div class="form-group py-2">
                                             <label for="profileTanggalLahir">Tanggal Lahir *</label>
-                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="down" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" required>
+                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="up" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" style="cursor:pointer; background-color: #FFFFFF" readonly required>
                                         </div>
                                     </div>
                                 </div>
@@ -1054,9 +1054,10 @@
 
                         </div>
                         <div class="form-group py-2">
-                            <label for="deskripsiKegiatan">Nomor Induk Kependudukan *</label>
-                            <input type="text" class="form-control" id="edit-profile-nik" name="nik" placeholder="Contoh: 248430234247924" required>
-                        </div>
+                            <label for="deskripsiKegiatan">NIK *</label>
+                            <input type="text" class="form-control" id="edit-profile-nik" pattern="[0-9]{16}" name="nik" placeholder="Contoh: 248430234247924" required>
+							<small>Jumlah digit NIK 16 digit tidak boleh lebih atau kurang</small>
+						</div>
 
 
                         <div class="menu-divider"></div>
@@ -1186,7 +1187,7 @@
                         </div>
                         <div class="form-group py-2">
                             <label for="filterTanggalSelesaikegiatan">Tahun Lulus *</label>
-                            <input type="text" class="form-control js-daterangepicker" id="profile-tahun-lulus" data-drops="up" name="profile_tahun_lulus" placeholder="Pilih tahun lulus" required>
+                            <input type="text" class="form-control js-daterangepicker" id="profile-tahun-lulus" data-drops="up" name="profile_tahun_lulus" placeholder="Pilih tahun lulus" style="cursor:pointer; background-color: #FFFFFF" readonly required>
                         </div>
 
                         <div class="menu-divider"></div>

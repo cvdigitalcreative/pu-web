@@ -247,8 +247,8 @@ class User extends CI_Controller
             $alamat_rumah = $this->input->post('alamat');
             $tempat_lahir = $this->input->post('tempat_lahir');
             $temptanggallahir = explode('/', $this->input->post('profile_tanggal_lahir'));
-            $tempbulan = $temptanggallahir[0];
-            $temphari = $temptanggallahir[1];
+            $tempbulan = $temptanggallahir[1];
+            $temphari = $temptanggallahir[0];
             $temptahun = $temptanggallahir[2];
             $temptanggallahir[0] = $temptahun;
             $temptanggallahir[1] = $tempbulan;
@@ -266,8 +266,8 @@ class User extends CI_Controller
             $nama_universitas = $this->input->post('nama_universitas');
             $jurusan = $this->input->post('jurusan');
             $temptahunlulus = explode('/', $this->input->post('profile_tahun_lulus'));
-            $tempbulan = $temptahunlulus[0];
-            $temphari = $temptahunlulus[1];
+            $tempbulan = $temptahunlulus[1];
+            $temphari = $temptahunlulus[0];
             $temptahun = $temptahunlulus[2];
             $temptahunlulus[0] = $temptahun;
             $temptahunlulus[1] = $tempbulan;
