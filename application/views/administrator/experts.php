@@ -100,7 +100,7 @@
 								<div class="col">
 							<label for="tanggalLahirTenagaAhli">Tanggal Lahir</label>
 										<input type="text" class="form-control js-daterangepicker"
-											id="tanggal-lahir-tenaga-ahli" data-drops="down" name="tanggal_lahir_tenaga_ahli" value=""
+											id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli" value=""
 											placeholder="Pilih tanggal lahir">
 								</div>
 							</div>

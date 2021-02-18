@@ -52,7 +52,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="filterTanggalMulaikegiatan">Tanggal Mulai</label>
-									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-mulai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan">
+									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-mulai-kegiatan" data-drops="down" name="filter_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan">
 									<small id="filter-tanggal-mulai-kegiatan-label" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -61,7 +61,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="filterTanggalSelesaikegiatan">Tanggal Selesai</label>
-									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-selesai-kegiatan" data-drops="up" name="filter_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan">
+									<input type="text" class="form-control js-daterangepicker" id="filter-tanggal-selesai-kegiatan" data-drops="down" name="filter_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan">
 									<small id="filter-tanggal-selesai-kegiatan-label" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -1001,7 +1001,7 @@
                                     <div class="col">
                                         <div class="form-group py-2">
                                             <label for="profileTanggalLahir">Tanggal Lahir *</label>
-                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="down" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" required>
+                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="up" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" required>
                                         </div>
                                     </div>
                                 </div>
