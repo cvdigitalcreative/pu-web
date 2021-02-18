@@ -71,7 +71,7 @@
                                     <div class="col">
                                         <div class="form-group py-2">
                                             <label for="profileTanggalLahir">Tanggal Lahir *</label>
-                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="up" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" required>
+                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="up" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" style="cursor:pointer; background-color: #FFFFFF" readonly required>
                                         </div>
                                     </div>
                                 </div>
@@ -263,7 +263,7 @@
                         </div>
                         <div class="form-group py-2">
                             <label for="filterTanggalSelesaikegiatan">Tahun Lulus *</label>
-                            <input type="text" class="form-control js-daterangepicker" id="profile-tahun-lulus" data-drops="up" name="profile_tahun_lulus" placeholder="Pilih tahun lulus" required>
+                            <input type="text" class="form-control js-daterangepicker" id="profile-tahun-lulus" data-drops="up" name="profile_tahun_lulus" placeholder="Pilih tahun lulus" style="cursor:pointer; background-color: #FFFFFF" readonly required>
                         </div>
 
                         <div class="menu-divider"></div>
