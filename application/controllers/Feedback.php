@@ -34,14 +34,30 @@ class Feedback extends CI_Controller
                 }
             }
 
+            $data['total_feedback'] = 0;
             $data['feedback'] = $this->Feedback_model->view_unanswered_feedback($this->session->userdata('token'));
             if ($data['feedback'] == null)
                 $null = true;
             else {
                 if ($data['feedback']['status'] == "Success") {
-                    $data['total_feedback'] = count($data['feedback']['data']);
+                    $data['total_feedback'] = $data['total_feedback'] + count($data['feedback']['data']);
+                    $data['total_unanswered_feedback'] = count($data['feedback']['data']);
                 } else {
-                    $data['total_feedback'] = 0;
+                    $data['total_feedback'] = $data['total_feedback'] + 0;
+                    $data['total_unanswered_feedback'] = 0;
+                    $this->session->set_flashdata('APImessage', $data['feedback']['message']);
+                }
+            }
+            $data['feedback_answered'] = $this->Feedback_model->view_answered_feedback($this->session->userdata('token'));
+            if ($data['feedback_answered'] == null)
+                $null = true;
+            else {
+                if ($data['feedback_answered']['status'] == "Success") {
+                    $data['total_feedback'] = $data['total_feedback'] + count($data['feedback_answered']['data']);
+                    $data['total_answered_feedback'] = count($data['feedback_answered']['data']);
+                } else {
+                    $data['total_feedback'] = $data['total_feedback'] + 0;
+                    $data['total_answered_feedback'] = 0;
                     $this->session->set_flashdata('APImessage', $data['feedback']['message']);
                 }
             }

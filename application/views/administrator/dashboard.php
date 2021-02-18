@@ -41,7 +41,7 @@
 												Total Peserta Pendaftar
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="h5 mb-0 mr-3 text-gray-800"><?= $dashboard['dashboard'][0]['jumlah'] . ' ' . $dashboard['dashboard'][0]['satuan'] ?></div>
+												<div class="h5 mb-0 mr-3 text-gray-800"><?= $total_peserta . ' ' . $dashboard['dashboard'][0]['satuan'] ?></div>
 											</div>
 										</div>
 									</div>
@@ -114,7 +114,7 @@
 												Total Kegiatan
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="h5 mb-0 mr-3 text-gray-800"><?= $dashboard['dashboard'][3]['jumlah'] . ' ' . $dashboard['dashboard'][3]['satuan'] ?></div>
+												<div class="h5 mb-0 mr-3 text-gray-800"><?= $jumlah_seluruh_kegiatan . ' ' . $dashboard['dashboard'][3]['satuan'] ?></div>
 											</div>
 										</div>
 									</div>
@@ -131,7 +131,7 @@
 												Total Kegiatan Selesai
 											</div>
 											<div class="row no-gutters align-items-center">
-												<div class="h5 mb-0 mr-3 text-gray-800"><?= $dashboard['dashboard'][4]['jumlah'] . ' ' . $dashboard['dashboard'][4]['satuan'] ?></div>
+												<div class="h5 mb-0 mr-3 text-gray-800"><?= $jumlah_kegiatan_selesai . ' ' . $dashboard['dashboard'][4]['satuan'] ?></div>
 											</div>
 										</div>
 									</div>

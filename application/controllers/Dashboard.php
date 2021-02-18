@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->load->model('dashboard_model');
         $this->load->model('User_model');
+        $this->load->model('Kegiatan_model');
 
         if ($this->session->userdata('id_role') == 3) {
             $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
@@ -44,6 +45,39 @@ class Dashboard extends CI_Controller
                 } else {
                     $data['dashboard'] = null;
                     $this->session->set_flashdata('APImessage', $data['dashboard']['message']);
+                }
+            }
+
+            $data['total_peserta'] = 0;
+            $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan(null, $this->session->userdata('token'));
+            if ($data['kegiatan'] == null)
+                $null = true;
+            else {
+                if ($data['kegiatan']['status'] == 'Success') {
+                    $data['jumlah_seluruh_kegiatan'] = count($data['kegiatan']['data']);
+                    if (count($data['kegiatan']['data']) != 0) {
+                        foreach ($data['kegiatan']['data'] as $val) {
+                            $data['total_peserta'] = $data['total_peserta'] + $val['jumlah_peserta'];
+                        }
+                    }
+                } else {
+                    $data['kegiatan'] = null;
+                    $data['jumlah_seluruh_kegiatan'] = 0;
+
+                    $this->session->set_flashdata('APImessage', $data['kegiatan']['message']);
+                }
+            }
+
+
+            $data['jumlah_kegiatan_selesai'] = $this->Kegiatan_model->view_kegiatan_selesai($this->session->userdata('token'));
+            if ($data['jumlah_kegiatan_selesai'] == null)
+                $null = true;
+            else {
+                if ($data['jumlah_kegiatan_selesai']['status'] == "Success") {
+                    $data['jumlah_kegiatan_selesai'] = count($data['jumlah_kegiatan_selesai']['data']);
+                } else {
+                    $data['jumlah_kegiatan_selesai'] = 0;
+                    $this->session->set_flashdata('APImessage', $data['jumlah_kegiatan_selesai']['message']);
                 }
             }
 
