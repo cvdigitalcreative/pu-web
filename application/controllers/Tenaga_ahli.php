@@ -343,8 +343,8 @@ class Tenaga_ahli extends CI_Controller
             $tempat_lahir = $this->input->post('tempat_lahir_tenaga_ahli');
             $tanggal_lahir = $this->input->post('tanggal_lahir_tenaga_ahli');
             $temparr = explode('/', $tanggal_lahir);
-            $tempbulan = $temparr[0];
-            $temphari = $temparr[1];
+            $tempbulan = $temparr[1];
+            $temphari = $temparr[0];
             $temptahun = $temparr[2];
             $arrtemptanggal[0] = $temptahun;
             $arrtemptanggal[1] = $tempbulan;
@@ -436,8 +436,8 @@ class Tenaga_ahli extends CI_Controller
             $tempat_lahir = $this->input->post('edit_tempat_lahir_tenaga_ahli');
             $tanggal_lahir = $this->input->post('edit_tanggal_lahir_tenaga_ahli');
             $temparr = explode('/', $tanggal_lahir);
-            $tempbulan = $temparr[0];
-            $temphari = $temparr[1];
+            $tempbulan = $temparr[1];
+            $temphari = $temparr[0];
             $temptahun = $temparr[2];
             $arrtemptanggal[0] = $temptahun;
             $arrtemptanggal[1] = $tempbulan;

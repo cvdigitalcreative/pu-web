@@ -90,6 +90,9 @@ $(document).ready(function () {
 	// tanggal mulai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -102,6 +105,9 @@ $(document).ready(function () {
 	// tanggal selesai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan_selesai"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -114,6 +120,9 @@ $(document).ready(function () {
 	// tanggal mulai filter kegiatan
 	$(function () {
 		$('input[name="filter_tanggal_kegiatan_mulai"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -126,6 +135,9 @@ $(document).ready(function () {
 	// tanggal selesai filter kegiatan
 	$(function () {
 		$('input[name="filter_tanggal_kegiatan_selesai"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -138,6 +150,9 @@ $(document).ready(function () {
 	// tanggal mulai edit kegiatan
 	$(function () {
 		$('input[name="edit_tanggal_kegiatan_mulai"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -150,6 +165,9 @@ $(document).ready(function () {
 	// tanggal selesai edit kegiatan
 	$(function () {
 		$('input[name="edit_tanggal_kegiatan_selesai"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -162,6 +180,9 @@ $(document).ready(function () {
 	// tanggal lahir tenaga ahli
 	$(function () {
 		$('input[name="tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -174,6 +195,9 @@ $(document).ready(function () {
 	// edit tanggal lahir tenaga ahli
 	$(function () {
 		$('input[name="edit_tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -186,6 +210,9 @@ $(document).ready(function () {
 	// edit profile
 	$(function () {
 		$('input[name="profile_tahun_lulus"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -198,6 +225,9 @@ $(document).ready(function () {
 	// tanggal lahir profile
 	$(function () {
 		$('input[name="profile_tanggal_lahir"]').daterangepicker({
+			locale: {
+				format: 'DD/MM/YYYY'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
