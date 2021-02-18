@@ -453,7 +453,7 @@ Tidak ada poster kegiatan`					}
 	$('table').on('click', '#btn-selesaikan-kegiatan', function () {
 		if ($('#kalender_kegiatan_table').length > 0) {
 			const id = $(this).data('id')
-			$('form').attr('action', `${BASE_URL}`)
+			$('form').attr('action', `${BASE_URL}Kegiatan/selesaikan_kegiatan_action/${id}`)
 			$('#modal-selesaikan-kegiatan').modal('show')
 		}
 		

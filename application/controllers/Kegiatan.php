@@ -891,6 +891,64 @@ class Kegiatan extends CI_Controller
         }
     }
 
+    public function selesaikan_kegiatan_action($id_kegiatan){
+        if ($this->session->userdata('logged_in') == true) {
+            $kegiatan = $this->Kegiatan_model->view_detail_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            if($kegiatan!= null && $kegiatan['status'] == "Success"){
+                $kegiatan = $kegiatan['data'];
+                $judul_kegiatan = $kegiatan['judul_kegiatan'];
+                $deskripsi_kegiatan = $kegiatan['deskripsi_kegiatan'];
+                $tanggal_kegiatan = $kegiatan['tanggal_kegiatan'];
+                $tanggal_kegiatan_selesai = $kegiatan['tanggal_kegiatan_selesai'];
+                $lokasi_kegiatan = $kegiatan['lokasi_kegiatan'];
+                $latitude_lokasi = $kegiatan['latitude_lokasi'];
+                $longitude_lokasi = $kegiatan['longitude_lokasi'];
+                $status_kegiatan = 2;
+                $foto_banner_kegiatan = null;
+                $id_akun_kegiatan = $kegiatan['id_akun_kegiatan'];
+                $id_jenis_kegiatan = $kegiatan['id_jenis_kegiatan'];
+                $id_provinsi = $kegiatan['id_provinsi'];
+                $id_kota_kabupaten = $kegiatan['id_kota_kabupaten'];
+                $file_materi_kegiatan = null;
+
+                $edit_kegiatan = $this->Kegiatan_model->edit_kegiatan(
+                    $judul_kegiatan,
+                    $deskripsi_kegiatan,
+                    $tanggal_kegiatan,
+                    $tanggal_kegiatan_selesai,
+                    $lokasi_kegiatan,
+                    $latitude_lokasi,
+                    $longitude_lokasi,
+                    $status_kegiatan,
+                    $foto_banner_kegiatan,
+                    $id_akun_kegiatan,
+                    $id_jenis_kegiatan,
+                    $id_provinsi,
+                    $id_kota_kabupaten,
+                    $file_materi_kegiatan,
+                    $id_kegiatan,
+                    $this->session->userdata('token')
+                );
+    
+                if ($edit_kegiatan == null) {
+                    $this->load->view('error_page');
+                }
+                if ($edit_kegiatan['status'] == "Success") {
+                    $this->session->set_flashdata('success', "Status Kegiatan berhasil dirubah");
+                    redirect("pupr/events");
+                } else {
+                    $this->session->set_flashdata('APImessage', "Gagal merubah status kegiatan");
+                    redirect("pupr/events");
+                }
+            }else {
+                $this->session->set_flashdata('APImessage', "Gagal merubah status kegiatan");
+                redirect("pupr/events");
+            }
+        } else {
+            redirect("pupr/login");
+        }
+    }
+
     public function ganti_status_kegiatan($id_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {

@@ -920,7 +920,7 @@
 					<form>
 						<div class="modal-footer">
 							<button class="btn btn-light" data-dismiss="modal">Batal</button>
-							<button class="btn btn-selensaikan-kegiata" type="submit">Selesaikan Kegiatan</button>
+							<button class="btn btn-selesaikan-kegiatan" type="submit">Selesaikan Kegiatan</button>
 						</div>
 					</form>
 				</div>
