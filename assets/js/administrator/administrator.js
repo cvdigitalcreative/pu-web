@@ -551,7 +551,8 @@ Tidak ada poster kegiatan`					}
 				data: 'id_user',
 				render: function (data) {
 					return `
-					<button id='btn-edit-peserta-kegiatan' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit Peserta</button>`
+					<button id='btn-edit-peserta-kegiatan' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit Peserta</button>
+					<button id='btn-delete-peserta-kegiatan' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus Peserta</button>`
 				}
 			},
 		],
@@ -2480,6 +2481,15 @@ Tidak ada poster kegiatan`					}
 			$('#edit-profile-nama').val($(this).parent().siblings().eq(2).text())
 			$('#modal-lihat-peserta-by-kegiatan').modal('hide')
 			$('#modal-edit-profile-peserta-kegiatan').modal('show')
+		}
+	})
+	
+	$('table').on('click', '#btn-delete-peserta-kegiatan', function () {
+		if ($('#daftar_peserta_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Peserta/delete_peserta/${id}`)
+			$('#modal-lihat-peserta-by-kegiatan').modal('hide')
+			$('#modal-delete-peserta-kegiatan').modal('show')
 		}
 	})
 	// 
