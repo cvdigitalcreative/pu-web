@@ -91,7 +91,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -106,7 +106,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="tanggal_kegiatan_selesai"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -121,7 +121,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="filter_tanggal_kegiatan_mulai"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -136,7 +136,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="filter_tanggal_kegiatan_selesai"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -151,7 +151,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="edit_tanggal_kegiatan_mulai"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -166,7 +166,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="edit_tanggal_kegiatan_selesai"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -181,7 +181,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="tanggal_lahir_tenaga_ahli"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -196,7 +196,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="edit_tanggal_lahir_tenaga_ahli"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -211,7 +211,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="profile_tahun_lulus"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,
@@ -226,7 +226,7 @@ $(document).ready(function () {
 	$(function () {
 		$('input[name="profile_tanggal_lahir"]').daterangepicker({
 			locale: {
-				format: 'DD/MM/YYYY'
+				format: 'YYYY/MM/DD'
 			},
 			singleDatePicker: true,
 			showDropdowns: true,

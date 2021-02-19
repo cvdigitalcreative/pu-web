@@ -259,14 +259,7 @@ class Peserta extends CI_Controller
             $alamat_rumah = $this->input->post('alamat');
             $tempat_lahir = $this->input->post('tempat_lahir');
             $tanggal_lahir = $this->input->post('profile_tanggal_lahir');
-
             $temparr = explode('/', $tanggal_lahir);
-            $hari = $temparr[0];
-            $bulan = $temparr[1];
-            $tahun = $temparr[2];
-            $temparr[0] = $tahun;
-            $temparr[1] = $bulan;
-            $temparr[2] = $hari;
             $tanggal_lahir = implode('-', $temparr);
 
             $nik = $this->input->post('nik');
@@ -300,12 +293,6 @@ class Peserta extends CI_Controller
             $tahun_lulus = $this->input->post('profile_tahun_lulus');
             
             $temparrlulus = explode('/', $tahun_lulus);
-            $hari = $temparrlulus[0];
-            $bulan = $temparrlulus[1];
-            $tahun = $temparrlulus[2];
-            $temparrlulus[0] = $tahun;
-            $temparrlulus[1] = $bulan;
-            $temparrlulus[2] = $hari;
             $tahun_lulus = implode('-', $temparrlulus);
 
             $npwp = $this->input->post('npwp');
