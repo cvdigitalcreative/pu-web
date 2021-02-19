@@ -136,7 +136,7 @@
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if ($akun_kegiatan != null) :
 									foreach ($akun_kegiatan as $row) :
-										if ($row['akun_kegiatan'] != "-") : ?>
+										if ($row['akun_kegiatan'] != "-" && strtolower($row['akun_kegiatan']) != 'forum') : ?>
 
 											<option value="<?= $row['id_akun_kegiatan'] ?>"><?= $row['akun_kegiatan'] ?></option>
 								<?php endif;
@@ -283,9 +283,11 @@
 							<select class="form-control" id="edit-akun-kegiatan" name="id_akun_kegiatan" required>
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if ($akun_kegiatan != null) :
-									foreach ($akun_kegiatan as $row2) : ?>
+									foreach ($akun_kegiatan as $row2) :
+									if(strtolower($row2['akun_kegiatan']) != 'forum') : ?>
 										<option value="<?= $row2['id_akun_kegiatan'] ?>"><?= $row2['akun_kegiatan'] ?></option>
-								<?php endforeach;
+								<?php endif;
+								endforeach;
 								endif; ?>
 							</select>
 						</div>
