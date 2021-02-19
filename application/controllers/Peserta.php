@@ -389,10 +389,10 @@ class Peserta extends CI_Controller
             } else {
                 if ($delete_peserta['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_peserta['message']);
-                    redirect();
+                    redirect('pupr/events');
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_peserta['message']);
-                    redirect();
+                    redirect('pupr/events');
                 }
             }
         } else
