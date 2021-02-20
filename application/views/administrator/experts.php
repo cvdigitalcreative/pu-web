@@ -349,7 +349,7 @@
 						</div>
 
 						<div class="form-group py-2">
-							<label for="provinsiTenagaAhli">Provinsi *</label>
+							<label for="provinsiTenagaAhli">Provinsi *<span class="ml-3 text-secondary"><small>Mohon pilih ulang Provinsi</small></span></label>
 							<select class="form-control" id="edit-provinsi-tenaga-ahli" name="edit_id_provinsi_tenaga_ahli"
 								onChange="getStateEditTenagaAhli(this.value);" required>
 								<?php foreach ($provinsi as $row) : ?>
@@ -405,7 +405,7 @@
 									<div class="input-group mb-3">
 									<div class="input-group-prepend">
 										<div class="input-group-text">
-											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli" required>
+											<input type="radio" id="edit-kategori-tenaga-ahli" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli" required>
 										</div>
 									</div>
 								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
@@ -414,7 +414,7 @@
 									<div class="input-group mb-3">
 									<div class="input-group-prepend">
 										<div class="input-group-text">
-											<input type="radio" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli">
+											<input type="radio" id="edit-kategori-tenaga-terampil" aria-label="Checkbox for following text input" value="<?= $row['id_kategori_tenaga_ahli']?>" name="edit_kategori_tenaga_ahli">
 										</div>
 									</div>
 								<input type="text" class="form-control" aria-label="Text input with checkbox" value="<?= $row['kategori_tenaga_ahli']?>" readonly style="background-color: white;">								
