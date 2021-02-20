@@ -175,10 +175,10 @@
 										placeholder="Contoh: 0203094902939043" required>
 								</div>
 						<div class="form-group py-2">
-							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja *</label>
+							<label for="jabatanKerjaTenagaAhli">Jabatan Kerja</label>
 							<select class="form-control selectpicker" id="jabatan-kerja-tenaga-ahli"
 								name="id_jabatan_kerja_tenaga_ahli[]" aria-placeholder="Pilih jabatan kerja yang pernah diambil" multiple
-								data-live-search="true" required>
+								data-live-search="true">
 								<?php if($jabker != null):
 								foreach ($jabker as $row):?>
 								<option value="<?=$row['id_jabker']?>"><?= $row['jabker']?></option>
