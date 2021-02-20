@@ -423,7 +423,7 @@
 						</div>
 
 						<div class="form-group py-2">
-							<label for="KategoriTenagaAhli">Ketenagakerjaan *</label>
+							<label for="KategoriTenagaAhli">Ketenagakerjaan</label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<div class="input-group-text">
