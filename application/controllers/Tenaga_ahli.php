@@ -353,10 +353,14 @@ class Tenaga_ahli extends CI_Controller
             $no_telepon_rumah = $this->input->post('nomor_rumah_tenaga_ahli');
             $no_handphone = $this->input->post('nomor_handphone_tenaga_ahli');
             $id_jabker = $this->input->post('id_jabatan_kerja_tenaga_ahli');
-            if (count($id_jabker) == 1)
-                $id_jabker = $id_jabker[0];
-            else
-                $id_jabker = '[' . implode(',', $id_jabker) . ']';
+            if ($id_jabker == null)
+                $id_jabker = '[]';
+            else {
+                if (count($id_jabker) == 1)
+                    $id_jabker = $id_jabker[0];
+                else
+                    $id_jabker = '[' . implode(',', $id_jabker) . ']';
+            }
             $id_kategori_tenaga_ahli = $this->input->post('kategori_tenaga_ahli');
             $is_instruktur = $this->input->post('is_instruktur');
             if ($is_instruktur == 1)
@@ -374,7 +378,6 @@ class Tenaga_ahli extends CI_Controller
             else
                 $file_tenaga_ahli = null;
 
-                
             $status_pns = $this->input->post('id_status_pns_tenaga_ahli');
             $npwp = $this->input->post('npwp_tenaga_ahli');
             $pendidikan = $this->input->post('id_pendidikan_tenaga_ahli');

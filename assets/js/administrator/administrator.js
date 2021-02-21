@@ -892,7 +892,7 @@ Tidak ada poster kegiatan`					}
 					data: 'id_tenaga_ahli',
 					render: function (data) {
 						return `
-						<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+						<button id='btn-edit-mitra' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 						<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>
 						<button id='btn-download' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download CV</button>`
 					}
@@ -2228,7 +2228,7 @@ Tidak ada poster kegiatan`					}
 				}
 			})
 		}
-		else if ($('#tenaga_terampil_table').length > 0) {
+		else if ($('#mitra_terampil_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
 				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
@@ -2403,6 +2403,25 @@ Tidak ada poster kegiatan`					}
 			$('form').attr('action', `${BASE_URL}Tenaga_ahli/edit_tenaga_ahli_action/${id}`)
 			var currentRow = $(this).closest("tr");
 			var data = $('#tenaga_ahli_table').DataTable().row(currentRow).data();
+
+			if (data['jenis_kelamin'] == "Perempuan") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(2)
+			}
+			else if (data['jenis_kelamin'] == "Laki-laki") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(1)
+			}
+			else if (data['jenis_kelamin'] == "-") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(0)
+			}
+
+
+			if (data['kategori_tenaga_ahli'] == "Tenaga Ahli") {
+				document.getElementById('edit-kategori-tenaga-ahli').checked = true;
+			}
+			else if (data['kategori_tenaga_ahli'] == "Tenaga Terampil") {
+				document.getElementById('edit-kategori-tenaga-terampil').checked = true;
+			}
+				
 			$('#edit-nama-tenaga-ahli').val($(this).parent().siblings().eq(1).text())
 			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
 			$('#edit-status-pns-tenaga-ahli').val(data['id_status_pns'])
@@ -2427,6 +2446,44 @@ Tidak ada poster kegiatan`					}
 		}
 	})
 	// End of edit
+	$('table').on('click', '#btn-edit-mitra', function () {
+		if ($('#mitra_terampil_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/edit_tenaga_ahli_action/${id}`)
+			var currentRow = $(this).closest("tr");
+			var data = $('#mitra_terampil_table').DataTable().row(currentRow).data();
+
+			if (data['jenis_kelamin'] == "Perempuan") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(2)
+			}
+			else if (data['jenis_kelamin'] == "Laki-laki") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(1)
+			}
+			else if (data['jenis_kelamin'] == "-") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(0)
+			}
+
+
+			if (data['kategori_tenaga_ahli'] == "Tenaga Ahli") {
+				document.getElementById('edit-kategori-tenaga-ahli').checked = true;
+			}
+			else if (data['kategori_tenaga_ahli'] == "Tenaga Terampil") {
+				document.getElementById('edit-kategori-tenaga-terampil').checked = true;
+			}
+			
+			$('#edit-nama-tenaga-ahli').val($(this).parent().siblings().eq(1).text())
+			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
+			$('#edit-status-pns-tenaga-ahli').val(data['id_status_pns'])
+			$('#edit-pendidikan-tenaga-ahli').val(data['id_pendidikan'])
+			$('#edit-nik-tenaga-ahli').val($(this).parent().siblings().eq(8).text())
+			$('#edit-email-tenaga-ahli').val($(this).parent().siblings().eq(5).text())
+			$('#edit-alamat-tenaga-ahli').val($(this).parent().siblings().eq(12).text())
+			$('#edit-nomor-handphone-tenaga-ahli').val($(this).parent().siblings().eq(6).text())
+			$('#edit-nomor-rumah-tenaga-ahli').val($(this).parent().siblings().eq(7).text())
+			$('#edit-npwp-tenaga-ahli').val($(this).parent().siblings().eq(9).text())
+			$('#modal-edit-tenaga-ahli').modal('show')
+		}
+	})
 
 	$('table').on('click', '#btn-edit-peserta-kegiatan', function () {
 		if ($('#daftar_peserta_table').length > 0) {
