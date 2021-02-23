@@ -177,35 +177,43 @@
 							</div>
 							<div class="card-body">
 
-								<div class="form-group py-2">
-									<label for="profileProvinsi">Pilih data yang ingin ditampilkan</label>
-									<select class="form-control" id="chart-filter-data">
-										<?php
-										$index = 0;
-										 if ($dashboard['grafik_konten'] != null) :
-											foreach ($dashboard['grafik_konten'] as $val) : 
-											if($index == 0) :?>
-												<option value=<?= $val['id_keterangan'] ?> selected><?= $val['keterangan'] ?></option>
-												<?php else: ?>
-												<option value=<?= $val['id_keterangan'] ?>><?= $val['keterangan'] ?></option>
-										<?php endif; $index++; endforeach;
-										endif; ?>
-									</select>
-								</div>
+								<div class="row">
+									<div class="col">
+										<div class="form-group py-2">
+											<label for="profileProvinsi">Pilih data yang ingin ditampilkan</label>
+											<select class="form-control" id="chart-filter-data">
+												<?php
+												$index = 0;
+												if ($dashboard['grafik_konten'] != null) :
+													foreach ($dashboard['grafik_konten'] as $val) :
+														if ($index == 0) : ?>
+															<option value=<?= $val['id_keterangan'] ?> selected><?= $val['keterangan'] ?></option>
+														<?php else : ?>
+															<option value=<?= $val['id_keterangan'] ?>><?= $val['keterangan'] ?></option>
+												<?php endif;
+														$index++;
+													endforeach;
+												endif; ?>
+											</select>
+										</div>
+									</div>
 
-								<div class="form-group py-2">
-									<label for="profileProvinsi">Filter Tahun</label>
-									<select class="form-control" id="chart-filter-tahun">
-										<?php if ($dashboard['grafik_filter'] != null) :
-											foreach ($dashboard['grafik_filter'] as $val) :
-												if ($val['keterangan'] == date('Y')) : ?>
-													<option value=<?= $val['keterangan'] ?> selected><?= $val['keterangan'] ?></option>
-												<?php else : ?>
-													<option value=<?= $val['keterangan'] ?>><?= $val['keterangan'] ?></option>
-										<?php endif;
-											endforeach;
-										endif; ?>
-									</select>
+									<div class="col">
+										<div class="form-group py-2">
+											<label for="profileProvinsi">Filter Tahun</label>
+											<select class="form-control" id="chart-filter-tahun">
+												<?php if ($dashboard['grafik_filter'] != null) :
+													foreach ($dashboard['grafik_filter'] as $val) :
+														if ($val['keterangan'] == date('Y')) : ?>
+															<option value=<?= $val['keterangan'] ?> selected><?= $val['keterangan'] ?></option>
+														<?php else : ?>
+															<option value=<?= $val['keterangan'] ?>><?= $val['keterangan'] ?></option>
+												<?php endif;
+													endforeach;
+												endif; ?>
+											</select>
+										</div>
+									</div>
 								</div>
 
 
