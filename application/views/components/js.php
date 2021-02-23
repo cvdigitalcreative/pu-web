@@ -19,6 +19,7 @@
 <!-- custom javascript -->
 <script>const BASE_URL='<?= base_url(); ?>'; </script>
 <script src="<?=base_url('assets/js/administrator/administrator.js')?>"></script>
+<script src="<?=base_url('assets/js/administrator/chart.js')?>"></script>
 
 <!-- date range picker -->
 <script src="<?=base_url('assets/js/daterangepicker/moment.min.js')?>"></script>
