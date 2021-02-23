@@ -141,35 +141,97 @@
 					</div>
 
 					<!-- Pie Chart -->
-					<div class="col-xl-4 col-lg-5">
+					<!-- <div class="col-xl-4 col-lg-5">
+							<div class="card mb-4">
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-black">Total Jumlah Kegiatan</h6>
+								</div>
+								<div class="card-body">
+									<div class="chart-pie pt-4 pb-2">
+										<canvas id="myPieChart"></canvas>
+									</div>
+									<div class="mt-4 text-center small">
+										<span class="mr-2">
+											<i class="fas fa-circle text-primary"></i> Pelatihan
+										</span>
+										<span class="mr-2">
+											<i class="fas fa-circle text-success"></i> Terampil
+										</span>
+										<span class="mr-2">
+											<i class="fas fa-circle text-info"></i> Vokasi
+										</span>
+										<span class="mr-2">
+											<i class="fas fa-circle text-warning"></i> Kegiatan Kerja Sama
+										</span>
+									</div>
+								</div>
+							</div>
+						</div> -->
+
+					<div class="col">
+
 						<div class="card mb-4">
 							<!-- Card Header - Dropdown -->
 							<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-								<h6 class="m-0 font-weight-bold text-black">Total Jumlah Kegiatan</h6>
+								<h6 class="m-0 font-weight-bold text-black" id="labelChart"></h6>
 							</div>
-							<!-- Card Body -->
 							<div class="card-body">
-								<div class="chart-pie pt-4 pb-2">
-									<canvas id="myPieChart"></canvas>
+
+								<div class="form-group py-2">
+									<label for="profileProvinsi">Filter Tahun *</label>
+									<select class="form-control" id="chart-filter-tahun">
+										<?php if ($dashboard['grafik_filter'] != null) :
+											foreach ($dashboard['grafik_filter'] as $val) :
+												if ($val['keterangan'] == date('Y')) : ?>
+													<option value=<?= $val['keterangan'] ?> selected><?= $val['keterangan'] ?></option>
+												<?php else : ?>
+													<option value=<?= $val['keterangan'] ?>><?= $val['keterangan'] ?></option>
+										<?php endif;
+											endforeach;
+										endif; ?>
+									</select>
 								</div>
-								<div class="mt-4 text-center small">
-									<span class="mr-2">
-										<i class="fas fa-circle text-primary"></i> Pelatihan
-									</span>
-									<span class="mr-2">
-										<i class="fas fa-circle text-success"></i> Terampil
-									</span>
-									<span class="mr-2">
-										<i class="fas fa-circle text-info"></i> Vokasi
-									</span>
-									<span class="mr-2">
-										<i class="fas fa-circle text-warning"></i> Kegiatan Kerja Sama
-									</span>
+
+								<div class="pb-4 pt-2">
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" id="tab-link-peserta" href="#tab-chart-peserta" role="tab" data-toggle="tab">Pendaftar</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="tab-link-tenaga-ahli" href="#tab-chart-tenaga-ahli" role="tab" data-toggle="tab">Tenaga Ahli</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="tab-link-tenaga-terampil" href="#tab-chart-tenaga-terampil" role="tab" data-toggle="tab">Tenaga Terampil</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="tab-link-kegiatan" href="#tab-chart-kegiatan" role="tab" data-toggle="tab">Kegiatan</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="tab-link-kegiatan-selesai" href="#tab-chart-kegiatan-selesai" role="tab" data-toggle="tab">Kegiatan Selesai</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="tab-content">
+									<div class="tab-pane fade active show" role="tabpanel" id="tab-chart-peserta">
+										<canvas id="chartPeserta"></canvas>
+									</div>
+									<div class="tab-pane fade show" role="tabpanel" id="tab-chart-tenaga-ahli">
+										<canvas id="chartTenagaAhli"></canvas>
+									</div>
+									<div class="tab-pane fade show" role="tabpanel" id="tab-chart-tenaga-terampil">
+										<canvas id="chartTenagaTerampil"></canvas>
+									</div>
+									<div class="tab-pane fade show" role="tabpanel" id="tab-chart-kegiatan">
+										<canvas id="chartKegiatan"></canvas>
+									</div>
+									<div class="tab-pane fade show" role="tabpanel" id="tab-chart-kegiatan-selesai">
+										<canvas id="chartKegiatanSelesai"></canvas>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
 
 				<div class="row d-flex flex-column justify-content-center align-items-center">

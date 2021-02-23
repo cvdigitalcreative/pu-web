@@ -18,8 +18,8 @@ class Dashboard_model extends CI_Model
 
     // ======================= Model Functions ========================
 
-    public function view_dashboard($token)
+    public function view_dashboard($id_grafik, $year, $token)
     {
-        return $this->http_request_get("/", $token);
+        return $this->http_request_get("/?id_grafik=$id_grafik&year=$year", $token);
     }
 }
