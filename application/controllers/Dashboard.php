@@ -11,6 +11,7 @@ class Dashboard extends CI_Controller
         $this->load->model('Dashboard_model');
         $this->load->model('User_model');
         $this->load->model('Kegiatan_model');
+        $this->load->model('Common_model');
 
         if ($this->session->userdata('id_role') == 3) {
             $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
@@ -89,7 +90,8 @@ class Dashboard extends CI_Controller
             redirect("pupr/login");
     }
 
-    public function dataTenagaAhli($tahun){
+    public function dataTenagaAhli($tahun)
+    {
         if ($this->session->userdata('logged_in') == true) {
             $data['dashboard'] = $this->Dashboard_model->view_dashboard(2, $tahun, $this->session->userdata('token'));
             if ($data['dashboard'] == null) {
@@ -100,7 +102,7 @@ class Dashboard extends CI_Controller
                 if ($data['dashboard']['status'] == "Success") {
                     if (count($data['dashboard']['data']['tabel_grafik']['grafik']) > 0) {
                         $data['dashboard'] = $data['dashboard']['data']['tabel_grafik'];
-                
+
                         $callback = array(
                             'data' => $data['dashboard']
                         );
@@ -123,7 +125,8 @@ class Dashboard extends CI_Controller
         }
     }
 
-    public function dataPeserta($tahun){
+    public function dataPeserta($tahun)
+    {
         if ($this->session->userdata('logged_in') == true) {
             $data['dashboard'] = $this->Dashboard_model->view_dashboard(1, $tahun, $this->session->userdata('token'));
             if ($data['dashboard'] == null) {
@@ -134,7 +137,7 @@ class Dashboard extends CI_Controller
                 if ($data['dashboard']['status'] == "Success") {
                     if (count($data['dashboard']['data']['tabel_grafik']['grafik']) > 0) {
                         $data['dashboard'] = $data['dashboard']['data']['tabel_grafik'];
-                
+
                         $callback = array(
                             'data' => $data['dashboard']
                         );
@@ -157,7 +160,8 @@ class Dashboard extends CI_Controller
         }
     }
 
-    public function dataTenagaTerampil($tahun){
+    public function dataTenagaTerampil($tahun)
+    {
         if ($this->session->userdata('logged_in') == true) {
             $data['dashboard'] = $this->Dashboard_model->view_dashboard(3, $tahun, $this->session->userdata('token'));
             if ($data['dashboard'] == null) {
@@ -168,7 +172,7 @@ class Dashboard extends CI_Controller
                 if ($data['dashboard']['status'] == "Success") {
                     if (count($data['dashboard']['data']['tabel_grafik']['grafik']) > 0) {
                         $data['dashboard'] = $data['dashboard']['data']['tabel_grafik'];
-                
+
                         $callback = array(
                             'data' => $data['dashboard']
                         );
@@ -191,7 +195,8 @@ class Dashboard extends CI_Controller
         }
     }
 
-    public function dataKegiatan($tahun){
+    public function dataKegiatan($tahun)
+    {
         if ($this->session->userdata('logged_in') == true) {
             $data['dashboard'] = $this->Dashboard_model->view_dashboard(4, $tahun, $this->session->userdata('token'));
             if ($data['dashboard'] == null) {
@@ -202,7 +207,7 @@ class Dashboard extends CI_Controller
                 if ($data['dashboard']['status'] == "Success") {
                     if (count($data['dashboard']['data']['tabel_grafik']['grafik']) > 0) {
                         $data['dashboard'] = $data['dashboard']['data']['tabel_grafik'];
-                
+
                         $callback = array(
                             'data' => $data['dashboard']
                         );
@@ -225,7 +230,8 @@ class Dashboard extends CI_Controller
         }
     }
 
-    public function dataKegiatanSelesai($tahun){
+    public function dataKegiatanSelesai($tahun)
+    {
         if ($this->session->userdata('logged_in') == true) {
             $data['dashboard'] = $this->Dashboard_model->view_dashboard(5, $tahun, $this->session->userdata('token'));
             if ($data['dashboard'] == null) {
@@ -236,7 +242,7 @@ class Dashboard extends CI_Controller
                 if ($data['dashboard']['status'] == "Success") {
                     if (count($data['dashboard']['data']['tabel_grafik']['grafik']) > 0) {
                         $data['dashboard'] = $data['dashboard']['data']['tabel_grafik'];
-                
+
                         $callback = array(
                             'data' => $data['dashboard']
                         );
@@ -251,6 +257,182 @@ class Dashboard extends CI_Controller
                     );
                 }
 
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
+
+    public function dataKegiatanbyStatus($tahun)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['status'] = $this->Common_model->view_status_kegiatan($this->session->userdata('token'));
+            if ($data['status'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['status']['status'] == "Success") {
+                    if (count($data['status']['data']) > 0) {
+                        $data['kegiatan']['tahun'] = $tahun;
+                        $index = 0;
+                        foreach ($data['status']['data'] as $val) {
+                            $tanggal_mulai = $tahun . "-01-01";
+                            $tanggal_selesai = $tahun . "-12-31";
+                            $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&status=" . $val['id_status_kegiatan'], $tahun, $this->session->userdata('token'));
+                            if ($temp == null) {
+                                $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                            } else {
+                                if ($temp['status'] == "Success") {
+                                    if (count($temp['data']) > 0) {
+                                        $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = count($temp['data']);
+                                    } else {
+                                        $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                    }
+                                } else {
+                                    $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                    $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                }
+                            }
+                            $index++;
+                        }
+                        $callback = array(
+                            'data' => $data['kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
+    public function dataKegiatanbyJenis($tahun)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['status'] = $this->Common_model->view_jenis_kegiatan($this->session->userdata('token'));
+            if ($data['status'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['status']['status'] == "Success") {
+                    if (count($data['status']['data']) > 0) {
+                        $data['kegiatan']['tahun'] = $tahun;
+                        $index = 0;
+                        foreach ($data['status']['data'] as $val) {
+                            if ($val['jenis_kegiatan'] != '-') {
+                                $tanggal_mulai = $tahun . "-01-01";
+                                $tanggal_selesai = $tahun . "-12-31";
+                                $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&jenis=" . $val['id_jenis_kegiatan'], $tahun, $this->session->userdata('token'));
+                                if ($temp == null) {
+                                    $data['kegiatan']['grafik'][$index]['jenis_kegiatan'] = $val['jenis_kegiatan'];
+                                    $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                } else {
+                                    if ($temp['status'] == "Success") {
+                                        if (count($temp['data']) > 0) {
+                                            $data['kegiatan']['grafik'][$index]['jenis_kegiatan'] = $val['jenis_kegiatan'];
+                                            $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = count($temp['data']);
+                                        } else {
+                                            $data['kegiatan']['grafik'][$index]['jenis_kegiatan'] = $val['jenis_kegiatan'];
+                                            $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                        }
+                                    } else {
+                                        $data['kegiatan']['grafik'][$index]['jenis_kegiatan'] = $val['jenis_kegiatan'];
+                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                    }
+                                }
+                                $index++;
+                            }
+                        }
+                        $callback = array(
+                            'data' => $data['kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
+    public function dataKegiatanbyProvinsi($tahun)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['status'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
+            if ($data['status'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['status']['status'] == "Success") {
+                    if (count($data['status']['data']) > 0) {
+                        $data['kegiatan']['tahun'] = $tahun;
+                        $index = 0;
+                        foreach ($data['status']['data'] as $val) {
+                            if ($val['provinsi'] != '-') {
+                                $tanggal_mulai = $tahun . "-01-01";
+                                $tanggal_selesai = $tahun . "-12-31";
+                                $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&id_provinsi=" . $val['id_provinsi'], $tahun, $this->session->userdata('token'));
+                                if ($temp == null) {
+                                    $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                    $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                } else {
+                                    if ($temp['status'] == "Success") {
+                                        if (count($temp['data']) > 0) {
+                                            $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                            $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = count($temp['data']);
+                                        } else {
+                                            $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                            $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                        }
+                                    } else {
+                                        $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                    }
+                                }
+                                $index++;
+                            }
+                        }
+                        $callback = array(
+                            'data' => $data['kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
                 header('Content-Type: application/json');
                 echo json_encode($callback);
             }
