@@ -2,12 +2,14 @@ $(document).ready(function () {
 
     // chart peserta
     var stringlabel = "";
-    var chartP, chartTA, chartTT, chartK, chartKS;
+    var chartP, chartTA, chartTT, chartK, chartKS, chartKBS, chartKBJ;
 
     var d = new Date();
     var n = d.getFullYear();
     
     drawChart(n);
+    drawChartKegiatanStatus(n);
+    drawChartKegiatanJenis(n);
 
     function drawChart(tahun) {
         $.ajax({
@@ -208,4 +210,86 @@ $(document).ready(function () {
         chartKS.destroy();
         drawChart(filter);
     })
+
+    function drawChartKegiatanStatus(tahun) {
+        $.ajax({
+            url: `${BASE_URL}Dashboard/dataKegiatanbyStatus/${tahun}`,
+            method: "GET",
+            success: function (data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data.grafik[i].status_kegiatan);
+                    value.push(data.data.grafik[i].jumlah_kegiatan);
+                    i++;
+                
+                } while (i < data.data.grafik.length);
+                var tahun = data.data.tahun;
+                document.getElementById("labelChartKegiatanStatus").innerHTML = "Data kegiatan berdasarkan Status (" + tahun + ")";                
+                var ctx = document.getElementById('chartKegiatanStatus').getContext('2d');
+                chartKBS = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Total Kegiatan",
+                            backgroundColor: '#36b9cc',
+                            borderColor: '#36b9cc',
+                            data: value
+                        }]
+                    },
+                    options: {}
+                });
+            }
+        });
+    }
+
+    $('#chart-filter-tahun-kegiatan-status').on('change', function () {
+        var filter = $('#chart-filter-tahun-kegiatan-status').val()
+        chartKBS.destroy()
+        drawChartKegiatanStatus(filter);
+    })
+
+
+    function drawChartKegiatanJenis(tahun) {
+        $.ajax({
+            url: `${BASE_URL}Dashboard/dataKegiatanbyJenis/${tahun}`,
+            method: "GET",
+            success: function (data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data.grafik[i].jenis_kegiatan);
+                    value.push(data.data.grafik[i].jumlah_kegiatan);
+                    i++;
+                
+                } while (i < data.data.grafik.length);
+                var tahun = data.data.tahun;
+                document.getElementById("labelChartKegiatanJenis").innerHTML = "Data kegiatan berdasarkan Jenis (" + tahun +")";                
+                var ctx = document.getElementById('chartKegiatanJenis').getContext('2d');
+                chartKBS = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Total Kegiatan",
+                            backgroundColor: '#36b9cc',
+                            borderColor: '#36b9cc',
+                            data: value
+                        }]
+                    },
+                    options: {}
+                });
+            }
+        });
+    }
+
+    $('#chart-filter-tahun-kegiatan-jenis').on('change', function () {
+        var filter = $('#chart-filter-tahun-kegiatan-jenis').val()
+        chartKBS.destroy()
+        drawChartKegiatanJenis(filter);
+    })
+
 });
