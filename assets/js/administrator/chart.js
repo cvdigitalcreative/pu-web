@@ -2,21 +2,34 @@ $(document).ready(function () {
 
     // chart peserta
     var stringlabel = "";
+    var stringcolor = "#4e73df";
     var chartP, chartTA, chartTT, chartK, chartKS, chartKBS, chartKBJ;
 
     var d = new Date();
     var n = d.getFullYear();
     
-    drawChart(n);
+    stringlabel = "Chart Data";
+    document.getElementById("labelChart").innerHTML = stringlabel;
+    drawChart($('#chart-filter-data').val(), n);
     drawChartKegiatanStatus(n);
     drawChartKegiatanJenis(n);
     drawChartKegiatanProvinsi(n);
 
-    function drawChart(tahun) {
+    function drawChart(id_jenis, tahun) {
+        if (id_jenis == 1) {
+            stringcolor = "#4e73df"
+        }
+        if (id_jenis == 2 || id_jenis == 3) {
+            stringcolor = "#f6c23e"
+        }
+        else if (id_jenis == 4 || id_jenis == 5) {
+            stringcolor = "#36b9cc"
+        }
         $.ajax({
-            url: `${BASE_URL}Dashboard/dataPeserta/${tahun}`,
+            url: `${BASE_URL}Dashboard/dataChart/${id_jenis}/${tahun}`,
             method: "GET",
             success: function (data) {
+                console.log(data);
                 var label = [];
                 var value = [];
                 i = 0;
@@ -30,168 +43,16 @@ $(document).ready(function () {
                 var tahun = data.data.tahun;
                 stringlabel = globallabel + " tahun " + tahun;
                 document.getElementById("labelChart").innerHTML = stringlabel;
-                $('#tab-link-peserta').on('click', function () {
-                    stringlabel = globallabel + " tahun " + tahun;
-                    document.getElementById("labelChart").innerHTML = stringlabel;
-                })
-                var ctx = document.getElementById('chartPeserta').getContext('2d');
+
+                var ctx = document.getElementById('chartData').getContext('2d');
                 chartP = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: label,
                         datasets: [{
                             label: globallabel,
-                            backgroundColor: '#4e73df',
-                            borderColor: '#4e73df',
-                            data: value
-                        }]
-                    },
-                    options: {}
-                });
-            }
-        });
-    
-    
-        //chart Tenaga Ahli
-        $.ajax({
-            url: `${BASE_URL}Dashboard/dataTenagaAhli/${tahun}`,
-            method: "GET",
-            success: function (data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data.grafik[i].bulan);
-                    value.push(data.data.grafik[i].jumlah);
-                    i++;
-                
-                } while (i < data.data.grafik.length);
-                var globallabel = data.data.keterangan;
-                var tahun = data.data.tahun;
-                $('#tab-link-tenaga-ahli').on('click', function () {
-                    stringlabel = globallabel + " tahun " + tahun;
-                    document.getElementById("labelChart").innerHTML = stringlabel;
-                })
-                var ctx = document.getElementById('chartTenagaAhli').getContext('2d');
-                chartTA = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: globallabel,
-                            backgroundColor: '#f6c23e',
-                            borderColor: '#f6c23e',
-                            data: value
-                        }]
-                    },
-                    options: {}
-                });
-            }
-        });
-
-        //chart Tenaga Terampil
-        $.ajax({
-            url: `${BASE_URL}Dashboard/dataTenagaTerampil/${tahun}`,
-            method: "GET",
-            success: function (data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data.grafik[i].bulan);
-                    value.push(data.data.grafik[i].jumlah);
-                    i++;
-                
-                } while (i < data.data.grafik.length);
-                var globallabel = data.data.keterangan;
-                var tahun = data.data.tahun;
-                $('#tab-link-tenaga-terampil').on('click', function () {
-                    stringlabel = globallabel + " tahun " + tahun;
-                    document.getElementById("labelChart").innerHTML = stringlabel;
-                })
-                var ctx = document.getElementById('chartTenagaTerampil').getContext('2d');
-                chartTT = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: globallabel,
-                            backgroundColor: '#f6c23e',
-                            borderColor: '#f6c23e',
-                            data: value
-                        }]
-                    },
-                    options: {}
-                });
-            }
-        });
-
-        //chart Kegiatan
-        $.ajax({
-            url: `${BASE_URL}Dashboard/dataKegiatan/${tahun}`,
-            method: "GET",
-            success: function (data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data.grafik[i].bulan);
-                    value.push(data.data.grafik[i].jumlah);
-                    i++;
-                
-                } while (i < data.data.grafik.length);
-                var globallabel = data.data.keterangan;
-                var tahun = data.data.tahun;
-                $('#tab-link-kegiatan').on('click', function () {
-                    stringlabel = globallabel + " tahun " + tahun;
-                    document.getElementById("labelChart").innerHTML = stringlabel;
-                })
-                var ctx = document.getElementById('chartKegiatan').getContext('2d');
-                chartK = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: globallabel,
-                            backgroundColor: '#36b9cc',
-                            borderColor: '#36b9cc',
-                            data: value
-                        }]
-                    },
-                    options: {}
-                });
-            }
-        });
-
-        //chart Kegiatan Selesai
-        $.ajax({
-            url: `${BASE_URL}Dashboard/dataKegiatanSelesai/${tahun}`,
-            method: "GET",
-            success: function (data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data.grafik[i].bulan);
-                    value.push(data.data.grafik[i].jumlah);
-                    i++;
-                
-                } while (i < data.data.grafik.length);
-                var globallabel = data.data.keterangan;
-                var tahun = data.data.tahun;
-                $('#tab-link-kegiatan-selesai').on('click', function () {
-                    stringlabel = globallabel + " tahun " + tahun;
-                    document.getElementById("labelChart").innerHTML = stringlabel;
-                })
-                var ctx = document.getElementById('chartKegiatanSelesai').getContext('2d');
-                chartKS = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: globallabel,
-                            backgroundColor: '#36b9cc',
-                            borderColor: '#36b9cc',
+                            backgroundColor: stringcolor,
+                            borderColor: stringcolor,
                             data: value
                         }]
                     },
@@ -203,13 +64,16 @@ $(document).ready(function () {
 
 
     $('#chart-filter-tahun').on('change', function () {
-        var filter = $('#chart-filter-tahun').val()
+        var filterJenis = $('#chart-filter-data').val()
+        var filterTahun = $('#chart-filter-tahun').val()
         chartP.destroy();
-        chartTA.destroy();
-        chartTT.destroy();
-        chartK.destroy();
-        chartKS.destroy();
-        drawChart(filter);
+        drawChart(filterJenis, filterTahun);
+    })
+    $('#chart-filter-data').on('change', function () {
+        var filterJenis = $('#chart-filter-data').val()
+        var filterTahun = $('#chart-filter-tahun').val()
+        chartP.destroy();
+        drawChart(filterJenis, filterTahun);
     })
 
     function drawChartKegiatanStatus(tahun) {
@@ -300,10 +164,12 @@ $(document).ready(function () {
             success: function (data) {
                 var label = [];
                 var value = [];
+                var value2 = [];
                 i = 0;
                 do {
                     label.push(data.data.grafik[i].provinsi);
                     value.push(data.data.grafik[i].jumlah_kegiatan);
+                    value2.push(data.data.grafik[i].total_peserta);
                     i++;
                 
                 } while (i < data.data.grafik.length);
@@ -319,9 +185,17 @@ $(document).ready(function () {
                             backgroundColor: '#36b9cc',
                             borderColor: '#36b9cc',
                             data: value
+                        },
+                        {
+                            label: "Total Peserta",
+                            backgroundColor: '#4e73df',
+                            borderColor: '#4e73df',
+                            data: value2
                         }]
                     },
-                    options: {}
+                    options: {
+                        responsive: true
+                    }
                 });
             }
         });
