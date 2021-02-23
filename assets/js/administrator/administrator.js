@@ -2532,6 +2532,8 @@ Tidak ada poster kegiatan`					}
 			$('#edit-profile-status-rumah').val(data['status_rumah'])
 			$('#edit-profile-jurusan').val($(this).parent().siblings().eq(14).text())
 			$('#edit-profile-nama-universitas').val($(this).parent().siblings().eq(15).text())
+			$('#edit-profile-pendidikan').val(data['id_pendidikan'])
+			$('#edit-profile-kompetensi').val(data['id_kompetensi'])
 
 
 			
@@ -2603,9 +2605,9 @@ Tidak ada poster kegiatan`					}
 	// 
 	$('#btn-export-peserta-seluruh').on('click', function () {
 		$.ajax({
-			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`,
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`,
 			success: function () {
-				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`;
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`;
 			}
 		})
 	});
