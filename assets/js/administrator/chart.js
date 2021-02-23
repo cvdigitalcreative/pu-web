@@ -10,6 +10,7 @@ $(document).ready(function () {
     drawChart(n);
     drawChartKegiatanStatus(n);
     drawChartKegiatanJenis(n);
+    drawChartKegiatanProvinsi(n);
 
     function drawChart(tahun) {
         $.ajax({
@@ -269,7 +270,7 @@ $(document).ready(function () {
                 var tahun = data.data.tahun;
                 document.getElementById("labelChartKegiatanJenis").innerHTML = "Data kegiatan berdasarkan Jenis (" + tahun +")";                
                 var ctx = document.getElementById('chartKegiatanJenis').getContext('2d');
-                chartKBS = new Chart(ctx, {
+                chartKBJ = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: label,
@@ -288,8 +289,48 @@ $(document).ready(function () {
 
     $('#chart-filter-tahun-kegiatan-jenis').on('change', function () {
         var filter = $('#chart-filter-tahun-kegiatan-jenis').val()
-        chartKBS.destroy()
+        chartKBJ.destroy()
         drawChartKegiatanJenis(filter);
+    })
+
+    function drawChartKegiatanProvinsi(tahun) {
+        $.ajax({
+            url: `${BASE_URL}Dashboard/dataKegiatanbyProvinsi/${tahun}`,
+            method: "GET",
+            success: function (data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data.grafik[i].provinsi);
+                    value.push(data.data.grafik[i].jumlah_kegiatan);
+                    i++;
+                
+                } while (i < data.data.grafik.length);
+                var tahun = data.data.tahun;
+                document.getElementById("labelChartKegiatanProvinsi").innerHTML = "Data kegiatan berdasarkan Provinsi (" + tahun +")";                
+                var ctx = document.getElementById('chartKegiatanProvinsi').getContext('2d');
+                chartKBP = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Total Kegiatan",
+                            backgroundColor: '#36b9cc',
+                            borderColor: '#36b9cc',
+                            data: value
+                        }]
+                    },
+                    options: {}
+                });
+            }
+        });
+    }
+
+    $('#chart-filter-tahun-kegiatan-provinsi').on('change', function () {
+        var filter = $('#chart-filter-tahun-kegiatan-provinsi').val()
+        chartKBP.destroy()
+        drawChartKegiatanProvinsi(filter);
     })
 
 });

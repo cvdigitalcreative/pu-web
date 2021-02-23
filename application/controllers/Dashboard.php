@@ -381,4 +381,63 @@ class Dashboard extends CI_Controller
             redirect('pupr/login');
         }
     }
+
+    public function dataKegiatanbyProvinsi($tahun)
+    {
+        if ($this->session->userdata('logged_in') == true) {
+            $data['status'] = $this->Common_model->view_provinsi($this->session->userdata('token'));
+            if ($data['status'] == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($data['status']['status'] == "Success") {
+                    if (count($data['status']['data']) > 0) {
+                        $data['kegiatan']['tahun'] = $tahun;
+                        $index = 0;
+                        foreach ($data['status']['data'] as $val) {
+                            if ($val['provinsi'] != '-') {
+                                $tanggal_mulai = $tahun . "-01-01";
+                                $tanggal_selesai = $tahun . "-12-31";
+                                $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&id_provinsi=" . $val['id_provinsi'], $tahun, $this->session->userdata('token'));
+                                if ($temp == null) {
+                                    $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                    $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                } else {
+                                    if ($temp['status'] == "Success") {
+                                        if (count($temp['data']) > 0) {
+                                            $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                            $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = count($temp['data']);
+                                        } else {
+                                            $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                            $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                        }
+                                    } else {
+                                        $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
+                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
+                                    }
+                                }
+                                $index++;
+                            }
+                        }
+                        $callback = array(
+                            'data' => $data['kegiatan']
+                        );
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                } else {
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);
+            }
+        } else {
+            redirect('pupr/login');
+        }
+    }
 }

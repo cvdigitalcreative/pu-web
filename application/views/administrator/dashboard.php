@@ -290,13 +290,37 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
 
-		</div>
+					<div class="col mt-3">
+							<div class="card mb-4">
+								<!-- Card Header - Dropdown -->
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-black" id="labelChartKegiatanProvinsi"></h6>
+								</div>
+								<div class="card-body">
 
-		<div class="row d-flex flex-column justify-content-center align-items-center">
-			<!-- <div class="col mt-4">
+									<div class="form-group py-2">
+										<label for="profileProvinsi">Filter Tahun</label>
+										<select class="form-control" id="chart-filter-tahun-kegiatan-provinsi">
+											<?php if ($dashboard['grafik_filter'] != null) :
+												foreach ($dashboard['grafik_filter'] as $val) :
+													if ($val['keterangan'] == date('Y')) : ?>
+														<option value=<?= $val['keterangan'] ?> selected><?= $val['keterangan'] ?></option>
+													<?php else : ?>
+														<option value=<?= $val['keterangan'] ?>><?= $val['keterangan'] ?></option>
+											<?php endif;
+												endforeach;
+											endif; ?>
+										</select>
+									</div>
+
+									<canvas id="chartKegiatanProvinsi"></canvas>
+								</div>
+							</div>
+						</div>
+
+					<!-- <div class="row d-flex flex-column justify-content-center align-items-center"> -->
+						<!-- <div class="col mt-4">
 							<div class="row d-flex flex-column justify-content-center align-items-center">
 								<div class="align-items-center">
 									<img class="img-profile mr-2" style="vertical-align:middle" src="<?= base_url('assets/illustration/pupr-illustration-under-construction.svg') ?>">
@@ -316,16 +340,14 @@
 								</div>
 							</div>
 						</div> -->
+					<!-- </div> -->
+			</div>
+			<!-- /.container-fluid -->
+
 		</div>
-	</div>
+		<!-- End of Main Content -->
 
-	</div>
-	<!-- /.container-fluid -->
-
-	</div>
-	<!-- End of Main Content -->
-
-	<?php $this->load->view("components/footer.php") ?>
+		<?php $this->load->view("components/footer.php") ?>
 
 	</div>
 	<!-- End of Content Wrapper -->
