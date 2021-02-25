@@ -100,7 +100,7 @@
 								<div class="col">
 							<label for="tanggalLahirTenagaAhli">Tanggal Lahir</label>
 										<input type="text" class="form-control js-daterangepicker"
-											id="tanggal-lahir-tenaga-ahli" data-drops="up" name="tanggal_lahir_tenaga_ahli" value=""
+											id="tanggal-lahir-tenaga-ahli" data-drops="down" name="tanggal_lahir_tenaga_ahli" value=""
 											placeholder="Pilih tanggal lahir" style="cursor:pointer; background-color: #FFFFFF" readonly>
 								</div>
 							</div>
@@ -312,7 +312,7 @@
 								<div class="col">
 							<label for="tanggalLahirTenagaAhli">Tanggal Lahir *</label>
 										<input type="text" class="form-control js-daterangepicker"
-											id="edit-tanggal-lahir-tenaga-ahli" data-drops="up" name="edit_tanggal_lahir_tenaga_ahli" value=""
+											id="edit-tanggal-lahir-tenaga-ahli" data-drops="down" name="edit_tanggal_lahir_tenaga_ahli" value=""
 											placeholder="Pilih tanggal lahir" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 								</div>
 							</div>
