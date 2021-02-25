@@ -179,20 +179,46 @@ class Administrasi_kegiatan extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function download_response($response)
+    {
+        header('Content-Type: application/json');
+        $myArray = ['response' => $response];
+        echo json_encode($myArray);
+    }
+
     public function download($id_administrasi_kegiatan)
     {
         if ($this->session->userdata('logged_in') == true) {
             $this->load->helper('download');
-            $administrasi = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan_detail($id_administrasi_kegiatan, $this->session->userdata('token'));
-            if ($administrasi == null)
-                $this->load->view('error_page');
+            $administrasi_kegiatan = $this->Administrasi_Kegiatan_model->view_administrasi_kegiatan_detail($id_administrasi_kegiatan, $this->session->userdata('token'));
+            if ($administrasi_kegiatan == null)
+                $this->download_response(false);
             else {
-                if ($administrasi['status'] == "Success") {
-                    $data = file_get_contents($administrasi['data']['file_administrasi_kegiatan']);
-                    force_download($administrasi['data']['file_administrasi_kegiatan'], $data);
+                if ($administrasi_kegiatan['status'] == "Success") {
+
+                    function curl($url_file, $token)
+                    {
+                        $dataHeader = ['Authorization: Bearer ' . $token];
+                        $curl = curl_init();
+                        $url = $url_file;
+                        curl_setopt($curl, CURLOPT_URL, $url);
+                        curl_setopt($curl, CURLOPT_HTTPHEADER, $dataHeader);
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+                        $result = curl_exec($curl);
+                        curl_close($curl);
+
+                        return json_decode($result, TRUE);
+                    }
+
+                    if (strtolower(curl($administrasi_kegiatan['data']['file_administrasi_kegiatan'], $this->session->userdata('token'))['message']) == "not found") {
+                        $this->download_response(false);
+                    } else {
+                        $data = file_get_contents($administrasi_kegiatan['data']['file_administrasi_kegiatan']);
+                        force_download($administrasi_kegiatan['data']['file_administrasi_kegiatan'], $data);
+                        $this->download_response(true);
+                    }
                 } else {
-                    $this->session->flashdata('APImessage', $administrasi['message']);
-                    redirect('pupr/skkni');
+                    $this->download_response(false);
                 }
             }
         } else

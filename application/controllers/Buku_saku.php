@@ -179,20 +179,46 @@ class Buku_saku extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function download_response($response)
+    {
+        header('Content-Type: application/json');
+        $myArray = ['response' => $response];
+        echo json_encode($myArray);
+    }
+
     public function download($id_buku_saku)
     {
         if ($this->session->userdata('logged_in') == true) {
             $this->load->helper('download');
             $buku_saku = $this->Buku_Saku_model->view_buku_saku_detail($id_buku_saku, $this->session->userdata('token'));
             if ($buku_saku == null)
-                $this->load->view('error_page');
+                $this->download_response(false);
             else {
                 if ($buku_saku['status'] == "Success") {
-                    $data = file_get_contents($buku_saku['data']['file_buku_saku']);
-                    force_download($buku_saku['data']['file_buku_saku'], $data);
+
+                    function curl($url_file, $token)
+                    {
+                        $dataHeader = ['Authorization: Bearer ' . $token];
+                        $curl = curl_init();
+                        $url = $url_file;
+                        curl_setopt($curl, CURLOPT_URL, $url);
+                        curl_setopt($curl, CURLOPT_HTTPHEADER, $dataHeader);
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+                        $result = curl_exec($curl);
+                        curl_close($curl);
+
+                        return json_decode($result, TRUE);
+                    }
+
+                    if (strtolower(curl($buku_saku['data']['file_buku_saku'], $this->session->userdata('token'))['message']) == "not found") {
+                        $this->download_response(false);
+                    } else {
+                        $data = file_get_contents($buku_saku['data']['file_buku_saku']);
+                        force_download($buku_saku['data']['file_buku_saku'], $data);
+                        $this->download_response(true);
+                    }
                 } else {
-                    $this->session->flashdata('APImessage', $buku_saku['message']);
-                    redirect('pupr/skkni');
+                    $this->download_response(false);
                 }
             }
         } else
