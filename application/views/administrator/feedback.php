@@ -178,7 +178,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													<?= $total_feedback ?></div>
+													<?= $total_unanswered_feedback ?></div>
 
 											</div>
 										</div>
@@ -198,7 +198,7 @@
 											<div class="row no-gutters align-items-center">
 
 												<div class="h5 mb-0 mr-3 text-gray-800">
-													<?= $total_feedback ?></div>
+													<?= $total_answered_feedback ?></div>
 
 											</div>
 										</div>

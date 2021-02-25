@@ -90,6 +90,9 @@ $(document).ready(function () {
 	// tanggal mulai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -102,6 +105,9 @@ $(document).ready(function () {
 	// tanggal selesai add kegiatan
 	$(function () {
 		$('input[name="tanggal_kegiatan_selesai"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -114,6 +120,9 @@ $(document).ready(function () {
 	// tanggal mulai filter kegiatan
 	$(function () {
 		$('input[name="filter_tanggal_kegiatan_mulai"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -126,6 +135,9 @@ $(document).ready(function () {
 	// tanggal selesai filter kegiatan
 	$(function () {
 		$('input[name="filter_tanggal_kegiatan_selesai"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -138,6 +150,9 @@ $(document).ready(function () {
 	// tanggal mulai edit kegiatan
 	$(function () {
 		$('input[name="edit_tanggal_kegiatan_mulai"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -150,6 +165,9 @@ $(document).ready(function () {
 	// tanggal selesai edit kegiatan
 	$(function () {
 		$('input[name="edit_tanggal_kegiatan_selesai"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -162,6 +180,9 @@ $(document).ready(function () {
 	// tanggal lahir tenaga ahli
 	$(function () {
 		$('input[name="tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -174,6 +195,9 @@ $(document).ready(function () {
 	// edit tanggal lahir tenaga ahli
 	$(function () {
 		$('input[name="edit_tanggal_lahir_tenaga_ahli"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -186,6 +210,9 @@ $(document).ready(function () {
 	// edit profile
 	$(function () {
 		$('input[name="profile_tahun_lulus"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -198,6 +225,9 @@ $(document).ready(function () {
 	// tanggal lahir profile
 	$(function () {
 		$('input[name="profile_tanggal_lahir"]').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD'
+			},
 			singleDatePicker: true,
 			showDropdowns: true,
 			minYear: 1900,
@@ -282,6 +312,7 @@ $(document).ready(function () {
 							<button id='btn-detail-experts' type='submit' class='btn btn-success btn-block' data-id='${row.id_kegiatan}'>Instruktur & Assesor</button>
 							<button id='btn-detail-file-kegiatan' type='submit' class='btn btn-secondary btn-block' data-id='${row.id_kegiatan}'>Lihat Daftar File</button>
 							<button id='btn-update' type='submit' class='btn btn-primary btn-block' data-id='${row.id_kegiatan}'>Ganti Status</button>
+							<button id='btn-selesaikan-kegiatan' type='submit' class='btn btn-selesaikan-kegiatan btn-block' data-id='${row.id_kegiatan}'>Selesaikan Kegiatan</button>
 							<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${row.id_kegiatan}'>Edit</button>
 							<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${row.id_kegiatan}'>Hapus</button>
 							`
@@ -418,6 +449,15 @@ Tidak ada poster kegiatan`					}
 			$('#modal-daftar-file-kegiatan').modal('show')
 		}
 	})
+
+	$('table').on('click', '#btn-selesaikan-kegiatan', function () {
+		if ($('#kalender_kegiatan_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Kegiatan/selesaikan_kegiatan_action/${id}`)
+			$('#modal-selesaikan-kegiatan').modal('show')
+		}
+		
+	})
 	// End of Kalender kegiatan datatable 
 
 	// Daftar Peserta by Kalender Kegiatan Datatable
@@ -507,14 +547,14 @@ Tidak ada poster kegiatan`					}
 					return "-"
 				}
 			},
-			// {
-			// 	data: 'id_user',
-			// 	render: function (data) {
-			// 		return `
-			// 		<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-			// 		<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
-			// 	}
-			// },
+			{
+				data: 'id_user',
+				render: function (data) {
+					return `
+					<button id='btn-edit-peserta-kegiatan' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit Peserta</button>
+					<button id='btn-delete-peserta-kegiatan' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus Peserta</button>`
+				}
+			},
 		],
 		rowCallback: function (row, data) { },
 		"order": [0, 'asc'],
@@ -852,7 +892,7 @@ Tidak ada poster kegiatan`					}
 					data: 'id_tenaga_ahli',
 					render: function (data) {
 						return `
-						<button id='btn-edit' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+						<button id='btn-edit-mitra' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 						<button id='btn-reject' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>
 						<button id='btn-download' type='submit' class='btn btn-info btn-block' data-id='${data}'>Download CV</button>`
 					}
@@ -2188,7 +2228,7 @@ Tidak ada poster kegiatan`					}
 				}
 			})
 		}
-		else if ($('#tenaga_terampil_table').length > 0) {
+		else if ($('#mitra_terampil_table').length > 0) {
 			const id = $(this).data('id')
 			$.ajax({
 				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
@@ -2363,6 +2403,25 @@ Tidak ada poster kegiatan`					}
 			$('form').attr('action', `${BASE_URL}Tenaga_ahli/edit_tenaga_ahli_action/${id}`)
 			var currentRow = $(this).closest("tr");
 			var data = $('#tenaga_ahli_table').DataTable().row(currentRow).data();
+
+			if (data['jenis_kelamin'] == "Perempuan") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(2)
+			}
+			else if (data['jenis_kelamin'] == "Laki-laki") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(1)
+			}
+			else if (data['jenis_kelamin'] == "-") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(0)
+			}
+
+
+			if (data['kategori_tenaga_ahli'] == "Tenaga Ahli") {
+				document.getElementById('edit-kategori-tenaga-ahli').checked = true;
+			}
+			else if (data['kategori_tenaga_ahli'] == "Tenaga Terampil") {
+				document.getElementById('edit-kategori-tenaga-terampil').checked = true;
+			}
+				
 			$('#edit-nama-tenaga-ahli').val($(this).parent().siblings().eq(1).text())
 			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
 			$('#edit-status-pns-tenaga-ahli').val(data['id_status_pns'])
@@ -2387,7 +2446,111 @@ Tidak ada poster kegiatan`					}
 		}
 	})
 	// End of edit
+	$('table').on('click', '#btn-edit-mitra', function () {
+		if ($('#mitra_terampil_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Tenaga_ahli/edit_tenaga_ahli_action/${id}`)
+			var currentRow = $(this).closest("tr");
+			var data = $('#mitra_terampil_table').DataTable().row(currentRow).data();
+
+			if (data['jenis_kelamin'] == "Perempuan") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(2)
+			}
+			else if (data['jenis_kelamin'] == "Laki-laki") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(1)
+			}
+			else if (data['jenis_kelamin'] == "-") {
+				$('#edit-jenis-kelamin-tenaga-ahli').val(0)
+			}
+
+
+			if (data['kategori_tenaga_ahli'] == "Tenaga Ahli") {
+				document.getElementById('edit-kategori-tenaga-ahli').checked = true;
+			}
+			else if (data['kategori_tenaga_ahli'] == "Tenaga Terampil") {
+				document.getElementById('edit-kategori-tenaga-terampil').checked = true;
+			}
+			
+			$('#edit-nama-tenaga-ahli').val($(this).parent().siblings().eq(1).text())
+			$('#edit-tempat-lahir-tenaga-ahli').val($(this).parent().siblings().eq(3).text())
+			$('#edit-status-pns-tenaga-ahli').val(data['id_status_pns'])
+			$('#edit-pendidikan-tenaga-ahli').val(data['id_pendidikan'])
+			$('#edit-nik-tenaga-ahli').val($(this).parent().siblings().eq(8).text())
+			$('#edit-email-tenaga-ahli').val($(this).parent().siblings().eq(5).text())
+			$('#edit-alamat-tenaga-ahli').val($(this).parent().siblings().eq(12).text())
+			$('#edit-nomor-handphone-tenaga-ahli').val($(this).parent().siblings().eq(6).text())
+			$('#edit-nomor-rumah-tenaga-ahli').val($(this).parent().siblings().eq(7).text())
+			$('#edit-npwp-tenaga-ahli').val($(this).parent().siblings().eq(9).text())
+			$('#modal-edit-tenaga-ahli').modal('show')
+		}
+	})
+
+	$('table').on('click', '#btn-edit-peserta-kegiatan', function () {
+		if ($('#daftar_peserta_table').length > 0) {
+			const id = $(this).data('id')
+			var currentRow = $(this).closest("tr");
+			var data = $('#daftar_peserta_table').DataTable().row(currentRow).data();
+			$('form').attr('action', `${BASE_URL}Peserta/edit_peserta_action/${id}`)
+			
+			$('#edit-profile-nama').val($(this).parent().siblings().eq(2).text())
+			
+			if (data['jenis_kelamin'] == "Laki-laki") {
+				document.getElementById("jk-1").checked = true;
+				document.getElementById("jk-2").checked = false;
+			}
+			else if (data['jenis_kelamin'] == "Perempuan") {
+				document.getElementById("jk-1").checked = false;
+				document.getElementById("jk-2").checked = true;
+			}
+			else if (data['jenis_kelamin'] == '-') {
+				document.getElementById("jk-1").checked = false;
+				document.getElementById("jk-2").checked = false;
+			}
+
+			if (data['file_foto_profile'] == '-') {
+				$('#banner-image-profile').attr('src', `${BASE_URL}assets/icons/pupr-add-image-icon.svg`)
+			}
+			else {
+				$('#banner-image-profile').val($(this).parent().siblings().eq(1).text())
+			}
+
+			$('#edit-profile-tempat-lahir').val(data['tempat_lahir'])
+			$('#edit-profile-status-perkawinan').val(data['status_perkawinan'])
+			$('#edit-profile-nama-perusahaan').val(data['nama_perusahaan'])
+			$('#edit-profile-jabatan').val(data['jabatan'])
+			$('#edit-profile-utusan').val($(this).parent().siblings().eq(7).text())
+			$('#edit-profile-npwp').val(data['npwp'])
+			$('#edit-profile-email').val($(this).parent().siblings().eq(6).text())
+			$('#edit-profile-nomor-telepon').val($(this).parent().siblings().eq(11).text())
+			$('#edit-profile-nomor-handphone').val($(this).parent().siblings().eq(12).text())
+			$('#edit-profile-nik').val($(this).parent().siblings().eq(5).text())
+			$('#edit-profile-alamat').val($(this).parent().siblings().eq(8).text())
+			$('#edit-profile-rt').val(data['rt'])
+			$('#edit-profile-rw').val(data['rw'])
+			$('#edit-profile-kode-pos').val(data['kode_pos'])
+			$('#edit-profile-kode-area').val(data['kode_area'])
+			$('#edit-profile-status-rumah').val(data['status_rumah'])
+			$('#edit-profile-jurusan').val($(this).parent().siblings().eq(14).text())
+			$('#edit-profile-nama-universitas').val($(this).parent().siblings().eq(15).text())
+			$('#edit-profile-pendidikan').val(data['id_pendidikan'])
+			$('#edit-profile-kompetensi').val(data['id_kompetensi'])
+
+
+			
+			$('#edit-profile-nama').val($(this).parent().siblings().eq(2).text())
+			$('#modal-lihat-peserta-by-kegiatan').modal('hide')
+			$('#modal-edit-profile-peserta-kegiatan').modal('show')
+		}
+	})
 	
+	$('table').on('click', '#btn-delete-peserta-kegiatan', function () {
+		if ($('#daftar_peserta_table').length > 0) {
+			const id = $(this).data('id')
+			$('form').attr('action', `${BASE_URL}Peserta/delete_peserta/${id}`)
+			$('#modal-lihat-peserta-by-kegiatan').modal('hide')
+			$('#modal-delete-peserta-kegiatan').modal('show')
+		}
+	})
 	// 
 	// ========= DELETE BUTTON ON CLICK ===========
 	// 
@@ -2440,11 +2603,19 @@ Tidak ada poster kegiatan`					}
 	// 
 	// ========= EXPORT PESERTA ONCLICK ===========
 	// 
-	$('#btn-export-peserta').on('click', function () {
+	$('#btn-export-peserta-seluruh').on('click', function () {
 		$.ajax({
-			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`,
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`,
 			success: function () {
-				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}`;
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`;
+			}
+		})
+	});
+	$('#btn-export-peserta-filter').on('click', function () {
+		$.ajax({
+			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`,
+			success: function () {
+				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`;
 			}
 		})
 	});

@@ -247,12 +247,6 @@ class User extends CI_Controller
             $alamat_rumah = $this->input->post('alamat');
             $tempat_lahir = $this->input->post('tempat_lahir');
             $temptanggallahir = explode('/', $this->input->post('profile_tanggal_lahir'));
-            $tempbulan = $temptanggallahir[0];
-            $temphari = $temptanggallahir[1];
-            $temptahun = $temptanggallahir[2];
-            $temptanggallahir[0] = $temptahun;
-            $temptanggallahir[1] = $tempbulan;
-            $temptanggallahir[2] = $temphari;
             $tanggal_lahir = implode('-', $temptanggallahir);
             $nik = $this->input->post('nik');
             $rt = $this->input->post('rt');
@@ -266,12 +260,6 @@ class User extends CI_Controller
             $nama_universitas = $this->input->post('nama_universitas');
             $jurusan = $this->input->post('jurusan');
             $temptahunlulus = explode('/', $this->input->post('profile_tahun_lulus'));
-            $tempbulan = $temptahunlulus[0];
-            $temphari = $temptahunlulus[1];
-            $temptahun = $temptahunlulus[2];
-            $temptahunlulus[0] = $temptahun;
-            $temptahunlulus[1] = $tempbulan;
-            $temptahunlulus[2] = $temphari;
             $tahun_lulus = implode('-', $temptahunlulus);
             if ($_FILES['file_foto_profile']['size'] == 0)
                 $file_foto_profil = null;

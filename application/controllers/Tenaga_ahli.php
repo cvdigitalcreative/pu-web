@@ -343,13 +343,7 @@ class Tenaga_ahli extends CI_Controller
             $tempat_lahir = $this->input->post('tempat_lahir_tenaga_ahli');
             $tanggal_lahir = $this->input->post('tanggal_lahir_tenaga_ahli');
             $temparr = explode('/', $tanggal_lahir);
-            $tempbulan = $temparr[0];
-            $temphari = $temparr[1];
-            $temptahun = $temparr[2];
-            $arrtemptanggal[0] = $temptahun;
-            $arrtemptanggal[1] = $tempbulan;
-            $arrtemptanggal[2] = $temphari;
-            $tanggal_lahir = implode('-', $arrtemptanggal);
+            $tanggal_lahir = implode('-', $temparr);
             $id_jenis_kelamin = $this->input->post('id_jenis_kelamin_tenaga_ahli');
             $nik = $this->input->post('nik_tenaga_ahli');
             $email = $this->input->post('email_tenaga_ahli');
@@ -359,10 +353,14 @@ class Tenaga_ahli extends CI_Controller
             $no_telepon_rumah = $this->input->post('nomor_rumah_tenaga_ahli');
             $no_handphone = $this->input->post('nomor_handphone_tenaga_ahli');
             $id_jabker = $this->input->post('id_jabatan_kerja_tenaga_ahli');
-            if (count($id_jabker) == 1)
-                $id_jabker = $id_jabker[0];
-            else
-                $id_jabker = '[' . implode(',', $id_jabker) . ']';
+            if ($id_jabker == null)
+                $id_jabker = '[]';
+            else {
+                if (count($id_jabker) == 1)
+                    $id_jabker = $id_jabker[0];
+                else
+                    $id_jabker = '[' . implode(',', $id_jabker) . ']';
+            }
             $id_kategori_tenaga_ahli = $this->input->post('kategori_tenaga_ahli');
             $is_instruktur = $this->input->post('is_instruktur');
             if ($is_instruktur == 1)
@@ -380,7 +378,6 @@ class Tenaga_ahli extends CI_Controller
             else
                 $file_tenaga_ahli = null;
 
-                
             $status_pns = $this->input->post('id_status_pns_tenaga_ahli');
             $npwp = $this->input->post('npwp_tenaga_ahli');
             $pendidikan = $this->input->post('id_pendidikan_tenaga_ahli');
@@ -436,13 +433,7 @@ class Tenaga_ahli extends CI_Controller
             $tempat_lahir = $this->input->post('edit_tempat_lahir_tenaga_ahli');
             $tanggal_lahir = $this->input->post('edit_tanggal_lahir_tenaga_ahli');
             $temparr = explode('/', $tanggal_lahir);
-            $tempbulan = $temparr[0];
-            $temphari = $temparr[1];
-            $temptahun = $temparr[2];
-            $arrtemptanggal[0] = $temptahun;
-            $arrtemptanggal[1] = $tempbulan;
-            $arrtemptanggal[2] = $temphari;
-            $tanggal_lahir = implode('-', $arrtemptanggal);
+            $tanggal_lahir = implode('-', $temparr);
             $id_jenis_kelamin = $this->input->post('edit_id_jenis_kelamin_tenaga_ahli');
             $nik = $this->input->post('edit_nik_tenaga_ahli');
             $email = $this->input->post('edit_email_tenaga_ahli');

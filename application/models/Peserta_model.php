@@ -125,6 +125,8 @@ class Peserta_model extends CI_Model
         $jabatan,
         $utusan,
         $alamat_rumah,
+        $tempat_lahir,
+        $tanggal_lahir,
         $nik,
         $rt,
         $rw,
@@ -135,8 +137,12 @@ class Peserta_model extends CI_Model
         $id_pendidikan,
         $id_jabker,
         $id_kompetensi,
+        $nama_universitas,
+        $jurusan,
+        $tahun_lulus,
         // $no_sertifikat,
         $file_foto_profil,
+        $npwp,
         $id_user_peserta,
         $token
     ) {
@@ -155,6 +161,8 @@ class Peserta_model extends CI_Model
             'jabatan' => $jabatan,
             'utusan' => $utusan,
             'alamat_rumah' => $alamat_rumah,
+            'tempat_lahir' => $tempat_lahir,
+            'tanggal_lahir' => $tanggal_lahir,
             'nik' => $nik,
             'rt' => $rt,
             'rw' => $rw,
@@ -165,8 +173,11 @@ class Peserta_model extends CI_Model
             'id_pendidikan' => $id_pendidikan,
             'id_jabker' => $id_jabker,
             'id_kompetensi' => $id_kompetensi,
-            // 'no_sertifikat' => $no_sertifikat,
-            'file_foto_profile' => $file_foto_profil
+            'nama_universitas' => $nama_universitas,
+            'jurusan' => $jurusan,
+            'tahun_lulus' => $tahun_lulus,
+            'file_foto_profile' => $file_foto_profil,
+            'npwp' => $npwp
         ];
 
         return $this->http_request_post($data, "/$id_user_peserta", $token);

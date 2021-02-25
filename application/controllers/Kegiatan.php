@@ -136,6 +136,53 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['jenis_kelamin'] = $this->Common_model->view_jenis_kelamin($this->session->userdata('token'));
+            if ($data['jenis_kelamin'] == null)
+                $null = true;
+            else {
+                if ($data['jenis_kelamin']['status'] == "Success") {
+                    $data['jenis_kelamin'] = $data['jenis_kelamin']['data'];
+                } else {
+                    $data['jenis_kelamin'] = null;
+                    $this->session->set_flashdata('APImessage', $data['jenis_kelamin']['message']);
+                }
+            }
+
+            $data['status_perkawinan'] = $this->Common_model->view_status_perkawinan($this->session->userdata('token'));
+            if ($data['status_perkawinan'] == null)
+                $null = true;
+            else {
+                if ($data['status_perkawinan']['status'] == "Success") {
+                    $data['status_perkawinan'] = $data['status_perkawinan']['data'];
+                } else {
+                    $data['status_perkawinan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['status_perkawinan']['message']);
+                }
+            }
+
+            $data['status_rumah'] = $this->Common_model->view_status_rumah($this->session->userdata('token'));
+            if ($data['status_rumah'] == null)
+                $null = true;
+            else {
+                if ($data['status_rumah']['status'] == "Success") {
+                    $data['status_rumah'] = $data['status_rumah']['data'];
+                } else {
+                    $data['status_rumah'] = null;
+                    $this->session->set_flashdata('APImessage', $data['status_rumah']['message']);
+                }
+            }
+            $data['pendidikan'] = $this->Common_model->view_pendidikan($this->session->userdata('token'));
+            if ($data['pendidikan'] == null)
+                $null = true;
+            else {
+                if ($data['pendidikan']['status'] == "Success") {
+                    $data['pendidikan'] = $data['pendidikan']['data'];
+                } else {
+                    $data['pendidikan'] = null;
+                    $this->session->set_flashdata('APImessage', $data['pendidikan']['message']);
+                }
+            }
+
             if ($null)
                 $this->load->view('error_page');
             else
@@ -157,12 +204,6 @@ class Kegiatan extends CI_Controller
             $filter = "?";
             if ($tanggal_awal != null) {
                 $temparr = explode('/', $tanggal_awal);
-                $temphari = $temparr[1];
-                $tempbulan = $temparr[0];
-                $temptahun = $temparr[2];
-                $temparr[0] = $temptahun;
-                $temparr[1] = $tempbulan;
-                $temparr[2] = $temphari;
                 $tanggal_awal = implode('-', $temparr);
                 if ($filter == "?")
                     $filter = $filter . "tanggal_awal=" . $tanggal_awal;
@@ -171,12 +212,6 @@ class Kegiatan extends CI_Controller
             }
             if ($tanggal_akhir != null) {
                 $temparrselesai = explode('/', $tanggal_akhir);
-                $temphari = $temparrselesai[1];
-                $tempbulan = $temparrselesai[0];
-                $temptahun = $temparrselesai[2];
-                $temparrselesai[0] = $temptahun;
-                $temparrselesai[1] = $tempbulan;
-                $temparrselesai[2] = $temphari;
                 $tanggal_akhir = implode('-', $temparrselesai);
                 if ($filter == "?")
                     $filter = $filter . "tanggal_akhir=" . $tanggal_akhir;
@@ -378,23 +413,11 @@ class Kegiatan extends CI_Controller
             $deskripsi_kegiatan = $this->input->post('deskripsi_kegiatan');
             $tanggal_kegiatan = $this->input->post('tanggal_kegiatan');
             $temparr = explode('/', $tanggal_kegiatan);
-            $tempbulan = $temparr[0];
-            $temphari = $temparr[1];
-            $temptahun = $temparr[2];
-            $arrtemptanggal[0] = $temptahun;
-            $arrtemptanggal[1] = $tempbulan;
-            $arrtemptanggal[2] = $temphari;
-            $tanggal_kegiatan = implode('-', $arrtemptanggal);
+            $tanggal_kegiatan = implode('-', $temparr);
 
             $tanggal_kegiatan_selesai = $this->input->post('tanggal_kegiatan_selesai');
             $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
-            $tempbulan = $temparrselesai[0];
-            $temphari = $temparrselesai[1];
-            $temptahun = $temparrselesai[2];
-            $arrtemptanggal[0] = $temptahun;
-            $arrtemptanggal[1] = $tempbulan;
-            $arrtemptanggal[2] = $temphari;
-            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggal);
+            $tanggal_kegiatan_selesai = implode('-', $temparrselesai);
 
             $lokasi_kegiatan = $this->input->post('lokasi_kegiatan');
             $latitude_lokasi = 0;
@@ -776,23 +799,12 @@ class Kegiatan extends CI_Controller
             $deskripsi_kegiatan = $this->input->post('edit_deskripsi_kegiatan');
             $tanggal_kegiatan = $this->input->post('edit_tanggal_kegiatan_mulai');
             $temparr = explode('/', $tanggal_kegiatan);
-            $tempbulan = $temparr[0];
-            $temphari = $temparr[1];
-            $temptahun = $temparr[2];
-            $arrtemptanggal[0] = $temptahun;
-            $arrtemptanggal[1] = $tempbulan;
-            $arrtemptanggal[2] = $temphari;
-            $tanggal_kegiatan = implode('-', $arrtemptanggal);
+            $tanggal_kegiatan = implode('-', $temparr);
 
             $tanggal_kegiatan_selesai = $this->input->post('edit_tanggal_kegiatan_selesai');
             $temparrselesai = explode('/', $tanggal_kegiatan_selesai);
-            $tempbulan = $temparrselesai[0];
-            $temphari = $temparrselesai[1];
-            $temptahun = $temparrselesai[2];
-            $arrtemptanggal[0] = $temptahun;
-            $arrtemptanggal[1] = $tempbulan;
-            $arrtemptanggal[2] = $temphari;
-            $tanggal_kegiatan_selesai = implode('-', $arrtemptanggal);
+            $tanggal_kegiatan_selesai = implode('-', $temparrselesai);
+
 
             $lokasi_kegiatan = $this->input->post('edit_lokasi_kegiatan');
             $latitude_lokasi = 0;
@@ -837,6 +849,64 @@ class Kegiatan extends CI_Controller
                 redirect("pupr/events");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_kegiatan['message']);
+                redirect("pupr/events");
+            }
+        } else {
+            redirect("pupr/login");
+        }
+    }
+
+    public function selesaikan_kegiatan_action($id_kegiatan){
+        if ($this->session->userdata('logged_in') == true) {
+            $kegiatan = $this->Kegiatan_model->view_detail_kegiatan($id_kegiatan, $this->session->userdata('token'));
+            if($kegiatan!= null && $kegiatan['status'] == "Success"){
+                $kegiatan = $kegiatan['data'];
+                $judul_kegiatan = $kegiatan['judul_kegiatan'];
+                $deskripsi_kegiatan = $kegiatan['deskripsi_kegiatan'];
+                $tanggal_kegiatan = $kegiatan['tanggal_kegiatan'];
+                $tanggal_kegiatan_selesai = $kegiatan['tanggal_kegiatan_selesai'];
+                $lokasi_kegiatan = $kegiatan['lokasi_kegiatan'];
+                $latitude_lokasi = $kegiatan['latitude_lokasi'];
+                $longitude_lokasi = $kegiatan['longitude_lokasi'];
+                $status_kegiatan = 2;
+                $foto_banner_kegiatan = null;
+                $id_akun_kegiatan = $kegiatan['id_akun_kegiatan'];
+                $id_jenis_kegiatan = $kegiatan['id_jenis_kegiatan'];
+                $id_provinsi = $kegiatan['id_provinsi'];
+                $id_kota_kabupaten = $kegiatan['id_kota_kabupaten'];
+                $file_materi_kegiatan = null;
+
+                $edit_kegiatan = $this->Kegiatan_model->edit_kegiatan(
+                    $judul_kegiatan,
+                    $deskripsi_kegiatan,
+                    $tanggal_kegiatan,
+                    $tanggal_kegiatan_selesai,
+                    $lokasi_kegiatan,
+                    $latitude_lokasi,
+                    $longitude_lokasi,
+                    $status_kegiatan,
+                    $foto_banner_kegiatan,
+                    $id_akun_kegiatan,
+                    $id_jenis_kegiatan,
+                    $id_provinsi,
+                    $id_kota_kabupaten,
+                    $file_materi_kegiatan,
+                    $id_kegiatan,
+                    $this->session->userdata('token')
+                );
+    
+                if ($edit_kegiatan == null) {
+                    $this->load->view('error_page');
+                }
+                if ($edit_kegiatan['status'] == "Success") {
+                    $this->session->set_flashdata('success', "Status Kegiatan berhasil dirubah");
+                    redirect("pupr/events");
+                } else {
+                    $this->session->set_flashdata('APImessage', "Gagal merubah status kegiatan");
+                    redirect("pupr/events");
+                }
+            }else {
+                $this->session->set_flashdata('APImessage', "Gagal merubah status kegiatan");
                 redirect("pupr/events");
             }
         } else {
