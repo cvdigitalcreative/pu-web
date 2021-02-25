@@ -35,6 +35,9 @@ class Kegiatan extends CI_Controller
                 }
             }
 
+            $data['jumlah_seluruh_kegiatan'] = 0;
+            $data['jumlah_kegiatan_selesai'] = 0;
+            $data['jumlah_kegiatan_berjalan'] = 0;
             $data['kegiatan'] = $this->Kegiatan_model->view_kegiatan(null, $this->session->userdata('token'));
             if ($data['kegiatan'] == null)
                 $null = true;
