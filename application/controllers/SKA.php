@@ -233,20 +233,46 @@ class SKA extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function download_response($response)
+    {
+        header('Content-Type: application/json');
+        $myArray = ['response' => $response];
+        echo json_encode($myArray);
+    }
+
     public function download($id_ska)
     {
         if ($this->session->userdata('logged_in') == true) {
             $this->load->helper('download');
-            $SKA = $this->SKA_model->view_ska_detail($id_ska, $this->session->userdata('token'));
-            if ($SKA == null)
-                $this->load->view('error_page');
+            $ska = $this->SKA_model->view_ska_detail($id_ska, $this->session->userdata('token'));
+            if ($ska == null)
+                $this->download_response(false);
             else {
-                if ($SKA['status'] == "Success") {
-                    $data = file_get_contents($SKA['data']['file_ska']);
-                    force_download($SKA['data']['file_ska'], $data);
+                if ($ska['status'] == "Success") {
+
+                    function curl($url_file, $token)
+                    {
+                        $dataHeader = ['Authorization: Bearer ' . $token];
+                        $curl = curl_init();
+                        $url = $url_file;
+                        curl_setopt($curl, CURLOPT_URL, $url);
+                        curl_setopt($curl, CURLOPT_HTTPHEADER, $dataHeader);
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+                        $result = curl_exec($curl);
+                        curl_close($curl);
+
+                        return json_decode($result, TRUE);
+                    }
+
+                    if (strtolower(curl($ska['data']['file_ska'], $this->session->userdata('token'))['message']) == "not found") {
+                        $this->download_response(false);
+                    } else {
+                        $data = file_get_contents($ska['data']['file_ska']);
+                        force_download($ska['data']['file_ska'], $data);
+                        $this->download_response(true);
+                    }
                 } else {
-                    $this->session->flashdata('APImessage', $SKA['message']);
-                    redirect('pupr/skkni');
+                    $this->download_response(false);
                 }
             }
         } else
