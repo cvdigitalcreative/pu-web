@@ -330,6 +330,9 @@ $(document).ready(function () {
 					}
 				},
 				{
+					data: 'kode_kegiatan',
+				},
+				{
 					data: 'judul_kegiatan',
 				},
 				{
@@ -2381,9 +2384,9 @@ Tidak ada poster kegiatan`					}
 			$('#edit-jenis-kegiatan').val(data['id_jenis_kegiatan'])
 			$('#edit-status-kegiatan').val(data['id_status_kegiatan'])
 			$('#banner-image-edit').attr('src', data['foto_banner_kegiatan'])
-			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(1).text())
-			$('#edit-deskripsi-kegiatan').val($(this).parent().siblings().eq(2).text())
-			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(13).text())
+			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(2).text())
+			$('#edit-deskripsi-kegiatan').val($(this).parent().siblings().eq(3).text())
+			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(14).text())
 			$(`#modal-edit-kegiatan`).modal('show')
 		}
 		else if ($('#skkni_table').length > 0) {

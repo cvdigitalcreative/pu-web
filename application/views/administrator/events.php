@@ -1352,6 +1352,7 @@
 										<tr>
 											<th>No</th>
 											<th>Aksi</th>
+											<th>Kode Kegiatan</th>
 											<th>Nama Kegiatan</th>
 											<th>Deskripsi Kegiatan</th>
 											<th>Status Kegiatan</th>
