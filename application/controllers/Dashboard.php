@@ -116,10 +116,9 @@ class Dashboard extends CI_Controller
                         'data' => []
                     );
                 }
-
-                header('Content-Type: application/json');
-                echo json_encode($callback);
             }
+            header('Content-Type: application/json');
+            echo json_encode($callback);
         } else {
             redirect('pupr/login');
         }
@@ -144,18 +143,22 @@ class Dashboard extends CI_Controller
                             $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&status=" . $val['id_status_kegiatan'], $tahun, $this->session->userdata('token'));
                             if ($temp == null) {
                                 $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                $data['kegiatan']['grafik'][$index]['id_status_kegiatan'] = $val['id_status_kegiatan'];
                                 $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
                             } else {
                                 if ($temp['status'] == "Success") {
                                     if (count($temp['data']) > 0) {
                                         $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                        $data['kegiatan']['grafik'][$index]['id_status_kegiatan'] = $val['id_status_kegiatan'];
                                         $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = count($temp['data']);
                                     } else {
                                         $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                        $data['kegiatan']['grafik'][$index]['id_status_kegiatan'] = $val['id_status_kegiatan'];
                                         $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
                                     }
                                 } else {
                                     $data['kegiatan']['grafik'][$index]['status_kegiatan'] = $val['status_kegiatan'];
+                                    $data['kegiatan']['grafik'][$index]['id_status_kegiatan'] = $val['id_status_kegiatan'];
                                     $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
                                 }
                             }
@@ -174,9 +177,82 @@ class Dashboard extends CI_Controller
                         'data' => []
                     );
                 }
-                header('Content-Type: application/json');
-                echo json_encode($callback);
             }
+            header('Content-Type: application/json');
+            echo json_encode($callback);
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
+    public function dataKegiatanbyStatusprovinsi($tahun, $status)
+    {
+        set_time_limit(10000);
+        if ($this->session->userdata('logged_in') == true) {
+            $status = str_replace("%20", " ", $status);
+            $arrstts = $this->Common_model->view_status_kegiatan($this->session->userdata('token'));
+            $idstts = -1;
+            if ($arrstts == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($arrstts['status'] == 'Success') {
+                    if (count($arrstts['data']) > 0) {
+                        foreach ($arrstts['data'] as $val) {
+                            if ($val['status_kegiatan'] == $status) {
+                                $idstts = $val['id_status_kegiatan'];
+                            }
+                        }
+                        $data['status'] = $this->Common_model->view_kabupaten_kota_all($this->session->userdata('token'));
+                        if ($data['status'] == null) {
+                            $callback = array(
+                                'data' => []
+                            );
+                        } else {
+                            if ($data['status']['status'] == "Success") {
+                                if (count($data['status']['data']) > 0) {
+                                    $data['kegiatan']['tahun'] = $tahun;
+                                    $index = 0;
+                                    foreach ($data['status']['data'] as $val) {
+                                        if ($val['kabupaten_kota'] != '-') {
+                                            $tanggal_mulai = $tahun . "-01-01";
+                                            $tanggal_selesai = $tahun . "-12-31";
+                                            $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&id_kabupaten_kota=" . $val['id_kabupaten_kota'] . "&status=$idstts", $tahun, $this->session->userdata('token'));
+                                            if ($temp != null) {
+                                                if ($temp['status'] == "Success") {
+                                                    if (count($temp['data']) > 0) {
+                                                        $data['kegiatan']['grafik'][$index]['kabupaten_kota'] = $val['kabupaten_kota'];
+                                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = count($temp['data']);
+                                                        $index++;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    $callback = array(
+                                        'data' => $data['kegiatan']
+                                    );
+                                } else {
+                                    $callback = array(
+                                        'data' => []
+                                    );
+                                }
+                            } else {
+                                $callback = array(
+                                    'data' => []
+                                );
+                            }
+                        }
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }
+            }
+            header('Content-Type: application/json');
+            echo json_encode($callback);
         } else {
             redirect('pupr/login');
         }
@@ -233,9 +309,82 @@ class Dashboard extends CI_Controller
                         'data' => []
                     );
                 }
-                header('Content-Type: application/json');
-                echo json_encode($callback);
             }
+            header('Content-Type: application/json');
+            echo json_encode($callback);
+        } else {
+            redirect('pupr/login');
+        }
+    }
+
+    public function dataKegiatanbyJenisprovinsi($tahun, $jenis)
+    {
+        set_time_limit(10000);
+        if ($this->session->userdata('logged_in') == true) {
+            $jenis = str_replace("%20", " ", $jenis);
+            $arrstts = $this->Common_model->view_jenis_kegiatan($this->session->userdata('token'));
+            $idstts = -1;
+            if ($arrstts == null) {
+                $callback = array(
+                    'data' => []
+                );
+            } else {
+                if ($arrstts['status'] == 'Success') {
+                    if (count($arrstts['data']) > 0) {
+                        foreach ($arrstts['data'] as $val) {
+                            if ($val['jenis_kegiatan'] == $jenis) {
+                                $idstts = $val['id_jenis_kegiatan'];
+                            }
+                        }
+                        $data['status'] = $this->Common_model->view_kabupaten_kota_all($this->session->userdata('token'));
+                        if ($data['status'] == null) {
+                            $callback = array(
+                                'data' => []
+                            );
+                        } else {
+                            if ($data['status']['status'] == "Success") {
+                                if (count($data['status']['data']) > 0) {
+                                    $data['kegiatan']['tahun'] = $tahun;
+                                    $index = 0;
+                                    foreach ($data['status']['data'] as $val) {
+                                        if ($val['kabupaten_kota'] != '-') {
+                                            $tanggal_mulai = $tahun . "-01-01";
+                                            $tanggal_selesai = $tahun . "-12-31";
+                                            $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&id_kabupaten_kota=" . $val['id_kabupaten_kota'] . "&jenis=$idstts", $tahun, $this->session->userdata('token'));
+                                            if ($temp != null) {
+                                                if ($temp['status'] == "Success") {
+                                                    if (count($temp['data']) > 0) {
+                                                        $data['kegiatan']['grafik'][$index]['kabupaten_kota'] = $val['kabupaten_kota'];
+                                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = count($temp['data']);
+                                                        $index++;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    $callback = array(
+                                        'data' => $data['kegiatan']
+                                    );
+                                } else {
+                                    $callback = array(
+                                        'data' => []
+                                    );
+                                }
+                            } else {
+                                $callback = array(
+                                    'data' => []
+                                );
+                            }
+                        }
+                    } else {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }
+            }
+            header('Content-Type: application/json');
+            echo json_encode($callback);
         } else {
             redirect('pupr/login');
         }
@@ -259,12 +408,7 @@ class Dashboard extends CI_Controller
                                 $tanggal_mulai = $tahun . "-01-01";
                                 $tanggal_selesai = $tahun . "-12-31";
                                 $temp = $this->Kegiatan_model->view_kegiatan("?tanggal_awal=$tanggal_mulai&tanggal_akhir=$tanggal_selesai&id_provinsi=" . $val['id_provinsi'], $tahun, $this->session->userdata('token'));
-                                if ($temp == null) {
-                                    $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
-                                    $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
-                                    $data['kegiatan']['grafik'][$index]['total_peserta'] = 0;
-
-                                } else {
+                                if ($temp != null) {
                                     if ($temp['status'] == "Success") {
                                         if (count($temp['data']) > 0) {
                                             $totalPeserta = 0;
@@ -274,20 +418,10 @@ class Dashboard extends CI_Controller
                                                 $totalPeserta = $totalPeserta + $val2['jumlah_peserta'];
                                             }
                                             $data['kegiatan']['grafik'][$index]['total_peserta'] = $totalPeserta;
-                                        } else {
-                                            $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
-                                            $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
-                                            $data['kegiatan']['grafik'][$index]['total_peserta'] = 0;
-
+                                            $index++;
                                         }
-                                    } else {
-                                        $data['kegiatan']['grafik'][$index]['provinsi'] = $val['provinsi'];
-                                        $data['kegiatan']['grafik'][$index]['jumlah_kegiatan'] = 0;
-                                        $data['kegiatan']['grafik'][$index]['total_peserta'] = 0;
-
                                     }
                                 }
-                                $index++;
                             }
                         }
                         $callback = array(
@@ -303,9 +437,9 @@ class Dashboard extends CI_Controller
                         'data' => []
                     );
                 }
-                header('Content-Type: application/json');
-                echo json_encode($callback);
             }
+            header('Content-Type: application/json');
+            echo json_encode($callback);
         } else {
             redirect('pupr/login');
         }
