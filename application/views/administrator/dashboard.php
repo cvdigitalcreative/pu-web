@@ -280,6 +280,38 @@
 						</div>
 					</div>
 
+					<div class="row">
+						<div class="col mt-3" id="expand-provinsi-status">
+							<div class="card mb-4">
+								<!-- Card Header - Dropdown -->
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-black" id="labelexpandkegiatanbystatus"></h6>
+									<button type="button" class="close" aria-label="Close" id="btn-close-expand-status">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="card-body">
+									<canvas id="chartExpandStatusProvinsi"></canvas>
+								</div>
+							</div>
+						</div>
+
+						<div class="col mt-3" id="expand-provinsi-jenis">
+							<div class="card mb-4">
+								<!-- Card Header - Dropdown -->
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-black" id="labelexpandkegiatanbyjenis"></h6>
+									<button type="button" class="close" aria-label="Close" id="btn-close-expand-jenis">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="card-body">
+									<canvas id="chartExpandJenisProvinsi"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<div class="col mt-3">
 						<div class="card mb-4">
 							<!-- Card Header - Dropdown -->
