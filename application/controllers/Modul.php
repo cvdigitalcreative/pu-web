@@ -232,20 +232,46 @@ class Modul extends CI_Controller
             redirect("pupr/login");
     }
 
+    public function download_response($response)
+    {
+        header('Content-Type: application/json');
+        $myArray = ['response' => $response];
+        echo json_encode($myArray);
+    }
+
     public function download($id_modul)
     {
         if ($this->session->userdata('logged_in') == true) {
             $this->load->helper('download');
             $modul = $this->Modul_model->view_modul_detail($id_modul, $this->session->userdata('token'));
             if ($modul == null)
-                $this->load->view('error_page');
+                $this->download_response(false);
             else {
                 if ($modul['status'] == "Success") {
-                    $data = file_get_contents($modul['data']['file_modul']);
-                    force_download($modul['data']['file_modul'], $data);
+
+                    function curl($url_file, $token)
+                    {
+                        $dataHeader = ['Authorization: Bearer ' . $token];
+                        $curl = curl_init();
+                        $url = $url_file;
+                        curl_setopt($curl, CURLOPT_URL, $url);
+                        curl_setopt($curl, CURLOPT_HTTPHEADER, $dataHeader);
+                        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+                        $result = curl_exec($curl);
+                        curl_close($curl);
+
+                        return json_decode($result, TRUE);
+                    }
+
+                    if (strtolower(curl($modul['data']['file_modul'], $this->session->userdata('token'))['message']) == "not found") {
+                        $this->download_response(false);
+                    } else {
+                        $data = file_get_contents($modul['data']['file_modul']);
+                        force_download($modul['data']['file_modul'], $data);
+                        $this->download_response(true);
+                    }
                 } else {
-                    $this->session->flashdata('APImessage', $modul['message']);
-                    redirect('pupr/skkni');
+                    $this->download_response(false);
                 }
             }
         } else

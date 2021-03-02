@@ -330,6 +330,9 @@ $(document).ready(function () {
 					}
 				},
 				{
+					data: 'kode_kegiatan',
+				},
+				{
 					data: 'judul_kegiatan',
 				},
 				{
@@ -409,7 +412,7 @@ Tidak ada poster kegiatan`					}
 						url: `${BASE_URL}Kegiatan/download_file_berita_acara/${id}`,
 						type: 'GET',
 						success: function () {
-							window.location = `${BASE_URL}Kegiatan/download_file_berita_acara/${id}`;
+							window.open(`${BASE_URL}Kegiatan/download_file_berita_acara/${id}`, '_blank') || window.location.replace(`${BASE_URL}Kegiatan/download_file_berita_acara/${id}`);
 						}
 					})
 				})
@@ -425,7 +428,7 @@ Tidak ada poster kegiatan`					}
 						url: `${BASE_URL}Kegiatan/download_file_invoice/${id}`,
 						type: 'GET',
 						success: function () {
-							window.location = `${BASE_URL}Kegiatan/download_file_invoice/${id}`;
+							window.open(`${BASE_URL}Kegiatan/download_file_invoice/${id}`, '_blank') || window.location.replace(`${BASE_URL}Kegiatan/download_file_invoice/${id}`);
 						}
 					})
 				})
@@ -441,7 +444,7 @@ Tidak ada poster kegiatan`					}
 						url: `${BASE_URL}Kegiatan/download_file_bukti_pembayaran/${id}`,
 						type: 'GET',
 						success: function () {
-							window.location = `${BASE_URL}Kegiatan/download_file_bukti_pembayaran/${id}`;
+							window.open(`${BASE_URL}Kegiatan/download_file_bukti_pembayaran/${id}`, '_blank') || window.location.replace(`${BASE_URL}Kegiatan/download_file_bukti_pembayaran/${id}`);
 						}
 					})
 				})
@@ -2183,8 +2186,13 @@ Tidak ada poster kegiatan`					}
 			$.ajax({
 				url: `${BASE_URL}SKA/download/${id}`,
 				type: 'POST',
-				success: function () {
-					window.location = `${BASE_URL}SKA/download/${id}`;
+				success: function (response) {	
+					if (response.response == false) {
+						alert("Download file SKKNI gagal. File atau data tidak ditemukan")
+					}
+					else {
+						window.open(`${BASE_URL}SKA/download/${id}`, '_blank') || window.location.replace(`${BASE_URL}SKA/download/${id}`);
+					}
 				}
 			})
 		}
@@ -2192,9 +2200,14 @@ Tidak ada poster kegiatan`					}
 			const id = $(this).data('id')
 			$.ajax({
 				url: `${BASE_URL}Buku_saku/download/${id}`,
-				type: 'POST',
-				success: function () {
-					window.location = `${BASE_URL}Buku_saku/download/${id}`;
+				type: 'GET',
+				success: function (response) {
+					if (response.response == false) {
+						alert("Download file buku saku gagal. File atau data tidak ditemukan")
+					}
+					else {
+						window.open(`${BASE_URL}Buku_saku/download/${id}`, '_blank') || window.location.replace(`${BASE_URL}Buku_saku/download/${id}`);
+					}
 				}
 			})
 		}
@@ -2203,8 +2216,13 @@ Tidak ada poster kegiatan`					}
 			$.ajax({
 				url: `${BASE_URL}Modul/download/${id}`,
 				type: 'POST',
-				success: function () {
-					window.location = `${BASE_URL}Modul/download/${id}`;
+				success: function (response) {
+					if (response.response == false) {
+						alert("Download file modul gagal. File atau data tidak ditemukan")
+					}
+					else {
+						window.open(`${BASE_URL}Modul/download/${id}`, '_blank') || window.location.replace(`${BASE_URL}Modul/download/${id}`);
+					}
 				}
 			})
 		}
@@ -2213,8 +2231,13 @@ Tidak ada poster kegiatan`					}
 			$.ajax({
 				url: `${BASE_URL}Administrasi_kegiatan/download/${id}`,
 				type: 'POST',
-				success: function () {
-					window.location = `${BASE_URL}Administrasi_kegiatan/download/${id}`;
+				success: function (response) {
+					if (response.response == false) {
+						alert("Download file administrasi kegiatan gagal. File atau data tidak ditemukan")
+					}
+					else {
+						window.open(`${BASE_URL}Administrasi_kegiatan/download/${id}`, '_blank') || window.location.replace(`${BASE_URL}Administrasi_kegiatan/download/${id}`);
+					}
 				}
 			})
 		}
@@ -2224,7 +2247,7 @@ Tidak ada poster kegiatan`					}
 				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
 				type: 'POST',
 				success: function () {
-					window.location = `${BASE_URL}Tenaga_ahli/download/${id}`;
+					window.open(`${BASE_URL}Tenaga_ahli/download/${id}`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/download/${id}`);
 				}
 			})
 		}
@@ -2234,7 +2257,7 @@ Tidak ada poster kegiatan`					}
 				url: `${BASE_URL}Tenaga_ahli/download/${id}`,
 				type: 'POST',
 				success: function () {
-					window.location = `${BASE_URL}Tenaga_ahli/download/${id}`;
+					window.open(`${BASE_URL}Tenaga_ahli/download/${id}`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/download/${id}`);
 				}
 			})
 		}
@@ -2291,11 +2314,13 @@ Tidak ada poster kegiatan`					}
 			var data = $('#kalender_kegiatan_table').DataTable().row(currentRow).data();
 			if (data['id_status_kegiatan'] == 1) {
 				$('#btn-export-peserta-vva').attr('href', `${BASE_URL}Peserta/export_peserta_VVA/${id}`)
+				$('#btn-export-peserta-vva').attr('target', '__blank')
 				$('form').attr('action', `${BASE_URL}Kegiatan/update_status_kegiatan_VVA_action/${id}`)
 				$(`#modal-ganti-status-kegiatan-vva`).modal('show')
 			}
 			if (data['id_status_kegiatan'] == 3) {
 				$('#btn-export-peserta-asesment').attr('href', `${BASE_URL}Peserta/export_peserta_asesment/${id}`)
+				$('#btn-export-peserta-asesment').attr('target', '__blank')
 				$('form').attr('action', `${BASE_URL}Kegiatan/update_status_kegiatan_asesment_action/${id}`)
 				$(`#modal-ganti-status-kegiatan-asesment`).modal('show')
 			}
@@ -2326,7 +2351,7 @@ Tidak ada poster kegiatan`					}
 				url: `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`,
 				type: 'POST',
 				success: function () {
-					window.location = `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`;
+					window.open(`${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`);
 				}
 			})
 		}
@@ -2336,7 +2361,7 @@ Tidak ada poster kegiatan`					}
 				url: `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`,
 				type: 'POST',
 				success: function () {
-					window.location = `${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`;
+					window.open(`${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/cv_tenaga_ahli/${id}`);
 				}
 			})
 		}
@@ -2359,9 +2384,9 @@ Tidak ada poster kegiatan`					}
 			$('#edit-jenis-kegiatan').val(data['id_jenis_kegiatan'])
 			$('#edit-status-kegiatan').val(data['id_status_kegiatan'])
 			$('#banner-image-edit').attr('src', data['foto_banner_kegiatan'])
-			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(1).text())
-			$('#edit-deskripsi-kegiatan').val($(this).parent().siblings().eq(2).text())
-			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(13).text())
+			$('#edit-nama-kegiatan').val($(this).parent().siblings().eq(2).text())
+			$('#edit-deskripsi-kegiatan').val($(this).parent().siblings().eq(3).text())
+			$('#edit-lokasi-kegiatan').val($(this).parent().siblings().eq(14).text())
 			$(`#modal-edit-kegiatan`).modal('show')
 		}
 		else if ($('#skkni_table').length > 0) {
@@ -2607,7 +2632,7 @@ Tidak ada poster kegiatan`					}
 		$.ajax({
 			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`,
 			success: function () {
-				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`;
+				window.open(`${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`, '_blank') || window.location.replace(`${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/1`);
 			}
 		})
 	});
@@ -2615,7 +2640,7 @@ Tidak ada poster kegiatan`					}
 		$.ajax({
 			url: `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`,
 			success: function () {
-				window.location = `${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`;
+				window.open(`${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`, '_blank') || window.location.replace(`${BASE_URL}Peserta/export_peserta_action/${id_kegiatan}/2`);
 			}
 		})
 	});
@@ -2638,7 +2663,7 @@ Tidak ada poster kegiatan`					}
 			url: `${BASE_URL}Tenaga_ahli/download_format_excel_action`,
 			type: 'POST',
 			success: function () {
-				window.location = `${BASE_URL}Tenaga_ahli/download_format_excel_action`;
+				window.open(`${BASE_URL}Tenaga_ahli/download_format_excel_action`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/download_format_excel_action`);
 			}
 		})
 	})
@@ -2651,7 +2676,7 @@ Tidak ada poster kegiatan`					}
 			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`,
 			type: 'POST',
 			success: function () {
-				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`;
+				window.open(`${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/0`);
 			}
 		})
 		$('#modal-export-tenaga-ahli').modal('hide')
@@ -2661,7 +2686,7 @@ Tidak ada poster kegiatan`					}
 			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`,
 			type: 'POST',
 			success: function () {
-				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`;
+				window.open(`${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/1`);
 			}
 		})
 		$('#modal-export-tenaga-ahli').modal('hide')
@@ -2671,7 +2696,7 @@ Tidak ada poster kegiatan`					}
 			url: `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`,
 			type: 'POST',
 			success: function () {
-				window.location = `${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`;
+				window.open(`${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`, '_blank') || window.location.replace(`${BASE_URL}Tenaga_ahli/export_tenaga_ahli_action/2`);
 			}
 		})
 		$('#modal-export-tenaga-ahli').modal('hide')
@@ -2686,7 +2711,7 @@ Tidak ada poster kegiatan`					}
 			url: `${BASE_URL}Kegiatan/export_kegiatan_action`,
 			type: 'POST',
 			success: function () {
-				window.location = `${BASE_URL}Kegiatan/export_kegiatan_action`;
+				window.open(`${BASE_URL}Kegiatan/export_kegiatan_action`, '_blank') || window.location.replace(`${BASE_URL}Kegiatan/export_kegiatan_action`);
 			}
 		})
 	})

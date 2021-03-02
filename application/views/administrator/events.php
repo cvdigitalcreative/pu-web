@@ -136,7 +136,7 @@
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if ($akun_kegiatan != null) :
 									foreach ($akun_kegiatan as $row) :
-										if ($row['akun_kegiatan'] != "-" && strtolower($row['akun_kegiatan']) != 'forum') : ?>
+										if ($row['akun_kegiatan'] != "-") : ?>
 
 											<option value="<?= $row['id_akun_kegiatan'] ?>"><?= $row['akun_kegiatan'] ?></option>
 								<?php endif;
@@ -150,7 +150,7 @@
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if ($jenis_kegiatan != null) :
 									foreach ($jenis_kegiatan as $row) :
-										if ($row['jenis_kegiatan'] != "-") : ?>
+										if ($row['jenis_kegiatan'] != "-" && strtolower($row['jenis_kegiatan']) != 'forum') : ?>
 											<option value="<?= $row['id_jenis_kegiatan'] ?>"><?= $row['jenis_kegiatan'] ?></option>
 								<?php endif;
 									endforeach;
@@ -176,7 +176,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="tanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="tanggal-mulai-kegiatan" data-drops="up" name="tanggal_kegiatan" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
+									<input type="text" class="form-control js-daterangepicker" id="tanggal-mulai-kegiatan" data-drops="down" name="tanggal_kegiatan" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -185,7 +185,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="tanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="tanggal-selesai-kegiatan" data-drops="up" name="tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
+									<input type="text" class="form-control js-daterangepicker" id="tanggal-selesai-kegiatan" data-drops="down" name="tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -284,7 +284,7 @@
 								<option selected disabled>Pilih akun kegiatan</option>
 								<?php if ($akun_kegiatan != null) :
 									foreach ($akun_kegiatan as $row2) :
-									if(strtolower($row2['akun_kegiatan']) != 'forum') : ?>
+										if($row2['akun_kegiatan'] != "-") :?>
 										<option value="<?= $row2['id_akun_kegiatan'] ?>"><?= $row2['akun_kegiatan'] ?></option>
 								<?php endif;
 								endforeach;
@@ -296,9 +296,11 @@
 							<select class="form-control" id="edit-jenis-kegiatan" name="id_jenis_kegiatan" required>
 								<option selected disabled>Pilih jenis kegiatan</option>
 								<?php if ($jenis_kegiatan != null) :
-									foreach ($jenis_kegiatan as $row2) : ?>
+									foreach ($jenis_kegiatan as $row2) :
+										if($row2['jenis_kegiatan'] != "-" && strtolower($row2['jenis_kegiatan']) != 'forum') : ?>
 										<option value="<?= $row2['id_jenis_kegiatan'] ?>"><?= $row2['jenis_kegiatan'] ?></option>
-								<?php endforeach;
+								<?php endif;
+								endforeach;
 								endif; ?>
 							</select>
 						</div>
@@ -324,7 +326,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="editTanggalMulaikegiatan">Tanggal Mulai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-mulai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
+									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-mulai-kegiatan" data-drops="down" name="edit_tanggal_kegiatan_mulai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-mulai-kegiatan" class="form-text text-muted">
 										Tanggal mulai kegiatan
 									</small>
@@ -333,7 +335,7 @@
 							<div class="col">
 								<div class="form-group py-2">
 									<label for="editTanggalSelesaikegiatan">Tanggal Selesai *</label>
-									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-selesai-kegiatan" data-drops="up" name="edit_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
+									<input type="text" class="form-control js-daterangepicker" id="edit-tanggal-selesai-kegiatan" data-drops="down" name="edit_tanggal_kegiatan_selesai" value="" placeholder="Pilih tanggal kegiatan" style="cursor:pointer; background-color: #FFFFFF" readonly required>
 									<small id="tanggal-selesai-kegiatan" class="form-text text-muted">
 										Tanggal selesai kegiatan
 									</small>
@@ -1027,7 +1029,7 @@
                                     <div class="col">
                                         <div class="form-group py-2">
                                             <label for="profileTanggalLahir">Tanggal Lahir *</label>
-                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="up" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" style="cursor:pointer; background-color: #FFFFFF" readonly required>
+                                            <input type="text" class="form-control js-daterangepicker" id="profile-tanggal-lahir" data-drops="down" name="profile_tanggal_lahir" placeholder="Pilih tanggal lahir" style="cursor:pointer; background-color: #FFFFFF" readonly required>
                                         </div>
                                     </div>
                                 </div>
@@ -1350,6 +1352,7 @@
 										<tr>
 											<th>No</th>
 											<th>Aksi</th>
+											<th>Kode Kegiatan</th>
 											<th>Nama Kegiatan</th>
 											<th>Deskripsi Kegiatan</th>
 											<th>Status Kegiatan</th>
