@@ -746,7 +746,7 @@
 					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="filterStatusKegiatan">Instruktur Kegiatan</label>
-							<select class="form-control" id="filter-status-kegiatan" name="id_tenaga_ahli" aria-placeholder="Pilih Instruktur">
+							<select class="form-control selectpicker" id="filter-status-kegiatan" name="id_tenaga_ahli" aria-placeholder="Pilih Instruktur" data-live-search="true">
 								<?php if ($instruktur != null) :
 									foreach ($instruktur as $row) : ?>
 										<option value="<?= $row['id_tenaga_ahli'] ?>"><?= $row['nama_lengkap'] ?></option>
@@ -779,7 +779,7 @@
 					<form method="POST" action="" enctype="multipart/form-data">
 						<div class="form-group py-2">
 							<label for="filterStatusKegiatan">Asesor Kegiatan</label>
-							<select class="form-control" id="filter-status-kegiatan" name="id_tenaga_ahli" aria-placeholder="Pilih Asesor">
+							<select class="form-control selectpicker" id="filter-status-kegiatan" name="id_tenaga_ahli" data-live-search="true" aria-placeholder="Pilih Asesor">
 								<?php if ($asesor != null) :
 									foreach ($asesor as $row) : ?>
 										<option value="<?= $row['id_tenaga_ahli'] ?>"><?= $row['nama_lengkap'] ?></option>
