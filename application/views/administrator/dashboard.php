@@ -339,6 +339,21 @@
 						</div>
 					</div>
 
+					<div class="col mt-3" id="expand-kota-provinsi">
+							<div class="card mb-4">
+								<!-- Card Header - Dropdown -->
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-black" id="labelexpandkegiatanbykota"></h6>
+									<button type="button" class="close" aria-label="Close" id="btn-close-expand-kota">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="card-body">
+									<canvas id="chartExpandKotaProvinsi"></canvas>
+								</div>
+							</div>
+						</div>
+
 					<!-- <div class="row d-flex flex-column justify-content-center align-items-center"> -->
 					<!-- <div class="col mt-4">
 							<div class="row d-flex flex-column justify-content-center align-items-center">
