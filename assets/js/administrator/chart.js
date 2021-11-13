@@ -1,13 +1,13 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     // chart peserta
     var stringlabel = "";
     var stringcolor = "#4e73df";
-    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand;
+    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa;
 
     var d = new Date();
     var n = d.getFullYear();
-    
+
     stringlabel = "Chart Data";
     document.getElementById("labelChart").innerHTML = stringlabel;
     drawChart($('#chart-filter-data').val(), n);
@@ -24,20 +24,68 @@ $(document).ready(function () {
     var z = document.getElementById("expand-kota-provinsi");
     z.style.display = "none";
 
+    // function drawChartBalaiJasa(balai) {
+    // $.ajax({
+    //     url: ``,
+    //     method: "GET",
+    //     success: function(data) {
+    //         var label = [];
+    //         var value = [];
+    //         i = 0;
+    //         do {
+    //             label.push(data.data[i].employee_name);
+    //             value.push(data.data[i].employee_salary);
+    //             i++;
+
+    //         } while (i < 2);
+    var ctx = document.getElementById('BalaiJasa').getContext('2d');
+    BalaiJasa = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Sumatera Selatan", "Jambi"],
+            datasets: [{
+                label: "Balai Jasa",
+                backgroundColor: stringcolor,
+                borderColor: stringcolor,
+                data: [40, 10]
+            }],
+
+
+        },
+        options: {
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    //     }
+    // });
+
+    // }
+
+
+    drawChartBalaiJasa('employees');
+
+
+
     function drawChart(id_jenis, tahun) {
         if (id_jenis == 1) {
             stringcolor = "#4e73df"
         }
         if (id_jenis == 2 || id_jenis == 3) {
             stringcolor = "#f6c23e"
-        }
-        else if (id_jenis == 4 || id_jenis == 5) {
+        } else if (id_jenis == 4 || id_jenis == 5) {
             stringcolor = "#36b9cc"
         }
         $.ajax({
             url: `${BASE_URL}Dashboard/dataChart/${id_jenis}/${tahun}`,
             method: "GET",
-            success: function (data) {
+            success: function(data) {
                 var label = [];
                 var value = [];
                 i = 0;
@@ -45,7 +93,7 @@ $(document).ready(function () {
                     label.push(data.data.grafik[i].bulan);
                     value.push(data.data.grafik[i].jumlah);
                     i++;
-                
+
                 } while (i < data.data.grafik.length);
                 var globallabel = data.data.keterangan;
                 var tahun = data.data.tahun;
@@ -69,7 +117,7 @@ $(document).ready(function () {
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                     beginAtZero: true
+                                    beginAtZero: true
                                 }
                             }]
                         }
@@ -80,13 +128,13 @@ $(document).ready(function () {
     }
 
 
-    $('#chart-filter-tahun').on('change', function () {
+    $('#chart-filter-tahun').on('change', function() {
         var filterJenis = $('#chart-filter-data').val()
         var filterTahun = $('#chart-filter-tahun').val()
         chartP.destroy();
         drawChart(filterJenis, filterTahun);
     })
-    $('#chart-filter-data').on('change', function () {
+    $('#chart-filter-data').on('change', function() {
         var filterJenis = $('#chart-filter-data').val()
         var filterTahun = $('#chart-filter-tahun').val()
         chartP.destroy();
@@ -94,11 +142,12 @@ $(document).ready(function () {
     })
 
     var tahunStatus = 0;
+
     function drawChartKegiatanStatus(tahun) {
         $.ajax({
             url: `${BASE_URL}Dashboard/dataKegiatanbyStatus/${tahun}`,
             method: "GET",
-            success: function (data) {
+            success: function(data) {
                 var label = [];
                 var value = [];
                 i = 0;
@@ -106,11 +155,11 @@ $(document).ready(function () {
                     label.push(data.data.grafik[i].status_kegiatan);
                     value.push(data.data.grafik[i].jumlah_kegiatan);
                     i++;
-                
+
                 } while (i < data.data.grafik.length);
                 var tahun = data.data.tahun;
                 tahunStatus = tahun;
-                document.getElementById("labelChartKegiatanStatus").innerHTML = "Data kegiatan berdasarkan Status (" + tahun + ")";                
+                document.getElementById("labelChartKegiatanStatus").innerHTML = "Data kegiatan berdasarkan Status (" + tahun + ")";
                 var ctx = document.getElementById('chartKegiatanStatus').getContext('2d');
                 chartKBS = new Chart(ctx, {
                     type: 'bar',
@@ -128,7 +177,7 @@ $(document).ready(function () {
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                     beginAtZero: true
+                                    beginAtZero: true
                                 }
                             }]
                         }
@@ -137,8 +186,8 @@ $(document).ready(function () {
             }
         });
     }
-    
-    document.getElementById("chartKegiatanStatus").onclick = function (evt) {
+
+    document.getElementById("chartKegiatanStatus").onclick = function(evt) {
         var activePoints = chartKBS.getElementsAtEventForMode(evt, 'point', chartKBS.options);
         var firstPoint = activePoints[0];
         var label = chartKBS.data.labels[firstPoint._index];
@@ -151,16 +200,16 @@ $(document).ready(function () {
         }
 
         drawChartKegiatanStatusProvinsi(tahunStatus, label)
-        $('#btn-close-expand-status').on('click', function () {
+        $('#btn-close-expand-status').on('click', function() {
             x.style.display = "none";
         })
     };
-    
+
     function drawChartKegiatanStatusProvinsi(tahun, status) {
         $.ajax({
             url: `${BASE_URL}Dashboard/dataKegiatanbyStatusprovinsi/${tahun}/${status}`,
             method: "GET",
-            success: function (data) {
+            success: function(data) {
                 var label = [];
                 var value = [];
                 i = 0;
@@ -168,10 +217,10 @@ $(document).ready(function () {
                     label.push(data.data.grafik[i].kabupaten_kota);
                     value.push(data.data.grafik[i].jumlah_kegiatan);
                     i++;
-                
+
                 } while (i < data.data.grafik.length);
                 var tahun = data.data.tahun;
-                document.getElementById("labelexpandkegiatanbystatus").innerHTML = "Detail data kegiatan untuk status " + status + " (" + tahun + ")" ;                
+                document.getElementById("labelexpandkegiatanbystatus").innerHTML = "Detail data kegiatan untuk status " + status + " (" + tahun + ")";
                 var ctx = document.getElementById('chartExpandStatusProvinsi').getContext('2d');
                 ChartKBSExpand = new Chart(ctx, {
                     type: 'bar',
@@ -189,18 +238,18 @@ $(document).ready(function () {
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                     beginAtZero: true
+                                    beginAtZero: true
                                 }
                             }]
                         }
-                          
+
                     }
                 });
             }
         });
     }
 
-    $('#chart-filter-tahun-kegiatan-status').on('change', function () {
+    $('#chart-filter-tahun-kegiatan-status').on('change', function() {
         var filter = $('#chart-filter-tahun-kegiatan-status').val()
         chartKBS.destroy()
         tahunStatus = filter;
@@ -213,11 +262,12 @@ $(document).ready(function () {
 
 
     var tahunJenis = 0;
+
     function drawChartKegiatanJenis(tahun) {
         $.ajax({
             url: `${BASE_URL}Dashboard/dataKegiatanbyJenis/${tahun}`,
             method: "GET",
-            success: function (data) {
+            success: function(data) {
                 var label = [];
                 var value = [];
                 i = 0;
@@ -225,11 +275,11 @@ $(document).ready(function () {
                     label.push(data.data.grafik[i].jenis_kegiatan);
                     value.push(data.data.grafik[i].jumlah_kegiatan);
                     i++;
-                
+
                 } while (i < data.data.grafik.length);
                 var tahun = data.data.tahun;
                 tahunJenis = tahun;
-                document.getElementById("labelChartKegiatanJenis").innerHTML = "Data kegiatan berdasarkan Jenis (" + tahun +")";                
+                document.getElementById("labelChartKegiatanJenis").innerHTML = "Data kegiatan berdasarkan Jenis (" + tahun + ")";
                 var ctx = document.getElementById('chartKegiatanJenis').getContext('2d');
                 chartKBJ = new Chart(ctx, {
                     type: 'bar',
@@ -243,11 +293,11 @@ $(document).ready(function () {
                         }]
                     },
                     options: {
-                        responsive: true, 
+                        responsive: true,
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                     beginAtZero: true
+                                    beginAtZero: true
                                 }
                             }]
                         }
@@ -257,7 +307,7 @@ $(document).ready(function () {
         });
     }
 
-    document.getElementById("chartKegiatanJenis").onclick = function (evt) {
+    document.getElementById("chartKegiatanJenis").onclick = function(evt) {
         var activePoints = chartKBJ.getElementsAtEventForMode(evt, 'point', chartKBJ.options);
         var firstPoint = activePoints[0];
         var label = chartKBJ.data.labels[firstPoint._index];
@@ -270,7 +320,7 @@ $(document).ready(function () {
         }
 
         drawChartKegiatanJenisProvinsi(tahunJenis, label)
-        $('#btn-close-expand-jenis').on('click', function () {
+        $('#btn-close-expand-jenis').on('click', function() {
             y.style.display = "none";
         })
     };
@@ -279,7 +329,7 @@ $(document).ready(function () {
         $.ajax({
             url: `${BASE_URL}Dashboard/dataKegiatanbyJenisprovinsi/${tahun}/${jenis}`,
             method: "GET",
-            success: function (data) {
+            success: function(data) {
                 var label = [];
                 var value = [];
                 i = 0;
@@ -287,10 +337,10 @@ $(document).ready(function () {
                     label.push(data.data.grafik[i].kabupaten_kota);
                     value.push(data.data.grafik[i].jumlah_kegiatan);
                     i++;
-                
+
                 } while (i < data.data.grafik.length);
                 var tahun = data.data.tahun;
-                document.getElementById("labelexpandkegiatanbyjenis").innerHTML = "Detail data kegiatan untuk jenis " + jenis + " (" + tahun + ")" ;                
+                document.getElementById("labelexpandkegiatanbyjenis").innerHTML = "Detail data kegiatan untuk jenis " + jenis + " (" + tahun + ")";
                 var ctx = document.getElementById('chartExpandJenisProvinsi').getContext('2d');
                 ChartKBJExpand = new Chart(ctx, {
                     type: 'bar',
@@ -308,18 +358,18 @@ $(document).ready(function () {
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                     beginAtZero: true
+                                    beginAtZero: true
                                 }
                             }]
                         }
-                          
+
                     }
                 });
             }
         });
     }
 
-    $('#chart-filter-tahun-kegiatan-jenis').on('change', function () {
+    $('#chart-filter-tahun-kegiatan-jenis').on('change', function() {
         var filter = $('#chart-filter-tahun-kegiatan-jenis').val()
         tahunJenis = filter;
         var y = document.getElementById("expand-provinsi-jenis");
@@ -331,11 +381,12 @@ $(document).ready(function () {
     })
 
     var tahunKota;
+
     function drawChartKegiatanProvinsi(tahun) {
         $.ajax({
             url: `${BASE_URL}Dashboard/dataKegiatanbyProvinsi/${tahun}`,
             method: "GET",
-            success: function (data) {
+            success: function(data) {
                 var label = [];
                 var value = [];
                 var value2 = [];
@@ -345,35 +396,36 @@ $(document).ready(function () {
                     value.push(data.data.grafik[i].jumlah_kegiatan);
                     value2.push(data.data.grafik[i].total_peserta);
                     i++;
-                
+
                 } while (i < data.data.grafik.length);
                 var tahun = data.data.tahun;
                 tahunKota = tahun;
-                document.getElementById("labelChartKegiatanProvinsi").innerHTML = "Data kegiatan berdasarkan Provinsi (" + tahun +")";                
+                document.getElementById("labelChartKegiatanProvinsi").innerHTML = "Data kegiatan berdasarkan Provinsi (" + tahun + ")";
                 var ctx = document.getElementById('chartKegiatanProvinsi').getContext('2d');
                 chartKBP = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Total Kegiatan",
-                            backgroundColor: '#36b9cc',
-                            borderColor: '#36b9cc',
-                            data: value
-                        },
-                        {
-                            label: "Total Peserta",
-                            backgroundColor: '#4e73df',
-                            borderColor: '#4e73df',
-                            data: value2
-                        }]
+                                label: "Total Kegiatan",
+                                backgroundColor: '#36b9cc',
+                                borderColor: '#36b9cc',
+                                data: value
+                            },
+                            {
+                                label: "Total Peserta",
+                                backgroundColor: '#4e73df',
+                                borderColor: '#4e73df',
+                                data: value2
+                            }
+                        ]
                     },
                     options: {
                         responsive: true,
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                     beginAtZero: true
+                                    beginAtZero: true
                                 }
                             }]
                         }
@@ -383,7 +435,7 @@ $(document).ready(function () {
         });
     }
 
-    document.getElementById("chartKegiatanProvinsi").onclick = function (evt) {
+    document.getElementById("chartKegiatanProvinsi").onclick = function(evt) {
         var activePoints = chartKBP.getElementsAtEventForMode(evt, 'point', chartKBP.options);
         var firstPoint = activePoints[0];
         var label = chartKBP.data.labels[firstPoint._index];
@@ -396,7 +448,7 @@ $(document).ready(function () {
         }
 
         drawChartKegiatanKotaProvinsi(tahunJenis, label)
-        $('#btn-close-expand-kota').on('click', function () {
+        $('#btn-close-expand-kota').on('click', function() {
             z.style.display = "none";
         })
     };
@@ -405,7 +457,7 @@ $(document).ready(function () {
         $.ajax({
             url: `${BASE_URL}Dashboard/dataKegiatanbyProvinsiKota/${tahun}/${provinsi}`,
             method: "GET",
-            success: function (data) {
+            success: function(data) {
                 var label = [];
                 var value = [];
                 var value2 = [];
@@ -415,45 +467,46 @@ $(document).ready(function () {
                     value.push(data.data.grafik[i].jumlah_kegiatan);
                     value2.push(data.data.grafik[i].total_peserta);
                     i++;
-                
+
                 } while (i < data.data.grafik.length);
                 var tahun = data.data.tahun;
-                document.getElementById("labelexpandkegiatanbykota").innerHTML = "Detail data kegiatan untuk provinsi " + provinsi + " (" + tahun + ")" ;                
+                document.getElementById("labelexpandkegiatanbykota").innerHTML = "Detail data kegiatan untuk provinsi " + provinsi + " (" + tahun + ")";
                 var ctx = document.getElementById('chartExpandKotaProvinsi').getContext('2d');
                 ChartKBPExpand = new Chart(ctx, {
                     type: 'bar',
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Total Kegiatan",
-                            backgroundColor: '#36b9cc',
-                            borderColor: '#36b9cc',
-                            data: value
-                        },
-                        {
-                            label: "Total Peserta",
-                            backgroundColor: '#4e73df',
-                            borderColor: '#4e73df',
-                            data: value2
-                        }]
+                                label: "Total Kegiatan",
+                                backgroundColor: '#36b9cc',
+                                borderColor: '#36b9cc',
+                                data: value
+                            },
+                            {
+                                label: "Total Peserta",
+                                backgroundColor: '#4e73df',
+                                borderColor: '#4e73df',
+                                data: value2
+                            }
+                        ]
                     },
                     options: {
                         responsive: true,
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                     beginAtZero: true
+                                    beginAtZero: true
                                 }
                             }]
                         }
-                          
+
                     }
                 });
             }
         });
     }
 
-    $('#chart-filter-tahun-kegiatan-provinsi').on('change', function () {
+    $('#chart-filter-tahun-kegiatan-provinsi').on('change', function() {
         var filter = $('#chart-filter-tahun-kegiatan-provinsi').val()
         tahunKota = filter;
         var z = document.getElementById("expand-kota-provinsi");
@@ -463,5 +516,7 @@ $(document).ready(function () {
         chartKBP.destroy()
         drawChartKegiatanProvinsi(filter);
     })
+
+
 
 });
