@@ -371,10 +371,11 @@
                             <div class="card-body">
                                 <div class="form-group py-2">
                                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                        <option selected>Choose...</option>
+                                    <select class="form-control" id="chart-filter-provinsi-balai-jasa">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
                                         <option value="1">Sumatera Selatan</option>
-                                        <option value="1">Jambi</option>
+                                        <option value="2">Jambi</option>
                                     </select>
                                 </div>
                                 <canvas id="BalaiJasa"></canvas>

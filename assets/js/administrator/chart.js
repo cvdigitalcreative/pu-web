@@ -24,52 +24,72 @@ $(document).ready(function() {
     var z = document.getElementById("expand-kota-provinsi");
     z.style.display = "none";
 
-    // function drawChartBalaiJasa(balai) {
-    // $.ajax({
-    //     url: ``,
-    //     method: "GET",
-    //     success: function(data) {
-    //         var label = [];
-    //         var value = [];
-    //         i = 0;
-    //         do {
-    //             label.push(data.data[i].employee_name);
-    //             value.push(data.data[i].employee_salary);
-    //             i++;
-
-    //         } while (i < 2);
-    var ctx = document.getElementById('BalaiJasa').getContext('2d');
-    BalaiJasa = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Sumatera Selatan", "Jambi"],
-            datasets: [{
-                label: "Balai Jasa",
-                backgroundColor: stringcolor,
-                borderColor: stringcolor,
-                data: [40, 10]
-            }],
-
-
-        },
-        options: {
-            responsive: true,
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
+    function drawChartBalaiJasa(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
         }
-    });
-    //     }
-    // });
+        if (provinsi == 1) {
+            label = ["Balai Jasa 1", "Balai Jasa 2", "Balai Jasa 3", "Balai Jasa 4", "Balai Jasa 5"]
+            data = [60, 50, 90, 10, 10]
+        }
 
-    // }
+        if (provinsi == 2) {
+            label = ["Balai Jasa 1", "Balai Jasa 2", "Balai Jasa 3", "Balai Jasa 4", "Balai Jasa 5"]
+            data = [18, 10, 80, 20, 30]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('BalaiJasa').getContext('2d');
+        BalaiJasa = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Balai Jasa",
+                    backgroundColor: stringcolor,
+                    borderColor: stringcolor,
+                    data: data
+                }],
 
 
-    drawChartBalaiJasa('employees');
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+
+    drawChartBalaiJasa(0);
+    $('#chart-filter-provinsi-balai-jasa').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-balai-jasa').val()
+        drawChartBalaiJasa(provinsi);
+    })
+
+
+
 
 
 
