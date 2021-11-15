@@ -1348,7 +1348,7 @@
         </div>
     </div>
     <!-- End modal tambah Balai Jasa -->
-    <!-- Tambah Balai Jasa -->
+    <!-- Tambah Jasa Konstruksi -->
     <div class="modal fade bd-example-modal-lg" id="modal-tambah-jasa-konsturksi" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1375,9 +1375,12 @@
                                 <option selected>Choose...</option>
                                 <option value="1">Bidang Bina Konstruksi Dinas PUPR Kab. Merangin</option>
                                 <option value="2">Bidang Bina Konstruksi Dinas PUPR Kab. Tanjung Jabung Timur</option>
-                                <option value="3">Seksi Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian Dinas PUPR Provinsi Jambi</option>
-                                <option value="4">Seksi Bina Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian Dinas PUPR Kota Jambi</option>
-                                <option value="5">Seksi Jasa Konstruksi, Bidang Cipta Karya dan Jasa Konstruksi, Dinas PUPR Kota Sungai Penuh</option>
+                                <option value="3">Seksi Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian Dinas
+                                    PUPR Provinsi Jambi</option>
+                                <option value="4">Seksi Bina Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian
+                                    Dinas PUPR Kota Jambi</option>
+                                <option value="5">Seksi Jasa Konstruksi, Bidang Cipta Karya dan Jasa Konstruksi, Dinas
+                                    PUPR Kota Sungai Penuh</option>
                             </select>
                         </div>
                         <div class="form-group py-2">
@@ -1403,7 +1406,49 @@
             </div>
         </div>
     </div>
-    <!-- End modal tambah Balai Jasa -->
+    <!-- End modal tambah Jasa Konstruksi-->
+     <!-- Tambah Universitas -->
+     <div class="modal fade bd-example-modal-lg" id="modal-tambah-jasa-konsturksi" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Jasa Konstruksi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Universitas</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: Universitas Sriwijaya" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Jumlah *</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: 190" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            Universitas</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Universitas-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1506,6 +1551,9 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-jasa-konstruksi-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jasa Konstruksi</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                    id="btn-add-universitas-master"><img class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Universitas</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -1568,6 +1616,10 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-balai-jasa" role="tab" data-toggle="tab">Balai
                                             Jasa</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-jasa-konstruksi" role="tab" data-toggle="tab">
+                                            Jasa Konstruksi</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1749,6 +1801,21 @@
                                                 <th>Provinsi</th>
                                                 <th>Balai Jasa</th>
                                                 <th>Jumlah</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-jasa-konstruksi">
+                                    <table id="jasa_konstruksi_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Jasa Konstruksi</th>
+                                                <th>Eselon</th>
+                                                <th>Jumlah</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                     </table>

@@ -3,7 +3,7 @@ $(document).ready(function() {
     // chart peserta
     var stringlabel = "";
     var stringcolor = "#4e73df";
-    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa;
+    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa, JasaKonstruksi;
 
     var d = new Date();
     var n = d.getFullYear();
@@ -89,6 +89,69 @@ $(document).ready(function() {
     })
 
 
+    function drawChartJasaKonstruksi(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
+        }
+        if (provinsi == 1) {
+            label = ["Jasa Konstruksi 1", "Jasa Konstruksi 2", "Jasa Konstruksi 3", "Jasa Konstruksi 4", "Jasa Konstruksi 5", "Jasa Konstruksi 6", "Jasa Konstruksi 7", "Jasa Konstruksi 8", "Jasa Konstruksi 9", "Jasa Konstruksi 10", "Jasa Konstruksi 11", "Jasa Konstruksi 12"]
+            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+        }
+
+        if (provinsi == 2) {
+            label = ["Jasa Konstruksi 1", "Jasa Konstruksi 2", "Jasa Konstruksi 3", "Jasa Konstruksi 4", "Jasa Konstruksi 5", "Jasa Konstruksi 6", "Jasa Konstruksi 7", "Jasa Konstruksi 8", "Jasa Konstruksi 9", "Jasa Konstruksi 10", "Jasa Konstruksi 11", "Jasa Konstruksi 12"]
+            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('JasaKonstruksi').getContext('2d');
+        JasaKonstruksi = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Jasa Konstruksi",
+                    backgroundColor: stringcolor,
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+
+    drawChartJasaKonstruksi(0);
+    $('#chart-filter-provinsi-jasa-konstruksi').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-jasa-konstruksi').val()
+        drawChartJasaKonstruksi(provinsi);
+    })
 
 
 

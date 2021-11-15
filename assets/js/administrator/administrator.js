@@ -2905,6 +2905,11 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-jasa-konsturksi').modal('show');
     })
 
+    $('#btn-add-universitas-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-universitas').modal('show');
+    })
+
 
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {
