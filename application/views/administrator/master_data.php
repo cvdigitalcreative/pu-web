@@ -1408,11 +1408,11 @@
     </div>
     <!-- End modal tambah Jasa Konstruksi-->
      <!-- Tambah Universitas -->
-     <div class="modal fade bd-example-modal-lg" id="modal-tambah-jasa-konsturksi" tabindex="-1" role="dialog">
+     <div class="modal fade bd-example-modal-lg" id="modal-tambah-universitas" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Jasa Konstruksi</h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Universitas</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1432,11 +1432,6 @@
                             <label for="namaPns">Universitas</label>
                             <input type="text" class="form-control" id="nama-pns" name="nama_pns"
                                 placeholder="Contoh: Universitas Sriwijaya" required>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah *</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: 190" required>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
