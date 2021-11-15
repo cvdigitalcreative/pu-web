@@ -2900,6 +2900,11 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-balai-jasa').modal('show');
     })
 
+    $('#btn-add-jasa-konstruksi-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-jasa-konsturksi').modal('show');
+    })
+
 
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {

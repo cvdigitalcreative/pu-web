@@ -1300,7 +1300,7 @@
         </div>
     </div>
     <!-- End modal delete pns -->
-    <!-- Tambah pns -->
+    <!-- Tambah Balai Jasa -->
     <div class="modal fade bd-example-modal-lg" id="modal-tambah-balai-jasa" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1314,32 +1314,32 @@
 
                     <form method="POST" enctype="multipart/form-data">
                         <div class="form-group py-2">
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                 <option selected>Choose...</option>
                                 <option value="1">Sumatera Selatan</option>
-								<option value="1">Jambi</option>
+                                <option value="1">Jambi</option>
                             </select>
                         </div>
-						<div class="form-group py-2">
-						<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Balai Jasa</label>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Balai Jasa</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                 <option selected>Choose...</option>
                                 <option value="1">Balai Wilayah Sungai Sumatera VI</option>
                                 <option value="2">Balai Pelaksanaan Jalan Nasional IV</option>
-								<option value="3">Balai Prasarana Permukiman Wilayah Jambi</option>
-								<option value="4">Balai Pelaksana Penyediaan Perumahan</option>
-								<option value="5">Balai Pelaksana Pemilihan Jasa Konstruksi Wilayah Jambi</option>
+                                <option value="3">Balai Prasarana Permukiman Wilayah Jambi</option>
+                                <option value="4">Balai Pelaksana Penyediaan Perumahan</option>
+                                <option value="5">Balai Pelaksana Pemilihan Jasa Konstruksi Wilayah Jambi</option>
                             </select>
                         </div>
-						<div class="form-group py-2">
+                        <div class="form-group py-2">
                             <label for="namaPns">Jumlah *</label>
                             <input type="text" class="form-control" id="nama-pns" name="nama_pns"
                                 placeholder="Contoh: 190" required>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Pns</button>
+                            Balai Jasa</button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
                     </form>
@@ -1347,7 +1347,63 @@
             </div>
         </div>
     </div>
-    <!-- End modal tambah pns -->
+    <!-- End modal tambah Balai Jasa -->
+    <!-- Tambah Balai Jasa -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-jasa-konsturksi" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Jasa Konstruksi</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jasa Konstruksi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Bidang Bina Konstruksi Dinas PUPR Kab. Merangin</option>
+                                <option value="2">Bidang Bina Konstruksi Dinas PUPR Kab. Tanjung Jabung Timur</option>
+                                <option value="3">Seksi Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian Dinas PUPR Provinsi Jambi</option>
+                                <option value="4">Seksi Bina Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian Dinas PUPR Kota Jambi</option>
+                                <option value="5">Seksi Jasa Konstruksi, Bidang Cipta Karya dan Jasa Konstruksi, Dinas PUPR Kota Sungai Penuh</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Pilih Eselon</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">ES .III</option>
+                                <option value="2">ES .IV</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Jumlah *</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: 190" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            Jasa Konstruksi</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Balai Jasa -->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1447,6 +1503,9 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-balai-jasa-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Balai Jasa</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                    id="btn-add-jasa-konstruksi-master"><img class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jasa Konstruksi</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -1506,8 +1565,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-pns" role="tab" data-toggle="tab">PNS</a>
                                     </li>
-									<li class="nav-item">
-                                        <a class="nav-link" href="#master-balai-jasa" role="tab" data-toggle="tab">Balai Jasa</a>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-balai-jasa" role="tab" data-toggle="tab">Balai
+                                            Jasa</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1681,14 +1741,14 @@
                                     </table>
                                 </div>
 
-								<div class="tab-pane fade show" role="tabpanel" id="master-balai-jasa">
+                                <div class="tab-pane fade show" role="tabpanel" id="master-balai-jasa">
                                     <table id="balai_jasa_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Provinsi</th>
                                                 <th>Balai Jasa</th>
-												<th>Jumlah</th>
+                                                <th>Jumlah</th>
                                             </tr>
                                         </thead>
                                     </table>
