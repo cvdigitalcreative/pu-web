@@ -3,7 +3,7 @@ $(document).ready(function() {
     // chart peserta
     var stringlabel = "";
     var stringcolor = "#4e73df";
-    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa, JasaKonstruksi, Pendidikan;
+    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa, JasaKonstruksi, Pendidikan, BUJK;
 
     var d = new Date();
     var n = d.getFullYear();
@@ -217,6 +217,105 @@ $(document).ready(function() {
 
     drawChartPendidikan();
 
+    function drawChartBUJK() {
+
+        label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
+        data = [18, 10, 80, 20, 30]
+
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('BUJK').getContext('2d');
+        BUJK = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "BUJK",
+                    backgroundColor: stringcolor,
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+    }
+
+    drawChartBUJK();
+
+    function drawChartAsosiasiProfesi() {
+
+        label = ["Asosiasi Profesi 1", "Asosiasi Profesi 2", "Asosiasi Profesi 3", "Asosiasi Profesi 4", "Asosiasi Profesi 5"]
+        data = [18, 10, 80, 20, 30]
+
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('Asosiasi_Profesi').getContext('2d');
+        BUJK = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Asosiasi Profesi",
+                    backgroundColor: stringcolor,
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+    }
+
+    drawChartAsosiasiProfesi();
 
 
     function drawChart(id_jenis, tahun) {
