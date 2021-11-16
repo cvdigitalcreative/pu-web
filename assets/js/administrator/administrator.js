@@ -2910,6 +2910,16 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-universitas').modal('show');
     })
 
+    $('#btn-add-politeknik-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-politeknik').modal('show');
+    })
+
+    $('#btn-add-smk-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-smk').modal('show');
+    })
+
 
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {

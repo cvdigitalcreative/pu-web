@@ -1444,6 +1444,80 @@
         </div>
     </div>
     <!-- End modal tambah Universitas-->
+     <!-- Tambah Politeknik -->
+     <div class="modal fade bd-example-modal-lg" id="modal-tambah-politeknik" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Politeknik</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Politeknik</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: Politeknik Negeri Sriwijaya" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            Politeknik</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Politeknik-->
+     <!-- Tambah SMK -->
+     <div class="modal fade bd-example-modal-lg" id="modal-tambah-smk" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah SMK</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">SMK</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: SMK 2 Palembang" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            SMK</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah SMK-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1549,6 +1623,12 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-universitas-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Universitas</button>
+                                        <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                    id="btn-add-politeknik-master"><img class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Politeknik</button>
+                                        <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                    id="btn-add-smk-master"><img class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">SMK</button>
                             </div>
                         </div>
                         <div class="card-body">
