@@ -3,7 +3,7 @@ $(document).ready(function() {
     // chart peserta
     var stringlabel = "";
     var stringcolor = "#4e73df";
-    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa, JasaKonstruksi;
+    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa, JasaKonstruksi, Pendidikan;
 
     var d = new Date();
     var n = d.getFullYear();
@@ -153,6 +153,69 @@ $(document).ready(function() {
         drawChartJasaKonstruksi(provinsi);
     })
 
+
+    function drawChartPendidikan() {
+        label = ["Sumatera Selatan", "Jambi", "Jakarta", "Medan", "Padang"]
+        data1 = [40, 60, 12, 23, 34]
+        data2 = [50, 90, 12, 56, 89]
+        data3 = [80, 90, 45, 91, 76]
+
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('Pendidikan').getContext('2d');
+        Pendidikan = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Universitas",
+                    backgroundColor: "#4e73df",
+                    borderColor: "#4e73df",
+                    data: data1
+                }, {
+                    label: "Politeknik",
+                    backgroundColor: "#f6c23e",
+                    borderColor: "#f6c23e",
+                    data: data2
+                }, {
+                    label: "SMK",
+                    backgroundColor: "#36b9cc",
+                    borderColor: "#36b9cc",
+                    data: data3
+                }],
+
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+
+    drawChartPendidikan();
 
 
 

@@ -382,6 +382,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col mt-3">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -398,6 +399,17 @@
                                     </select>
                                 </div>
                                 <canvas id="JasaKonstruksi"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mt-3">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Instansi Pendidikan</h6>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="Pendidikan"></canvas>
                             </div>
                         </div>
                     </div>
