@@ -1819,6 +1819,10 @@
                                         <a class="nav-link" href="#master-universitas" role="tab" data-toggle="tab">
                                             Universitas</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-politeknik" role="tab" data-toggle="tab">
+                                            Politeknik</a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -2027,6 +2031,19 @@
                                                 <th>No</th>
                                                 <th>Provinsi</th>
                                                 <th>Univeristas</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-politeknik">
+                                    <table id="universitas_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Politeknik</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
