@@ -1831,6 +1831,10 @@
                                         <a class="nav-link" href="#master-bujk" role="tab" data-toggle="tab">
                                             BUJK</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-asosiasi-profesi" role="tab" data-toggle="tab">
+                                            Asosiasi Profesi</a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -2077,6 +2081,20 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>BUJK</th>
+                                                <th>Status Akreditasi</th>
+                                                <th>Jumlah</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-asosiasi-profesi">
+                                    <table id="asosiasi_profesi_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Asosiasi Profesi</th>
                                                 <th>Status Akreditasi</th>
                                                 <th>Jumlah</th>
                                                 <th>Aksi</th>
