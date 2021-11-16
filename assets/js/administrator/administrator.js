@@ -2925,6 +2925,11 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-bujk').modal('show');
     })
 
+    $('#btn-add-asosiasi-profesi-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-asosiasi-profesi').modal('show');
+    })
+
 
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {

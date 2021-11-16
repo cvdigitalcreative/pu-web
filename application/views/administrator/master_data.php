@@ -1520,7 +1520,7 @@
         </div>
     </div>
     <!-- End modal tambah SMK-->
-    <!-- Tambah SMK -->
+    <!-- Tambah Tambah Asosiasi Badan Usaha Jasa Konstruksi -->
     <div class="modal fade bd-example-modal-lg" id="modal-tambah-bujk" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1576,7 +1576,61 @@
             </div>
         </div>
     </div>
-    <!-- End modal tambah SMK-->
+    <!-- End modal tambah Tambah Asosiasi Badan Usaha Jasa Konstruksi-->
+    <!-- Tambah Tambah Asosiasi Profesi -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-asosiasi-profesi" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asosiasi Profesi </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Asosiasi Profesi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">DPD ASTTI</option>
+                                <option value="2">DPW A2K4-I</option>
+                                <option value="3">DPD GATAKI</option>
+                                <option value="4">HPJI</option>
+                                <option value="5">DPD HATSINDO</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status Akreditasi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">Terakreditasi</option>
+                                <option value="2">Belum Terakreditasi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Jumlah</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: 4" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            Asosiasi Profesi</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Tambah Asosiasi Profesi-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1691,6 +1745,10 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-bujk-master"><img
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">BUJK</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                    id="btn-add-asosiasi-profesi-master"><img class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Asosiasi
+                                    Profesi</button>
                             </div>
                         </div>
                         <div class="card-body">
