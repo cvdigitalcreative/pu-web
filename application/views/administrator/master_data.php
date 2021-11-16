@@ -1809,12 +1809,15 @@
                                         <a class="nav-link" href="#master-pns" role="tab" data-toggle="tab">PNS</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-balai-jasa" role="tab" data-toggle="tab">Balai
-                                            Jasa</a>
+                                        <a class="nav-link" href="#master-balai-jasa" role="tab" data-toggle="tab">BSKP</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-jasa-konstruksi" role="tab" data-toggle="tab">
-                                            Jasa Konstruksi</a>
+                                            UOJK</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-universitas" role="tab" data-toggle="tab">
+                                            Universitas</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2001,6 +2004,7 @@
                                         </thead>
                                     </table>
                                 </div>
+
                                 <div class="tab-pane fade show" role="tabpanel" id="master-jasa-konstruksi">
                                     <table id="jasa_konstruksi_table" class="display" style="width:100%">
                                         <thead>
@@ -2010,6 +2014,19 @@
                                                 <th>Jasa Konstruksi</th>
                                                 <th>Eselon</th>
                                                 <th>Jumlah</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-universitas">
+                                    <table id="universitas_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Univeristas</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
