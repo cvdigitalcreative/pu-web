@@ -1305,7 +1305,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Balai Jasa</h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Balai Sektoral Kementerian PUPR</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1322,7 +1322,8 @@
                             </select>
                         </div>
                         <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Balai Jasa</label>
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Balai Sektoral Kementerian
+                                PUPR</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                 <option selected>Choose...</option>
                                 <option value="1">Balai Wilayah Sungai Sumatera VI</option>
@@ -1353,7 +1354,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Jasa Konstruksi</h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Unit Organisasi Jasa Konstruksi</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1370,7 +1371,8 @@
                             </select>
                         </div>
                         <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jasa Konstruksi</label>
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Unit Organisasi Jasa
+                                Konstruksi</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                 <option selected>Choose...</option>
                                 <option value="1">Bidang Bina Konstruksi Dinas PUPR Kab. Merangin</option>
@@ -1407,8 +1409,8 @@
         </div>
     </div>
     <!-- End modal tambah Jasa Konstruksi-->
-     <!-- Tambah Universitas -->
-     <div class="modal fade bd-example-modal-lg" id="modal-tambah-universitas" tabindex="-1" role="dialog">
+    <!-- Tambah Universitas -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-universitas" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1444,8 +1446,8 @@
         </div>
     </div>
     <!-- End modal tambah Universitas-->
-     <!-- Tambah Politeknik -->
-     <div class="modal fade bd-example-modal-lg" id="modal-tambah-politeknik" tabindex="-1" role="dialog">
+    <!-- Tambah Politeknik -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-politeknik" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1481,8 +1483,8 @@
         </div>
     </div>
     <!-- End modal tambah Politeknik-->
-     <!-- Tambah SMK -->
-     <div class="modal fade bd-example-modal-lg" id="modal-tambah-smk" tabindex="-1" role="dialog">
+    <!-- Tambah SMK -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-smk" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1510,6 +1512,63 @@
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
                             SMK</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah SMK-->
+    <!-- Tambah SMK -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-bujk" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asosiasi Badan Usaha Jasa Konstruksi
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Asosiasi Badan Usaha Jasa
+                                Konstruksi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">DPD ASPEKINDO</option>
+                                <option value="2">DPD ASPEKNAS</option>
+                                <option value="3">DPD ASKONAS</option>
+                                <option value="4">DPD AKAINDO</option>
+                                <option value="5">BPD GAPENSI</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status Akreditasi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">Terakreditasi</option>
+                                <option value="2">Belum Terakreditasi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Jumlah</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: 4" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            Asosiasi Badan Usaha Jasa
+                            Konstruksi</button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
                     </form>
@@ -1616,19 +1675,22 @@
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">PNS</button>
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-balai-jasa-master"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Balai Jasa</button>
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">BSKP</button>
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-jasa-konstruksi-master"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Jasa Konstruksi</button>
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">UOJK</button>
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-universitas-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Universitas</button>
-                                        <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-politeknik-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Politeknik</button>
-                                        <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-smk-master"><img class="img-profile mr-2"
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-smk-master"><img
+                                        class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">SMK</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-bujk-master"><img
+                                        class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">BUJK</button>
                             </div>
                         </div>
                         <div class="card-body">
