@@ -1823,6 +1823,14 @@
                                         <a class="nav-link" href="#master-politeknik" role="tab" data-toggle="tab">
                                             Politeknik</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-smk" role="tab" data-toggle="tab">
+                                            SMK</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-bujk" role="tab" data-toggle="tab">
+                                            BUJK</a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -2038,12 +2046,39 @@
                                 </div>
 
                                 <div class="tab-pane fade show" role="tabpanel" id="master-politeknik">
-                                    <table id="universitas_table" class="display" style="width:100%">
+                                    <table id="politeknik_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Provinsi</th>
                                                 <th>Politeknik</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-smk">
+                                    <table id="smk_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>SMK</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-bujk">
+                                    <table id="bujk_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>BUJK</th>
+                                                <th>Status Akreditasi</th>
+                                                <th>Jumlah</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
