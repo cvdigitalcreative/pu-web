@@ -2929,6 +2929,10 @@ Tidak ada poster kegiatan`
         $('form').attr('action', ``)
         $('#modal-tambah-asosiasi-profesi').modal('show');
     })
+    $('#btn-add-aktk-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-aktk').modal('show');
+    })
 
 
     // ================================= Tenaga Ahli ===================================

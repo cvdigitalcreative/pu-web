@@ -1631,6 +1631,59 @@
         </div>
     </div>
     <!-- End modal tambah Tambah Asosiasi Profesi-->
+    <!-- Tambah AKTK -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-aktk" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asesor Kompetensi Tenaga Kerja</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Nama</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: Taufiiqul Hakim" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bidang</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">ASESOR ARSITEKTUR</option>
+                                <option value="2">ASESOR ELEKTRIKAL</option>
+                                <option value="3">ASESOR SIPIL</option>
+                                <option value="4">ASESOR TATA LINGKUNGAN</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status RCC</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">Aktif</option>
+                                <option value="2">Tidak Aktif</option>
+                            </select>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                        Asesor Kompetensi Tenaga Kerja </button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Tambah AKTK-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1749,6 +1802,10 @@
                                     id="btn-add-asosiasi-profesi-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Asosiasi
                                     Profesi</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                    id="btn-add-aktk-master"><img class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
+                                    AKTK</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -1809,7 +1866,8 @@
                                         <a class="nav-link" href="#master-pns" role="tab" data-toggle="tab">PNS</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-balai-jasa" role="tab" data-toggle="tab">BSKP</a>
+                                        <a class="nav-link" href="#master-balai-jasa" role="tab"
+                                            data-toggle="tab">BSKP</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-jasa-konstruksi" role="tab" data-toggle="tab">
@@ -1832,8 +1890,14 @@
                                             BUJK</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-asosiasi-profesi" role="tab" data-toggle="tab">
+                                        <a class="nav-link" href="#master-asosiasi-profesi" role="tab"
+                                            data-toggle="tab">
                                             Asosiasi Profesi</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-aktk" role="tab"
+                                            data-toggle="tab">
+                                            AKTK</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2090,6 +2154,20 @@
                                 </div>
 
                                 <div class="tab-pane fade show" role="tabpanel" id="master-asosiasi-profesi">
+                                    <table id="asosiasi_profesi_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Asosiasi Profesi</th>
+                                                <th>Status Akreditasi</th>
+                                                <th>Jumlah</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-aktk">
                                     <table id="asosiasi_profesi_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
