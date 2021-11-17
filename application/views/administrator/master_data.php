@@ -1675,7 +1675,56 @@
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Asesor Kompetensi Tenaga Kerja </button>
+                            Asesor Kompetensi Tenaga Kerja </button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Tambah AKBU-->
+    <!-- Tambah AKTK -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-akbu" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asesor Kompetensi Badan Usaha</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Nama</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: Taufiiqul Hakim" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">No. Registrasi</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh: 0534/AKBU-LPJK/XI/2018" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status RCC</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">Aktif</option>
+                                <option value="2">Tidak Aktif</option>
+                            </select>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            Asesor Kompetensi Badan Usaha</button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
                     </form>
@@ -1802,10 +1851,14 @@
                                     id="btn-add-asosiasi-profesi-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Asosiasi
                                     Profesi</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-aktk-master"><img class="img-profile mr-2"
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-aktk-master"><img
+                                        class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
                                     AKTK</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-akbu-master"><img
+                                        class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
+                                    AKBU</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -1895,9 +1948,12 @@
                                             Asosiasi Profesi</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-aktk" role="tab"
-                                            data-toggle="tab">
+                                        <a class="nav-link" href="#master-aktk" role="tab" data-toggle="tab">
                                             AKTK</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-akbu" role="tab" data-toggle="tab">
+                                            AKBU</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2144,6 +2200,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Provinsi</th>
                                                 <th>BUJK</th>
                                                 <th>Status Akreditasi</th>
                                                 <th>Jumlah</th>
@@ -2158,9 +2215,9 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
+                                                <th>Provinsi</th>
                                                 <th>Asosiasi Profesi</th>
                                                 <th>Status Akreditasi</th>
-                                                <th>Jumlah</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -2168,13 +2225,29 @@
                                 </div>
 
                                 <div class="tab-pane fade show" role="tabpanel" id="master-aktk">
-                                    <table id="asosiasi_profesi_table" class="display" style="width:100%">
+                                    <table id="aktk_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Asosiasi Profesi</th>
-                                                <th>Status Akreditasi</th>
-                                                <th>Jumlah</th>
+                                                <th>Provinsi</th>
+                                                <th>Nama</th>
+                                                <th>Bidang</th>
+                                                <th>Status RCC</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-akbu">
+                                    <table id="akbu_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Nama</th>
+                                                <th>No. Registrasi</th>
+                                                <th>Status RCC</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

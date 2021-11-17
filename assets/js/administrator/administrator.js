@@ -2929,9 +2929,15 @@ Tidak ada poster kegiatan`
         $('form').attr('action', ``)
         $('#modal-tambah-asosiasi-profesi').modal('show');
     })
+
     $('#btn-add-aktk-master').on('click', function() {
         $('form').attr('action', ``)
         $('#modal-tambah-aktk').modal('show');
+    })
+
+    $('#btn-add-akbu-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-akbu').modal('show');
     })
 
 
