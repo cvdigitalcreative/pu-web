@@ -217,10 +217,21 @@ $(document).ready(function() {
 
     drawChartPendidikan();
 
-    function drawChartBUJK() {
+    function drawChartBUJK(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
+        }
+        if (provinsi == 1) {
+            label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
+            data = [18, 10, 80, 20, 30]
+        }
 
-        label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
-        data = [18, 10, 80, 20, 30]
+        if (provinsi == 2) {
+            label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
+            data = [18, 10, 80, 20, 30]
+        }
+
 
 
         // $.ajax({
@@ -265,12 +276,28 @@ $(document).ready(function() {
         // });
     }
 
-    drawChartBUJK();
+    drawChartBUJK(0);
+    $('#chart-filter-provinsi-BUJK').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-BUJK').val()
+        drawChartBUJK(provinsi);
+    })
 
-    function drawChartAsosiasiProfesi() {
+    function drawChartAsosiasiProfesi(provinsi) {
 
-        label = ["Asosiasi Profesi 1", "Asosiasi Profesi 2", "Asosiasi Profesi 3", "Asosiasi Profesi 4", "Asosiasi Profesi 5"]
-        data = [18, 10, 80, 20, 30]
+
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
+        }
+        if (provinsi == 1) {
+            label = ["Asosiasi Profesi 1", "Asosiasi Profesi 2", "Asosiasi Profesi 3", "Asosiasi Profesi 4", "Asosiasi Profesi 5"]
+            data = [12, 10, 67, 45, 30]
+        }
+
+        if (provinsi == 2) {
+            label = ["Asosiasi Profesi 1", "Asosiasi Profesi 2", "Asosiasi Profesi 3", "Asosiasi Profesi 4", "Asosiasi Profesi 5"]
+            data = [18, 10, 80, 20, 30]
+        }
 
 
         // $.ajax({
@@ -315,7 +342,11 @@ $(document).ready(function() {
         // });
     }
 
-    drawChartAsosiasiProfesi();
+    drawChartAsosiasiProfesi(0);
+    $('#chart-filter-provinsi-asosiasi-profesi').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-asosiasi-profesi').val()
+        drawChartAsosiasiProfesi(provinsi);
+    })
 
 
     function drawChart(id_jenis, tahun) {

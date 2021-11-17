@@ -425,7 +425,7 @@
                                 <div class="card-body">
                                     <div class="form-group py-2">
                                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                        <select class="form-control" id="chart-filter-provinsi-jasa-konstruksi">
+                                        <select class="form-control" id="chart-filter-provinsi-BUJK">
                                             <option selected>Choose..</option>
                                             <option value="0">All</option>
                                             <option value="1">Sumatera Selatan</option>
@@ -445,7 +445,7 @@
                                 <div class="card-body">
                                     <div class="form-group py-2">
                                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                        <select class="form-control" id="chart-filter-provinsi-jasa-konstruksi">
+                                        <select class="form-control" id="chart-filter-provinsi-asosiasi-profesi">
                                             <option selected>Choose..</option>
                                             <option value="0">All</option>
                                             <option value="1">Sumatera Selatan</option>
