@@ -1708,7 +1708,7 @@
                         <div class="form-group py-2">
                             <label for="namaPns">Nama</label>
                             <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: Taufiiqul Hakim" required>
+                                placeholder="Contoh: Taufiiqul Hakim, A.Md. T" required>
                         </div>
                         <div class="form-group py-2">
                             <label for="namaPns">No. Registrasi</label>
@@ -1733,6 +1733,59 @@
         </div>
     </div>
     <!-- End modal tambah Tambah AKTK-->
+     <!-- Tambah IALKI -->
+     <div class="modal fade bd-example-modal-lg" id="modal-tambah-ialki" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Data Instruktur</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Nama</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh:  Taufiiqul Hakim, A.Md. T" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Materi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">Arsitektur</option>
+                                <option value="2">Jalan Jembatan</option>
+                                <option value="3">Alat Berat</option>
+                                <option value="4">Arsitektur Bangunan Gedung Kecipta-Karyaan</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Pelatihan TOT</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">Belum</option>
+                                <option value="2">Sudah</option>
+                            </select>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                        Tambah Data Instruktur</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Tambah IALKI-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1859,6 +1912,10 @@
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
                                     AKBU</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-ialki-master"><img
+                                        class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
+                                    IALKI</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -1954,6 +2011,10 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-akbu" role="tab" data-toggle="tab">
                                             AKBU</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-ialki" role="tab" data-toggle="tab">
+                                            IALKI</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2248,6 +2309,21 @@
                                                 <th>Nama</th>
                                                 <th>No. Registrasi</th>
                                                 <th>Status RCC</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-ialki">
+                                    <table id="ialki_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Nama</th>
+                                                <th>Materi</th>
+                                                <th>Pelatihan TOT</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

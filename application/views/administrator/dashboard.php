@@ -363,7 +363,7 @@
                         </div>
                     </div>
 
-                    <div class="col mt-3">
+                    <!-- <div class="col mt-3">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Balai Sektoral Kementerian PUPR</h6>
@@ -401,8 +401,49 @@
                                 <canvas id="JasaKonstruksi"></canvas>
                             </div>
                         </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-lg-6 mt-3">
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Balai Sektoral Kementerian PUPR</h6>
+                                </div>
+                                <div class="card-body">
+                                        <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-balai-jasa">
+                                                <option selected>Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="1">Sumatera Selatan</option>
+                                                <option value="2">Jambi</option>
+                                            </select>
+                                        </div>
+                                    <canvas id="BalaiJasa"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Unit Organisasi Jasa Konstruksi</h6>
+                                </div>
+                                <div class="card-body">
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-jasa-konstruksi">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                    <canvas id="JasaKonstruksi"></canvas>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                     <div class="col mt-3">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -458,6 +499,59 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-lg-6 mt-3">
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja</h6>
+                                </div>
+                                <div class="card-body">
+                                        <!-- <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-aktk">
+                                                <option selected>Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="1">Sumatera Selatan</option>
+                                                <option value="2">Jambi</option>
+                                            </select>
+                                        </div> -->
+                                    <canvas id="AKTK"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-3">
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Badan Usaha</h6>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="AKBU"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mt-3">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Data Instruktur</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-ialki">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="IALKI"></canvas>
+                            </div>
+                        </div>
+                    </div> -->
 
                     <div class="col mt-3" id="expand-kota-provinsi">
                         <div class="card mb-4">

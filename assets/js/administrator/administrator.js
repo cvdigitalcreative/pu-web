@@ -2940,6 +2940,10 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-akbu').modal('show');
     })
 
+    $('#btn-add-ialki-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-ialki').modal('show');
+    })
 
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {

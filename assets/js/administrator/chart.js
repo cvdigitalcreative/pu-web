@@ -59,7 +59,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "Balai Jasa",
-                    backgroundColor: stringcolor,
+                    backgroundColor: "#287674",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -124,7 +124,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "Jasa Konstruksi",
-                    backgroundColor: stringcolor,
+                    backgroundColor: "#287674",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -224,12 +224,12 @@ $(document).ready(function() {
         }
         if (provinsi == 1) {
             label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
-            data = [18, 10, 80, 20, 30]
+            data = [18, 18, 10, 76, 16]
         }
 
         if (provinsi == 2) {
             label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
-            data = [18, 10, 80, 20, 30]
+            data = [18, 10, 90, 20, 30]
         }
 
 
@@ -347,6 +347,191 @@ $(document).ready(function() {
         var provinsi = $('#chart-filter-provinsi-asosiasi-profesi').val()
         drawChartAsosiasiProfesi(provinsi);
     })
+
+    function drawChartAKTK(provinsi) {
+
+
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
+        }
+        if (provinsi == 1) {
+            label = ["AKTK 1", "AKTK 2", "AKTK 3", "AKTK 4", "AKTK 5"]
+            data = [12, 10, 67, 45, 30]
+        }
+
+        if (provinsi == 2) {
+            label = ["AKTK 1", "AKTK 2", "AKTK 3", "AKTK 4", "AKTK 5"]
+            data = [18, 10, 80, 20, 30]
+        }
+
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('AKTK').getContext('2d');
+        BUJK = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "AKTK",
+                    backgroundColor: stringcolor,
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+    }
+
+    drawChartAKTK(0);
+    $('#chart-filter-provinsi-aktk').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-aktk').val()
+        drawChartAKTK(provinsi);
+    })
+
+    function drawChartAKBU() {
+
+
+
+        label = ["Sumatera Selatan", "Jambi", "Jakarta"]
+        data = [40, 60, 90]
+
+
+
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('AKBU').getContext('2d');
+        BUJK = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "AKBU",
+                    backgroundColor: stringcolor,
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+    }
+
+    drawChartAKBU();
+
+    function drawChartIALKI(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
+        }
+        if (provinsi == 1) {
+            label = ["Instruktur 1", "Instruktur 2", "Instruktur 3", "Instruktur 4", "Instruktur 5", "Instruktur 6", "Instruktur 7", "Instruktur 8", "Instruktur 9", "Instruktur 10", "Instruktur 11", "Instruktur 12"]
+            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+        }
+
+        if (provinsi == 2) {
+            label = ["Instruktur 1", "Instruktur 2", "Instruktur 3", "Instruktur 4", "Instruktur 5", "Instruktur 6", "Instruktur 7", "Instruktur 8", "Instruktur 9", "Instruktur 10", "Instruktur 11", "Instruktur 12"]
+            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('IALKI').getContext('2d');
+        JasaKonstruksi = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Data IALKI",
+                    backgroundColor: "#2813674",
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+
+    drawChartIALKI(0);
+    $('#chart-filter-provinsi-ialki').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-ialki').val()
+        drawChartIALKI(provinsi);
+    })
+
 
 
     function drawChart(id_jenis, tahun) {
