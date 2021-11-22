@@ -596,6 +596,86 @@ $(document).ready(function() {
         drawChartPadatKarya(provinsi);
     })
 
+    function drawChartAPBNAPBDByProvinsi(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data1 = [40, 60]
+            data2 = [45, 80]
+            data3 = [47, 90]
+        }
+
+        if (provinsi == 1) {
+            label = ["Kabupaten 1", "Kabupaten 2", "Kabupaten 3", "Kabupaten 4", "Kabupaten 5", "Kabupaten 6", "Kabupaten 7", "Kabupaten 8", "Kabupaten 9", "Kabupaten 10", "Kabupaten 11", "Kabupaten 12"]
+            data1 = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+            data2 = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+            data3 = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+        }
+
+        if (provinsi == 2) {
+            label = ["Kabupaten 1", "Kabupaten 2", "Kabupaten 3", "Kabupaten 4", "Kabupaten 5", "Kabupaten 6", "Kabupaten 7", "Kabupaten 8", "Kabupaten 9", "Kabupaten 10", "Kabupaten 11", "Kabupaten 12"]
+            data1 = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+            data2 = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+            data3 = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('APBN_APBD').getContext('2d');
+        JasaKonstruksi = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "APBN",
+                    backgroundColor: "#007ea7",
+                    borderColor: stringcolor,
+                    data: data1
+                }, {
+                    label: "APBD",
+                    backgroundColor: "#007ea7",
+                    borderColor: stringcolor,
+                    data: data2
+                }, {
+                    label: "Sharing",
+                    backgroundColor: "#007ea7",
+                    borderColor: stringcolor,
+                    data: data3
+                }],
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+    drawChartAPBNAPBDByProvinsi(0);
+    $('#chart-filter-provinsi-apbd-apbn').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-apbd-apbn').val()
+        drawChartAPBNAPBDByProvinsi(provinsi);
+    })
+
+
+
 
     function drawChart(id_jenis, tahun) {
         if (id_jenis == 1) {

@@ -573,6 +573,27 @@
                         </div>
                     </div>  
 
+                    
+                    <div class="col mt-3">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Data APBN dan APBD</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-apbd-apbn">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="APBN_APBD"></canvas>
+                            </div>
+                        </div>
+                    </div>  
+
                     <div class="col mt-3" id="expand-kota-provinsi">
                         <div class="card mb-4">
                             <!-- Card Header - Dropdown -->
