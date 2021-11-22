@@ -532,6 +532,69 @@ $(document).ready(function() {
         drawChartIALKI(provinsi);
     })
 
+    function drawChartPadatKarya(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
+        }
+        if (provinsi == 1) {
+            label = ["Program 1", "Program 2", "Program 3", "Program 4", "Program 5", "Program 6", "Program 7", "Program 8", "Program 9", "Program 10", "Program 11", "Program 12"]
+            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+        }
+
+        if (provinsi == 2) {
+            label = ["Program 1", "Program 2", "Program 3", "Program 4", "Program 5", "Program 6", "Program 7", "Program 8", "Program 9", "Program 10", "Program 11", "Program 12"]
+            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('Padat_Karya').getContext('2d');
+        JasaKonstruksi = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Data Padat Karya",
+                    backgroundColor: "#007ea7",
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+
+    drawChartPadatKarya(0);
+    $('#chart-filter-provinsi-padat-karya').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-padat-karya').val()
+        drawChartPadatKarya(provinsi);
+    })
 
 
     function drawChart(id_jenis, tahun) {

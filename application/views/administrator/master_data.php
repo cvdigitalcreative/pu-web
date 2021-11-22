@@ -1786,6 +1786,52 @@
         </div>
     </div>
     <!-- End modal tambah Tambah IALKI-->
+     <!-- Tambah IALKI -->
+     <div class="modal fade bd-example-modal-lg" id="modal-tambah-padat-karya" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Program Padat Karya</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="1">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Instansi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option value="1">Balai Prasarana Permukiman Wilayah</option>
+                                <option value="2">Balai Pelaksanaan Jalan Nasional IV</option>
+                                <option value="3">Balai Wilayah Sungai Sumatera</option>
+                                <option value="4">Balai Pelaksana Penyediaan Perumahan</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Program Padat Karya</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh:  Program Percepatan Peningkatan Tata Guna Air Irigasi (P3-TGAI)" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                        Tambah Data Program Padat Karya</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal tambah Tambah IALKI-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1916,6 +1962,10 @@
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
                                     IALKI</button>
+                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-padat-karya-master"><img
+                                        class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
+                                    Padat Karya</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -2015,6 +2065,10 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-ialki" role="tab" data-toggle="tab">
                                             IALKI</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-padat-karya" role="tab" data-toggle="tab">
+                                            Padat Karya</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2324,6 +2378,20 @@
                                                 <th>Nama</th>
                                                 <th>Materi</th>
                                                 <th>Pelatihan TOT</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                                <div class="tab-pane fade show" role="tabpanel" id="master-padat-karya">
+                                    <table id="padat_karya_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Instansi</th>
+                                                <th>Program Padat Karya</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

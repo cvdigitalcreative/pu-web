@@ -2945,6 +2945,11 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-ialki').modal('show');
     })
 
+    $('#btn-add-padat-karya-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-padat-karya').modal('show');
+    })
+
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {
         $('#btn-add-tenaga-ahli').on('click', function() {
