@@ -1892,7 +1892,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Kegiatan Berdasarkan Potensi Mitra  </h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Kegiatan Berdasarkan Potensi Mitra</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -2187,6 +2187,10 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-padat-karya" role="tab" data-toggle="tab">
                                             Padat Karya</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-apbn-apbd" role="tab" data-toggle="tab">
+                                            APBN/APBD</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2510,6 +2514,19 @@
                                                 <th>Provinsi</th>
                                                 <th>Instansi</th>
                                                 <th>Program Padat Karya</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-apbn-apbd">
+                                    <table id="padat_karya_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kabupaten</th>
+                                                <th>Pola Pembiayaan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
