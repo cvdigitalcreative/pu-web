@@ -2955,6 +2955,11 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-apbn-apbd').modal('show');
     })
 
+    $('#btn-add-kegiatan-potensi-mitra-master').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-kegiatan-potensi-mitra').modal('show');
+    })
+
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {
         $('#btn-add-tenaga-ahli').on('click', function() {

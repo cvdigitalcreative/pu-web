@@ -1831,8 +1831,8 @@
             </div>
         </div>
     </div>
-    <!-- End modal tambah Tambah APBN/APBD-->
-    <!-- Tambah Program Padat Karya -->
+    <!-- End modal Program Padat Karya -->
+    <!-- Tambah Data APBN/APBD -->
     <div class="modal fade bd-example-modal-lg" id="modal-tambah-apbn-apbd" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1886,7 +1886,62 @@
             </div>
         </div>
     </div>
-    <!-- End modal tambah Tambah Program Padat Karya-->
+    <!-- End modal APBN/APBD-->
+    <!-- Tambah Data APBN/APBD -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan-potensi-mitra" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Kegiatan Berdasarkan Potensi Mitra  </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="2">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Organisasi Perangkat Daerah</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">OPD</option>
+                                <option value="2">IBM</option>
+                                <option value="3">SMK</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kegiatan</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Pelatihan</option>
+                                <option value="2">Pembekalan/Bimtek</option>
+                                <option value="3">Uji Sertifikasi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Jumlah</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh:  50" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                        Data Peserta Kegiatan Berdasarkan Potensi Mitra </button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal APBN/APBD-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -2025,6 +2080,10 @@
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
                                     APBN/APBD</button>
+                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kegiatan-potensi-mitra-master"><img
+                                        class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
+                                    Potensi Mitra</button>
                             </div>
                         </div>
                         <div class="card-body">
