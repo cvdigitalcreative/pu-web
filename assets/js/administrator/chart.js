@@ -3,7 +3,7 @@ $(document).ready(function() {
     // chart peserta
     var stringlabel = "";
     var stringcolor = "#4e73df";
-    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa, JasaKonstruksi, Pendidikan, BUJK;
+    var chartP, chartKBS, ChartKBSExpand, chartKBJ, ChartKBJExpand, chartKBP, ChartKBPExpand, BalaiJasa, JasaKonstruksi, Pendidikan, BUJK, APBN_APBD, Asosiasi_Profesi, AKTK, Kegiatan_Pie;
 
     var d = new Date();
     var n = d.getFullYear();
@@ -314,7 +314,7 @@ $(document).ready(function() {
 
         //         } while (i < 2);
         var ctx = document.getElementById('Asosiasi_Profesi').getContext('2d');
-        BUJK = new Chart(ctx, {
+        Asosiasi_Profesi = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: label,
@@ -380,7 +380,7 @@ $(document).ready(function() {
 
         //         } while (i < 2);
         var ctx = document.getElementById('AKTK').getContext('2d');
-        BUJK = new Chart(ctx, {
+        AKTK = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: label,
@@ -416,8 +416,6 @@ $(document).ready(function() {
 
     function drawChartAKBU() {
 
-
-
         label = ["Sumatera Selatan", "Jambi", "Jakarta"]
         data = [40, 60, 90]
 
@@ -438,7 +436,7 @@ $(document).ready(function() {
 
         //         } while (i < 2);
         var ctx = document.getElementById('AKBU').getContext('2d');
-        BUJK = new Chart(ctx, {
+        AKBU = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: label,
@@ -497,7 +495,7 @@ $(document).ready(function() {
 
         //         } while (i < 2);
         var ctx = document.getElementById('IALKI').getContext('2d');
-        JasaKonstruksi = new Chart(ctx, {
+        IALKI = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: label,
@@ -535,7 +533,7 @@ $(document).ready(function() {
     function drawChartPadatKarya(provinsi) {
         if (provinsi == 0) {
             label = ["Sumatera Selatan", "Jambi"]
-            data = [40, 60]
+            data = [350, 612]
         }
         if (provinsi == 1) {
             label = ["Program 1", "Program 2", "Program 3", "Program 4", "Program 5", "Program 6", "Program 7", "Program 8", "Program 9", "Program 10", "Program 11", "Program 12"]
@@ -566,7 +564,7 @@ $(document).ready(function() {
             data: {
                 labels: label,
                 datasets: [{
-                    label: "Data Padat Karya",
+                    label: "Data Program Padat Karya",
                     backgroundColor: "#007ea7",
                     borderColor: stringcolor,
                     data: data
@@ -632,7 +630,7 @@ $(document).ready(function() {
 
         //         } while (i < 2);
         var ctx = document.getElementById('APBN_APBD').getContext('2d');
-        JasaKonstruksi = new Chart(ctx, {
+        APBN_APBD = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: label,
@@ -674,8 +672,21 @@ $(document).ready(function() {
         drawChartAPBNAPBDByProvinsi(provinsi);
     })
 
-    function drawPieKegiatan() {
+    function drawPieKegiatan(provinsi) {
+        if (provinsi == 0) {
+            label = ['Pelatihan', 'Pembekalan/Bimtek', 'Uji Sertifikasi', 'Vokasi']
+            data1 = [1290, 1299, 1277, 1200]
+        }
 
+        if (provinsi == 1) {
+            label = ['Pelatihan', 'Pembekalan/Bimtek', 'Uji Sertifikasi', 'Vokasi']
+            data1 = [60, 50, 90, 10]
+        }
+
+        if (provinsi == 2) {
+            label = ['Pelatihan', 'Pembekalan/Bimtek', 'Uji Sertifikasi', 'Vokasi']
+            data1 = [18, 10, 80, 20]
+        }
         // $.ajax({
         //     url: ``,
         //     method: "GET",
@@ -690,21 +701,18 @@ $(document).ready(function() {
 
         //         } while (i < 2);
         var ctx = document.getElementById('Kegiatan_Pie').getContext('2d');
-        JasaKonstruksi = new Chart(ctx, {
+        Kegiatan_Pie = new Chart(ctx, {
             type: 'pie',
             data: {
                 datasets: [{
-                    data: [10, 80, 30, 70],
+                    data: data1,
                     backgroundColor: ["#ff643f", "#56a700", "#007ea7", "#a70008"]
                 }],
 
+
                 // These labels appear in the legend and in the tooltips when hovering different arcs
-                labels: [
-                    'Pelatihan',
-                    'Pembekalan/Bimtek',
-                    'Uji Sertifikasi',
-                    'Vokasi'
-                ]
+                labels: label
+
             },
             options: {
                 responsive: true,
@@ -721,12 +729,89 @@ $(document).ready(function() {
         // });
 
     }
-    drawPieKegiatan();
-    // $('#chart-filter-provinsi-kegiatan-pie').on('change', function() {
-    //     var provinsi = $('#chart-filter-provinsi-kegiatan-pie').val()
-    //     drawPieKegiatan();
-    // })
+    drawPieKegiatan(0);
+    $('#chart-filter-provinsi-kagiatan-pie1').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-kagiatan-pie1').val()
+        drawPieKegiatan(provinsi);
+    })
 
+    function drawChartKegiatanPotensiMitra(provinsi) {
+        if (provinsi == 0) {
+            label = ["OPD", "IBM", "SMK", "Politeknik", "Universitas", "Lapas", "Asosiasi"]
+            data1 = [61, 50, 70, 11, 20, 5]
+            data2 = [68, 30, 10, 10, 1, 1]
+            data3 = [60, 12, 78, 17, 21, 5]
+        }
+
+        if (provinsi == 1) {
+            label = ["OPD", "IBM", "SMK", "Politeknik", "Universitas", "Lapas", "Asosiasi"]
+            data1 = [60, 50, 90, 10, 10, 5]
+            data2 = [62, 30, 70, 80, 0, 1]
+            data3 = [61, 50, 98, 17, 11, 5]
+        }
+
+        if (provinsi == 2) {
+            label = ["OPD", "IBM", "SMK", "Politeknik", "Universitas", "Lapas", "Asosiasi"]
+            data1 = [18, 10, 80, 20, 30, 8]
+            data2 = [11, 0, 10, 28, 31, 0]
+            data3 = [10, 1, 83, 27, 17, 0]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('Kegiatan_Potensi_Mitra').getContext('2d');
+        Kegiatan_Potensi_Mitra = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Pelatihan",
+                    backgroundColor: "#007ea7",
+                    borderColor: stringcolor,
+                    data: data1
+                }, {
+                    label: "Pembekalan/Bimtek",
+                    backgroundColor: "#ff643f",
+                    borderColor: stringcolor,
+                    data: data2
+                }, {
+                    label: "Uji Sertifikasi",
+                    backgroundColor: "#f2fc31",
+                    borderColor: stringcolor,
+                    data: data3
+                }],
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+    drawChartKegiatanPotensiMitra(0);
+    $('#chart-filter-provinsi-kagiatan-potensi-mitra').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-kagiatan-potensi-mitra').val()
+        drawChartKegiatanPotensiMitra(provinsi);
+    })
 
 
 

@@ -577,7 +577,7 @@
                     <div class="col mt-3">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Data APBN dan APBD</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Data Peserta Berdasarkan Wilayah dan Pembiayaan di Provinsi </h6>
                             </div>
                             <div class="card-body">
                                 <div class="form-group py-2">
@@ -597,12 +597,12 @@
                     <div class="col mt-3">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Data Kegiatan</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Data Peserta Berdasarkan Wilayah dan Pembiayaan di Provinsi </h6>
                             </div>
                             <div class="card-body">
                                 <div class="form-group py-2">
                                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                    <select class="form-control" id="chart-filter-provinsi-kagiatan-pie">
+                                    <select class="form-control" id="chart-filter-provinsi-kagiatan-pie1">
                                         <option selected>Choose..</option>
                                         <option value="0">All</option>
                                         <option value="1">Sumatera Selatan</option>
@@ -613,6 +613,27 @@
                             </div>
                         </div>
                     </div> 
+
+                    <div class="col mt-3">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Data Peserta Kegiatan Berdasarkan Potensi Mitra </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-kagiatan-potensi-mitra">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Kegiatan_Potensi_Mitra"></canvas>
+                            </div>
+                        </div>
+                    </div> 
+                    
 
                     <div class="col mt-3" id="expand-kota-provinsi">
                         <div class="card mb-4">
