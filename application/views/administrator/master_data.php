@@ -2192,6 +2192,10 @@
                                         <a class="nav-link" href="#master-apbn-apbd" role="tab" data-toggle="tab">
                                             APBN/APBD</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-potensi-mitra" role="tab" data-toggle="tab">
+                                            Potensi Mitra</a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -2527,6 +2531,21 @@
                                                 <th>Provinsi</th>
                                                 <th>Kabupaten</th>
                                                 <th>Pola Pembiayaan</th>
+                                                <th>Jumlah  </th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-potensi-mitra">
+                                    <table id="padat_karya_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Organisasi Perangkat Daerah</th>
+                                                <th>Jenis Kegitan</th>
+                                                <th>Jumlah</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

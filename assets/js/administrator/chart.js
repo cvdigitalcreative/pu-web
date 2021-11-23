@@ -536,12 +536,12 @@ $(document).ready(function() {
             data = [350, 612]
         }
         if (provinsi == 1) {
-            label = ["Program 1", "Program 2", "Program 3", "Program 4", "Program 5", "Program 6", "Program 7", "Program 8", "Program 9", "Program 10", "Program 11", "Program 12"]
+            label = ["Instansi 1", "Instansi 2", "Instansi 3", "Instansi 4", "Instansi 5", "Instansi 6", "Instansi 7", "Instansi 8", "Instansi 9", "Instansi 10", "Instansi 11", "Instansi 12"]
             data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
         }
 
         if (provinsi == 2) {
-            label = ["Program 1", "Program 2", "Program 3", "Program 4", "Program 5", "Program 6", "Program 7", "Program 8", "Program 9", "Program 10", "Program 11", "Program 12"]
+            label = ["Instansi 1", "Instansi 2", "Instansi 3", "Instansi 4", "Instansi 5", "Instansi 6", "Instansi 7", "Instansi 8", "Instansi 9", "Instansi 10", "Instansi 11", "Instansi 12"]
             data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
         }
 
