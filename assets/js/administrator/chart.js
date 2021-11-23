@@ -643,12 +643,12 @@ $(document).ready(function() {
                     data: data1
                 }, {
                     label: "APBD",
-                    backgroundColor: "#007ea7",
+                    backgroundColor: "#ff643f",
                     borderColor: stringcolor,
                     data: data2
                 }, {
                     label: "Sharing",
-                    backgroundColor: "#007ea7",
+                    backgroundColor: "#f2fc31",
                     borderColor: stringcolor,
                     data: data3
                 }],
@@ -673,6 +673,59 @@ $(document).ready(function() {
         var provinsi = $('#chart-filter-provinsi-apbd-apbn').val()
         drawChartAPBNAPBDByProvinsi(provinsi);
     })
+
+    function drawPieKegiatan() {
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('Kegiatan_Pie').getContext('2d');
+        JasaKonstruksi = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                datasets: [{
+                    data: [10, 80, 30, 70],
+                    backgroundColor: ["#ff643f", "#56a700", "#007ea7", "#a70008"]
+                }],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: [
+                    'Pelatihan',
+                    'Pembekalan/Bimtek',
+                    'Uji Sertifikasi',
+                    'Vokasi'
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+    drawPieKegiatan();
+    // $('#chart-filter-provinsi-kegiatan-pie').on('change', function() {
+    //     var provinsi = $('#chart-filter-provinsi-kegiatan-pie').val()
+    //     drawPieKegiatan();
+    // })
 
 
 
