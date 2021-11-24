@@ -1887,7 +1887,7 @@
         </div>
     </div>
     <!-- End modal APBN/APBD-->
-    <!-- Tambah Data APBN/APBD -->
+    <!-- Tambah Data Peserta Kegiatan Berdasarkan Potensi Mitra -->
     <div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan-potensi-mitra" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1941,7 +1941,52 @@
             </div>
         </div>
     </div>
-    <!-- End modal APBN/APBD-->
+    <!-- End modal Peserta Kegiatan Berdasarkan Potensi Mitra-->
+    <!-- Tambah Data Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan-asasemen" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Sumatera Selatan</option>
+                                <option value="2">Jambi</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Hasil Asasemen</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Kompeten</option>
+                                <option value="2">Belum Kompeten</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="namaPns">Jumlah</label>
+                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                                placeholder="Contoh:  50" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                        Data Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen </button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen-->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -2084,6 +2129,10 @@
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
                                     Potensi Mitra</button>
+                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kegiatan-asasemen"><img
+                                        class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
+                                    Asasemen</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -2195,6 +2244,10 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-potensi-mitra" role="tab" data-toggle="tab">
                                             Potensi Mitra</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-asasemen" role="tab" data-toggle="tab">
+                                            Asasemen</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2545,6 +2598,19 @@
                                                 <th>Provinsi</th>
                                                 <th>Organisasi Perangkat Daerah</th>
                                                 <th>Jenis Kegitan</th>
+                                                <th>Jumlah</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-asasemen">
+                                    <table id="padat_karya_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Hasil Asasemen</th>
                                                 <th>Jumlah</th>
                                                 <th>Aksi</th>
                                             </tr>

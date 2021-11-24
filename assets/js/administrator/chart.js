@@ -813,6 +813,76 @@ $(document).ready(function() {
         drawChartKegiatanPotensiMitra(provinsi);
     })
 
+    function drawChartKegiatanAsasemen(provinsi) {
+        if (provinsi == 0) {
+            label = ["Ahli", "Terampil"]
+            data1 = [610, 850]
+            data2 = [968, 230]
+        }
+
+        if (provinsi == 1) {
+            label = ["Ahli", "Terampil"]
+            data1 = [60, 50]
+            data2 = [62, 30]
+        }
+
+        if (provinsi == 2) {
+            label = ["Ahli", "Terampil"]
+            data1 = [18, 10]
+            data2 = [11, 0]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('Kegiatan_Asasemen').getContext('2d');
+        Kegiatan_Asasemen = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Kompeten",
+                    backgroundColor: "#007ea7",
+                    borderColor: stringcolor,
+                    data: data1
+                }, {
+                    label: "Belum Kompeten",
+                    backgroundColor: "#ff643f",
+                    borderColor: stringcolor,
+                    data: data2
+                }],
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+    drawChartKegiatanAsasemen(0);
+    $('#chart-filter-provinsi-kagiatan-asasemen').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-kagiatan-asasemen').val()
+        drawChartKegiatanAsasemen(provinsi);
+    })
+
 
 
     function drawChart(id_jenis, tahun) {
