@@ -2483,9 +2483,8 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Provinsi</th>
-                                                <th>Jasa Konstruksi</th>
-                                                <th>Eselon</th>
-                                                <th>Jumlah</th>
+                                                <th>Kabupaten</th>
+                                                <th>Jumlah Unit Organisasi Jasa Konstruksi</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
