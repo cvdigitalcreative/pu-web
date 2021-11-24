@@ -124,7 +124,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "Jasa Konstruksi",
-                    backgroundColor: "#287674",
+                    backgroundColor: "#15cef6",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -254,7 +254,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "BUJK",
-                    backgroundColor: stringcolor,
+                    backgroundColor: "#f1c232",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -320,7 +320,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "Asosiasi Profesi",
-                    backgroundColor: stringcolor,
+                    backgroundColor: "#15cef6",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -386,7 +386,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "AKTK",
-                    backgroundColor: stringcolor,
+                    backgroundColor: "#4b32f1",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -442,7 +442,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "AKBU",
-                    backgroundColor: stringcolor,
+                    backgroundColor: "#4b32f1",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -565,7 +565,7 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "Data Program Padat Karya",
-                    backgroundColor: "#007ea7",
+                    backgroundColor: "#5eee4a",
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -770,7 +770,7 @@ $(document).ready(function() {
         //             i++;
 
         //         } while (i < 2);
-        var ctx = document.getElementById('Kegiatan_Potensi_Mitra').getContext('2d');
+        var ctx = document.getElementById('Peserta_Potensi_Mitra').getContext('2d');
         Kegiatan_Potensi_Mitra = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -845,7 +845,7 @@ $(document).ready(function() {
         //             i++;
 
         //         } while (i < 2);
-        var ctx = document.getElementById('Kegiatan_Asasemen').getContext('2d');
+        var ctx = document.getElementById('Peserta_Asasemen').getContext('2d');
         Kegiatan_Asasemen = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -881,6 +881,70 @@ $(document).ready(function() {
     $('#chart-filter-provinsi-kagiatan-asasemen').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-kagiatan-asasemen').val()
         drawChartKegiatanAsasemen(provinsi);
+    })
+
+     function drawChartKegiatanJabker(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [350, 612]
+        }
+        if (provinsi == 1) {
+            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
+            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+        }
+
+        if (provinsi == 2) {
+            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
+            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+        }
+
+        // $.ajax({
+        //     url: ``,
+        //     method: "GET",
+        //     success: function(data) {
+        //         var label = [];
+        //         var value = [];
+        //         i = 0;
+        //         do {
+        //             label.push(data.data[i].employee_name);
+        //             value.push(data.data[i].employee_salary);
+        //             i++;
+
+        //         } while (i < 2);
+        var ctx = document.getElementById('Peserta_Jabker').getContext('2d');
+        Peserta_Jabker = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: "Data Peserta Jabatan Kerja",
+                    backgroundColor: "#883f3f",
+                    borderColor: stringcolor,
+                    data: data
+                }],
+
+
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        //     }
+        // });
+
+    }
+
+    drawChartKegiatanJabker(0);
+    $('#chart-filter-provinsi-kagiatan-jabker').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-kagiatan-jabker').val()
+        drawChartKegiatanJabker(provinsi);
     })
 
 

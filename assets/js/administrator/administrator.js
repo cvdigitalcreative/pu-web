@@ -2966,6 +2966,11 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-kegiatan-asasemen').modal('show');
     })
 
+     $('#btn-add-kegiatan-jabker').on('click', function() {
+        $('form').attr('action', ``)
+        $('#modal-tambah-kegiatan-jabker').modal('show');
+    })
+
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {
         $('#btn-add-tenaga-ahli').on('click', function() {
