@@ -1837,7 +1837,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Pola Pembiayaan Pelaksanaan Kegiatan </h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Berdasarkan Wilayah dan Pembiayaan di Provinsi</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1878,7 +1878,7 @@
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Data Pola Pembiayaan Pelaksanaan Kegiatan</button>
+                        Data Peserta Berdasarkan Wilayah dan Pembiayaan di Provinsi </button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
                     </form>

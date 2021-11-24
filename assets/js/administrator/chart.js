@@ -738,23 +738,23 @@ $(document).ready(function() {
     function drawChartKegiatanPotensiMitra(provinsi) {
         if (provinsi == 0) {
             label = ["OPD", "IBM", "SMK", "Politeknik", "Universitas", "Lapas", "Asosiasi"]
-            data1 = [61, 50, 70, 11, 20, 5]
-            data2 = [68, 30, 10, 10, 1, 1]
-            data3 = [60, 12, 78, 17, 21, 5]
+            data1 = [61, 50, 70, 11, 20, 5, 0]
+            data2 = [68, 30, 10, 10, 1, 1, 1]
+            data3 = [60, 12, 78, 17, 21, 5, 2]
         }
 
         if (provinsi == 1) {
             label = ["OPD", "IBM", "SMK", "Politeknik", "Universitas", "Lapas", "Asosiasi"]
-            data1 = [60, 50, 90, 10, 10, 5]
-            data2 = [62, 30, 70, 80, 0, 1]
-            data3 = [61, 50, 98, 17, 11, 5]
+            data1 = [60, 50, 90, 10, 10, 5, 1]
+            data2 = [62, 30, 70, 80, 0, 1, 2]
+            data3 = [61, 50, 98, 17, 11, 5, 0]
         }
 
         if (provinsi == 2) {
             label = ["OPD", "IBM", "SMK", "Politeknik", "Universitas", "Lapas", "Asosiasi"]
-            data1 = [18, 10, 80, 20, 30, 8]
-            data2 = [11, 0, 10, 28, 31, 0]
-            data3 = [10, 1, 83, 27, 17, 0]
+            data1 = [18, 10, 80, 20, 30, 8, 0]
+            data2 = [11, 0, 10, 28, 31, 0, 1]
+            data3 = [10, 1, 83, 27, 17, 0, 1]
         }
 
         // $.ajax({
