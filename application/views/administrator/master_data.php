@@ -1334,7 +1334,7 @@
                             </select>
                         </div>
                         <div class="form-group py-2">
-                            <label for="namaPns">Jumlah *</label>
+                            <label for="namaPns">Jumlah Satuan Kerja</label>
                             <input type="text" class="form-control" id="nama-pns" name="nama_pns"
                                 placeholder="Contoh: 190" required>
                         </div>
@@ -1367,34 +1367,19 @@
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                 <option selected>Choose...</option>
                                 <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
+                                <option value="2">Jambi</option>
                             </select>
                         </div>
                         <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Unit Organisasi Jasa
-                                Konstruksi</label>
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kabupaten</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                 <option selected>Choose...</option>
-                                <option value="1">Bidang Bina Konstruksi Dinas PUPR Kab. Merangin</option>
-                                <option value="2">Bidang Bina Konstruksi Dinas PUPR Kab. Tanjung Jabung Timur</option>
-                                <option value="3">Seksi Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian Dinas
-                                    PUPR Provinsi Jambi</option>
-                                <option value="4">Seksi Bina Jasa Konstruksi, Bidang Bina Konstruksi dan Pengendalian
-                                    Dinas PUPR Kota Jambi</option>
-                                <option value="5">Seksi Jasa Konstruksi, Bidang Cipta Karya dan Jasa Konstruksi, Dinas
-                                    PUPR Kota Sungai Penuh</option>
+                                <option value="1">Ogan Ilir</option>
+                                <option value="2">Ogan Komering Ilir</option>
                             </select>
                         </div>
                         <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Pilih Eselon</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">ES .III</option>
-                                <option value="2">ES .IV</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah *</label>
+                            <label for="namaPns">Jumlah Unit Organisasi Jasa Konsturksi</label>
                             <input type="text" class="form-control" id="nama-pns" name="nama_pns"
                                 placeholder="Contoh: 190" required>
                         </div>

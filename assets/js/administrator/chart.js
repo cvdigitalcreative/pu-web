@@ -95,12 +95,12 @@ $(document).ready(function() {
             data = [40, 60]
         }
         if (provinsi == 1) {
-            label = ["Jasa Konstruksi 1", "Jasa Konstruksi 2", "Jasa Konstruksi 3", "Jasa Konstruksi 4", "Jasa Konstruksi 5", "Jasa Konstruksi 6", "Jasa Konstruksi 7", "Jasa Konstruksi 8", "Jasa Konstruksi 9", "Jasa Konstruksi 10", "Jasa Konstruksi 11", "Jasa Konstruksi 12"]
+            label = ["Kabupaten 1", "Kabupaten 2", "Kabupaten 3", "Kabupaten 4", "Kabupaten 5", "Kabupaten 6", "Kabupaten 7", "Kabupaten 8", "Kabupaten 9", "Kabupaten 10", "Kabupaten 11", "Kabupaten 12"]
             data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
         }
 
         if (provinsi == 2) {
-            label = ["Jasa Konstruksi 1", "Jasa Konstruksi 2", "Jasa Konstruksi 3", "Jasa Konstruksi 4", "Jasa Konstruksi 5", "Jasa Konstruksi 6", "Jasa Konstruksi 7", "Jasa Konstruksi 8", "Jasa Konstruksi 9", "Jasa Konstruksi 10", "Jasa Konstruksi 11", "Jasa Konstruksi 12"]
+            label = ["Kabupaten 1", "Kabupaten 2", "Kabupaten 3", "Kabupaten 4", "Kabupaten 5", "Kabupaten 6", "Kabupaten 7", "Kabupaten 8", "Kabupaten 9", "Kabupaten 10", "Kabupaten 11", "Kabupaten 12"]
             data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
         }
 
@@ -883,7 +883,7 @@ $(document).ready(function() {
         drawChartKegiatanAsasemen(provinsi);
     })
 
-     function drawChartKegiatanJabker(provinsi) {
+    function drawChartKegiatanJabker(provinsi) {
         if (provinsi == 0) {
             label = ["Sumatera Selatan", "Jambi"]
             data = [350, 612]
