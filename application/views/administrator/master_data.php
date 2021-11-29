@@ -1545,11 +1545,6 @@
                                 <option value="2">Belum Terakreditasi</option>
                             </select>
                         </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: 4" required>
-                        </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
                             Asosiasi Badan Usaha Jasa
@@ -1599,11 +1594,6 @@
                                 <option value="1">Terakreditasi</option>
                                 <option value="2">Belum Terakreditasi</option>
                             </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: 4" required>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
@@ -2538,7 +2528,6 @@
                                                 <th>Provinsi</th>
                                                 <th>BUJK</th>
                                                 <th>Status Akreditasi</th>
-                                                <th>Jumlah</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

@@ -464,15 +464,15 @@
                                         Konstruksi</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group py-2">
-                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                        <select class="form-control" id="chart-filter-provinsi-BUJK">
-                                            <option selected>Choose..</option>
-                                            <option value="0">All</option>
-                                            <option value="1">Sumatera Selatan</option>
-                                            <option value="2">Jambi</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-BUJK">
+                                                <option selected>Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="1">Sumatera Selatan</option>
+                                                <option value="2">Jambi</option>
+                                            </select>
+                                        </div>
                                     <canvas id="BUJK"></canvas>
                                 </div>
                             </div>
@@ -484,15 +484,14 @@
                                     <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi Profesi</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="form-group py-2">
-                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                        <select class="form-control" id="chart-filter-provinsi-asosiasi-profesi">
-                                            <option selected>Choose..</option>
-                                            <option value="0">All</option>
-                                            <option value="1">Sumatera Selatan</option>
-                                            <option value="2">Jambi</option>
-                                        </select>
-                                    </div>
+                                <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status RCC</label>
+                                            <select class="form-control" id="chart-filter-provinsi-asosiasi-profesi">
+                                                <option selected>Choose..</option>
+                                                <option value="0">Terakreditasi</option>
+                                                <option value="1">Belum Terakreditasi</option>
+                                            </select>
+                                        </div>
                                     <canvas id="Asosiasi_Profesi"></canvas>
                                 </div>
                             </div>

@@ -290,14 +290,10 @@ $(document).ready(function() {
             data = [40, 60]
         }
         if (provinsi == 1) {
-            label = ["Asosiasi Profesi 1", "Asosiasi Profesi 2", "Asosiasi Profesi 3", "Asosiasi Profesi 4", "Asosiasi Profesi 5"]
-            data = [12, 10, 67, 45, 30]
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [41, 89]
         }
 
-        if (provinsi == 2) {
-            label = ["Asosiasi Profesi 1", "Asosiasi Profesi 2", "Asosiasi Profesi 3", "Asosiasi Profesi 4", "Asosiasi Profesi 5"]
-            data = [18, 10, 80, 20, 30]
-        }
 
 
         // $.ajax({
@@ -342,7 +338,7 @@ $(document).ready(function() {
         // });
     }
 
-    drawChartAsosiasiProfesi(0);
+    drawChartAsosiasiProfesi(1);
     $('#chart-filter-provinsi-asosiasi-profesi').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-asosiasi-profesi').val()
         drawChartAsosiasiProfesi(provinsi);
