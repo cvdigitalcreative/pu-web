@@ -1939,6 +1939,14 @@
                             </select>
                         </div>
                         <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori Keahlian</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                <option selected>Choose...</option>
+                                <option value="1">Ahli</option>
+                                <option value="2">Terampil</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Hasil Asasemen</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                                 <option selected>Choose...</option>
@@ -2640,6 +2648,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Provinsi</th>
+                                                <th>Kategori Keahlian</th>
                                                 <th>Hasil Asasemen</th>
                                                 <th>Jumlah Peserta</th>
                                                 <th>Aksi</th>
