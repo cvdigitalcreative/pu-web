@@ -154,11 +154,29 @@ $(document).ready(function() {
     })
 
 
-    function drawChartPendidikan() {
-        label = ["Sumatera Selatan", "Jambi", "Jakarta", "Medan", "Padang"]
-        data1 = [40, 60, 12, 23, 34]
-        data2 = [50, 90, 12, 56, 89]
-        data3 = [80, 90, 45, 91, 76]
+    function drawChartPendidikan(provinsi) {
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi", "Jakarta", "Medan", "Padang"]
+            data1 = [40, 60, 12, 23, 34]
+            data2 = [50, 90, 12, 56, 89]
+            data3 = [80, 90, 45, 91, 76]
+        }
+
+        if (provinsi == 1) {
+            label = ["Sumatera Selatan"]
+            data1 = [40]
+            data2 = [50]
+            data3 = [80]
+        }
+
+        if (provinsi == 2) {
+            label = ["Jambi"]
+            data1 = [60]
+            data2 = [90]
+            data3 = [90]
+        }
+
+
 
 
         // $.ajax({
@@ -214,8 +232,12 @@ $(document).ready(function() {
         // });
 
     }
+    drawChartPendidikan(0);
+    $('#chart-filter-provinsi-Pendidikan').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-Pendidikan').val()
+        drawChartPendidikan(provinsi);
+    })
 
-    drawChartPendidikan();
 
     function drawChartBUJK(provinsi) {
         if (provinsi == 0) {

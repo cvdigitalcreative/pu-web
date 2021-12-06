@@ -450,6 +450,15 @@
                                 <h6 class="m-0 font-weight-bold text-black" id="">Instansi Pendidikan</h6>
                             </div>
                             <div class="card-body">
+                            <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
                                 <canvas id="Pendidikan"></canvas>
                             </div>
                         </div>
