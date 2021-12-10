@@ -515,7 +515,7 @@
                                     <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja</h6>
                                 </div>
                                 <div class="card-body">
-                                        <!-- <div class="form-group py-2">
+                                        <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-aktk">
                                                 <option selected>Choose..</option>
@@ -523,7 +523,7 @@
                                                 <option value="1">Sumatera Selatan</option>
                                                 <option value="2">Jambi</option>
                                             </select>
-                                        </div> -->
+                                        </div>
                                     <canvas id="AKTK"></canvas>
                                 </div>
                             </div>
@@ -535,6 +535,15 @@
                                     <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Badan Usaha</h6>
                                 </div>
                                 <div class="card-body">
+                                    <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-akbu">
+                                                <option selected>Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="1">Sumatera Selatan</option>
+                                                <option value="2">Jambi</option>
+                                            </select>
+                                        </div>
                                     <canvas id="AKBU"></canvas>
                                 </div>
                             </div>

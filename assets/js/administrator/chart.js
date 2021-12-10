@@ -95,13 +95,13 @@ $(document).ready(function() {
             data = [40, 60]
         }
         if (provinsi == 1) {
-            label = ["Kabupaten 1", "Kabupaten 2", "Kabupaten 3", "Kabupaten 4", "Kabupaten 5", "Kabupaten 6", "Kabupaten 7", "Kabupaten 8", "Kabupaten 9", "Kabupaten 10", "Kabupaten 11", "Kabupaten 12"]
-            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
+            label = ["Eselon 1", "Eselon IV 2", "Hanya Tusi", "Belum Ada"]
+            data = [60, 50, 90, 10]
         }
 
         if (provinsi == 2) {
-            label = ["Kabupaten 1", "Kabupaten 2", "Kabupaten 3", "Kabupaten 4", "Kabupaten 5", "Kabupaten 6", "Kabupaten 7", "Kabupaten 8", "Kabupaten 9", "Kabupaten 10", "Kabupaten 11", "Kabupaten 12"]
-            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
+            label = ["Eselon 1", "Eselon IV 2", "Hanya Tusi", "Belum Ada"]
+            data = [18, 10, 80, 20]
         }
 
         // $.ajax({
@@ -432,10 +432,21 @@ $(document).ready(function() {
         drawChartAKTK(provinsi);
     })
 
-    function drawChartAKBU() {
+    function drawChartAKBU(provinsi) {
 
-        label = ["Sumatera Selatan", "Jambi", "Jakarta"]
-        data = [40, 60, 90]
+        if (provinsi == 0) {
+            label = ["Sumatera Selatan", "Jambi"]
+            data = [40, 60]
+        }
+        if (provinsi == 1) {
+            label = ["Sudah RCC", "Belum RCC"]
+            data = [12, 10]
+        }
+
+        if (provinsi == 2) {
+            label = ["Sudah RCC", "Belum RCC"]
+            data = [18, 10]
+        }
 
 
 
@@ -482,7 +493,11 @@ $(document).ready(function() {
         // });
     }
 
-    drawChartAKBU();
+    drawChartAKBU(0);
+    $('#chart-filter-provinsi-akbu').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-akbu').val()
+        drawChartAKBU(provinsi);
+    })
 
     function drawChartIALKI(provinsi) {
         if (provinsi == 0) {
