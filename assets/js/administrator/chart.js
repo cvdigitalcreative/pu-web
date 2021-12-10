@@ -245,13 +245,13 @@ $(document).ready(function() {
             data = [40, 60]
         }
         if (provinsi == 1) {
-            label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
-            data = [18, 18, 10, 76, 16]
+            label = ["Sudah Akreditasi", "Belum Akreditasi"]
+            data = [18, 18]
         }
 
         if (provinsi == 2) {
-            label = ["BUJK 1", "BUJK 2", "BUJK 3", "BUJK 4", "BUJK 5"]
-            data = [18, 10, 90, 20, 30]
+            label = ["Sudah Akreditasi", "Belum Akreditasi"]
+            data = [90, 70]
         }
 
 
@@ -312,7 +312,11 @@ $(document).ready(function() {
             data = [40, 60]
         }
         if (provinsi == 1) {
-            label = ["Sumatera Selatan", "Jambi"]
+            label = ["Sudah Terakreditasi", "Belum Terakreditasi"]
+            data = [41, 89]
+        }
+        if (provinsi == 2) {
+            label = ["Sudah Terakreditasi", "Belum Terakreditasi"]
             data = [41, 89]
         }
 
