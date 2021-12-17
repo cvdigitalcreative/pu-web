@@ -35,8 +35,8 @@ $(document).ready(function() {
         }
 
         if (provinsi == 2) {
-            label = ["Balai Jasa 1", "Balai Jasa 2", "Balai Jasa 3", "Balai Jasa 4", "Balai Jasa 5"]
-            data = [18, 10, 80, 20, 30]
+            label = ["Balai Jasa 1", "Balai Jasa 2", "Balai Jasa 3", "Balai Jasa 4"]
+            data = [18, 10, 80, 20]
         }
 
         // $.ajax({
@@ -59,7 +59,12 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "Balai Jasa",
-                    backgroundColor: "#287674",
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                    ],
                     borderColor: stringcolor,
                     data: data
                 }],
@@ -124,7 +129,12 @@ $(document).ready(function() {
                 labels: label,
                 datasets: [{
                     label: "Jasa Konstruksi",
-                    backgroundColor: "#15cef6",
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                    ],
                     borderColor: stringcolor,
                     data: data
                 }],
