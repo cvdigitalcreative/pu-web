@@ -240,7 +240,41 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Counts Section -->
+ <!-- ======= About Us Section ======= -->
+ <section id="about1" class="about1">
+            <div class="container">
 
+                <div class="section-title" data-aos="fade-up">
+                    <h2>MITRA DAN KERJASAMA BALAI JASA KONSTRUKSI WILAYAH II PALEMBANG</h2>
+                </div>
+
+                <div class="row content">
+                    <div class="col mt-3">
+                        <div class="card border-primary mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">MITRA DAN KERJASAMA</h6>
+                            </div>
+                            <div class="card-body">
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-primary">Download
+                                    File</a>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2"
+                                        for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-mitra3">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Mitra3" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
             <div class="container">
