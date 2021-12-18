@@ -1,0 +1,9 @@
+div#about1 {
+    background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
+    background-size: 500px 800px;
+}
+
+div.card-body {
+    background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
+    background-size: 500px 800px;
+}

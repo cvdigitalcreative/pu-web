@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- Template Main CSS File -->
     <link href="<?=base_url('assets/public_component/css/style.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/css/style_custom.css')?>" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Vesperr - v4.7.0
@@ -152,23 +153,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- End Clients Section -->
 
         <!-- ======= About Us Section ======= -->
-        <section id="about" class="about">
+        <section id="about1" class="about1">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>SEBARAN MITRA DAN KERJASAMA BALAI JASA KONSTRUKSI WILAYAH II PALEMBANG DI PROVINSI JAMBI</h2>
+                    <h2>MITRA DAN KERJASAMA BALAI JASA KONSTRUKSI WILAYAH II PALEMBANG</h2>
                 </div>
 
                 <div class="row content">
                     <div class="col mt-3">
-                        <div class="card mb-4">
+                        <div class="card border-primary mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">MITRA DAN KERJASAMA</h6>
                             </div>
                             <div class="card-body">
-                            <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download File</a>
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-primary">Download
+                                    File</a>
                                 <div class="form-group py-2">
-                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <label class="my-1 mr-2"
+                                        for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                     <select class="form-control" id="chart-filter-provinsi-Pendidikan">
                                         <option selected>Choose..</option>
                                         <option value="0">All</option>
@@ -176,7 +179,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <option value="2">Jambi</option>
                                     </select>
                                 </div>
-                                <canvas id="Mitra"></canvas>
+                                <canvas id="Mitra" height="100"></canvas>
                             </div>
                         </div>
                     </div>
@@ -190,56 +193,48 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
 
                 <div class="row">
-                    <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start"
-                        data-aos="fade-right" data-aos-delay="150">
-                        <img src="assets/img/counts-img.svg" alt="" class="img-fluid">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                            </div>
+                            <div class="card-body">
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                    File</a>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-balai">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Balai" width="900" height="400"></canvas>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left"
-                        data-aos-delay="300">
-                        <div class="content d-flex flex-column justify-content-center">
-                            <div class="row">
-                                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="bi bi-emoji-smile"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="65"
-                                            data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam
-                                            architecto ut.</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="bi bi-journal-richtext"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="85"
-                                            data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium
-                                            et quia dere tan</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="bi bi-clock"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="18"
-                                            data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam
-                                            ducimus aut voluptate non vel</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                                    <div class="count-box">
-                                        <i class="bi bi-award"></i>
-                                        <span data-purecounter-start="0" data-purecounter-end="15"
-                                            data-purecounter-duration="1" class="purecounter"></span>
-                                        <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et
-                                            nemo pad der</p>
-                                    </div>
-                                </div>
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
                             </div>
-                        </div><!-- End .content-->
+                            <div class="card-body">
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                    File</a>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Balai1" width="900" height="400"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -1061,7 +1056,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <script src="<?=base_url('assets/jquery-easing/jquery.easing.min.js')?>"></script>
 
-    <script src="<?=base_url('assets/chart.js/Chart.min.js')?>"></script>  
+    <script src="<?=base_url('assets/chart.js/Chart.min.js')?>"></script>
 
     <script src="<?=base_url('assets/js/administrator/public.js')?>"></script>
 
@@ -1074,7 +1069,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?=base_url('assets/public_component/vendor/isotope-layout/isotope.pkgd.min.js')?>"></script>
     <script src="<?=base_url('assets/public_component/vendor/swiper/swiper-bundle.min.js')?>"></script>
     <script src="<?=base_url('assets/public_component/vendor/php-email-form/validate.js')?>"></script>
-   
+
     <!-- Template Main JS File -->
     <script src="<?= base_url('assets/public_component/js/main.js')?>"></script>
 
