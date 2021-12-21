@@ -175,8 +175,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <select class="form-control" id="chart-filter-provinsi-Pendidikan">
                                         <option selected>Choose..</option>
                                         <option value="0">All</option>
-                                        <option value="1">Sumatera Selatan</option>
-                                        <option value="2">Jambi</option>
+                                        <option value="15">Sumatera Selatan</option>
+                                        <option value="16">Jambi</option>
                                     </select>
                                 </div>
                                 <canvas id="Mitra" height="100"></canvas>
@@ -1106,6 +1106,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- Template Main JS File -->
     <script src="<?= base_url('assets/public_component/js/main.js')?>"></script>
+    <?php $this->load->view("components/js.php") ?>
 
 </body>
 

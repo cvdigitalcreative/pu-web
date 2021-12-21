@@ -1,79 +1,56 @@
 $(document).ready(function() {
-    function drawChartPendidikan(provinsi) {
-        if (provinsi == 0) {
-            label = ["Smk", "Politeknik", "Perguruan Tinggi", "Balai Sektoral PUPR", "Asosiasi Profesi"]
-            data1 = [40, 60, 12, 23, 34]
-            data2 = [50, 90, 12, 56, 89]
-        }
-
-        if (provinsi == 1) {
-            label = ["Smk", "Politeknik", "Perguruan Tinggi", "Balai Sektoral PUPR", "Asosiasi Profesi"]
-            data1 = [48, 60, 62, 23, 34]
-            data2 = [58, 90, 19, 56, 89]
-        }
-
-        if (provinsi == 2) {
-            label = ["Smk", "Politeknik", "Perguruan Tinggi", "Balai Sektoral PUPR", "Asosiasi Profesi"]
-            data1 = [40, 90, 12, 3, 34]
-            data2 = [50, 90, 82, 96, 89]
-        }
 
 
 
+    function drawChartPendidikan(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
 
-        // $.ajax({
-        //     url: ``,
-        //     method: "GET",
-        //     success: function(data) {
-        //         var label = [];
-        //         var value = [];
-        //         i = 0;
-        //         do {
-        //             label.push(data.data[i].employee_name);
-        //             value.push(data.data[i].employee_salary);
-        //             i++;
-
-        //         } while (i < 2);
-        var ctx = document.getElementById('Mitra').getContext('2d');
-        Pendidikan = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: label,
-                datasets: [{
-                    label: "Kerja Sama Yang Belum Terlaksana",
-                    backgroundColor: 'rgba(255, 0, 26, 0.1)',
-                    borderColor: 'rgba(255, 0, 26, 0.1)',
-                    data: data1
-                }, {
-                    label: "Kerja Sama Yang Terlaksana",
-                    backgroundColor: 'rgba(0,225, 51, 0.1)',
-                    borderColor: 'rgba(0,225, 51, 0.1)',
-                    data: data2
-                }],
+                } while (i < data.data.length);
+                var ctx = document.getElementById('Mitra').getContext('2d');
+                Pendidikan = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Kerja Sama Yang Belum Terlaksana",
+                            backgroundColor: 'rgba(255, 0, 26, 0.1)',
+                            borderColor: 'rgba(255, 0, 26, 0.1)',
+                            data: value
+                        }],
 
 
 
-            },
-            options: {
-                responsive: true,
-                fill: false,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
                         }
-                    }]
-                }
+                    }
+                });
             }
         });
-        //     }
-        // });
 
     }
-    drawChartPendidikan(0);
+    drawChartPendidikan(15, 1);
     $('#chart-filter-provinsi-Pendidikan').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-Pendidikan').val()
-        drawChartPendidikan(provinsi);
+        drawChartPendidikan(provinsi, 1);
     })
     $('#chart-filter-provinsi-Pendidikan').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-Pendidikan').val()
