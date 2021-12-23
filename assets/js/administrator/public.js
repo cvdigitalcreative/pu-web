@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     function drawChartBalaiSektoral(id_provinsi, kategori) {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
@@ -15,7 +16,7 @@ $(document).ready(function() {
                 } while (i < data.data.length);
                 var ctx = document.getElementById('Balai_Sektoral').getContext('2d');
                 Mitra = new Chart(ctx, {
-                    type: 'bar',
+                    type: document.getElementById("chartType").value,
                     data: {
                         labels: label,
                         datasets: [{
@@ -49,6 +50,7 @@ $(document).ready(function() {
 
     }
     drawChartBalaiSektoral(0, 1);
+
     $('#chart-filter-provinsi-balai-sektoral').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-balai-sektoral').val()
         Mitra.destroy();
@@ -56,10 +58,21 @@ $(document).ready(function() {
     })
 
 
+    $('#chartType').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-balai-sektoral").value
+        Mitra.destroy();
+        drawChartBalaiSektoral(provinsi1, 1);
+    })
+
+    document.getElementById("download-chart-balai-sektoral").addEventListener('click', function() {
+        var url_base64jp = document.getElementById("Balai_Sektoral").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-balai-sektoral");
+        a.href = url_base64jp;
+    });
+
+
 
     function drawChartOPD(id_provinsi, kategori) {
-
-
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
@@ -167,77 +180,74 @@ $(document).ready(function() {
         })
 
     }
-    drawChartSekolah(0, 2);
+    drawChartSekolah(0, 3);
     $('#chart-filter-provinsi-sekolah').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-sekolah').val()
         Sekolah.destroy();
-        drawChartSekolah(provinsi, 2);
+        drawChartSekolah(provinsi, 3);
     })
 
-
-    function drawChartKegiatanJabker(provinsi) {
-        if (provinsi == 0) {
-            label = ["Sumatera Selatan", "Jambi"]
-            data = [350, 612]
-        }
-        if (provinsi == 1) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
-        }
-
-        if (provinsi == 2) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
-        }
-
-        // $.ajax({
-        //     url: ``,
-        //     method: "GET",
-        //     success: function(data) {
-        //         var label = [];
-        //         var value = [];
-        //         i = 0;
-        //         do {
-        //             label.push(data.data[i].employee_name);
-        //             value.push(data.data[i].employee_salary);
-        //             i++;
-
-        //         } while (i < 2);
-        var ctx = document.getElementById('Mitra3').getContext('2d');
-        Peserta_Jabker = new Chart(ctx, {
-            type: 'polarArea',
-            data: {
-                labels: label,
-                datasets: [{
-                    label: "Data Peserta Jabatan Kerja",
-                    backgroundColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    borderColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    data: data
-                }],
+    function drawChartAsosiasiProfesi(id_provinsi, kategori) {
 
 
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('AsosiasiProfesi').getContext('2d');
+                AsosiasiProfesi = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: label,
+                            backgroundColor: 'rgba(255, 0, 26, 0.1)',
+                            borderColor: 'rgba(255, 0, 26, 0.1)',
+                            data: value
+                        }],
+
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
                         }
-                    }]
-                }
+                    }
+                });
             }
         });
-        //     }
-        // });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-asosiasi-profesi').attr('href', data.data[0].pathfile);
+            }
+        })
 
     }
-
-    drawChartKegiatanJabker(0);
-    $('#chart-filter-provinsi-mitra3').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-mitra3').val()
-        drawChartKegiatanJabker(provinsi);
+    drawChartAsosiasiProfesi(0, 4);
+    $('#chart-filter-provinsi-asosiasi-profesi').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-asosiasi-profesi').val()
+        AsosiasiProfesi.destroy();
+        drawChartAsosiasiProfesi(provinsi, 4);
     })
+
+
+
 
     function drawChartKegiatanJabker2(provinsi) {
         if (provinsi == 0) {

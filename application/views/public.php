@@ -164,16 +164,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col mt-3">
                         <div class="card border-primary mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">MITRA DAN KERJASAMA</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Balai Sektoral</h6>
                             </div>
                             <div class="card-body">
-                                <a href="" id="chart-filter-file-balai-sektoral" type="button" class="btn btn-primary">Download
+                                <a href="" id="chart-filter-file-balai-sektoral" type="button"
+                                    class="btn btn-primary">Download
                                     File</a>
+                                <a id="download-chart-balai-sektoral" download="ChartImage.jpg" href=""
+                                    class="btn btn-primary float-right bg-flat-color-1" title="Descargar Gráfico">
+                                    Download Image
+                                </a>
                                 <div class="form-group py-2">
                                     <label class="my-1 mr-2"
                                         for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                     <select class="form-control" id="chart-filter-provinsi-balai-sektoral">
-                                        <option selected>Choose..</option>
+                                        <option selected value="0">Choose..</option>
                                         <option value="0">All</option>
                                         <option value="15">Jambi</option>
                                         <option value="16">Sumatera Selatan</option>
@@ -181,6 +186,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <option value="18">Lampung</option>
                                         <option value="19">Kepulauan Bangka</option>
 
+                                    </select>
+                                </div>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref text-primary">Pilih
+                                        Chart</label>
+                                    <select  class="form-control" name="chartType" id="chartType">
+                                        <option value="line">Line</option>
+                                        <option value="bar">Bar</option>
+                                        <option value="radar">Radar</option>
+                                        <option value="pie">Pie</option>
+                                        <option value="doughnut">Doughnut</option>
                                     </select>
                                 </div>
                                 <canvas id="Balai_Sektoral" height="100"></canvas>
@@ -200,7 +216,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Organisasi Perangkat Daerah Suburusan Jasa Konstruksi</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Organisasi Perangkat Daerah Suburusan
+                                    Jasa Konstruksi</h6>
                             </div>
                             <div class="card-body">
                                 <a href="" id="chart-filter-file-opd" type="button" class="btn btn-warning">Download
@@ -255,29 +272,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>MITRA DAN KERJASAMA BALAI JASA KONSTRUKSI WILAYAH II PALEMBANG</h2>
+                    <h2>ASOSIASI PROFESI BALAI JASA KONSTRUKSI WILAYAH II PALEMBANG</h2>
                 </div>
 
                 <div class="row content">
                     <div class="col mt-3">
                         <div class="card border-primary mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">MITRA DAN KERJASAMA</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">ASOSIASI PROFESI</h6>
                             </div>
                             <div class="card-body">
-                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-primary">Download
+                                <a href="" id="chart-filter-file-asosiasi-profesi" type="button"
+                                    class="btn btn-primary">Download
                                     File</a>
                                 <div class="form-group py-2">
                                     <label class="my-1 mr-2"
                                         for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                    <select class="form-control" id="chart-filter-provinsi-mitra3">
+                                    <select class="form-control" id="chart-filter-provinsi-asosiasi-profesi">
                                         <option selected>Choose..</option>
                                         <option value="0">All</option>
-                                        <option value="1">Sumatera Selatan</option>
-                                        <option value="2">Jambi</option>
+                                        <option value="15">Jambi</option>
+                                        <option value="16">Sumatera Selatan</option>
+                                        <option value="17">Bengkulu</option>
+                                        <option value="18">Lampung</option>
+                                        <option value="19">Kepulauan Bangka</option>
                                     </select>
                                 </div>
-                                <canvas id="Mitra3" height="100"></canvas>
+                                <canvas id="AsosiasiProfesi" height="100"></canvas>
                             </div>
                         </div>
                     </div>
@@ -445,7 +466,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                   
+
                 </div>
 
             </div>
