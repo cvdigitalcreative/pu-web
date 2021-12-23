@@ -1363,24 +1363,23 @@
 
                     <form method="POST" enctype="multipart/form-data">
                         <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <label class="my-1 mr-2" for="id_provinsi">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="id_provinsi">
                                 <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="2">Jambi</option>
+                                <option value="0">All</option>
+                                <option value="15">Jambi</option>
+                                <option value="16">Sumatera Selatan</option>
                             </select>
                         </div>
+                        
                         <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kabupaten</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Ogan Ilir</option>
-                                <option value="2">Ogan Komering Ilir</option>
-                            </select>
+                            <label for="nama_uojk">Nama Unit Organisasi Jasa Konsturksi</label>
+                            <input type="text" class="form-control" id="nama_uojk" name="nama_uojk"
+                                placeholder="Contoh: BP2P Wilayah Sumatera IV " required>
                         </div>
                         <div class="form-group py-2">
-                            <label for="namaPns">Jumlah Unit Organisasi Jasa Konsturksi</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
+                            <label for="jumlah_uojk">Jumlah Unit Organisasi Jasa Konsturksi</label>
+                            <input type="text" class="form-control" id="jumlah_uojk" name="jumlah_uojk"
                                 placeholder="Contoh: 190" required>
                         </div>
                         <div class="menu-divider"></div>

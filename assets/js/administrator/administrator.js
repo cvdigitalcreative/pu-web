@@ -2966,9 +2966,14 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-kegiatan-asasemen').modal('show');
     })
 
-     $('#btn-add-kegiatan-jabker').on('click', function() {
+    $('#btn-add-kegiatan-jabker').on('click', function() {
         $('form').attr('action', ``)
         $('#modal-tambah-kegiatan-jabker').modal('show');
+    })
+
+    $('#btn-add-jasa-konstruksi-master').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis/add_infografis`)
+        $('#modal-tambah-jasa-konsturksi').modal('show');
     })
 
     // ================================= Tenaga Ahli ===================================

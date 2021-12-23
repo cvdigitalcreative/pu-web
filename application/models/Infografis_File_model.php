@@ -1,6 +1,6 @@
 <?php
 
-class Infografis_model extends CI_model
+class Infografis_File_model extends CI_model
 {
     public function http_request_get($data, $function)
     {
@@ -33,7 +33,7 @@ class Infografis_model extends CI_model
     }
     // ======================= Model Functions ========================
 
-    public function data_chart_infografis(
+    public function data_file_infografis(
         $id_provinsi,
         $kategori
     ) {
@@ -42,10 +42,10 @@ class Infografis_model extends CI_model
             'kategori' => $kategori
         ];
 
-        return $this->http_request_get($data, "/");
+        return $this->http_request_get($data, "/file/");
     }
 
-    public function add_data_chart_infografis(
+    public function add_data_file_infografis(
         $id_provinsi,
         $nama_uojk,
         $jumlah_uojk,

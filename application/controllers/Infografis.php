@@ -8,28 +8,29 @@ class Infografis extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Infografis_model');
-
+        $this->load->model('Infografis_File_model');
 
         if ($this->session->userdata('id_role') == 3) {
             $this->session->set_flashdata('APImessage', "Akses gagal. Hanya administrator yang dapat mengakses website ini");
             redirect('pupr/login');
         }
     }
-    public function infografis($id_provini, $kategori)
+    public function infografis_file($id_provini, $kategori)
         {
-            if($this->session->userdata('logged_in') == true){
-                $data['infografis'] = $this->Infografis_model->data_chart_balai($id_provini, $kategori, $this->session->userdata('token'));
-                if ($data['infografis'] == null) {
+            
+                $data['infografis_file'] = $this->Infografis_File_model->data_file_infografis($id_provini, $kategori);
+                
+                if ($data['infografis_file'] == null) {
                     $callback = array(
                         'data' => []
                     );
                 }else{
-                    if($data['infografis']['status'] == "Success"){
-                        if (count($data['infografis']['data']) > 0) {
-                            $data['infografis'] = $data['infografis']['data'];
+                    if($data['infografis_file']['status'] == "Success"){
+                        if (count($data['infografis_file']['data']) > 0) {
+                            $data['infografis_file'] = $data['infografis_file']['data'];
     
                             $callback = array(
-                                'data' => $data['infografis']
+                                'data' => $data['infografis_file']
                             );
                         } else {
                             $callback = array(
@@ -45,9 +46,63 @@ class Infografis extends CI_Controller
                     }
                     header('Content-Type: application/json');
                     echo json_encode($callback);
-                }else{
-                    redirect('pupr/login');
+               
+            }
+
+            public function infografis($id_provini, $kategori)
+            {
+                
+                    $data['infografis'] = $this->Infografis_model->data_chart_infografis($id_provini, $kategori);
+                    if ($data['infografis'] == null) {
+                        $callback = array(
+                            'data' => []
+                        );
+                    }else{
+                        if($data['infografis']['status'] == "Success"){
+                            if (count($data['infografis']['data']) > 0) {
+                                $data['infografis'] = $data['infografis']['data'];
+        
+                                $callback = array(
+                                    'data' => $data['infografis']
+                                );
+                            } else {
+                                $callback = array(
+                                    'data' => []
+                                );
+                            }
+                        }else{
+                                $callback = array(
+                                    'data' => []
+                                );
+                            }
+    
+                        }
+                        header('Content-Type: application/json');
+                        echo json_encode($callback);
+                   
                 }
+
+            public function add_infografis(){
+                if($this->session->userdata('logged_in') == true){
+                    $id_provinsi = $this->input->post('id_provinsi');
+                    $nama_uojk = $this->input->post('nama_uojk');
+                    $jumlah_uojk = $this->input->post('jumlah_uojk');
+                    $kategori = "1";
+                    $add = $this->Infografis_model->add_data_chart_infografis($id_provinsi, $nama_uojk, $jumlah_uojk, $kategori, $this->session->userdata('token'));
+                    if ($add == null)
+                        $this->load->view('error_page');
+                    else {
+                        if ($add['status'] == "Success") {
+                            $this->session->set_flashdata('success', $add['message']);
+                            redirect('pupr/master');
+                        } else {
+                            $this->session->set_flashdata('APImessage', $add['message']);
+                            redirect('pupr/master');
+                        }
+                    }
+                } else
+                    redirect('pupr/login');
+                
             }
 }
     

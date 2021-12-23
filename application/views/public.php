@@ -157,7 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>MITRA DAN KERJASAMA BALAI JASA KONSTRUKSI WILAYAH II PALEMBANG</h2>
+                    <h2>Balai Sektoral Kementerian PUPR</h2>
                 </div>
 
                 <div class="row content">
@@ -167,19 +167,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-primary" id="">MITRA DAN KERJASAMA</h6>
                             </div>
                             <div class="card-body">
-                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-primary">Download
+                                <a href="" id="chart-filter-file-balai-sektoral" type="button" class="btn btn-primary">Download
                                     File</a>
                                 <div class="form-group py-2">
                                     <label class="my-1 mr-2"
                                         for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                    <select class="form-control" id="chart-filter-provinsi-balai-sektoral">
                                         <option selected>Choose..</option>
                                         <option value="0">All</option>
-                                        <option value="15">Sumatera Selatan</option>
-                                        <option value="16">Jambi</option>
+                                        <option value="15">Jambi</option>
+                                        <option value="16">Sumatera Selatan</option>
+                                        <option value="17">Bengkulu</option>
+                                        <option value="18">Lampung</option>
+                                        <option value="19">Kepulauan Bangka</option>
+
                                     </select>
                                 </div>
-                                <canvas id="Mitra" height="100"></canvas>
+                                <canvas id="Balai_Sektoral" height="100"></canvas>
                             </div>
                         </div>
                     </div>
@@ -196,21 +200,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Organisasi Perangkat Daerah Suburusan Jasa Konstruksi</h6>
                             </div>
                             <div class="card-body">
-                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                <a href="" id="chart-filter-file-opd" type="button" class="btn btn-warning">Download
                                     File</a>
                                 <div class="form-group py-2">
                                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                    <select class="form-control" id="chart-filter-provinsi-balai">
+                                    <select class="form-control" id="chart-filter-provinsi-opd">
                                         <option selected>Choose..</option>
                                         <option value="0">All</option>
-                                        <option value="1">Sumatera Selatan</option>
-                                        <option value="2">Jambi</option>
+                                        <option value="15">Jambi</option>
+                                        <option value="16">Sumatera Selatan</option>
+                                        <option value="17">Bengkulu</option>
+                                        <option value="18">Lampung</option>
+                                        <option value="19">Kepulauan Bangka</option>
                                     </select>
                                 </div>
-                                <canvas id="Balai" width="900" height="400"></canvas>
+                                <canvas id="OPD" width="900" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -218,21 +225,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Sekolah</h6>
                             </div>
                             <div class="card-body">
-                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                <a href="" id="chart-filter-file-sekolah" type="button" class="btn btn-warning">Download
                                     File</a>
                                 <div class="form-group py-2">
                                     <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                    <select class="form-control" id="chart-filter-provinsi-sekolah">
                                         <option selected>Choose..</option>
                                         <option value="0">All</option>
-                                        <option value="1">Sumatera Selatan</option>
-                                        <option value="2">Jambi</option>
+                                        <option value="15">Jambi</option>
+                                        <option value="16">Sumatera Selatan</option>
+                                        <option value="17">Bengkulu</option>
+                                        <option value="18">Lampung</option>
+                                        <option value="19">Kepulauan Bangka</option>
                                     </select>
                                 </div>
-                                <canvas id="Balai1" width="900" height="400"></canvas>
+                                <canvas id="Sekolah" width="900" height="400"></canvas>
                             </div>
                         </div>
                     </div>
@@ -240,8 +250,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Counts Section -->
- <!-- ======= About Us Section ======= -->
- <section id="about1" class="about1">
+        <!-- ======= About Us Section ======= -->
+        <section id="about1" class="about1">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
@@ -285,41 +295,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="col-xl-6 d-flex align-items-stretch">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi</p>
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                                </div>
+                                <div class="card-body">
+                                    <a href="" id="chart-filter-file-mitra" type="button"
+                                        class="btn btn-warning">Download
+                                        File</a>
+                                    <div class="form-group py-2">
+                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                        <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                            <option selected>Choose..</option>
+                                            <option value="0">All</option>
+                                            <option value="1">Sumatera Selatan</option>
+                                            <option value="2">Jambi</option>
+                                        </select>
+                                    </div>
+                                    <canvas id="Mitra4" width="900" height="800"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 d-flex align-items-stretch">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                                </div>
+                                <div class="card-body">
+                                    <a href="" id="chart-filter-file-mitra" type="button"
+                                        class="btn btn-warning">Download
+                                        File</a>
+                                    <div class="form-group py-2">
+                                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                        <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                            <option selected>Choose..</option>
+                                            <option value="0">All</option>
+                                            <option value="1">Sumatera Selatan</option>
+                                            <option value="2">Jambi</option>
+                                        </select>
+                                    </div>
+                                    <canvas id="Mitra5" width="900" height="800"></canvas>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                dolore</p>
-                        </div>
-                    </div>
 
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                            <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis</p>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -332,50 +359,93 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="row">
                     <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="card" style='background-image: url("assets/img/more-services-1.jpg");'
-                            data-aos="fade-up" data-aos-delay="100">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="">Lobira Duno</a></h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor
-                                    ut labore et dolore magna aliqua.</p>
-                                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                    File</a>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Mitra6" width="900"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                        <div class="card" style='background-image: url("assets/img/more-services-2.jpg");'
-                            data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-6 d-flex align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="">Limere Radses</a></h5>
-                                <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    doloremque laudantium, totam rem.</p>
-                                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                    File</a>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Mitra7" width="900" height="400"></canvas>
                             </div>
                         </div>
 
                     </div>
-                    <div class="col-md-6 d-flex align-items-stretch mt-4">
-                        <div class="card" style='background-image: url("assets/img/more-services-3.jpg");'
-                            data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-md-6 align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="">Nive Lodo</a></h5>
-                                <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit,
-                                    sed quia magni dolores.</p>
-                                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                    File</a>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Mitra8" width="900" height="400"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex align-items-stretch mt-4">
-                        <div class="card" style='background-image: url("assets/img/more-services-4.jpg");'
-                            data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-6 align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">MITRA DAN KERJASAMA</h6>
+                            </div>
                             <div class="card-body">
-                                <h5 class="card-title"><a href="">Pale Treda</a></h5>
-                                <p class="card-text">Nostrum eum sed et autem dolorum perspiciatis. Magni porro quisquam
-                                    laudantium voluptatem.</p>
-                                <div class="read-more"><a href="#"><i class="bi bi-arrow-right"></i> Read More</a></div>
+                                <a href="" id="chart-filter-file-mitra" type="button" class="btn btn-warning">Download
+                                    File</a>
+                                <div class="form-group py-2">
+                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                    <select class="form-control" id="chart-filter-provinsi-Pendidikan">
+                                        <option selected>Choose..</option>
+                                        <option value="0">All</option>
+                                        <option value="1">Sumatera Selatan</option>
+                                        <option value="2">Jambi</option>
+                                    </select>
+                                </div>
+                                <canvas id="Mitra9" width="900" height="400"></canvas>
                             </div>
                         </div>
                     </div>
+
+                   
                 </div>
 
             </div>
