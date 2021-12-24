@@ -456,6 +456,7 @@ $(document).ready(function() {
         a.href = image;
     });
 
+
     function drawChartAKTK(id_provinsi, kategori) {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
@@ -471,7 +472,7 @@ $(document).ready(function() {
 
                 } while (i < data.data.length);
                 var ctx = document.getElementById('AKTK').getContext('2d');
-                Aktk = new Chart(ctx, {
+                AKTK = new Chart(ctx, {
                     type: document.getElementById("chartTypeAKTK").value,
                     data: {
                         labels: label,
@@ -505,19 +506,19 @@ $(document).ready(function() {
         })
 
     }
-    drawChartAKTK(0, 6);
+    drawChartAKTK(0, 7);
 
     $('#chart-filter-provinsi-AKTK').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-AKTK').val()
-        Aktk.destroy();
-        drawChartAKTK(provinsi, 6);
+        AKTK.destroy();
+        drawChartAKTK(provinsi, 7);
     })
 
 
     $('#chartTypeAKTK').on('change', function() {
         var provinsi1 = document.getElementById("chart-filter-provinsi-AKTK").value
-        Aktk.destroy();
-        drawChartAKTK(provinsi1, 6);
+        AKTK.destroy();
+        drawChartAKTK(provinsi1, 7);
     })
 
     document.getElementById("download-chart-AKTK").addEventListener('click', function() {
@@ -527,11 +528,215 @@ $(document).ready(function() {
     });
 
 
+    function drawChartDABU(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('DABU').getContext('2d');
+                Dabu = new Chart(ctx, {
+                    type: document.getElementById("chartTypeDABU").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Daftar Asesor Badan Usaha",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-DABU').attr('href', data.data[0].pathfile);
+            }
+        })
+
+    }
+    drawChartDABU(0, 8);
+
+    $('#chart-filter-provinsi-DABU').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-DABU').val()
+        Dabu.destroy();
+        drawChartDABU(provinsi, 8);
+    })
 
 
+    $('#chartTypeDABU').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-DABU").value
+        Dabu.destroy();
+        drawChartDABU(provinsi1, 8);
+    })
+
+    document.getElementById("download-chart-DABU").addEventListener('click', function() {
+        var image = document.getElementById("DABU").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-DABU");
+        a.href = image;
+    });
+
+    function drawChartDINV(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('DINV').getContext('2d');
+                Dinv = new Chart(ctx, {
+                    type: document.getElementById("chartTypeDINV").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Instruktur Non Vokasi",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-DINV').attr('href', data.data[0].pathfile);
+            }
+        })
+
+    }
+    drawChartDINV(0, 9);
+
+    $('#chart-filter-provinsi-DINV').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-DINV').val()
+        Dinv.destroy();
+        drawChartDINV(provinsi, 9);
+    })
 
 
+    $('#chartTypeDINV').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-DINV").value
+        Dinv.destroy();
+        drawChartDINV(provinsi1, 9);
+    })
 
+    document.getElementById("download-chart-DINV").addEventListener('click', function() {
+        var image = document.getElementById("DINV").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-DINV");
+        a.href = image;
+    });
+
+    function drawChartDIV(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('DIV').getContext('2d');
+                Div = new Chart(ctx, {
+                    type: document.getElementById("chartTypeDIV").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Instruktur Vokasi",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-DIV').attr('href', data.data[0].pathfile);
+            }
+        })
+
+    }
+    drawChartDIV(0, 9);
+
+    $('#chart-filter-provinsi-DIV').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-DIV').val()
+        Div.destroy();
+        drawChartDIV(provinsi, 9);
+    })
+
+
+    $('#chartTypeDIV').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-DIV").value
+        Div.destroy();
+        drawChartDIV(provinsi1, 9);
+    })
+
+    document.getElementById("download-chart-DIV").addEventListener('click', function() {
+        var image = document.getElementById("DIV").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-DIV");
+        a.href = image;
+    });
 
 
 
