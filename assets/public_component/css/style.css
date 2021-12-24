@@ -726,7 +726,7 @@ div#about1.about1 {
 .services .icon-box::before {
     content: "";
     position: absolute;
-    background: #e1f0fa;
+    background: #0099ff;
     right: -60px;
     top: -40px;
     width: 100px;
@@ -803,7 +803,7 @@ div#about1.about1 {
 
 .more-services .card {
     border: 0;
-    padding: 160px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     position: relative;
     width: 100%;
     background-size: cover;
@@ -878,11 +878,11 @@ div#about1.about1 {
 }
 
 .features .icon-box h3 {
-    font-weight: 700;
+    font-weight: 500;
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .features .icon-box h3 a {

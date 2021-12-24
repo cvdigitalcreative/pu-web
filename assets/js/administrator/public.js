@@ -1,5 +1,37 @@
 $(document).ready(function() {
 
+    let backgrundcolor_1 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
+        'rgb(25, 150, 39, 0.1)', 'rgb(024, 50, 173, 0.1)', 'rgb(25, 34, 90, 0.1)', 'rgb(255, 220, 175, 0.1)', 'rgb(120, 250, 36, 0.1)'
+    ];
+    let backgrundcolor_2 = ['rgb(167, 90, 199, 0.1)', 'rgb(255, 25, 19, 0.1)',
+        'rgb(25, 105, 39, 0.1)', 'rgb(24, 150, 13, 0.1)', 'rgb(27, 241, 90, 0.1)', 'rgb(55, 220, 17, 0.1)', 'rgb(120, 25, 136, 0.1)'
+    ];
+    let backgrundcolor_3 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
+        'rgb(25, 15, 39, 0.1)', 'rgb(24, 50, 173, 0.1)', 'rgb(257, 41, 90, 0.1)', 'rgb(55, 220, 175, 0.1)', 'rgb(12, 25, 136, 0.1)'
+    ];
+    let backgrundcolor_4 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
+        'rgb(25, 15, 39, 0.1)', 'rgb(24, 50, 173, 0.1)', 'rgb(257, 41, 90, 0.1)', 'rgb(55, 220, 175, 0.1)', 'rgb(12, 25, 136, 0.1)'
+    ];
+    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
+        'rgb(25, 15, 39, 0.1)', 'rgb(24, 50, 173, 0.1)', 'rgb(257, 41, 90, 0.1)', 'rgb(55, 220, 175, 0.1)', 'rgb(12, 25, 136, 0.1)'
+    ];
+
+    let bordercolor_1 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
+        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    ];
+    let bordercolor_2 = ['rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
+        'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)'
+    ];
+    let bordercolor_3 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
+        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    ];
+    let bordercolor_4 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
+        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    ];
+    let bordercolor_5 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
+        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    ];
+
     function drawChartBalaiSektoral(id_provinsi, kategori) {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
@@ -21,8 +53,8 @@ $(document).ready(function() {
                         labels: label,
                         datasets: [{
                             label: "Balai Sektoral Kementerian PUPR",
-                            backgroundColor: 'rgba(255, 0, 26, 0.1)',
-                            borderColor: 'rgba(255, 0, 26, 0.1)',
+                            backgroundColor: backgrundcolor_1,
+                            borderColor: bordercolor_1,
                             data: value
                         }],
                     },
@@ -65,12 +97,10 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-balai-sektoral").addEventListener('click', function() {
-        var url_base64jp = document.getElementById("Balai_Sektoral").toDataURL("image/jpg");
+        var image = document.getElementById("Balai_Sektoral").toDataURL("image/jpg");
         var a = document.getElementById("download-chart-balai-sektoral");
-        a.href = url_base64jp;
+        a.href = image;
     });
-
-
 
     function drawChartOPD(id_provinsi, kategori) {
         $.ajax({
@@ -88,13 +118,13 @@ $(document).ready(function() {
                 } while (i < data.data.length);
                 var ctx = document.getElementById('OPD').getContext('2d');
                 Opd = new Chart(ctx, {
-                    type: 'line',
+                    type: document.getElementById("chartTypeOPD").value,
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Organisasi Perangkat Daerah Suburusan Jasa Konstruksi",
-                            backgroundColor: 'rgba(255, 0, 26, 0.1)',
-                            borderColor: 'rgba(255, 0, 26, 0.1)',
+                            label: "Balai Sektoral Kementerian PUPR",
+                            backgroundColor: backgrundcolor_2,
+                            borderColor: bordercolor_2,
                             data: value
                         }],
                     },
@@ -122,6 +152,7 @@ $(document).ready(function() {
 
     }
     drawChartOPD(0, 2);
+
     $('#chart-filter-provinsi-opd').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-opd').val()
         Opd.destroy();
@@ -129,9 +160,22 @@ $(document).ready(function() {
     })
 
 
+    $('#chartTypeOPD').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-opd").value
+        Opd.destroy();
+        drawChartOPD(provinsi1, 2);
+    })
+
+    document.getElementById("download-chart-opd").addEventListener('click', function() {
+        var image = document.getElementById("OPD").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-opd");
+        a.href = image;
+    });
+
+
+
+
     function drawChartSekolah(id_provinsi, kategori) {
-
-
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
@@ -147,13 +191,13 @@ $(document).ready(function() {
                 } while (i < data.data.length);
                 var ctx = document.getElementById('Sekolah').getContext('2d');
                 Sekolah = new Chart(ctx, {
-                    type: 'line',
+                    type: document.getElementById("chartTypeSekolah").value,
                     data: {
                         labels: label,
                         datasets: [{
                             label: "Sekolah",
-                            backgroundColor: 'rgba(255, 0, 26, 0.1)',
-                            borderColor: 'rgba(255, 0, 26, 0.1)',
+                            backgroundColor: backgrundcolor_2,
+                            borderColor: bordercolor_2,
                             data: value
                         }],
                     },
@@ -181,15 +225,27 @@ $(document).ready(function() {
 
     }
     drawChartSekolah(0, 3);
+
     $('#chart-filter-provinsi-sekolah').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-sekolah').val()
         Sekolah.destroy();
         drawChartSekolah(provinsi, 3);
     })
 
+
+    $('#chartTypeSekolah').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-sekolah").value
+        Sekolah.destroy();
+        drawChartSekolah(provinsi1, 3);
+    })
+
+    document.getElementById("download-chart-sekolah").addEventListener('click', function() {
+        var image = document.getElementById("Sekolah").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-sekolah");
+        a.href = image;
+    });
+
     function drawChartAsosiasiProfesi(id_provinsi, kategori) {
-
-
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
@@ -203,18 +259,17 @@ $(document).ready(function() {
                     i++;
 
                 } while (i < data.data.length);
-                var ctx = document.getElementById('AsosiasiProfesi').getContext('2d');
-                AsosiasiProfesi = new Chart(ctx, {
-                    type: 'bar',
+                var ctx = document.getElementById('Asosiasi_Profesi').getContext('2d');
+                Sekolah = new Chart(ctx, {
+                    type: document.getElementById("chartTypeAsosiasiProfesi").value,
                     data: {
                         labels: label,
                         datasets: [{
-                            label: label,
-                            backgroundColor: 'rgba(255, 0, 26, 0.1)',
-                            borderColor: 'rgba(255, 0, 26, 0.1)',
+                            label: "Asosiasi_Profesi",
+                            backgroundColor: backgrundcolor_3,
+                            borderColor: bordercolor_3,
                             data: value
                         }],
-
                     },
                     options: {
                         responsive: true,
@@ -240,268 +295,245 @@ $(document).ready(function() {
 
     }
     drawChartAsosiasiProfesi(0, 4);
+
     $('#chart-filter-provinsi-asosiasi-profesi').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-asosiasi-profesi').val()
-        AsosiasiProfesi.destroy();
+        Sekolah.destroy();
         drawChartAsosiasiProfesi(provinsi, 4);
     })
 
 
-
-
-    function drawChartKegiatanJabker2(provinsi) {
-        if (provinsi == 0) {
-            label = ["Sumatera Selatan", "Jambi"]
-            data = [350, 612]
-        }
-        if (provinsi == 1) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
-        }
-
-        if (provinsi == 2) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
-        }
-
-        // $.ajax({
-        //     url: ``,
-        //     method: "GET",
-        //     success: function(data) {
-        //         var label = [];
-        //         var value = [];
-        //         i = 0;
-        //         do {
-        //             label.push(data.data[i].employee_name);
-        //             value.push(data.data[i].employee_salary);
-        //             i++;
-
-        //         } while (i < 2);
-        var ctx = document.getElementById('Mitra4').getContext('2d');
-        Peserta_Jabker = new Chart(ctx, {
-            type: 'polarArea',
-            data: {
-                labels: label,
-                datasets: [{
-                    label: "Data Peserta Jabatan Kerja",
-                    backgroundColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    borderColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    data: data
-                }],
-
-
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-        //     }
-        // });
-
-    }
-
-    drawChartKegiatanJabker2(0);
-    $('#chart-filter-provinsi-mitra3').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-mitra3').val()
-        drawChartKegiatanJabker2(provinsi);
+    $('#chartTypeAsosiasiProfesi').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-asosiasi-profesi").value
+        Sekolah.destroy();
+        drawChartAsosiasiProfesi(provinsi1, 4);
     })
 
-    function drawChartKegiatanJabker3(provinsi) {
-        if (provinsi == 0) {
-            label = ["Sumatera Selatan", "Jambi"]
-            data = [350, 612]
-        }
-        if (provinsi == 1) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
-        }
+    document.getElementById("download-chart-asosiasi-profesi").addEventListener('click', function() {
+        var image = document.getElementById("Asosiasi_Profesi").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-asosiasi-profesi");
+        a.href = image;
+    });
 
-        if (provinsi == 2) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
-        }
+    function drawChartABUJK(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
 
-        // $.ajax({
-        //     url: ``,
-        //     method: "GET",
-        //     success: function(data) {
-        //         var label = [];
-        //         var value = [];
-        //         i = 0;
-        //         do {
-        //             label.push(data.data[i].employee_name);
-        //             value.push(data.data[i].employee_salary);
-        //             i++;
-
-        //         } while (i < 2);
-        var ctx = document.getElementById('Mitra5').getContext('2d');
-        Peserta_Jabker = new Chart(ctx, {
-            type: 'polarArea',
-            data: {
-                labels: label,
-                datasets: [{
-                    label: "Data Peserta Jabatan Kerja",
-                    backgroundColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    borderColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    data: data
-                }],
-
-
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+                } while (i < data.data.length);
+                var ctx = document.getElementById('ABUJK').getContext('2d');
+                Abujk = new Chart(ctx, {
+                    type: document.getElementById("chartTypeABUJK").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Asosiasi Badan Usaha Jasa Konstruksi",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
                         }
-                    }]
-                }
+                    }
+                });
             }
         });
-        //     }
-        // });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-ABUJK').attr('href', data.data[0].pathfile);
+            }
+        })
 
     }
+    drawChartABUJK(0, 5);
 
-    drawChartKegiatanJabker3(0);
-    $('#chart-filter-provinsi-mitra3').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-mitra3').val()
-        drawChartKegiatanJabker3(provinsi);
+    $('#chart-filter-provinsi-ABUJK').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-ABUJK').val()
+        Abujk.destroy();
+        drawChartABUJK(provinsi, 5);
     })
 
-    function drawChartKegiatanJabker4(provinsi) {
-        if (provinsi == 0) {
-            label = ["Sumatera Selatan", "Jambi"]
-            data = [350, 612]
-        }
-        if (provinsi == 1) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
-        }
 
-        if (provinsi == 2) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
-        }
+    $('#chartTypeABUJK').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-ABUJK").value
+        Abujk.destroy();
+        drawChartABUJK(provinsi1, 5);
+    })
 
-        // $.ajax({
-        //     url: ``,
-        //     method: "GET",
-        //     success: function(data) {
-        //         var label = [];
-        //         var value = [];
-        //         i = 0;
-        //         do {
-        //             label.push(data.data[i].employee_name);
-        //             value.push(data.data[i].employee_salary);
-        //             i++;
-
-        //         } while (i < 2);
-        var ctx = document.getElementById('Mitra6').getContext('2d');
-        Peserta_Jabker = new Chart(ctx, {
-            type: 'polarArea',
-            data: {
-                labels: label,
-                datasets: [{
-                    label: "Data Peserta Jabatan Kerja",
-                    backgroundColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    borderColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    data: data
-                }],
+    document.getElementById("download-chart-ABUJK").addEventListener('click', function() {
+        var image = document.getElementById("ABUJK").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-ABUJK");
+        a.href = image;
+    });
 
 
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+    function drawChartSertifikasi(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('Sertifikasi').getContext('2d');
+                Sertifikasi = new Chart(ctx, {
+                    type: document.getElementById("chartTypeSertifikasi").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Kewajiban Penggunaan Tenaga Kerja Konstruksi yang Bersertifikat Kompetensi",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
                         }
-                    }]
-                }
+                    }
+                });
             }
         });
-        //     }
-        // });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-Sertifikasi').attr('href', data.data[0].pathfile);
+            }
+        })
 
     }
+    drawChartSertifikasi(0, 6);
 
-    drawChartKegiatanJabker4(0);
-    $('#chart-filter-provinsi-mitra3').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-mitra3').val()
-        drawChartKegiatanJabker4(provinsi);
+    $('#chart-filter-provinsi-Sertifikasi').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-Sertifikasi').val()
+        Sertifikasi.destroy();
+        drawChartSertifikasi(provinsi, 6);
     })
 
-    function drawChartKegiatanJabker5(provinsi) {
-        if (provinsi == 0) {
-            label = ["Sumatera Selatan", "Jambi"]
-            data = [350, 612]
-        }
-        if (provinsi == 1) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [60, 50, 90, 10, 10, 5, 10, 89, 90, 20, 12, 13]
-        }
 
-        if (provinsi == 2) {
-            label = ["Jabker 1", "Jabker 2", "Jabker 3", "Jabker 4", "Jabker 5", "Jabker 6", "Jabker 7", "Jabker 8", "Jabker 9", "Jabker 10", "Jabker 11", "Jabker 12"]
-            data = [18, 10, 80, 20, 30, 8, 12, 34, 12, 90, 12, 60]
-        }
+    $('#chartTypeSertifikasi').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-Sertifikasi").value
+        Sertifikasi.destroy();
+        drawChartSertifikasi(provinsi1, 6);
+    })
 
-        // $.ajax({
-        //     url: ``,
-        //     method: "GET",
-        //     success: function(data) {
-        //         var label = [];
-        //         var value = [];
-        //         i = 0;
-        //         do {
-        //             label.push(data.data[i].employee_name);
-        //             value.push(data.data[i].employee_salary);
-        //             i++;
+    document.getElementById("download-chart-Sertifikasi").addEventListener('click', function() {
+        var image = document.getElementById("Sertifikasi").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-Sertifikasi");
+        a.href = image;
+    });
 
-        //         } while (i < 2);
-        var ctx = document.getElementById('Mitra7').getContext('2d');
-        Peserta_Jabker = new Chart(ctx, {
-            type: 'polarArea',
-            data: {
-                labels: label,
-                datasets: [{
-                    label: "Data Peserta Jabatan Kerja",
-                    backgroundColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    borderColor: ["rgba(255, 0, 26, 0.1)", "rgba(0,225, 51, 0.1)"],
-                    data: data
-                }],
+    function drawChartAKTK(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
 
-
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+                } while (i < data.data.length);
+                var ctx = document.getElementById('AKTK').getContext('2d');
+                Aktk = new Chart(ctx, {
+                    type: document.getElementById("chartTypeAKTK").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Kewajiban Penggunaan Tenaga Kerja Konstruksi yang Bersertifikat Kompetensi",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
                         }
-                    }]
-                }
+                    }
+                });
             }
         });
-        //     }
-        // });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-AKTK').attr('href', data.data[0].pathfile);
+            }
+        })
 
     }
+    drawChartAKTK(0, 6);
 
-    drawChartKegiatanJabker5(0);
-    $('#chart-filter-provinsi-mitra3').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-mitra3').val()
-        drawChartKegiatanJabker5(provinsi);
+    $('#chart-filter-provinsi-AKTK').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-AKTK').val()
+        Aktk.destroy();
+        drawChartAKTK(provinsi, 6);
     })
+
+
+    $('#chartTypeAKTK').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-AKTK").value
+        Aktk.destroy();
+        drawChartAKTK(provinsi1, 6);
+    })
+
+    document.getElementById("download-chart-AKTK").addEventListener('click', function() {
+        var image = document.getElementById("AKTK").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-AKTK");
+        a.href = image;
+    });
+
+
+
+
+
+
+
+
+
+
+
 });

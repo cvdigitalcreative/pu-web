@@ -125,3 +125,6 @@ $route['privacy-policy'] = "Common/privacy";
 //route terms & condition
 $route['terms-and-conditions'] = "Common/terms";
 
+// route public page
+$route['public'] = "Public_page/index";
+
