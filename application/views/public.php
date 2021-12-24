@@ -752,16 +752,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="card mb-4">
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga
-                                            Kerja</h6>
+                                        <h6 class="m-0 font-weight-bold text-black" id="">Program Padat Karya</h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="mt-2">
-                                                <a href="" id="chart-filter-file-DIV" type="button"
+                                                <a href="" id="chart-filter-file-PPP" type="button"
                                                     class="btn btn-warning float-right bg-flat-color-1">Download
                                                     File</a>
-                                                <a id="download-chart-DIV" download="ChartImage.jpg" href=""
+                                                <a id="download-chart-PPP" download="ChartImage.jpg" href=""
                                                     class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                     title="Descargar Gráfico">
                                                     Download Image
@@ -773,7 +772,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <div class="form-group py-2">
                                                     <label class="my-1"
                                                         for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                                    <select class="form-control" id="chart-filter-provinsi-DIV">
+                                                    <select class="form-control" id="chart-filter-provinsi-PPP">
                                                         <option selected value="0">Choose..</option>
                                                         <option value="0">All</option>
                                                         <option value="15">Jambi</option>
@@ -789,7 +788,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <label class="my-1"
                                                         for="inlineFormCustomSelectPref text-primary">Pilih
                                                         Chart</label>
-                                                    <select class="form-control" name="chartTypeDIV" id="chartTypeDIV">
+                                                    <select class="form-control" name="chartTypePPP" id="chartTypePPP">
                                                         <option value="line">Line</option>
                                                         <option value="bar">Bar</option>
                                                         <option value="radar">Radar</option>
@@ -799,7 +798,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 </div>
                                             </div>
                                         </div>
-                                        <canvas id="DIV" width="400" height="300"></canvas>
+                                        <canvas id="PPP" width="400" height="250"></canvas>
                                     </div>
                                 </div>
                             </div>
