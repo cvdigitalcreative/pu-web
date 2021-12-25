@@ -1,4 +1,4 @@
-div#about1 {
+div#asosiasi {
     background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
     background-size: 500px 800px;
 }
@@ -6,4 +6,16 @@ div#about1 {
 div.card-body {
     background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
     background-size: 500px 800px;
+}
+
+section#pricing {
+    background-color: rgb(245, 169, 29);
+}
+
+#pricing .section-title h2 {
+    color: white;
+}
+
+#pricing .section-title p {
+    color: white;
 }

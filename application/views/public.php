@@ -39,8 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Balai Sektoral</a></li>
+                    <li><a class="nav-link scrollto" href="#asosiasi">Asosiasi</a></li>
                     <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
                     <li><a class="nav-link scrollto" href="#team">Team</a></li>
                     <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
@@ -77,11 +77,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up">Info Grafis BJKW II Palembang</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with
-                        Bootstrap</h2>
+                    <h1 data-aos="fade-up">Info Grafis</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Balai Jasa Konstruksi Wilayah II Palembang</h2>
                     <div data-aos="fade-up" data-aos-delay="800">
-                        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+                        <a href="#about" class="btn-get-started scrollto">Selengkapnya</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -321,7 +320,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Counts Section -->
         <!-- ======= About Us Section ======= -->
-        <section id="about1" class="about1">
+        <section id="asosiasi" class="asosiasi">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
@@ -393,8 +392,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Services</h2>
-                    <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p>
+                    <h2>Sumber Daya Tenaga Ahli</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
                 </div>
 
                 <div class="row">
@@ -531,7 +530,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-DABU" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1 ">Download
                                             File</a>
                                         <a id="download-chart-DABU" download="ChartImage.jpg" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -733,7 +732,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-md-6 align-items-stretch">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Instruktur Vokasi</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Program Padat Karya</h6>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -769,10 +768,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypePPP" id="chartTypePPP">
+                                                <option value="pie">Pie</option>
                                                 <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="radar">Radar</option>
-                                                <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
                                             </select>
                                         </div>
@@ -785,7 +784,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-md-6 align-items-stretch">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Instruktur Vokasi</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Pemanfaatan Mobile Training Unit</h6>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -821,10 +820,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypePMTU" id="chartTypePMTU">
+                                                <option value="pie">Pie</option>
                                                 <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="radar">Radar</option>
-                                                <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
                                             </select>
                                         </div>
@@ -837,7 +836,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-md-6 align-items-stretch">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Instruktur Vokasi</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan</h6>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -873,8 +872,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeRPK" id="chartTypeRPK">
-                                                <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
+                                                <option value="bar">Bar</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
@@ -886,166 +885,255 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="col-md-6 align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Peserta
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="mt-2">
+                                        <a href="" id="chart-filter-file-RPKP" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-RPKP" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-RPKP">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeRPKP" id="chartTypeRPKP">
+                                                <option value="line">Line</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <canvas id="RPKP" width="900" height="600"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
         </section><!-- End More Services Section -->
-
-
-
-        <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio">
+        <!-- ======= Pricing Section ======= -->
+        <section id="pricing" class="pricing">
             <div class="container">
 
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Portfolio</h2>
-                    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+                <div class="section-title">
+                    <h2>Rekap Pelaksanaan Kegiatan</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
                 </div>
 
-                <div class="row" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-lg-12 d-flex justify-content-center">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-app">App</li>
-                            <li data-filter=".filter-card">Card</li>
-                            <li data-filter=".filter-web">Web</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="container">
-                           
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
+                            <div class="card mb-5">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Peserta Berdasarkan Wilayah dan
+                                        Pembiayaan</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="mt-2">
+                                            <a href="" id="chart-filter-file-RPBWP" type="button"
+                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                File</a>
+                                            <a id="download-chart-RPBWP" download="ChartImage.jpg" href=""
+                                                class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                                title="Descargar Gráfico">
+                                                Download Image
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1"
+                                                    for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                                <select class="form-control" id="chart-filter-provinsi-RPBWP">
+                                                    <option selected value="0">Choose..</option>
+                                                    <option value="0">All</option>
+                                                    <option value="15">Jambi</option>
+                                                    <option value="16">Sumatera Selatan</option>
+                                                    <option value="17">Bengkulu</option>
+                                                    <option value="18">Lampung</option>
+                                                    <option value="19">Kepulauan Bangka</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                    Chart</label>
+                                                <select class="form-control" name="chartTypeRPBWP" id="chartTypeRPBWP">
+                                                    <option value="line">Line</option>
+                                                    <option value="bar">Bar</option>
+                                                    <option value="radar">Radar</option>
+                                                    <option value="pie">Pie</option>
+                                                    <option value="doughnut">Doughnut</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="RPBWP" height="300"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                        <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="card mb-5">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Pembekalan/Bimtek dan Uji Sertifikasi Berdasarkan Berita Acara Hasil Penilaian</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="mt-2">
+                                            <a href="" id="chart-filter-file-RPBU" type="button"
+                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                File</a>
+                                            <a id="download-chart-RPBU" download="ChartImage.jpg" href=""
+                                                class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                                title="Descargar Gráfico">
+                                                Download Image
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1"
+                                                    for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                                <select class="form-control" id="chart-filter-provinsi-RPBU">
+                                                    <option selected value="0">Choose..</option>
+                                                    <option value="0">All</option>
+                                                    <option value="15">Jambi</option>
+                                                    <option value="16">Sumatera Selatan</option>
+                                                    <option value="17">Bengkulu</option>
+                                                    <option value="18">Lampung</option>
+                                                    <option value="19">Kepulauan Bangka</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                    Chart</label>
+                                                <select class="form-control" name="chartTypeRPBU"
+                                                    id="chartTypeRPBU">
+                                                    <option value="radar">Radar</option>
+                                                    <option value="line">Line</option>
+                                                    <option value="bar">Bar</option>
+                                                    <option value="pie">Pie</option>
+                                                    <option value="doughnut">Doughnut</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="RPBU" height="300"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+                        <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
+                            <div class="card mb-5">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Peserta Berdasarkan Wilayah
+                                        dan
+                                        Pembiayaan</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="mt-2">
+                                            <a href="" id="chart-filter-file-RPBWP2" type="button"
+                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                File</a>
+                                            <a id="download-chart-RPBWP2" download="ChartImage.jpg" href=""
+                                                class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                                title="Descargar Gráfico">
+                                                Download Image
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1"
+                                                    for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                                <select class="form-control" id="chart-filter-provinsi-RPBWP2">
+                                                    <option selected value="0">Choose..</option>
+                                                    <option value="0">All</option>
+                                                    <option value="15">Jambi</option>
+                                                    <option value="16">Sumatera Selatan</option>
+                                                    <option value="17">Bengkulu</option>
+                                                    <option value="18">Lampung</option>
+                                                    <option value="19">Kepulauan Bangka</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                    Chart</label>
+                                                <select class="form-control" name="chartTypeRPBWP2"
+                                                    id="chartTypeRPBWP2">
+                                                    <option value="line">Line</option>
+                                                    <option value="bar">Bar</option>
+                                                    <option value="radar">Radar</option>
+                                                    <option value="pie">Pie</option>
+                                                    <option value="doughnut">Doughnut</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="RPBWP2" height="300"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
-        </section><!-- End Portfolio Section -->
+
+            </div>
+        </section><!-- End Pricing Section -->
+
+
+
 
         <!-- ======= Features Section ======= -->
         <section id="features" class="features">
@@ -1134,160 +1222,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Features Section -->
 
-        <!-- ======= Team Section ======= -->
-        <section id="team" class="team section-bg">
-            <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Team</h2>
-                    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Executive Officer</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="200">
-                            <div class="member-img">
-                                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="300">
-                            <div class="member-img">
-                                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>CTO</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="400">
-                            <div class="member-img">
-                                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Accountant</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Team Section -->
-
-        <!-- ======= Pricing Section ======= -->
-        <section id="pricing" class="pricing">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Pricing</h2>
-                    <p>Sit sint consectetur velit nemo qui impedit suscipit alias ea</p>
-                </div>
-
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="box" data-aos="zoom-in-right" data-aos-delay="200">
-                            <h3>Free</h3>
-                            <h4><sup>$</sup>0<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li class="na">Pharetra massa</li>
-                                <li class="na">Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-                        <div class="box recommended" data-aos="zoom-in" data-aos-delay="100">
-                            <h3>Business</h3>
-                            <h4><sup>$</sup>19<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li class="na">Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-                        <div class="box" data-aos="zoom-in-left" data-aos-delay="200">
-                            <h3>Developer</h3>
-                            <h4><sup>$</sup>29<span> / month</span></h4>
-                            <ul>
-                                <li>Aida dere</li>
-                                <li>Nec feugiat nisl</li>
-                                <li>Nulla at volutpat dola</li>
-                                <li>Pharetra massa</li>
-                                <li>Massa ultricies mi</li>
-                            </ul>
-                            <div class="btn-wrap">
-                                <a href="#" class="btn-buy">Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section><!-- End Pricing Section -->
 
         <!-- ======= F.A.Q Section ======= -->
         <section id="faq" class="faq">
@@ -1454,14 +1388,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row d-flex align-items-center">
                 <div class="col-lg-6 text-lg-left text-center">
                     <div class="copyright">
-                        &copy; Copyright <strong>Vesperr</strong>. All Rights Reserved
+                        &copy; Balai Jasa <strong>Konstruksi</strong>Wilayah II
                     </div>
                     <div class="credits">
-                        <!-- All the links in the footer should remain intact. -->
-                        <!-- You can delete the links only if you purchased the pro version. -->
-                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                       Palembang
                     </div>
                 </div>
                 <div class="col-lg-6">

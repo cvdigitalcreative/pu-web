@@ -31,6 +31,7 @@ $(document).ready(function() {
     let bordercolor_5 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
         'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
     ];
+    Chart.defaults.global.defaultFontSize = 10;
 
     function drawChartBalaiSektoral(id_provinsi, kategori) {
         $.ajax({
@@ -47,6 +48,7 @@ $(document).ready(function() {
 
                 } while (i < data.data.length);
                 var ctx = document.getElementById('Balai_Sektoral').getContext('2d');
+
                 Mitra = new Chart(ctx, {
                     type: document.getElementById("chartType").value,
                     data: {
@@ -101,6 +103,8 @@ $(document).ready(function() {
         var a = document.getElementById("download-chart-balai-sektoral");
         a.href = image;
     });
+
+
 
     function drawChartOPD(id_provinsi, kategori) {
         $.ajax({
@@ -351,6 +355,7 @@ $(document).ready(function() {
                                 }
                             }]
                         }
+
                     }
                 });
             }
@@ -828,7 +833,7 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Program Padat Karya",
+                            label: "Pemanfaatan Mobile Training Unit",
                             backgroundColor: backgrundcolor_4,
                             borderColor: bordercolor_4,
                             data: value,
@@ -898,7 +903,7 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Program Padat Karya",
+                            label: "Rekap Pelaksanaan Kegiatan",
                             backgroundColor: backgrundcolor_4,
                             borderColor: bordercolor_4,
                             data: value,
@@ -948,5 +953,285 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    function drawChartRPKP(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('RPKP').getContext('2d');
+                RPKP = new Chart(ctx, {
+                    type: document.getElementById("chartTypeRPKP").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Rekap Pelaksanaan Kegiatan Peserta",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-RPKP').attr('href', data.data[0].pathfile);
+            }
+        })
+
+    }
+    drawChartRPKP(0, 14);
+
+    $('#chart-filter-provinsi-RPKP').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-RPKP').val()
+        RPKP.destroy();
+        drawChartRPKP(provinsi, 14);
+    })
+
+
+    $('#chartTypeRPKP').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPKP").value
+        RPKP.destroy();
+        drawChartRPKP(provinsi1, 14);
+    })
+
+    document.getElementById("download-chart-RPKP").addEventListener('click', function() {
+        var image = document.getElementById("RPKP").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-RPKP");
+        a.href = image;
+    });
+
+    function drawChartRPBWP(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('RPBWP').getContext('2d');
+                RPBWP = new Chart(ctx, {
+                    type: document.getElementById("chartTypeRPBWP").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-RPBWP').attr('href', data.data[0].pathfile);
+            }
+        })
+
+    }
+    drawChartRPBWP(0, 15);
+
+    $('#chart-filter-provinsi-RPBWP').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-RPBWP').val()
+        RPBWP.destroy();
+        drawChartRPBWP(provinsi, 15);
+    })
+
+
+    $('#chartTypeRPBWP').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBWP").value
+        RPBWP.destroy();
+        drawChartRPBWP(provinsi1, 15);
+    })
+
+    document.getElementById("download-chart-RPBWP").addEventListener('click', function() {
+        var image = document.getElementById("RPBWP").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-RPBWP");
+        a.href = image;
+    });
+
+
+    function drawChartRPBWP2(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('RPBWP2').getContext('2d');
+                RPBWP2 = new Chart(ctx, {
+                    type: document.getElementById("chartTypeRPBWP2").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-RPBWP2').attr('href', data.data[0].pathfile);
+            }
+        })
+
+    }
+    drawChartRPBWP2(0, 16);
+
+    $('#chart-filter-provinsi-RPBWP2').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-RPBWP2').val()
+        RPBWP2.destroy();
+        drawChartRPBWP2(provinsi, 16);
+    })
+
+
+    $('#chartTypeRPBWP2').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBWP2").value
+        RPBWP2.destroy();
+        drawChartRPBWP2(provinsi1, 16);
+    })
+
+    document.getElementById("download-chart-RPBWP2").addEventListener('click', function() {
+        var image = document.getElementById("RPBWP2").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-RPBWP2");
+        a.href = image;
+    });
+
+    function drawChartRPBU(id_provinsi, kategori) {
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                var label = [];
+                var value = [];
+                i = 0;
+                do {
+                    label.push(data.data[i].nama);
+                    value.push(data.data[i].jumlah);
+                    i++;
+
+                } while (i < data.data.length);
+                var ctx = document.getElementById('RPBU').getContext('2d');
+                RPBU = new Chart(ctx, {
+                    type: document.getElementById("chartTypeRPBU").value,
+                    data: {
+                        labels: label,
+                        datasets: [{
+                            label: "Realisasi Peserta Pembekalan/Bimtek dan Uji Sertifikasi Berdasarkan Berita Acara Hasil Penilaian",
+                            backgroundColor: backgrundcolor_4,
+                            borderColor: bordercolor_4,
+                            data: value,
+                        }],
+                    },
+                    options: {
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                $('#chart-filter-file-RPBU').attr('href', data.data[0].pathfile);
+            }
+        })
+
+    }
+    drawChartRPBU(0, 17);
+
+    $('#chart-filter-provinsi-RPBU').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-RPBU').val()
+        RPBU.destroy();
+        drawChartRPBU(provinsi, 17);
+    })
+
+
+    $('#chartTypeRPBU').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBU").value
+        RPBU.destroy();
+        drawChartRPBU(provinsi1, 17);
+    })
+
+    document.getElementById("download-chart-RPBU").addEventListener('click', function() {
+        var image = document.getElementById("RPBU").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-RPBU");
+        a.href = image;
+    });
 
 });
