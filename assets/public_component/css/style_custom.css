@@ -12,6 +12,18 @@ section#pricing {
     background-color: rgb(245, 169, 29);
 }
 
+section#services {
+    background-color: rgb(245, 169, 29);
+}
+
+#services .section-title h2 {
+    color: white;
+}
+
+#services .section-title p {
+    color: white;
+}
+
 #pricing .section-title h2 {
     color: white;
 }

@@ -41,29 +41,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">Balai Sektoral</a></li>
                     <li><a class="nav-link scrollto" href="#asosiasi">Asosiasi</a></li>
-                    <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                    <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                    <li><a class="nav-link scrollto " href="#more-services">Asesor</a></li>
+                    <li class="dropdown"><a href="#"><span>Infografis Lainnya</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
+                            <li><a href="#counts">OPD dan Sekolah</a></li>
+                            <li><a href="#services">Kegiatan</a></li>
                             <li><a href="#">Drop Down 3</a></li>
                             <li><a href="#">Drop Down 4</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                    <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Hubungi</a></li>
+                    <li><a class="getstarted scrollto" href="#about">Explore</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -133,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Clients Section -->
 
-        <!-- ======= About Us Section ======= -->
+        <!-- ======= Balai Sektoral Kementerian PUPR Section ======= -->
         <section id="about" class="about">
             <div class="container">
 
@@ -199,11 +187,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
             </div>
-        </section><!-- End About Us Section -->
+        </section><!-- Balai Sektoral Kementerian PUPR Section -->
 
-        <!-- ======= Counts Section ======= -->
+        <!-- ======= Mitra OPD dan Sekolah ======= -->
         <section id="counts" class="counts">
             <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Organisasi Perangkat Daerah Suburusan dan Sekolah</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                </div>
 
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -318,7 +310,133 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
             </div>
-        </section><!-- End Counts Section -->
+        </section><!-- Mitra OPD dan Sekolah Section -->
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Rekap Pelaksanaan Kegiatan</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                </div>
+
+                <div class="row">
+                    <div class="col d-flex">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="mt-2">
+                                            <a href="" id="chart-filter-file-RPK" type="button"
+                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                File</a>
+                                            <a id="download-chart-RPK" download="ChartImage.jpg" href=""
+                                                class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                                title="Descargar Gráfico">
+                                                Download Image
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1"
+                                                    for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                                <select class="form-control" id="chart-filter-provinsi-RPK">
+                                                    <option selected value="0">Choose..</option>
+                                                    <option value="0">All</option>
+                                                    <option value="15">Jambi</option>
+                                                    <option value="16">Sumatera Selatan</option>
+                                                    <option value="17">Bengkulu</option>
+                                                    <option value="18">Lampung</option>
+                                                    <option value="19">Kepulauan Bangka</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                    Chart</label>
+                                                <select class="form-control" name="chartTypeRPK" id="chartTypeRPK">
+                                                    <option value="radar">Radar</option>
+                                                    <option value="line">Line</option>
+                                                    <option value="bar">Bar</option>
+                                                    <option value="pie">Pie</option>
+                                                    <option value="doughnut">Doughnut</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="RPK" width="535"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col d-flex">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card mb-4">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Peserta
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="mt-2">
+                                            <a href="" id="chart-filter-file-RPKP" type="button"
+                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                File</a>
+                                            <a id="download-chart-RPKP" download="ChartImage.jpg" href=""
+                                                class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                                title="Descargar Gráfico">
+                                                Download Image
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1"
+                                                    for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                                <select class="form-control" id="chart-filter-provinsi-RPKP">
+                                                    <option selected value="0">Choose..</option>
+                                                    <option value="0">All</option>
+                                                    <option value="15">Jambi</option>
+                                                    <option value="16">Sumatera Selatan</option>
+                                                    <option value="17">Bengkulu</option>
+                                                    <option value="18">Lampung</option>
+                                                    <option value="19">Kepulauan Bangka</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group py-2">
+                                                <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                    Chart</label>
+                                                <select class="form-control" name="chartTypeRPKP" id="chartTypeRPKP">
+                                                    <option value="radar">Radar</option>
+                                                    <option value="line">Line</option>
+                                                    <option value="bar">Bar</option>
+                                                    <option value="pie">Pie</option>
+                                                    <option value="doughnut">Doughnut</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <canvas id="RPKP" width="535"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
         <!-- ======= About Us Section ======= -->
         <section id="asosiasi" class="asosiasi">
             <div class="container">
@@ -387,12 +505,247 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End About Us Section -->
+
+
+        <!-- ======= More Services Section ======= -->
+        <section id="more-services" class="more-services">
+            <div class="container">
+
+                <div class="row">
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Asesor Badan Usaha dan Kompetensi Tenaga Kerja</h2>
+                        <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Asesor Badan Usaha</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="mt-2">
+                                        <a href="" id="chart-filter-file-DABU" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1 ">Download
+                                            File</a>
+                                        <a id="download-chart-DABU" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-DABU">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeDABU" id="chartTypeDABU">
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="line">Line</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="pie">Pie</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <canvas id="DABU" width="900" height="600"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="mt-2">
+                                        <a href="" id="chart-filter-file-AKTK" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-AKTK" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-AKTK">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeAKTK" id="chartTypeAKTK">
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="line">Line</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="pie">Pie</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <canvas id="AKTK" width="900" height="600"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Program Padat Karya dan Pemanfaatan Mobile Training Unit</h2>
+                        <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                    </div>
+                    <div class="col-md-6 align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Program Padat Karya</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="mt-2">
+                                        <a href="" id="chart-filter-file-PPP" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-PPP" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-PPP">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypePPP" id="chartTypePPP">
+                                                <option value="pie">Pie</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <canvas id="PPP" width="900" height="600"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 align-items-stretch">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Pemanfaatan Mobile Training Unit</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="mt-2">
+                                        <a href="" id="chart-filter-file-PMTU" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-PMTU" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-PMTU">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypePMTU" id="chartTypePMTU">
+                                                <option value="pie">Pie</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <canvas id="PMTU" width="900" height="600"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 align-items-stretch">
+
+                    </div>
+                    <div class="col-md-6 align-items-stretch">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End More Services Section -->
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Sumber Daya Tenaga Ahli</h2>
+                    <h2>Asosiasi Badan Jasa Usaha dan Tenaga Kerja Konstruksi</h2>
                     <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
                 </div>
 
@@ -516,115 +869,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Services Section -->
 
-        <!-- ======= More Services Section ======= -->
-        <section id="more-services" class="more-services">
+        <section>
             <div class="container">
-
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Sumber Daya Tenaga Ahli</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                </div>
                 <div class="row">
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Asesor Badan Usaha</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="mt-2">
-                                        <a href="" id="chart-filter-file-DABU" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1 ">Download
-                                            File</a>
-                                        <a id="download-chart-DABU" download="ChartImage.jpg" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-DABU">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypeDABU" id="chartTypeDABU">
-                                                <option value="doughnut">Doughnut</option>
-                                                <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="pie">Pie</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <canvas id="DABU" width="900" height="600"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex align-items-stretch">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="mt-2">
-                                        <a href="" id="chart-filter-file-AKTK" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
-                                            File</a>
-                                        <a id="download-chart-AKTK" download="ChartImage.jpg" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-AKTK">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypeAKTK" id="chartTypeAKTK">
-                                                <option value="doughnut">Doughnut</option>
-                                                <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="pie">Pie</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <canvas id="AKTK" width="900" height="600"></canvas>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-6 align-items-stretch">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -729,220 +980,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 align-items-stretch">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Program Padat Karya</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="mt-2">
-                                        <a href="" id="chart-filter-file-PPP" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
-                                            File</a>
-                                        <a id="download-chart-PPP" download="ChartImage.jpg" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-PPP">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypePPP" id="chartTypePPP">
-                                                <option value="pie">Pie</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="line">Line</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="doughnut">Doughnut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <canvas id="PPP" width="900" height="600"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 align-items-stretch">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Pemanfaatan Mobile Training Unit</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="mt-2">
-                                        <a href="" id="chart-filter-file-PMTU" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
-                                            File</a>
-                                        <a id="download-chart-PMTU" download="ChartImage.jpg" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-PMTU">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypePMTU" id="chartTypePMTU">
-                                                <option value="pie">Pie</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="line">Line</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="doughnut">Doughnut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <canvas id="PMTU" width="900" height="600"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 align-items-stretch">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="mt-2">
-                                        <a href="" id="chart-filter-file-RPK" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
-                                            File</a>
-                                        <a id="download-chart-RPK" download="ChartImage.jpg" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-RPK">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypeRPK" id="chartTypeRPK">
-                                                <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="doughnut">Doughnut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <canvas id="RPK" width="900" height="600"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 align-items-stretch">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Peserta
-                                </h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="mt-2">
-                                        <a href="" id="chart-filter-file-RPKP" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
-                                            File</a>
-                                        <a id="download-chart-RPKP" download="ChartImage.jpg" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-RPKP">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypeRPKP" id="chartTypeRPKP">
-                                                <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="doughnut">Doughnut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <canvas id="RPKP" width="900" height="600"></canvas>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
             </div>
-        </section><!-- End More Services Section -->
+        </section>
         <!-- ======= Pricing Section ======= -->
         <section id="pricing" class="pricing">
             <div class="container">
@@ -1015,7 +1055,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-5">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Pembekalan/Bimtek dan Uji Sertifikasi Berdasarkan Berita Acara Hasil Penilaian</h6>
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta
+                                        Pembekalan/Bimtek dan Uji Sertifikasi Berdasarkan Berita Acara Hasil Penilaian
+                                    </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -1050,8 +1092,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
-                                                <select class="form-control" name="chartTypeRPBU"
-                                                    id="chartTypeRPBU">
+                                                <select class="form-control" name="chartTypeRPBU" id="chartTypeRPBU">
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
@@ -1391,7 +1432,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         &copy; Balai Jasa <strong>Konstruksi</strong>Wilayah II
                     </div>
                     <div class="credits">
-                       Palembang
+                        Palembang
                     </div>
                 </div>
                 <div class="col-lg-6">
