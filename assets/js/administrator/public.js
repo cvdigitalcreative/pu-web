@@ -1,19 +1,22 @@
 $(document).ready(function() {
 
-    let backgrundcolor_1 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
-        'rgb(25, 150, 39, 0.1)', 'rgb(024, 50, 173, 0.1)', 'rgb(25, 34, 90, 0.1)', 'rgb(255, 220, 175, 0.1)', 'rgb(120, 250, 36, 0.1)'
+    let backgrundcolor_1 = ['rgb(255, 35, 139, 0.4)', 'rgb(255, 225, 19, 0.4)',
+        'rgb(25, 150, 39, 0.4)', 'rgb(024, 50, 173, 0.4)', 'rgb(25, 34, 90, 0.4)', 'rgb(255, 220, 175, 0.4)', 'rgb(120, 250, 36, 0.4)'
     ];
-    let backgrundcolor_2 = ['rgb(167, 90, 199, 0.1)', 'rgb(255, 25, 19, 0.1)',
-        'rgb(25, 105, 39, 0.1)', 'rgb(24, 150, 13, 0.1)', 'rgb(27, 241, 90, 0.1)', 'rgb(55, 220, 17, 0.1)', 'rgb(120, 25, 136, 0.1)'
+    let backgrundcolor_2 = ['rgb(167, 90, 199, 0.4)', 'rgb(255, 25, 19, 0.4)',
+        'rgb(25, 105, 39, 0.4)', 'rgb(24, 150, 13, 0.4)', 'rgb(27, 241, 90, 0.4)', 'rgb(55, 220, 17, 0.4)', 'rgb(120, 25, 136, 0.4)'
     ];
-    let backgrundcolor_3 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
-        'rgb(25, 15, 39, 0.1)', 'rgb(24, 50, 173, 0.1)', 'rgb(257, 41, 90, 0.1)', 'rgb(55, 220, 175, 0.1)', 'rgb(12, 25, 136, 0.1)'
+    let backgrundcolor_3 = ['rgb(0, 255, 0, 0.4)', 'rgb(255, 225, 19, 0.4)',
+        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
     ];
-    let backgrundcolor_4 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
-        'rgb(25, 15, 39, 0.1)', 'rgb(24, 50, 173, 0.1)', 'rgb(257, 41, 90, 0.1)', 'rgb(55, 220, 175, 0.1)', 'rgb(12, 25, 136, 0.1)'
+    let backgrundcolor_4 = ['rgb(17, 74, 232, 0.4)', 'rgb(255, 225, 19, 0.4)',
+        'rgb(25, 15, 39, 0.4)', 'rgb(0, 250, 0, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
     ];
-    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.1)', 'rgb(255, 225, 19, 0.1)',
-        'rgb(25, 15, 39, 0.1)', 'rgb(24, 50, 173, 0.1)', 'rgb(257, 41, 90, 0.1)', 'rgb(55, 220, 175, 0.1)', 'rgb(12, 25, 136, 0.1)'
+    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.4)', 'rgb(255, 225, 19, 0.4)',
+        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(0, 255, 0, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    ];
+    let backgrundcolor_6 = ['rgb(44, 255, 65, 0.4)', 'rgb(255, 225, 19, 0.4)',
+        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
     ];
 
     let bordercolor_1 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
@@ -31,7 +34,10 @@ $(document).ready(function() {
     let bordercolor_5 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
         'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
     ];
-    Chart.defaults.global.defaultFontSize = 10;
+    let bordercolor_6 = ['rgb(44, 255, 65, 0.2)', 'rgb(255, 225, 19, 0.8)',
+        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    ];
+    Chart.defaults.global.defaultFontSize = 9;
 
     function drawChartBalaiSektoral(id_provinsi, kategori) {
         $.ajax({
@@ -269,7 +275,7 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Asosiasi_Profesi",
+                            label: "Asosiasi Profesi",
                             backgroundColor: backgrundcolor_3,
                             borderColor: bordercolor_3,
                             data: value
@@ -904,8 +910,8 @@ $(document).ready(function() {
                         labels: label,
                         datasets: [{
                             label: "Rekap Pelaksanaan Kegiatan",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
+                            backgroundColor: backgrundcolor_6,
+                            borderColor: bordercolor_6,
                             data: value,
                         }],
                     },
@@ -974,8 +980,8 @@ $(document).ready(function() {
                         labels: label,
                         datasets: [{
                             label: "Rekap Pelaksanaan Kegiatan Peserta",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
+                            backgroundColor: backgrundcolor_6,
+                            borderColor: bordercolor_6,
                             data: value,
                         }],
                     },
@@ -1043,7 +1049,7 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan",
+                            label: "Peserta Berdasarkan Wilayah dan Pembiayaan",
                             backgroundColor: backgrundcolor_4,
                             borderColor: bordercolor_4,
                             data: value,
@@ -1114,7 +1120,7 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan",
+                            label: "Peserta Berdasarkan Wilayah dan Pembiayaan",
                             backgroundColor: backgrundcolor_4,
                             borderColor: bordercolor_4,
                             data: value,
@@ -1184,9 +1190,9 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Realisasi Peserta Pembekalan/Bimtek dan Uji Sertifikasi Berdasarkan Berita Acara Hasil Penilaian",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
+                            label: "Peserta Pembekalan/Bimtek dan Uji Sertifikasi",
+                            backgroundColor: backgrundcolor_5,
+                            borderColor: bordercolor_5,
                             data: value,
                         }],
                     },

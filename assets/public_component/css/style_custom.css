@@ -31,3 +31,7 @@ section#services {
 #pricing .section-title p {
     color: white;
 }
+
+.padding .box {
+    padding: 0px;
+}

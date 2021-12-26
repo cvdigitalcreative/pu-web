@@ -42,12 +42,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a class="nav-link scrollto" href="#about">Balai Sektoral</a></li>
                     <li><a class="nav-link scrollto" href="#asosiasi">Asosiasi</a></li>
                     <li><a class="nav-link scrollto " href="#more-services">Asesor</a></li>
-                    <li class="dropdown"><a href="#"><span>Infografis Lainnya</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Infografis Lainnya</span> <i
+                                class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#counts">OPD dan Sekolah</a></li>
                             <li><a href="#services">Kegiatan</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#program">Program</a></li>
+                            <li><a href="#sumber_daya">Vokasi</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="#contact">Hubungi</a></li>
@@ -65,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up">Info Grafis</h1>
+                    <h1 data-aos="fade-up">Infografis</h1>
                     <h2 data-aos="fade-up" data-aos-delay="400">Balai Jasa Konstruksi Wilayah II Palembang</h2>
                     <div data-aos="fade-up" data-aos-delay="800">
                         <a href="#about" class="btn-get-started scrollto">Selengkapnya</a>
@@ -88,32 +89,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="zoom-in">
+                        <img src="" class="img-fluid" alt="" data-aos="zoom-in">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="zoom-in"
-                            data-aos-delay="100">
+                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="zoom-in"
-                            data-aos-delay="200">
+                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="zoom-in"
-                            data-aos-delay="300">
+                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="zoom-in"
-                            data-aos-delay="400">
+                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="zoom-in"
-                            data-aos-delay="500">
+                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
                     </div>
 
                 </div>
@@ -122,7 +118,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- End Clients Section -->
 
         <!-- ======= Balai Sektoral Kementerian PUPR Section ======= -->
-        <section id="about" class="about">
+        <section id="about" class="about mt-5">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
@@ -507,7 +503,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- End About Us Section -->
 
 
-        <!-- ======= More Services Section ======= -->
+        <!-- ======= Asesor Section ======= -->
         <section id="more-services" class="more-services">
             <div class="container">
 
@@ -620,7 +616,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                     </div>
-                    <div class="section-title" data-aos="fade-up">
+                    <div id="program" class="section-title mt-3" data-aos="fade-up">
                         <h2>Program Padat Karya dan Pemanfaatan Mobile Training Unit</h2>
                         <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
                     </div>
@@ -871,7 +867,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <section>
             <div class="container">
-                <div class="section-title" data-aos="fade-up">
+                <div id="sumber_daya" class="section-title" data-aos="fade-up">
                     <h2>Sumber Daya Tenaga Ahli</h2>
                     <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
                 </div>
@@ -1035,16 +1031,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPBWP" id="chartTypeRPBWP">
+                                                    <option value="pie">Pie</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
                                                     <option value="radar">Radar</option>
-                                                    <option value="pie">Pie</option>
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <canvas id="RPBWP" height="300"></canvas>
+                                    <canvas id="RPBWP" height="260"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1102,7 +1098,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         </div>
                                     </div>
-                                    <canvas id="RPBU" height="300"></canvas>
+                                    <canvas id="RPBU" height="260"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1152,8 +1148,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPBWP2"
                                                     id="chartTypeRPBWP2">
-                                                    <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
+                                                    <option value="line">Line</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="pie">Pie</option>
                                                     <option value="doughnut">Doughnut</option>
@@ -1161,7 +1157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         </div>
                                     </div>
-                                    <canvas id="RPBWP2" height="300"></canvas>
+                                    <canvas id="RPBWP2" height="260"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1174,192 +1170,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- End Pricing Section -->
 
 
-
-
-        <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
-            <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Features</h2>
-                    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
-                </div>
-
-                <div class="row" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="icon-box">
-                            <i class="ri-store-line" style="color: #ffbb2c;"></i>
-                            <h3><a href="">Lorem Ipsum</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                            <h3><a href="">Dolor Sitema</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                        <div class="icon-box">
-                            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-                            <h3><a href="">Sed perspiciatis</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-                        <div class="icon-box">
-                            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-                            <h3><a href="">Magni Dolores</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-database-2-line" style="color: #47aeff;"></i>
-                            <h3><a href="">Nemo Enim</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-                            <h3><a href="">Eiusmod Tempor</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-                            <h3><a href="">Midela Teren</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-                            <h3><a href="">Pira Neve</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-anchor-line" style="color: #b2904f;"></i>
-                            <h3><a href="">Dirada Pack</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-disc-line" style="color: #b20969;"></i>
-                            <h3><a href="">Moton Ideal</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-base-station-line" style="color: #ff5828;"></i>
-                            <h3><a href="">Verdo Park</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mt-4">
-                        <div class="icon-box">
-                            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-                            <h3><a href="">Flavor Nivelanda</a></h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Features Section -->
-
-
-        <!-- ======= F.A.Q Section ======= -->
-        <section id="faq" class="faq">
-            <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Frequently Asked Questions</h2>
-                </div>
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-5">
-                        <i class="ri-question-line"></i>
-                        <h4>Non consectetur a erat nam at lectus urna duis?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                            curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-lg-5">
-                        <i class="ri-question-line"></i>
-                        <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                            laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.
-                            Est pellentesque elit ullamcorper dignissim.
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                    <div class="col-lg-5">
-                        <i class="ri-question-line"></i>
-                        <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                            elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                            pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-                    <div class="col-lg-5">
-                        <i class="ri-question-line"></i>
-                        <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Aperiam itaque sit optio et deleniti eos nihil quidem cumque. Voluptas dolorum accusantium
-                            sunt sit enim. Provident consequuntur quam aut reiciendis qui rerum dolorem sit odio.
-                            Repellat assumenda soluta sunt pariatur error doloribus fuga.
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
-                    <div class="col-lg-5">
-                        <i class="ri-question-line"></i>
-                        <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est
-                            ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing
-                            bibendum est. Purus gravida quis blandit turpis cursus in
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-            </div>
-        </section><!-- End F.A.Q Section -->
-
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Contact Us</h2>
+                    <h2>Hubungi Kami</h2>
                 </div>
 
                 <div class="row">
 
                     <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="contact-about">
-                            <h3>Vesperr</h3>
-                            <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus.
-                                Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc
-                                congue.</p>
+                            <h3>Balai Jasa Konstruksi Wilayah II Palembang</h3>
+                            <p>Layanan Sosial Media Kami.</p>
                             <div class="social-links">
                                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -1439,8 +1263,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
                         <a href="#intro" class="scrollto">Home</a>
                         <a href="#about" class="scrollto">About</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
                     </nav>
                 </div>
             </div>
