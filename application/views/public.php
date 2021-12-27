@@ -22,6 +22,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+      
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="<?=base_url('assets/public_component/vendor/aos/aos.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/vendor/bootstrap-icons/bootstrap-icons.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/vendor/boxicons/css/boxicons.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/vendor/glightbox/css/glightbox.min.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/vendor/remixicon/remixicon.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/vendor/swiper/swiper-bundle.min.css')?>" rel="stylesheet">
+      
+    <!-- Template Main CSS File -->
+    <link href="<?=base_url('assets/public_component/css/style.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/public_component/css/style_custom.css')?>" rel="stylesheet">
 </head>
 
 <body>
@@ -1197,7 +1215,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="info">
                             <div>
                                 <i class="ri-map-pin-line"></i>
-                                <p>A108 Adam Street<br>New York, NY 535022</p>
+                                <p>20 Ilir D. IV, Ilir Timur I, <br>Kota Palembang, Sumatera Selatan, Indonesia</p>
                             </div>
 
                             <div>
@@ -1216,27 +1234,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
                         <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Masukan Nama"
                                     required>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Your Email" required>
+                                    placeholder="Masukan Email" required>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" required>
+                                    placeholder="Judul" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                                <textarea class="form-control" name="message" rows="5" placeholder="Isi Pesan"
                                     required></textarea>
                             </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center"><button type="submit">Kirim Pesan</button></div>
                         </form>
                     </div>
 
@@ -1272,6 +1285,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
     <?php $this->load->view("components/js.php") ?>
+      <!-- Vendor JS Files -->
+    <script src="<?= base_url('assets/public_component/vendor/purecounter/purecounter.js')?>"></script>
+    <script src="<?= base_url('assets/public_component/vendor/aos/aos.js')?>"></script>
+    <script src="<?= base_url('assets/public_component/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="<?=base_url('assets/public_component/vendor/glightbox/js/glightbox.min.js')?>"></script>
+    <script src="<?=base_url('assets/public_component/vendor/isotope-layout/isotope.pkgd.min.js')?>"></script>
+    <script src="<?=base_url('assets/public_component/vendor/swiper/swiper-bundle.min.js')?>"></script>
+    <script src="<?=base_url('assets/public_component/vendor/php-email-form/validate.js')?>"></script>
+
+    <!-- Template Main JS File -->
+    <script src="<?= base_url('assets/public_component/js/main.js')?>"></script>
+    <script src="<?=base_url('assets/jquery/jquery.min.js')?>"></script>
+    <script src="<?=base_url('assets/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+    <script src="<?=base_url('assets/jquery-easing/jquery.easing.min.js')?>"></script>
+    <script src="<?=base_url('assets/chart.js/Chart.min.js')?>"></script>
+    <script src="<?=base_url('assets/js/administrator/public.js')?>"></script>
 </body>
 
 </html>

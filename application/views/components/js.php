@@ -174,20 +174,6 @@
         }
     </script>
     
-    <script src="<?=base_url('assets/jquery/jquery.min.js')?>"></script>
-    <script src="<?=base_url('assets/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-    <script src="<?=base_url('assets/jquery-easing/jquery.easing.min.js')?>"></script>
-    <script src="<?=base_url('assets/chart.js/Chart.min.js')?>"></script>
-    <script src="<?=base_url('assets/js/administrator/public.js')?>"></script>
+   
 
-    <!-- Vendor JS Files -->
-    <script src="<?= base_url('assets/public_component/vendor/purecounter/purecounter.js')?>"></script>
-    <script src="<?= base_url('assets/public_component/vendor/aos/aos.js')?>"></script>
-    <script src="<?= base_url('assets/public_component/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-    <script src="<?=base_url('assets/public_component/vendor/glightbox/js/glightbox.min.js')?>"></script>
-    <script src="<?=base_url('assets/public_component/vendor/isotope-layout/isotope.pkgd.min.js')?>"></script>
-    <script src="<?=base_url('assets/public_component/vendor/swiper/swiper-bundle.min.js')?>"></script>
-    <script src="<?=base_url('assets/public_component/vendor/php-email-form/validate.js')?>"></script>
-
-    <!-- Template Main JS File -->
-    <script src="<?= base_url('assets/public_component/js/main.js')?>"></script>
+  
