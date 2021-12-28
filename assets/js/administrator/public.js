@@ -84,7 +84,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-balai-sektoral').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-balai-sektoral').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-balai-sektoral').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -132,7 +136,7 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Balai Sektoral Kementerian PUPR",
+                            label: "Organisasi Perangkat Daerah",
                             backgroundColor: backgrundcolor_2,
                             borderColor: bordercolor_2,
                             data: value
@@ -156,7 +160,12 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-opd').attr('href', data.data[0].pathfile);
+                // console.log(data.data[0])
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-opd').attr('href', "Link Somthing");
+                } else {
+                    $('#chart-filter-file-opd').attr('href', data.data[0].pathfile);
+                }
             }
         })
 

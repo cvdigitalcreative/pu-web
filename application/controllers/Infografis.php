@@ -104,6 +104,10 @@ class Infografis extends CI_Controller
                     redirect('pupr/login');
                 
             }
+
+            public function infografis_data_null(){
+                echo "Data Tidak Ada";
+            }
 }
     
 
