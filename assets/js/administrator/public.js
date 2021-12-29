@@ -312,7 +312,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-asosiasi-profesi').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-asosiasi-profesi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-asosiasi-profesi').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -383,7 +387,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-ABUJK').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-ABUJK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-ABUJK').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -454,7 +462,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-Sertifikasi').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-Sertifikasi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-Sertifikasi').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -501,7 +513,7 @@ $(document).ready(function() {
                     data: {
                         labels: label,
                         datasets: [{
-                            label: "Kewajiban Penggunaan Tenaga Kerja Konstruksi yang Bersertifikat Kompetensi",
+                            label: "Asesor Kompetensi Tenaga Kerja",
                             backgroundColor: backgrundcolor_4,
                             borderColor: bordercolor_4,
                             data: value,
@@ -525,7 +537,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-AKTK').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-AKTK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-AKTK').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -596,7 +612,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-DABU').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-DABU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-DABU').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -666,7 +686,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-DINV').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-DINV').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-DINV').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -736,7 +760,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-DIV').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-DIV').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-DIV').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -806,7 +834,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-PPP').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-PPP').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-PPP').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -876,7 +908,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-PMTU').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-PMTU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-PMTU').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -946,7 +982,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-RPK').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-RPK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-RPK').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -1016,7 +1056,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-RPKP').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-RPKP').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-RPKP').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -1086,7 +1130,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-RPBWP').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-RPBWP').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-RPBWP').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -1157,7 +1205,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-RPBWP2').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-RPBWP2').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-RPBWP2').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
@@ -1227,7 +1279,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-RPBU').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-RPBU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-RPBU').attr('href', data.data[0].pathfile);
+                }
             }
         })
 
