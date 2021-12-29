@@ -2162,7 +2162,7 @@ Tidak ada poster kegiatan`
         }
     })
 
-    $('#infografis_table').DataTable({
+    $('#infografis_file_table').DataTable({
         "order": [0, 'asc'],
         processing: true,
         serverSide: false,
@@ -2171,11 +2171,11 @@ Tidak ada poster kegiatan`
             emptyTable: "Data tidak ditemukan!",
         },
         ajax: {
-            url: `${BASE_URL}Infografis/infografis_table`,
+            url: `${BASE_URL}Infografis/infografis_file_all`,
             type: "GET",
         },
         columns: [{
-                data: 'no_data_infografis',
+                data: 'no_infografis_file',
             },
             {
                 data: 'nama_provinsi',
@@ -2184,13 +2184,12 @@ Tidak ada poster kegiatan`
                 data: 'nama_kategori',
             },
             {
-                data: 'nama',
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
             },
-            {
-                data: 'jumlah',
-            },
-
-
             {
                 data: 'id',
                 render: function(data) {
