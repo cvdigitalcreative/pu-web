@@ -1349,12 +1349,12 @@
         </div>
     </div>
     <!-- End modal tambah Balai Jasa -->
-    <!-- Tambah Jasa Konstruksi -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-jasa-konsturksi" tabindex="-1" role="dialog">
+    <!-- Tambah Infografis -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-master" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Unit Organisasi Jasa Konstruksi</h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Infografis</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1363,28 +1363,55 @@
 
                     <form method="POST" enctype="multipart/form-data">
                         <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="id_provinsi">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="id_provinsi">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref"
+                                name="idprovinsi">
                                 <option selected>Choose...</option>
-                                <option value="0">All</option>
                                 <option value="15">Jambi</option>
                                 <option value="16">Sumatera Selatan</option>
+                                <option value="17">Bengkulu</option>
+                                <option value="18">Lampung</option>
+                                <option value="19">Kepulauan Bangka</option>
                             </select>
                         </div>
-                        
                         <div class="form-group py-2">
-                            <label for="nama_uojk">Nama Unit Organisasi Jasa Konsturksi</label>
-                            <input type="text" class="form-control" id="nama_uojk" name="nama_uojk"
-                                placeholder="Contoh: BP2P Wilayah Sumatera IV " required>
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                placeholder="Contoh: UNiversitas Negeri Sriwijaya" required>
                         </div>
                         <div class="form-group py-2">
-                            <label for="jumlah_uojk">Jumlah Unit Organisasi Jasa Konsturksi</label>
-                            <input type="text" class="form-control" id="jumlah_uojk" name="jumlah_uojk"
-                                placeholder="Contoh: 190" required>
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="kategori">
+                                <option selected>Choose...</option>
+                                <option value="1">Balai Sektoral Kementerian PUPR</option>
+                                <option value="2">Organisasi Perangkat Daerah Suburusan Jasa Konstruksi</option>
+                                <option value="3">Sekolah</option>
+                                <option value="4">Asosiasi Profesi</option>
+                                <option value="5">Asosiasi Badan Usaha Jasa Konstruksi</option>
+                                <option value="6">Aturan Kewajiban Penggunaan Tenaga Kerja Konstruksi yang Bersertifikat
+                                    Kompetensi</option>
+                                <option value="7">Asesor Kompetensi Tenaga Kerja </option>
+                                <option value="8">Daftar Asesor Badan Usaha </option>
+                                <option value="9">Daftar Instruktur Non Vokasi</option>
+                                <option value="10">Daftar Instruktur Vokasi</option>
+                                <option value="11">Program Padat Karya</option>
+                                <option value="12">Pemanfaatan Mobile Training Unit</option>
+                                <option value="13">Rekap Pelaksanaan Kegiatan</option>
+                                <option value="14">Rekap Pelaksanaan Kegiatan Peserta</option>
+                                <option value="15">Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan</option>
+                                <option value="16">Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan</option>
+                                <option value="17">Realisasi Peserta Pembekalan/Bimtek dan Uji Sertifikasi Berdasarkan
+                                    Berita Acara Hasil Penilaian</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="jumlah">Jumlah</label>
+                            <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Contoh: 190"
+                                required>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Jasa Konstruksi</button>
+                            Infografis</button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
                     </form>
@@ -1392,632 +1419,7 @@
             </div>
         </div>
     </div>
-    <!-- End modal tambah Jasa Konstruksi-->
-    <!-- Tambah Universitas -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-universitas" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Universitas</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Universitas</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: Universitas Sriwijaya" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Universitas</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Universitas-->
-    <!-- Tambah Politeknik -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-politeknik" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Politeknik</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Politeknik</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: Politeknik Negeri Sriwijaya" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Politeknik</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Politeknik-->
-    <!-- Tambah SMK -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-smk" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah SMK</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">SMK</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: SMK 2 Palembang" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            SMK</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah SMK-->
-    <!-- Tambah Tambah Asosiasi Badan Usaha Jasa Konstruksi -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-bujk" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asosiasi Badan Usaha Jasa Konstruksi
-                    </h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Asosiasi Badan Usaha Jasa
-                                Konstruksi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">DPD ASPEKINDO</option>
-                                <option value="2">DPD ASPEKNAS</option>
-                                <option value="3">DPD ASKONAS</option>
-                                <option value="4">DPD AKAINDO</option>
-                                <option value="5">BPD GAPENSI</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status Akreditasi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">Terakreditasi</option>
-                                <option value="2">Belum Terakreditasi</option>
-                            </select>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Asosiasi Badan Usaha Jasa
-                            Konstruksi</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Tambah Asosiasi Badan Usaha Jasa Konstruksi-->
-    <!-- Tambah Tambah Asosiasi Profesi -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-asosiasi-profesi" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asosiasi Profesi </h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Asosiasi Profesi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">DPD ASTTI</option>
-                                <option value="2">DPW A2K4-I</option>
-                                <option value="3">DPD GATAKI</option>
-                                <option value="4">HPJI</option>
-                                <option value="5">DPD HATSINDO</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status Akreditasi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">Terakreditasi</option>
-                                <option value="2">Belum Terakreditasi</option>
-                            </select>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Asosiasi Profesi</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Tambah Asosiasi Profesi-->
-    <!-- Tambah AKTK -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-aktk" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asesor Kompetensi Tenaga Kerja</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Nama</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: Taufiiqul Hakim" required>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bidang</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">ASESOR ARSITEKTUR</option>
-                                <option value="2">ASESOR ELEKTRIKAL</option>
-                                <option value="3">ASESOR SIPIL</option>
-                                <option value="4">ASESOR TATA LINGKUNGAN</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status RCC</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">Aktif</option>
-                                <option value="2">Tidak Aktif</option>
-                            </select>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Asesor Kompetensi Tenaga Kerja </button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Tambah AKBU-->
-    <!-- Tambah AKTK -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-akbu" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Asesor Kompetensi Badan Usaha</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Nama</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: Taufiiqul Hakim, A.Md. T" required>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">No. Registrasi</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: 0534/AKBU-LPJK/XI/2018" required>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status RCC</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">Aktif</option>
-                                <option value="2">Tidak Aktif</option>
-                            </select>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Asesor Kompetensi Badan Usaha</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Tambah AKTK-->
-     <!-- Tambah IALKI -->
-     <div class="modal fade bd-example-modal-lg" id="modal-tambah-ialki" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Data Instruktur</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Nama</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh:  Taufiiqul Hakim, A.Md. T" required>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Materi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">Arsitektur</option>
-                                <option value="2">Jalan Jembatan</option>
-                                <option value="3">Alat Berat</option>
-                                <option value="4">Arsitektur Bangunan Gedung Kecipta-Karyaan</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Pelatihan TOT</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">Belum</option>
-                                <option value="2">Sudah</option>
-                            </select>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Tambah Data Instruktur</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Tambah IALKI-->
-     <!-- Tambah Program Padat Karya -->
-     <div class="modal fade bd-example-modal-lg" id="modal-tambah-padat-karya" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Program Padat Karya</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Instansi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option value="1">Balai Prasarana Permukiman Wilayah</option>
-                                <option value="2">Balai Pelaksanaan Jalan Nasional IV</option>
-                                <option value="3">Balai Wilayah Sungai Sumatera</option>
-                                <option value="4">Balai Pelaksana Penyediaan Perumahan</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Program Padat Karya</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh:  Program Percepatan Peningkatan Tata Guna Air Irigasi (P3-TGAI)" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Tambah Data Program Padat Karya</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal Program Padat Karya -->
-    <!-- Tambah Data APBN/APBD -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-apbn-apbd" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Berdasarkan Wilayah dan Pembiayaan di Provinsi</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="2">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kabupaten</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Ogan Ilir</option>
-                                <option value="2">Ogan Komering Ilir</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Pola Pembiayaan Pelaksanaan Kegiatan</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1"> APBN</option>
-                                <option value="2">APBD</option>
-                                <option value="2">SHARING</option>
-                            </select>
-                        </div>
-                    
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh:  50" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Data Peserta Berdasarkan Wilayah dan Pembiayaan di Provinsi </button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal APBN/APBD-->
-    <!-- Tambah Data Peserta Kegiatan Berdasarkan Potensi Mitra -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan-potensi-mitra" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Kegiatan Berdasarkan Potensi Mitra</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="2">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Organisasi Perangkat Daerah</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">OPD</option>
-                                <option value="2">IBM</option>
-                                <option value="3">SMK</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jenis Kegiatan</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Pelatihan</option>
-                                <option value="2">Pembekalan/Bimtek</option>
-                                <option value="3">Uji Sertifikasi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh:  50" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Data Peserta Kegiatan Berdasarkan Potensi Mitra </button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal Peserta Kegiatan Berdasarkan Potensi Mitra-->
-    <!-- Tambah Data Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan-asasemen" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="2">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori Keahlian</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Ahli</option>
-                                <option value="2">Terampil</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Hasil Asasemen</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Kompeten</option>
-                                <option value="2">Belum Kompeten</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh:  50" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Data Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen </button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal Peserta Kegiatan Berdasarkan Hasil Berita Acara Asesmen-->
-     <!-- Tambah Data Peserta Kegiatan Jabatan Kerja -->
-     <div class="modal fade bd-example-modal-lg" id="modal-tambah-kegiatan-jabker" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Peserta Kegiatan Berdasarkan Jabatan Kerja</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="2">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Jabker</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Tukang Pasang Keramik</option>
-                                <option value="2">Tukang Batu</option>
-                                <option value="3">Tukang Besi Beton</option>
-                                <option value="4">Tukang Cor Beton</option>
-                                <option value="5">Juru Gambar Sipil</option>
-                                <option value="6">Teknisi Instalasi Penerangan Dan Daya Fasa Satu</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah Peserta</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh:  50" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                        Data Peserta Kegiatan Jabatan Kerja </button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal Peserta Kegiatan Berdasarkan Jabatan Kerja-->
+    <!-- End Modal Infografis -->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -2047,9 +1449,10 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <?php elseif ($this->session->flashdata('APImessage')) : ?>
+                    <?php endif; ?>
+                    <?php if ($this->session->flashdata('gagal')) : ?>
                     <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
-                        <?= $this->session->flashdata('APImessage') ?>
+                        <?= $this->session->flashdata('gagal') ?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -2117,57 +1520,9 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-balai-jasa-master"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">BSKP</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-jasa-konstruksi-master"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">UOJK</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-universitas-master"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Universitas</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-politeknik-master"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Politeknik</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-smk-master"><img
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-infografis"><img
                                         class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">SMK</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-bujk-master"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">BUJK</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-asosiasi-profesi-master"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Asosiasi
-                                    Profesi</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-aktk-master"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                    AKTK</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-akbu-master"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                    AKBU</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-ialki-master"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                    IALKI</button>
-                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-padat-karya-master"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                    Padat Karya</button>
-                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-apbn-apbd-master"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                        Peserta APBN/APBD</button>
-                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kegiatan-potensi-mitra-master"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                        Peserta Potensi Mitra</button>
-                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kegiatan-asasemen"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                        Peserta Asasemen</button>
-                                    <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-kegiatan-jabker"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">
-                                        Peserta Jabker</button>
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Infografis</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -2232,61 +1587,8 @@
                                             data-toggle="tab">BSKP</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-jasa-konstruksi" role="tab" data-toggle="tab">
-                                            UOJK</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-universitas" role="tab" data-toggle="tab">
-                                            Universitas</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-politeknik" role="tab" data-toggle="tab">
-                                            Politeknik</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-smk" role="tab" data-toggle="tab">
-                                            SMK</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-bujk" role="tab" data-toggle="tab">
-                                            BUJK</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-asosiasi-profesi" role="tab"
-                                            data-toggle="tab">
-                                            Asosiasi Profesi</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-aktk" role="tab" data-toggle="tab">
-                                            AKTK</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-akbu" role="tab" data-toggle="tab">
-                                            AKBU</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-ialki" role="tab" data-toggle="tab">
-                                            IALKI</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-padat-karya" role="tab" data-toggle="tab">
-                                            Padat Karya</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-apbn-apbd" role="tab" data-toggle="tab">
-                                            Peserta APBN/APBD</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-potensi-mitra" role="tab" data-toggle="tab">
-                                        Peserta Potensi Mitra</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-asasemen" role="tab" data-toggle="tab">
-                                        Peserta Asasemen</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-peserta-jabker" role="tab" data-toggle="tab">
-                                        Peserta Jabker</a>
+                                        <a class="nav-link" href="#master-infografis" role="tab" data-toggle="tab">
+                                            Infografis</a>
                                     </li>
                                 </ul>
                             </div>
@@ -2473,196 +1775,14 @@
                                         </thead>
                                     </table>
                                 </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-jasa-konstruksi">
-                                    <table id="jasa_konstruksi_table" class="display" style="width:100%">
+                                <div class="tab-pane fade show" role="tabpanel" id="master-infografis">
+                                    <table id="infografis_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
                                                 <th>Provinsi</th>
-                                                <th>Kabupaten</th>
-                                                <th>Jumlah Unit Organisasi Jasa Konstruksi</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-universitas">
-                                    <table id="universitas_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Univeristas</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-politeknik">
-                                    <table id="politeknik_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Politeknik</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-smk">
-                                    <table id="smk_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>SMK</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-bujk">
-                                    <table id="bujk_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>BUJK</th>
-                                                <th>Status Akreditasi</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-asosiasi-profesi">
-                                    <table id="asosiasi_profesi_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Asosiasi Profesi</th>
-                                                <th>Status Akreditasi</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-aktk">
-                                    <table id="aktk_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Nama</th>
-                                                <th>Bidang</th>
-                                                <th>Status RCC</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-akbu">
-                                    <table id="akbu_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Nama</th>
-                                                <th>No. Registrasi</th>
-                                                <th>Status RCC</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-ialki">
-                                    <table id="ialki_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Nama</th>
-                                                <th>Materi</th>
-                                                <th>Pelatihan TOT</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-padat-karya">
-                                    <table id="padat_karya_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Instansi</th>
-                                                <th>Program Padat Karya</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                                <div class="tab-pane fade show" role="tabpanel" id="master-apbn-apbd">
-                                    <table id="padat_karya_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Kabupaten</th>
-                                                <th>Pola Pembiayaan</th>
-                                                <th>Jumlah Program</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                                <div class="tab-pane fade show" role="tabpanel" id="master-potensi-mitra">
-                                    <table id="padat_karya_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Organisasi Perangkat Daerah</th>
-                                                <th>Jenis Kegitan</th>
-                                                <th>Jumlah Peserta</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                                <div class="tab-pane fade show" role="tabpanel" id="master-asasemen">
-                                    <table id="padat_karya_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Kategori Keahlian</th>
-                                                <th>Hasil Asasemen</th>
-                                                <th>Jumlah Peserta</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
-                                <div class="tab-pane fade show" role="tabpanel" id="master-peserta-jabker">
-                                    <table id="padat_karya_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Jabatan Kerja</th>
-                                                <th>Jumlah Peserta</th>
+                                                <th>Kategori</th>
+                                                <th>Jumlah</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>

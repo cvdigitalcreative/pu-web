@@ -84,10 +84,10 @@ class Infografis extends CI_Controller
 
             public function add_infografis(){
                 if($this->session->userdata('logged_in') == true){
-                    $id_provinsi = $this->input->post('id_provinsi');
-                    $nama_uojk = $this->input->post('nama_uojk');
-                    $jumlah_uojk = $this->input->post('jumlah_uojk');
-                    $kategori = "1";
+                    $id_provinsi = $this->input->post('idprovinsi');
+                    $nama_uojk = $this->input->post('nama');
+                    $jumlah_uojk = $this->input->post('jumlah');
+                    $kategori = $this->input->post('kategori');;
                     $add = $this->Infografis_model->add_data_chart_infografis($id_provinsi, $nama_uojk, $jumlah_uojk, $kategori, $this->session->userdata('token'));
                     if ($add == null)
                         $this->load->view('error_page');
@@ -95,8 +95,8 @@ class Infografis extends CI_Controller
                         if ($add['status'] == "Success") {
                             $this->session->set_flashdata('success', $add['message']);
                             redirect('pupr/master');
-                        } else {
-                            $this->session->set_flashdata('APImessage', $add['message']);
+                        } else if($add['status'] == "Error"){
+                            $this->session->set_flashdata('gagal', $add['message']);
                             redirect('pupr/master');
                         }
                     }
@@ -106,7 +106,7 @@ class Infografis extends CI_Controller
             }
 
             public function infografis_data_null(){
-                echo "Data Tidak Ada";
+                $this->load->view('null_file');
             }
 }
     

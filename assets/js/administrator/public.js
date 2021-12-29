@@ -9,14 +9,14 @@ $(document).ready(function() {
     let backgrundcolor_3 = ['rgb(0, 255, 0, 0.4)', 'rgb(255, 225, 19, 0.4)',
         'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
     ];
-    let backgrundcolor_4 = ['rgb(17, 74, 232, 0.4)', 'rgb(255, 225, 19, 0.4)',
-        'rgb(25, 15, 39, 0.4)', 'rgb(0, 250, 0, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    let backgrundcolor_4 = ['rgb(0, 250, 0, 0.4)', 'rgb(17, 74, 232, 0.4)', 'rgb(255, 225, 19, 0.4)',
+        'rgb(25, 15, 39, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
     ];
-    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.4)', 'rgb(255, 225, 19, 0.4)',
-        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(0, 255, 0, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.4)',
+        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(0, 255, 0, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(255, 225, 19, 0.4)', 'rgb(12, 25, 136, 0.4)'
     ];
-    let backgrundcolor_6 = ['rgb(44, 255, 65, 0.4)', 'rgb(255, 225, 19, 0.4)',
-        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    let backgrundcolor_6 = ['rgb(44, 255, 65, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(255, 225, 19, 0.4)',
+        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(12, 25, 136, 0.4)'
     ];
 
     let bordercolor_1 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
@@ -162,7 +162,7 @@ $(document).ready(function() {
             success: function(data) {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
-                    $('#chart-filter-file-opd').attr('href', "Link Somthing");
+                    $('#chart-filter-file-opd').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
                 } else {
                     $('#chart-filter-file-opd').attr('href', data.data[0].pathfile);
                 }
@@ -238,7 +238,11 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                $('#chart-filter-file-sekolah').attr('href', data.data[0].pathfile);
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-sekolah').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-sekolah').attr('href', data.data[0].pathfile);
+                }
             }
         })
 

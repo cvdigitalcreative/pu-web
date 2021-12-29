@@ -1218,14 +1218,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <p>20 Ilir D. IV, Ilir Timur I, <br>Kota Palembang, Sumatera Selatan, Indonesia</p>
                             </div>
 
-                            <div>
+                            <!-- <div>
                                 <i class="ri-mail-send-line"></i>
                                 <p>info@example.com</p>
-                            </div>
+                            </div> -->
 
                             <div>
                                 <i class="ri-phone-line"></i>
-                                <p>+1 5589 55488 55s</p>
+                                <p>+62 627 11416963</p>
                             </div>
 
                         </div>
@@ -1266,7 +1266,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="row d-flex align-items-center">
                 <div class="col-lg-6 text-lg-left text-center">
                     <div class="copyright">
-                        &copy; Balai Jasa <strong>Konstruksi</strong>Wilayah II
+                        &copy; Balai Jasa <strong>Konstruksi</strong> Wilayah II
                     </div>
                     <div class="credits">
                         Palembang

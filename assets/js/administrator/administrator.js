@@ -2900,81 +2900,11 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-balai-jasa').modal('show');
     })
 
-    $('#btn-add-jasa-konstruksi-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-jasa-konsturksi').modal('show');
-    })
-
-    $('#btn-add-universitas-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-universitas').modal('show');
-    })
-
-    $('#btn-add-politeknik-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-politeknik').modal('show');
-    })
-
-    $('#btn-add-smk-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-smk').modal('show');
-    })
-
-    $('#btn-add-bujk-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-bujk').modal('show');
-    })
-
-    $('#btn-add-asosiasi-profesi-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-asosiasi-profesi').modal('show');
-    })
-
-    $('#btn-add-aktk-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-aktk').modal('show');
-    })
-
-    $('#btn-add-akbu-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-akbu').modal('show');
-    })
-
-    $('#btn-add-ialki-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-ialki').modal('show');
-    })
-
-    $('#btn-add-padat-karya-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-padat-karya').modal('show');
-    })
-
-    $('#btn-add-apbn-apbd-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-apbn-apbd').modal('show');
-    })
-
-
-    $('#btn-add-kegiatan-potensi-mitra-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-kegiatan-potensi-mitra').modal('show');
-    })
-
-    $('#btn-add-kegiatan-asasemen').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-kegiatan-asasemen').modal('show');
-    })
-
-    $('#btn-add-kegiatan-jabker').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-kegiatan-jabker').modal('show');
-    })
-
-    $('#btn-add-jasa-konstruksi-master').on('click', function() {
+    $('#btn-add-infografis').on('click', function() {
         $('form').attr('action', `${BASE_URL}Infografis/add_infografis`)
-        $('#modal-tambah-jasa-konsturksi').modal('show');
+        $('#modal-tambah-infografis-master').modal('show');
     })
+
 
     // ================================= Tenaga Ahli ===================================
     if (window.location.href == `${BASE_URL}pupr/experts?redirect=events`) {
