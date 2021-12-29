@@ -33,33 +33,19 @@ class Infografis_File_model extends CI_model
     }
     // ======================= Model Functions ========================
 
-    public function data_file_infografis(
-        $id_provinsi,
-        $kategori
-    ) {
-        $data = [
-            'id_provinsi' => $id_provinsi,
-            'kategori' => $kategori
-        ];
-
-        return $this->http_request_get($data, "/file/");
-    }
-
+    
     public function add_data_file_infografis(
-        $id_provinsi,
-        $nama_uojk,
-        $jumlah_uojk,
+        $file_infografis,
+        $idprovinsi,
         $kategori,
         $token
     ) {
         $data = [
-            'idprovinsi' => $id_provinsi,
-            'nama' => $nama_uojk,
-            'jumlah' => $jumlah_uojk,
+            'file_infografis' => $file_infografis,
+            'idprovinsi' => $idprovinsi,
             'kategori' => $kategori
         ];
-
-        return $this->http_request_post($data, "/", $token);
+        return $this->http_request_post($data, "/file/", $token);
     }
 
 }

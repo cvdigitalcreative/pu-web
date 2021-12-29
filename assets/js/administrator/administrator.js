@@ -2087,6 +2087,156 @@ Tidak ada poster kegiatan`
         }
     })
 
+    $('#infografis_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis/infografis_table`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_data_infografis',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'nama',
+            },
+            {
+                data: 'jumlah',
+            },
+
+
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+            {
+                data: 'id_provinsi',
+                render: function(data) {
+                    return `
+					<p style="visibility:hidden; witdh:0px">${data}</p>`
+                },
+            },
+            {
+                data: 'id_kategori',
+                render: function(data) {
+                    return `<p style="visibility:hidden; witdh:0px">${data}</p>`
+                },
+            }
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-table-master', function() {
+        if ($('#infografis_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis/edit_infografis/${id}`)
+            $('#edit_provinsi_infografis').val($(this).parent().siblings().eq(5).text())
+            $('#edit_kategori_infografis').val($(this).parent().siblings().eq(6).text())
+            $('#edit_nama_infografis').val($(this).parent().siblings().eq(3).text())
+            $('#edit_jumlah_infografis').val($(this).parent().siblings().eq(4).text())
+
+
+            $('#modal-edit-infografis-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-table-master', function() {
+        if ($('#infografis_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis/delete_infografis/${id}`)
+            $('#modal-delete-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis/infografis_table`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_data_infografis',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'nama',
+            },
+            {
+                data: 'jumlah',
+            },
+
+
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+            {
+                data: 'id_provinsi',
+                render: function(data) {
+                    return `
+					<p style="visibility:hidden; witdh:0px">${data}</p>`
+                },
+            },
+            {
+                data: 'id_kategori',
+                render: function(data) {
+                    return `<p style="visibility:hidden; witdh:0px">${data}</p>`
+                },
+            }
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-table-master', function() {
+        if ($('#infografis_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis/edit_infografis/${id}`)
+            $('#edit_provinsi_infografis').val($(this).parent().siblings().eq(5).text())
+            $('#edit_kategori_infografis').val($(this).parent().siblings().eq(6).text())
+            $('#edit_nama_infografis').val($(this).parent().siblings().eq(3).text())
+            $('#edit_jumlah_infografis').val($(this).parent().siblings().eq(4).text())
+
+
+            $('#modal-edit-infografis-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-table-master', function() {
+        if ($('#infografis_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis/delete_infografis/${id}`)
+            $('#modal-delete-infografis').modal('show')
+        }
+    })
+
 
 
 
@@ -2895,14 +3045,14 @@ Tidak ada poster kegiatan`
         $('#modal-tambah-pns').modal('show');
     })
 
-    $('#btn-add-balai-jasa-master').on('click', function() {
-        $('form').attr('action', ``)
-        $('#modal-tambah-balai-jasa').modal('show');
-    })
-
     $('#btn-add-infografis').on('click', function() {
         $('form').attr('action', `${BASE_URL}Infografis/add_infografis`)
         $('#modal-tambah-infografis-master').modal('show');
+    })
+
+    $('#btn-add-file-infografis').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis/add_infografis_file`)
+        $('#modal-tambah-infografis-file-master').modal('show');
     })
 
 

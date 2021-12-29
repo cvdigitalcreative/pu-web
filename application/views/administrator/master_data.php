@@ -1300,55 +1300,7 @@
         </div>
     </div>
     <!-- End modal delete pns -->
-    <!-- Tambah Balai Jasa -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-balai-jasa" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Balai Sektoral Kementerian PUPR</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
 
-                    <form method="POST" enctype="multipart/form-data">
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Sumatera Selatan</option>
-                                <option value="1">Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Balai Sektoral Kementerian
-                                PUPR</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                                <option selected>Choose...</option>
-                                <option value="1">Balai Wilayah Sungai Sumatera VI</option>
-                                <option value="2">Balai Pelaksanaan Jalan Nasional IV</option>
-                                <option value="3">Balai Prasarana Permukiman Wilayah Jambi</option>
-                                <option value="4">Balai Pelaksana Penyediaan Perumahan</option>
-                                <option value="5">Balai Pelaksana Pemilihan Jasa Konstruksi Wilayah Jambi</option>
-                            </select>
-                        </div>
-                        <div class="form-group py-2">
-                            <label for="namaPns">Jumlah Satuan Kerja</label>
-                            <input type="text" class="form-control" id="nama-pns" name="nama_pns"
-                                placeholder="Contoh: 190" required>
-                        </div>
-                        <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
-                            Balai Jasa</button>
-                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
-                            data-dismiss="modal">Batal</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal tambah Balai Jasa -->
     <!-- Tambah Infografis -->
     <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-master" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -1364,8 +1316,7 @@
                     <form method="POST" enctype="multipart/form-data">
                         <div class="form-group py-2">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref"
-                                name="idprovinsi">
+                            <select class="custom-select my-1 mr-sm-2" id="idprovinsi" name="idprovinsi">
                                 <option selected>Choose...</option>
                                 <option value="15">Jambi</option>
                                 <option value="16">Sumatera Selatan</option>
@@ -1408,6 +1359,136 @@
                             <label for="jumlah">Jumlah</label>
                             <input type="text" class="form-control" id="jumlah" name="jumlah" placeholder="Contoh: 190"
                                 required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                            Infografis</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Infografis -->
+
+    <!-- Edit Infografis -->
+    <div class="modal fade bd-example-modal-lg" id="modal-edit-infografis-master" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Edit Infografis</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+
+                        <div class="form-group py-2">
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="edit_nama_infografis"
+                                name="edit_nama_infografis" placeholder="Contoh: Universitas Negeri Sriwijaya" required>
+                        </div>
+                        <input type="text" class="form-control" id="edit_kategori_infografis"
+                            name="edit_kategori_infografis" hidden>
+                        <input type="text" class="form-control" id="edit_provinsi_infografis"
+                            name="edit_provinsi_infografis" hidden>
+                        <div class="form-group py-2">
+                            <label for="jumlah">Jumlah</label>
+                            <input type="text" class="form-control" id="edit_jumlah_infografis"
+                                name="edit_jumlah_infografis" placeholder="Contoh: 190" required>
+                        </div>
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit
+                            Infografis</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Infografis -->
+    <!-- Modal Delete Infografis -->
+    <div class="modal fade bd-example-modal-lg" id="modal-delete-infografis" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus Item Infografis Ini?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Pastikan dengan benar bahwa anda ingin menghapus data ini!
+                    <form>
+                        <div class="modal-footer">
+                            <button class="btn btn-light" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-danger" type="submit">Hapus</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal delete Infografis -->
+
+    <!-- Tambah Infografis File -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-file-master" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Infografis</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                            <select class="custom-select my-1 mr-sm-2" id="idprovinsi" name="idprovinsi">
+                                <option selected>Choose...</option>
+                                <option value="15">Jambi</option>
+                                <option value="16">Sumatera Selatan</option>
+                                <option value="17">Bengkulu</option>
+                                <option value="18">Lampung</option>
+                                <option value="19">Kepulauan Bangka</option>
+                            </select>
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="nama">File Infografis</label>
+                            <input type="file" class="form-control" id="file_infografis" name="file_infografis"
+                                placeholder="Contoh: UNiversitas Negeri Sriwijaya" required>
+                        </div>
+                        <div class="form-group py-2">
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
+                            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="kategori">
+                                <option selected>Choose...</option>
+                                <option value="1">Balai Sektoral Kementerian PUPR</option>
+                                <option value="2">Organisasi Perangkat Daerah Suburusan Jasa Konstruksi</option>
+                                <option value="3">Sekolah</option>
+                                <option value="4">Asosiasi Profesi</option>
+                                <option value="5">Asosiasi Badan Usaha Jasa Konstruksi</option>
+                                <option value="6">Aturan Kewajiban Penggunaan Tenaga Kerja Konstruksi yang Bersertifikat
+                                    Kompetensi</option>
+                                <option value="7">Asesor Kompetensi Tenaga Kerja </option>
+                                <option value="8">Daftar Asesor Badan Usaha </option>
+                                <option value="9">Daftar Instruktur Non Vokasi</option>
+                                <option value="10">Daftar Instruktur Vokasi</option>
+                                <option value="11">Program Padat Karya</option>
+                                <option value="12">Pemanfaatan Mobile Training Unit</option>
+                                <option value="13">Rekap Pelaksanaan Kegiatan</option>
+                                <option value="14">Rekap Pelaksanaan Kegiatan Peserta</option>
+                                <option value="15">Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan</option>
+                                <option value="16">Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan</option>
+                                <option value="17">Realisasi Peserta Pembekalan/Bimtek dan Uji Sertifikasi Berdasarkan
+                                    Berita Acara Hasil Penilaian</option>
+                            </select>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
@@ -1517,12 +1598,12 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-pns-master"><img
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">PNS</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-balai-jasa-master"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">BSKP</button>
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-infografis"><img
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Infografis</button>
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-file-infografis"><img
+                                        class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">File Infografis</button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -1583,12 +1664,12 @@
                                         <a class="nav-link" href="#master-pns" role="tab" data-toggle="tab">PNS</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-balai-jasa" role="tab"
-                                            data-toggle="tab">BSKP</a>
-                                    </li>
-                                    <li class="nav-item">
                                         <a class="nav-link" href="#master-infografis" role="tab" data-toggle="tab">
                                             Infografis</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis" role="tab" data-toggle="tab">
+                                            Infografis File</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1761,20 +1842,6 @@
                                         </thead>
                                     </table>
                                 </div>
-
-                                <div class="tab-pane fade show" role="tabpanel" id="master-balai-jasa">
-                                    <table id="balai_jasa_table" class="display" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Provinsi</th>
-                                                <th>Balai Jasa</th>
-                                                <th>Jumlah Satuan Kerja</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-infografis">
                                     <table id="infografis_table" class="display" style="width:100%">
                                         <thead>
@@ -1782,8 +1849,26 @@
                                                 <th>No</th>
                                                 <th>Provinsi</th>
                                                 <th>Kategori</th>
+                                                <th>Nama</th>
                                                 <th>Jumlah</th>
                                                 <th>Aksi</th>
+                                                <th id="id_provinsi" style="display:none;">No </th>
+                                                <th id="id_kategori" style="display:none;">No </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis">
+                                    <table id="infografis_file_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                                <th id="id_provinsi" style="display:none;">No </th>
+                                                <th id="id_kategori" style="display:none;">No </th>
                                             </tr>
                                         </thead>
                                     </table>
