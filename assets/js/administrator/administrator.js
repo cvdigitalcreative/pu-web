@@ -2194,8 +2194,8 @@ Tidak ada poster kegiatan`
                 data: 'id',
                 render: function(data) {
                     return `
-					<button id='btn-edit-infografis-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
-					<button id='btn-reject-infografis-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
                 },
             },
             {
@@ -2214,25 +2214,21 @@ Tidak ada poster kegiatan`
         ]
     })
 
-    $('table').on('click', '#btn-edit-infografis-table-master', function() {
-        if ($('#infografis_table').length > 0) {
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis/edit_infografis/${id}`)
-            $('#edit_provinsi_infografis').val($(this).parent().siblings().eq(5).text())
-            $('#edit_kategori_infografis').val($(this).parent().siblings().eq(6).text())
-            $('#edit_nama_infografis').val($(this).parent().siblings().eq(3).text())
-            $('#edit_jumlah_infografis').val($(this).parent().siblings().eq(4).text())
-
-
-            $('#modal-edit-infografis-master').modal('show')
+            $('form').attr('action', `${BASE_URL}Infografis/edit_infografis_file/${id}`)
+            $('#edit_file_provinsi_infografis').val($(this).parent().siblings().eq(4).text())
+            $('#edit_file_kategori_infografis').val($(this).parent().siblings().eq(5).text())
+            $('#modal-edit-infografis-file-master').modal('show')
 
         }
     })
-    $('table').on('click', '#btn-reject-infografis-table-master', function() {
-        if ($('#infografis_table').length > 0) {
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis/delete_infografis/${id}`)
-            $('#modal-delete-infografis').modal('show')
+            $('form').attr('action', `${BASE_URL}Infografis/delete_file_infografis/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
         }
     })
 

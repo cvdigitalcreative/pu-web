@@ -1328,7 +1328,7 @@
                         <div class="form-group py-2">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" id="nama" name="nama"
-                                placeholder="Contoh: UNiversitas Negeri Sriwijaya" required>
+                                placeholder="Contoh: Universitas Negeri Sriwijaya" required>
                         </div>
                         <div class="form-group py-2">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
@@ -1441,7 +1441,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah Infografis</h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah File Infografis</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -1463,7 +1463,7 @@
                         <div class="form-group py-2">
                             <label for="nama">File Infografis</label>
                             <input type="file" class="form-control" id="file_infografis" name="file_infografis"
-                                placeholder="Contoh: UNiversitas Negeri Sriwijaya" required>
+                                placeholder="Contoh: Universitas Negeri Sriwijaya" required>
                         </div>
                         <div class="form-group py-2">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
@@ -1491,7 +1491,7 @@
                             </select>
                         </div>
                         <div class="menu-divider"></div>
-                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah File
                             Infografis</button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
@@ -1501,6 +1501,64 @@
         </div>
     </div>
     <!-- End Modal Infografis -->
+    <!-- Edit Infografis File -->
+    <div class="modal fade bd-example-modal-lg" id="modal-edit-infografis-file-master" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Edit File Infografis</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="POST" enctype="multipart/form-data">
+                        <input type="text" class="form-control" id="edit_file_kategori_infografis"
+                            name="edit_file_kategori_infografis" hidden>
+                        <input type="text" class="form-control" id="edit_file_provinsi_infografis"
+                            name="edit_file_provinsi_infografis" hidden>
+                        <div class="form-group py-2">
+                            <label for="nama">File Infografis</label>
+                            <input type="file" class="form-control" id="edit_file_infografis"
+                                name="edit_file_infografis" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf" required>
+                        </div>
+
+                        <div class="menu-divider"></div>
+                        <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit File
+                            Infografis</button>
+                        <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
+                            data-dismiss="modal">Batal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Infografis -->
+    <!-- Modal Delete Infografis -->
+    <div class="modal fade bd-example-modal-lg" id="modal-delete-file-infografis" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus File Infografis Ini?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Pastikan dengan benar bahwa anda ingin menghapus data ini!
+                    <form>
+                        <div class="modal-footer">
+                            <button class="btn btn-light" data-dismiss="modal">Batal</button>
+                            <button class="btn btn-danger" type="submit">Hapus</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal delete Infografis -->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -1601,8 +1659,8 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-infografis"><img
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Infografis</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-file-infografis"><img
-                                        class="img-profile mr-2"
+                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
+                                    id="btn-add-file-infografis"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">File Infografis</button>
                             </div>
                         </div>
