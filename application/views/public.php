@@ -1296,7 +1296,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- Template Main JS File -->
     <script src="<?= base_url('assets/public_component/js/main.js')?>"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+    <script src="<?=base_url('assets/js/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js')?>"></script>
  
 
     <script src="<?=base_url('assets/js/administrator/public.js')?>"></script>

@@ -1,43 +1,49 @@
 $(document).ready(function() {
 
-    let backgrundcolor_1 = ['rgb(255, 35, 139, 0.4)', 'rgb(255, 225, 19, 0.4)',
-        'rgb(25, 150, 39, 0.4)', 'rgb(024, 50, 173, 0.4)', 'rgb(25, 34, 90, 0.4)', 'rgb(255, 220, 175, 0.4)', 'rgb(120, 250, 36, 0.4)'
+
+
+    let backgrundcolor_1 = ['rgb(253, 50, 139, 0.3)', 'rgb(255, 225, 19, 0.3)',
+        'rgb(25, 150, 39, 0.3)', 'rgb(024, 50, 173, 0.3)', 'rgb(25, 34, 90, 0.3)', 'rgb(255, 220, 175, 0.3)', 'rgb(120, 250, 36, 0.3)'
     ];
-    let backgrundcolor_2 = ['rgb(167, 90, 199, 0.4)', 'rgb(255, 25, 19, 0.4)',
-        'rgb(25, 105, 39, 0.4)', 'rgb(24, 150, 13, 0.4)', 'rgb(27, 241, 90, 0.4)', 'rgb(55, 220, 17, 0.4)', 'rgb(120, 25, 136, 0.4)'
+    let backgrundcolor_2 = ['rgb(167, 90, 199, 0.3)', 'rgb(255, 25, 19, 0.3)',
+        'rgb(25, 105, 39, 0.3)', 'rgb(24, 150, 13, 0.3)', 'rgb(27, 241, 90, 0.3)', 'rgb(55, 220, 17, 0.3)', 'rgb(120, 25, 136, 0.3)'
     ];
-    let backgrundcolor_3 = ['rgb(0, 255, 0, 0.4)', 'rgb(255, 225, 19, 0.4)',
-        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    let backgrundcolor_3 = ['rgb(0, 255, 0, 0.3)', 'rgb(255, 225, 19, 0.3)',
+        'rgb(25, 15, 39, 0.3)', 'rgb(24, 50, 173, 0.3)', 'rgb(257, 41, 90, 0.3)', 'rgb(55, 220, 175, 0.3)', 'rgb(12, 25, 136, 0.3)'
     ];
-    let backgrundcolor_4 = ['rgb(0, 250, 0, 0.4)', 'rgb(17, 74, 232, 0.4)', 'rgb(255, 225, 19, 0.4)',
-        'rgb(25, 15, 39, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    let backgrundcolor_4 = ['rgb(0, 250, 0, 0.3)', 'rgb(17, 74, 232, 0.3)', 'rgb(255, 225, 19, 0.3)',
+        'rgb(25, 15, 39, 0.3)', 'rgb(257, 41, 90, 0.3)', 'rgb(55, 220, 175, 0.3)', 'rgb(12, 25, 136, 0.3)'
     ];
-    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.4)',
-        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(0, 255, 0, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(255, 225, 19, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.3)',
+        'rgb(25, 15, 39, 0.3)', 'rgb(24, 50, 173, 0.3)', 'rgb(0, 255, 0, 0.3)', 'rgb(55, 220, 175, 0.3)', 'rgb(255, 225, 19, 0.3)', 'rgb(12, 25, 136, 0.3)'
     ];
-    let backgrundcolor_6 = ['rgb(44, 255, 65, 0.4)', 'rgb(55, 220, 175, 0.4)', 'rgb(255, 225, 19, 0.4)',
-        'rgb(25, 15, 39, 0.4)', 'rgb(24, 50, 173, 0.4)', 'rgb(257, 41, 90, 0.4)', 'rgb(12, 25, 136, 0.4)'
+    let backgrundcolor_6 = ['rgb(44, 255, 65, 0.3)', 'rgb(55, 220, 175, 0.3)', 'rgb(255, 225, 19, 0.3)',
+        'rgb(25, 15, 39, 0.3)', 'rgb(24, 50, 173, 0.3)', 'rgb(257, 41, 90, 0.3)', 'rgb(12, 25, 136, 0.3)'
     ];
 
-    let bordercolor_1 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    let bordercolor_1 = ['rgb(255, 255, 255, 0.2)', 'rgb(255, 225, 19, 0.2)',
+        'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
-    let bordercolor_2 = ['rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
-        'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)'
+    let bordercolor_2 = ['rgb(167, 90, 199, 0.2)', 'rgb(255, 25, 19, 0.2)',
+        'rgb(25, 105, 39, 0.2)', 'rgb(24, 150, 13, 0.2)', 'rgb(27, 241, 90, 0.2)', 'rgb(55, 220, 17, 0.2)', 'rgb(120, 25, 136, 0.2)'
     ];
-    let bordercolor_3 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    let bordercolor_3 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.2)',
+        'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
-    let bordercolor_4 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    let bordercolor_4 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.2)',
+        'rgb(25, 15, 39, 1)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
-    let bordercolor_5 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    let bordercolor_5 = ['rgb(255, 35, 139, 0.2)', 'rgb(255, 225, 19, 0.2)',
+        'rgb(25, 15, 39, 1)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
-    let bordercolor_6 = ['rgb(44, 255, 65, 0.2)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(83, 255, 139, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)'
+    let bordercolor_6 = ['rgb(44, 255, 65, 0.2)', 'rgb(255, 225, 19, 0.2)',
+        'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
     Chart.defaults.global.defaultFontSize = 9;
+
+
+
+
 
     function drawChartBalaiSektoral(id_provinsi, kategori) {
         $.ajax({
@@ -63,10 +69,25 @@ $(document).ready(function() {
                             label: "Balai Sektoral Kementerian PUPR",
                             backgroundColor: backgrundcolor_1,
                             borderColor: bordercolor_1,
-                            data: value
+                            data: value,
                         }],
                     },
                     options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: "rgb(25, 15, 39, 1)",
+                                anchor: 'center',
+
+                                font: {
+                                    size: 14,
+
+                                    family: ["Open Sans", "sans-serif"]
+
+                                }
+
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -74,9 +95,9 @@ $(document).ready(function() {
                                 ticks: {
                                     beginAtZero: true
                                 }
-                            }]
+                            }],
                         }
-                    }
+                    },
                 });
             }
         });
@@ -143,6 +164,22 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+
+                                }
+
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -221,6 +258,21 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+
+                                }
+
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -295,6 +347,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -369,6 +433,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -445,6 +521,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -520,6 +608,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -595,6 +695,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -669,6 +781,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -743,6 +867,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -817,6 +953,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -891,6 +1039,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -965,6 +1125,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -1039,6 +1211,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -1113,6 +1297,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -1188,6 +1384,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
@@ -1262,6 +1470,18 @@ $(document).ready(function() {
                         }],
                     },
                     options: {
+                        plugins: {
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+                                }
+                            }
+                        },
                         responsive: true,
                         fill: false,
                         scales: {
