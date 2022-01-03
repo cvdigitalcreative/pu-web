@@ -106,6 +106,15 @@
 		</a>
 	</li>
 
+	<!-- Nav Item - Infografis Data -->
+	<li class="nav-item <?=$this->uri->segment(2) == 'infografis' ? 'active' : ''?>">
+		<a class="nav-link <?=$this->uri->segment(2) == 'infografis' ? 'disabled' : ''?>"
+			href="<?=base_url('pupr/infografis')?>">
+			<img class="img-profile mr-2" src="<?=base_url('assets/illustration/administrasi-menu.svg')?>">
+			<span>Infografis Data</span>
+		</a>
+	</li>
+
 	<!-- Divider -->
 	<hr class="sidebar-divider d-none d-md-block">
 

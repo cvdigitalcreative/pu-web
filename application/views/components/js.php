@@ -35,7 +35,7 @@
 <script src="<?=base_url('assets/js/chart/chart-area.js')?>"></script>
 <script src="<?=base_url('assets/js/chart/chart-bar.js')?>"></script>
 
-<script src="<?=base_url('node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js')?>"></script>  
+
 <script>
     function getState(val) {
         $.ajax({

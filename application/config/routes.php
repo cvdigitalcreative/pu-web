@@ -113,8 +113,11 @@ $route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
 //route feedback
 $route['pupr/feedback'] = "Feedback/seluruh";
 
-//route feedback
+//route master
 $route['pupr/master'] = "Master/seluruh";
+
+//route Infografis Data
+$route['pupr/infografis'] = "Infografis_data/seluruh";
 
 //route Profile
 $route['pupr/profile'] = "User/profile";

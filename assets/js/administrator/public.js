@@ -1,3 +1,7 @@
+Chart.plugins.register({
+    ChartDataLabels
+});
+
 $(document).ready(function() {
 
 

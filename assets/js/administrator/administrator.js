@@ -2096,7 +2096,7 @@ Tidak ada poster kegiatan`
             emptyTable: "Data tidak ditemukan!",
         },
         ajax: {
-            url: `${BASE_URL}Infografis/infografis_table`,
+            url: `${BASE_URL}Infografis_data/infografis_table`,
             type: "GET",
         },
         columns: [{
@@ -2143,7 +2143,7 @@ Tidak ada poster kegiatan`
     $('table').on('click', '#btn-edit-infografis-table-master', function() {
         if ($('#infografis_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis/edit_infografis/${id}`)
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis/${id}`)
             $('#edit_provinsi_infografis').val($(this).parent().siblings().eq(5).text())
             $('#edit_kategori_infografis').val($(this).parent().siblings().eq(6).text())
             $('#edit_nama_infografis').val($(this).parent().siblings().eq(3).text())
@@ -2157,7 +2157,7 @@ Tidak ada poster kegiatan`
     $('table').on('click', '#btn-reject-infografis-table-master', function() {
         if ($('#infografis_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis/delete_infografis/${id}`)
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_infografis/${id}`)
             $('#modal-delete-infografis').modal('show')
         }
     })
@@ -2171,7 +2171,7 @@ Tidak ada poster kegiatan`
             emptyTable: "Data tidak ditemukan!",
         },
         ajax: {
-            url: `${BASE_URL}Infografis/infografis_file_all`,
+            url: `${BASE_URL}Infografis_data/infografis_file_all`,
             type: "GET",
         },
         columns: [{
@@ -2217,7 +2217,7 @@ Tidak ada poster kegiatan`
     $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
         if ($('#infografis_file_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis/edit_infografis_file/${id}`)
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file/${id}`)
             $('#edit_file_provinsi_infografis').val($(this).parent().siblings().eq(4).text())
             $('#edit_file_kategori_infografis').val($(this).parent().siblings().eq(5).text())
             $('#modal-edit-infografis-file-master').modal('show')
@@ -2227,7 +2227,7 @@ Tidak ada poster kegiatan`
     $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
         if ($('#infografis_file_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis/delete_file_infografis/${id}`)
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis/${id}`)
             $('#modal-delete-file-infografis').modal('show')
         }
     })
@@ -3041,12 +3041,12 @@ Tidak ada poster kegiatan`
     })
 
     $('#btn-add-infografis').on('click', function() {
-        $('form').attr('action', `${BASE_URL}Infografis/add_infografis`)
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis`)
         $('#modal-tambah-infografis-master').modal('show');
     })
 
     $('#btn-add-file-infografis').on('click', function() {
-        $('form').attr('action', `${BASE_URL}Infografis/add_infografis_file`)
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_file`)
         $('#modal-tambah-infografis-file-master').modal('show');
     })
 
