@@ -204,7 +204,7 @@ $(document).ready(function() {
 
     $('#chart-filter-tahun-kegiatan-status').on('change', function() {
         var filter = $('#chart-filter-tahun-kegiatan-status').val()
-        chartKBS.destroy()
+        chartKBS.destroy();
         tahunStatus = filter;
         var x = document.getElementById("expand-provinsi-status");
         if (x.style.display === "block") {
@@ -329,7 +329,7 @@ $(document).ready(function() {
         if (y.style.display === "block") {
             y.style.display = "none";
         }
-        chartKBJ.destroy()
+        chartKBJ.destroy();
         drawChartKegiatanJenis(filter);
     })
 
@@ -352,7 +352,7 @@ $(document).ready(function() {
 
                 } while (i < data.data.grafik.length);
                 var tahun = data.data.tahun;
-                tahunKota = tahun;
+                // tahunKota = tahun;
                 document.getElementById("labelChartKegiatanProvinsi").innerHTML = "Data kegiatan berdasarkan Provinsi (" + tahun + ")";
                 var ctx = document.getElementById('chartKegiatanProvinsi').getContext('2d');
                 chartKBP = new Chart(ctx, {
@@ -388,23 +388,20 @@ $(document).ready(function() {
         });
     }
 
-    document.getElementById("chartKegiatanProvinsi").onclick = function(evt) {
-        var activePoints = chartKBP.getElementsAtEventForMode(evt, 'point', chartKBP.options);
-        var firstPoint = activePoints[0];
-        var label = chartKBP.data.labels[firstPoint._index];
+    drawChartKegiatanProvinsi(2021);
+    $('#chart-filter-tahun-kegiatan-provinsi').on('change', function() {
+        var filter = $('#chart-filter-tahun-kegiatan-provinsi').val()
+        chartKBP.destroy();
+        tahunKota = filter;
         var z = document.getElementById("expand-kota-provinsi");
-        if (z.style.display === "none") {
-            z.style.display = "block";
-        }
-        if (ChartKBPExpand != undefined) {
-            ChartKBPExpand.destroy();
+        if (z.style.display === "block") {
+            z.style.display = "none";
         }
 
-        drawChartKegiatanKotaProvinsi(tahunJenis, label)
-        $('#btn-close-expand-kota').on('click', function() {
-            z.style.display = "none";
-        })
-    };
+        drawChartKegiatanProvinsi(filter);
+    })
+
+
 
     function drawChartKegiatanKotaProvinsi(tahun, provinsi) {
         $.ajax({
@@ -459,16 +456,23 @@ $(document).ready(function() {
         });
     }
 
-    $('#chart-filter-tahun-kegiatan-provinsi').on('change', function() {
-        var filter = $('#chart-filter-tahun-kegiatan-provinsi').val()
-        tahunKota = filter;
+    document.getElementById("chartKegiatanProvinsi").onclick = function(evt) {
+        var activePoints = chartKBP.getElementsAtEventForMode(evt, 'point', chartKBP.options);
+        var firstPoint = activePoints[0];
+        var label = chartKBP.data.labels[firstPoint._index];
         var z = document.getElementById("expand-kota-provinsi");
-        if (z.style.display === "block") {
-            z.style.display = "none";
+        if (z.style.display === "none") {
+            z.style.display = "block";
         }
-        chartKBP.destroy()
-        drawChartKegiatanProvinsi(filter);
-    })
+        if (ChartKBPExpand != undefined) {
+            ChartKBPExpand.destroy();
+        }
+
+        drawChartKegiatanKotaProvinsi(tahunJenis, label)
+        $('#btn-close-expand-kota').on('click', function() {
+            z.style.display = "none";
+        })
+    };
 
 
 

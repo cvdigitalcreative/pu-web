@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-      
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?=base_url('assets/public_component/vendor/glightbox/css/glightbox.min.css')?>" rel="stylesheet">
     <link href="<?=base_url('assets/public_component/vendor/remixicon/remixicon.css')?>" rel="stylesheet">
     <link href="<?=base_url('assets/public_component/vendor/swiper/swiper-bundle.min.css')?>" rel="stylesheet">
-      
+
     <!-- Template Main CSS File -->
     <link href="<?=base_url('assets/public_component/css/style.css')?>" rel="stylesheet">
     <link href="<?=base_url('assets/public_component/css/style_custom.css')?>" rel="stylesheet">
@@ -194,6 +194,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
+                                    </div>
+                                </div>
                                 <canvas id="Balai_Sektoral" height="100"></canvas>
                             </div>
                         </div>
@@ -260,7 +264,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
+                                    </div>
+                                </div>
 
                                 <canvas id="OPD" width="900"></canvas>
                             </div>
@@ -315,8 +322,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
-
-
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
+                                    </div>
+                                </div>
                                 <canvas id="Sekolah" width="900"></canvas>
                             </div>
                         </div>
@@ -385,6 +394,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader">
+                                        </div>
+                                    </div>
                                     <canvas id="RPK" width="535"></canvas>
                                 </div>
                             </div>
@@ -439,6 +452,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader">
                                         </div>
                                     </div>
                                     <canvas id="RPKP" width="535"></canvas>
@@ -511,6 +528,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
+                                    </div>
+                                </div>
                                 <canvas id="Asosiasi_Profesi" height="100"></canvas>
                             </div>
                         </div>
@@ -578,6 +599,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
+                                    </div>
+                                </div>
                                 <canvas id="DABU" width="900" height="600"></canvas>
                             </div>
                         </div>
@@ -628,6 +653,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option value="pie">Pie</option>
                                             </select>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
                                     </div>
                                 </div>
                                 <canvas id="AKTK" width="900" height="600"></canvas>
@@ -686,6 +715,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
+                                    </div>
+                                </div>
                                 <canvas id="PPP" width="900" height="600"></canvas>
                             </div>
                         </div>
@@ -736,6 +769,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option value="doughnut">Doughnut</option>
                                             </select>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
                                     </div>
                                 </div>
                                 <canvas id="PMTU" width="900" height="600"></canvas>
@@ -815,6 +852,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader">
+                                        </div>
+                                    </div>
                                     <canvas id="ABUJK" width="535"></canvas>
                                 </div>
                             </div>
@@ -870,6 +911,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader">
                                         </div>
                                     </div>
                                     <canvas id="Sertifikasi" width="535"></canvas>
@@ -938,6 +983,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
+                                    </div>
+                                </div>
                                 <canvas id="DINV" width="900" height="600"></canvas>
                             </div>
                         </div>
@@ -988,6 +1037,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option value="doughnut">Doughnut</option>
                                             </select>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader">
                                     </div>
                                 </div>
                                 <canvas id="DIV" width="900" height="600"></canvas>
@@ -1058,6 +1111,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader">
+                                        </div>
+                                    </div>
                                     <canvas id="RPBWP" height="260"></canvas>
                                 </div>
                             </div>
@@ -1114,6 +1171,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader">
                                         </div>
                                     </div>
                                     <canvas id="RPBU" height="260"></canvas>
@@ -1173,6 +1234,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader">
                                         </div>
                                     </div>
                                     <canvas id="RPBWP2" height="260"></canvas>
@@ -1242,8 +1307,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     placeholder="Masukan Email" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Judul" required>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Judul"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" name="message" rows="5" placeholder="Isi Pesan"
@@ -1285,7 +1350,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
     <?php $this->load->view("components/js.php") ?>
-      <!-- Vendor JS Files -->
+    <!-- Vendor JS Files -->
     <script src="<?= base_url('assets/public_component/vendor/purecounter/purecounter.js')?>"></script>
     <script src="<?= base_url('assets/public_component/vendor/aos/aos.js')?>"></script>
     <script src="<?= base_url('assets/public_component/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>

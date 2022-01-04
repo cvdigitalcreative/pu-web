@@ -53,6 +53,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -92,6 +98,7 @@ $(document).ready(function() {
 
                             }
                         },
+
                         responsive: true,
                         fill: false,
                         scales: {
@@ -104,6 +111,7 @@ $(document).ready(function() {
                     },
                 });
             }
+
         });
         $.ajax({
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
@@ -143,6 +151,12 @@ $(document).ready(function() {
 
     function drawChartOPD(id_provinsi, kategori) {
         $.ajax({
+            beforeSend: function() {
+                $('#loader').show();
+            },
+            complete: function() {
+                $('#loader').hide();
+            },
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
@@ -239,6 +253,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -328,6 +348,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -414,6 +440,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -502,6 +534,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -589,6 +627,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -676,6 +720,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -762,6 +812,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -848,6 +904,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -934,6 +996,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -1020,6 +1088,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -1106,6 +1180,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -1192,6 +1272,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -1278,6 +1364,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -1365,6 +1457,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];
@@ -1451,6 +1549,12 @@ $(document).ready(function() {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
+            beforeSend: function() {
+                $('.loader').show();
+            },
+            complete: function() {
+                $('.loader').hide();
+            },
             success: function(data) {
                 var label = [];
                 var value = [];

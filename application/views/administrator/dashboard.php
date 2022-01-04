@@ -335,9 +335,9 @@
                         </div>
                     </div>
 
-                    <div class="col mt-3">
+                <div class="col mt-3">
                         <div class="card mb-4">
-                            <!-- Card Header - Dropdown -->
+                           
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="labelChartKegiatanProvinsi"></h6>
                             </div>
@@ -361,51 +361,13 @@
                                 <canvas id="chartKegiatanProvinsi"></canvas>
                             </div>
                         </div>
-                    </div>
+                    </div> 
 
-                    <!-- <div class="col mt-3">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Balai Sektoral Kementerian PUPR</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group py-2">
-                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                    <select class="form-control" id="chart-filter-provinsi-balai-jasa">
-                                        <option selected>Choose..</option>
-                                        <option value="0">All</option>
-                                        <option value="1">Sumatera Selatan</option>
-                                        <option value="2">Jambi</option>
-                                    </select>
-                                </div>
-                                <canvas id="BalaiJasa"></canvas>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="col mt-3">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Unit Organisasi Jasa Konstruksi</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group py-2">
-                                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                    <select class="form-control" id="chart-filter-provinsi-jasa-konstruksi">
-                                        <option selected>Choose..</option>
-                                        <option value="0">All</option>
-                                        <option value="1">Sumatera Selatan</option>
-                                        <option value="2">Jambi</option>
-                                    </select>
-                                </div>
-                                <canvas id="JasaKonstruksi"></canvas>
-                            </div>
-                        </div>
-                    </div> -->
 
                     <div class="col mt-3" id="expand-kota-provinsi">
                         <div class="card mb-4">
-                            <!-- Card Header - Dropdown -->
+                            Card Header - Dropdown
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="labelexpandkegiatanbykota"></h6>
                                 <button type="button" class="close" aria-label="Close" id="btn-close-expand-kota">
@@ -416,30 +378,8 @@
                                 <canvas id="chartExpandKotaProvinsi"></canvas>
                             </div>
                         </div>
-                    </div>
+                    </div> 
 
-                    <!-- <div class="row d-flex flex-column justify-content-center align-items-center"> -->
-                    <!-- <div class="col mt-4">
-							<div class="row d-flex flex-column justify-content-center align-items-center">
-								<div class="align-items-center">
-									<img class="img-profile mr-2" style="vertical-align:middle" src="<?= base_url('assets/illustration/pupr-illustration-under-construction.svg') ?>">
-								</div>
-							</div>
-						</div>
-						
-						<div class="col mt-4">
-							<div class="row d-flex flex-column justify-content-center align-items-center">
-								<div class="align-items-center">
-									<div>
-										<h3>Fitur ini akan segera hadir!</h3>
-									</div>
-									<div>
-										<p class="image-title">Menu Dashboard sedang dalam pengembangan, lihat kembali nanti!</p>
-									</div>
-								</div>
-							</div>
-						</div> -->
-                    <!-- </div> -->
                 </div>
                 <!-- /.container-fluid -->
 
