@@ -316,6 +316,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <select class="form-control" id="chart-filter-provinsi-vokasi">
                                                 <option value="0" selected>Choose..</option>
                                                 <option value="0">All</option>
+                                                <option value="99">All Label</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -379,6 +380,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <select class="form-control" id="chart-filter-provinsi-Asosiasi_Profesi">
                                                 <option value="0" selected>Choose..</option>
                                                 <option value="0">All</option>
+                                                <option value="99">All Label</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>

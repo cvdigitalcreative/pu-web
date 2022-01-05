@@ -341,103 +341,6 @@ $(document).ready(function() {
     });
 
 
-
-
-    // function drawChartvokasi(id_provinsi, kategori) {
-    //     $.ajax({
-    //         url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-    //         method: "GET",
-    //         beforeSend: function() {
-    //             $('.loader').show();
-    //         },
-    //         complete: function() {
-    //             $('.loader').hide();
-    //         },
-    //         success: function(data) {
-    //             var label = [];
-    //             var value = [];
-    //             i = 0;
-    //             do {
-    //                 label.push(data.data[i].nama);
-    //                 value.push(data.data[i].jumlah);
-    //                 i++;
-
-    //             } while (i < data.data.length);
-    //             var ctx = document.getElementById('vokasi').getContext('2d');
-    //             vokasi = new Chart(ctx, {
-    //                 type: document.getElementById("chartTypevokasi").value,
-    //                 data: {
-    //                     labels: label,
-    //                     datasets: [{
-    //                         label: "Vokasi",
-    //                         backgroundColor: backgrundcolor_2,
-    //                         borderColor: bordercolor_2,
-    //                         data: value
-    //                     }],
-    //                 },
-    //                 options: {
-    //                     plugins: {
-    //                         // Change options for ALL labels of THIS CHART
-    //                         datalabels: {
-    //                             color: 'rgb(25, 15, 39, 1)',
-    //                             anchor: 'end',
-
-    //                             font: {
-    //                                 size: 14,
-    //                                 style: 'italic',
-    //                                 family: ["Open Sans", "sans-serif"]
-
-    //                             }
-
-    //                         }
-    //                     },
-    //                     responsive: true,
-    //                     fill: false,
-    //                     scales: {
-    //                         yAxes: [{
-    //                             ticks: {
-    //                                 beginAtZero: true
-    //                             }
-    //                         }]
-    //                     }
-    //                 }
-    //             });
-    //         }
-    //     });
-    //     $.ajax({
-    //         url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-    //         method: "GET",
-    //         success: function(data) {
-    //             if (data.data[0] == undefined) {
-    //                 $('#chart-filter-file-vokasi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-    //             } else {
-    //                 $('#chart-filter-file-vokasi').attr('href', data.data[0].pathfile);
-    //             }
-    //         }
-    //     })
-
-    // }
-    // drawChartvokasi(0, 3);
-
-    // $('#chart-filter-provinsi-vokasi').on('change', function() {
-    //     var provinsi = $('#chart-filter-provinsi-vokasi').val()
-    //     vokasi.destroy();
-    //     drawChartvokasi(provinsi, 3);
-    // })
-
-
-    // $('#chartTypevokasi').on('change', function() {
-    //     var provinsi1 = document.getElementById("chart-filter-provinsi-vokasi").value
-    //     vokasi.destroy();
-    //     drawChartvokasi(provinsi1, 3);
-    // })
-
-    // document.getElementById("download-chart-vokasi").addEventListener('click', function() {
-    //     var image = document.getElementById("vokasi").toDataURL("image/jpg");
-    //     var a = document.getElementById("download-chart-vokasi");
-    //     a.href = image;
-    // });
-
     function drawChartvokasi(id_provinsi, kategori) {
 
         $.ajax({
@@ -584,49 +487,103 @@ $(document).ready(function() {
         a.href = image;
     });
 
+
     function drawChartAsosiasi_Profesi(id_provinsi, kategori) {
+
         $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
             beforeSend: function() {
-                $('.loader').show();
+                $('#loader').show();
             },
             complete: function() {
-                $('.loader').hide();
+                $('#loader').hide();
             },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
             success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
+                if (id_provinsi == 0) {
+                    var sets = new Set();
 
-                } while (i < data.data.length);
+                    var value = [];
+                    var labels = [];
+
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        console.log(labels[j])
+                        console.log(jumlah_data);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_3[j] + "\", \"borderColor\": \"" + backgrundcolor_3[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var dataset = [{
+                        label: "Asosiasi Profesi",
+                        backgroundColor: backgrundcolor_2,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                }
+
                 var ctx = document.getElementById('Asosiasi_Profesi').getContext('2d');
-                Sekolah = new Chart(ctx, {
+                Asosiasi_Profesi = new Chart(ctx, {
                     type: document.getElementById("chartTypeAsosiasi_Profesi").value,
                     data: {
                         labels: label,
-                        datasets: [{
-                            label: "Asosiasi Profesi",
-                            backgroundColor: backgrundcolor_3,
-                            borderColor: bordercolor_3,
-                            data: value
-                        }],
+                        datasets: dataset,
                     },
                     options: {
                         plugins: {
+                            // Change options for ALL labels of THIS CHART
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+
 
                                 font: {
                                     size: 14,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
+
                                 }
+
                             }
                         },
                         responsive: true,
@@ -646,6 +603,7 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
+                // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-Asosiasi_Profesi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
                 } else {
@@ -659,14 +617,14 @@ $(document).ready(function() {
 
     $('#chart-filter-provinsi-Asosiasi_Profesi').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-Asosiasi_Profesi').val()
-        Sekolah.destroy();
+        Asosiasi_Profesi.destroy();
         drawChartAsosiasi_Profesi(provinsi, 4);
     })
 
 
     $('#chartTypeAsosiasi_Profesi').on('change', function() {
         var provinsi1 = document.getElementById("chart-filter-provinsi-Asosiasi_Profesi").value
-        Sekolah.destroy();
+        Asosiasi_Profesi.destroy();
         drawChartAsosiasi_Profesi(provinsi1, 4);
     })
 
@@ -675,6 +633,7 @@ $(document).ready(function() {
         var a = document.getElementById("download-chart-Asosiasi_Profesi");
         a.href = image;
     });
+
 
     function drawChartABUJK(id_provinsi, kategori) {
         $.ajax({
