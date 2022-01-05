@@ -46,59 +46,104 @@ $(document).ready(function() {
     Chart.defaults.global.defaultFontSize = 9;
 
 
-
-
-
     function drawChartBalaiSektoral(id_provinsi, kategori) {
+
         $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
             beforeSend: function() {
-                $('.loader').show();
+                $('#loader').show();
             },
             complete: function() {
-                $('.loader').hide();
+                $('#loader').hide();
             },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
             success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
+                if (id_provinsi == 0) {
+                    var sets = new Set();
 
-                } while (i < data.data.length);
+                    var value = [];
+                    var labels = [];
+
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        console.log(labels[j])
+                        console.log(jumlah_data);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_2[j] + "\", \"borderColor\": \"" + backgrundcolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var dataset = [{
+                        label: "Balai Sektoral Kementrian PUPR",
+                        backgroundColor: backgrundcolor_2,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                }
+
                 var ctx = document.getElementById('Balai_Sektoral').getContext('2d');
-
-                Mitra = new Chart(ctx, {
+                balai_sektoral = new Chart(ctx, {
                     type: document.getElementById("chartType").value,
                     data: {
                         labels: label,
-                        datasets: [{
-                            label: "Balai Sektoral Kementerian PUPR",
-                            backgroundColor: backgrundcolor_1,
-                            borderColor: bordercolor_1,
-                            data: value,
-                        }],
+                        datasets: dataset,
                     },
                     options: {
                         plugins: {
                             // Change options for ALL labels of THIS CHART
                             datalabels: {
-                                color: "rgb(25, 15, 39, 1)",
-                                anchor: 'center',
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+
 
                                 font: {
                                     size: 14,
-
+                                    style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
                                 }
 
                             }
                         },
-
                         responsive: true,
                         fill: false,
                         scales: {
@@ -106,17 +151,17 @@ $(document).ready(function() {
                                 ticks: {
                                     beginAtZero: true
                                 }
-                            }],
+                            }]
                         }
-                    },
+                    }
                 });
             }
-
         });
         $.ajax({
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
+                // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-balai-sektoral').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
                 } else {
@@ -130,14 +175,14 @@ $(document).ready(function() {
 
     $('#chart-filter-provinsi-balai-sektoral').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-balai-sektoral').val()
-        Mitra.destroy();
+        balai_sektoral.destroy();
         drawChartBalaiSektoral(provinsi, 1);
     })
 
 
     $('#chartType').on('change', function() {
         var provinsi1 = document.getElementById("chart-filter-provinsi-balai-sektoral").value
-        Mitra.destroy();
+        balai_sektoral.destroy();
         drawChartBalaiSektoral(provinsi1, 1);
     })
 
@@ -150,6 +195,7 @@ $(document).ready(function() {
 
 
     function drawChartOPD(id_provinsi, kategori) {
+
         $.ajax({
             beforeSend: function() {
                 $('#loader').show();
@@ -160,26 +206,74 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
+                if (id_provinsi == 0) {
+                    var sets = new Set();
 
-                } while (i < data.data.length);
+                    var value = [];
+                    var labels = [];
+
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        console.log(labels[j])
+                        console.log(jumlah_data);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_1[j] + "\", \"borderColor\": \"" + backgrundcolor_1[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var dataset = [{
+                        label: "Organisasi Perangkat Daerah",
+                        backgroundColor: backgrundcolor_2,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                }
+
                 var ctx = document.getElementById('OPD').getContext('2d');
                 Opd = new Chart(ctx, {
                     type: document.getElementById("chartTypeOPD").value,
                     data: {
                         labels: label,
-                        datasets: [{
-                            label: "Organisasi Perangkat Daerah",
-                            backgroundColor: backgrundcolor_2,
-                            borderColor: bordercolor_2,
-                            data: value
-                        }],
+                        datasets: dataset,
                     },
                     options: {
                         plugins: {
@@ -249,37 +343,181 @@ $(document).ready(function() {
 
 
 
-    function drawChartSekolah(id_provinsi, kategori) {
+    // function drawChartvokasi(id_provinsi, kategori) {
+    //     $.ajax({
+    //         url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+    //         method: "GET",
+    //         beforeSend: function() {
+    //             $('.loader').show();
+    //         },
+    //         complete: function() {
+    //             $('.loader').hide();
+    //         },
+    //         success: function(data) {
+    //             var label = [];
+    //             var value = [];
+    //             i = 0;
+    //             do {
+    //                 label.push(data.data[i].nama);
+    //                 value.push(data.data[i].jumlah);
+    //                 i++;
+
+    //             } while (i < data.data.length);
+    //             var ctx = document.getElementById('vokasi').getContext('2d');
+    //             vokasi = new Chart(ctx, {
+    //                 type: document.getElementById("chartTypevokasi").value,
+    //                 data: {
+    //                     labels: label,
+    //                     datasets: [{
+    //                         label: "Vokasi",
+    //                         backgroundColor: backgrundcolor_2,
+    //                         borderColor: bordercolor_2,
+    //                         data: value
+    //                     }],
+    //                 },
+    //                 options: {
+    //                     plugins: {
+    //                         // Change options for ALL labels of THIS CHART
+    //                         datalabels: {
+    //                             color: 'rgb(25, 15, 39, 1)',
+    //                             anchor: 'end',
+
+    //                             font: {
+    //                                 size: 14,
+    //                                 style: 'italic',
+    //                                 family: ["Open Sans", "sans-serif"]
+
+    //                             }
+
+    //                         }
+    //                     },
+    //                     responsive: true,
+    //                     fill: false,
+    //                     scales: {
+    //                         yAxes: [{
+    //                             ticks: {
+    //                                 beginAtZero: true
+    //                             }
+    //                         }]
+    //                     }
+    //                 }
+    //             });
+    //         }
+    //     });
+    //     $.ajax({
+    //         url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+    //         method: "GET",
+    //         success: function(data) {
+    //             if (data.data[0] == undefined) {
+    //                 $('#chart-filter-file-vokasi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+    //             } else {
+    //                 $('#chart-filter-file-vokasi').attr('href', data.data[0].pathfile);
+    //             }
+    //         }
+    //     })
+
+    // }
+    // drawChartvokasi(0, 3);
+
+    // $('#chart-filter-provinsi-vokasi').on('change', function() {
+    //     var provinsi = $('#chart-filter-provinsi-vokasi').val()
+    //     vokasi.destroy();
+    //     drawChartvokasi(provinsi, 3);
+    // })
+
+
+    // $('#chartTypevokasi').on('change', function() {
+    //     var provinsi1 = document.getElementById("chart-filter-provinsi-vokasi").value
+    //     vokasi.destroy();
+    //     drawChartvokasi(provinsi1, 3);
+    // })
+
+    // document.getElementById("download-chart-vokasi").addEventListener('click', function() {
+    //     var image = document.getElementById("vokasi").toDataURL("image/jpg");
+    //     var a = document.getElementById("download-chart-vokasi");
+    //     a.href = image;
+    // });
+
+    function drawChartvokasi(id_provinsi, kategori) {
+
         $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
             beforeSend: function() {
-                $('.loader').show();
+                $('#loader').show();
             },
             complete: function() {
-                $('.loader').hide();
+                $('#loader').hide();
             },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
             success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
+                if (id_provinsi == 0) {
+                    var sets = new Set();
 
-                } while (i < data.data.length);
-                var ctx = document.getElementById('Sekolah').getContext('2d');
-                Sekolah = new Chart(ctx, {
-                    type: document.getElementById("chartTypeSekolah").value,
+                    var value = [];
+                    var labels = [];
+
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        console.log(labels[j])
+                        console.log(jumlah_data);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_1[j] + "\", \"borderColor\": \"" + backgrundcolor_1[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var dataset = [{
+                        label: "Vokasi",
+                        backgroundColor: backgrundcolor_2,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                }
+
+                var ctx = document.getElementById('vokasi').getContext('2d');
+                vokasi = new Chart(ctx, {
+                    type: document.getElementById("chartTypevokasi").value,
                     data: {
                         labels: label,
-                        datasets: [{
-                            label: "Sekolah",
-                            backgroundColor: backgrundcolor_2,
-                            borderColor: bordercolor_2,
-                            data: value
-                        }],
+                        datasets: dataset,
                     },
                     options: {
                         plugins: {
@@ -287,6 +525,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+
 
                                 font: {
                                     size: 14,
@@ -314,37 +553,38 @@ $(document).ready(function() {
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
             success: function(data) {
+                // console.log(data.data[0])
                 if (data.data[0] == undefined) {
-                    $('#chart-filter-file-sekolah').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-vokasi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
                 } else {
-                    $('#chart-filter-file-sekolah').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-vokasi').attr('href', data.data[0].pathfile);
                 }
             }
         })
 
     }
-    drawChartSekolah(0, 3);
+    drawChartvokasi(0, 3);
 
-    $('#chart-filter-provinsi-sekolah').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-sekolah').val()
-        Sekolah.destroy();
-        drawChartSekolah(provinsi, 3);
+    $('#chart-filter-provinsi-vokasi').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-vokasi').val()
+        vokasi.destroy();
+        drawChartvokasi(provinsi, 3);
     })
 
 
-    $('#chartTypeSekolah').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-sekolah").value
-        Sekolah.destroy();
-        drawChartSekolah(provinsi1, 3);
+    $('#chartTypevokasi').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-vokasi").value
+        vokasi.destroy();
+        drawChartvokasi(provinsi1, 3);
     })
 
-    document.getElementById("download-chart-sekolah").addEventListener('click', function() {
-        var image = document.getElementById("Sekolah").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-sekolah");
+    document.getElementById("download-chart-vokasi").addEventListener('click', function() {
+        var image = document.getElementById("vokasi").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-vokasi");
         a.href = image;
     });
 
-    function drawChartAsosiasiProfesi(id_provinsi, kategori) {
+    function drawChartAsosiasi_Profesi(id_provinsi, kategori) {
         $.ajax({
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
@@ -366,7 +606,7 @@ $(document).ready(function() {
                 } while (i < data.data.length);
                 var ctx = document.getElementById('Asosiasi_Profesi').getContext('2d');
                 Sekolah = new Chart(ctx, {
-                    type: document.getElementById("chartTypeAsosiasiProfesi").value,
+                    type: document.getElementById("chartTypeAsosiasi_Profesi").value,
                     data: {
                         labels: label,
                         datasets: [{
@@ -407,32 +647,32 @@ $(document).ready(function() {
             method: "GET",
             success: function(data) {
                 if (data.data[0] == undefined) {
-                    $('#chart-filter-file-asosiasi-profesi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-Asosiasi_Profesi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
                 } else {
-                    $('#chart-filter-file-asosiasi-profesi').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-Asosiasi_Profesi').attr('href', data.data[0].pathfile);
                 }
             }
         })
 
     }
-    drawChartAsosiasiProfesi(0, 4);
+    drawChartAsosiasi_Profesi(0, 4);
 
-    $('#chart-filter-provinsi-asosiasi-profesi').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-asosiasi-profesi').val()
+    $('#chart-filter-provinsi-Asosiasi_Profesi').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-Asosiasi_Profesi').val()
         Sekolah.destroy();
-        drawChartAsosiasiProfesi(provinsi, 4);
+        drawChartAsosiasi_Profesi(provinsi, 4);
     })
 
 
-    $('#chartTypeAsosiasiProfesi').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-asosiasi-profesi").value
+    $('#chartTypeAsosiasi_Profesi').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-Asosiasi_Profesi").value
         Sekolah.destroy();
-        drawChartAsosiasiProfesi(provinsi1, 4);
+        drawChartAsosiasi_Profesi(provinsi1, 4);
     })
 
-    document.getElementById("download-chart-asosiasi-profesi").addEventListener('click', function() {
+    document.getElementById("download-chart-Asosiasi_Profesi").addEventListener('click', function() {
         var image = document.getElementById("Asosiasi_Profesi").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-asosiasi-profesi");
+        var a = document.getElementById("download-chart-Asosiasi_Profesi");
         a.href = image;
     });
 
@@ -530,97 +770,6 @@ $(document).ready(function() {
     });
 
 
-    function drawChartSertifikasi(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('Sertifikasi').getContext('2d');
-                Sertifikasi = new Chart(ctx, {
-                    type: document.getElementById("chartTypeSertifikasi").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Kewajiban Penggunaan Tenaga Kerja Konstruksi yang Bersertifikat Kompetensi",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-Sertifikasi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-Sertifikasi').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartSertifikasi(0, 6);
-
-    $('#chart-filter-provinsi-Sertifikasi').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-Sertifikasi').val()
-        Sertifikasi.destroy();
-        drawChartSertifikasi(provinsi, 6);
-    })
-
-
-    $('#chartTypeSertifikasi').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-Sertifikasi").value
-        Sertifikasi.destroy();
-        drawChartSertifikasi(provinsi1, 6);
-    })
-
-    document.getElementById("download-chart-Sertifikasi").addEventListener('click', function() {
-        var image = document.getElementById("Sertifikasi").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-Sertifikasi");
-        a.href = image;
-    });
 
 
     function drawChartAKTK(id_provinsi, kategori) {
@@ -992,649 +1141,8 @@ $(document).ready(function() {
         a.href = image;
     });
 
-    function drawChartPPP(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('PPP').getContext('2d');
-                Ppp = new Chart(ctx, {
-                    type: document.getElementById("chartTypePPP").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Program Padat Karya",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-PPP').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-PPP').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartPPP(0, 11);
-
-    $('#chart-filter-provinsi-PPP').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-PPP').val()
-        Ppp.destroy();
-        drawChartPPP(provinsi, 11);
-    })
 
 
-    $('#chartTypePPP').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-PPP").value
-        Ppp.destroy();
-        drawChartPPP(provinsi1, 11);
-    })
 
-    document.getElementById("download-chart-PPP").addEventListener('click', function() {
-        var image = document.getElementById("PPP").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-PPP");
-        a.href = image;
-    });
-
-    function drawChartPMTU(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('PMTU').getContext('2d');
-                Pmtu = new Chart(ctx, {
-                    type: document.getElementById("chartTypePMTU").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Pemanfaatan Mobile Training Unit",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-PMTU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-PMTU').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartPMTU(0, 12);
-
-    $('#chart-filter-provinsi-PMTU').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-PMTU').val()
-        Pmtu.destroy();
-        drawChartPMTU(provinsi, 12);
-    })
-
-
-    $('#chartTypePMTU').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-PMTU").value
-        Pmtu.destroy();
-        drawChartPMTU(provinsi1, 12);
-    })
-
-    document.getElementById("download-chart-PMTU").addEventListener('click', function() {
-        var image = document.getElementById("PMTU").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-PMTU");
-        a.href = image;
-    });
-
-    function drawChartRPK(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('RPK').getContext('2d');
-                RPK = new Chart(ctx, {
-                    type: document.getElementById("chartTypeRPK").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Rekap Pelaksanaan Kegiatan",
-                            backgroundColor: backgrundcolor_6,
-                            borderColor: bordercolor_6,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-RPK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-RPK').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartRPK(0, 13);
-
-    $('#chart-filter-provinsi-RPK').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-RPK').val()
-        RPK.destroy();
-        drawChartRPK(provinsi, 13);
-    })
-
-
-    $('#chartTypeRPK').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPK").value
-        RPK.destroy();
-        drawChartRPK(provinsi1, 13);
-    })
-
-    document.getElementById("download-chart-RPK").addEventListener('click', function() {
-        var image = document.getElementById("RPK").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-RPK");
-        a.href = image;
-    });
-
-    function drawChartRPKP(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('RPKP').getContext('2d');
-                RPKP = new Chart(ctx, {
-                    type: document.getElementById("chartTypeRPKP").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Rekap Pelaksanaan Kegiatan Peserta",
-                            backgroundColor: backgrundcolor_6,
-                            borderColor: bordercolor_6,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-RPKP').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-RPKP').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartRPKP(0, 14);
-
-    $('#chart-filter-provinsi-RPKP').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-RPKP').val()
-        RPKP.destroy();
-        drawChartRPKP(provinsi, 14);
-    })
-
-
-    $('#chartTypeRPKP').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPKP").value
-        RPKP.destroy();
-        drawChartRPKP(provinsi1, 14);
-    })
-
-    document.getElementById("download-chart-RPKP").addEventListener('click', function() {
-        var image = document.getElementById("RPKP").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-RPKP");
-        a.href = image;
-    });
-
-    function drawChartRPBWP(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('RPBWP').getContext('2d');
-                RPBWP = new Chart(ctx, {
-                    type: document.getElementById("chartTypeRPBWP").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Peserta Berdasarkan Wilayah dan Pembiayaan",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-RPBWP').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-RPBWP').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartRPBWP(0, 15);
-
-    $('#chart-filter-provinsi-RPBWP').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-RPBWP').val()
-        RPBWP.destroy();
-        drawChartRPBWP(provinsi, 15);
-    })
-
-
-    $('#chartTypeRPBWP').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBWP").value
-        RPBWP.destroy();
-        drawChartRPBWP(provinsi1, 15);
-    })
-
-    document.getElementById("download-chart-RPBWP").addEventListener('click', function() {
-        var image = document.getElementById("RPBWP").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-RPBWP");
-        a.href = image;
-    });
-
-
-    function drawChartRPBWP2(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('RPBWP2').getContext('2d');
-                RPBWP2 = new Chart(ctx, {
-                    type: document.getElementById("chartTypeRPBWP2").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Peserta Berdasarkan Wilayah dan Pembiayaan",
-                            backgroundColor: backgrundcolor_4,
-                            borderColor: bordercolor_4,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-RPBWP2').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-RPBWP2').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartRPBWP2(0, 16);
-
-    $('#chart-filter-provinsi-RPBWP2').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-RPBWP2').val()
-        RPBWP2.destroy();
-        drawChartRPBWP2(provinsi, 16);
-    })
-
-
-    $('#chartTypeRPBWP2').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBWP2").value
-        RPBWP2.destroy();
-        drawChartRPBWP2(provinsi1, 16);
-    })
-
-    document.getElementById("download-chart-RPBWP2").addEventListener('click', function() {
-        var image = document.getElementById("RPBWP2").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-RPBWP2");
-        a.href = image;
-    });
-
-    function drawChartRPBU(id_provinsi, kategori) {
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
-            method: "GET",
-            beforeSend: function() {
-                $('.loader').show();
-            },
-            complete: function() {
-                $('.loader').hide();
-            },
-            success: function(data) {
-                var label = [];
-                var value = [];
-                i = 0;
-                do {
-                    label.push(data.data[i].nama);
-                    value.push(data.data[i].jumlah);
-                    i++;
-
-                } while (i < data.data.length);
-                var ctx = document.getElementById('RPBU').getContext('2d');
-                RPBU = new Chart(ctx, {
-                    type: document.getElementById("chartTypeRPBU").value,
-                    data: {
-                        labels: label,
-                        datasets: [{
-                            label: "Peserta Pembekalan/Bimtek dan Uji Sertifikasi",
-                            backgroundColor: backgrundcolor_5,
-                            borderColor: bordercolor_5,
-                            data: value,
-                        }],
-                    },
-                    options: {
-                        plugins: {
-                            datalabels: {
-                                color: 'rgb(25, 15, 39, 1)',
-                                anchor: 'end',
-
-                                font: {
-                                    size: 14,
-                                    style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
-                                }
-                            }
-                        },
-                        responsive: true,
-                        fill: false,
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                }
-                            }]
-                        }
-                    }
-                });
-            }
-        });
-        $.ajax({
-            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
-            method: "GET",
-            success: function(data) {
-                if (data.data[0] == undefined) {
-                    $('#chart-filter-file-RPBU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
-                } else {
-                    $('#chart-filter-file-RPBU').attr('href', data.data[0].pathfile);
-                }
-            }
-        })
-
-    }
-    drawChartRPBU(0, 17);
-
-    $('#chart-filter-provinsi-RPBU').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-RPBU').val()
-        RPBU.destroy();
-        drawChartRPBU(provinsi, 17);
-    })
-
-
-    $('#chartTypeRPBU').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBU").value
-        RPBU.destroy();
-        drawChartRPBU(provinsi1, 17);
-    })
-
-    document.getElementById("download-chart-RPBU").addEventListener('click', function() {
-        var image = document.getElementById("RPBU").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-RPBU");
-        a.href = image;
-    });
 
 });
