@@ -4,7 +4,7 @@ div#asosiasi {
 }
 
 div#balai {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi.jpg');
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
     background-size: 700px 600px;
 }
 
@@ -151,6 +151,72 @@ div.loader_AKTK {
 }
 
 div.loader_DABU {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_SE_Kepala_Daerah {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_PBJK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_PBMK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPBWP {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPKBMK {
     border: 16px solid #f3f3f3;
     /* Light grey */
     border-top: 16px solid #3498db;

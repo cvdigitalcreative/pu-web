@@ -232,11 +232,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
                 <div class="row content">
                     <div class="col">
-                        <div class="card mb-4" id="balai">
+                        <div class="card mb-4" >
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Balai PUPR</h6>
+                                <h6 class="m-0 font-weight-bold" id="">Balai PUPR</h6>
                             </div>
-                            <div class="card-body" >
+                            <div class="card-body" id="balai" >
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-Balai_Sektoral" type="button"
@@ -294,7 +294,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section>
         <!-- ======= OPD dan Vokasi ======= -->
-        <section id="counts" class="counts">
+        <section id="counts" class="counts mt-3">
             <div class="container">
                 <div class="row">
 
@@ -925,14 +925,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asesor Section -->
         <!-- ======= SE Kepala Daerah ======= -->
-        <section id="about" class="about mt-5">
+        <section id="about" class="about">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
                     <h2>Surat Edaran Kepala Daerah</h2>
                 </div>
                 <div class="row content">
-                    <div class="col mt-3">
+                    <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-primary" id="">SE Kepala Daerah</h6>
@@ -973,7 +973,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
-                                            <select class="form-control" name="chartType" id="chartType">
+                                            <select class="form-control" name="chartTypeSE_Kepala_Daerah" id="chartTypeSE_Kepala_Daerah">
                                                 <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
@@ -984,7 +984,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_SE_Kepala_Daerah">
                                     </div>
                                 </div>
                                 <canvas id="SE_Kepala_Daerah" height="100"></canvas>
@@ -997,12 +997,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- SE Kepala Daerah Section -->
         <!-- Balai Sektoral Kementerian PUPR Section -->
 
-        <!-- ======= Services Section ======= -->
+        <!-- ======= Capaian Output Section ======= -->
         <section id="services" class="services">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Rekap Pelaksanaan Kegiatan</h2>
+                    <h2>Capaian Output</h2>
                     <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
                 </div>
 
@@ -1058,10 +1058,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <div class="loader">
+                                        <div class="loader_RPK">
                                         </div>
                                     </div>
-                                    <canvas id="RPK" width="435"></canvas>
+                                    <canvas id="RPK" width="535"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1071,16 +1071,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Peserta
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Berdasarkan Jenis Kegiatan
                                     </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="mt-2">
-                                            <a href="" id="chart-filter-file-RPKP" type="button"
+                                            <a href="" id="chart-filter-file-PBJK" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-RPKP" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-PBJK" download="ChartImage.jpg" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1092,7 +1092,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                                <select class="form-control" id="chart-filter-provinsi-RPKP">
+                                                <select class="form-control" id="chart-filter-provinsi-PBJK">
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All</option>
                                                     <option value="15">Jambi</option>
@@ -1107,7 +1107,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
-                                                <select class="form-control" name="chartTypeRPKP" id="chartTypeRPKP">
+                                                <select class="form-control" name="chartTypePBJK" id="chartTypePBJK">
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
@@ -1118,10 +1118,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <div class="loader">
+                                        <div class="loader_PBJK">
                                         </div>
                                     </div>
-                                    <canvas id="RPKP" width="435"></canvas>
+                                    <canvas id="PBJK" width="535"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1130,34 +1130,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section><!-- End Capaian Output Section -->
 
         
-        <!-- ======= Services Section ======= -->
+        <!-- ======= Capaian Output Section ======= -->
         <section id="services" class="services">
             <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
-                    <h2>Asosiasi Badan Jasa Usaha dan Tenaga Kerja Konstruksi</h2>
-                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
-                </div>
-
                 <div class="row">
                     <div class="col d-flex">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi Badan Jasa Usaha
-                                        Konstruksi</h6>
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Berdasarkan Subklasifikasi</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="mt-2">
-                                            <a href="" id="chart-filter-file-ABUJK" type="button"
+                                            <a href="" id="chart-filter-file-RPKBS" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-ABUJK" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-RPKBS" download="ChartImage.jpg" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1169,7 +1162,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                                <select class="form-control" id="chart-filter-provinsi-ABUJK">
+                                                <select class="form-control" id="chart-filter-provinsi-RPKBS">
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All</option>
                                                     <option value="15">Jambi</option>
@@ -1184,7 +1177,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
-                                                <select class="form-control" name="chartTypeABUJK" id="chartTypeABUJK">
+                                                <select class="form-control" name="chartTypeRPKBS" id="chartTypeRPKBS">
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
@@ -1195,10 +1188,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <div class="loader">
+                                        <div class="loader_RPKBS">
                                         </div>
                                     </div>
-                                    <canvas id="ABUJK" width="535"></canvas>
+                                    <canvas id="RPKBS" width="535"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1208,16 +1201,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Tenaga Kerja Konstruksi yang
-                                        Bersertifikat Kompetensi</h6>
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="mt-2">
-                                            <a href="" id="chart-filter-file-Sertifikasi" type="button"
+                                            <a href="" id="chart-filter-file-RPBWP" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-Sertifikasi" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-RPBWP" download="ChartImage.jpg" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1229,7 +1221,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                                <select class="form-control" id="chart-filter-provinsi-Sertifikasi">
+                                                <select class="form-control" id="chart-filter-provinsi-RPBWP">
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All</option>
                                                     <option value="15">Jambi</option>
@@ -1244,8 +1236,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
-                                                <select class="form-control" name="chartTypeSertifikasi"
-                                                    id="chartTypeSertifikasi">
+                                                <select class="form-control" name="chartTypeRPBWP"
+                                                    id="chartTypeRPBWP">
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
@@ -1256,10 +1248,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <div class="loader">
+                                        <div class="loader_RPBWP">
                                         </div>
                                     </div>
-                                    <canvas id="Sertifikasi" width="535"></canvas>
+                                    <canvas id="RPBWP" width="535"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1268,8 +1260,74 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section><!-- End Capaian Output Section -->
+<!-- ======= Capaian Output Daerah ======= -->
+<section id="about" class="about">
+            <div class="container">
+                <div class="row content">
+                    <div class="col">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Realisasi Peserta Kegiatan Berdasarkan Mitra Kerja</h6>
+                            </div>
 
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-RPKBMK" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-RPKBMK" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-RPKBMK">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeRPKBMK" id="chartTypeRPKBMK">
+                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_RPKBMK">
+                                    </div>
+                                </div>
+                                <canvas id="RPKBMK" height="110"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Capaian Output Section -->
 
 
 
