@@ -160,23 +160,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Mitra BJKW II Palembang</h2>
+                    <h2>Mitra Balai Jasa Konstruksi Wilayah II Palembang</h2>
                 </div>
                 <div class="row content">
                     <div class="col mt-3">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Balai PUPR</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Mitra</h6>
                             </div>
 
 
                             <div class="card-body">
                                 <div class="row">
                                     <div class="container mt-2">
-                                        <a href="" id="chart-filter-file-balai-sektoral" type="button"
+                                        <a href="" id="chart-filter-file-mitra" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-balai-sektoral" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-mitra" download="ChartImage.jpg" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -188,7 +188,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1"
                                                 for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-balai-sektoral">
+                                            <select class="form-control" id="chart-filter-provinsi-mitra">
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All</option>
                                                 <option value="99">All Label</option>
@@ -216,10 +216,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_mitra">
                                     </div>
                                 </div>
-                                <canvas id="Balai_Sektoral" height="100"></canvas>
+                                <canvas id="mitra" height="100"></canvas>
                             </div>
                         </div>
                     </div>
@@ -281,7 +281,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_OPD">
                                     </div>
                                 </div>
 
@@ -340,7 +340,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_vokasi">
                                     </div>
                                 </div>
                                 <canvas id="vokasi" width="900"></canvas>
@@ -395,17 +395,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeAsosiasi_Profesi"
                                                 id="chartTypeAsosiasi_Profesi">
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
                                                 <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
-                                                <option value="doughnut">Doughnut</option>
+                                                
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_Asosiasi_Profesi">
                                     </div>
                                 </div>
 
@@ -440,6 +441,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <select class="form-control" id="chart-filter-provinsi-ABUJK">
                                                 <option value="0" selected>Choose..</option>
                                                 <option value="0">All</option>
+                                                <option value="99">All Label</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -453,17 +455,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeABUJK" id="chartTypeABUJK">
+                                                <option value="radar">Radar</option>    
+                                                <option value="doughnut">Doughnut</option>    
                                                 <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
-                                                <option value="doughnut">Doughnut</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_ABUJK">
                                     </div>
                                 </div>
                                 <canvas id="ABUJK" width="900"></canvas>
@@ -507,6 +509,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <select class="form-control" id="chart-filter-provinsi-DIV">
                                                 <option value="0" selected>Choose..</option>
                                                 <option value="0">All</option>
+                                                <option value="99">All Label</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -520,17 +523,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeDIV" id="chartTypeDIV">
-                                                <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>    
+                                                <option value="radar">Radar</option>    
                                                 <option value="pie">Pie</option>
-                                                <option value="doughnut">Doughnut</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option> 
+                                                
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_DIV">
                                     </div>
                                 </div>
 
@@ -565,6 +569,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <select class="form-control" id="chart-filter-provinsi-DINV">
                                                 <option value="0" selected>Choose..</option>
                                                 <option value="0">All</option>
+                                                <option value="99">All Label</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -578,17 +583,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeDINV" id="chartTypeDINV">
+                                                <option value="doughnut">Doughnut</option>    
+                                                <option value="radar">Radar</option>     
+                                                <option value="pie">Pie</option>
                                                 <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="doughnut">Doughnut</option>
+                                                
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_DINV">
                                     </div>
                                 </div>
                                 <canvas id="DINV" width="900"></canvas>
@@ -633,6 +639,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <select class="form-control" id="chart-filter-provinsi-AKTK">
                                                 <option value="0" selected>Choose..</option>
                                                 <option value="0">All</option>
+                                                <option value="99">All Label</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -862,7 +869,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="loader">
                                         </div>
                                     </div>
-                                    <canvas id="RPK" width="535"></canvas>
+                                    <canvas id="RPK" width="435"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -922,7 +929,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="loader">
                                         </div>
                                     </div>
-                                    <canvas id="RPKP" width="535"></canvas>
+                                    <canvas id="RPKP" width="435"></canvas>
                                 </div>
                             </div>
                         </div>
