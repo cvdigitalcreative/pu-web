@@ -155,7 +155,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Clients Section -->
 
-        <!-- ======= Balai Sektoral Kementerian PUPR Section ======= -->
+        <!-- ======= Mitra Section ======= -->
         <section id="about" class="about mt-5">
             <div class="container">
 
@@ -227,10 +227,79 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section>
+            <!-- ======= Balai Sektoral Kemetrian PUPR Section ======= -->
+            <section id="about" class="about mt-5">
+            <div class="container">
+                <div class="row content">
+                    <div class="col mt-3">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Balai PUPR</h6>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-Balai_Sektoral" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-Balai_Sektoral" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-Balai_Sektoral">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="99">All Label</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeBalai_Sektoral" id="chartTypeBalai_Sektoral">
+                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_Balai_Sektoral">
+                                    </div>
+                                </div>
+                                <canvas id="Balai_Sektoral" height="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <!-- ======= OPD dan Vokasi ======= -->
         <section id="counts" class="counts">
             <div class="container">
                 <div class="row">
+
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -285,7 +354,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
 
-                                <canvas id="OPD" width="900"></canvas>
+                                <canvas id="OPD" width="900" ></canvas>
                             </div>
                         </div>
                     </div>
@@ -343,7 +412,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_vokasi">
                                     </div>
                                 </div>
-                                <canvas id="vokasi" width="900"></canvas>
+                                <canvas id="vokasi" width="900" ></canvas>
                             </div>
                         </div>
                     </div>
@@ -469,6 +538,131 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <canvas id="ABUJK" width="900"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
+             <!-- ======= LAPAS dan BUJK ======= -->
+             <section id="counts" class="counts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">LAPAS</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-lapas" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-lapas" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-lapas">
+                                                <option value="0" selected>Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="99">All Label</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypelapas"
+                                                id="chartTypelapas">
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="line">Line</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="pie">Pie</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_lapas">
+                                    </div>
+                                </div>
+
+                                <canvas id="lapas" width="900"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">BUJK</h6>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="mt-2">
+                                        <a href="" id="chart-filter-file-BUJK" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-BUJK" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-BUJK">
+                                                <option value="0" selected>Choose..</option>
+                                                <option value="0">All</option>
+                                                <option value="99">All Label</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeBUJK" id="chartTypeBUJK">
+                                                <option value="radar">Radar</option>    
+                                                <option value="doughnut">Doughnut</option>    
+                                                <option value="line">Line</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="pie">Pie</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_BUJK">
+                                    </div>
+                                </div>
+                                <canvas id="BUJK" width="900"></canvas>
                             </div>
                         </div>
                     </div>
@@ -663,7 +857,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_AKTK">
                                     </div>
                                 </div>
 
@@ -721,7 +915,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader">
+                                    <div class="loader_DABU">
                                     </div>
                                 </div>
                                 <canvas id="DABU" width="900"></canvas>

@@ -30,6 +30,17 @@ div.loader_mitra {
     animation: spin 1s linear infinite;
 }
 
+div.loader_Balai_Sektoral {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
 div.loader_OPD {
     border: 16px solid #f3f3f3;
     /* Light grey */
@@ -74,6 +85,28 @@ div.loader_ABUJK {
     animation: spin 1s linear infinite;
 }
 
+div.loader_lapas {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_BUJK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
 div.loader_DIV {
     border: 16px solid #f3f3f3;
     /* Light grey */
@@ -86,6 +119,28 @@ div.loader_DIV {
 }
 
 div.loader_DINV {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_AKTK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_DABU {
     border: 16px solid #f3f3f3;
     /* Light grey */
     border-top: 16px solid #3498db;
