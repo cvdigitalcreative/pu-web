@@ -3,6 +3,16 @@ div#asosiasi {
     background-size: 500px 800px;
 }
 
+div#balai {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi.jpg');
+    background-size: 700px 600px;
+}
+
+section#balai_pupr {
+    background-color: rgb(245, 169, 29);
+    background-size: 500px 700px;
+}
+
 div.card-body {
     background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
     background-size: 500px 800px;

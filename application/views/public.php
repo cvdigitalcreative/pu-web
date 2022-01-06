@@ -127,27 +127,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="" class="img-fluid" alt="" data-aos="zoom-in">
+                        <img src="<?= base_url();?>assets/illustration/deal.png" class="img-fluid" alt="" data-aos="zoom-in">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="<?= base_url();?>assets/illustration/instructor.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="<?= base_url();?>assets/illustration/checklist.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="<?= base_url();?>assets/illustration/letter.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="<?= base_url();?>assets/illustration/office.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="<?= base_url();?>assets/illustration/output.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
                     </div>
 
                 </div>
@@ -228,17 +228,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section>
             <!-- ======= Balai Sektoral Kemetrian PUPR Section ======= -->
-            <section id="about" class="about mt-5">
+            <section id="balai_pupr" class="balai_pupr">
             <div class="container">
                 <div class="row content">
-                    <div class="col mt-3">
-                        <div class="card mb-4">
+                    <div class="col">
+                        <div class="card mb-4" id="balai">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-primary" id="">Balai PUPR</h6>
                             </div>
-
-
-                            <div class="card-body">
+                            <div class="card-body" >
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-Balai_Sektoral" type="button"
