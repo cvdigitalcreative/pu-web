@@ -60,9 +60,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li class="dropdown"><a href="#about"><span>Mitra Balai</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#counts">Balai PUPR</a></li>
-                            <li><a href="#services">OPD</a></li>
-                            <li><a href="#">Vokasi</a></li>
+                            <li><a href="#balai_pupr">Balai PUPR</a></li>
+                            <li><a href="#opd_1">OPD</a></li>
+                            <li><a href="#vokasi_1">Vokasi</a></li>
                             <li class="dropdown"><a href="#"><span>Asosiasi</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
@@ -163,16 +163,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h2>Mitra Balai Jasa Konstruksi Wilayah II Palembang</h2>
                 </div>
                 <div class="row content">
-                    <div class="col mt-3">
+                    <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-primary" id="">Mitra</h6>
                             </div>
 
 
-                            <div class="card-body">
+                            <div class="card-body" id="mitra_1">
                                 <div class="row">
-                                    <div class="container mt-2">
+                                    <div class="container">
                                         <a href="" id="chart-filter-file-mitra" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
@@ -190,8 +190,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-mitra">
                                                 <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -256,8 +256,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-Balai_Sektoral">
                                                 <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -294,7 +294,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section>
         <!-- ======= OPD dan Vokasi ======= -->
-        <section id="counts" class="counts mt-3">
+        <section id="opd_1" class="counts mt-3">
             <div class="container">
                 <div class="row">
 
@@ -304,7 +304,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">Organisasi Perangkat Daerah Sub Urusan
                                     Jasa Konstruksi</h6>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" id="opd">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-opd" type="button"
@@ -323,8 +323,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-opd">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -363,7 +363,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">Vokasi</h6>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" id="vokasi_1">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-vokasi" type="button"
@@ -382,8 +382,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-vokasi">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -419,7 +419,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- OPD dan Vokasi Section -->
         <!-- ======= Asosiasi Profesi dan Asosias BUJK ======= -->
-        <section id="counts" class="counts">
+        <section id="counts1" class=" mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -427,7 +427,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi Profesi</h6>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" id="asosiasi_profesi">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-Asosiasi_Profesi" type="button"
@@ -446,8 +446,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-Asosiasi_Profesi">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -488,7 +488,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi BUJK</h6>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" id="asosiasi_bujk">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-ABUJK" type="button"
@@ -507,8 +507,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-ABUJK">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -544,7 +544,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
              <!-- ======= LAPAS dan BUJK ======= -->
-             <section id="counts" class="counts">
+             <section id="counts" class="counts mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -552,7 +552,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">LAPAS</h6>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" id="lapas_1">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-lapas" type="button"
@@ -571,8 +571,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-lapas">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -587,12 +587,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 Chart</label>
                                             <select class="form-control" name="chartTypelapas"
                                                 id="chartTypelapas">
+                                                <option value="pie">Pie</option>
+                                                <option value="bar">Bar</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="doughnut">Doughnut</option>
                                                 <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="pie">Pie</option>
-                                                
                                             </select>
                                         </div>
                                     </div>
@@ -613,7 +612,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">BUJK</h6>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" id="bujk_1">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-BUJK" type="button"
@@ -632,8 +631,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-BUJK">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -647,11 +646,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeBUJK" id="chartTypeBUJK">
+                                                <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>    
                                                 <option value="doughnut">Doughnut</option>    
                                                 <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
-                                                <option value="pie">Pie</option>
                                             </select>
                                         </div>
                                     </div>
@@ -669,7 +668,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
         <!-- ======= Instruktur ======= -->
-        <section id="counts" class="counts">
+        <section id="instruktur" class="instruktur">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Instruktur</h2>
@@ -700,8 +699,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-DIV">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -760,8 +759,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-DINV">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -811,7 +810,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja
                                     Konstruksi</h6>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" id="aktk_1" >
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-AKTK" type="button"
@@ -830,8 +829,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-AKTK">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
-                                                <option value="99">All Label</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -870,7 +869,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Badan Usaha</h6>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" id="ABU">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-DABU" type="button"
@@ -889,7 +888,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-DABU">
                                                 <option value="0" selected>Choose..</option>
-                                                <option value="0">All</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -925,7 +925,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asesor Section -->
         <!-- ======= SE Kepala Daerah ======= -->
-        <section id="about" class="about">
+        <section id="se_kepala_daerah" class="se_kepala_daerah">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
@@ -939,9 +939,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
 
-                            <div class="card-body">
+                            <div class="card-body" id="SE_KD">
                                 <div class="row">
-                                    <div class="container mt-2">
+                                    <div class="container">
                                         <a href="" id="chart-filter-file-SE_Kepala_Daerah" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
@@ -959,7 +959,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-SE_Kepala_Daerah">
                                                 <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>
@@ -1034,7 +1035,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                                 <select class="form-control" id="chart-filter-provinsi-RPK">
                                                     <option selected value="0">Choose..</option>
-                                                    <option value="0">All</option>
+                                                    <option value="0">All By Provinsi</option>
+                                                    <option value="99">All By Kategori</option>
                                                     <option value="15">Jambi</option>
                                                     <option value="16">Sumatera Selatan</option>
                                                     <option value="17">Bengkulu</option>
@@ -1094,7 +1096,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                                 <select class="form-control" id="chart-filter-provinsi-PBJK">
                                                     <option selected value="0">Choose..</option>
-                                                    <option value="0">All</option>
+                                                    <option value="0">All By Provinsi</option>
+                                                    <option value="99">All By Kategori</option>
                                                     <option value="15">Jambi</option>
                                                     <option value="16">Sumatera Selatan</option>
                                                     <option value="17">Bengkulu</option>
@@ -1144,7 +1147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Berdasarkan Subklasifikasi</h6>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="RPKBS_1">
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-RPKBS" type="button"
@@ -1164,7 +1167,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                                 <select class="form-control" id="chart-filter-provinsi-RPKBS">
                                                     <option selected value="0">Choose..</option>
-                                                    <option value="0">All</option>
+                                                    <option value="0">All By Provinsi</option>
+                                                    <option value="99">All By Kategori</option>
                                                     <option value="15">Jambi</option>
                                                     <option value="16">Sumatera Selatan</option>
                                                     <option value="17">Bengkulu</option>
@@ -1178,11 +1182,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPKBS" id="chartTypeRPKBS">
+                                                    <option value="doughnut">Doughnut</option>    
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
                                                     <option value="pie">Pie</option>
-                                                    <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1203,7 +1207,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan</h6>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="RPBWP_1">
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-RPBWP" type="button"
@@ -1223,7 +1227,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                                 <select class="form-control" id="chart-filter-provinsi-RPBWP">
                                                     <option selected value="0">Choose..</option>
-                                                    <option value="0">All</option>
+                                                    <option value="0">All By Provinsi</option>
+                                                    <option value="99">All By Kategori</option>
                                                     <option value="15">Jambi</option>
                                                     <option value="16">Sumatera Selatan</option>
                                                     <option value="17">Bengkulu</option>
@@ -1238,11 +1243,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPBWP"
                                                     id="chartTypeRPBWP">
+                                                    <option value="doughnut">Doughnut</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
                                                     <option value="pie">Pie</option>
-                                                    <option value="doughnut">Doughnut</option>
+                                                    
                                                 </select>
                                             </div>
                                         </div>
@@ -1292,7 +1298,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-RPKBMK">
                                                 <option selected value="0">Choose..</option>
-                                                <option value="0">All</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
                                                 <option value="15">Jambi</option>
                                                 <option value="16">Sumatera Selatan</option>
                                                 <option value="17">Bengkulu</option>

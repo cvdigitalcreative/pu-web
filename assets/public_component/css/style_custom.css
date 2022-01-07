@@ -4,13 +4,78 @@ div#asosiasi {
 }
 
 div#balai {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
-    background-size: 700px 600px;
+    background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
+    background-size: 1000px 600px;
 }
 
 section#balai_pupr {
-    background-color: rgb(245, 169, 29);
+    background-color: rgb(245, 169, 29, 0.9);
     background-size: 500px 700px;
+}
+
+section#counts1 {
+    background-color: rgb(245, 169, 29, 0.9);
+    background-size: 500px 700px;
+}
+
+div#mitra_1 {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
+    background-size: 1000px 600px;
+}
+
+div#opd {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
+    background-size: 500px 400px;
+}
+
+div#vokasi_1 {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
+    background-size: 500px 400px;
+}
+
+div#asosiasi_profesi {
+    background-image: url('http://localhost/pu-web/assets/image/dewan_redaksi.png');
+    background-size: 500px 300px;
+}
+
+div#asosiasi_bujk {
+    background-image: url('http://localhost/pu-web/assets/image/dewan_redaksi.png');
+    background-size: 500px 300px;
+}
+
+div#lapas_1 {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
+    background-size: 600px 400px;
+}
+
+div#bujk_1 {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
+    background-size: 600px 400px;
+}
+
+div#aktk_1 {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
+    background-size: 600px 400px;
+}
+
+div#ABU {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
+    background-size: 600px 400px;
+}
+
+div#SE_KD {
+    background-image: url('http://localhost/pu-web/assets/image/dewan_redaksi.png');
+    background-size: 600px 400px;
+}
+
+div#RPKBS_1 {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
+    background-size: 600px 400px;
+}
+
+div#RPBWP_1 {
+    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
+    background-size: 600px 400px;
 }
 
 div.card-body {
@@ -21,7 +86,7 @@ div.card-body {
 div.loader {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -32,7 +97,7 @@ div.loader {
 div.loader_mitra {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -43,7 +108,7 @@ div.loader_mitra {
 div.loader_Balai_Sektoral {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -54,7 +119,7 @@ div.loader_Balai_Sektoral {
 div.loader_OPD {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -65,7 +130,7 @@ div.loader_OPD {
 div.loader_vokasi {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -76,7 +141,7 @@ div.loader_vokasi {
 div.loader_Asosiasi_Profesi {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -87,7 +152,7 @@ div.loader_Asosiasi_Profesi {
 div.loader_ABUJK {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -98,7 +163,7 @@ div.loader_ABUJK {
 div.loader_lapas {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -109,7 +174,7 @@ div.loader_lapas {
 div.loader_BUJK {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -120,7 +185,7 @@ div.loader_BUJK {
 div.loader_DIV {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -131,7 +196,7 @@ div.loader_DIV {
 div.loader_DINV {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -142,7 +207,7 @@ div.loader_DINV {
 div.loader_AKTK {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -153,7 +218,7 @@ div.loader_AKTK {
 div.loader_DABU {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -164,7 +229,7 @@ div.loader_DABU {
 div.loader_SE_Kepala_Daerah {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -175,7 +240,7 @@ div.loader_SE_Kepala_Daerah {
 div.loader_RPK {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -186,7 +251,7 @@ div.loader_RPK {
 div.loader_PBJK {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -197,7 +262,7 @@ div.loader_PBJK {
 div.loader_PBMK {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -208,7 +273,18 @@ div.loader_PBMK {
 div.loader_RPBWP {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPKBS {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -219,7 +295,7 @@ div.loader_RPBWP {
 div.loader_RPKBMK {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #3498db;
+    border-top: 16px solid rgb(245, 169, 29);
     /* Blue */
     border-radius: 50%;
     width: 120px;
@@ -242,6 +318,10 @@ section#pricing {
 
 section#services {
     background-color: rgb(245, 169, 29);
+}
+
+section#instruktur {
+    background-color: #4aa3df;
 }
 
 #services .section-title h2 {
