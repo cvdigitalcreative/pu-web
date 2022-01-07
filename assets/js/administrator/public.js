@@ -7,9 +7,9 @@ $(document).ready(function() {
 
 
     let backgrundcolor_1 = ['rgb(253, 50, 139, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 150, 39, 0.8)', 'rgb(024, 50, 173, 0.8)', 'rgb(25, 34, 90, 0.8)', 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)', 'rgb(253, 50, 139, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 150, 39, 0.8)', 'rgb(024, 50, 173, 0.8)', 'rgb(25, 34, 90, 0.8)', 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)', , 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)', 'rgb(253, 50, 139, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 150, 39, 0.8)', 'rgb(024, 50, 173, 0.8)', 'rgb(25, 34, 90, 0.8)', 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)'
+        'rgb(25, 150, 39, 0.8)', 'rgb(241, 50, 173, 0.8)', 'rgb(23, 34, 90, 0.8)', 'rgb(255, 220, 175, 0.8)', 'rgb(120, 212, 36, 0.8)', 'rgb(25, 52, 19, 0.8)', 'rgb(55, 21, 19, 0.8)',
+        'rgb(2, 110, 39, 0.8)', 'rgb(24, 51, 13, 0.8)', 'rgb(25, 31, 10, 0.8)', 'rgb(21, 22, 175, 0.8)', 'rgb(120, 20, 31, 0.8)', , 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)', 'rgb(253, 50, 139, 0.8)', 'rgb(255, 225, 19, 0.8)',
+        'rgb(25, 150, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(25, 31, 90, 0.8)', 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)'
     ];
     let backgrundcolor_2 = ['rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
         'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
@@ -165,6 +165,8 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
+
 
 
                                 font: {
@@ -270,7 +272,7 @@ $(document).ready(function() {
 
                         } while (i < data.data.length);
 
-                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_2[j] + "\", \"borderColor\": \"" + bordercolor_6[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_1[j] + "\", \"borderColor\": \"" + bordercolor_6[j] + "\", \"data\": [" + jumlah_data + "]}"
                         dataset.push(JSON.parse(temp))
 
                     }
@@ -310,6 +312,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+
 
 
                                 font: {
@@ -458,6 +461,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -604,6 +608,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -750,6 +755,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -894,6 +900,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -1038,6 +1045,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -1326,6 +1334,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -1468,6 +1477,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -1613,6 +1623,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -1757,6 +1768,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -1901,6 +1913,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -1939,19 +1952,19 @@ $(document).ready(function() {
         })
 
     }
-    drawChartSE_Kepala_Daerah(0, 11);
+    drawChartSE_Kepala_Daerah(0, 9);
 
     $('#chart-filter-provinsi-SE_Kepala_Daerah').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-SE_Kepala_Daerah').val()
         SE_Kepala_Daerah.destroy();
-        drawChartSE_Kepala_Daerah(provinsi, 11);
+        drawChartSE_Kepala_Daerah(provinsi, 9);
     })
 
 
     $('#chartTypeSE_Kepala_Daerah').on('change', function() {
         var provinsi1 = document.getElementById("chart-filter-provinsi-SE_Kepala_Daerah").value
         SE_Kepala_Daerah.destroy();
-        drawChartSE_Kepala_Daerah(provinsi1, 11);
+        drawChartSE_Kepala_Daerah(provinsi1, 9);
     })
 
     document.getElementById("download-chart-SE_Kepala_Daerah").addEventListener('click', function() {
@@ -2045,6 +2058,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -2104,14 +2118,14 @@ $(document).ready(function() {
         a.href = image;
     });
 
-    function drawChartPBJK(id_provinsi, kategori) {
+    function drawChartRPBK(id_provinsi, kategori) {
 
         $.ajax({
             beforeSend: function() {
-                $('.loader_PBJK').show();
+                $('.loader_RPBK').show();
             },
             complete: function() {
-                $('.loader_PBJK').hide();
+                $('.loader_RPBK').hide();
             },
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
@@ -2161,7 +2175,7 @@ $(document).ready(function() {
                     var label = [];
                     var value = [];
                     var dataset = [{
-                        label: "Peserta Berdasarkan Jenis Kegiatan",
+                        label: "Rekap Peserta Berdasarkan Skema",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
                         data: value
@@ -2176,9 +2190,9 @@ $(document).ready(function() {
                     } while (i < data.data.length);
                 }
 
-                var ctx = document.getElementById('PBJK').getContext('2d');
-                PBJK = new Chart(ctx, {
-                    type: document.getElementById("chartTypePBJK").value,
+                var ctx = document.getElementById('RPBK').getContext('2d');
+                RPBK = new Chart(ctx, {
+                    type: document.getElementById("chartTypeRPBK").value,
                     data: {
                         labels: label,
                         datasets: dataset,
@@ -2189,6 +2203,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -2219,32 +2234,32 @@ $(document).ready(function() {
             success: function(data) {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
-                    $('#chart-filter-file-PBJK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-RPBK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
                 } else {
-                    $('#chart-filter-file-PBJK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-RPBK').attr('href', data.data[0].pathfile);
                 }
             }
         })
 
     }
-    drawChartPBJK(0, 20);
+    drawChartRPBK(0, 20);
 
-    $('#chart-filter-provinsi-PBJK').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-PBJK').val()
-        PBJK.destroy();
-        drawChartPBJK(provinsi, 20);
+    $('#chart-filter-provinsi-RPBK').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-RPBK').val()
+        RPBK.destroy();
+        drawChartRPBK(provinsi, 20);
     })
 
 
-    $('#chartTypePBJK').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-PBJK").value
-        PBJK.destroy();
-        drawChartPBJK(provinsi1, 20);
+    $('#chartTypeRPBK').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBK").value
+        RPBK.destroy();
+        drawChartRPBK(provinsi1, 20);
     })
 
-    document.getElementById("download-chart-PBJK").addEventListener('click', function() {
-        var image = document.getElementById("PBJK").toDataURL("image/jpg");
-        var a = document.getElementById("download-chart-PBJK");
+    document.getElementById("download-chart-RPBK").addEventListener('click', function() {
+        var image = document.getElementById("RPBK").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-RPBK");
         a.href = image;
     });
 
@@ -2306,6 +2321,7 @@ $(document).ready(function() {
                     var label = [];
                     var value = [];
                     var dataset = [{
+
                         label: "Rekap Pelaksanaan Kegiatan Berdasarkan Subklasifikasi",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
@@ -2334,6 +2350,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -2349,6 +2366,7 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
                                     beginAtZero: true
                                 }
@@ -2372,19 +2390,19 @@ $(document).ready(function() {
         })
 
     }
-    drawChartRPKBS(0, 19);
+    drawChartRPKBS(0, 17);
 
     $('#chart-filter-provinsi-RPKBS').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-RPKBS').val()
         RPKBS.destroy();
-        drawChartRPKBS(provinsi, 19);
+        drawChartRPKBS(provinsi, 17);
     })
 
 
     $('#chartTypeRPKBS').on('change', function() {
         var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBS").value
         RPKBS.destroy();
-        drawChartRPKBS(provinsi1, 19);
+        drawChartRPKBS(provinsi1, 17);
     })
 
     document.getElementById("download-chart-RPKBS").addEventListener('click', function() {
@@ -2478,6 +2496,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -2594,6 +2613,7 @@ $(document).ready(function() {
                     var label = [];
                     var value = [];
                     var dataset = [{
+
                         label: "Rekap Pelaksanaan Kegiatan Berdasarkan Subklasifikasi",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
@@ -2622,6 +2642,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
+                                align: 'end',
 
 
                                 font: {
@@ -2681,5 +2702,150 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    function drawChartPPK(id_provinsi, kategori) {
+
+        $.ajax({
+            beforeSend: function() {
+                $('.loader_PPK').show();
+            },
+            complete: function() {
+                $('.loader_PPK').hide();
+            },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                if (id_provinsi == 0) {
+                    var sets = new Set();
+
+                    var value = [];
+                    var labels = [];
+
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_6[j] + "\", \"borderColor\": \"" + bordercolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var dataset = [{
+
+                        label: "Rekap Pelaksanaan Kegiatan Berdasarkan Subklasifikasi",
+                        backgroundColor: backgrundcolor_2,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                }
+
+                var ctx = document.getElementById('PPK').getContext('2d');
+                PPK = new Chart(ctx, {
+                    type: document.getElementById("chartTypePPK").value,
+                    data: {
+                        labels: label,
+                        datasets: dataset,
+                    },
+                    options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+                                align: 'end',
+
+
+                                font: {
+                                    size: 14,
+                                    style: 'italic',
+                                    family: ["Open Sans", "sans-serif"]
+
+                                }
+
+                            }
+                        },
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                // console.log(data.data[0])
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-PPK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-PPK').attr('href', data.data[0].pathfile);
+                }
+            }
+        })
+
+    }
+    drawChartPPK(0, 14);
+
+    $('#chart-filter-provinsi-PPK').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-PPK').val()
+        PPK.destroy();
+        drawChartPPK(provinsi, 14);
+    })
+
+
+    $('#chartTypePPK').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-PPK").value
+        PPK.destroy();
+        drawChartPPK(provinsi1, 14);
+    })
+
+    document.getElementById("download-chart-PPK").addEventListener('click', function() {
+        var image = document.getElementById("PPK").toDataURL("image/jpg");
+        var a = document.getElementById("download-chart-PPK");
+        a.href = image;
+    });
 
 });

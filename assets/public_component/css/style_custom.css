@@ -248,7 +248,7 @@ div.loader_RPK {
     animation: spin 1s linear infinite;
 }
 
-div.loader_PBJK {
+div.loader_RPBK {
     border: 16px solid #f3f3f3;
     /* Light grey */
     border-top: 16px solid rgb(245, 169, 29);
@@ -293,6 +293,17 @@ div.loader_RPKBS {
 }
 
 div.loader_RPKBMK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_PPK {
     border: 16px solid #f3f3f3;
     /* Light grey */
     border-top: 16px solid rgb(245, 169, 29);

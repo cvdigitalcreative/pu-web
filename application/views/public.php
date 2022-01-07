@@ -1073,16 +1073,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Berdasarkan Jenis Kegiatan
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Peserta Berdasarkan Skema
                                     </h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="mt-2">
-                                            <a href="" id="chart-filter-file-PBJK" type="button"
+                                            <a href="" id="chart-filter-file-RPBK" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-PBJK" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-RPBK" download="ChartImage.jpg" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1094,7 +1094,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                                <select class="form-control" id="chart-filter-provinsi-PBJK">
+                                                <select class="form-control" id="chart-filter-provinsi-RPBK">
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
@@ -1110,7 +1110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
-                                                <select class="form-control" name="chartTypePBJK" id="chartTypePBJK">
+                                                <select class="form-control" name="chartTypeRPBK" id="chartTypeRPBK">
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
@@ -1121,10 +1121,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <div class="loader_PBJK">
+                                        <div class="loader_RPBK">
                                         </div>
                                     </div>
-                                    <canvas id="PBJK" width="535"></canvas>
+                                    <canvas id="RPBK" width="535"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1145,7 +1145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Berdasarkan Subklasifikasi</h6>
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</h6>
                                 </div>
                                 <div class="card-body" id="RPKBS_1">
                                     <div class="row">
@@ -1328,6 +1328,74 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <canvas id="RPKBMK" height="110"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Capaian Output Section -->
+        <!-- ======= Capaian Output Daerah ======= -->
+<section id="about" class="about">
+            <div class="container">
+                <div class="row content">
+                    <div class="col">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Program Padat Karya</h6>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-PPK" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-PPK" download="ChartImage.jpg" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-PPK">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Jambi</option>
+                                                <option value="16">Sumatera Selatan</option>
+                                                <option value="17">Bengkulu</option>
+                                                <option value="18">Lampung</option>
+                                                <option value="19">Kepulauan Bangka</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypePPK" id="chartTypePPK">
+                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_PPK">
+                                    </div>
+                                </div>
+                                <canvas id="PPK" height="110"></canvas>
                             </div>
                         </div>
                     </div>
