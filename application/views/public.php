@@ -66,30 +66,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li class="dropdown"><a href="#"><span>Asosiasi</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="#counts">Asosiasi Profesi</a></li>
-                                    <li><a href="#services">Asosiasi BUJK</a></li>
+                                    <li><a href="#asosiasi_profesi">Asosiasi Profesi</a></li>
+                                    <li><a href="#asosiasi_bujk">Asosiasi BUJK</a></li>
                                 </ul>
                             </li>
-                            <li><a class="nav-link scrollto " href="#more-services">Lapas</a></li>
-                            <li><a class="nav-link scrollto " href="#more-services">BUJK</a></li>
+                            <li><a class="nav-link scrollto " href="#lapas_1">Lapas</a></li>
+                            <li><a class="nav-link scrollto " href="#bujk_1">BUJK</a></li>
 
                         </ul>
                     </li>
 
-                    <li class="dropdown"><a href="#"><span>Instruktur</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#instruktur"><span>Instruktur</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#counts">Vokasi</a></li>
-                            <li><a href="#services">Non Vokasi</a></li>
+                            <li><a href="#instruktur">Vokasi</a></li>
+                            <li><a href="#dinv">Non Vokasi</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Asesor</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#asesor"><span>Asesor</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#counts">AKTK</a></li>
-                            <li><a href="#services">ABU</a></li>
+                            <li><a href="#aktk_1">AKTK</a></li>
+                            <li><a href="#abu_1">ABU</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto " href="#more-services">SE Kepala Daerah</a></li>
-                    <li><a class="nav-link scrollto " href="#more-services">Capaian Output</a></li>
+                    <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
+                    <li><a class="nav-link scrollto " href="#capaian_output">Capaian Output</a></li>
                     <li><a class="getstarted scrollto" href="#contact">Hubungi</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -425,7 +425,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- OPD dan Vokasi Section -->
         <!-- ======= Asosiasi Profesi dan Asosias BUJK ======= -->
-        <section id="counts1" class=" mt-3">
+        <section id="asosiasi_profesi" class=" mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -488,13 +488,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="asosiasi_bujk">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi BUJK</h6>
                             </div>
 
-                            <div class="card-body" id="asosiasi_bujk">
+                            <div class="card-body" >
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-ABUJK" type="button"
@@ -550,7 +550,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
         <!-- ======= LAPAS dan BUJK ======= -->
-        <section id="counts" class="counts mt-3">
+        <section id="lapas_1" class="counts mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -611,7 +611,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="bujk_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">BUJK</h6>
@@ -740,7 +740,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="dinv">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Instruktur Non Vokasi</h6>
@@ -803,14 +803,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Instruktur Section -->
         <!-- ======= Asesor ======= -->
-        <section id="counts" class="counts">
+        <section id="asesor" class="counts">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Asesor</h2>
                     <p>Asesor Kompetensi Tenaga Kerja Konstruksi dan Asesor Badan Usaha</p>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="aktk_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja
@@ -869,7 +869,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="abu_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Badan Usaha</h6>
@@ -1006,7 +1006,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Balai Sektoral Kementerian PUPR Section -->
 
         <!-- ======= Capaian Output Section ======= -->
-        <section id="services" class="services">
+        <section id="capaian_output" class="services">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
@@ -1174,7 +1174,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                                 <select class="form-control" id="chart-filter-provinsi-RPKBS">
-                                                    <option selected value="0">Choose..</option>
+                                                
+                                                    <option selected value="99">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
                                                     <option value="15">Sumatera Selatan</option>
@@ -1235,7 +1236,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                                 <select class="form-control" id="chart-filter-provinsi-RPBWP">
-                                                    <option selected value="0">Choose..</option>
+                                                    <option selected value="99">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
                                                     <option value="15">Sumatera Selatan</option>
@@ -1345,7 +1346,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Capaian Output Section -->
         <!-- ======= Capaian Output Daerah ======= -->
-        <section id="about" class="about">
+        <section id="capaian_output" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">

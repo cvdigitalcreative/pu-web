@@ -2390,7 +2390,7 @@ $(document).ready(function() {
         })
 
     }
-    drawChartRPKBS(0, 17);
+    drawChartRPKBS(99, 17);
 
     $('#chart-filter-provinsi-RPKBS').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-RPKBS').val()
@@ -2535,7 +2535,7 @@ $(document).ready(function() {
         })
 
     }
-    drawChartRPBWP(0, 18);
+    drawChartRPBWP(99, 18);
 
     $('#chart-filter-provinsi-RPBWP').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-RPBWP').val()
@@ -2659,6 +2659,7 @@ $(document).ready(function() {
                         scales: {
                             yAxes: [{
                                 ticks: {
+
                                     beginAtZero: true
                                 }
                             }]
@@ -2681,7 +2682,7 @@ $(document).ready(function() {
         })
 
     }
-    drawChartRPKBMK(0, 21);
+    drawChartRPKBMK(99, 21);
 
     $('#chart-filter-provinsi-RPKBMK').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-RPKBMK').val()
