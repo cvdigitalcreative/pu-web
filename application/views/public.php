@@ -127,27 +127,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/deal.png" class="img-fluid" alt="" data-aos="zoom-in">
+                        <img src="<?= base_url();?>assets/illustration/deal.png" class="img-fluid" alt=""
+                            data-aos="zoom-in">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/instructor.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="<?= base_url();?>assets/illustration/instructor.png" class="img-fluid" alt=""
+                            data-aos="zoom-in" data-aos-delay="100">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/checklist.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="<?= base_url();?>assets/illustration/checklist.png" class="img-fluid" alt=""
+                            data-aos="zoom-in" data-aos-delay="200">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/letter.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="<?= base_url();?>assets/illustration/letter.png" class="img-fluid" alt=""
+                            data-aos="zoom-in" data-aos-delay="300">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/office.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="<?= base_url();?>assets/illustration/office.png" class="img-fluid" alt=""
+                            data-aos="zoom-in" data-aos-delay="400">
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/output.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="<?= base_url();?>assets/illustration/output.png" class="img-fluid" alt=""
+                            data-aos="zoom-in" data-aos-delay="500">
                     </div>
 
                 </div>
@@ -192,12 +198,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
-
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -227,16 +232,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section>
-            <!-- ======= Balai Sektoral Kemetrian PUPR Section ======= -->
-            <section id="balai_pupr" class="balai_pupr">
+        <!-- ======= Balai Sektoral Kemetrian PUPR Section ======= -->
+        <section id="balai_pupr" class="balai_pupr">
             <div class="container">
                 <div class="row content">
                     <div class="col">
-                        <div class="card mb-4" >
+                        <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold" id="">Balai PUPR</h6>
                             </div>
-                            <div class="card-body" id="balai" >
+                            <div class="card-body" id="balai">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-Balai_Sektoral" type="button"
@@ -258,11 +263,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
 
                                             </select>
                                         </div>
@@ -271,7 +276,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
-                                            <select class="form-control" name="chartTypeBalai_Sektoral" id="chartTypeBalai_Sektoral">
+                                            <select class="form-control" name="chartTypeBalai_Sektoral"
+                                                id="chartTypeBalai_Sektoral">
                                                 <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
@@ -322,14 +328,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-opd">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -352,7 +358,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
 
-                                <canvas id="OPD" width="900" ></canvas>
+                                <canvas id="OPD" width="900"></canvas>
                             </div>
                         </div>
                     </div>
@@ -381,14 +387,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-vokasi">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -410,7 +416,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_vokasi">
                                     </div>
                                 </div>
-                                <canvas id="vokasi" width="900" ></canvas>
+                                <canvas id="vokasi" width="900"></canvas>
                             </div>
                         </div>
                     </div>
@@ -445,14 +451,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-Asosiasi_Profesi">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -467,7 +473,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
                                                 <option value="pie">Pie</option>
-                                                
+
                                             </select>
                                         </div>
                                     </div>
@@ -506,14 +512,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-ABUJK">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -522,8 +528,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeABUJK" id="chartTypeABUJK">
-                                                <option value="radar">Radar</option>    
-                                                <option value="doughnut">Doughnut</option>    
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
                                                 <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
                                                 <option value="pie">Pie</option>
@@ -543,8 +549,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
-             <!-- ======= LAPAS dan BUJK ======= -->
-             <section id="counts" class="counts mt-3">
+        <!-- ======= LAPAS dan BUJK ======= -->
+        <section id="counts" class="counts mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -570,14 +576,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-lapas">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -585,10 +591,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
-                                            <select class="form-control" name="chartTypelapas"
-                                                id="chartTypelapas">
-                                                <option value="pie">Pie</option>
+                                            <select class="form-control" name="chartTypelapas" id="chartTypelapas">
                                                 <option value="bar">Bar</option>
+                                                <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="doughnut">Doughnut</option>
                                                 <option value="line">Line</option>
@@ -630,14 +635,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-BUJK">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -646,11 +651,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeBUJK" id="chartTypeBUJK">
-                                                <option value="pie">Pie</option>
-                                                <option value="radar">Radar</option>    
-                                                <option value="doughnut">Doughnut</option>    
-                                                <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="line">Line</option>
+
                                             </select>
                                         </div>
                                     </div>
@@ -698,14 +704,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-DIV">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -714,12 +720,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeDIV" id="chartTypeDIV">
-                                                <option value="doughnut">Doughnut</option>    
-                                                <option value="radar">Radar</option>    
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="bar">Bar</option>
-                                                <option value="line">Line</option> 
-                                                
+                                                <option value="line">Line</option>
+
                                             </select>
                                         </div>
                                     </div>
@@ -758,14 +764,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-DINV">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -774,12 +780,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeDINV" id="chartTypeDINV">
-                                                <option value="doughnut">Doughnut</option>    
-                                                <option value="radar">Radar</option>     
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
-                                                
+
                                             </select>
                                         </div>
                                     </div>
@@ -810,7 +816,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja
                                     Konstruksi</h6>
                             </div>
-                            <div class="card-body" id="aktk_1" >
+                            <div class="card-body" id="aktk_1">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-AKTK" type="button"
@@ -828,14 +834,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-AKTK">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -887,14 +893,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                                             <select class="form-control" id="chart-filter-provinsi-DABU">
-                                                <option value="0" selected>Choose..</option>
+                                                <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
                                             </select>
                                         </div>
                                     </div>
@@ -961,11 +967,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
 
                                             </select>
                                         </div>
@@ -974,7 +980,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
-                                            <select class="form-control" name="chartTypeSE_Kepala_Daerah" id="chartTypeSE_Kepala_Daerah">
+                                            <select class="form-control" name="chartTypeSE_Kepala_Daerah"
+                                                id="chartTypeSE_Kepala_Daerah">
                                                 <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
@@ -1037,11 +1044,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
-                                                    <option value="15">Jambi</option>
-                                                    <option value="16">Sumatera Selatan</option>
-                                                    <option value="17">Bengkulu</option>
-                                                    <option value="18">Lampung</option>
-                                                    <option value="19">Kepulauan Bangka</option>
+                                                    <option value="15">Sumatera Selatan</option>
+                                                    <option value="16">Kep. Bangka Belitung</option>
+                                                    <option value="17">Jambi</option>
+                                                    <option value="18">Bengkulu</option>
+                                                    <option value="19">Lampung</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1050,10 +1057,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPK" id="chartTypeRPK">
+                                                    <option value="pie">Pie</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
-                                                    <option value="bar">Bar</option>
-                                                    <option value="pie">Pie</option>
+                                                    <option value="bar">Bar</option> 
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
@@ -1098,11 +1105,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
-                                                    <option value="15">Jambi</option>
-                                                    <option value="16">Sumatera Selatan</option>
-                                                    <option value="17">Bengkulu</option>
-                                                    <option value="18">Lampung</option>
-                                                    <option value="19">Kepulauan Bangka</option>
+                                                    <option value="15">Sumatera Selatan</option>
+                                                    <option value="16">Kep. Bangka Belitung</option>
+                                                    <option value="17">Jambi</option>
+                                                    <option value="18">Bengkulu</option>
+                                                    <option value="19">Lampung</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1111,10 +1118,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPBK" id="chartTypeRPBK">
+                                                <option value="pie">Pie</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
-                                                    <option value="bar">Bar</option>
-                                                    <option value="pie">Pie</option>
+                                                    <option value="bar">Bar</option>    
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
@@ -1135,7 +1142,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Capaian Output Section -->
 
-        
+
         <!-- ======= Capaian Output Section ======= -->
         <section id="services" class="services">
             <div class="container">
@@ -1145,7 +1152,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</h6>
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan
+                                        Berdasarkan Jenis Kegiatan</h6>
                                 </div>
                                 <div class="card-body" id="RPKBS_1">
                                     <div class="row">
@@ -1169,11 +1177,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
-                                                    <option value="15">Jambi</option>
-                                                    <option value="16">Sumatera Selatan</option>
-                                                    <option value="17">Bengkulu</option>
-                                                    <option value="18">Lampung</option>
-                                                    <option value="19">Kepulauan Bangka</option>
+                                                    <option value="15">Sumatera Selatan</option>
+                                                    <option value="16">Kep. Bangka Belitung</option>
+                                                    <option value="17">Jambi</option>
+                                                    <option value="18">Bengkulu</option>
+                                                    <option value="19">Lampung</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1182,7 +1190,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPKBS" id="chartTypeRPKBS">
-                                                    <option value="doughnut">Doughnut</option>    
+                                                    <option value="doughnut">Doughnut</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
@@ -1205,7 +1213,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan</h6>
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Berdasarkan
+                                        Wilayah dan Pembiayaan</h6>
                                 </div>
                                 <div class="card-body" id="RPBWP_1">
                                     <div class="row">
@@ -1229,11 +1238,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <option selected value="0">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
-                                                    <option value="15">Jambi</option>
-                                                    <option value="16">Sumatera Selatan</option>
-                                                    <option value="17">Bengkulu</option>
-                                                    <option value="18">Lampung</option>
-                                                    <option value="19">Kepulauan Bangka</option>
+                                                    <option value="15">Sumatera Selatan</option>
+                                                    <option value="16">Kep. Bangka Belitung</option>
+                                                    <option value="17">Jambi</option>
+                                                    <option value="18">Bengkulu</option>
+                                                    <option value="19">Lampung</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1241,14 +1250,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
-                                                <select class="form-control" name="chartTypeRPBWP"
-                                                    id="chartTypeRPBWP">
+                                                <select class="form-control" name="chartTypeRPBWP" id="chartTypeRPBWP">
                                                     <option value="doughnut">Doughnut</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
                                                     <option value="bar">Bar</option>
                                                     <option value="pie">Pie</option>
-                                                    
+
                                                 </select>
                                             </div>
                                         </div>
@@ -1267,14 +1275,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Capaian Output Section -->
-<!-- ======= Capaian Output Daerah ======= -->
-<section id="about" class="about">
+        <!-- ======= Capaian Output Daerah ======= -->
+        <section id="about" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Realisasi Peserta Kegiatan Berdasarkan Mitra Kerja</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Realisasi Peserta Kegiatan
+                                    Berdasarkan Mitra Kerja</h6>
                             </div>
 
 
@@ -1300,11 +1309,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
 
                                             </select>
                                         </div>
@@ -1336,7 +1345,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Capaian Output Section -->
         <!-- ======= Capaian Output Daerah ======= -->
-<section id="about" class="about">
+        <section id="about" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -1368,11 +1377,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
-                                                <option value="15">Jambi</option>
-                                                <option value="16">Sumatera Selatan</option>
-                                                <option value="17">Bengkulu</option>
-                                                <option value="18">Lampung</option>
-                                                <option value="19">Kepulauan Bangka</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
 
                                             </select>
                                         </div>
