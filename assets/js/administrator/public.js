@@ -257,7 +257,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (id_provinsi == 0) {
                     var sets = new Set();
-
+                    var max_1 = 0;
                     var value = [];
                     var labels = [];
 
@@ -281,6 +281,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -300,6 +303,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Balai Sektoral Kementerian PUPR",
                         backgroundColor: backgrundcolor_2,
@@ -310,6 +314,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -345,9 +352,18 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    beginAtZero: true
-                                }
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.9,
+                                categoryPercentage: 0.8,
+
                             }]
                         }
                     }
@@ -406,7 +422,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (id_provinsi == 0) {
                     var sets = new Set();
-
+                    var max_1 = 0;
                     var value = [];
                     var labels = [];
 
@@ -430,6 +446,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -449,6 +468,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Organisasi Perangkat Daerah",
                         backgroundColor: backgrundcolor_2,
@@ -459,6 +479,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -494,9 +517,18 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    beginAtZero: true
-                                }
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.9,
+                                categoryPercentage: 0.9,
+
                             }]
                         }
                     }
@@ -553,7 +585,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (id_provinsi == 0) {
                     var sets = new Set();
-
+                    var max_1 = 0;
                     var value = [];
                     var labels = [];
 
@@ -577,6 +609,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -596,6 +631,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Vokasi",
                         backgroundColor: backgrundcolor_2,
@@ -606,6 +642,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -641,9 +680,18 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    beginAtZero: true
-                                }
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.9,
+                                categoryPercentage: 0.9,
+
                             }]
                         }
                     }
