@@ -344,8 +344,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeOPD" id="chartTypeOPD">
-                                                <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
@@ -403,8 +403,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypevokasi" id="chartTypevokasi">
-                                                <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
@@ -468,10 +468,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeAsosiasi_Profesi"
                                                 id="chartTypeAsosiasi_Profesi">
+                                                <option value="bar">Bar</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="doughnut">Doughnut</option>
                                                 <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
                                                 <option value="pie">Pie</option>
 
                                             </select>
@@ -528,10 +528,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeABUJK" id="chartTypeABUJK">
+                                                <option value="bar">Bar</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="doughnut">Doughnut</option>
-                                                <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
+                                                <option value="line">Line</option> 
                                                 <option value="pie">Pie</option>
                                             </select>
                                         </div>
@@ -720,10 +720,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeDIV" id="chartTypeDIV">
+                                                <option value="bar">Bar</option>
                                                 <option value="doughnut">Doughnut</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
-                                                <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
 
                                             </select>
@@ -780,12 +780,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeDINV" id="chartTypeDINV">
+                                                <option value="bar">Bar</option>
                                                 <option value="doughnut">Doughnut</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="line">Line</option>
-                                                <option value="bar">Bar</option>
-
                                             </select>
                                         </div>
                                     </div>
@@ -850,8 +849,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeAKTK" id="chartTypeAKTK">
-                                                <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
+                                                <option value="line">Line</option> 
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
@@ -909,8 +908,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeDABU" id="chartTypeDABU">
-                                                <option value="line">Line</option>
                                                 <option value="bar">Bar</option>
+                                                <option value="line">Line</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
@@ -1057,10 +1056,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPK" id="chartTypeRPK">
+                                                    <option value="bar">Bar</option> 
                                                     <option value="pie">Pie</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
-                                                    <option value="bar">Bar</option> 
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
@@ -1118,10 +1117,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPBK" id="chartTypeRPBK">
-                                                <option value="pie">Pie</option>
+                                                    <option value="bar">Bar</option>  
+                                                    <option value="pie">Pie</option>
                                                     <option value="radar">Radar</option>
-                                                    <option value="line">Line</option>
-                                                    <option value="bar">Bar</option>    
+                                                    <option value="line">Line</option>   
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
@@ -1191,11 +1190,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPKBS" id="chartTypeRPKBS">
+                                                    <option value="bar">Bar</option> 
+                                                    <option value="pie">Pie</option>
                                                     <option value="doughnut">Doughnut</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
-                                                    <option value="bar">Bar</option>
-                                                    <option value="pie">Pie</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1252,10 +1251,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPBWP" id="chartTypeRPBWP">
+                                                    <option value="bar">Bar</option>
                                                     <option value="doughnut">Doughnut</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
-                                                    <option value="bar">Bar</option>
                                                     <option value="pie">Pie</option>
 
                                                 </select>

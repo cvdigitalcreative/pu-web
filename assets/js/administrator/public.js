@@ -93,7 +93,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (id_provinsi == 0) {
                     var sets = new Set();
-
+                    var max_1 = 0;
                     var value = [];
                     var labels = [];
 
@@ -103,6 +103,7 @@ $(document).ready(function() {
                     i = 0;
                     do {
                         if (!labels.includes(data.data[i].nama)) {
+
                             labels.push(data.data[i].nama);
                         }
 
@@ -117,6 +118,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -136,6 +140,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Mitra Balai Jasa Konstruksi Wilayah II Palembang",
                         backgroundColor: backgrundcolor_2,
@@ -146,6 +151,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -170,7 +178,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -182,9 +190,18 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    beginAtZero: true
-                                }
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.5,
+                                categoryPercentage: 0.8,
+
                             }]
                         }
                     }
@@ -316,7 +333,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -465,7 +482,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -612,7 +629,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -759,7 +776,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -904,7 +921,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1049,7 +1066,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1193,7 +1210,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1338,7 +1355,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1481,7 +1498,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1627,7 +1644,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1772,7 +1789,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1917,7 +1934,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -1990,9 +2007,9 @@ $(document).ready(function() {
 
                     var value = [];
                     var labels = [];
-
-
                     var dataset = [];
+                    var max_1 = 0;
+
 
                     i = 0;
                     do {
@@ -2011,6 +2028,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -2018,7 +2038,7 @@ $(document).ready(function() {
                             i++;
 
                         } while (i < data.data.length);
-                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_5[j] + "\", \"borderColor\": \"" + bordercolor_4[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_4[j] + "\", \"borderColor\": \"" + bordercolor_4[j] + "\", \"data\": [" + jumlah_data + "]}"
                         dataset.push(JSON.parse(temp))
 
                     }
@@ -2029,6 +2049,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Realisasi Peserta dan Kegiatan",
                         backgroundColor: backgrundcolor_2,
@@ -2039,6 +2060,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -2062,7 +2086,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -2075,6 +2099,7 @@ $(document).ready(function() {
                         scales: {
                             yAxes: [{
                                 ticks: {
+                                    max: max_1 + (max_1 * 80 / 100),
                                     beginAtZero: true
                                 }
                             }]
@@ -2135,8 +2160,7 @@ $(document).ready(function() {
 
                     var value = [];
                     var labels = [];
-
-
+                    var max_1 = 0;
                     var dataset = [];
 
                     i = 0;
@@ -2156,6 +2180,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -2174,6 +2201,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Rekap Peserta Berdasarkan Skema",
                         backgroundColor: backgrundcolor_2,
@@ -2184,6 +2212,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -2201,13 +2232,14 @@ $(document).ready(function() {
                         plugins: {
                             // Change options for ALL labels of THIS CHART
                             datalabels: {
+
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
                                 align: 'end',
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -2219,9 +2251,18 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    beginAtZero: true
-                                }
+                                    max: max_1 + (max_1 * 10 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.5,
+                                categoryPercentage: 1,
+
                             }]
                         }
                     }
@@ -2354,7 +2395,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -2500,7 +2541,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -2646,7 +2687,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
@@ -2793,7 +2834,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 14,
+                                    size: 12,
                                     style: 'italic',
                                     family: ["Open Sans", "sans-serif"]
 
