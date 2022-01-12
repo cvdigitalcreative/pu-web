@@ -1151,16 +1151,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan
-                                        Berdasarkan Jenis Kegiatan</h6>
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Program Padat Karya</h6>
                                 </div>
-                                <div class="card-body" id="RPKBS_1">
+                                <div class="card-body" >
                                     <div class="row">
                                         <div class="mt-2">
-                                            <a href="" id="chart-filter-file-RPKBS" type="button"
+                                            <a href="" id="chart-filter-file-PPK" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-RPKBS" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-PPK" download="ChartImage.jpg" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1172,7 +1171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                                <select class="form-control" id="chart-filter-provinsi-RPKBS">
+                                                <select class="form-control" id="chart-filter-provinsi-PPK">
                                                 
                                                     <option selected value="99">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
@@ -1189,7 +1188,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <div class="form-group py-2">
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
-                                                <select class="form-control" name="chartTypeRPKBS" id="chartTypeRPKBS">
+                                                <select class="form-control" name="chartTypePPK" id="chartTypePPK">
                                                     <option value="bar">Bar</option> 
                                                     <option value="pie">Pie</option>
                                                     <option value="doughnut">Doughnut</option>
@@ -1200,10 +1199,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <div class="loader_RPKBS">
+                                        <div class="loader_PPK">
                                         </div>
                                     </div>
-                                    <canvas id="RPKBS" width="535"></canvas>
+                                    <canvas id="PPK" width="535"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1275,6 +1274,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Capaian Output Section -->
+
         <!-- ======= Capaian Output Daerah ======= -->
         <section id="about" class="about">
             <div class="container">
@@ -1351,17 +1351,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Program Padat Karya</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</h6>
                             </div>
 
 
-                            <div class="card-body">
+                            <div class="card-body" id="RPKBS_1">
                                 <div class="row">
                                     <div class="container mt-2">
-                                        <a href="" id="chart-filter-file-PPK" type="button"
+                                        <a href="" id="chart-filter-file-RPKBS" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-PPK" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-RPKBS" download="ChartImage.jpg" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -1373,7 +1373,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1"
                                                 for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-PPK">
+                                            <select class="form-control" id="chart-filter-provinsi-RPKBS">
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
@@ -1390,7 +1390,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
-                                            <select class="form-control" name="chartTypePPK" id="chartTypePPK">
+                                            <select class="form-control" name="chartTypeRPKBS" id="chartTypeRPKBS">
                                                 <option value="bar">Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
@@ -1401,10 +1401,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader_PPK">
+                                    <div class="loader_RPKBS">
                                     </div>
                                 </div>
-                                <canvas id="PPK" height="110"></canvas>
+                                <canvas id="RPKBS" height="110"></canvas>
                             </div>
                         </div>
                     </div>
