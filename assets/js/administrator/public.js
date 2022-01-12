@@ -1376,7 +1376,7 @@ $(document).ready(function() {
     });
 
 
-    function drawChartKSO(id_provinsi, kategori) {
+    function drawChartKSO(id_provinsi, kategori, chart_type) {
 
         $.ajax({
             beforeSend: function() {
@@ -1430,7 +1430,16 @@ $(document).ready(function() {
                     }
 
                     var label = Array.from(sets);
-                    $('#KSO').attr('height', `250vh`);
+                    if (chart_type == 'horizontalBar') {
+                        $('#KSO').attr('height', `300vh`);
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        $('#KSO').attr('height', `100`);
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+
 
 
                 } else {
@@ -1439,7 +1448,7 @@ $(document).ready(function() {
                     var max_1 = 0;
                     var dataset = [{
 
-                        label: "Rekap Pelaksanaan Kegiatan Berdasarkan Mitra Kerja",
+                        label: "KSO",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
                         data: value
@@ -1456,11 +1465,18 @@ $(document).ready(function() {
 
                     } while (i < data.data.length);
                     $('#KSO').attr('height', `100`);
+                    if (chart_type == 'horizontalBar') {
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
                 }
 
                 var ctx = document.getElementById('KSO').getContext('2d');
                 KSO = new Chart(ctx, {
-                    type: document.getElementById("chartTypeKSO").value,
+                    type: chart_type,
                     data: {
                         labels: label,
                         datasets: dataset,
@@ -1491,20 +1507,22 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
+                                    display: display_y_axis
 
                                 },
-                                barPercentage: 0.6,
-                                categoryPercentage: 0.9,
+                                barPercentage: 0.8,
+                                categoryPercentage: 0.7,
 
                             }],
                             xAxes: [{
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
+                                    display: display_x_axis
 
                                 },
-                                barPercentage: 0.2,
-                                categoryPercentage: 0.2,
+                                barPercentage: 0.8,
+                                categoryPercentage: 0.7,
                             }]
                         }
                     }
@@ -1525,19 +1543,21 @@ $(document).ready(function() {
         })
 
     }
-    drawChartKSO(99, 27);
+    drawChartKSO(99, 27, 'bar');
 
     $('#chart-filter-provinsi-KSO').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-KSO').val()
+        var chart_type = document.getElementById("chartTypeKSO").value
         KSO.destroy();
-        drawChartKSO(provinsi, 27);
+        drawChartKSO(provinsi, 27, chart_type);
     })
 
 
     $('#chartTypeKSO').on('change', function() {
         var provinsi1 = document.getElementById("chart-filter-provinsi-KSO").value
+        var chart_type = document.getElementById("chartTypeKSO").value
         KSO.destroy();
-        drawChartKSO(provinsi1, 27);
+        drawChartKSO(provinsi1, 27, chart_type);
     })
 
     document.getElementById("download-chart-KSO").addEventListener('click', function() {
@@ -2987,7 +3007,7 @@ $(document).ready(function() {
         a.href = image;
     });
 
-    function drawChartRPKBMK(id_provinsi, kategori) {
+    function drawChartRPKBMK(id_provinsi, kategori, chart_type) {
 
         $.ajax({
             beforeSend: function() {
@@ -3041,7 +3061,16 @@ $(document).ready(function() {
                     }
 
                     var label = Array.from(sets);
-                    $('#RPKBMK').attr('height', `500vh`);
+                    if (chart_type == 'horizontalBar') {
+                        $('#RPKBMK').attr('height', `500vh`);
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        $('#RPKBMK').attr('height', `100`);
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+
 
 
                 } else {
@@ -3067,6 +3096,13 @@ $(document).ready(function() {
 
                     } while (i < data.data.length);
                     $('#RPKBMK').attr('height', `100`);
+                    if (chart_type == 'horizontalBar') {
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
                 }
 
                 var ctx = document.getElementById('RPKBMK').getContext('2d');
@@ -3098,20 +3134,22 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
-
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-
+                                    display: display_y_axis
                                 },
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.9,
-
                             }],
                             xAxes: [{
-
-                                barPercentage: 0.2,
-                                categoryPercentage: 0.2,
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: display_x_axis
+                                },
+                                barPercentage: 0.7,
+                                categoryPercentage: 0.9,
                             }]
                         }
                     }
@@ -3132,19 +3170,21 @@ $(document).ready(function() {
         })
 
     }
-    drawChartRPKBMK(99, 21);
+    drawChartRPKBMK(99, 21, 'horizontalBar');
 
     $('#chart-filter-provinsi-RPKBMK').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-RPKBMK').val()
+        var chart_type = document.getElementById("chartTypeRPKBMK").value
         RPKBMK.destroy();
-        drawChartRPKBMK(provinsi, 21);
+        drawChartRPKBMK(provinsi, 21, chart_type);
     })
 
 
     $('#chartTypeRPKBMK').on('change', function() {
         var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBMK").value
+        var chart_type = document.getElementById("chartTypeRPKBMK").value
         RPKBMK.destroy();
-        drawChartRPKBMK(provinsi1, 21);
+        drawChartRPKBMK(provinsi1, 21, chart_type);
     })
 
     document.getElementById("download-chart-RPKBMK").addEventListener('click', function() {

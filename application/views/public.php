@@ -762,7 +762,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeKSO" id="chartTypeKSO">
-                                                <option value="horizontalBar">Bar</option>
+                                                <option value="bar">Vertical Bar</option>
+                                                <option value="horizontalBar">Horizontal Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>
@@ -1436,7 +1437,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeRPKBMK" id="chartTypeRPKBMK">
-                                                <option value="horizontalBar">Bar</option>
+                                                <option value="horizontalBar">Horizontal Bar</option>
+                                                <option value="bar">Vertical Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>
