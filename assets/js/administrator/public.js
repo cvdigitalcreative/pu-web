@@ -1375,6 +1375,177 @@ $(document).ready(function() {
         a.href = image;
     });
 
+
+    function drawChartKSO(id_provinsi, kategori) {
+
+        $.ajax({
+            beforeSend: function() {
+                $('.loader_KSO').show();
+            },
+            complete: function() {
+                $('.loader_KSO').hide();
+            },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                if (id_provinsi == 0) {
+                    var sets = new Set();
+
+                    var value = [];
+                    var labels = [];
+                    var max_1 = 0;
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_6[j] + "\", \"borderColor\": \"" + bordercolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+                    $('#KSO').attr('height', `250vh`);
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var max_1 = 0;
+                    var dataset = [{
+
+                        label: "Rekap Pelaksanaan Kegiatan Berdasarkan Mitra Kerja",
+                        backgroundColor: backgrundcolor_2,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                    $('#KSO').attr('height', `100`);
+                }
+
+                var ctx = document.getElementById('KSO').getContext('2d');
+                KSO = new Chart(ctx, {
+                    type: document.getElementById("chartTypeKSO").value,
+                    data: {
+                        labels: label,
+                        datasets: dataset,
+                    },
+                    options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+                                align: 'end',
+
+
+                                font: {
+                                    size: 12,
+                                    style: 'italic',
+                                    family: ["Century Gothic", "sans-serif"]
+
+                                }
+
+                            }
+                        },
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+
+                                },
+                                barPercentage: 0.6,
+                                categoryPercentage: 0.9,
+
+                            }],
+                            xAxes: [{
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+
+                                },
+                                barPercentage: 0.2,
+                                categoryPercentage: 0.2,
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                // console.log(data.data[0])
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-KSO').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-KSO').attr('href', data.data[0].pathfile);
+                }
+            }
+        })
+
+    }
+    drawChartKSO(99, 27);
+
+    $('#chart-filter-provinsi-KSO').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-KSO').val()
+        KSO.destroy();
+        drawChartKSO(provinsi, 27);
+    })
+
+
+    $('#chartTypeKSO').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-KSO").value
+        KSO.destroy();
+        drawChartKSO(provinsi1, 27);
+    })
+
+    document.getElementById("download-chart-KSO").addEventListener('click', function() {
+        var image = document.getElementById("KSO").toDataURL("image/png");
+        var a = document.getElementById("download-chart-KSO");
+        a.href = image;
+    });
+
     function drawChartDIV(id_provinsi, kategori) {
 
         $.ajax({

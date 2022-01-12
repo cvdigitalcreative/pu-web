@@ -72,6 +72,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </li>
                             <li><a class="nav-link scrollto " href="#lapas_1">Lapas</a></li>
                             <li><a class="nav-link scrollto " href="#instansi_lain_1">Instansi Lain</a></li>
+                            <li><a class="nav-link scrollto " href="#kso_1">KSO</a></li>
+                            <li><a class="nav-link scrollto " href="#mtu_1">MTU</a></li>
 
                         </ul>
                     </li>
@@ -463,7 +465,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- OPD dan Vokasi Section -->
         <!-- ======= Asosiasi Profesi dan Asosias BUJK ======= -->
-        <section id="asosiasi_profesi" class=" mt-3">
+        <section id="asosiasi_profesi" class="asosiasi_profesi">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -589,7 +591,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
         <!-- ======= LAPAS dan BUJK ======= -->
-        <section id="lapas_1" class="counts mt-3">
+        <section id="lapas_1" class="lapas_1 mt-6">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -713,6 +715,74 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
+        <!-- ======= Capaian Output Daerah ======= -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="row content">
+                    <div class="col">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">KSO</h6>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-KSO" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-KSO" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-KSO">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeKSO" id="chartTypeKSO">
+                                                <option value="horizontalBar">Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_KSO">
+                                    </div>
+                                </div>
+                                <canvas id="KSO" height=""></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Capaian Output Section -->
         <!-- ======= Instruktur ======= -->
         <section id="instruktur" class="instruktur">
             <div class="container">
