@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1><a href="index.html">BJKW II Palembang</a></h1>
+                <h1><a href="index.html">BJKW II PALEMBANG</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -76,7 +76,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </ul>
                     </li>
 
-                    <li class="dropdown"><a href="#instruktur"><span>Instruktur</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#instruktur"><span>Instruktur</span> <i
+                                class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#instruktur">Vokasi</a></li>
                             <li><a href="#dinv">Non Vokasi</a></li>
@@ -90,7 +91,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </li>
                     <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
                     <li><a class="nav-link scrollto " href="#capaian_output">Capaian Output</a></li>
-                    <li><a class="getstarted scrollto" href="#contact">Hubungi</a></li>
+                    <li class="dropdown"><a href="#about"><span>Laporan Infografis</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#balai_pupr">2020</a></li>
+                            <li><a href="#opd_1">2021</a></li>
+                            <li><a href="#vokasi_1">2022</a></li>
+                            <div class="btn-group">
+                                <div class="btn-group dropleft" role="group">
+                                    <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Provinsi</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Sumatera Selatan</a>
+                                        <a class="dropdown-item" href="#">Kep. Bangka Belitung</a>
+                                        <a class="dropdown-item" href="#">Jambi</a>
+                                        <a class="dropdown-item" href="#">Bengkulu</a>
+                                        <a class="dropdown-item" href="#">Jambi</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-white">
+                                    Provinsi
+                                </button>
+                            </div>
+                        </ul>
+                    </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -488,13 +514,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="asosiasi_bujk">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+                        id="asosiasi_bujk">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi BUJK</h6>
                             </div>
 
-                            <div class="card-body" >
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-ABUJK" type="button"
@@ -531,7 +558,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option value="bar">Bar</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="doughnut">Doughnut</option>
-                                                <option value="line">Line</option> 
+                                                <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
                                             </select>
                                         </div>
@@ -611,7 +638,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="bujk_1">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+                        id="bujk_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">BUJK</h6>
@@ -740,7 +768,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="dinv">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+                        id="dinv">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Instruktur Non Vokasi</h6>
@@ -809,7 +838,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <p>Asesor Kompetensi Tenaga Kerja Konstruksi dan Asesor Badan Usaha</p>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="aktk_1">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+                        id="aktk_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja
@@ -850,7 +880,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeAKTK" id="chartTypeAKTK">
                                                 <option value="bar">Bar</option>
-                                                <option value="line">Line</option> 
+                                                <option value="line">Line</option>
                                                 <option value="radar">Radar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="doughnut">Doughnut</option>
@@ -868,7 +898,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
 
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start" id="abu_1">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+                        id="abu_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Badan Usaha</h6>
@@ -1056,7 +1087,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPK" id="chartTypeRPK">
-                                                    <option value="bar">Bar</option> 
+                                                    <option value="bar">Bar</option>
                                                     <option value="pie">Pie</option>
                                                     <option value="radar">Radar</option>
                                                     <option value="line">Line</option>
@@ -1117,10 +1148,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypeRPBK" id="chartTypeRPBK">
-                                                    <option value="bar">Bar</option>  
+                                                    <option value="bar">Bar</option>
                                                     <option value="pie">Pie</option>
                                                     <option value="radar">Radar</option>
-                                                    <option value="line">Line</option>   
+                                                    <option value="line">Line</option>
                                                     <option value="doughnut">Doughnut</option>
                                                 </select>
                                             </div>
@@ -1153,7 +1184,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-black" id="">Program Padat Karya</h6>
                                 </div>
-                                <div class="card-body" >
+                                <div class="card-body">
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-PPK" type="button"
@@ -1172,7 +1203,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1"
                                                     for="inlineFormCustomSelectPref text-primary">Provinsi</label>
                                                 <select class="form-control" id="chart-filter-provinsi-PPK">
-                                                
+
                                                     <option selected value="99">Choose..</option>
                                                     <option value="0">All By Provinsi</option>
                                                     <option value="99">All By Kategori</option>
@@ -1189,7 +1220,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                     Chart</label>
                                                 <select class="form-control" name="chartTypePPK" id="chartTypePPK">
-                                                    <option value="bar">Bar</option> 
+                                                    <option value="bar">Bar</option>
                                                     <option value="pie">Pie</option>
                                                     <option value="doughnut">Doughnut</option>
                                                     <option value="radar">Radar</option>
@@ -1293,7 +1324,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-RPKBMK" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-RPKBMK" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-RPKBMK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -1323,7 +1354,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeRPKBMK" id="chartTypeRPKBMK">
-                                                <option value="bar">Bar</option>
+                                                <option value="horizontalBar">Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>
@@ -1336,7 +1367,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_RPKBMK">
                                     </div>
                                 </div>
-                                <canvas id="RPKBMK" height="110"></canvas>
+                                <canvas id="RPKBMK" height=""></canvas>
                             </div>
                         </div>
                     </div>
@@ -1351,7 +1382,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Rekap Pelaksanaan Kegiatan
+                                    Berdasarkan Jenis Kegiatan</h6>
                             </div>
 
 

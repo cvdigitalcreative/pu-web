@@ -77,6 +77,7 @@ $(document).ready(function() {
         'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
     Chart.defaults.global.defaultFontSize = 9;
+    Chart.defaults.global.defaultFontFamily = "Century Gothic";
 
 
     function drawChartMitra(id_provinsi, kategori) {
@@ -145,6 +146,7 @@ $(document).ready(function() {
                         label: "Mitra Balai Jasa Konstruksi Wilayah II Palembang",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
+
                         data: value
                     }];
                     i = 0;
@@ -170,6 +172,7 @@ $(document).ready(function() {
                     options: {
                         plugins: {
                             // Change options for ALL labels of THIS CHART
+
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
@@ -177,7 +180,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -186,12 +189,14 @@ $(document).ready(function() {
                         responsive: true,
                         fill: false,
                         scales: {
+
                             yAxes: [{
 
                                 ticks: {
                                     max: max_1 + (max_1 * 17 / 100),
                                     beginAtZero: true,
-                                    display: false
+                                    display: false,
+
                                 },
 
                             }],
@@ -337,7 +342,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -502,7 +507,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -665,7 +670,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -826,7 +831,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -987,7 +992,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -1149,7 +1154,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -1307,7 +1312,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -1468,7 +1473,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -1627,7 +1632,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -1789,7 +1794,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -1950,7 +1955,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -2111,7 +2116,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -2272,7 +2277,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -2425,7 +2430,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -2445,7 +2450,7 @@ $(document).ready(function() {
                             }],
                             xAxes: [{
                                 barPercentage: 0.5,
-                                categoryPercentage: 1,
+                                categoryPercentage: 0.9,
 
                             }]
                         }
@@ -2588,7 +2593,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -2668,8 +2673,7 @@ $(document).ready(function() {
 
                     var value = [];
                     var labels = [];
-
-
+                    var max_1 = 0;
                     var dataset = [];
 
                     i = 0;
@@ -2689,6 +2693,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -2707,6 +2714,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan",
                         backgroundColor: backgrundcolor_2,
@@ -2717,6 +2725,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -2742,7 +2753,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -2752,9 +2763,18 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    beginAtZero: true
-                                }
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.8,
+                                categoryPercentage: 1,
+
                             }]
                         }
                     }
@@ -2813,7 +2833,7 @@ $(document).ready(function() {
 
                     var value = [];
                     var labels = [];
-
+                    var max_1 = 0;
 
                     var dataset = [];
 
@@ -2834,6 +2854,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -2847,14 +2870,16 @@ $(document).ready(function() {
                     }
 
                     var label = Array.from(sets);
+                    $('#RPKBMK').attr('height', `500vh`);
 
 
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
 
-                        label: "Rekap Pelaksanaan Kegiatan Berdasarkan Subklasifikasi",
+                        label: "Rekap Pelaksanaan Kegiatan Berdasarkan Mitra Kerja",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
                         data: value
@@ -2863,10 +2888,14 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
                     } while (i < data.data.length);
+                    $('#RPKBMK').attr('height', `100`);
                 }
 
                 var ctx = document.getElementById('RPKBMK').getContext('2d');
@@ -2888,7 +2917,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -2898,10 +2927,20 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
-                                ticks: {
 
-                                    beginAtZero: true
-                                }
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+
+                                },
+                                barPercentage: 0.6,
+                                categoryPercentage: 0.9,
+
+                            }],
+                            xAxes: [{
+
+                                barPercentage: 0.2,
+                                categoryPercentage: 0.2,
                             }]
                         }
                     }
@@ -3042,7 +3081,7 @@ $(document).ready(function() {
                                 font: {
                                     size: 12,
                                     style: 'italic',
-                                    family: ["Open Sans", "sans-serif"]
+                                    family: ["Century Gothic", "sans-serif"]
 
                                 }
 
@@ -3062,7 +3101,7 @@ $(document).ready(function() {
                             }],
                             xAxes: [{
                                 barPercentage: 0.7,
-                                categoryPercentage: 1,
+                                categoryPercentage: 0.8,
 
                             }]
                         }
