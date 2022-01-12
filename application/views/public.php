@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <h1><a href="index.html">BJKW II PALEMBANG</a></h1>
+                <h1><a href="#about">BJKW II PALEMBANG</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
@@ -71,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </ul>
                             </li>
                             <li><a class="nav-link scrollto " href="#lapas_1">Lapas</a></li>
-                            <li><a class="nav-link scrollto " href="#bujk_1">BUJK</a></li>
+                            <li><a class="nav-link scrollto " href="#instansi_lain_1">Instansi Lain</a></li>
 
                         </ul>
                     </li>
@@ -133,7 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h1 data-aos="fade-up">Infografis</h1>
                     <h2 data-aos="fade-up" data-aos-delay="400">Balai Jasa Konstruksi Wilayah II Palembang</h2>
                     <div data-aos="fade-up" data-aos-delay="800">
-                        <a href="#about" class="btn-get-started scrollto">Selengkapnya</a>
+                        <a href="#contact" class="btn-get-started scrollto">Selengkapnya</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -153,33 +153,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/deal.png" class="img-fluid" alt=""
-                            data-aos="zoom-in">
+                        <a href="#hero">
+                            <img src="<?= base_url();?>assets/illustration/office.png" class="img-fluid" alt=""
+                                data-aos="zoom-in" data-aos-delay="400">
+                        </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/instructor.png" class="img-fluid" alt=""
-                            data-aos="zoom-in" data-aos-delay="100">
+                        <a href="#about">
+                            <img src="<?= base_url();?>assets/illustration/deal.png" class="img-fluid" alt=""
+                                data-aos="zoom-in">
+                        </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/checklist.png" class="img-fluid" alt=""
-                            data-aos="zoom-in" data-aos-delay="200">
+                        <a href="#instruktur">
+                            <img src="<?= base_url();?>assets/illustration/instructor.png" class="img-fluid" alt=""
+                                data-aos="zoom-in" data-aos-delay="100">
+                        </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/letter.png" class="img-fluid" alt=""
-                            data-aos="zoom-in" data-aos-delay="300">
+                        <a href="#asesor">
+                            <img src="<?= base_url();?>assets/illustration/checklist.png" class="img-fluid" alt=""
+                                data-aos="zoom-in" data-aos-delay="200">
+                        </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/office.png" class="img-fluid" alt=""
-                            data-aos="zoom-in" data-aos-delay="400">
+                        <a href="#se_kepala_daerah">
+                            <img src="<?= base_url();?>assets/illustration/letter.png" class="img-fluid" alt=""
+                                data-aos="zoom-in" data-aos-delay="300">
+                        </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <img src="<?= base_url();?>assets/illustration/output.png" class="img-fluid" alt=""
-                            data-aos="zoom-in" data-aos-delay="500">
+                        <a href="#capaian_output">
+                            <img src="<?= base_url();?>assets/illustration/output.png" class="img-fluid" alt=""
+                                data-aos="zoom-in" data-aos-delay="500">
+                        </a>
                     </div>
 
                 </div>
@@ -639,13 +651,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
-                        id="bujk_1">
+                        id="instansi_lain_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">BUJK</h6>
                             </div>
 
-                            <div class="card-body" id="bujk_1">
+                            <div class="card-body" id="instansi_lain_1">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-BUJK" type="button"
