@@ -802,7 +802,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Instruktur Section -->
         <!-- ======= Asesor ======= -->
-        <section id="asesor" class="counts">
+        <section id="asesor" class="counts mt-5">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Asesor</h2>
