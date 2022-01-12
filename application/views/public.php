@@ -654,16 +654,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         id="instansi_lain_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">BUJK</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Instansi Lain</h6>
                             </div>
 
                             <div class="card-body" id="instansi_lain_1">
                                 <div class="row">
                                     <div class="mt-2">
-                                        <a href="" id="chart-filter-file-BUJK" type="button"
+                                        <a href="" id="chart-filter-file-instansi_lain" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-BUJK" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-instansi_lain" download="ChartImage.jpg" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -674,7 +674,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="col">
                                         <div class="form-group py-2">
                                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-BUJK">
+                                            <select class="form-control" id="chart-filter-provinsi-instansi_lain">
                                                 <option selected value="0">Choose..</option>
                                                 <option value="0">All By Provinsi</option>
                                                 <option value="99">All By Kategori</option>
@@ -690,7 +690,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
-                                            <select class="form-control" name="chartTypeBUJK" id="chartTypeBUJK">
+                                            <select class="form-control" name="chartTypeinstansi_lain" id="chartTypeinstansi_lain">
                                                 <option value="bar">Bar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>
@@ -702,10 +702,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">
-                                    <div class="loader_BUJK">
+                                    <div class="loader_instansi_lain">
                                     </div>
                                 </div>
-                                <canvas id="BUJK" width="900"></canvas>
+                                <canvas id="instansi_lain" width="900"></canvas>
                             </div>
                         </div>
                     </div>

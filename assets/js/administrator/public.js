@@ -1217,14 +1217,14 @@ $(document).ready(function() {
         a.href = image;
     });
 
-    function drawChartBUJK(id_provinsi, kategori) {
+    function drawChartinstansi_lain(id_provinsi, kategori) {
 
         $.ajax({
             beforeSend: function() {
-                $('.loader_BUJK').show();
+                $('.loader_instansi_lain').show();
             },
             complete: function() {
-                $('.loader_BUJK').hide();
+                $('.loader_instansi_lain').hide();
             },
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
@@ -1294,9 +1294,9 @@ $(document).ready(function() {
                     } while (i < data.data.length);
                 }
 
-                var ctx = document.getElementById('BUJK').getContext('2d');
-                BUJK = new Chart(ctx, {
-                    type: document.getElementById("chartTypeBUJK").value,
+                var ctx = document.getElementById('instansi_lain').getContext('2d');
+                instansi_lain = new Chart(ctx, {
+                    type: document.getElementById("chartTypeinstansi_lain").value,
                     data: {
                         labels: label,
                         datasets: dataset,
@@ -1346,32 +1346,32 @@ $(document).ready(function() {
             success: function(data) {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
-                    $('#chart-filter-file-BUJK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-instansi_lain').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
                 } else {
-                    $('#chart-filter-file-BUJK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-instansi_lain').attr('href', data.data[0].pathfile);
                 }
             }
         })
 
     }
-    drawChartBUJK(0, 8);
+    drawChartinstansi_lain(0, 8);
 
-    $('#chart-filter-provinsi-BUJK').on('change', function() {
-        var provinsi = $('#chart-filter-provinsi-BUJK').val()
-        BUJK.destroy();
-        drawChartBUJK(provinsi, 8);
+    $('#chart-filter-provinsi-instansi_lain').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-instansi_lain').val()
+        instansi_lain.destroy();
+        drawChartinstansi_lain(provinsi, 8);
     })
 
 
-    $('#chartTypeBUJK').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-BUJK").value
-        BUJK.destroy();
-        drawChartBUJK(provinsi1, 8);
+    $('#chartTypeinstansi_lain').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-instansi_lain").value
+        instansi_lain.destroy();
+        drawChartinstansi_lain(provinsi1, 8);
     })
 
-    document.getElementById("download-chart-BUJK").addEventListener('click', function() {
-        var image = document.getElementById("BUJK").toDataURL("image/png");
-        var a = document.getElementById("download-chart-BUJK");
+    document.getElementById("download-chart-instansi_lain").addEventListener('click', function() {
+        var image = document.getElementById("instansi_lain").toDataURL("image/png");
+        var a = document.getElementById("download-chart-instansi_lain");
         a.href = image;
     });
 
