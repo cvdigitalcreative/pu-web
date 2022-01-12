@@ -174,9 +174,6 @@ $(document).ready(function() {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
                                 align: 'end',
-
-
-
                                 font: {
                                     size: 12,
                                     style: 'italic',
@@ -192,14 +189,14 @@ $(document).ready(function() {
                             yAxes: [{
 
                                 ticks: {
-                                    max: max_1 + (max_1 * 37 / 100),
+                                    max: max_1 + (max_1 * 17 / 100),
                                     beginAtZero: true,
                                     display: false
                                 },
 
                             }],
                             xAxes: [{
-                                barPercentage: 0.5,
+                                barPercentage: 0.8,
                                 categoryPercentage: 0.8,
 
                             }]
@@ -238,7 +235,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-mitra").addEventListener('click', function() {
-        var image = document.getElementById("mitra").toDataURL("image/jpg");
+        var image = document.getElementById("mitra").toDataURL('image/png');
         var a = document.getElementById("download-chart-mitra");
         a.href = image;
     });
@@ -336,9 +333,7 @@ $(document).ready(function() {
                             datalabels: {
                                 color: 'rgb(25, 15, 39, 1)',
                                 anchor: 'end',
-
-
-
+                                align: 'end',
                                 font: {
                                     size: 12,
                                     style: 'italic',
@@ -400,7 +395,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-Balai_Sektoral").addEventListener('click', function() {
-        var image = document.getElementById("Balai_Sektoral").toDataURL("image/jpg");
+        var image = document.getElementById("Balai_Sektoral").toDataURL("image/png");
         var a = document.getElementById("download-chart-Balai_Sektoral");
         a.href = image;
     });
@@ -565,7 +560,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-opd").addEventListener('click', function() {
-        var image = document.getElementById("OPD").toDataURL("image/jpg");
+        var image = document.getElementById("OPD").toDataURL("image/png");
         var a = document.getElementById("download-chart-opd");
         a.href = image;
     });
@@ -728,7 +723,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-vokasi").addEventListener('click', function() {
-        var image = document.getElementById("vokasi").toDataURL("image/jpg");
+        var image = document.getElementById("vokasi").toDataURL("image/png");
         var a = document.getElementById("download-chart-vokasi");
         a.href = image;
     });
@@ -888,7 +883,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-Asosiasi_Profesi").addEventListener('click', function() {
-        var image = document.getElementById("Asosiasi_Profesi").toDataURL("image/jpg");
+        var image = document.getElementById("Asosiasi_Profesi").toDataURL("image/png");
         var a = document.getElementById("download-chart-Asosiasi_Profesi");
         a.href = image;
     });
@@ -1049,7 +1044,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-ABUJK").addEventListener('click', function() {
-        var image = document.getElementById("ABUJK").toDataURL("image/jpg");
+        var image = document.getElementById("ABUJK").toDataURL("image/png");
         var a = document.getElementById("download-chart-ABUJK");
         a.href = image;
     });
@@ -1211,7 +1206,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-lapas").addEventListener('click', function() {
-        var image = document.getElementById("lapas").toDataURL("image/jpg");
+        var image = document.getElementById("lapas").toDataURL("image/png");
         var a = document.getElementById("download-chart-lapas");
         a.href = image;
     });
@@ -1230,11 +1225,9 @@ $(document).ready(function() {
             success: function(data) {
                 if (id_provinsi == 0) {
                     var sets = new Set();
-
+                    var max_1 = 0;
                     var value = [];
                     var labels = [];
-
-
                     var dataset = [];
 
                     i = 0;
@@ -1254,6 +1247,9 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -1272,6 +1268,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Balai Usaha Jasa Konstruksi",
                         backgroundColor: backgrundcolor_2,
@@ -1282,6 +1279,9 @@ $(document).ready(function() {
                     do {
 
                         label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
                         value.push(data.data[i].jumlah);
                         i++;
 
@@ -1316,9 +1316,18 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    beginAtZero: true
-                                }
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.9,
+                                categoryPercentage: 0.9,
+
                             }]
                         }
                     }
@@ -1355,7 +1364,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-BUJK").addEventListener('click', function() {
-        var image = document.getElementById("BUJK").toDataURL("image/jpg");
+        var image = document.getElementById("BUJK").toDataURL("image/png");
         var a = document.getElementById("download-chart-BUJK");
         a.href = image;
     });
@@ -1374,7 +1383,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (id_provinsi == 0) {
                     var sets = new Set();
-
+                    var max_1 = 0;
                     var value = [];
                     var labels = [];
 
@@ -1398,6 +1407,7 @@ $(document).ready(function() {
                         i = 0;
                         do {
                             if (labels[j] == data.data[i].nama) {
+
                                 jumlah_data.push(data.data[i].jumlah);
                             }
 
@@ -1500,7 +1510,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-DIV").addEventListener('click', function() {
-        var image = document.getElementById("DIV").toDataURL("image/jpg");
+        var image = document.getElementById("DIV").toDataURL("image/png");
         var a = document.getElementById("download-chart-DIV");
         a.href = image;
     });
@@ -1643,7 +1653,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-DINV").addEventListener('click', function() {
-        var image = document.getElementById("DINV").toDataURL("image/jpg");
+        var image = document.getElementById("DINV").toDataURL("image/png");
         var a = document.getElementById("download-chart-DINV");
         a.href = image;
     });
@@ -1789,7 +1799,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-AKTK").addEventListener('click', function() {
-        var image = document.getElementById("AKTK").toDataURL("image/jpg");
+        var image = document.getElementById("AKTK").toDataURL("image/png");
         var a = document.getElementById("download-chart-AKTK");
         a.href = image;
     });
@@ -1934,7 +1944,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-DABU").addEventListener('click', function() {
-        var image = document.getElementById("DABU").toDataURL("image/jpg");
+        var image = document.getElementById("DABU").toDataURL("image/png");
         var a = document.getElementById("download-chart-DABU");
         a.href = image;
     });
@@ -2079,7 +2089,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-SE_Kepala_Daerah").addEventListener('click', function() {
-        var image = document.getElementById("SE_Kepala_Daerah").toDataURL("image/jpg");
+        var image = document.getElementById("SE_Kepala_Daerah").toDataURL("image/png");
         var a = document.getElementById("download-chart-SE_Kepala_Daerah");
         a.href = image;
     });
@@ -2232,7 +2242,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-RPK").addEventListener('click', function() {
-        var image = document.getElementById("RPK").toDataURL("image/jpg");
+        var image = document.getElementById("RPK").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPK");
         a.href = image;
     });
@@ -2393,7 +2403,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-RPBK").addEventListener('click', function() {
-        var image = document.getElementById("RPBK").toDataURL("image/jpg");
+        var image = document.getElementById("RPBK").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPBK");
         a.href = image;
     });
@@ -2556,7 +2566,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-RPKBS").addEventListener('click', function() {
-        var image = document.getElementById("RPKBS").toDataURL("image/jpg");
+        var image = document.getElementById("RPKBS").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPKBS");
         a.href = image;
     });
@@ -2701,7 +2711,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-RPBWP").addEventListener('click', function() {
-        var image = document.getElementById("RPBWP").toDataURL("image/jpg");
+        var image = document.getElementById("RPBWP").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPBWP");
         a.href = image;
     });
@@ -2848,7 +2858,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-RPKBMK").addEventListener('click', function() {
-        var image = document.getElementById("RPKBMK").toDataURL("image/jpg");
+        var image = document.getElementById("RPKBMK").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPKBMK");
         a.href = image;
     });
@@ -2994,7 +3004,7 @@ $(document).ready(function() {
     })
 
     document.getElementById("download-chart-PPK").addEventListener('click', function() {
-        var image = document.getElementById("PPK").toDataURL("image/jpg");
+        var image = document.getElementById("PPK").toDataURL("image/png");
         var a = document.getElementById("download-chart-PPK");
         a.href = image;
     });
