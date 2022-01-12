@@ -787,6 +787,7 @@ $(document).ready(function() {
                 } else {
                     var label = [];
                     var value = [];
+                    var max_1 = 0;
                     var dataset = [{
                         label: "Asosiasi Profesi",
                         backgroundColor: backgrundcolor_2,
