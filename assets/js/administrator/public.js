@@ -216,8 +216,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-mitra').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-mitra').attr('target', '');
                 } else {
                     $('#chart-filter-file-mitra').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-mitra').attr('target', '_blank');
                 }
             }
         })
@@ -376,8 +378,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-Balai_Sektoral').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-Balai_Sektoral').attr('target', '');
                 } else {
                     $('#chart-filter-file-Balai_Sektoral').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-Balai_Sektoral').attr('target', '_blank');
                 }
             }
         })
@@ -541,8 +545,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-opd').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-opd').attr('target', '');
                 } else {
                     $('#chart-filter-file-opd').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-opd').attr('target', '_blank');
                 }
             }
         })
@@ -704,8 +710,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-vokasi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-vokasi').attr('target', '');
                 } else {
                     $('#chart-filter-file-vokasi').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-vokasi').attr('target', '_blank');
                 }
             }
         })
@@ -865,8 +873,11 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-Asosiasi_Profesi').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-Asosiasi_Profesi').attr('target', '');
                 } else {
                     $('#chart-filter-file-Asosiasi_Profesi').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-Asosiasi_Profesi').attr('target', '_blank');
+
                 }
             }
         })
@@ -1026,8 +1037,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-ABUJK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-ABUJK').attr('target', '');
                 } else {
                     $('#chart-filter-file-ABUJK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-ABUJK').attr('target', '_blank');
                 }
             }
         })
@@ -1188,8 +1201,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-lapas').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-lapas').attr('target', '');
                 } else {
                     $('#chart-filter-file-lapas').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-lapas').attr('target', '_blank');
                 }
             }
         })
@@ -1346,8 +1361,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-instansi_lain').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-instansi_lain').attr('target', '');
                 } else {
                     $('#chart-filter-file-instansi_lain').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-instansi_lain').attr('target', '_blank');
                 }
             }
         })
@@ -1535,8 +1552,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-KSO').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-KSO').attr('target', '');
                 } else {
                     $('#chart-filter-file-KSO').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-KSO').attr('target', '_blank');
                 }
             }
         })
@@ -1726,8 +1745,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-MTU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-MTU').attr('target', '');
                 } else {
                     $('#chart-filter-file-MTU').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-MTU').attr('target', '_blank');
                 }
             }
         })
@@ -2048,8 +2069,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-DINV').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-DINV').attr('target', '');
                 } else {
                     $('#chart-filter-file-DINV').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-DINV').attr('target', '_blank');
                 }
             }
         })
@@ -2210,8 +2233,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-AKTK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-AKTK').attr('target', '');
                 } else {
                     $('#chart-filter-file-AKTK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-AKTK').attr('target', '_blank');
                 }
             }
         })
@@ -2371,8 +2396,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-DABU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-DABU').attr('target', '');
                 } else {
                     $('#chart-filter-file-DABU').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-DABU').attr('target', '_blank');
                 }
             }
         })
@@ -2532,8 +2559,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-SE_Kepala_Daerah').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-SE_Kepala_Daerah').attr('target', '');
                 } else {
                     $('#chart-filter-file-SE_Kepala_Daerah').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-SE_Kepala_Daerah').attr('target', '_blank');
                 }
             }
         })
@@ -2685,8 +2714,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-RPK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-RPK').attr('target', '');
                 } else {
                     $('#chart-filter-file-RPK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-RPK').attr('target', '_blank');
                 }
             }
         })
@@ -2846,8 +2877,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-RPBK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-RPBK').attr('target', '');
                 } else {
                     $('#chart-filter-file-RPBK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-RPBK').attr('target', '_blank');
                 }
             }
         })
@@ -3009,8 +3042,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-RPKBS').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-RPKBS').attr('target', '');
                 } else {
                     $('#chart-filter-file-RPKBS').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-RPKBS').attr('target', '_blank');
                 }
             }
         })
@@ -3169,8 +3204,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-RPBWP').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-RPBWP').attr('target', '');
                 } else {
                     $('#chart-filter-file-RPBWP').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-RPBWP').attr('target', '_blank');
                 }
             }
         })
@@ -3353,8 +3390,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-RPKBMK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-RPKBMK').attr('target', '');
                 } else {
                     $('#chart-filter-file-RPKBMK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-RPKBMK').attr('target', '_blank');
                 }
             }
         })
@@ -3517,8 +3556,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-PPK').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-PPK').attr('target', '');
                 } else {
                     $('#chart-filter-file-PPK').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-PPK').attr('target', '_blank');
                 }
             }
         })
@@ -3702,8 +3743,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-TKK_AHLI').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-TKK_AHLI').attr('target', '');
                 } else {
                     $('#chart-filter-file-TKK_AHLI').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-TKK_AHLI').attr('target', '_blank');
                 }
             }
         })
@@ -3889,8 +3932,10 @@ $(document).ready(function() {
                 // console.log(data.data[0])
                 if (data.data[0] == undefined) {
                     $('#chart-filter-file-TKK_TERAMPIL').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                    $('#chart-filter-file-TKK_TERAMPIL').attr('target', '');
                 } else {
                     $('#chart-filter-file-TKK_TERAMPIL').attr('href', data.data[0].pathfile);
+                    $('#chart-filter-file-TKK_TERAMPIL').attr('target', '_blank');
                 }
             }
         })

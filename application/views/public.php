@@ -227,7 +227,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container">
                                         <a href="" id="chart-filter-file-mitra" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-mitra" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -292,7 +292,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-Balai_Sektoral" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-Balai_Sektoral" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -361,7 +361,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-opd" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-opd" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -420,7 +420,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-vokasi" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-vokasi" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -484,7 +484,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-Asosiasi_Profesi" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-Asosiasi_Profesi" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -546,7 +546,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-ABUJK" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-ABUJK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -610,7 +610,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-lapas" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-lapas" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -670,7 +670,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-instansi_lain" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-instansi_lain" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -738,7 +738,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-KSO" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-KSO" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -806,7 +806,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-MTU" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-MTU" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -877,7 +877,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-DIV" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-DIV" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -938,7 +938,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-DINV" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-DINV" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1008,7 +1008,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-AKTK" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-AKTK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1068,7 +1068,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-DABU" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-DABU" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1138,7 +1138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container">
                                         <a href="" id="chart-filter-file-SE_Kepala_Daerah" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-SE_Kepala_Daerah" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1214,7 +1214,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-RPK" type="button"
-                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                                 File</a>
                                             <a id="download-chart-RPK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1275,7 +1275,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-RPBK" type="button"
-                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                                 File</a>
                                             <a id="download-chart-RPBK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1345,7 +1345,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-PPK" type="button"
-                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                                 File</a>
                                             <a id="download-chart-PPK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1407,7 +1407,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-RPBWP" type="button"
-                                                class="btn btn-warning float-right bg-flat-color-1">Download
+                                                class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                                 File</a>
                                             <a id="download-chart-RPBWP" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1479,7 +1479,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-RPKBMK" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-RPKBMK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1549,7 +1549,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-RPKBS" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-RPKBS" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1618,7 +1618,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-TKK_AHLI" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-TKK_AHLI" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
@@ -1688,7 +1688,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-TKK_TERAMPIL" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
                                             File</a>
                                         <a id="download-chart-TKK_TERAMPIL" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
