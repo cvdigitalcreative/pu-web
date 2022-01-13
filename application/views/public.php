@@ -1792,9 +1792,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <h3>Balai Jasa Konstruksi Wilayah II Palembang</h3>
                             <p>Layanan Sosial Media Kami.</p>
                             <div class="social-links">
-                                <a href="Balai Jasa Konstruksi Wilayah II" class="facebook"><i
+                                <a href="https://www.facebook.com/balai.palembang.7" target="_blank" class="facebook"><i
                                         class="bi bi-facebook"></i></a>
-                                <a href="https://instagram.com/pupr_bjkw2_palembang" class="instagram" target-blank><i
+                                <a href="https://instagram.com/pupr_bjkw2_palembang" target="_blank" class="instagram" target-blank><i
                                         class="bi bi-instagram"></i></a>
                             </div>
                         </div>
@@ -1804,8 +1804,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="info">
                             <div>
                                 <i class="ri-map-pin-line"></i>
-                                <p>Jl. Kasnariansyah, No. 78, KM 4.5, Kel. 20 Ilir, Kec. Ilir Timur I, <br>Kota
-                                    Palembang, Sumatera Selatan, Indonesia</p>
+                                <p> <a href="https://goo.gl/maps/bCC4fWupRY4agv3z6" target="_blank">Jl. Kasnariansyah, No. 78, KM 4.5, Kel. 20 Ilir, Kec. Ilir Timur I, <br>Kota
+                                    Palembang, Sumatera Selatan, Indonesia</a></p>
                             </div>
 
                             <!-- <div>
@@ -1818,8 +1818,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <p>+62 711 4169 63</p>
                             </div>
                             <div>
-                                <i class="ri-mail-send-line"></i>
-                                <p>bjkw2plg@pu.go.id</p>
+                                <i class="ri-mail-send-line"><a href="mailto:bjkw2plg@pu.go.id"></a></i>
+                                <p><a href="mailto:bjkw2plg@pu.go.id">bjkw2plg@pu.go.id</a></p>
                             </div>
 
                         </div>
