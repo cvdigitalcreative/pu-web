@@ -1430,7 +1430,7 @@ $(document).ready(function() {
 
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
-                        $('#KSO').attr('height', `300vh`);
+                        $('#KSO').attr('height', `200vh`);
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -1509,7 +1509,7 @@ $(document).ready(function() {
                                     display: display_y_axis
 
                                 },
-                                barPercentage: 1,
+                                barPercentage: 0.8,
                                 categoryPercentage: 0.7,
 
                             }],
@@ -1520,7 +1520,7 @@ $(document).ready(function() {
                                     display: display_x_axis
 
                                 },
-                                barPercentage: 1,
+                                barPercentage: 0.8,
                                 categoryPercentage: 0.7,
                             }]
                         }
@@ -1700,7 +1700,7 @@ $(document).ready(function() {
                                     display: display_y_axis
 
                                 },
-                                barPercentage: 1,
+                                barPercentage: 0.8,
                                 categoryPercentage: 0.7,
 
                             }],
@@ -1711,7 +1711,7 @@ $(document).ready(function() {
                                     display: display_x_axis
 
                                 },
-                                barPercentage: 1,
+                                barPercentage: 0.8,
                                 categoryPercentage: 0.7,
                             }]
                         }
@@ -3787,7 +3787,7 @@ $(document).ready(function() {
 
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
-                        $('#TKK_TERAMPIL').attr('height', `500vh`);
+                        $('#TKK_TERAMPIL').attr('height', `2500vh`);
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -3825,6 +3825,7 @@ $(document).ready(function() {
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
+                        $('#TKK_TERAMPIL').attr('height', `200`);
                         var display_y_axis = false
                         var display_x_axis = true
                     }

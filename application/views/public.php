@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </li>
                             <li><a class="nav-link scrollto " href="#lapas_1">Lapas</a></li>
                             <li><a class="nav-link scrollto " href="#instansi_lain_1">Instansi Lain</a></li>
-                            <li><a class="nav-link scrollto " href="#kso_1">KSO</a></li>
+                            <li><a class="nav-link scrollto " href="#kso_1">KSO/PKS</a></li>
                             <li><a class="nav-link scrollto " href="#mtu_1">MTU</a></li>
 
                         </ul>
@@ -365,7 +365,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section>
         <!-- ======= OPD dan Vokasi ======= -->
-        <section id="opd_1" class="counts mt-3">
+        <section id="opd_1" class="count">
             <div class="container">
                 <div class="row">
 
@@ -742,7 +742,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
         <!-- ======= Capaian Output Daerah ======= -->
-        <section id="about" class="about">
+        <section id="kso_1" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -810,7 +810,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Capaian Output Section -->
-        <section id="about" class="about">
+        <section id="mtu_1" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -1008,7 +1008,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Instruktur Section -->
         <!-- ======= Asesor ======= -->
-        <section id="asesor" class="counts mt-5">
+        <section id="asesor" class="counts">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Asesor</h2>
@@ -1211,7 +1211,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- SE Kepala Daerah Section -->
         <!-- Balai Sektoral Kementerian PUPR Section -->
-
         <!-- ======= Capaian Output Section ======= -->
         <section id="capaian_output" class="services">
             <div class="container">
@@ -1349,9 +1348,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Capaian Output Section -->
 
-
         <!-- ======= Capaian Output Section ======= -->
-        <section id="services" class="services">
+        <section id="ppp_1" class="services">
             <div class="container">
                 <div class="row">
                     <div class="col d-flex">
@@ -1484,7 +1482,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- End Capaian Output Section -->
 
         <!-- ======= Capaian Output Daerah ======= -->
-        <section id="about" class="about">
+        <section id="RPKBMK_1" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -1554,7 +1552,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Capaian Output Section -->
         <!-- ======= Capaian Output Daerah ======= -->
-        <section id="capaian_output" class="about">
+        <section id="RPKBJK_1" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -1623,7 +1621,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Capaian Output Section -->
         <!-- ======= Capaian Output Daerah ======= -->
-        <section id="capaian_output" class="about">
+        <section id="TKK_AHLI_1" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -1693,7 +1691,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Capaian Output Section -->
-        <section id="capaian_output" class="about">
+        <section id="TKK_TERAMPIL_1" class="about">
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -1763,8 +1761,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Capaian Output Section -->
+        <section id="her">
+            <div class="container">
 
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Our Team</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                </div>
 
+            </div>
+        </section><!-- End Capaian Output Section -->
+        <div id="her">
+
+            <img id="her" src="<?=base_url('assets/image/foto_bersama.jpg')?>" width="100%" height="50%" alt="">
+
+        </div>
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">

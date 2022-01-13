@@ -18,6 +18,31 @@ section#clients {
 }
 
 section#capaian_output {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#ppp_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#RPKBMK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#RPKBJK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#TKK_AHLI_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#TKK_TERAMPIL_1 {
     background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
     background-size: 100% 100%;
 }
@@ -33,8 +58,48 @@ div#balai {
 }
 
 section#balai_pupr {
-    background-color: rgb(245, 169, 29, 0.9);
-    background-size: 500px 700px;
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#opd_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#asosiasi_profesi {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#lapas_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#kso_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#mtu_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#instruktur {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#asesor {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#se_kepala_daerah {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
 }
 
 section#counts1 {
@@ -217,6 +282,17 @@ div.loader_KSO {
     animation: spin 1s linear infinite;
 }
 
+div.loader_MTU {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
 div.loader_DIV {
     border: 16px solid #f3f3f3;
     /* Light grey */
@@ -360,6 +436,17 @@ div.loader_TKK_AHLI {
     animation: spin 1s linear infinite;
 }
 
+div.loader_TKK_TERAMPIL {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -375,10 +462,6 @@ section#pricing {
 
 section#services {
     background-color: rgb(245, 169, 29);
-}
-
-section#instruktur {
-    background-color: #4aa3df;
 }
 
 #services .section-title h2 {
