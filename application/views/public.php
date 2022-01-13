@@ -249,7 +249,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Mitra</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Mitra</h6>
                             </div>
 
 
@@ -760,7 +760,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">KSO/PKS</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">KSO/PKS</h6>
                             </div>
 
 
@@ -828,7 +828,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Mobile Training Unit (MTU)</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Mobile Training Unit (MTU)</h6>
                             </div>
 
 
@@ -1160,7 +1160,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">SE Kepala Daerah</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">SE Kepala Daerah</h6>
                             </div>
 
 
@@ -1432,7 +1432,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-black" id="">Realisasi Peserta Berdasarkan
+                                    <h6 class="m-0 font-weight-bold text-black" id="">Rekap Peserta Berdasarkan
                                         Wilayah dan Pembiayaan</h6>
                                 </div>
                                 <div class="card-body" id="RPBWP_1">
@@ -1502,7 +1502,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Realisasi Peserta Kegiatan
+                                <h6 class="m-0 font-weight-bold text-black" id="">Rekap Peserta Kegiatan
                                     Berdasarkan Mitra Kerja</h6>
                             </div>
 
@@ -1572,7 +1572,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Rekap Pelaksanaan Kegiatan
+                                <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan
                                     Berdasarkan Jenis Kegiatan</h6>
                             </div>
 
@@ -1641,7 +1641,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Jumlah TKK Ahli Terlatih dan
+                                <h6 class="m-0 font-weight-bold text-black" id="">Jumlah TKK Ahli Terlatih dan
                                     Tersertifikasi Berdasarkan Jabatan Kerja</h6>
                             </div>
 
@@ -1711,7 +1711,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">Jumlah TKK Terampil Terlatih dan
+                                <h6 class="m-0 font-weight-bold text-black" id="">Jumlah TKK Terampil Terlatih dan
                                     Tersertifikasi Berdasarkan Jabatan Kerja</h6>
                             </div>
 
@@ -1788,24 +1788,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="contact-about">
                             <h3>Balai Jasa Konstruksi Wilayah II Palembang</h3>
                             <p>Layanan Sosial Media Kami.</p>
                             <div class="social-links">
-                                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                                <a href="Balai Jasa Konstruksi Wilayah II" class="facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="https://instagram.com/pupr_bjkw2_palembang" class="instagram" target-blank><i class="bi bi-instagram"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-lg-6 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
                         <div class="info">
                             <div>
                                 <i class="ri-map-pin-line"></i>
-                                <p>20 Ilir D. IV, Ilir Timur I, <br>Kota Palembang, Sumatera Selatan, Indonesia</p>
+                                <p>Jl. Kasnariansyah, No. 78, KM 4.5, Kel. 20 Ilir, Kec. Ilir Timur I, <br>Kota Palembang, Sumatera Selatan, Indonesia</p>
                             </div>
 
                             <!-- <div>
@@ -1815,33 +1813,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div>
                                 <i class="ri-phone-line"></i>
-                                <p>+62 627 11416963</p>
+                                <p>+62 711 4169 63</p>
+                            </div>
+                            <div>
+                                <i class="ri-mail-send-line"></i>
+                                <p>bjkw2plg@pu.go.id</p>
                             </div>
 
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Masukan Nama"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Masukan Email" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Judul"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Isi Pesan"
-                                    required></textarea>
-                            </div>
-                            <div class="text-center"><button type="submit">Kirim Pesan</button></div>
-                        </form>
-                    </div>
 
                 </div>
 
@@ -1862,12 +1843,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         Palembang
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-                        <a href="#intro" class="scrollto">Home</a>
-                        <a href="#about" class="scrollto">About</a>
-                    </nav>
-                </div>
+            
             </div>
         </div>
     </footer><!-- End Footer -->
