@@ -82,13 +82,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#instruktur">Vokasi</a></li>
-                            <li><a href="#dinv">Non Vokasi</a></li>
+                            <li><a href="#instruktur">Non Vokasi</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="#asesor"><span>Asesor</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#aktk_1">AKTK</a></li>
-                            <li><a href="#abu_1">ABU</a></li>
+                            <li><a href="#asesor">AKTK</a></li>
+                            <li><a href="#asesor">ABU</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
@@ -103,12 +103,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <span class="sr-only">2020</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">All</a>
-                                        <a class="dropdown-item" href="#">Sumatera Selatan</a>
-                                        <a class="dropdown-item" href="#">Kep. Bangka Belitung</a>
-                                        <a class="dropdown-item" href="#">Jambi</a>
-                                        <a class="dropdown-item" href="#">Bengkulu</a>
-                                        <a class="dropdown-item" href="#">Jambi</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf" target="_blank">All</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_SUMSEL_TA_2020_1642079242.pdf" target="_blank">Sumatera Selatan</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf" target="_blank">Kep. Bangka Belitung</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf" target="_blank">Jambi</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf" target="_blank">Bengkulu</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_Lampung_TA_2020_1642079213.pdf" target="_blank">Lampung</a>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-white">
@@ -122,37 +122,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <span class="sr-only">2021</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">All</a>
-                                        <a class="dropdown-item" href="#">Sumatera Selatan</a>
-                                        <a class="dropdown-item" href="#">Kep. Bangka Belitung</a>
-                                        <a class="dropdown-item" href="#">Jambi</a>
-                                        <a class="dropdown-item" href="#">Bengkulu</a>
-                                        <a class="dropdown-item" href="#">Jambi</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Wilayah_GABUNGAN_TA_2021_(FINAL)_(1)_1642079139.pdf" target="_blank">All</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf" target="_blank">Sumatera Selatan</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf" target="_blank">Kep. Bangka Belitung</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf" target="_blank">Jambi</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf" target="_blank">Bengkulu</a>
+                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/05a_-_Laporan_Wilayah_Prov._LAMPUNG_TA_2021_(FINAL)_1642078848.pdf" target="_blank">Lampung</a>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-white">
                                     2021
                                 </button>
                             </div>
-                            <div class="btn-group">
-                                <div class="btn-group dropleft" role="group">
-                                    <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">2022</span>
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">All</a>
-                                        <a class="dropdown-item" href="#">Sumatera Selatan</a>
-                                        <a class="dropdown-item" href="#">Kep. Bangka Belitung</a>
-                                        <a class="dropdown-item" href="#">Jambi</a>
-                                        <a class="dropdown-item" href="#">Bengkulu</a>
-                                        <a class="dropdown-item" href="#">Jambi</a>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-white">
-                                    2022
-                                </button>
-                            </div>
+                            
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto " href="#contact">Hubungi Kami</a></li>
