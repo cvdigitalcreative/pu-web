@@ -6,40 +6,39 @@ $(document).ready(function() {
 
 
 
-    let backgrundcolor_1 = ['rgb(253, 50, 139, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 150, 39, 0.8)', 'rgb(241, 50, 173, 0.8)', 'rgb(23, 34, 90, 0.8)', 'rgb(255, 220, 175, 0.8)', 'rgb(120, 212, 36, 0.8)', 'rgb(25, 52, 19, 0.8)', 'rgb(55, 21, 19, 0.8)',
-        'rgb(2, 110, 39, 0.8)', 'rgb(24, 51, 13, 0.8)', 'rgb(25, 31, 10, 0.8)', 'rgb(21, 22, 175, 0.8)', 'rgb(120, 20, 31, 0.8)', , 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)', 'rgb(253, 50, 139, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 150, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(25, 31, 90, 0.8)', 'rgb(255, 220, 175, 0.8)', 'rgb(120, 250, 36, 0.8)'
+    let backgrundcolor_1 = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)',
+        'rgb(165, 165, 165, 1)', 'rgb(255, 192, 0, 1)', 'rgb(68, 114, 196, 1)', 'rgb(112, 173, 71, 1)', 'rgb(65, 151, 202, 1)', 'rgb(211, 121, 25, 1)', 'rgb(89, 91, 130, 1)', 'rgb(208, 175, 0, 1)', 'rgb(67, 115, 180, 1)', 'rgb(114, 163, 75, 1)', 'rgb(127, 192, 232, 1)', 'rgb(241, 151, 90, 1)'
     ];
-    let backgrundcolor_2 = ['rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
-        'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
-        'rgb(25, 105, 39, 0.8)', 'rgb(24, 151, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
-        'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
-        'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)',
+    let backgrundcolor_2 = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)',
+        'rgb(165, 165, 165, 1)', 'rgb(255, 192, 0, 1)', 'rgb(68, 114, 196, 1)', 'rgb(112, 173, 71, 1)', 'rgb(65, 151, 202, 1)', 'rgb(211, 121, 25, 1)', 'rgb(89, 91, 130, 1)', 'rgb(208, 175, 0, 1)', 'rgb(67, 115, 180, 1)', 'rgb(114, 163, 75, 1)', 'rgb(127, 192, 232, 1)', 'rgb(241, 151, 90, 1)'
     ];
-    let backgrundcolor_3 = ['rgb(0, 255, 0, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(0, 255, 0, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(0, 255, 0, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(0, 255, 0, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)',
+    let backgrundcolor_3 = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)',
+        'rgb(165, 165, 165, 1)', 'rgb(255, 192, 0, 1)', 'rgb(68, 114, 196, 1)', 'rgb(112, 173, 71, 1)', 'rgb(65, 151, 202, 1)', 'rgb(211, 121, 25, 1)', 'rgb(89, 91, 130, 1)', 'rgb(208, 175, 0, 1)', 'rgb(67, 115, 180, 1)', 'rgb(114, 163, 75, 1)', 'rgb(127, 192, 232, 1)', 'rgb(241, 151, 90, 1)'
     ];
-    let backgrundcolor_4 = ['rgb(0, 250, 0, 0.8)', 'rgb(17, 74, 232, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(0, 250, 0, 0.8)', 'rgb(17, 74, 212, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(125, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(0, 250, 0, 0.8)', 'rgb(17, 74, 232, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(55, 220, 175, 0.8)',
+    let backgrundcolor_4 = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)',
+        'rgb(165, 165, 165, 1)', 'rgb(255, 192, 0, 1)', 'rgb(68, 114, 196, 1)', 'rgb(112, 173, 71, 1)', 'rgb(65, 151, 202, 1)', 'rgb(211, 121, 25, 1)', 'rgb(89, 91, 130, 1)', 'rgb(208, 175, 0, 1)', 'rgb(67, 115, 180, 1)', 'rgb(114, 163, 75, 1)', 'rgb(127, 192, 232, 1)', 'rgb(241, 151, 90, 1)'
     ];
-    let backgrundcolor_5 = ['rgb(255, 35, 139, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(0, 255, 0, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(255, 225, 19, 0.8)', 'rgb(12, 15, 136, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(0, 250, 0, 0.8)', 'rgb(17, 74, 232, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(257, 71, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(24, 150, 112, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
-        'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)',
+    let backgrundcolor_5 = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)',
+        'rgb(165, 165, 165, 1)', 'rgb(255, 192, 0, 1)', 'rgb(68, 114, 196, 1)', 'rgb(112, 173, 71, 1)', 'rgb(65, 151, 202, 1)', 'rgb(211, 121, 25, 1)', 'rgb(89, 91, 130, 1)', 'rgb(208, 175, 0, 1)', 'rgb(67, 115, 180, 1)', 'rgb(114, 163, 75, 1)', 'rgb(127, 192, 232, 1)', 'rgb(241, 151, 90, 1)'
     ];
-    let backgrundcolor_6 = ['rgb(44, 255, 65, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(44, 255, 65, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(257, 41, 90, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(24, 50, 173, 0.8)', 'rgb(0, 255, 0, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(255, 225, 19, 0.8)', 'rgb(12, 15, 136, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(12, 25, 136, 0.8)', 'rgb(0, 250, 0, 0.8)', 'rgb(17, 74, 232, 0.8)', 'rgb(255, 225, 19, 0.8)',
-        'rgb(25, 15, 39, 0.8)', 'rgb(257, 71, 90, 0.8)', 'rgb(55, 220, 175, 0.8)', 'rgb(24, 150, 112, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)', 'rgb(55, 220, 17, 0.8)', 'rgb(120, 25, 136, 0.8)', 'rgb(167, 90, 199, 0.8)', 'rgb(255, 25, 19, 0.8)',
-        'rgb(25, 105, 39, 0.8)', 'rgb(24, 150, 13, 0.8)', 'rgb(27, 241, 90, 0.8)',
+    let backgrundcolor_6 = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)',
+        'rgb(165, 165, 165, 1)', 'rgb(255, 192, 0, 1)', 'rgb(68, 114, 196, 1)', 'rgb(112, 173, 71, 1)', 'rgb(65, 151, 202, 1)', 'rgb(211, 121, 25, 1)', 'rgb(89, 91, 130, 1)', 'rgb(208, 175, 0, 1)', 'rgb(67, 115, 180, 1)', 'rgb(114, 163, 75, 1)', 'rgb(127, 192, 232, 1)', 'rgb(241, 151, 90, 1)'
     ];
+    let backgrundcolor_mitra = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)',
+        'rgb(165, 165, 165, 1)', 'rgb(255, 192, 0, 1)', 'rgb(68, 114, 196, 1)', 'rgb(112, 173, 71, 1)', 'rgb(65, 151, 202, 1)', 'rgb(211, 121, 25, 1)', 'rgb(89, 91, 130, 1)', 'rgb(208, 175, 0, 1)', 'rgb(67, 115, 180, 1)', 'rgb(114, 163, 75, 1)', 'rgb(127, 192, 232, 1)', 'rgb(241, 151, 90, 1)'
+    ];
+    let backgrundcolor_RPKBMK = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)'
 
+    ];
+    let backgrundcolor_RPKBJK = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)'
+
+    ];
+    let backgrundcolor_TKK_AHLI = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)'
+
+    ];
+    let backgrundcolor_TKK_TERAMPIL = ['rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)', 'rgb(91, 155, 213, 1)', 'rgb(237, 125, 49, 1)'
+
+    ];
     let bordercolor_1 = ['rgb(255, 255, 255, 0.2)', 'rgb(255, 225, 19, 0.2)',
         'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)', 'rgb(167, 90, 199, 0.2)', 'rgb(255, 25, 19, 0.2)',
         'rgb(25, 105, 39, 0.2)', 'rgb(24, 150, 13, 0.2)', 'rgb(27, 241, 90, 0.2)', 'rgb(55, 220, 17, 0.2)', 'rgb(120, 25, 136, 0.2)', 'rgb(255, 255, 255, 0.2)', 'rgb(255, 225, 19, 0.2)',
@@ -130,7 +129,7 @@ $(document).ready(function() {
 
                         } while (i < data.data.length);
 
-                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_2[j] + "\", \"borderColor\": \"" + bordercolor_3[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_mitra[j] + "\", \"borderColor\": \"" + bordercolor_3[j] + "\", \"data\": [" + jumlah_data + "]}"
                         dataset.push(JSON.parse(temp))
 
                     }
@@ -144,7 +143,7 @@ $(document).ready(function() {
                     var max_1 = 0;
                     var dataset = [{
                         label: "Mitra Balai Jasa Konstruksi Wilayah II Palembang",
-                        backgroundColor: backgrundcolor_2,
+                        backgroundColor: backgrundcolor_mitra,
                         borderColor: bordercolor_2,
 
                         data: value
@@ -294,7 +293,7 @@ $(document).ready(function() {
 
                         } while (i < data.data.length);
 
-                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_1[j] + "\", \"borderColor\": \"" + bordercolor_6[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_mitra[j] + "\", \"borderColor\": \"" + bordercolor_6[j] + "\", \"data\": [" + jumlah_data + "]}"
                         dataset.push(JSON.parse(temp))
 
                     }
@@ -308,7 +307,7 @@ $(document).ready(function() {
                     var max_1 = 0;
                     var dataset = [{
                         label: "Balai Sektoral Kementerian PUPR",
-                        backgroundColor: backgrundcolor_2,
+                        backgroundColor: backgrundcolor_mitra,
                         borderColor: bordercolor_2,
                         data: value
                     }];
@@ -1510,7 +1509,7 @@ $(document).ready(function() {
                                     display: display_y_axis
 
                                 },
-                                barPercentage: 0.8,
+                                barPercentage: 1,
                                 categoryPercentage: 0.7,
 
                             }],
@@ -1521,7 +1520,7 @@ $(document).ready(function() {
                                     display: display_x_axis
 
                                 },
-                                barPercentage: 0.8,
+                                barPercentage: 1,
                                 categoryPercentage: 0.7,
                             }]
                         }
@@ -1563,6 +1562,197 @@ $(document).ready(function() {
     document.getElementById("download-chart-KSO").addEventListener('click', function() {
         var image = document.getElementById("KSO").toDataURL("image/png");
         var a = document.getElementById("download-chart-KSO");
+        a.href = image;
+    });
+
+
+    function drawChartMTU(id_provinsi, kategori, chart_type) {
+
+        $.ajax({
+            beforeSend: function() {
+                $('.loader_MTU').show();
+            },
+            complete: function() {
+                $('.loader_MTU').hide();
+            },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                if (id_provinsi == 0) {
+                    var sets = new Set();
+
+                    var value = [];
+                    var labels = [];
+                    var max_1 = 0;
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_6[j] + "\", \"borderColor\": \"" + bordercolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+                    if (chart_type == 'horizontalBar') {
+                        $('#MTU').attr('height', `300vh`);
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        $('#MTU').attr('height', `100`);
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var max_1 = 0;
+                    var dataset = [{
+
+                        label: "MTU",
+                        backgroundColor: backgrundcolor_2,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                    $('#MTU').attr('height', `100`);
+                    if (chart_type == 'horizontalBar') {
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+                }
+
+                var ctx = document.getElementById('MTU').getContext('2d');
+                MTU = new Chart(ctx, {
+                    type: chart_type,
+                    data: {
+                        labels: label,
+                        datasets: dataset,
+                    },
+                    options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+                                align: 'end',
+
+
+                                font: {
+                                    size: 12,
+                                    style: 'italic',
+                                    family: ["Century Gothic", "sans-serif"]
+
+                                }
+
+                            }
+                        },
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: display_y_axis
+
+                                },
+                                barPercentage: 1,
+                                categoryPercentage: 0.7,
+
+                            }],
+                            xAxes: [{
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: display_x_axis
+
+                                },
+                                barPercentage: 1,
+                                categoryPercentage: 0.7,
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                // console.log(data.data[0])
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-MTU').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-MTU').attr('href', data.data[0].pathfile);
+                }
+            }
+        })
+
+    }
+    drawChartMTU(99, 28, 'bar');
+
+    $('#chart-filter-provinsi-MTU').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-MTU').val()
+        var chart_type = document.getElementById("chartTypeMTU").value
+        MTU.destroy();
+        drawChartMTU(provinsi, 28, chart_type);
+    })
+
+
+    $('#chartTypeMTU').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-MTU").value
+        var chart_type = document.getElementById("chartTypeMTU").value
+        MTU.destroy();
+        drawChartMTU(provinsi1, 28, chart_type);
+    })
+
+    document.getElementById("download-chart-MTU").addEventListener('click', function() {
+        var image = document.getElementById("MTU").toDataURL("image/png");
+        var a = document.getElementById("download-chart-MTU");
         a.href = image;
     });
 
@@ -1843,7 +2033,7 @@ $(document).ready(function() {
                             }],
                             xAxes: [{
                                 barPercentage: 0.6,
-                                categoryPercentage: 0.8,
+                                categoryPercentage: 1,
 
                             }]
                         }
@@ -2733,7 +2923,7 @@ $(document).ready(function() {
                             i++;
 
                         } while (i < data.data.length);
-                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_5[j] + "\", \"borderColor\": \"" + bordercolor_6[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_RPKBJK[j] + "\", \"borderColor\": \"" + bordercolor_6[j] + "\", \"data\": [" + jumlah_data + "]}"
                         dataset.push(JSON.parse(temp))
 
                     }
@@ -2748,7 +2938,7 @@ $(document).ready(function() {
                     var dataset = [{
 
                         label: "Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan",
-                        backgroundColor: backgrundcolor_2,
+                        backgroundColor: backgrundcolor_RPKBJK,
                         borderColor: bordercolor_2,
                         data: value
                     }];
@@ -2804,7 +2994,7 @@ $(document).ready(function() {
                             }],
                             xAxes: [{
                                 barPercentage: 0.8,
-                                categoryPercentage: 1,
+                                categoryPercentage: 0.8,
 
                             }]
                         }
@@ -2964,7 +3154,7 @@ $(document).ready(function() {
                             }],
                             xAxes: [{
                                 barPercentage: 0.8,
-                                categoryPercentage: 1,
+                                categoryPercentage: 0.8,
 
                             }]
                         }
@@ -3055,7 +3245,7 @@ $(document).ready(function() {
                             i++;
 
                         } while (i < data.data.length);
-                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_6[j] + "\", \"borderColor\": \"" + bordercolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_RPKBMK[j] + "\", \"borderColor\": \"" + bordercolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
                         dataset.push(JSON.parse(temp))
 
                     }
@@ -3080,7 +3270,7 @@ $(document).ready(function() {
                     var dataset = [{
 
                         label: "Rekap Pelaksanaan Kegiatan Berdasarkan Mitra Kerja",
-                        backgroundColor: backgrundcolor_2,
+                        backgroundColor: backgrundcolor_RPKBMK,
                         borderColor: bordercolor_2,
                         data: value
                     }];
@@ -3352,6 +3542,379 @@ $(document).ready(function() {
     document.getElementById("download-chart-PPK").addEventListener('click', function() {
         var image = document.getElementById("PPK").toDataURL("image/png");
         var a = document.getElementById("download-chart-PPK");
+        a.href = image;
+    });
+
+    function drawChartTKK_AHLI(id_provinsi, kategori, chart_type) {
+
+        $.ajax({
+            beforeSend: function() {
+                $('.loader_TKK_AHLI').show();
+            },
+            complete: function() {
+                $('.loader_TKK_AHLI').hide();
+            },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                if (id_provinsi == 0) {
+                    var sets = new Set();
+
+                    var value = [];
+                    var labels = [];
+                    var max_1 = 0;
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_TKK_AHLI[j] + "\", \"borderColor\": \"" + bordercolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+                    if (chart_type == 'horizontalBar') {
+                        $('#TKK_AHLI').attr('height', `500vh`);
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        $('#TKK_AHLI').attr('height', `100`);
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var max_1 = 0;
+                    var dataset = [{
+
+                        label: "Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja",
+
+                        backgroundColor: backgrundcolor_TKK_AHLI,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                    $('#TKK_AHLI').attr('height', `200`);
+                    if (chart_type == 'horizontalBar') {
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+                }
+
+                var ctx = document.getElementById('TKK_AHLI').getContext('2d');
+                TKK_AHLI = new Chart(ctx, {
+                    type: document.getElementById("chartTypeTKK_AHLI").value,
+                    data: {
+                        labels: label,
+                        datasets: dataset,
+                    },
+                    options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+                                align: 'end',
+
+
+                                font: {
+                                    size: 12,
+                                    style: 'italic',
+                                    family: ["Century Gothic", "sans-serif"]
+
+                                }
+
+                            }
+                        },
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: display_y_axis
+                                },
+                                barPercentage: 0.6,
+                                categoryPercentage: 0.9,
+                            }],
+                            xAxes: [{
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: display_x_axis
+                                },
+                                barPercentage: 0.7,
+                                categoryPercentage: 0.9,
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                // console.log(data.data[0])
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-TKK_AHLI').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-TKK_AHLI').attr('href', data.data[0].pathfile);
+                }
+            }
+        })
+
+    }
+    drawChartTKK_AHLI(99, 25, 'horizontalBar');
+
+    $('#chart-filter-provinsi-TKK_AHLI').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-TKK_AHLI').val()
+        var chart_type = document.getElementById("chartTypeTKK_AHLI").value
+        TKK_AHLI.destroy();
+        drawChartTKK_AHLI(provinsi, 25, chart_type);
+    })
+
+
+    $('#chartTypeTKK_AHLI').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_AHLI").value
+        var chart_type = document.getElementById("chartTypeTKK_AHLI").value
+        TKK_AHLI.destroy();
+        drawChartTKK_AHLI(provinsi1, 25, chart_type);
+    })
+
+    document.getElementById("download-chart-TKK_AHLI").addEventListener('click', function() {
+        var image = document.getElementById("TKK_AHLI").toDataURL("image/png");
+        var a = document.getElementById("download-chart-TKK_AHLI");
+        a.href = image;
+    });
+
+    function drawChartTKK_TERAMPIL(id_provinsi, kategori, chart_type) {
+
+        $.ajax({
+            beforeSend: function() {
+                $('.loader_TKK_TERAMPIL').show();
+            },
+            complete: function() {
+                $('.loader_TKK_TERAMPIL').hide();
+            },
+            url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                if (id_provinsi == 0) {
+                    var sets = new Set();
+
+                    var value = [];
+                    var labels = [];
+                    var max_1 = 0;
+
+                    var dataset = [];
+
+                    i = 0;
+                    do {
+                        if (!labels.includes(data.data[i].nama)) {
+                            labels.push(data.data[i].nama);
+                        }
+
+                        sets.add(data.data[i].nama_provinsi);
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+
+                    for (let j = 0; j < labels.length; j++) {
+                        var jumlah_data = [];
+                        i = 0;
+                        do {
+                            if (labels[j] == data.data[i].nama) {
+                                if (data.data[i].jumlah > max_1) {
+                                    max_1 = data.data[i].jumlah;
+                                }
+                                jumlah_data.push(data.data[i].jumlah);
+                            }
+
+
+                            i++;
+
+                        } while (i < data.data.length);
+                        var temp = "{\"label\": \"" + labels[j] + "\", \"backgroundColor\": \"" + backgrundcolor_TKK_TERAMPIL[j] + "\", \"borderColor\": \"" + bordercolor_2[j] + "\", \"data\": [" + jumlah_data + "]}"
+                        dataset.push(JSON.parse(temp))
+
+                    }
+
+                    var label = Array.from(sets);
+                    if (chart_type == 'horizontalBar') {
+                        $('#TKK_TERAMPIL').attr('height', `500vh`);
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        $('#TKK_TERAMPIL').attr('height', `100`);
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+
+
+
+                } else {
+                    var label = [];
+                    var value = [];
+                    var max_1 = 0;
+                    var dataset = [{
+
+                        label: "Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja",
+                        backgroundColor: backgrundcolor_TKK_TERAMPIL,
+                        borderColor: bordercolor_2,
+                        data: value
+                    }];
+                    i = 0;
+                    do {
+
+                        label.push(data.data[i].nama);
+                        if (data.data[i].jumlah > max_1) {
+                            max_1 = data.data[i].jumlah;
+                        }
+                        value.push(data.data[i].jumlah);
+                        i++;
+
+                    } while (i < data.data.length);
+                    $('#TKK_TERAMPIL').attr('height', `600`);
+                    if (chart_type == 'horizontalBar') {
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
+                }
+
+                var ctx = document.getElementById('TKK_TERAMPIL').getContext('2d');
+                TKK_TERAMPIL = new Chart(ctx, {
+                    type: document.getElementById("chartTypeTKK_TERAMPIL").value,
+                    data: {
+                        labels: label,
+                        datasets: dataset,
+                    },
+                    options: {
+                        plugins: {
+                            // Change options for ALL labels of THIS CHART
+                            datalabels: {
+                                color: 'rgb(25, 15, 39, 1)',
+                                anchor: 'end',
+                                align: 'end',
+
+
+                                font: {
+                                    size: 12,
+                                    style: 'italic',
+                                    family: ["Century Gothic", "sans-serif"]
+
+                                }
+
+                            }
+                        },
+                        responsive: true,
+                        fill: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: display_y_axis
+                                },
+                                barPercentage: 0.6,
+                                categoryPercentage: 0.9,
+                            }],
+                            xAxes: [{
+                                ticks: {
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: display_x_axis
+                                },
+                                barPercentage: 0.7,
+                                categoryPercentage: 0.9,
+                            }]
+                        }
+                    }
+                });
+            }
+        });
+        $.ajax({
+            url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
+            method: "GET",
+            success: function(data) {
+                // console.log(data.data[0])
+                if (data.data[0] == undefined) {
+                    $('#chart-filter-file-TKK_TERAMPIL').attr('href', `${BASE_URL}Infografis/infografis_data_null`);
+                } else {
+                    $('#chart-filter-file-TKK_TERAMPIL').attr('href', data.data[0].pathfile);
+                }
+            }
+        })
+
+    }
+    drawChartTKK_TERAMPIL(99, 26, 'horizontalBar');
+
+    $('#chart-filter-provinsi-TKK_TERAMPIL').on('change', function() {
+        var provinsi = $('#chart-filter-provinsi-TKK_TERAMPIL').val()
+        var chart_type = document.getElementById("chartTypeTKK_TERAMPIL").value
+        TKK_TERAMPIL.destroy();
+        drawChartTKK_TERAMPIL(provinsi, 26, chart_type);
+    })
+
+
+    $('#chartTypeTKK_TERAMPIL').on('change', function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_TERAMPIL").value
+        var chart_type = document.getElementById("chartTypeTKK_TERAMPIL").value
+        TKK_TERAMPIL.destroy();
+        drawChartTKK_TERAMPIL(provinsi1, 26, chart_type);
+    })
+
+    document.getElementById("download-chart-TKK_TERAMPIL").addEventListener('click', function() {
+        var image = document.getElementById("TKK_TERAMPIL").toDataURL("image/png");
+        var a = document.getElementById("download-chart-TKK_TERAMPIL");
         a.href = image;
     });
 

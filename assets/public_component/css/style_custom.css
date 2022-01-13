@@ -3,6 +3,26 @@ div#asosiasi {
     background-size: 500px 800px;
 }
 
+section#hero {
+    background-image: url('http://localhost/pu-web/assets/image/home1.jpg');
+    background-size: 100% 100%;
+}
+
+section#clients {
+    background-image: url('http://localhost/pu-web/assets/image/2.png');
+    background-size: 100% 100%;
+}
+
+section#capaian_output {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#about {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
 div#balai {
     background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
     background-size: 1000px 600px;
@@ -24,8 +44,8 @@ div#mitra_1 {
 }
 
 div#opd {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
-    background-size: 500px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg.jpg');
+    background-size: 100% 100%;
 }
 
 div#vokasi_1 {
@@ -315,6 +335,17 @@ div.loader_RPKBMK {
 }
 
 div.loader_PPK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_TKK_AHLI {
     border: 16px solid #f3f3f3;
     /* Light grey */
     border-top: 16px solid rgb(245, 169, 29);

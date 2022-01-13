@@ -96,16 +96,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li class="dropdown"><a href="#about"><span>Laporan Infografis</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#balai_pupr">2020</a></li>
-                            <li><a href="#opd_1">2021</a></li>
-                            <li><a href="#vokasi_1">2022</a></li>
                             <div class="btn-group">
                                 <div class="btn-group dropleft" role="group">
                                     <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Provinsi</span>
+                                        <span class="sr-only">2020</span>
                                     </button>
                                     <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">All</a>
                                         <a class="dropdown-item" href="#">Sumatera Selatan</a>
                                         <a class="dropdown-item" href="#">Kep. Bangka Belitung</a>
                                         <a class="dropdown-item" href="#">Jambi</a>
@@ -114,11 +112,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-white">
-                                    Provinsi
+                                2020
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <div class="btn-group dropleft" role="group">
+                                    <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">2021</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">All</a>
+                                        <a class="dropdown-item" href="#">Sumatera Selatan</a>
+                                        <a class="dropdown-item" href="#">Kep. Bangka Belitung</a>
+                                        <a class="dropdown-item" href="#">Jambi</a>
+                                        <a class="dropdown-item" href="#">Bengkulu</a>
+                                        <a class="dropdown-item" href="#">Jambi</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-white">
+                                2021
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <div class="btn-group dropleft" role="group">
+                                    <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">2022</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">All</a>
+                                        <a class="dropdown-item" href="#">Sumatera Selatan</a>
+                                        <a class="dropdown-item" href="#">Kep. Bangka Belitung</a>
+                                        <a class="dropdown-item" href="#">Jambi</a>
+                                        <a class="dropdown-item" href="#">Bengkulu</a>
+                                        <a class="dropdown-item" href="#">Jambi</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-white">
+                                2022
                                 </button>
                             </div>
                         </ul>
                     </li>
+                    <li><a class="nav-link scrollto " href="#contact">Hubungi Kami</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -131,16 +168,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <!-- <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
                     <h1 data-aos="fade-up">Infografis</h1>
                     <h2 data-aos="fade-up" data-aos-delay="400">Balai Jasa Konstruksi Wilayah II Palembang</h2>
                     <div data-aos="fade-up" data-aos-delay="800">
                         <a href="#contact" class="btn-get-started scrollto">Selengkapnya</a>
                     </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+                </div> -->
+                <!-- <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
                     <img src="<?=base_url('assets/image/pupr_logo.png')?>" class="img-fluid animated" alt="">
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -156,42 +193,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#hero">
-                            <img src="<?= base_url();?>assets/illustration/office.png" class="img-fluid" alt=""
+                            <img src="<?= base_url();?>assets/illustration/home.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" data-aos-delay="400">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#about">
-                            <img src="<?= base_url();?>assets/illustration/deal.png" class="img-fluid" alt=""
+                            <img src="<?= base_url();?>assets/illustration/mitra.png" class="img-fluid" alt=""
                                 data-aos="zoom-in">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#instruktur">
-                            <img src="<?= base_url();?>assets/illustration/instructor.png" class="img-fluid" alt=""
+                            <img src="<?= base_url();?>assets/illustration/instruktur.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" data-aos-delay="100">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#asesor">
-                            <img src="<?= base_url();?>assets/illustration/checklist.png" class="img-fluid" alt=""
+                            <img src="<?= base_url();?>assets/illustration/asesor.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" data-aos-delay="200">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#se_kepala_daerah">
-                            <img src="<?= base_url();?>assets/illustration/letter.png" class="img-fluid" alt=""
-                                data-aos="zoom-in" data-aos-delay="300">
+                            <img src="<?= base_url();?>assets/illustration/SE_Kepala_Daerah.png" class="img-fluid"
+                                alt="" data-aos="zoom-in" data-aos-delay="300">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#capaian_output">
-                            <img src="<?= base_url();?>assets/illustration/output.png" class="img-fluid" alt=""
+                            <img src="<?= base_url();?>assets/illustration/Capaian_Output.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" data-aos-delay="500">
                         </a>
                     </div>
@@ -222,7 +259,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-mitra" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-mitra" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-mitra" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -287,7 +324,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-Balai_Sektoral" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-Balai_Sektoral" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-Balai_Sektoral" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -356,7 +393,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-opd" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-opd" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-opd" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -415,7 +452,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-vokasi" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-vokasi" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-vokasi" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -479,7 +516,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-Asosiasi_Profesi" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-Asosiasi_Profesi" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-Asosiasi_Profesi" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -541,7 +578,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-ABUJK" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-ABUJK" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-ABUJK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -605,7 +642,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-lapas" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-lapas" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-lapas" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -665,7 +702,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-instansi_lain" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-instansi_lain" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-instansi_lain" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -692,7 +729,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group py-2">
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
-                                            <select class="form-control" name="chartTypeinstansi_lain" id="chartTypeinstansi_lain">
+                                            <select class="form-control" name="chartTypeinstansi_lain"
+                                                id="chartTypeinstansi_lain">
                                                 <option value="bar">Bar</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>
@@ -722,7 +760,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary" id="">KSO</h6>
+                                <h6 class="m-0 font-weight-bold text-primary" id="">KSO/PKS</h6>
                             </div>
 
 
@@ -784,6 +822,74 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Capaian Output Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="row content">
+                    <div class="col">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Mobile Training Unit (MTU)</h6>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-MTU" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-MTU" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-MTU">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeMTU" id="chartTypeMTU">
+                                                <option value="bar">Vertical Bar</option>
+                                                <option value="horizontalBar">Horizontal Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_MTU">
+                                    </div>
+                                </div>
+                                <canvas id="MTU" height=""></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Capaian Output Section -->
         <!-- ======= Instruktur ======= -->
         <section id="instruktur" class="instruktur">
             <div class="container">
@@ -803,7 +909,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-DIV" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-DIV" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-DIV" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -864,7 +970,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-DINV" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-DINV" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-DINV" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -934,7 +1040,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-AKTK" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-AKTK" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-AKTK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -994,7 +1100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-DABU" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-DABU" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-DABU" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -1064,7 +1170,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-SE_Kepala_Daerah" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-SE_Kepala_Daerah" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-SE_Kepala_Daerah" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -1141,7 +1247,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <a href="" id="chart-filter-file-RPK" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-RPK" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-RPK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1202,7 +1308,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <a href="" id="chart-filter-file-RPBK" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-RPBK" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-RPBK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1273,7 +1379,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <a href="" id="chart-filter-file-PPK" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-PPK" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-PPK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1335,7 +1441,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <a href="" id="chart-filter-file-RPBWP" type="button"
                                                 class="btn btn-warning float-right bg-flat-color-1">Download
                                                 File</a>
-                                            <a id="download-chart-RPBWP" download="ChartImage.jpg" href=""
+                                            <a id="download-chart-RPBWP" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                                 title="Descargar Gráfico">
                                                 Download Image
@@ -1477,7 +1583,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <a href="" id="chart-filter-file-RPKBS" type="button"
                                             class="btn btn-warning float-right bg-flat-color-1">Download
                                             File</a>
-                                        <a id="download-chart-RPKBS" download="ChartImage.jpg" href=""
+                                        <a id="download-chart-RPKBS" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
                                             title="Descargar Gráfico">
                                             Download Image
@@ -1521,6 +1627,147 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <canvas id="RPKBS" height="110"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Capaian Output Section -->
+        <!-- ======= Capaian Output Daerah ======= -->
+        <section id="capaian_output" class="about">
+            <div class="container">
+                <div class="row content">
+                    <div class="col">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Jumlah TKK Ahli Terlatih dan
+                                    Tersertifikasi Berdasarkan Jabatan Kerja</h6>
+                            </div>
+
+
+                            <div class="card-body" id="TKK_AHLI_1">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-TKK_AHLI" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-TKK_AHLI" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-TKK_AHLI">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeTKK_AHLI"
+                                                id="chartTypeTKK_AHLI">
+                                                <option value="horizontalBar">Horizontal Bar</option>
+                                                <option value="bar">Vertical Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_TKK_AHLI">
+                                    </div>
+                                </div>
+                                <canvas id="TKK_AHLI" height="110"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- Capaian Output Section -->
+        <section id="capaian_output" class="about">
+            <div class="container">
+                <div class="row content">
+                    <div class="col">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary" id="">Jumlah TKK Terampil Terlatih dan
+                                    Tersertifikasi Berdasarkan Jabatan Kerja</h6>
+                            </div>
+
+
+                            <div class="card-body" id="TKK_TERAMPIL_1">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-TKK_TERAMPIL" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1">Download
+                                            File</a>
+                                        <a id="download-chart-TKK_TERAMPIL" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Descargar Gráfico">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-TKK_TERAMPIL">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeTKK_TERAMPIL"
+                                                id="chartTypeTKK_TERAMPIL">
+                                                <option value="horizontalBar">Horizontal Bar</option>
+                                                <option value="bar">Vertical Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_TKK_TERAMPIL">
+                                    </div>
+                                </div>
+                                <canvas id="TKK_TERAMPIL" height="110"></canvas>
                             </div>
                         </div>
                     </div>
