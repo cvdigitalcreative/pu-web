@@ -75,7 +75,8 @@ $(document).ready(function() {
         'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)', 'rgb(255, 255, 255, 0.2)', 'rgb(255, 225, 19, 0.2)',
         'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
-    Chart.defaults.global.defaultFontSize = 9;
+    Chart.defaults.global.defaultFontSize = 11;
+    Chart.defaults.global.defaultFontColor = "#000000"
     Chart.defaults.global.defaultFontFamily = "Century Gothic";
 
 
@@ -196,12 +197,19 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false,
 
+
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.8,
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }]
                         }
@@ -359,12 +367,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.8,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -525,13 +538,19 @@ $(document).ready(function() {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
                                     display: false
+
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -691,12 +710,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -854,12 +878,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -1018,12 +1047,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -1182,12 +1216,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -1342,12 +1381,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -1526,6 +1570,9 @@ $(document).ready(function() {
                                     display: display_y_axis
 
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.7,
 
@@ -1536,6 +1583,9 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: display_x_axis
 
+                                },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
                                 },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.7,
@@ -1719,6 +1769,9 @@ $(document).ready(function() {
                                     display: display_y_axis
 
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.7,
 
@@ -1729,6 +1782,9 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: display_x_axis
 
+                                },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
                                 },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.7,
@@ -1891,12 +1947,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -2050,12 +2111,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.6,
                                 categoryPercentage: 1,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -2214,12 +2280,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.8,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -2377,12 +2448,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.8,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -2540,12 +2616,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.8,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -2650,7 +2731,7 @@ $(document).ready(function() {
                     var value = [];
                     var max_1 = 0;
                     var dataset = [{
-                        label: "Realisasi Peserta dan Kegiatan",
+                        label: "Rekap Peserta dan Kegiatan",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
                         data: value
@@ -2697,9 +2778,22 @@ $(document).ready(function() {
                         fill: false,
                         scales: {
                             yAxes: [{
+
                                 ticks: {
-                                    max: max_1 + (max_1 * 80 / 100),
-                                    beginAtZero: true
+                                    max: max_1 + (max_1 * 37 / 100),
+                                    beginAtZero: true,
+                                    display: false
+                                },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
+
+                            }],
+                            xAxes: [{
+                                barPercentage: 0.8,
+                                categoryPercentage: 0.8,
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
                                 }
                             }]
                         }
@@ -2854,16 +2948,21 @@ $(document).ready(function() {
                             yAxes: [{
 
                                 ticks: {
-                                    max: max_1 + (max_1 * 10 / 100),
+                                    max: max_1 + (max_1 * 50 / 100),
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.5,
                                 categoryPercentage: 0.9,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -3023,12 +3122,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.8,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -3132,7 +3236,7 @@ $(document).ready(function() {
                     var value = [];
                     var max_1 = 0;
                     var dataset = [{
-                        label: "Realisasi Peserta Berdasarkan Wilayah dan Pembiayaan",
+                        label: "Rekap Peserta Berdasarkan Wilayah dan Pembiayaan",
                         backgroundColor: backgrundcolor_2,
                         borderColor: bordercolor_2,
                         data: value
@@ -3185,12 +3289,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.8,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -3366,6 +3475,9 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: display_y_axis
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                },
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.9,
                             }],
@@ -3374,6 +3486,9 @@ $(document).ready(function() {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
                                     display: display_x_axis
+                                },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
                                 },
                                 barPercentage: 0.7,
                                 categoryPercentage: 0.9,
@@ -3537,12 +3652,17 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
 
                             }],
                             xAxes: [{
                                 barPercentage: 0.7,
                                 categoryPercentage: 0.8,
-
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                }
                             }]
                         }
                     }
@@ -3641,7 +3761,7 @@ $(document).ready(function() {
 
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
-                        $('#TKK_AHLI').attr('height', `500vh`);
+                        $('#TKK_AHLI').attr('height', `800vh`);
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -3719,6 +3839,9 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: display_y_axis
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                },
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.9,
                             }],
@@ -3727,6 +3850,9 @@ $(document).ready(function() {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
                                     display: display_x_axis
+                                },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
                                 },
                                 barPercentage: 0.7,
                                 categoryPercentage: 0.9,
@@ -3834,7 +3960,7 @@ $(document).ready(function() {
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
-                        $('#TKK_TERAMPIL').attr('height', `100`);
+                        $('#TKK_TERAMPIL').attr('height', `400`);
                         var display_y_axis = false
                         var display_x_axis = true
                     }
@@ -3908,6 +4034,9 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: display_y_axis
                                 },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
+                                },
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.9,
                             }],
@@ -3916,6 +4045,9 @@ $(document).ready(function() {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
                                     display: display_x_axis
+                                },
+                                gridLines: {
+                                    color: "rgba(0, 0, 0, 0)",
                                 },
                                 barPercentage: 0.7,
                                 categoryPercentage: 0.9,

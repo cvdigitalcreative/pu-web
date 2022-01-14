@@ -38,23 +38,18 @@ section#RPKBJK_1 {
 }
 
 section#TKK_AHLI_1 {
-    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-color: white;
     background-size: 100% 100%;
 }
 
 section#TKK_TERAMPIL_1 {
-    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-color: white;
     background-size: 100% 100%;
 }
 
 section#about {
     background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
     background-size: 100% 100%;
-}
-
-div#balai {
-    background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
-    background-size: 1000px 600px;
 }
 
 section#balai_pupr {
@@ -67,7 +62,7 @@ section#opd_1 {
     background-size: 100% 100%;
 }
 
-section#asosiasi_profesi {
+section#asosiasi_1 {
     background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
     background-size: 100% 100%;
 }
@@ -108,63 +103,118 @@ section#counts1 {
 }
 
 div#mitra_1 {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
-    background-size: 1000px 600px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#balai {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
 }
 
 div#opd {
-    background-image: url('http://localhost/pu-web/assets/image/bg.jpg');
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
     background-size: 100% 100%;
 }
 
 div#vokasi_1 {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
-    background-size: 500px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#asosiasi_profesi {
-    background-image: url('http://localhost/pu-web/assets/image/dewan_redaksi.png');
-    background-size: 500px 300px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#asosiasi_bujk {
-    background-image: url('http://localhost/pu-web/assets/image/dewan_redaksi.png');
-    background-size: 500px 300px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#lapas_1 {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
-    background-size: 600px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#instansi_lain_1 {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
-    background-size: 600px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#kso {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#mtu {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#instruktur_vokasi {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#instruktur_non_vokasi {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#aktk_1 {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
-    background-size: 600px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#ABU {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi.png');
-    background-size: 600px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#SE_KD {
-    background-image: url('http://localhost/pu-web/assets/image/dewan_redaksi.png');
-    background-size: 600px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
 }
 
-div#RPKBS_1 {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
-    background-size: 600px 400px;
+div#RPK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPBS_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#PPP_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
 }
 
 div#RPBWP_1 {
-    background-image: url('http://localhost/pu-web/assets/image/konstruksi_2.png');
-    background-size: 600px 400px;
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPKBMK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPKBJK {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#TKK_AHLI_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_scratch.jpg');
+    background-size: 100% 100%;
+}
+
+div#TKK_TERAMPIL_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_scratch.jpg');
+    background-size: 100% 100%;
 }
 
 div.card-body {

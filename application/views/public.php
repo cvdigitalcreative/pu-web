@@ -57,17 +57,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero1">Home</a></li>
-                    <li class="dropdown"><a href="#about"><span>Mitra Balai</span> <i
+                    <li class="dropdown"><a href="#about"><span>Mitra Kerja</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#balai_pupr">Balai PUPR</a></li>
                             <li><a href="#opd_1">OPD</a></li>
                             <li><a href="#vokasi_1">Vokasi</a></li>
-                            <li class="dropdown"><a href="#"><span>Asosiasi</span> <i
+                            <li class="dropdown"><a href="#asosiasi_1"><span>Asosiasi</span> <i
                                         class="bi bi-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="#asosiasi_profesi">Asosiasi Profesi</a></li>
-                                    <li><a href="#asosiasi_bujk">Asosiasi BUJK</a></li>
+                                    <li><a href="#asosiasi_bujk_1">Asosiasi BUJK</a></li>
                                 </ul>
                             </li>
                             <li><a class="nav-link scrollto " href="#lapas_1">Lapas</a></li>
@@ -93,48 +93,144 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </li>
                     <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
                     <li><a class="nav-link scrollto " href="#capaian_output">Capaian Output</a></li>
-                    <li class="dropdown"><a href="#about"><span>Laporan Infografis</span> <i
-                                class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Laporan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <div class="btn-group">
                                 <div class="btn-group dropleft" role="group">
                                     <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">2020</span>
+                                        <span class="sr-only">Infografis</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf" target="_blank">All</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_SUMSEL_TA_2020_1642079242.pdf" target="_blank">Sumatera Selatan</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf" target="_blank">Kep. Bangka Belitung</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf" target="_blank">Jambi</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf" target="_blank">Bengkulu</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_Lampung_TA_2020_1642079213.pdf" target="_blank">Lampung</a>
+                                        <li class="dropdown"><a href="#"><span>2020</span> <i
+                                                    class="bi bi-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a>
+                                                </li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
+                                                        Selatan</a></li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
+                                                        Bangka Belitung</a></li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a>
+                                                </li>
+                                                <li><a
+                                                        href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a>
+                                                </li>
+                                                <li><a
+                                                        href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#"><span>2021</span> <i
+                                                    class="bi bi-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Infografis_GABUNGAN_TA_2021_(FINAL)_1642162238.pdf"
+                                                        target="_blank">All</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/01b_-_Laporan_Infografis_Prov._SUMSEL_TA_2021_(FINAL)_(1)_1642162041.pdf"
+                                                        target="_blank">Sumatera Selatan</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02b_-_Laporan_Infografis_Prov._KEP._BABEL_TA_2021_(FINAL)_(1)_1642162131.pdf"
+                                                        target="_blank">Kep. Bangka Belitung</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-28-INFOGRAFIS_PROVINSI_JAMBI_2021_1642162167.pdf"
+                                                        target="_blank">Jambi</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/04b_-_Laporan_Infografis_Prov._BENGKULU_TA_2021_(FINAL)_(1)_1642162077.pdf"
+                                                        target="_blank">Bengkulu</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/05b_-_Laporan_Infografis_Prov._LAMPUNG_TA_2021_(FINAL)_(1)_1642161954.pdf"
+                                                        target="_blank">Lampung</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#"><span>2022</span> <i
+                                                    class="bi bi-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a>
+                                                </li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
+                                                        Selatan</a></li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
+                                                        Bangka Belitung</a></li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a>
+                                                </li>
+                                                <li><a
+                                                        href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a>
+                                                </li>
+                                                <li><a
+                                                        href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-white">
-                                    2020
+                                    Infografis
                                 </button>
                             </div>
                             <div class="btn-group">
                                 <div class="btn-group dropleft" role="group">
                                     <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">2021</span>
+                                        <span class="sr-only">Kegiatan</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Wilayah_GABUNGAN_TA_2021_(FINAL)_(1)_1642079139.pdf" target="_blank">All</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf" target="_blank">Sumatera Selatan</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf" target="_blank">Kep. Bangka Belitung</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf" target="_blank">Jambi</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf" target="_blank">Bengkulu</a>
-                                        <a class="dropdown-item" href="https://api.classico.id/pupr/uploads//file/file_modul/05a_-_Laporan_Wilayah_Prov._LAMPUNG_TA_2021_(FINAL)_1642078848.pdf" target="_blank">Lampung</a>
+                                        <li class="dropdown"><a href="#"><span>2020</span> <i
+                                                    class="bi bi-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf"
+                                                        target="_blank">All</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_SUMSEL_TA_2020_1642079242.pdf"
+                                                        target="_blank">Sumatera Selatan</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf"
+                                                        target="_blank">Kep. Bangka Belitung</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf"
+                                                        target="_blank">Jambi</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf"
+                                                        target="_blank">Bengkulu</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_Lampung_TA_2020_1642079213.pdf"
+                                                        target="_blank">Lampung</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#"><span>2021</span> <i
+                                                    class="bi bi-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Wilayah_GABUNGAN_TA_2021_(FINAL)_(1)_1642079139.pdf"
+                                                        target="_blank">All</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf"
+                                                        target="_blank">Sumatera Selatan</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf"
+                                                        target="_blank">Kep. Bangka Belitung</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf"
+                                                        target="_blank">Jambi</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf"
+                                                        target="_blank">Bengkulu</a></li>
+                                                <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/05a_-_Laporan_Wilayah_Prov._LAMPUNG_TA_2021_(FINAL)_1642078848.pdf"
+                                                        target="_blank">Lampung</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#"><span>2022</span> <i
+                                                    class="bi bi-chevron-down"></i></a>
+                                            <ul>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a>
+                                                </li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
+                                                        Selatan</a></li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
+                                                        Bangka Belitung</a></li>
+                                                <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a>
+                                                </li>
+                                                <li><a
+                                                        href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a>
+                                                </li>
+                                                <li><a
+                                                        href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-white">
-                                    2021
+                                    Kegiatan
                                 </button>
                             </div>
-                            
+
+
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto " href="#contact">Hubungi Kami</a></li>
@@ -219,7 +315,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Mitra</h6>
+                                <h6 class="m-0 font-weight-bold text-black" id="">Mitra Kerja</h6>
                             </div>
 
 
@@ -231,7 +327,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-mitra" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -296,7 +392,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-Balai_Sektoral" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -365,7 +461,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-opd" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -424,7 +520,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-vokasi" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -472,7 +568,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- OPD dan Vokasi Section -->
         <!-- ======= Asosiasi Profesi dan Asosias BUJK ======= -->
-        <section id="asosiasi_profesi" class="asosiasi_profesi">
+        <section id="asosiasi_1" class="asosiasi_profesi">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -488,7 +584,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-Asosiasi_Profesi" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -536,13 +632,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
-                        id="asosiasi_bujk">
+                        id="asosiasi_bujk_1">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi BUJK</h6>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" id="asosiasi_bujk">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-ABUJK" type="button"
@@ -550,7 +646,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-ABUJK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -614,7 +710,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-lapas" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -674,7 +770,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-instansi_lain" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -734,7 +830,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
 
-                            <div class="card-body">
+                            <div class="card-body" id="kso">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-KSO" type="button"
@@ -742,7 +838,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-KSO" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -802,7 +898,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
 
-                            <div class="card-body">
+                            <div class="card-body" id="mtu">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-MTU" type="button"
@@ -810,7 +906,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-MTU" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -873,7 +969,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Instruktur Vokasi</h6>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" id="instruktur_vokasi">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-DIV" type="button"
@@ -881,7 +977,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-DIV" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -934,7 +1030,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <h6 class="m-0 font-weight-bold text-black" id="">Instruktur Non Vokasi</h6>
                             </div>
 
-                            <div class="card-body">
+                            <div class="card-body" id="instruktur_non_vokasi">
                                 <div class="row">
                                     <div class="mt-2">
                                         <a href="" id="chart-filter-file-DINV" type="button"
@@ -942,7 +1038,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-DINV" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1012,7 +1108,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-AKTK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1072,7 +1168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-DABU" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1142,7 +1238,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-SE_Kepala_Daerah" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1210,7 +1306,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-black" id="">Rekap Pelaksanaan Kegiatan</h6>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="RPK_1">
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-RPK" type="button"
@@ -1218,7 +1314,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 File</a>
                                             <a id="download-chart-RPK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                                title="Descargar Gráfico">
+                                                title="Download Gambar Chart">
                                                 Download Image
                                             </a>
                                         </div>
@@ -1271,7 +1367,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <h6 class="m-0 font-weight-bold text-black" id="">Rekap Peserta Berdasarkan Skema
                                     </h6>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="RPBS_1">
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-RPBK" type="button"
@@ -1279,7 +1375,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 File</a>
                                             <a id="download-chart-RPBK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                                title="Descargar Gráfico">
+                                                title="Download Gambar Chart">
                                                 Download Image
                                             </a>
                                         </div>
@@ -1341,7 +1437,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-black" id="">Program Padat Karya</h6>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" id="PPP_1">
                                     <div class="row">
                                         <div class="mt-2">
                                             <a href="" id="chart-filter-file-PPK" type="button"
@@ -1349,7 +1445,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 File</a>
                                             <a id="download-chart-PPK" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                                title="Descargar Gráfico">
+                                                title="Download Gambar Chart">
                                                 Download Image
                                             </a>
                                         </div>
@@ -1411,7 +1507,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 File</a>
                                             <a id="download-chart-RPBWP" download="ChartImage.png" href=""
                                                 class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                                title="Descargar Gráfico">
+                                                title="Download Gambar Chart">
                                                 Download Image
                                             </a>
                                         </div>
@@ -1475,7 +1571,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
 
-                            <div class="card-body">
+                            <div class="card-body" id="RPKBMK_1">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-RPKBMK" type="button"
@@ -1483,7 +1579,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-RPKBMK" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1545,7 +1641,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
 
 
-                            <div class="card-body" id="RPKBS_1">
+                            <div class="card-body" id="RPKBJK">
                                 <div class="row">
                                     <div class="container mt-2">
                                         <a href="" id="chart-filter-file-RPKBS" type="button"
@@ -1553,7 +1649,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-RPKBS" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1622,7 +1718,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-TKK_AHLI" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1692,7 +1788,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             File</a>
                                         <a id="download-chart-TKK_TERAMPIL" download="ChartImage.png" href=""
                                             class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Descargar Gráfico">
+                                            title="Download Gambar Chart">
                                             Download Image
                                         </a>
                                     </div>
@@ -1776,8 +1872,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="social-links">
                                 <a href="https://www.facebook.com/balai.palembang.7" target="_blank" class="facebook"><i
                                         class="bi bi-facebook"></i></a>
-                                <a href="https://instagram.com/pupr_bjkw2_palembang" target="_blank" class="instagram" target-blank><i
-                                        class="bi bi-instagram"></i></a>
+                                <a href="https://instagram.com/pupr_bjkw2_palembang" target="_blank" class="instagram"
+                                    target-blank><i class="bi bi-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1786,8 +1882,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="info">
                             <div>
                                 <i class="ri-map-pin-line"></i>
-                                <p> <a href="https://goo.gl/maps/bCC4fWupRY4agv3z6" target="_blank">Jl. Kasnariansyah, No. 78, KM 4.5, Kel. 20 Ilir, Kec. Ilir Timur I, <br>Kota
-                                    Palembang, Sumatera Selatan, Indonesia</a></p>
+                                <p> <a href="https://goo.gl/maps/bCC4fWupRY4agv3z6" target="_blank">Jl. Kasnariansyah,
+                                        No. 78, KM 4.5, Kel. 20 Ilir, Kec. Ilir Timur I, <br>Kota
+                                        Palembang, Sumatera Selatan, Indonesia</a></p>
                             </div>
 
                             <!-- <div>
@@ -1835,7 +1932,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-    <?php $this->load->view("components/js.php") ?>
+    <?php $this->load->view("components/js_public.php") ?>
+
     <!-- Vendor JS Files -->
     <script src="<?= base_url('assets/public_component/vendor/purecounter/purecounter.js')?>"></script>
     <script src="<?= base_url('assets/public_component/vendor/aos/aos.js')?>"></script>
