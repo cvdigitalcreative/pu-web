@@ -122,16 +122,12 @@ class Infografis_model extends CI_model
     public function edit_data_chart_infografis(
         $nama_infografis,
         $jumlah,
-        $idprovinsi,
-        $kategori,
         $id,
         $token
     ) {
         $data = [
             'nama' => $nama_infografis,
             'jumlah' => $jumlah,
-            'idprovinsi' => $idprovinsi,
-            'kategori' => $kategori,
             'id' => $id
         ];
 

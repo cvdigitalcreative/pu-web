@@ -152,7 +152,7 @@ class Infografis_data extends CI_Controller
     }
 
     
-    public function add_infografis(){
+    public function add_infografis_mitra(){
         if($this->session->userdata('logged_in') == true){
             $id_provinsi = $this->input->post('idprovinsi');
             $nama_infografis = $this->input->post('nama');
@@ -211,13 +211,11 @@ class Infografis_data extends CI_Controller
         }
     }
 
-    public function edit_infografis($id){
+    public function edit_infografis_mitra($id){
         if($this->session->userdata('logged_in') == true){
-            $id_provinsi = $this->input->post('edit_provinsi_infografis');
             $nama_infografis = $this->input->post('edit_nama_infografis');
             $jumlah = $this->input->post('edit_jumlah_infografis');
-            $kategori = $this->input->post('edit_kategori_infografis');;
-            $add = $this->Infografis_model->edit_data_chart_infografis($nama_infografis, $jumlah, $id_provinsi, $kategori, $id, $this->session->userdata('token'));
+            $add = $this->Infografis_model->edit_data_chart_infografis($nama_infografis, $jumlah, $id, $this->session->userdata('token'));
             if ($add == null)
                 $this->load->view('error_page');
             else {
@@ -264,7 +262,7 @@ class Infografis_data extends CI_Controller
         }
     }
 
-    public function delete_infografis($id_infografis){
+    public function delete_infografis_mitra($id_infografis){
         if($this->session->userdata('logged_in') == true){
             $delete_infografis = $this->Infografis_model->delete_data_chart_infografis($id_infografis, $this->session->userdata('token'));
             echo var_dump($delete_infografis);
