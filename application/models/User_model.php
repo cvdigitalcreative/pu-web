@@ -19,7 +19,7 @@ class User_model extends CI_Model
     public function http_request_post($data, $function)
     {
         $curl = curl_init();
-        $url = API_URL . "/user" . $function;
+        $url = API_URL_LOCAL . "/user" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_POST, TRUE);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);

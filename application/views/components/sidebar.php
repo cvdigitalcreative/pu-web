@@ -108,23 +108,23 @@
     </li>
 
     <!-- Nav Item - Infografis Data -->
-    <!-- <li class="nav-item ">
-        <a class="nav-link"
-            href="<?=base_url('pupr/infografis')?>">
-            <img class="img-profile mr-2" src="<?=base_url('assets/illustration/administrasi-menu.svg')?>">
-            <span>Infografis Data</span>
-        </a>
-    </li> -->
+        <!-- <li class="nav-item ">
+            <a class="nav-link"
+                href="<?=base_url('pupr/mitra')?>">
+                <img class="img-profile mr-2" src="<?=base_url('assets/illustration/administrasi-menu.svg')?>">
+                <span>Infografis Data</span>
+            </a>
+        </li> -->
 
-    <li class="nav-item <?=$this->uri->segment(2) == 'infografis' ? 'active' : ''?>">
-        <a class="nav-link  <?=$this->uri->segment(2) == 'infografis' ? 'disabled' : ''?>" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <img class="img-profile mr-2" src="<?=base_url('assets/illustration/administrasi-menu.svg')?>">
             <span>Infografis Data</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-border.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/home.png')?>">Mitra Kerja</a>
+                <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'mitra' ? 'active' : ''?>" href="<?=base_url('pupr/mitra')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/home.png')?>">Mitra Kerja</a>
                 <a class="collapse-item" href="utilities-animation.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/instruktur.png')?>">Instruktur</a>
                 <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/asesor.png')?>">Asesor</a>
                 <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/SE_Kepala_Daerah.png')?>">SE Kepala Daerah</a>

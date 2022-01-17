@@ -17,7 +17,7 @@ class Infografis_data extends CI_Controller
         }
     }
 
-    public function seluruh(){
+    public function mitra(){
         if ($this->session->userdata('logged_in') == true) {
             $null = false;
 
@@ -36,34 +36,34 @@ class Infografis_data extends CI_Controller
             if ($null)
                 $this->load->view('error_page');
             else
-                $this->load->view('administrator/infografis_data', $data);
+                $this->load->view('administrator/infografis_data_mitra', $data);
         }  else {
         redirect('pupr/login');
         }
     }
 
-    public function infografis_table()
+    public function infografis_table_mitra()
     {
         if($this->session->userdata('logged_in') == true){
-            $data['infografis_table'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), 15, 1);
-            if($data['infografis_table'] == null){
+            $data['infografis_table_mitra'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 1);
+            if($data['infografis_table_mitra'] == null){
                 $callback = array(
                     'data' => []
                 );
             }else{
-                if($data['infografis_table']['status'] == "Success"){
-                    if(count($data['infografis_table']['data']) > 0){
-                        $data['infografis_table'] = $data['infografis_table']['data'];
+                if($data['infografis_table_mitra']['status'] == "Success"){
+                    if(count($data['infografis_table_mitra']['data']) > 0){
+                        $data['infografis_table_mitra'] = $data['infografis_table_mitra']['data'];
                         $index_data_infografis = 0;
                         $no_data_infografis = 1;
-                        foreach ($data['infografis_table'] as $val) {
-                            $data['infografis_table'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+                        foreach ($data['infografis_table_mitra'] as $val) {
+                            $data['infografis_table_mitra'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
 
                             $index_data_infografis++;
                             $no_data_infografis++;
                         }
                         $callback = array(
-                            'data' => $data['infografis_table']
+                            'data' => $data['infografis_table_mitra']
                         );
                     }else{
                         $callback = array(
@@ -147,10 +147,10 @@ class Infografis_data extends CI_Controller
             else {
                 if ($add['status'] == "Success") {
                     $this->session->set_flashdata('success', $add['message']);
-                    redirect('pupr/infografis');
+                    redirect('pupr/mitra');
                 } else if($add['status'] == "Error"){
                     $this->session->set_flashdata('gagal', $add['message']);
-                    redirect('pupr/infografis');
+                    redirect('pupr/mitra');
                 }
             }
         } else{
@@ -175,10 +175,10 @@ class Infografis_data extends CI_Controller
             }
             if ($tambah_infografis_file['status'] == "Success") {
                 $this->session->set_flashdata('success', $tambah_infografis_file['message']);
-                redirect("pupr/infografis");
+                redirect("pupr/mitra");
             } else {
                 $this->session->set_flashdata('APImessage', $tambah_infografis_file['message']);
-                redirect("pupr/infografis");
+                redirect("pupr/mitra");
             }
 
         }else{
@@ -198,10 +198,10 @@ class Infografis_data extends CI_Controller
             else {
                 if ($add['status'] == "Success") {
                     $this->session->set_flashdata('success', $add['message']);
-                    redirect('pupr/infografis');
+                    redirect('pupr/mitra');
                 } else if($add['status'] == "Error"){
                     $this->session->set_flashdata('gagal', $add['message']);
-                    redirect('pupr/infografis');
+                    redirect('pupr/mitra');
                 }
             }
         } else
@@ -229,10 +229,10 @@ class Infografis_data extends CI_Controller
             }
             if ($edit_file_infografis['status'] == "Success") {
                 $this->session->set_flashdata('success', $edit_file_infografis['message']);
-                redirect("pupr/infografis");
+                redirect("pupr/mitra");
             } else {
                 $this->session->set_flashdata('APImessage', $edit_file_infografis['message']);
-                redirect("pupr/infografis");
+                redirect("pupr/mitra");
             }
         } else {
             redirect("pupr/login");
@@ -248,10 +248,10 @@ class Infografis_data extends CI_Controller
             } else {
                 if ($delete_infografis['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_infografis['message']);
-                    redirect("pupr/infografis");
+                    redirect("pupr/mitra");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_infografis['message']);
-                    redirect("pupr/infografis");
+                    redirect("pupr/mitra");
                 }
             }
         }else{
@@ -268,10 +268,10 @@ class Infografis_data extends CI_Controller
             } else {
                 if ($delete_file_infografis['status'] == "Success") {
                     $this->session->set_flashdata('success', $delete_file_infografis['message']);
-                    redirect("pupr/infografis");
+                    redirect("pupr/mitra");
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_file_infografis['message']);
-                    redirect("pupr/infografis");
+                    redirect("pupr/mitra");
                 }
             }
         }else{

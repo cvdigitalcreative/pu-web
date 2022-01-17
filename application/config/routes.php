@@ -116,8 +116,8 @@ $route['pupr/feedback'] = "Feedback/seluruh";
 //route master
 $route['pupr/master'] = "Master/seluruh";
 
-//route Infografis Data
-$route['pupr/infografis'] = "Infografis_data/seluruh";
+//route Infografis Data Mitra
+$route['pupr/mitra'] = "Infografis_data/mitra";
 
 //route Profile
 $route['pupr/profile'] = "User/profile";

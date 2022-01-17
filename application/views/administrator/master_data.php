@@ -1656,9 +1656,6 @@
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-pns-master"><img
                                         class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">PNS</button>
-                                <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4" id="btn-add-infografis"><img
-                                        class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Infografis</button>
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-file-infografis"><img class="img-profile mr-2"
                                         src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">File Infografis</button>
@@ -1720,10 +1717,6 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-pns" role="tab" data-toggle="tab">PNS</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#master-infografis" role="tab" data-toggle="tab">
-                                            Infografis</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#master-file-infografis" role="tab" data-toggle="tab">
@@ -1900,8 +1893,8 @@
                                         </thead>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade show" role="tabpanel" id="master-infografis">
-                                    <table id="infografis_table" class="display" style="width:100%">
+                                <div class="tab-pane fade show" role="tabpanel" id="master-infografis-mitra">
+                                    <table id="infografis_table_mitra" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
