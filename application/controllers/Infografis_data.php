@@ -109,6 +109,7 @@ class Infografis_data extends CI_Controller
        
         
     }
+
     public function infografis_table_balai()
     {
         if($this->session->userdata('logged_in') == true){
@@ -131,6 +132,221 @@ class Infografis_data extends CI_Controller
                         }
                         $callback = array(
                             'data' => $data['infografis_table_balai']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_opd()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_opd'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 3);
+            if($data['infografis_table_opd'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_opd']['status'] == "Success"){
+                    if(count($data['infografis_table_opd']['data']) > 0){
+                        $data['infografis_table_opd'] = $data['infografis_table_opd']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_opd'] as $val) {
+                            $data['infografis_table_opd'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_opd']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_vokasi()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_vokasi'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 4);
+            if($data['infografis_table_vokasi'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_vokasi']['status'] == "Success"){
+                    if(count($data['infografis_table_vokasi']['data']) > 0){
+                        $data['infografis_table_vokasi'] = $data['infografis_table_vokasi']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_vokasi'] as $val) {
+                            $data['infografis_table_vokasi'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_vokasi']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_asosiasi_profesi()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_asosiasi_profesi'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 5);
+            if($data['infografis_table_asosiasi_profesi'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_asosiasi_profesi']['status'] == "Success"){
+                    if(count($data['infografis_table_asosiasi_profesi']['data']) > 0){
+                        $data['infografis_table_asosiasi_profesi'] = $data['infografis_table_asosiasi_profesi']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_asosiasi_profesi'] as $val) {
+                            $data['infografis_table_asosiasi_profesi'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_asosiasi_profesi']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_asosiasi_bujk()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_asosiasi_bujk'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 6);
+            if($data['infografis_table_asosiasi_bujk'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_asosiasi_bujk']['status'] == "Success"){
+                    if(count($data['infografis_table_asosiasi_bujk']['data']) > 0){
+                        $data['infografis_table_asosiasi_bujk'] = $data['infografis_table_asosiasi_bujk']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_asosiasi_bujk'] as $val) {
+                            $data['infografis_table_asosiasi_bujk'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_asosiasi_bujk']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_lapas()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_lapas'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 6);
+            if($data['infografis_table_lapas'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_lapas']['status'] == "Success"){
+                    if(count($data['infografis_table_lapas']['data']) > 0){
+                        $data['infografis_table_lapas'] = $data['infografis_table_lapas']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_lapas'] as $val) {
+                            $data['infografis_table_lapas'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_lapas']
                         );
                     }else{
                         $callback = array(
