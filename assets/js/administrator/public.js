@@ -217,6 +217,7 @@ $(document).ready(function() {
                 });
             }
         });
+
         $.ajax({
             url: `${BASE_URL}Infografis/infografis_file/${id_provinsi}/${kategori}`,
             method: "GET",
