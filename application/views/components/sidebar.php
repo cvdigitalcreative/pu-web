@@ -125,10 +125,15 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'mitra' ? 'active' : ''?>" href="<?=base_url('pupr/mitra')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/home.png')?>">Mitra Kerja</a>
+                <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'mitra_file' ? 'active' : ''?>" href="<?=base_url('pupr/mitra_file')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/home.png')?>">Mitra Kerja File</a>
                 <a class="collapse-item" href="utilities-animation.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/instruktur.png')?>">Instruktur</a>
+                <a class="collapse-item" href="utilities-animation.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/instruktur.png')?>">Instruktur File</a>
                 <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/asesor.png')?>">Asesor</a>
+                <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/asesor.png')?>">Asesor File</a>
                 <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/SE_Kepala_Daerah.png')?>">SE Kepala Daerah</a>
+                <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/SE_Kepala_Daerah.png')?>">SE Kepala Daerah File</a>
                 <a class="collapse-item" href="#"><img class="img-profile mr-2" src="<?=base_url('assets/image/Capaian_Output.png')?>">Capaian Output</a>
+                <a class="collapse-item" href="#"><img class="img-profile mr-2" src="<?=base_url('assets/image/Capaian_Output.png')?>">Capaian Output File</a>
             </div>
         </div>
     </li>

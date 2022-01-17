@@ -119,6 +119,9 @@ $route['pupr/master'] = "Master/seluruh";
 //route Infografis Data Mitra
 $route['pupr/mitra'] = "Infografis_data/mitra";
 
+//route Infografis Data Mitra
+$route['pupr/mitra_file'] = "Infografis_data/mitra_file";
+
 //route Profile
 $route['pupr/profile'] = "User/profile";
 

@@ -42,6 +42,31 @@ class Infografis_data extends CI_Controller
         }
     }
 
+    public function mitra_file(){
+        if ($this->session->userdata('logged_in') == true) {
+            $null = false;
+
+            $data['header']['detail_user'] = $this->User_model->view_user_detail($this->session->userdata('token'));
+            if ($data['header']['detail_user'] == null)
+                $null = true;
+            else {
+                if ($data['header']['detail_user']['status'] == "Success") {
+                    $data['header']['detail_user'] = $data['header']['detail_user']['data'];
+                } else {
+                    $data['header']['detail_user'] = null;
+                    $this->session->set_flashdata('APImessage', $data['header']['detail_user']['message']);
+                }
+            }
+
+            if ($null)
+                $this->load->view('error_page');
+            else
+                $this->load->view('administrator/infografis_data_mitra_file', $data);
+        }  else {
+        redirect('pupr/login');
+        }
+    }
+
     public function infografis_table_mitra()
     {
         if($this->session->userdata('logged_in') == true){
