@@ -16,13 +16,14 @@ class Infografis_File_model extends CI_model
         return json_decode($result, TRUE);
     }
     
-    public function http_request_get_all($function, $token)
+    public function http_request_get_all($data, $function, $token)
     {
         $dataHeader = ['Authorization: Bearer ' . $token];
         $curl = curl_init();
         $url = API_URL_LOCAL . "/infografis/file" . $function;
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $dataHeader);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         $result = curl_exec($curl);
@@ -107,9 +108,13 @@ class Infografis_File_model extends CI_model
         return $this->http_request_get($data, "/file/");
     }
 
-    public function data_table_file_infografis($token) {
+    public function data_table_file_infografis($token, $id_provinsi, $kategori) {
+        $data = [
+            'id_provinsi' => $id_provinsi,
+            'kategori' => $kategori
+        ];
       
-        return $this->http_request_get_all("/all/", $token);
+        return $this->http_request_get_all($data, "/all/", $token);
     }
 
     public function edit_infografis_file(
