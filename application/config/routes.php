@@ -128,6 +128,12 @@ $route['pupr/instruktur'] = "Infografis_data/instruktur";
 //route Infografis Data Instruktur
 $route['pupr/instruktur_file'] = "Infografis_data/instruktur_file";
 
+//route Infografis Data Asesor
+$route['pupr/asesor'] = "Infografis_data/asesor";
+
+//route Infografis Data Asesor
+$route['pupr/asesor_file'] = "Infografis_data/asesor_file";
+
 //route Profile
 $route['pupr/profile'] = "User/profile";
 
