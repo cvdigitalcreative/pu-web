@@ -122,6 +122,12 @@ $route['pupr/mitra'] = "Infografis_data/mitra";
 //route Infografis Data Mitra
 $route['pupr/mitra_file'] = "Infografis_data/mitra_file";
 
+//route Infografis Data Instruktur
+$route['pupr/instruktur'] = "Infografis_data/instruktur";
+
+//route Infografis Data Instruktur
+$route['pupr/instruktur_file'] = "Infografis_data/instruktur_file";
+
 //route Profile
 $route['pupr/profile'] = "User/profile";
 
