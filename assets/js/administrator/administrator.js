@@ -3456,6 +3456,61 @@ Tidak ada poster kegiatan`
                 data: 'id',
                 render: function(data) {
                     return `
+					<button id='btn-edit-infografis-mitra-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-mitra-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-mitra-file-table-master', function() {
+        if ($('#infografis_file_mitra_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-mitra-file-table-master', function() {
+        if ($('#infografis_file_mitra_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_balai_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_balai`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
 					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
 					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
                 },
@@ -3464,19 +3519,17 @@ Tidak ada poster kegiatan`
     })
 
     $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
-        if ($('#infografis_file_mitra_table').length > 0) {
+        if ($('#infografis_file_balai_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file/${id}`)
-            $('#edit_file_provinsi_infografis').val($(this).parent().siblings().eq(4).text())
-            $('#edit_file_kategori_infografis').val($(this).parent().siblings().eq(5).text())
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_balai/${id}`)
             $('#modal-edit-infografis-file-master').modal('show')
 
         }
     })
     $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
-        if ($('#infografis_file_mitra_table').length > 0) {
+        if ($('#infografis_file_balai_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis/${id}`)
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_balai/${id}`)
             $('#modal-delete-file-infografis').modal('show')
         }
     })
@@ -4312,6 +4365,11 @@ Tidak ada poster kegiatan`
     $('#btn-add-infografis-capaian_output').on('click', function() {
         $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_capaian_output`)
         $('#modal-tambah-infografis-capaian_output-master').modal('show');
+    })
+
+    $('#btn-add-file-infografis-mitra').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_file_mitra`)
+        $('#modal-tambah-infografis-balai-file-master').modal('show');
     })
 
 

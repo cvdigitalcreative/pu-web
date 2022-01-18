@@ -85,6 +85,7 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 define('API_URL', "https://api.classico.id/pupr");
-define('API_URL_LOCAL', "http://localhost:1340");
+// define('API_URL_LOCAL', "http://localhost:1340");
+define('API_URL_LOCAL', "https://api.classico.id/pupr");
 // Website name
 define('SITE_NAME_ADMIN', "BJKW II Palembang");

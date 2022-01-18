@@ -9,7 +9,8 @@
 
 
     <!-- Tambah Mitra File -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-file-master" tabindex="-1" role="dialog">
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-balai-file-master" tabindex="-1"
+        role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -77,14 +78,10 @@
                 <div class="modal-body">
 
                     <form method="POST" enctype="multipart/form-data">
-                        <input type="text" class="form-control" id="edit_file_kategori_infografis"
-                            name="edit_file_kategori_infografis" hidden>
-                        <input type="text" class="form-control" id="edit_file_provinsi_infografis"
-                            name="edit_file_provinsi_infografis" hidden>
                         <div class="form-group py-2">
                             <label for="nama">File Mitra</label>
-                            <input type="file" class="form-control" id="edit_file_infografis"
-                                name="edit_file_infografis" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf"
+                            <input type="file" class="form-control" id="edit_file_infografis_mitra"
+                                name="edit_file_infografis_mitra" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf"
                                 required>
                         </div>
                         <div class="menu-divider"></div>
@@ -140,7 +137,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h2 font-weight-bold mb-4 mt-4">Mitra Kerja Data</h1>
+                        <h1 class="h2 font-weight-bold mb-4 mt-4">Mitra Kerja File</h1>
                     </div>
 
                     <!-- Alert -->
@@ -166,22 +163,43 @@
                             <div class="">
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-file-infografis-mitra"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Mitra Kerja File</button>
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Mitra Kerja</button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="pb-4 pt-2">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#master-file-infografis-mitra" role="tab" data-toggle="tab">
-                                            Mitra Kerja File</a>
+                                        <a class="nav-link active" href="#master-file-infografis-mitra" role="tab"
+                                            data-toggle="tab">
+                                            Mitra Kerja</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-balai" role="tab"
+                                            data-toggle="tab">
+                                            Balai</a>
                                     </li>
                                 </ul>
+
                             </div>
 
                             <div class="tab-content">
-                                <div class="tab-pane fade active show" role="tabpanel" id="master-file-infografis-mitra">
+                                <div class="tab-pane fade active show" role="tabpanel"
+                                    id="master-file-infografis-mitra">
                                     <table id="infografis_file_mitra_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-balai">
+                                    <table id="infografis_file_balai_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>

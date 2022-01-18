@@ -119,15 +119,11 @@ class Infografis_File_model extends CI_model
 
     public function edit_infografis_file(
         $file_infografis,
-        $idprovinsi,
-        $kategori,
         $id,
         $token
     ) {
         $data = [
             'file_infografis' => $file_infografis,
-            'idprovinsi' => $idprovinsi,
-            'kategori' => $kategori,
             'id' => $id
         ];
 
