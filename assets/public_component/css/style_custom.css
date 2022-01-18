@@ -1,0 +1,535 @@
+div#asosiasi {
+    background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
+    background-size: 500px 800px;
+}
+
+section#hero {
+    background-image: url('http://localhost/pu-web/assets/image/home1.jpg');
+    background-size: 100% 100%;
+}
+
+img#home1 {
+    margin-top: 100px;
+}
+
+section#clients {
+    background-image: url('http://localhost/pu-web/assets/image/2.png');
+    background-size: 100% 100%;
+}
+
+section#capaian_output {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#ppp_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#RPKBMK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#RPKBJK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#TKK_AHLI_1 {
+    background-color: white;
+    background-size: 100% 100%;
+}
+
+section#TKK_TERAMPIL_1 {
+    background-color: white;
+    background-size: 100% 100%;
+}
+
+section#about {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#balai_pupr {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#opd_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#asosiasi_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#lapas_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#kso_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#mtu_1 {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#instruktur {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#asesor {
+    background-image: url('http://localhost/pu-web/assets/image/Mitra.jpg');
+    background-size: 100% 100%;
+}
+
+section#se_kepala_daerah {
+    background-image: url('http://localhost/pu-web/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#counts1 {
+    background-color: rgb(245, 169, 29, 0.9);
+    background-size: 500px 700px;
+}
+
+div#mitra_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#balai {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#opd {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#vokasi_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#asosiasi_profesi {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#asosiasi_bujk {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#lapas_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#instansi_lain_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#kso {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#mtu {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#instruktur_vokasi {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#instruktur_non_vokasi {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#aktk_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#ABU {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#SE_KD {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPBS_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#PPP_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPBWP_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_small.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPKBMK_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#RPKBJK {
+    background-image: url('http://localhost/pu-web/assets/image/bg_big.jpg');
+    background-size: 100% 100%;
+}
+
+div#TKK_AHLI_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_scratch.jpg');
+    background-size: 100% 100%;
+}
+
+div#TKK_TERAMPIL_1 {
+    background-image: url('http://localhost/pu-web/assets/image/bg_scratch.jpg');
+    background-size: 100% 100%;
+}
+
+div.card-body {
+    background-image: url('http://localhost/pu-web/assets/image/pupr.jpg');
+    background-size: 500px 800px;
+}
+
+div.loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_mitra {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_Balai_Sektoral {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_OPD {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_vokasi {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_Asosiasi_Profesi {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_ABUJK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_lapas {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_instansi_lain {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_KSO {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_MTU {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_DIV {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_DINV {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_AKTK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_DABU {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_SE_Kepala_Daerah {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPBK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_PBMK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPBWP {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPKBS {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_RPKBMK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_PPK {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_TKK_AHLI {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+div.loader_TKK_TERAMPIL {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid rgb(245, 169, 29);
+    /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+section#pricing {
+    background-color: rgb(245, 169, 29);
+}
+
+section#services {
+    background-color: rgb(245, 169, 29);
+}
+
+#services .section-title h2 {
+    color: white;
+}
+
+#services .section-title p {
+    color: white;
+}
+
+#pricing .section-title h2 {
+    color: white;
+}
+
+#pricing .section-title p {
+    color: white;
+}
+
+.padding .box {
+    padding: 0px;
+}

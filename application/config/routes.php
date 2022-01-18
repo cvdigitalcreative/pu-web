@@ -113,8 +113,38 @@ $route['pupr/news/detail/(:any)'] = "Berita/detail/$1";
 //route feedback
 $route['pupr/feedback'] = "Feedback/seluruh";
 
-//route feedback
+//route master
 $route['pupr/master'] = "Master/seluruh";
+
+//route Infografis Data Mitra
+$route['pupr/mitra'] = "Infografis_data/mitra";
+
+//route Infografis Data Mitra
+$route['pupr/mitra_file'] = "Infografis_data/mitra_file";
+
+//route Infografis Data Instruktur
+$route['pupr/instruktur'] = "Infografis_data/instruktur";
+
+//route Infografis Data Instruktur
+$route['pupr/instruktur_file'] = "Infografis_data/instruktur_file";
+
+//route Infografis Data Asesor
+$route['pupr/asesor'] = "Infografis_data/asesor";
+
+//route Infografis Data Asesor
+$route['pupr/asesor_file'] = "Infografis_data/asesor_file";
+
+//route Infografis Data SE Kepala Daerah
+$route['pupr/se_kepala_daerah'] = "Infografis_data/se_kepala_daerah";
+
+//route Infografis Data SE Kepala Daerah
+$route['pupr/se_kepala_daerah_file'] = "Infografis_data/se_kepala_daerah_file";
+
+//route Infografis Data Capaian Output
+$route['pupr/capaian_output'] = "Infografis_data/capaian_output";
+
+//route Infografis Data Capaian Output
+$route['pupr/capaian_output_file'] = "Infografis_data/capaian_output_file";
 
 //route Profile
 $route['pupr/profile'] = "User/profile";
@@ -124,4 +154,7 @@ $route['privacy-policy'] = "Common/privacy";
 
 //route terms & condition
 $route['terms-and-conditions'] = "Common/terms";
+
+// route public page
+$route['public'] = "Public_page/index";
 

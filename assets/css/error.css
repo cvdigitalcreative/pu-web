@@ -1,7 +1,9 @@
-html {
-    height: 100%;
-    background-color: #FFC928;
-
+body {
+    background-image: url("http://localhost/pu-web/assets/image/maaf.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .masuk-title {
@@ -13,4 +15,3 @@ html {
     font-size: 19px;
     font-weight: normal;
 }
-

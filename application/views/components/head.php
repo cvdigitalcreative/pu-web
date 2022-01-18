@@ -31,3 +31,6 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 <!-- bootstrap-select -->
 <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-select/bootstrap-select.min.css') ?>">
 
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+

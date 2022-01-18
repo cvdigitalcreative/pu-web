@@ -40,6 +40,7 @@ class Authentication extends CI_Controller
                         $this->session->set_userdata('id_user', $login['data']['id_user']);
                         $this->session->set_userdata('nama', $login['data']['nama']);
                         $this->session->set_userdata('role', $login['data']['id_role']);
+                        $this->session->set_userdata('id_provinsi', $login['data']['id_provinsi']);
                         redirect("pupr/dashboard");
                     }
                     else{
