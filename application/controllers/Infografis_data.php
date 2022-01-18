@@ -998,6 +998,49 @@ class Infografis_data extends CI_Controller
         
     }
 
+    public function infografis_table_PPK()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_PPK'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 14);
+            if($data['infografis_table_PPK'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_PPK']['status'] == "Success"){
+                    if(count($data['infografis_table_PPK']['data']) > 0){
+                        $data['infografis_table_PPK'] = $data['infografis_table_PPK']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_PPK'] as $val) {
+                            $data['infografis_table_PPK'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_PPK']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
     public function infografis_file_mitra(){
         if($this->session->userdata('logged_in') == true){
             $data['infografis_file_mitra_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 1);
