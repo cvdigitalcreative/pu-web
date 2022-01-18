@@ -328,7 +328,7 @@ class Infografis_data extends CI_Controller
     public function infografis_table_lapas()
     {
         if($this->session->userdata('logged_in') == true){
-            $data['infografis_table_lapas'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 6);
+            $data['infografis_table_lapas'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 7);
             if($data['infografis_table_lapas'] == null){
                 $callback = array(
                     'data' => []
@@ -368,6 +368,134 @@ class Infografis_data extends CI_Controller
         
     }
 
+    public function infografis_table_instansi_lain()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_instansi_lain'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 8);
+            if($data['infografis_table_instansi_lain'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_instansi_lain']['status'] == "Success"){
+                    if(count($data['infografis_table_instansi_lain']['data']) > 0){
+                        $data['infografis_table_instansi_lain'] = $data['infografis_table_instansi_lain']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_instansi_lain'] as $val) {
+                            $data['infografis_table_instansi_lain'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_instansi_lain']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_kso()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_kso'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 27);
+            if($data['infografis_table_kso'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_kso']['status'] == "Success"){
+                    if(count($data['infografis_table_kso']['data']) > 0){
+                        $data['infografis_table_kso'] = $data['infografis_table_kso']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_kso'] as $val) {
+                            $data['infografis_table_kso'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_kso']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_mtu()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_mtu'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 28);
+            if($data['infografis_table_mtu'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_mtu']['status'] == "Success"){
+                    if(count($data['infografis_table_mtu']['data']) > 0){
+                        $data['infografis_table_mtu'] = $data['infografis_table_mtu']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_mtu'] as $val) {
+                            $data['infografis_table_mtu'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_mtu']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
     public function infografis_file_mitra(){
         if($this->session->userdata('logged_in') == true){
             $data['infografis_file_mitra_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 1);
