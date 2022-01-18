@@ -1044,7 +1044,7 @@ class Infografis_data extends CI_Controller
     public function infografis_table_RPBWP()
     {
         if($this->session->userdata('logged_in') == true){
-            $data['infografis_table_RPBWP'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 14);
+            $data['infografis_table_RPBWP'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 18);
             if($data['infografis_table_RPBWP'] == null){
                 $callback = array(
                     'data' => []
@@ -1063,6 +1063,178 @@ class Infografis_data extends CI_Controller
                         }
                         $callback = array(
                             'data' => $data['infografis_table_RPBWP']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_RPKBMK()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_RPKBMK'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 21);
+            if($data['infografis_table_RPKBMK'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_RPKBMK']['status'] == "Success"){
+                    if(count($data['infografis_table_RPKBMK']['data']) > 0){
+                        $data['infografis_table_RPKBMK'] = $data['infografis_table_RPKBMK']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_RPKBMK'] as $val) {
+                            $data['infografis_table_RPKBMK'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_RPKBMK']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_RPKBJK()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_RPKBJK'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 17);
+            if($data['infografis_table_RPKBJK'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_RPKBJK']['status'] == "Success"){
+                    if(count($data['infografis_table_RPKBJK']['data']) > 0){
+                        $data['infografis_table_RPKBJK'] = $data['infografis_table_RPKBJK']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_RPKBJK'] as $val) {
+                            $data['infografis_table_RPKBJK'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_RPKBJK']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_TKK_AHLI()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_TKK_AHLI'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 25);
+            if($data['infografis_table_TKK_AHLI'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_TKK_AHLI']['status'] == "Success"){
+                    if(count($data['infografis_table_TKK_AHLI']['data']) > 0){
+                        $data['infografis_table_TKK_AHLI'] = $data['infografis_table_TKK_AHLI']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_TKK_AHLI'] as $val) {
+                            $data['infografis_table_TKK_AHLI'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_TKK_AHLI']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
+    public function infografis_table_TKK_TERAMPIL()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_TKK_TERAMPIL'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 26);
+            if($data['infografis_table_TKK_TERAMPIL'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_TKK_TERAMPIL']['status'] == "Success"){
+                    if(count($data['infografis_table_TKK_TERAMPIL']['data']) > 0){
+                        $data['infografis_table_TKK_TERAMPIL'] = $data['infografis_table_TKK_TERAMPIL']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_TKK_TERAMPIL'] as $val) {
+                            $data['infografis_table_TKK_TERAMPIL'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_TKK_TERAMPIL']
                         );
                     }else{
                         $callback = array(

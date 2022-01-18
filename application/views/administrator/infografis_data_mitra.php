@@ -183,7 +183,6 @@
                         <div class="card-body">
                             <div class="pb-4 pt-2">
                                 <ul class="nav nav-tabs" role="tablist">
-
                                     <li class="nav-item">
                                         <a class="nav-link active" href="#master-infografis-mitra" role="tab"
                                             data-toggle="tab">
