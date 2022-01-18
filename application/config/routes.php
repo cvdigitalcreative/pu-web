@@ -134,6 +134,18 @@ $route['pupr/asesor'] = "Infografis_data/asesor";
 //route Infografis Data Asesor
 $route['pupr/asesor_file'] = "Infografis_data/asesor_file";
 
+//route Infografis Data SE Kepala Daerah
+$route['pupr/se_kepala_daerah'] = "Infografis_data/se_kepala_daerah";
+
+//route Infografis Data SE Kepala Daerah
+$route['pupr/se_kepala_daerah_file'] = "Infografis_data/se_kepala_daerah_file";
+
+//route Infografis Data Capaian Output
+$route['pupr/capaian_output'] = "Infografis_data/capaian_output";
+
+//route Infografis Data Capaian Output
+$route['pupr/capaian_output_file'] = "Infografis_data/capaian_output_file";
+
 //route Profile
 $route['pupr/profile'] = "User/profile";
 

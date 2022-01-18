@@ -2900,6 +2900,66 @@ Tidak ada poster kegiatan`
         }
     })
 
+    $('#infografis_table_se_kepala_daerah').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_table_se_kepala_daerah`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_data_infografis',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'nama',
+            },
+            {
+                data: 'jumlah',
+            },
+
+
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-table-se_kepala_daerah' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-table-se_kepala_daerah' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-table-se_kepala_daerah', function() {
+        if ($('#infografis_table_se_kepala_daerah').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_se_kepala_daerah/${id}`)
+            $('#edit_nama_infografis').val($(this).parent().siblings().eq(3).text())
+            $('#edit_jumlah_infografis').val($(this).parent().siblings().eq(4).text())
+            $('#modal-edit-infografis-se_kepala_daerah').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-table-se_kepala_daerah', function() {
+        if ($('#infografis_table_se_kepala_daerah').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-infografis-se_kepala_daerah').modal('show')
+        }
+    })
+
+
+
 
     $('#infografis_file_mitra_table').DataTable({
         "order": [0, 'asc'],
@@ -3780,6 +3840,12 @@ Tidak ada poster kegiatan`
         $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_asesor`)
         $('#modal-tambah-infografis-asesor-master').modal('show');
     })
+
+    $('#btn-add-infografis-se_kepala_daerah').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_se_kepala_daerah`)
+        $('#modal-tambah-infografis-se_kepala_daerah-master').modal('show');
+    })
+
 
 
     // ================================= Tenaga Ahli ===================================

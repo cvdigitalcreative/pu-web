@@ -130,10 +130,10 @@
                 <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'instruktur_file' ? 'active' : ''?>" href="<?=base_url('pupr/instruktur_file')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/instruktur.png')?>">Instruktur File</a>
                 <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'asesor' ? 'active' : ''?>" href="<?=base_url('pupr/asesor')?>" href="<?=base_url('pupr/asesor')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/asesor.png')?>">Asesor</a>
                 <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'asesor_file' ? 'active' : ''?>" href="<?=base_url('pupr/asesor_file')?>" href="<?=base_url('pupr/asesor_file')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/asesor.png')?>">Asesor File</a>
-                <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/SE_Kepala_Daerah.png')?>">SE Kepala Daerah</a>
-                <a class="collapse-item" href="utilities-other.html"><img class="img-profile mr-2" src="<?=base_url('assets/image/SE_Kepala_Daerah.png')?>">SE Kepala Daerah File</a>
-                <a class="collapse-item" href="#"><img class="img-profile mr-2" src="<?=base_url('assets/image/Capaian_Output.png')?>">Capaian Output</a>
-                <a class="collapse-item" href="#"><img class="img-profile mr-2" src="<?=base_url('assets/image/Capaian_Output.png')?>">Capaian Output File</a>
+                <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'se_kepala_daerah' ? 'active' : ''?>" href="<?=base_url('pupr/se_kepala_daerah')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/SE_Kepala_Daerah.png')?>">SE Kepala Daerah</a>
+                <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'se_kepala_daerah_file' ? 'active' : ''?>" href="<?=base_url('pupr/se_kepala_daerah_file')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/SE_Kepala_Daerah.png')?>">SE Kepala Daerah File</a>
+                <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'capaian_output' ? 'active' : ''?>" href="<?=base_url('pupr/capaian_output')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/Capaian_Output.png')?>">Capaian Output</a>
+                <a class="collapse-item nav-item <?=$this->uri->segment(2) == 'capaian_output_file' ? 'active' : ''?>" href="<?=base_url('pupr/capaian_output_file')?>"><img class="img-profile mr-2" src="<?=base_url('assets/image/Capaian_Output.png')?>">Capaian Output File</a>
             </div>
         </div>
     </li>
