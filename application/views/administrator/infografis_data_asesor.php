@@ -182,9 +182,9 @@
                                             AKTK</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-infografis-dinv" role="tab"
+                                        <a class="nav-link" href="#master-infografis-abu" role="tab"
                                             data-toggle="tab">
-                                            Asesor Non Vokasi</a>
+                                            ABU</a>
                                     </li>
                                 </ul>
                             </div>
@@ -205,8 +205,8 @@
                                     </table>
                                 </div>
 
-                                <div class="tab-pane fade show" role="tabpanel" id="master-infografis-dinv">
-                                    <table id="infografis_table_dinv" class="display" style="width:100%">
+                                <div class="tab-pane fade show" role="tabpanel" id="master-infografis-abu">
+                                    <table id="infografis_table_abu" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
