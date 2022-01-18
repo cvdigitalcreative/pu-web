@@ -912,6 +912,49 @@ class Infografis_data extends CI_Controller
         
     }
 
+    public function infografis_table_RPK()
+    {
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_table_RPK'] = $this->Infografis_model->data_table_chart_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 16);
+            if($data['infografis_table_RPK'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_table_RPK']['status'] == "Success"){
+                    if(count($data['infografis_table_RPK']['data']) > 0){
+                        $data['infografis_table_RPK'] = $data['infografis_table_RPK']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_table_RPK'] as $val) {
+                            $data['infografis_table_RPK'][$index_data_infografis]['no_data_infografis'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_table_RPK']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+       
+        
+    }
+
     public function infografis_file_mitra(){
         if($this->session->userdata('logged_in') == true){
             $data['infografis_file_mitra_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 1);
@@ -1078,6 +1121,37 @@ class Infografis_data extends CI_Controller
         }
     }
 
+    public function add_infografis_capaian_output(){
+        if($this->session->userdata('logged_in') == true){
+            $id_provinsi = $this->input->post('idprovinsi');
+            $nama_infografis = $this->input->post('nama');
+            $jumlah = $this->input->post('jumlah');
+            $kategori = $this->input->post('kategori');
+            // echo $id_provinsi;
+            // echo "<br>";
+            // echo $jumlah;
+            // echo "<br>";
+            // echo $id_provinsi;
+            // echo "<br>";
+            // echo $$katefori;
+            // echo "<br>";
+            $add = $this->Infografis_model->add_data_chart_infografis($id_provinsi, $nama_infografis, $jumlah, $kategori, $this->session->userdata('token'));
+            if ($add == null)
+                $this->load->view('error_page');
+            else {
+                if ($add['status'] == "Success") {
+                    $this->session->set_flashdata('success', $add['message']);
+                    redirect('pupr/capaian_output');
+                } else if($add['status'] == "Error"){
+                    $this->session->set_flashdata('gagal', $add['message']);
+                    redirect('pupr/capaian_output');
+                }
+            }
+        } else{
+            redirect('pupr/login');  
+        }
+    }
+
     public function add_infografis_file(){
         if($this->session->userdata('logged_in') == true){
             $file_infografis = new \CurlFile($_FILES['file_infografis']['tmp_name'], $_FILES['file_infografis']['type'], $_FILES['file_infografis']['name']);
@@ -1181,6 +1255,26 @@ class Infografis_data extends CI_Controller
                 } else if($add['status'] == "Error"){
                     $this->session->set_flashdata('gagal', $add['message']);
                     redirect('pupr/se_kepala_daerah');
+                }
+            }
+        } else
+            redirect('pupr/login');
+    }
+
+    public function edit_infografis_capaian_output($id){
+        if($this->session->userdata('logged_in') == true){
+            $nama_infografis = $this->input->post('edit_nama_infografis');
+            $jumlah = $this->input->post('edit_jumlah_infografis');
+            $add = $this->Infografis_model->edit_data_chart_infografis($nama_infografis, $jumlah, $id, $this->session->userdata('token'));
+            if ($add == null)
+                $this->load->view('error_page');
+            else {
+                if ($add['status'] == "Success") {
+                    $this->session->set_flashdata('success', $add['message']);
+                    redirect('pupr/capaian_output');
+                } else if($add['status'] == "Error"){
+                    $this->session->set_flashdata('gagal', $add['message']);
+                    redirect('pupr/capaian_output');
                 }
             }
         } else
@@ -1291,6 +1385,26 @@ class Infografis_data extends CI_Controller
                 } else {
                     $this->session->set_flashdata('APImessage', $delete_infografis['message']);
                     redirect("pupr/se_kepala_daerah");
+                }
+            }
+        }else{
+            redirect('pupr/login');
+        }
+    }
+
+    public function delete_infografis_capaian_output($id_infografis){
+        if($this->session->userdata('logged_in') == true){
+            $delete_infografis = $this->Infografis_model->delete_data_chart_infografis($id_infografis, $this->session->userdata('token'));
+            echo var_dump($delete_infografis);
+            if ($delete_infografis == null) {
+                $this->load->view('error_page');
+            } else {
+                if ($delete_infografis['status'] == "Success") {
+                    $this->session->set_flashdata('success', $delete_infografis['message']);
+                    redirect("pupr/capaian_output");
+                } else {
+                    $this->session->set_flashdata('APImessage', $delete_infografis['message']);
+                    redirect("pupr/capaian_output");
                 }
             }
         }else{
