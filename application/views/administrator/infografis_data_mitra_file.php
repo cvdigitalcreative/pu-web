@@ -48,8 +48,8 @@
                                 <option value="4">Vokasi</option>
                                 <option value="5">Asosiasi Profesi</option>
                                 <option value="6">Asosiasi Badan Usaha Jasa Konstruksi</option>
-                                <option value="7">Lapas </option>
-                                <option value="8">Instansi Lain </option>
+                                <option value="7">Lapas</option>
+                                <option value="8">Instansi Lain</option>
                                 <option value="27">KSO/PKS </option>
                                 <option value="28">MTU </option>
                             </select>
@@ -199,6 +199,16 @@
                                             data-toggle="tab">
                                             Asosiasi BUJK</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-lapas" role="tab"
+                                            data-toggle="tab">
+                                            Lapas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-instansi_lain" role="tab"
+                                            data-toggle="tab">
+                                            Instansi Lain</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -272,6 +282,19 @@
                                 </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-asosiasi_bujk">
                                     <table id="infografis_file_asosiasi_bujk_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-lapas">
+                                    <table id="infografis_file_lapas_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
