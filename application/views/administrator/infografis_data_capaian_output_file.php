@@ -183,6 +183,11 @@
                                             data-toggle="tab">
                                             Program Padat Karya</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-RPBWP" role="tab"
+                                            data-toggle="tab">
+                                            Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -215,6 +220,19 @@
                                 </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-PPK">
                                     <table id="infografis_file_PPK_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-RPBWP">
+                                    <table id="infografis_file_RPBWP_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>

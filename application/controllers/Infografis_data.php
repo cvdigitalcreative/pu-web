@@ -1955,7 +1955,7 @@ class Infografis_data extends CI_Controller
 
     public function infografis_file_PPK(){
         if($this->session->userdata('logged_in') == true){
-            $data['infografis_file_PPK_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 14);
+            $data['infografis_file_PPK_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 14    );
      
             if($data['infografis_file_PPK_table'] == null){
                 $callback = array(
@@ -1975,6 +1975,47 @@ class Infografis_data extends CI_Controller
                         }
                         $callback = array(
                             'data' => $data['infografis_file_PPK_table']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+    }
+
+    public function infografis_file_RPBWP(){
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_file_RPBWP_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 18);
+     
+            if($data['infografis_file_RPBWP_table'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_file_RPBWP_table']['status'] == "Success"){
+                    if(count($data['infografis_file_RPBWP_table']['data']) > 0){
+                        $data['infografis_file_RPBWP_table'] = $data['infografis_file_RPBWP_table']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_file_RPBWP_table'] as $val) {
+                            $data['infografis_file_RPBWP_table'][$index_data_infografis]['no_infografis_file'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_file_RPBWP_table']
                         );
                     }else{
                         $callback = array(
