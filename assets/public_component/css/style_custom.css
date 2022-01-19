@@ -1,3 +1,69 @@
+.chart-container {
+    height: 55vh;
+}
+
+.chart-container-balai-sektoral {
+    height: 55vh;
+}
+
+.chart-container-opd {
+    height: 55vh;
+}
+
+.chart-container-vokasi {
+    height: 55vh;
+}
+
+.chart-container-asosiasi-profesi {
+    height: 55vh;
+}
+
+.chart-container-asosiasi-bujk {
+    height: 55vh;
+}
+
+.chart-container-lapas {
+    height: 55vh;
+}
+
+.chart-container-instansi_lain {
+    height: 55vh;
+}
+
+.chart-container-div {
+    height: 55vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .chart-container {
+        height: 50vh;
+    }
+    .chart-container-balai-sektoral {
+        height: 50vh;
+    }
+    .chart-container-opd {
+        height: 40vh;
+    }
+    .chart-container-vokasi {
+        height: 40vh;
+    }
+    .chart-container-asosiasi-profesi {
+        height: 40vh;
+    }
+    .chart-container-asosiasi-bujk {
+        height: 40vh;
+    }
+    .chart-container-lapas {
+        height: 40vh;
+    }
+    .chart-container-instansi_lain {
+        height: 40vh;
+    }
+    .chart-container-div {
+        height: 40vh;
+    }
+}
+
 div#asosiasi {
     background-image: url('https://pupr-dev.classico.id/assets/image/pupr.jpg');
     background-size: 500px 800px;

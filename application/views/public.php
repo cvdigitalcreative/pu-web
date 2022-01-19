@@ -70,10 +70,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <li><a href="#asosiasi_bujk_1">Asosiasi BUJK</a></li>
                                 </ul>
                             </li>
-                            <li><a class="nav-link scrollto " href="#lapas_1">Lapas</a></li>
-                            <li><a class="nav-link scrollto " href="#instansi_lain_1">Instansi Lain</a></li>
-                            <li><a class="nav-link scrollto " href="#kso_1">KSO/PKS</a></li>
-                            <li><a class="nav-link scrollto " href="#mtu_1">MTU</a></li>
+                            <li><a href="#lapas_2">Lapas</a></li>
+                            <li><a href="#instansi_lain_1">Instansi Lain</a></li>
+                            <li><a href="#kso_1">KSO/PKS</a></li>
+                            <li><a href="#mtu_1">MTU</a></li>
 
                         </ul>
                     </li>
@@ -367,7 +367,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_mitra">
                                     </div>
                                 </div>
-                                <canvas id="mitra" height="100"></canvas>
+                                <div class="chart-container">
+                                    <canvas id="mitra"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -434,7 +436,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_Balai_Sektoral">
                                     </div>
                                 </div>
-                                <canvas id="Balai_Sektoral" height="100"></canvas>
+                                <div class="chart-container-balai-sektoral">
+                                    <canvas id="Balai_Sektoral"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -500,8 +504,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_OPD">
                                     </div>
                                 </div>
-
-                                <canvas id="OPD" width="900"></canvas>
+                                <div class="chart-container-opd">
+                                    <canvas id="OPD" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -559,7 +564,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_vokasi">
                                     </div>
                                 </div>
-                                <canvas id="vokasi" width="900"></canvas>
+                                <div class="chart-container-vokasi">
+                                    <canvas id="vokasi" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -625,8 +632,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_Asosiasi_Profesi">
                                     </div>
                                 </div>
-
-                                <canvas id="Asosiasi_Profesi" width="900"></canvas>
+                                <div class="chart-container-asosiasi-profesi">
+                                    <canvas id="Asosiasi_Profesi" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -685,7 +693,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_ABUJK">
                                     </div>
                                 </div>
-                                <canvas id="ABUJK" width="900"></canvas>
+                                <div class="chart-container-asosiasi-profesi">
+                                    <canvas id="ABUJK" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -694,7 +704,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
         <!-- ======= LAPAS dan BUJK ======= -->
-        <section id="lapas_1" class="lapas_1 mt-6">
+        <!-- <section id="lapas_2" class="lapas_1 mt-6">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -749,14 +759,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_lapas">
                                     </div>
                                 </div>
-
-                                <canvas id="lapas" width="900"></canvas>
+                                <div class="chart-container-lapas">
+                                    <canvas id="lapas" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+
+        </section> -->
+        <!-- Asosiasi Profesi dan Asosias BUJK Section -->
+        <!-- <section id="instansi_lain_1">
+            <div class="container">
+                <div class="row">
+
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
-                        id="instansi_lain_1">
+                        id="instansi_lain_2">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Instansi Lain</h6>
@@ -811,15 +829,146 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_instansi_lain">
                                     </div>
                                 </div>
-                                <canvas id="instansi_lain" width="900"></canvas>
+                                <div class="chart-container-instansi_lain">
+                                    <canvas id="instansi_lain" width="900"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section> -->
+        <section id="lapas_2" class="lapas_1 mt-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi Profesi</h6>
+                            </div>
+                            <div class="card-body" id="lapas_1">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-lapas" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
+                                            File</a>
+                                        <a id="download-chart-lapas" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Download Gambar Chart">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-lapas">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypelapas" id="chartTypelapas">
+                                                <option value="bar">Bar</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_lapas">
+                                    </div>
+                                </div>
+                                <div class="chart-container-asosiasi-profesi">
+                                    <canvas id="lapas" width="900"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
+                        >
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Asosiasi BUJK</h6>
+                            </div>
+
+                            <div class="card-body" id="instansi_lain_1">
+                                <div class="row">
+                                    <div class="mt-2">
+                                        <a href="" id="chart-filter-file-instansi_lain" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
+                                            File</a>
+                                        <a id="download-chart-instansi_lain" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Download Gambar Chart">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-instansi_lain">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeinstansi_lain"
+                                                id="chartTypeinstansi_lain">
+                                                <option value="bar">Bar</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_instansi_lain">
+                                    </div>
+                                </div>
+                                <div class="chart-container-asosiasi-profesi">
+                                    <canvas id="instansi_lain" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
-        <!-- ======= Capaian Output Daerah ======= -->
+        </section>
+        <!-- ======= KSO/PKS ======= -->
         <section id="kso_1" class="about">
             <div class="container">
                 <div class="row content">
@@ -880,14 +1029,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_KSO">
                                     </div>
                                 </div>
+
                                 <canvas id="KSO" height=""></canvas>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </section><!-- Capaian Output Section -->
+        </section><!-- KSO/PKS Section -->
         <section id="mtu_1" class="about">
             <div class="container">
                 <div class="row content">
@@ -1017,8 +1168,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_DIV">
                                     </div>
                                 </div>
-
-                                <canvas id="DIV" width="900"></canvas>
+                                <div class="chart-container-div">
+                                    <canvas id="DIV" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
