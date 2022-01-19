@@ -25,12 +25,29 @@
                         <div class="form-group py-2">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                             <select class="custom-select my-1 mr-sm-2" id="idprovinsi" name="idprovinsi">
+                            <?php if($this->session->userdata('id_provinsi') == 0) {?>
                                 <option selected>Choose...</option>
                                 <option value="15">Sumatera Selatan</option>
                                 <option value="16">Kep. Bangka Belitung</option>
                                 <option value="17">Jambi</option>
                                 <option value="18">Bengkulu</option>
                                 <option value="19">Lampung</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 15){?>
+                                <option selected>Choose...</option>
+                                <option value="15">Sumatera Selatan</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 16){ ?>
+                                <option selected>Choose...</option>
+                                <option value="16">Kep. Bangka Belitung</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 17){ ?>
+                                <option selected>Choose...</option>
+                                <option value="17">Jambi</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 18){ ?>
+                                <option selected>Choose...</option>
+                                <option value="18">Bengkulu</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 19){ ?>
+                                <option selected>Choose...</option>
+                                <option value="19">Lampung</option>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="form-group py-2">
