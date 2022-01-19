@@ -9,7 +9,7 @@
 
 
     <!-- Tambah Mitra File -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-balai-file-master" tabindex="-1"
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-mitra-file-master" tabindex="-1"
         role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -209,6 +209,16 @@
                                             data-toggle="tab">
                                             Instansi Lain</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-kso" role="tab"
+                                            data-toggle="tab">
+                                            KSO/PKS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-mtu" role="tab"
+                                            data-toggle="tab">
+                                            MTU</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -308,6 +318,32 @@
                                 </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-instansi_lain">
                                     <table id="infografis_file_instansi_lain_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-kso">
+                                    <table id="infografis_file_kso_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-mtu">
+                                    <table id="infografis_file_mtu_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
