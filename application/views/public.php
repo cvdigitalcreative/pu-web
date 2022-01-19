@@ -367,7 +367,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_mitra">
                                     </div>
                                 </div>
-                                <canvas id="mitra" height="100"></canvas>
+                                <div class="chart-container">
+                                    <canvas id="mitra"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -434,7 +436,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_Balai_Sektoral">
                                     </div>
                                 </div>
-                                <canvas id="Balai_Sektoral" height="100"></canvas>
+                                <div class="chart-container-balai-sektoral">
+                                <canvas id="Balai_Sektoral"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>

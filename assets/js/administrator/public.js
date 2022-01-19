@@ -187,6 +187,7 @@ $(document).ready(function() {
                             }
                         },
                         responsive: true,
+                        maintainAspectRatio: false,
                         fill: false,
                         scales: {
 
@@ -197,7 +198,6 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false,
 
-
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -205,8 +205,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
-                                barPercentage: 0.8,
-                                categoryPercentage: 0.8,
+
+                                barPercentage: 0.5,
+                                categoryPercentage: 0.9,
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
                                 }
@@ -360,6 +361,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
