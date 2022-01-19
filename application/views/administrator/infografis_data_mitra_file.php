@@ -194,6 +194,11 @@
                                             data-toggle="tab">
                                             Asosiasi Profesi</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-asosiasi_bujk" role="tab"
+                                            data-toggle="tab">
+                                            Asosiasi BUJK</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -254,6 +259,19 @@
                                 </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-asosiasi_profesi">
                                     <table id="infografis_file_asosiasi_profesi_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-asosiasi_bujk">
+                                    <table id="infografis_file_asosiasi_bujk_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
