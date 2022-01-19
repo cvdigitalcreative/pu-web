@@ -504,8 +504,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_OPD">
                                     </div>
                                 </div>
-
+                                <div class="chart-container-opd">
                                 <canvas id="OPD" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -563,7 +564,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_vokasi">
                                     </div>
                                 </div>
+                                <div class="chart-container-vokasi">
                                 <canvas id="vokasi" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -629,8 +632,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_Asosiasi_Profesi">
                                     </div>
                                 </div>
-
+                                <div class="chart-container-asosiasi-profesi">
                                 <canvas id="Asosiasi_Profesi" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -689,7 +693,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_ABUJK">
                                     </div>
                                 </div>
+                                <div class="chart-container-asosiasi-profesi">
                                 <canvas id="ABUJK" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -753,14 +759,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_lapas">
                                     </div>
                                 </div>
-
+                                <div class="chart-container-lapas">
                                 <canvas id="lapas" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
-                        id="instansi_lain_1">
+                        >
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Instansi Lain</h6>
@@ -815,7 +822,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_instansi_lain">
                                     </div>
                                 </div>
+                                <div class="chart-container-instansi_lain">
                                 <canvas id="instansi_lain" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -823,7 +832,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Asosiasi Profesi dan Asosias BUJK Section -->
-        <!-- ======= Capaian Output Daerah ======= -->
+        <!-- ======= KSO/PKS ======= -->
         <section id="kso_1" class="about">
             <div class="container">
                 <div class="row content">
@@ -884,14 +893,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_KSO">
                                     </div>
                                 </div>
+                                
                                 <canvas id="KSO" height=""></canvas>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </section><!-- Capaian Output Section -->
+        </section><!-- KSO/PKS Section -->
         <section id="mtu_1" class="about">
             <div class="container">
                 <div class="row content">
@@ -1021,8 +1032,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_DIV">
                                     </div>
                                 </div>
-
+                                <div class="chart-container-div">
                                 <canvas id="DIV" width="900"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>

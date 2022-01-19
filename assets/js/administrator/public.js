@@ -534,6 +534,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -705,6 +706,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -873,6 +875,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -1042,6 +1045,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -1211,6 +1215,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -1376,6 +1381,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -1494,7 +1500,7 @@ $(document).ready(function() {
 
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
-                        $('#KSO').attr('height', `200vh`);
+                        $('#KSO').attr('height', `500vh`);
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -1564,6 +1570,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+
                         scales: {
                             yAxes: [{
 
@@ -1942,6 +1949,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
