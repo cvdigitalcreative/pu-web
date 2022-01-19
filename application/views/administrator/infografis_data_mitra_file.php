@@ -9,7 +9,7 @@
 
 
     <!-- Tambah Mitra File -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-balai-file-master" tabindex="-1"
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-mitra-file-master" tabindex="-1"
         role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -25,12 +25,29 @@
                         <div class="form-group py-2">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Provinsi</label>
                             <select class="custom-select my-1 mr-sm-2" id="idprovinsi" name="idprovinsi">
+                            <?php if($this->session->userdata('id_provinsi') == 0) {?>
                                 <option selected>Choose...</option>
                                 <option value="15">Sumatera Selatan</option>
                                 <option value="16">Kep. Bangka Belitung</option>
                                 <option value="17">Jambi</option>
                                 <option value="18">Bengkulu</option>
                                 <option value="19">Lampung</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 15){?>
+                                <option selected>Choose...</option>
+                                <option value="15">Sumatera Selatan</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 16){ ?>
+                                <option selected>Choose...</option>
+                                <option value="16">Kep. Bangka Belitung</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 17){ ?>
+                                <option selected>Choose...</option>
+                                <option value="17">Jambi</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 18){ ?>
+                                <option selected>Choose...</option>
+                                <option value="18">Bengkulu</option>
+                                <?php } elseif($this->session->userdata('id_provinsi')== 19){ ?>
+                                <option selected>Choose...</option>
+                                <option value="19">Lampung</option>
+                                <?php } ?>
                             </select>
                         </div>
                         <div class="form-group py-2">
@@ -48,8 +65,8 @@
                                 <option value="4">Vokasi</option>
                                 <option value="5">Asosiasi Profesi</option>
                                 <option value="6">Asosiasi Badan Usaha Jasa Konstruksi</option>
-                                <option value="7">Lapas </option>
-                                <option value="8">Instansi Lain </option>
+                                <option value="7">Lapas</option>
+                                <option value="8">Instansi Lain</option>
                                 <option value="27">KSO/PKS </option>
                                 <option value="28">MTU </option>
                             </select>
@@ -179,6 +196,46 @@
                                             data-toggle="tab">
                                             Balai</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-opd" role="tab"
+                                            data-toggle="tab">
+                                            OPD</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-vokasi" role="tab"
+                                            data-toggle="tab">
+                                            Vokasi</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-asosiasi_profesi" role="tab"
+                                            data-toggle="tab">
+                                            Asosiasi Profesi</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-asosiasi_bujk" role="tab"
+                                            data-toggle="tab">
+                                            Asosiasi BUJK</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-lapas" role="tab"
+                                            data-toggle="tab">
+                                            Lapas</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-instansi_lain" role="tab"
+                                            data-toggle="tab">
+                                            Instansi Lain</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-kso" role="tab"
+                                            data-toggle="tab">
+                                            KSO/PKS</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-mtu" role="tab"
+                                            data-toggle="tab">
+                                            MTU</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -211,7 +268,110 @@
                                         </thead>
                                     </table>
                                 </div>
-
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-opd">
+                                    <table id="infografis_file_opd_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-vokasi">
+                                    <table id="infografis_file_vokasi_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-asosiasi_profesi">
+                                    <table id="infografis_file_asosiasi_profesi_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-asosiasi_bujk">
+                                    <table id="infografis_file_asosiasi_bujk_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-lapas">
+                                    <table id="infografis_file_lapas_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-instansi_lain">
+                                    <table id="infografis_file_instansi_lain_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-kso">
+                                    <table id="infografis_file_kso_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-mtu">
+                                    <table id="infografis_file_mtu_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
                             </div>
 
                         </div>

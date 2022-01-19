@@ -3521,7 +3521,7 @@ Tidak ada poster kegiatan`
     $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
         if ($('#infografis_file_balai_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_balai/${id}`)
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
             $('#modal-edit-infografis-file-master').modal('show')
 
         }
@@ -3529,10 +3529,1165 @@ Tidak ada poster kegiatan`
     $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
         if ($('#infografis_file_balai_table').length > 0) {
             const id = $(this).data('id')
-            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_balai/${id}`)
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
             $('#modal-delete-file-infografis').modal('show')
         }
     })
+
+    $('#infografis_file_opd_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_opd`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_opd_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_opd_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_vokasi_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_vokasi`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_vokasi_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_vokasi_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_asosiasi_profesi_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_asosiasi_profesi`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_asosiasi_profesi_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_asosiasi_profesi_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_asosiasi_bujk_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_asosiasi_bujk`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_asosiasi_bujk_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_asosiasi_bujk_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_lapas_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_lapas`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_lapas_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_lapas_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_instansi_lain_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_instansi_lain`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_instansi_lain_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_instansi_lain_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_kso_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_kso`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_kso_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_kso_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_mtu_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_mtu`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_mtu_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_mitra/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+
+        }
+    })
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_mtu_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_mitra/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_div_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_div`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_div_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_instruktur/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_div_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_instruktur/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_dinv_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_dinv`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_dinv_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_instruktur/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_dinv_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_instruktur/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_aktk_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_aktk`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_aktk_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_asesor/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_aktk_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_asesor/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_abu_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_abu`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_abu_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_asesor/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_abu_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_asesor/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_se_kepala_daerah_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_se_kepala_daerah`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_se_kepala_daerah/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_RPK_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_RPK`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_RPK_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_RPK/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_RPBS_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_RPBS`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_RPBS_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_RPBS/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_PPK_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_PPK`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_PPK_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_PPK/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_RPBWP_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_RPBWP`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_RPBWP_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_RPBWP/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_RPKBMK_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_RPKBMK`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_RPKBMK_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_RPKBMK/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_RPKBJK_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_RPKBJK`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_RPKBJK_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_RPKBJK/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_TKK_AHLI_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_TKK_AHLI`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_TKK_AHLI_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_TKK_AHLI/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
+    $('#infografis_file_TKK_TERAMPIL_table').DataTable({
+        "order": [0, 'asc'],
+        processing: true,
+        serverSide: false,
+        pagingType: "full_numbers",
+        language: {
+            emptyTable: "Data tidak ditemukan!",
+        },
+        ajax: {
+            url: `${BASE_URL}Infografis_data/infografis_file_TKK_TERAMPIL`,
+            type: "GET",
+        },
+        columns: [{
+                data: 'no_infografis_file',
+            },
+            {
+                data: 'nama_provinsi',
+            },
+            {
+                data: 'nama_kategori',
+            },
+            {
+                data: 'path_file',
+                render: function(data) {
+                    return `
+					<a href="${data}" class='btn btn-success btn-block'>Download</a>`
+                },
+            },
+            {
+                data: 'id',
+                render: function(data) {
+                    return `
+					<button id='btn-edit-infografis-file-table-master' type='submit' class='btn btn-warning btn-block' data-id='${data}'>Edit</button>
+					<button id='btn-reject-infografis-file-table-master' type='submit' class='btn btn-danger btn-block' data-id='${data}'>Hapus</button>`
+                },
+            },
+        ]
+    })
+
+    $('table').on('click', '#btn-edit-infografis-file-table-master', function() {
+        if ($('#infografis_file_TKK_TERAMPIL_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/edit_infografis_file_TKK_TERAMPIL/${id}`)
+            $('#modal-edit-infografis-file-master').modal('show')
+        }
+    })
+
+    $('table').on('click', '#btn-reject-infografis-file-table-master', function() {
+        if ($('#infografis_file_se_kepala_daerah_table').length > 0) {
+            const id = $(this).data('id')
+            $('form').attr('action', `${BASE_URL}Infografis_data/delete_file_infografis_se_kepala_daerah/${id}`)
+            $('#modal-delete-file-infografis').modal('show')
+        }
+    })
+
 
 
 
@@ -4369,8 +5524,32 @@ Tidak ada poster kegiatan`
 
     $('#btn-add-file-infografis-mitra').on('click', function() {
         $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_file_mitra`)
-        $('#modal-tambah-infografis-balai-file-master').modal('show');
+        $('#modal-tambah-infografis-mitra-file-master').modal('show');
     })
+
+    $('#btn-add-file-infografis-instruktur').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_file_instruktur`)
+        $('#modal-tambah-infografis-instruktur-file-master').modal('show');
+    })
+
+    $('#btn-add-file-infografis-asesor').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_file_asesor`)
+        $('#modal-tambah-infografis-asesor-file-master').modal('show');
+    })
+
+    $('#btn-add-file-infografis-se_kepala_daerah').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_file_se_kepala_daerah`)
+        $('#modal-tambah-infografis-se_kepala_daerah-file-master').modal('show');
+    })
+
+    $('#btn-add-file-infografis-capaian_output').on('click', function() {
+        $('form').attr('action', `${BASE_URL}Infografis_data/add_infografis_file_capaian_output`)
+        $('#modal-tambah-infografis-capaian_output-file-master').modal('show');
+    })
+
+
+
+
 
 
 
