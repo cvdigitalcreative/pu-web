@@ -8,12 +8,12 @@
 <body id="page-top">
 
 
-    <!-- Tambah Mitra File -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-file-master" tabindex="-1" role="dialog">
+    <!-- Tambah Asesor File -->
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-asesor-file-master" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah File Mitra</h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Tambah File Asesor</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -33,7 +33,7 @@
                             </select>
                         </div>
                         <div class="form-group py-2">
-                            <label for="nama">File Mitra</label>
+                            <label for="nama">File Asesor</label>
                             <input type="file" class="form-control" id="file_infografis" name="file_infografis"
                                 placeholder="Contoh: Universitas Negeri Sriwijaya" required>
                         </div>
@@ -41,21 +41,13 @@
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Kategori</label>
                             <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="kategori">
                                 <option selected>Choose...</option>
-                                <option value="1">Mitra Balai Jasa Konstruksi Wilayah II Palembang</option>
-                                <option value="2">Balai PUPR</option>
-                                <option value="3">Organisasi Perangkat Daerah Sub Urusan Jasa Konstruksi</option>
-                                <option value="4">Vokasi</option>
-                                <option value="5">Asosiasi Profesi</option>
-                                <option value="6">Asosiasi Badan Usaha Jasa Konstruksi</option>
-                                <option value="7">Lapas </option>
-                                <option value="8">Instansi Lain </option>
-                                <option value="27">KSO/PKS </option>
-                                <option value="28">MTU </option>
+                                <option value="10">Asesor Kompetensi Tenaga Kerja (AKTK) </option>
+                                <option value="11">Asesor Kompetensi Badan Usaha (ABU)</option>
                             </select>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Tambah File
-                            Mitra</button>
+                            Asesor</button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
                     </form>
@@ -63,13 +55,13 @@
             </div>
         </div>
     </div>
-    <!-- End Modal Mitra -->
-    <!-- Edit Mitra File -->
+    <!-- End Modal Asesor -->
+    <!-- Edit Asesor File -->
     <div class="modal fade bd-example-modal-lg" id="modal-edit-infografis-file-master" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="exampleModalCenterTitle">Edit File Mitra</h4>
+                    <h4 class="modal-title" id="exampleModalCenterTitle">Edit File Asesor</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -77,19 +69,15 @@
                 <div class="modal-body">
 
                     <form method="POST" enctype="multipart/form-data">
-                        <input type="text" class="form-control" id="edit_file_kategori_infografis"
-                            name="edit_file_kategori_infografis" hidden>
-                        <input type="text" class="form-control" id="edit_file_provinsi_infografis"
-                            name="edit_file_provinsi_infografis" hidden>
                         <div class="form-group py-2">
-                            <label for="nama">File Mitra</label>
-                            <input type="file" class="form-control" id="edit_file_infografis"
-                                name="edit_file_infografis" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf"
+                            <label for="nama">File Asesor</label>
+                            <input type="file" class="form-control" id="edit_file_infografis_instruktur"
+                                name="edit_file_infografis_instruktur" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf"
                                 required>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit File
-                            Mitra</button>
+                            Asesor</button>
                         <button type="button" class="btn btn-block btn-outline-dark btn-modal-close-add-kegiatan"
                             data-dismiss="modal">Batal</button>
                     </form>
@@ -97,14 +85,14 @@
             </div>
         </div>
     </div>
-    <!-- End Modal Mitra -->
-    <!-- Modal Delete Mitra -->
+    <!-- End Modal Asesor -->
+    <!-- Modal Delete Asesor -->
     <div class="modal fade bd-example-modal-lg" id="modal-delete-file-infografis" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus File Mitra Ini?</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Hapus File Asesor Ini?</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -121,7 +109,7 @@
             </div>
         </div>
     </div>
-    <!-- End modal delete Mitra -->
+    <!-- End modal delete Asesor -->
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -140,7 +128,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h2 font-weight-bold mb-4 mt-4">Mitra Kerja Data</h1>
+                        <h1 class="h2 font-weight-bold mb-4 mt-4">Asesor Data</h1>
                     </div>
 
                     <!-- Alert -->
@@ -165,23 +153,40 @@
                         <div class="col d-flex justify-content-between button-field">
                             <div class="">
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
-                                    id="btn-add-file-infografis-mitra"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Mitra Kerja File</button>
+                                    id="btn-add-file-infografis-asesor"><img class="img-profile mr-2"
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Asesor File</button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="pb-4 pt-2">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#master-file-infografis-mitra" role="tab" data-toggle="tab">
-                                            Mitra Kerja File</a>
+                                        <a class="nav-link active" href="#master-file-infografis-aktk" role="tab" data-toggle="tab">
+                                            AKTK</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-abu" role="tab" data-toggle="tab">
+                                            ABUJK</a>
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="tab-content">
-                                <div class="tab-pane fade active show" role="tabpanel" id="master-file-infografis-mitra">
-                                    <table id="infografis_file_mitra_table" class="display" style="width:100%">
+                                <div class="tab-pane fade active show" role="tabpanel" id="master-file-infografis-aktk">
+                                    <table id="infografis_file_aktk_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-abu">
+                                    <table id="infografis_file_abu_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>

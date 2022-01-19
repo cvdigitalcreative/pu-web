@@ -1706,7 +1706,89 @@ class Infografis_data extends CI_Controller
             redirect('pupr/login');
         }
     }
+
+    public function infografis_file_dinv(){
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_file_dinv_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 12);
+     
+            if($data['infografis_file_dinv_table'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_file_dinv_table']['status'] == "Success"){
+                    if(count($data['infografis_file_dinv_table']['data']) > 0){
+                        $data['infografis_file_dinv_table'] = $data['infografis_file_dinv_table']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_file_dinv_table'] as $val) {
+                            $data['infografis_file_dinv_table'][$index_data_infografis]['no_infografis_file'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_file_dinv_table']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+    }
     
+    public function infografis_file_aktk(){
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_file_aktk_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 10);
+     
+            if($data['infografis_file_aktk_table'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_file_aktk_table']['status'] == "Success"){
+                    if(count($data['infografis_file_aktk_table']['data']) > 0){
+                        $data['infografis_file_aktk_table'] = $data['infografis_file_aktk_table']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_file_aktk_table'] as $val) {
+                            $data['infografis_file_aktk_table'][$index_data_infografis]['no_infografis_file'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_file_aktk_table']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+    }
+
     public function add_infografis_mitra(){
         if($this->session->userdata('logged_in') == true){
             $id_provinsi = $this->input->post('idprovinsi');
@@ -1917,6 +1999,34 @@ class Infografis_data extends CI_Controller
             redirect("pupr/login");
         }
     }
+
+    public function add_infografis_file_asesor(){
+        if($this->session->userdata('logged_in') == true){
+            $file_infografis = new \CurlFile($_FILES['file_infografis']['tmp_name'], $_FILES['file_infografis']['type'], $_FILES['file_infografis']['name']);
+            $id_provinsi = $this->input->post('idprovinsi');
+            $kategori = $this->input->post('kategori');
+            $tambah_infografis_file = $this->Infografis_File_model->add_data_file_infografis(
+                $file_infografis,
+                $id_provinsi,
+                $kategori,
+                $this->session->userdata('token')
+            );
+
+            if ($tambah_infografis_file == null) {
+                $this->load->view('error_page');
+            }
+            if ($tambah_infografis_file['status'] == "Success") {
+                $this->session->set_flashdata('success', $tambah_infografis_file['message']);
+                redirect("pupr/asesor_file");
+            } else {
+                $this->session->set_flashdata('APImessage', $tambah_infografis_file['message']);
+                redirect("pupr/asesor_file");
+            }
+
+        }else{
+            redirect("pupr/login");
+        }
+    }
     
 
     public function edit_infografis_mitra($id){
@@ -2106,6 +2216,33 @@ class Infografis_data extends CI_Controller
         }
     }
 
+    public function edit_infografis_file_asesor($id_infografis_file){
+        if ($this->session->userdata('logged_in') == true) {
+            if ($_FILES['edit_file_infografis_asesor']['size'] > 0)
+                $file_infografis = new \CurlFile($_FILES['edit_file_infografis_asesor']['tmp_name'], $_FILES['edit_file_infografis_asesor']['type'], $_FILES['edit_file_infografis_asesor']['name']);
+            else
+                $file_infografis = null;
+                $edit_file_infografis = $this->Infografis_File_model->edit_infografis_file(
+                $file_infografis,
+                $id_infografis_file,
+                $this->session->userdata('token')
+            );
+
+            if ($edit_file_infografis == null) {
+                $this->load->view('error_page');
+            }
+            if ($edit_file_infografis['status'] == "Success") {
+                $this->session->set_flashdata('success', $edit_file_infografis['message']);
+                redirect("pupr/asesor_file");
+            } else {
+                $this->session->set_flashdata('APImessage', $edit_file_infografis['message']);
+                redirect("pupr/asesor_file");
+            }
+        } else {
+            redirect("pupr/login");
+        }
+    }
+
     public function delete_infografis_mitra($id_infografis){
         if($this->session->userdata('logged_in') == true){
             $delete_infografis = $this->Infografis_model->delete_data_chart_infografis($id_infografis, $this->session->userdata('token'));
@@ -2266,4 +2403,23 @@ class Infografis_data extends CI_Controller
         }
     }
 
+    public function delete_file_infografis_asesor($id_file_infografis){
+        if($this->session->userdata('logged_in') == true){
+            $delete_file_infografis = $this->Infografis_File_model->delete_infografis_file($id_file_infografis, $this->session->userdata('token'));
+            echo var_dump($delete_infografis);
+            if ($delete_file_infografis == null) {
+                $this->load->view('error_page');
+            } else {
+                if ($delete_file_infografis['status'] == "Success") {
+                    $this->session->set_flashdata('success', $delete_file_infografis['message']);
+                    redirect("pupr/asesor_file");
+                } else {
+                    $this->session->set_flashdata('APImessage', $delete_file_infografis['message']);
+                    redirect("pupr/asesor_file");
+                }
+            }
+        }else{
+            redirect('pupr/login');
+        }
+    }
 }

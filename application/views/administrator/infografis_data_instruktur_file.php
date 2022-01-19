@@ -164,12 +164,29 @@
                                         <a class="nav-link active" href="#master-file-infografis-div" role="tab" data-toggle="tab">
                                             Instruktur Vokasi</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-dinv" role="tab" data-toggle="tab">
+                                            Instruktur Non Vokasi</a>
+                                    </li>
                                 </ul>
                             </div>
 
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" role="tabpanel" id="master-file-infografis-div">
                                     <table id="infografis_file_div_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-dinv">
+                                    <table id="infografis_file_dinv_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
