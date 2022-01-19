@@ -178,6 +178,11 @@
                                             data-toggle="tab">
                                             Rekap Peserta Berdasarkan Skema</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-PPK" role="tab"
+                                            data-toggle="tab">
+                                            Program Padat Karya</a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -197,6 +202,19 @@
                                 </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-RPBS">
                                     <table id="infografis_file_RPBS_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-PPK">
+                                    <table id="infografis_file_PPK_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
