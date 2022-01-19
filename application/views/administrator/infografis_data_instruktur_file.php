@@ -128,7 +128,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h2 font-weight-bold mb-4 mt-4">Instruktur Data</h1>
+                        <h1 class="h2 font-weight-bold mb-4 mt-4">Instruktur File</h1>
                     </div>
 
                     <!-- Alert -->
