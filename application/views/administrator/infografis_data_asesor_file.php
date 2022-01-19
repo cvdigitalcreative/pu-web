@@ -71,8 +71,8 @@
                     <form method="POST" enctype="multipart/form-data">
                         <div class="form-group py-2">
                             <label for="nama">File Asesor</label>
-                            <input type="file" class="form-control" id="edit_file_infografis_instruktur"
-                                name="edit_file_infografis_instruktur" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf"
+                            <input type="file" class="form-control" id="edit_file_infografis_asesor"
+                                name="edit_file_infografis_asesor" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf"
                                 required>
                         </div>
                         <div class="menu-divider"></div>
