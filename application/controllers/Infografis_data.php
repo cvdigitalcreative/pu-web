@@ -1912,6 +1912,47 @@ class Infografis_data extends CI_Controller
         }
     }
 
+    public function infografis_file_RPBS(){
+        if($this->session->userdata('logged_in') == true){
+            $data['infografis_file_RPBS_table'] = $this->Infografis_File_model->data_table_file_infografis($this->session->userdata('token'), $this->session->userdata('id_provinsi'), 20);
+     
+            if($data['infografis_file_RPBS_table'] == null){
+                $callback = array(
+                    'data' => []
+                );
+            }else{
+                if($data['infografis_file_RPBS_table']['status'] == "Success"){
+                    if(count($data['infografis_file_RPBS_table']['data']) > 0){
+                        $data['infografis_file_RPBS_table'] = $data['infografis_file_RPBS_table']['data'];
+                        $index_data_infografis = 0;
+                        $no_data_infografis = 1;
+                        foreach ($data['infografis_file_RPBS_table'] as $val) {
+                            $data['infografis_file_RPBS_table'][$index_data_infografis]['no_infografis_file'] = $no_data_infografis;
+
+                            $index_data_infografis++;
+                            $no_data_infografis++;
+                        }
+                        $callback = array(
+                            'data' => $data['infografis_file_RPBS_table']
+                        );
+                    }else{
+                        $callback = array(
+                            'data' => []
+                        );
+                    }
+                }else{
+                    $callback = array(
+                        'data' => []
+                    );
+                }
+                header('Content-Type: application/json');
+                echo json_encode($callback);  
+            }
+        }else{
+            redirect('pupr/login');
+        }
+    }
+
     public function add_infografis_mitra(){
         if($this->session->userdata('logged_in') == true){
             $id_provinsi = $this->input->post('idprovinsi');

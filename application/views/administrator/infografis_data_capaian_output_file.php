@@ -9,7 +9,8 @@
 
 
     <!-- Tambah Capaian Output File -->
-    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-capaian_output-file-master" tabindex="-1" role="dialog">
+    <div class="modal fade bd-example-modal-lg" id="modal-tambah-infografis-capaian_output-file-master" tabindex="-1"
+        role="dialog">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -47,7 +48,8 @@
                                 <option value="18">Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</option>
                                 <option value="21">Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</option>
                                 <option value="17">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</option>
-                                <option value="25">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</option>
+                                <option value="25">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja
+                                </option>
                             </select>
                         </div>
                         <div class="menu-divider"></div>
@@ -77,8 +79,8 @@
                         <div class="form-group py-2">
                             <label for="nama">File Capaian Output</label>
                             <input type="file" class="form-control" id="edit_file_infografis_instruktur"
-                                name="edit_file_infografis_instruktur" placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf"
-                                required>
+                                name="edit_file_infografis_instruktur"
+                                placeholder="Contoh: Universitas_Negeri_Sriwijaya.pdf" required>
                         </div>
                         <div class="menu-divider"></div>
                         <button type="submit" class="btn btn-block btn-primary btn-modal-add-kegiatan">Edit File
@@ -159,15 +161,22 @@
                             <div class="">
                                 <button class="btn btn-primary btn-add-kegiatan mr-2 mt-4"
                                     id="btn-add-file-infografis-capaian_output"><img class="img-profile mr-2"
-                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Capaian Output File</button>
+                                        src="<?= base_url('assets/icons/pupr-add-icon.svg') ?>">Capaian Output
+                                    File</button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="pb-4 pt-2">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" href="#master-file-infografis-RPK" role="tab" data-toggle="tab">
+                                        <a class="nav-link active" href="#master-file-infografis-RPK" role="tab"
+                                            data-toggle="tab">
                                             Rekap Pelaksanaan Kegiatan</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-RPBS" role="tab"
+                                            data-toggle="tab">
+                                            Rekap Peserta Berdasarkan Skema</a>
                                     </li>
                                 </ul>
                             </div>
@@ -175,6 +184,19 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" role="tabpanel" id="master-file-infografis-RPK">
                                     <table id="infografis_file_RPK_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-RPBS">
+                                    <table id="infografis_file_RPBS_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
