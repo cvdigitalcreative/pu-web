@@ -50,6 +50,7 @@
                                 <option value="17">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</option>
                                 <option value="25">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja
                                 </option>
+                                <option value="26">Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</option>
                             </select>
                         </div>
                         <div class="menu-divider"></div>
@@ -189,9 +190,24 @@
                                             Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#master-file-infografis-RPBMK" role="tab"
+                                        <a class="nav-link" href="#master-file-infografis-RPKBMK" role="tab"
                                             data-toggle="tab">
                                             Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-RPKBJK" role="tab"
+                                            data-toggle="tab">
+                                            Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-TKK_AHLI" role="tab"
+                                            data-toggle="tab">
+                                            Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-TKK_TERAMPIL" role="tab"
+                                            data-toggle="tab">
+                                            Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</a>
                                     </li>
                                 </ul>
                             </div>
@@ -251,6 +267,45 @@
                                 </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-RPKBMK">
                                     <table id="infografis_file_RPKBMK_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-RPKBJK">
+                                    <table id="infografis_file_RPKBJK_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-TKK_AHLI">
+                                    <table id="infografis_file_TKK_AHLI_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-TKK_TERAMPIL">
+                                    <table id="infografis_file_TKK_TERAMPIL_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>

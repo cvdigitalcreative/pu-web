@@ -47,6 +47,7 @@
                                 <option value="21">Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</option>
                                 <option value="17">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</option>
                                 <option value="25">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</option>
+                                <option value="26">Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</option>
 
                             </select>
                         </div>
