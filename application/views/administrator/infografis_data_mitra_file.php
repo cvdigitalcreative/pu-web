@@ -184,6 +184,11 @@
                                             data-toggle="tab">
                                             OPD</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#master-file-infografis-vokasi" role="tab"
+                                            data-toggle="tab">
+                                            Vokasi</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -218,6 +223,19 @@
                                 </div>
                                 <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-opd">
                                     <table id="infografis_file_opd_table" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Provinsi</th>
+                                                <th>Kategori</th>
+                                                <th>File</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade show" role="tabpanel" id="master-file-infografis-vokasi">
+                                    <table id="infografis_file_vokasi_table" class="display" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
