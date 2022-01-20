@@ -1485,7 +1485,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPK">
-                                        <canvas id="RPK" width="535"></canvas>
+                                        <canvas id="RPK" width="590"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1548,7 +1548,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBK">
-                                        <canvas id="RPBK" width="535"></canvas>
+                                        <canvas id="RPBK" width="590"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1621,7 +1621,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-PPK">
-                                        <canvas id="PPK" width="535"></canvas>
+                                        <canvas id="PPK" width="590"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1685,7 +1685,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBWP">
-                                        <canvas id="RPBWP" width="535"></canvas>
+                                        <canvas id="RPBWP" width="590"></canvas>
                                     </div>
                                 </div>
                             </div>

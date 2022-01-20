@@ -2000,7 +2000,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -4246,13 +4246,15 @@ $(document).ready(function() {
 
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
-                        $('#TKK_AHLI').attr('height', `800vh`);
-                        var height_bar = 300
+                        $('#TKK_AHLI').attr('height', `1200vh`);
+                        var height_bar = 350
+                        var height_bar_mobile = 1100
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
                         $('#TKK_AHLI').attr('height', `100`);
                         var height_bar = 150
+                        var height_bar_mobile = 150
                         var display_y_axis = false
                         var display_x_axis = true
                     }
@@ -4284,6 +4286,7 @@ $(document).ready(function() {
                     } while (i < data.data.length);
                     $('#TKK_AHLI').attr('height', `500vh`);
                     var height_bar = 100
+                    var height_bar_mobile = 250
                     if (chart_type == 'horizontalBar') {
 
                         var display_y_axis = true
@@ -4304,11 +4307,13 @@ $(document).ready(function() {
                 if ($(window).width() < 900) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar;
                 }
 
                 if ($(window).width() < 700) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar_mobile;
                 }
 
 
@@ -4473,13 +4478,13 @@ $(document).ready(function() {
                     if (chart_type == 'horizontalBar') {
                         $('#TKK_TERAMPIL').attr('height', `3000vh`);
                         var height_bar = 1000
-                        var height_bar_mobile = 3000
+                        var height_bar_mobile = 4100
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
                         $('#TKK_TERAMPIL').attr('height', `400`);
                         var height_bar = 150
-                        var height_bar_mobile = 3000
+                        var height_bar_mobile = 3500
                         var display_y_axis = false
                         var display_x_axis = true
                     }
@@ -4509,8 +4514,8 @@ $(document).ready(function() {
 
                     } while (i < data.data.length);
                     $('#TKK_TERAMPIL').attr('height', `2000vh`);
-                    var height_bar = 200
-                    var height_bar_mobile = 500
+                    var height_bar = 300
+                    var height_bar_mobile = 600
                     if (chart_type == 'horizontalBar') {
                         var display_y_axis = true
                         var display_x_axis = false
