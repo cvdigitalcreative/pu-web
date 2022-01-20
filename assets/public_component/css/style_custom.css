@@ -1,5 +1,5 @@
 .chart-container {
-    height: 55vh;
+    height: 65vh;
 }
 
 .chart-container-balai-sektoral {
@@ -34,33 +34,110 @@
     height: 55vh;
 }
 
+.chart-container-dinv {
+    height: 55vh;
+}
+
+.chart-container-aktk {
+    height: 55vh;
+}
+
+.chart-container-dabu {
+    height: 55vh;
+}
+
+.chart-container-RPK {
+    height: 55vh;
+}
+
+.chart-container-RPBK {
+    height: 55vh;
+}
+
+.chart-container-PPK {
+    height: 55vh;
+}
+
+.chart-container-RPBWP {
+    height: 55vh;
+}
+
+.chart-container-RPKBS {
+    height: 55vh;
+}
+
+.chart-container-KSO {
+    height: 55vh;
+}
+
+.chart-container-MTU {
+    height: 55vh;
+}
+
+.chart-container-SE_Kepala_Daerah {
+    height: 55vh;
+}
+
 @media only screen and (max-width: 600px) {
     .chart-container {
-        height: 50vh;
+        height: 80vh;
     }
     .chart-container-balai-sektoral {
-        height: 50vh;
+        height: 80vh;
     }
     .chart-container-opd {
-        height: 40vh;
+        height: 80vh;
     }
     .chart-container-vokasi {
-        height: 40vh;
+        height: 80vh;
     }
     .chart-container-asosiasi-profesi {
-        height: 40vh;
+        height: 70vh;
     }
     .chart-container-asosiasi-bujk {
-        height: 40vh;
+        height: 70vh;
     }
     .chart-container-lapas {
-        height: 40vh;
+        height: 70vh;
     }
     .chart-container-instansi_lain {
-        height: 40vh;
+        height: 70vh;
     }
     .chart-container-div {
-        height: 40vh;
+        height: 70vh;
+    }
+    .chart-container-dinv {
+        height: 70vh;
+    }
+    .chart-container-aktk {
+        height: 80vh;
+    }
+    .chart-container-dabu {
+        height: 80vh;
+    }
+    .chart-container-RPK {
+        height: 70vh;
+    }
+    .chart-container-RPBK {
+        height: 70vh;
+    }
+    .chart-container-PPK {
+        height: 70vh;
+    }
+    .chart-container-RPBWP {
+        height: 70vh;
+    }
+    .chart-container-RPKBS {
+        height: 70vh;
+    }
+    .chart-container-SE_Kepala_Daerah {
+        height: 70vh;
+    }
+    .chart-container-KSO {
+        height: 70vh;
+    }
+    .chart-container-MTU {
+        height: 70vh;
     }
 }
 

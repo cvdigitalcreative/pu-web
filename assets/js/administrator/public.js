@@ -80,14 +80,18 @@ $(document).ready(function() {
     Chart.defaults.global.defaultFontFamily = "Century Gothic";
 
 
+
     function drawChartMitra(id_provinsi, kategori) {
 
         $.ajax({
             beforeSend: function() {
                 $('.loader_mitra').show();
+                // $('#mitra').hide();
             },
+
             complete: function() {
                 $('.loader_mitra').hide();
+                // $('#mitra').show();
             },
             url: `${BASE_URL}Infografis/infografis/${id_provinsi}/${kategori}`,
             method: "GET",
@@ -163,6 +167,25 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('mitra').getContext('2d');
+
+                if ($(window).width() > 1000) {
+                    ctx.canvas.width = 100;
+                    var font_Size = 12;
+
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                    ctx.canvas.width = 100;
+
+                }
+
+                if ($(window).width() < 700) {
+
+                    ctx.canvas.width = 100;
+                    var font_Size = 7;
+
+                }
+
                 mitra = new Chart(ctx, {
                     type: document.getElementById("chartType").value,
                     data: {
@@ -178,7 +201,7 @@ $(document).ready(function() {
                                 anchor: 'end',
                                 align: 'end',
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -198,6 +221,7 @@ $(document).ready(function() {
                                     beginAtZero: true,
                                     display: false,
 
+
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -205,7 +229,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
-
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.5,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -235,7 +261,9 @@ $(document).ready(function() {
         })
 
     }
+
     drawChartMitra(0, 1);
+
 
     $('#chart-filter-provinsi-mitra').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-mitra').val()
@@ -250,11 +278,23 @@ $(document).ready(function() {
         drawChartMitra(provinsi1, 1);
     })
 
+
+
     document.getElementById("download-chart-mitra").addEventListener('click', function() {
         var image = document.getElementById("mitra").toDataURL('image/png');
         var a = document.getElementById("download-chart-mitra");
         a.href = image;
     });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-mitra").value
+        mitra.destroy();
+        drawChartMitra(provinsi1, 1);
+
+    });
+
+
+
 
     function drawChartBalai_Sektoral(id_provinsi, kategori) {
 
@@ -337,6 +377,23 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('Balai_Sektoral').getContext('2d');
+                if ($(window).width() > 1000) {
+                    ctx.canvas.width = 100;
+                    var font_Size = 12;
+
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                    ctx.canvas.width = 100;
+
+                }
+
+                if ($(window).width() < 700) {
+
+                    ctx.canvas.width = 100;
+                    var font_Size = 7;
+
+                }
                 balai_sektoral = new Chart(ctx, {
                     type: document.getElementById("chartTypeBalai_Sektoral").value,
                     data: {
@@ -351,7 +408,7 @@ $(document).ready(function() {
                                 anchor: 'end',
                                 align: 'end',
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -368,7 +425,9 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: false
+                                    display: false,
+
+
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -376,8 +435,12 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.8,
+
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
                                 }
@@ -424,6 +487,12 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-Balai_Sektoral").value
+        balai_sektoral.destroy();
+        drawChartBalai_Sektoral(provinsi1, 2);
+
+    });
 
 
 
@@ -508,6 +577,22 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('OPD').getContext('2d');
+                if ($(window).width() > 1000) {
+
+                    var font_Size = 12;
+
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+
+
+                }
+
+                if ($(window).width() < 700) {
+
+                    var font_Size = 7;
+
+                }
                 Opd = new Chart(ctx, {
                     type: document.getElementById("chartTypeOPD").value,
                     data: {
@@ -524,7 +609,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -550,6 +635,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -598,6 +686,12 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    $(window).resize(function() {
+        var provinsi = $('#chart-filter-provinsi-opd').val()
+        Opd.destroy();
+        drawChartOPD(provinsi, 3);
+
+    });
 
     function drawChartvokasi(id_provinsi, kategori) {
 
@@ -680,6 +774,22 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('vokasi').getContext('2d');
+                if ($(window).width() > 1000) {
+
+                    var font_Size = 12;
+
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+
+
+                }
+
+                if ($(window).width() < 700) {
+
+                    var font_Size = 7;
+
+                }
                 vokasi = new Chart(ctx, {
                     type: document.getElementById("chartTypevokasi").value,
                     data: {
@@ -696,7 +806,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -721,6 +831,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -767,6 +880,13 @@ $(document).ready(function() {
         var image = document.getElementById("vokasi").toDataURL("image/png");
         var a = document.getElementById("download-chart-vokasi");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-vokasi").value
+        vokasi.destroy();
+        drawChartvokasi(provinsi1, 4);
+
     });
 
 
@@ -849,6 +969,22 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('Asosiasi_Profesi').getContext('2d');
+                if ($(window).width() > 1000) {
+
+                    var font_Size = 12;
+
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+
+
+                }
+
+                if ($(window).width() < 700) {
+
+                    var font_Size = 7;
+
+                }
                 Asosiasi_Profesi = new Chart(ctx, {
                     type: document.getElementById("chartTypeAsosiasi_Profesi").value,
                     data: {
@@ -865,7 +1001,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -890,6 +1026,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -937,6 +1076,13 @@ $(document).ready(function() {
         var image = document.getElementById("Asosiasi_Profesi").toDataURL("image/png");
         var a = document.getElementById("download-chart-Asosiasi_Profesi");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-Asosiasi_Profesi").value
+        Asosiasi_Profesi.destroy();
+        drawChartAsosiasi_Profesi(provinsi1, 5);
+
     });
 
     function drawChartABUJK(id_provinsi, kategori) {
@@ -1019,6 +1165,22 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('ABUJK').getContext('2d');
+                if ($(window).width() > 1000) {
+
+                    var font_Size = 12;
+
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+
+
+                }
+
+                if ($(window).width() < 700) {
+
+                    var font_Size = 7;
+
+                }
                 ABUJK = new Chart(ctx, {
                     type: document.getElementById("chartTypeABUJK").value,
                     data: {
@@ -1035,7 +1197,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -1060,6 +1222,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -1106,6 +1271,13 @@ $(document).ready(function() {
         var image = document.getElementById("ABUJK").toDataURL("image/png");
         var a = document.getElementById("download-chart-ABUJK");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-ABUJK").value
+        ABUJK.destroy();
+        drawChartABUJK(provinsi1, 6);
+
     });
 
     function drawChartlapas(id_provinsi, kategori) {
@@ -1189,6 +1361,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('lapas').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 lapas = new Chart(ctx, {
                     type: document.getElementById("chartTypelapas").value,
                     data: {
@@ -1205,7 +1387,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -1230,6 +1412,7 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: { fontSize: font_Size },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -1276,6 +1459,13 @@ $(document).ready(function() {
         var image = document.getElementById("lapas").toDataURL("image/png");
         var a = document.getElementById("download-chart-lapas");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-lapas").value
+        lapas.destroy();
+        drawChartlapas(provinsi1, 7);
+
     });
 
     function drawChartinstansi_lain(id_provinsi, kategori) {
@@ -1356,6 +1546,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('instansi_lain').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 instansi_lain = new Chart(ctx, {
                     type: document.getElementById("chartTypeinstansi_lain").value,
                     data: {
@@ -1371,7 +1571,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -1396,6 +1596,7 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: { fontSize: font_Size },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -1442,6 +1643,13 @@ $(document).ready(function() {
         var image = document.getElementById("instansi_lain").toDataURL("image/png");
         var a = document.getElementById("download-chart-instansi_lain");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-instansi_lain").value
+        instansi_lain.destroy();
+        drawChartinstansi_lain(provinsi1, 8);
+
     });
 
 
@@ -1544,6 +1752,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('KSO').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 KSO = new Chart(ctx, {
                     type: chart_type,
                     data: {
@@ -1560,7 +1778,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -1570,6 +1788,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
 
                         scales: {
                             yAxes: [{
@@ -1591,7 +1810,8 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: display_x_axis
+                                    display: display_x_axis,
+                                    fontSize: font_Size
 
                                 },
                                 gridLines: {
@@ -1643,6 +1863,16 @@ $(document).ready(function() {
         var a = document.getElementById("download-chart-KSO");
         a.href = image;
     });
+
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-KSO").value
+        var chart_type = document.getElementById("chartTypeKSO").value
+        KSO.destroy();
+        drawChartKSO(provinsi1, 27, chart_type);
+
+    });
+
 
 
     function drawChartMTU(id_provinsi, kategori, chart_type) {
@@ -1744,6 +1974,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('MTU').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 MTU = new Chart(ctx, {
                     type: chart_type,
                     data: {
@@ -1770,6 +2010,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -1790,7 +2031,8 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: display_x_axis
+                                    display: display_x_axis,
+                                    fontSize: font_Size
 
                                 },
                                 gridLines: {
@@ -1841,6 +2083,14 @@ $(document).ready(function() {
         var image = document.getElementById("MTU").toDataURL("image/png");
         var a = document.getElementById("download-chart-MTU");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-MTU").value
+        var chart_type = document.getElementById("chartTypeMTU").value
+        MTU.destroy();
+        drawChartMTU(provinsi1, 28, chart_type);
+
     });
 
     function drawChartDIV(id_provinsi, kategori) {
@@ -1923,6 +2173,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('DIV').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 DIV = new Chart(ctx, {
                     type: document.getElementById("chartTypeDIV").value,
                     data: {
@@ -1939,7 +2199,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -1964,6 +2224,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.9,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -2008,6 +2271,13 @@ $(document).ready(function() {
         var image = document.getElementById("DIV").toDataURL("image/png");
         var a = document.getElementById("download-chart-DIV");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-DIV").value
+        DIV.destroy();
+        drawChartDIV(provinsi1, 13);
+
     });
 
     function drawChartDINV(id_provinsi, kategori) {
@@ -2088,6 +2358,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('DINV').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 DINV = new Chart(ctx, {
                     type: document.getElementById("chartTypeDINV").value,
                     data: {
@@ -2104,7 +2384,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -2114,6 +2394,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -2128,6 +2409,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.6,
                                 categoryPercentage: 1,
                                 gridLines: {
@@ -2174,6 +2458,13 @@ $(document).ready(function() {
         var image = document.getElementById("DINV").toDataURL("image/png");
         var a = document.getElementById("download-chart-DINV");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-DINV").value
+        DINV.destroy();
+        drawChartDINV(provinsi1, 12);
+
     });
 
 
@@ -2257,6 +2548,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('AKTK').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 AKTK = new Chart(ctx, {
                     type: document.getElementById("chartTypeAKTK").value,
                     data: {
@@ -2273,7 +2574,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -2283,6 +2584,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -2297,6 +2599,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -2344,6 +2649,14 @@ $(document).ready(function() {
         var a = document.getElementById("download-chart-AKTK");
         a.href = image;
     });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-AKTK").value
+        AKTK.destroy();
+        drawChartAKTK(provinsi1, 10);
+
+    });
+
 
     function drawChartDABU(id_provinsi, kategori) {
 
@@ -2425,6 +2738,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('DABU').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 DABU = new Chart(ctx, {
                     type: document.getElementById("chartTypeDABU").value,
                     data: {
@@ -2441,7 +2764,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -2451,6 +2774,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -2465,6 +2789,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -2511,6 +2838,13 @@ $(document).ready(function() {
         var image = document.getElementById("DABU").toDataURL("image/png");
         var a = document.getElementById("download-chart-DABU");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-DABU").value
+        DABU.destroy();
+        drawChartDABU(provinsi1, 11);
+
     });
 
     function drawChartSE_Kepala_Daerah(id_provinsi, kategori) {
@@ -2593,6 +2927,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('SE_Kepala_Daerah').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 SE_Kepala_Daerah = new Chart(ctx, {
                     type: document.getElementById("chartTypeSE_Kepala_Daerah").value,
                     data: {
@@ -2609,7 +2953,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -2619,6 +2963,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -2633,6 +2978,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.6,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -2679,6 +3027,13 @@ $(document).ready(function() {
         var image = document.getElementById("SE_Kepala_Daerah").toDataURL("image/png");
         var a = document.getElementById("download-chart-SE_Kepala_Daerah");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-SE_Kepala_Daerah").value
+        SE_Kepala_Daerah.destroy();
+        drawChartSE_Kepala_Daerah(provinsi1, 9);
+
     });
 
     function drawChartRPK(id_provinsi, kategori) {
@@ -2761,6 +3116,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('RPK').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 RPK = new Chart(ctx, {
                     type: document.getElementById("chartTypeRPK").value,
                     data: {
@@ -2777,7 +3142,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -2787,6 +3152,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -2801,6 +3167,7 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: { fontSize: font_Size },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -2847,6 +3214,13 @@ $(document).ready(function() {
         var image = document.getElementById("RPK").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPK");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPK").value
+        RPK.destroy();
+        drawChartRPK(provinsi1, 16);
+
     });
 
     function drawChartRPBK(id_provinsi, kategori) {
@@ -2928,6 +3302,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('RPBK').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 RPBK = new Chart(ctx, {
                     type: document.getElementById("chartTypeRPBK").value,
                     data: {
@@ -2945,7 +3329,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -2955,6 +3339,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -2969,6 +3354,7 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: { fontSize: font_Size },
                                 barPercentage: 0.5,
                                 categoryPercentage: 0.9,
                                 gridLines: {
@@ -3015,6 +3401,13 @@ $(document).ready(function() {
         var image = document.getElementById("RPBK").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPBK");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBK").value
+        RPBK.destroy();
+        drawChartRPBK(provinsi1, 20);
+
     });
 
 
@@ -3099,6 +3492,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('RPKBS').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 RPKBS = new Chart(ctx, {
                     type: document.getElementById("chartTypeRPKBS").value,
                     data: {
@@ -3115,7 +3518,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -3125,6 +3528,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -3139,6 +3543,7 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: { fontSize: font_Size },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -3185,6 +3590,13 @@ $(document).ready(function() {
         var image = document.getElementById("RPKBS").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPKBS");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBS").value
+        RPKBS.destroy();
+        drawChartRPKBS(provinsi1, 17);
+
     });
 
     function drawChartRPBWP(id_provinsi, kategori) {
@@ -3266,6 +3678,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('RPBWP').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 RPBWP = new Chart(ctx, {
                     type: document.getElementById("chartTypeRPBWP").value,
                     data: {
@@ -3282,7 +3704,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -3292,6 +3714,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -3306,6 +3729,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -3352,6 +3778,12 @@ $(document).ready(function() {
         var image = document.getElementById("RPBWP").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPBWP");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBWP").value
+        RPBWP.destroy();
+        drawChartRPBWP(provinsi1, 18);
     });
 
     function drawChartRPKBMK(id_provinsi, kategori, chart_type) {
@@ -3442,7 +3874,7 @@ $(document).ready(function() {
                         i++;
 
                     } while (i < data.data.length);
-                    $('#RPKBMK').attr('height', `100`);
+                    $('#RPKBMK').attr('height', `500vh`);
                     if (chart_type == 'horizontalBar') {
                         var display_y_axis = true
                         var display_x_axis = false
@@ -3453,6 +3885,20 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('RPKBMK').getContext('2d');
+                if ($(window).width() > 900) {
+                    var font_Size = 11;
+                    ctx.canvas.width = 100;
+                    ctx.canvas.height = 100;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 5.5;
+                    ctx.canvas.width = 100;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 5.5;
+                    ctx.canvas.width = 100;
+                }
                 RPKBMK = new Chart(ctx, {
                     type: document.getElementById("chartTypeRPKBMK").value,
                     data: {
@@ -3484,7 +3930,8 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: display_y_axis
+                                    display: display_y_axis,
+                                    fontSize: font_Size
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -3546,6 +3993,13 @@ $(document).ready(function() {
         var image = document.getElementById("RPKBMK").toDataURL("image/png");
         var a = document.getElementById("download-chart-RPKBMK");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBMK").value
+        var chart_type = document.getElementById("chartTypeRPKBMK").value
+        RPKBMK.destroy();
+        drawChartRPKBMK(provinsi1, 21, chart_type);
     });
 
     function drawChartPPK(id_provinsi, kategori) {
@@ -3629,6 +4083,16 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('PPK').getContext('2d');
+                if ($(window).width() > 1000) {
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 7;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 7;
+                }
                 PPK = new Chart(ctx, {
                     type: document.getElementById("chartTypePPK").value,
                     data: {
@@ -3645,7 +4109,7 @@ $(document).ready(function() {
 
 
                                 font: {
-                                    size: 12,
+                                    size: font_Size,
                                     style: 'italic',
                                     family: ["Century Gothic", "sans-serif"]
 
@@ -3655,6 +4119,7 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
+                        maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
 
@@ -3669,6 +4134,9 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
+                                ticks: {
+                                    fontSize: font_Size
+                                },
                                 barPercentage: 0.7,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -3715,6 +4183,12 @@ $(document).ready(function() {
         var image = document.getElementById("PPK").toDataURL("image/png");
         var a = document.getElementById("download-chart-PPK");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-PPK").value
+        PPK.destroy();
+        drawChartPPK(provinsi1, 14);
     });
 
     function drawChartTKK_AHLI(id_provinsi, kategori, chart_type) {
@@ -3773,10 +4247,12 @@ $(document).ready(function() {
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
                         $('#TKK_AHLI').attr('height', `800vh`);
+                        var height_bar = 300
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
                         $('#TKK_AHLI').attr('height', `100`);
+                        var height_bar = 150
                         var display_y_axis = false
                         var display_x_axis = true
                     }
@@ -3806,17 +4282,36 @@ $(document).ready(function() {
                         i++;
 
                     } while (i < data.data.length);
-                    $('#TKK_AHLI').attr('height', `200`);
+                    $('#TKK_AHLI').attr('height', `500vh`);
+                    var height_bar = 100
                     if (chart_type == 'horizontalBar') {
+
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
+                        $('#TKK_AHLI').attr('height', `200vh`);
                         var display_y_axis = false
                         var display_x_axis = true
                     }
                 }
 
                 var ctx = document.getElementById('TKK_AHLI').getContext('2d');
+                if ($(window).width() > 900) {
+                    var font_Size = 11;
+                    ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar;
+                }
+                if ($(window).width() < 900) {
+                    var font_Size = 5.5;
+                    ctx.canvas.width = 100;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 5.5;
+                    ctx.canvas.width = 100;
+                }
+
+
                 TKK_AHLI = new Chart(ctx, {
                     type: document.getElementById("chartTypeTKK_AHLI").value,
                     data: {
@@ -3848,7 +4343,8 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: display_y_axis
+                                    display: display_y_axis,
+                                    fontSize: font_Size
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -3860,7 +4356,8 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: display_x_axis
+                                    display: display_x_axis,
+
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -3910,6 +4407,13 @@ $(document).ready(function() {
         var image = document.getElementById("TKK_AHLI").toDataURL("image/png");
         var a = document.getElementById("download-chart-TKK_AHLI");
         a.href = image;
+    });
+
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_AHLI").value
+        var chart_type = document.getElementById("chartTypeTKK_AHLI").value
+        TKK_AHLI.destroy();
+        drawChartTKK_AHLI(provinsi1, 25, chart_type);
     });
 
     function drawChartTKK_TERAMPIL(id_provinsi, kategori, chart_type) {
@@ -3967,11 +4471,15 @@ $(document).ready(function() {
 
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
-                        $('#TKK_TERAMPIL').attr('height', `2500vh`);
+                        $('#TKK_TERAMPIL').attr('height', `3000vh`);
+                        var height_bar = 1000
+                        var height_bar_mobile = 3000
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
                         $('#TKK_TERAMPIL').attr('height', `400`);
+                        var height_bar = 150
+                        var height_bar_mobile = 3000
                         var display_y_axis = false
                         var display_x_axis = true
                     }
@@ -4000,7 +4508,9 @@ $(document).ready(function() {
                         i++;
 
                     } while (i < data.data.length);
-                    $('#TKK_TERAMPIL').attr('height', `600`);
+                    $('#TKK_TERAMPIL').attr('height', `2000vh`);
+                    var height_bar = 200
+                    var height_bar_mobile = 500
                     if (chart_type == 'horizontalBar') {
                         var display_y_axis = true
                         var display_x_axis = false
@@ -4012,6 +4522,27 @@ $(document).ready(function() {
                 }
 
                 var ctx = document.getElementById('TKK_TERAMPIL').getContext('2d');
+                if ($(window).width() > 600) {
+                    var font_Size = 11;
+                    ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar;
+                }
+                if ($(window).width() > 950) {
+                    var font_Size = 11;
+                    ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar;
+                }
+                if ($(window).width() < 1100) {
+                    var font_Size = 9;
+                    ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar;
+                }
+
+                if ($(window).width() < 700) {
+                    var font_Size = 5.5;
+                    ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar_mobile;
+                }
                 TKK_TERAMPIL = new Chart(ctx, {
                     type: document.getElementById("chartTypeTKK_TERAMPIL").value,
                     data: {
@@ -4043,7 +4574,8 @@ $(document).ready(function() {
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: display_y_axis
+                                    display: display_y_axis,
+                                    fontSize: font_Size,
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -4053,6 +4585,7 @@ $(document).ready(function() {
                             }],
                             xAxes: [{
                                 ticks: {
+
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
                                     display: display_x_axis
@@ -4107,4 +4640,11 @@ $(document).ready(function() {
         a.href = image;
     });
 
-});
+    $(window).resize(function() {
+        var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_TERAMPIL").value
+        var chart_type = document.getElementById("chartTypeTKK_TERAMPIL").value
+        TKK_TERAMPIL.destroy();
+        drawChartTKK_TERAMPIL(provinsi1, 26, chart_type);
+    });
+
+})
