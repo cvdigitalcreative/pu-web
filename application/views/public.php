@@ -67,42 +67,50 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera Selatan</a></li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
+                                                    Selatan</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
                                                     Bangka Belitung</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a></li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a>
+                                            </li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a>
+                                            </li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#about"><span>2021</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                            <li><a  href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Infografis_GABUNGAN_TA_2021_(FINAL)_1642162238.pdf"
-                                                        target="_blank">All</a></li>
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Infografis_GABUNGAN_TA_2021_(FINAL)_1642162238.pdf"
+                                                    target="_blank">All</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/01b_-_Laporan_Infografis_Prov._SUMSEL_TA_2021_(FINAL)_(1)_1642162041.pdf"
-                                                        target="_blank">Sumatera Selatan</a></li>
+                                                    target="_blank">Sumatera Selatan</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02b_-_Laporan_Infografis_Prov._KEP._BABEL_TA_2021_(FINAL)_(1)_1642162131.pdf"
-                                                        target="_blank">Kep.
+                                                    target="_blank">Kep.
                                                     Bangka Belitung</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-28-INFOGRAFIS_PROVINSI_JAMBI_2021_1642162167.pdf"
-                                                        target="_blank">Jambi</a></li>
-                                            <li><a  href="https://api.classico.id/pupr/uploads//file/file_modul/04b_-_Laporan_Infografis_Prov._BENGKULU_TA_2021_(FINAL)_(1)_1642162077.pdf"
-                                                        target="_blank">Bengkulu</a></li>
+                                                    target="_blank">Jambi</a></li>
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/04b_-_Laporan_Infografis_Prov._BENGKULU_TA_2021_(FINAL)_(1)_1642162077.pdf"
+                                                    target="_blank">Bengkulu</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/05b_-_Laporan_Infografis_Prov._LAMPUNG_TA_2021_(FINAL)_(1)_1642161954.pdf"
-                                                        target="_blank">Lampung</a></li>
+                                                    target="_blank">Lampung</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#about"><span>2022</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera Selatan</a></li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
+                                                    Selatan</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
                                                     Bangka Belitung</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a></li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a>
+                                            </li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a>
+                                            </li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a>
+                                            </li>
                                         </ul>
                                     </li>
 
@@ -114,49 +122,53 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <li class="dropdown"><a href="#about"><span>2020</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                        <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf"
-                                                        target="_blank">All</a></li>
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf"
+                                                    target="_blank">All</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_SUMSEL_TA_2020_1642079242.pdf"
-                                                        target="_blank">Sumatera Selatan</a></li>
+                                                    target="_blank">Sumatera Selatan</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf"
-                                                        target="_blank">Kep.
+                                                    target="_blank">Kep.
                                                     Bangka Belitung</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf"
-                                                        target="_blank">Jambi</a></li>
+                                                    target="_blank">Jambi</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf"
-                                                        target="_blank">Bengkulu</a></li>
+                                                    target="_blank">Bengkulu</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_Lampung_TA_2020_1642079213.pdf"
-                                                        target="_blank">Lampung</a></li>
+                                                    target="_blank">Lampung</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#about"><span>2021</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                        <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Wilayah_GABUNGAN_TA_2021_(FINAL)_(1)_1642079139.pdf"
-                                                        target="_blank">All</a></li>
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Wilayah_GABUNGAN_TA_2021_(FINAL)_(1)_1642079139.pdf"
+                                                    target="_blank">All</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf"
-                                                        target="_blank">Sumatera Selatan</a></li>
+                                                    target="_blank">Sumatera Selatan</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf"
-                                                        target="_blank">Kep.
+                                                    target="_blank">Kep.
                                                     Bangka Belitung</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf"
-                                                        target="_blank">Jambi</a></li>
+                                                    target="_blank">Jambi</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf"
-                                                        target="_blank">Bengkulu</a></li>
+                                                    target="_blank">Bengkulu</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/05a_-_Laporan_Wilayah_Prov._LAMPUNG_TA_2021_(FINAL)_1642078848.pdf"
-                                                        target="_blank">Lampung</a></li>
+                                                    target="_blank">Lampung</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#about"><span>2022</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                        <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera Selatan</a></li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a></li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
+                                                    Selatan</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
                                                     Bangka Belitung</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a></li>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a></li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Jambi</a>
+                                            </li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Bengkulu</a>
+                                            </li>
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">Lampung</a>
+                                            </li>
                                         </ul>
                                     </li>
 
@@ -202,7 +214,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </li>
                     <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
                     <li><a class="nav-link scrollto " href="#capaian_output">Capaian Output</a></li>
-                    
+
                     <li><a class="nav-link scrollto " href="#contact">Hubungi Kami</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -999,7 +1011,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="chart-container-KSO">
-                                <canvas id="KSO" height=""></canvas>
+                                    <canvas id="KSO" height=""></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1069,7 +1081,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="chart-container-MTU">
-                                <canvas id="MTU" height=""></canvas>
+                                    <canvas id="MTU" height=""></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1815,7 +1827,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
                                                 Chart</label>
                                             <select class="form-control" name="chartTypeRPKBS" id="chartTypeRPKBS">
-                                                <option value="bar">Bar</option>
+                                                <option value="horizontalBar">Horizontal Bar</option>
+                                                <option value="bar">Vertical Bar</option>
                                                 <option value="line">Line</option>
                                                 <option value="pie">Pie</option>
                                                 <option value="radar">Radar</option>
@@ -1828,9 +1841,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_RPKBS">
                                     </div>
                                 </div>
-                                <div class="chart-container-RPKBS">
-                                    <canvas id="RPKBS" height="110"></canvas>
-                                </div>
+                                
+                                    <canvas id="RPKBS" height=""></canvas>
+                             
                             </div>
                         </div>
                     </div>

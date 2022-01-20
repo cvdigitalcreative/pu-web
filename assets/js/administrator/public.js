@@ -3411,7 +3411,7 @@ $(document).ready(function() {
     });
 
 
-    function drawChartRPKBS(id_provinsi, kategori) {
+    function drawChartRPKBS(id_provinsi, kategori, chart_type) {
 
         $.ajax({
             beforeSend: function() {
@@ -3465,6 +3465,19 @@ $(document).ready(function() {
                     }
 
                     var label = Array.from(sets);
+                    if (chart_type == 'horizontalBar') {
+                        $('#RPKBS').attr('height', `800vh`);
+                        var height_bar_mobile = 90
+                        var height_bar = 90
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        $('#RPKBS').attr('height', `150`);
+                        var height_bar = 90
+                        var height_bar_mobile = 90
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
 
 
                 } else {
@@ -3489,21 +3502,47 @@ $(document).ready(function() {
                         i++;
 
                     } while (i < data.data.length);
+                    if (chart_type == 'horizontalBar') {
+                        $('#RPKBS').attr('height', `800vh`);
+                        var height_bar = 30
+                        var height_bar_mobile = 60
+                        var display_y_axis = true
+                        var display_x_axis = false
+                    } else {
+                        $('#RPKBS').attr('height', `150`);
+                        var height_bar = 30
+                        var height_bar_mobile = 60
+                        var display_y_axis = false
+                        var display_x_axis = true
+                    }
                 }
 
                 var ctx = document.getElementById('RPKBS').getContext('2d');
-                if ($(window).width() > 1000) {
+                if ($(window).width() > 1100) {
+                    ctx.canvas.height = height_bar
+                    ctx.canvas.width = 100;
+                    var font_Size = 12;
+                }
+                if ($(window).width() < 1100) {
+                    ctx.canvas.height = height_bar_mobile
+                    ctx.canvas.width = 100;
                     var font_Size = 12;
                 }
                 if ($(window).width() < 900) {
+                    ctx.canvas.height = height_bar_mobile;
+                    ctx.canvas.width = 100;
                     var font_Size = 7;
                 }
 
-                if ($(window).width() < 700) {
+                if ($(window).width() < 800) {
+                    ctx.canvas.height = height_bar_mobile;
+                    ctx.canvas.width = 100;
                     var font_Size = 7;
                 }
+
+
                 RPKBS = new Chart(ctx, {
-                    type: document.getElementById("chartTypeRPKBS").value,
+                    type: chart_type,
                     data: {
                         labels: label,
                         datasets: dataset,
@@ -3528,14 +3567,15 @@ $(document).ready(function() {
                         },
                         responsive: true,
                         fill: false,
-                        maintainAspectRatio: false,
+
                         scales: {
                             yAxes: [{
 
                                 ticks: {
                                     max: max_1 + (max_1 * 37 / 100),
                                     beginAtZero: true,
-                                    display: false
+                                    display: display_y_axis,
+                                    fontSize: font_Size
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
@@ -3543,7 +3583,7 @@ $(document).ready(function() {
 
                             }],
                             xAxes: [{
-                                ticks: { fontSize: font_Size },
+                                ticks: { fontSize: font_Size, display: display_x_axis },
                                 barPercentage: 0.8,
                                 categoryPercentage: 0.8,
                                 gridLines: {
@@ -3571,19 +3611,21 @@ $(document).ready(function() {
         })
 
     }
-    drawChartRPKBS(99, 17);
+    drawChartRPKBS(99, 17, 'horizontalBar');
 
     $('#chart-filter-provinsi-RPKBS').on('change', function() {
         var provinsi = $('#chart-filter-provinsi-RPKBS').val()
+        var chart_type = document.getElementById("chartTypeRPKBS").value
         RPKBS.destroy();
-        drawChartRPKBS(provinsi, 17);
+        drawChartRPKBS(provinsi, 17, chart_type);
     })
 
 
     $('#chartTypeRPKBS').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBS").value
+        var provinsi = document.getElementById("chart-filter-provinsi-RPKBS").value
+        var chart_type = document.getElementById("chartTypeRPKBS").value
         RPKBS.destroy();
-        drawChartRPKBS(provinsi1, 17);
+        drawChartRPKBS(provinsi, 17, chart_type);
     })
 
     document.getElementById("download-chart-RPKBS").addEventListener('click', function() {
@@ -3593,9 +3635,10 @@ $(document).ready(function() {
     });
 
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBS").value
+        var provinsi = document.getElementById("chart-filter-provinsi-RPKBS").value
+        var chart_type = document.getElementById("chartTypeRPKBS").value
         RPKBS.destroy();
-        drawChartRPKBS(provinsi1, 17);
+        drawChartRPKBS(provinsi, 17, chart_type);
 
     });
 
@@ -3843,7 +3886,7 @@ $(document).ready(function() {
                     if (chart_type == 'horizontalBar') {
                         $('#RPKBMK').attr('height', `500vh`);
                         var height_bar = 200
-                        var height_bar_mobile = 800
+                        var height_bar_mobile = 350
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -3880,7 +3923,7 @@ $(document).ready(function() {
                     } while (i < data.data.length);
                     $('#RPKBMK').attr('height', `500vh`);
                     if (chart_type == 'horizontalBar') {
-                        var height_bar_mobile = 100
+                        var height_bar_mobile = 60
                         var height_bar = 50
                         var display_y_axis = true
                         var display_x_axis = false
@@ -3899,9 +3942,10 @@ $(document).ready(function() {
                 if ($(window).width() < 900) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar_mobile
                 }
 
-                if ($(window).width() < 700) {
+                if ($(window).width() < 800) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
                     ctx.canvas.height = height_bar_mobile
@@ -4314,7 +4358,7 @@ $(document).ready(function() {
                 if ($(window).width() < 900) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
-                    ctx.canvas.height = height_bar;
+                    ctx.canvas.height = height_bar_mobile;
                 }
 
                 if ($(window).width() < 700) {
@@ -4550,7 +4594,7 @@ $(document).ready(function() {
                     ctx.canvas.height = height_bar;
                 }
 
-                if ($(window).width() < 700) {
+                if ($(window).width() < 800) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
                     ctx.canvas.height = height_bar_mobile;
