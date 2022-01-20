@@ -3842,10 +3842,14 @@ $(document).ready(function() {
                     var label = Array.from(sets);
                     if (chart_type == 'horizontalBar') {
                         $('#RPKBMK').attr('height', `500vh`);
+                        var height_bar = 200
+                        var height_bar_mobile = 800
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
                         $('#RPKBMK').attr('height', `100`);
+                        var height_bar_mobile = 200
+                        var height_bar = 200
                         var display_y_axis = false
                         var display_x_axis = true
                     }
@@ -3876,6 +3880,8 @@ $(document).ready(function() {
                     } while (i < data.data.length);
                     $('#RPKBMK').attr('height', `500vh`);
                     if (chart_type == 'horizontalBar') {
+                        var height_bar_mobile = 100
+                        var height_bar = 50
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -3888,7 +3894,7 @@ $(document).ready(function() {
                 if ($(window).width() > 900) {
                     var font_Size = 11;
                     ctx.canvas.width = 100;
-                    ctx.canvas.height = 100;
+                    ctx.canvas.height = height_bar;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 5.5;
@@ -3898,6 +3904,7 @@ $(document).ready(function() {
                 if ($(window).width() < 700) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
+                    ctx.canvas.height = height_bar_mobile
                 }
                 RPKBMK = new Chart(ctx, {
                     type: document.getElementById("chartTypeRPKBMK").value,
@@ -4285,7 +4292,7 @@ $(document).ready(function() {
 
                     } while (i < data.data.length);
                     $('#TKK_AHLI').attr('height', `500vh`);
-                    var height_bar = 100
+                    var height_bar = 60
                     var height_bar_mobile = 250
                     if (chart_type == 'horizontalBar') {
 
@@ -4514,7 +4521,7 @@ $(document).ready(function() {
 
                     } while (i < data.data.length);
                     $('#TKK_TERAMPIL').attr('height', `2000vh`);
-                    var height_bar = 300
+                    var height_bar = 250
                     var height_bar_mobile = 600
                     if (chart_type == 'horizontalBar') {
                         var display_y_axis = true
