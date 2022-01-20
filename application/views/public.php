@@ -134,7 +134,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <ul>
                                         <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Wilayah_GABUNGAN_TA_2021_(FINAL)_(1)_1642079139.pdf"
                                                         target="_blank">All</a></li>
-                                            <li><ahref="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf"
                                                         target="_blank">Sumatera Selatan</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf"
                                                         target="_blank">Kep.
