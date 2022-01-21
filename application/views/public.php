@@ -244,7 +244,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div id="hero1">
 
-            <img id="home1" src="<?=base_url('assets/image/home1.png')?>" width="100%" height="100%" alt="">
+            <img id="home1" src="<?=base_url('assets/image/home1.png')?>" loading="lazy" width="100%" height="100%" alt="">
 
         </div>
         <!-- ======= Clients Section ======= -->
@@ -256,42 +256,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#hero">
                             <img src="<?= base_url();?>assets/illustration/home.png" class="img-fluid" alt=""
-                                data-aos="zoom-in" data-aos-delay="400">
+                                data-aos="zoom-in" data-aos-delay="400" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#about">
                             <img src="<?= base_url();?>assets/illustration/mitra.png" class="img-fluid" alt=""
-                                data-aos="zoom-in">
+                                data-aos="zoom-in" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#instruktur">
                             <img src="<?= base_url();?>assets/illustration/instruktur.png" class="img-fluid" alt=""
-                                data-aos="zoom-in" data-aos-delay="100">
+                                data-aos="zoom-in" data-aos-delay="100" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#asesor">
                             <img src="<?= base_url();?>assets/illustration/asesor.png" class="img-fluid" alt=""
-                                data-aos="zoom-in" data-aos-delay="200">
+                                data-aos="zoom-in" data-aos-delay="200" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#se_kepala_daerah">
                             <img src="<?= base_url();?>assets/illustration/SE_Kepala_Daerah.png" class="img-fluid"
-                                alt="" data-aos="zoom-in" data-aos-delay="300">
+                                alt="" data-aos="zoom-in" data-aos-delay="300" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#capaian_output">
                             <img src="<?= base_url();?>assets/illustration/Capaian_Output.png" class="img-fluid" alt=""
-                                data-aos="zoom-in" data-aos-delay="500">
+                                data-aos="zoom-in" data-aos-delay="500" loading="lazy">
                         </a>
                     </div>
 
@@ -2019,7 +2019,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- End Capaian Output Section -->
         <div id="her">
 
-            <img id="her" src="<?=base_url('assets/image/foto_bersama.jpg')?>" width="100%" height="50%" alt="">
+            <img id="her" src="<?=base_url('assets/image/foto_bersama.jpg')?>" width="100%" height="100%" loading="lazy" alt="">
 
         </div>
 
