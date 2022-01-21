@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title><?php echo SITE_NAME_ADMIN . " - " . ucfirst($this->uri->segment(2)) ?></title>
+    <title><?php echo SITE_NAME_ADMIN ?> - Infografis</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
