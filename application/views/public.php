@@ -213,7 +213,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
-                    <li><a class="nav-link scrollto " href="#capaian_output">Capaian Output</a></li>
+                    <li class="dropdown"><a href="#capaian_output"><span>Capaian Output</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a style="font-size:12px" href="#capaian_output_1">Rekap Pelaksanaan Kegiatan</a></li>
+                            <li><a style="font-size:12px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a></li>
+                            <li><a style="font-size:12px" href="#vokasi_1">Program Padat Karya</a></li>
+                            <li><a style="font-size:12px" href="#lapas_2">Lapas</a></li>
+                            <li><a style="font-size:12px" href="#instansi_lain_1">Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</a></li>
+                            <li><a style="font-size:12px" href="#kso_1">Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</a></li>
+                            <li><a style="font-size:12px" href="#mtu_1">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</a></li>
+                            
+                            <li><a style="font-size:12px" href="#mtu_1">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
+                            <li><a style="font-size:12px" href="#mtu_1">Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
+                        </ul>
+                    </li>
 
                     <li><a class="nav-link scrollto " href="#contact">Hubungi Kami</a></li>
                 </ul>
@@ -1432,7 +1446,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- SE Kepala Daerah Section -->
         <!-- Balai Sektoral Kementerian PUPR Section -->
         <!-- ======= Capaian Output Section ======= -->
-        <section id="capaian_output" class="services">
+        <section id="capaian_output_1" class="services">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">

@@ -79,7 +79,8 @@ $(document).ready(function() {
     Chart.defaults.global.defaultFontColor = "#000000"
     Chart.defaults.global.defaultFontFamily = "Century Gothic";
 
-
+    var width = $(window).width()
+    const width_now = width
 
     function drawChartMitra(id_provinsi, kategori) {
 
@@ -273,9 +274,9 @@ $(document).ready(function() {
 
 
     $('#chartType').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-mitra").value
+        var provinsi = document.getElementById("chart-filter-provinsi-mitra").value
         mitra.destroy();
-        drawChartMitra(provinsi1, 1);
+        drawChartMitra(provinsi, 1);
     })
 
 
@@ -286,13 +287,19 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    // if ($(window).width() != width) {
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-mitra").value
-        mitra.destroy();
-        drawChartMitra(provinsi1, 1);
+        if ($(document).width() != width) {
+            var provinsi = document.getElementById("chart-filter-provinsi-mitra").value
+            mitra.destroy();
+            drawChartMitra(provinsi, 1);
+        }
 
     });
 
+    console.log(width)
+    console.log(width_now)
+    console.log($(document).width())
 
 
 
