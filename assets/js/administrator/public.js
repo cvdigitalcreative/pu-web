@@ -3556,7 +3556,7 @@ $(document).ready(function() {
                         $('#RPKBS').attr('height', `800vh`);
                         var height_bar_mobile = 90
                         var height_bar = 90
-                        var height_bar_mobile_400 = 200
+                        var height_bar_mobile_400 = 300
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -3594,7 +3594,7 @@ $(document).ready(function() {
                         $('#RPKBS').attr('height', `800vh`);
                         var height_bar = 30
                         var height_bar_mobile = 60
-                        var height_bar_mobile_400 = 150
+                        var height_bar_mobile_400 = 100
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -3993,7 +3993,7 @@ $(document).ready(function() {
                         $('#RPKBMK').attr('height', `500vh`);
                         var height_bar = 200
                         var height_bar_mobile = 350
-                        var height_bar_mobile_300 = 700
+                        var height_bar_mobile_300 = 800
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
@@ -4031,7 +4031,7 @@ $(document).ready(function() {
                     $('#RPKBMK').attr('height', `500vh`);
                     if (chart_type == 'horizontalBar') {
                         var height_bar_mobile = 60
-                        var height_bar_mobile_300 = 150
+                        var height_bar_mobile_300 = 160
                         var height_bar = 50
                         var display_y_axis = true
                         var display_x_axis = false
