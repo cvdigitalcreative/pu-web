@@ -3629,6 +3629,12 @@ $(document).ready(function() {
                     var font_Size = 7;
                 }
 
+                if ($(window).width() < 600) {
+                    ctx.canvas.height = height_bar_mobile_400;
+                    ctx.canvas.width = 100;
+                    var font_Size = 7;
+                }
+
                 if ($(window).width() < 400) {
                     ctx.canvas.height = height_bar_mobile_400;
                     ctx.canvas.width = 100;
@@ -4059,7 +4065,7 @@ $(document).ready(function() {
                     ctx.canvas.height = height_bar_mobile
                 }
 
-                if ($(window).width() < 400) {
+                if ($(window).width() < 600) {
                     var font_Size = 5.5;
                     ctx.canvas.width = 100;
                     ctx.canvas.height = height_bar_mobile_300
