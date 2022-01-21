@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <li class="dropdown"><a href="#about"><span>2020</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a></li>
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf">All</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
                                                     Selatan</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
@@ -122,16 +122,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <li class="dropdown"><a href="#about"><span>2020</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf"
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null"
                                                     target="_blank">All</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_SUMSEL_TA_2020_1642079242.pdf"
                                                     target="_blank">Sumatera Selatan</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf "
                                                     target="_blank">Kep.
                                                     Bangka Belitung</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf"
                                                     target="_blank">Jambi</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf"
                                                     target="_blank">Bengkulu</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_Lampung_TA_2020_1642079213.pdf"
                                                     target="_blank">Lampung</a></li>
@@ -144,12 +144,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     target="_blank">All</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf"
                                                     target="_blank">Sumatera Selatan</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf"
                                                     target="_blank">Kep.
                                                     Bangka Belitung</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf "
                                                     target="_blank">Jambi</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf"
                                                     target="_blank">Bengkulu</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/05a_-_Laporan_Wilayah_Prov._LAMPUNG_TA_2021_(FINAL)_1642078848.pdf"
                                                     target="_blank">Lampung</a></li>
@@ -1442,7 +1442,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPK">
-                                        <canvas id="RPK" width="590"></canvas>
+                                        <canvas id="RPK" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1505,7 +1505,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBK">
-                                        <canvas id="RPBK" width="590"></canvas>
+                                        <canvas id="RPBK" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1578,7 +1578,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-PPK">
-                                        <canvas id="PPK" width="590"></canvas>
+                                        <canvas id="PPK" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1642,7 +1642,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBWP">
-                                        <canvas id="RPBWP" width="590"></canvas>
+                                        <canvas id="RPBWP" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
