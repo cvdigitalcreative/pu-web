@@ -60,13 +60,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li class="dropdown"><a href="#about"><span>Laporan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
 
-                            <li class="dropdown"><a href="#asosiasi_1"><span>Infografis</span> <i
+                            <li class="dropdown"><a href="#about"><span>Infografis</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
                                     <li class="dropdown"><a href="#about"><span>2020</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null">All</a></li>
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf">All</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
                                                     Selatan</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
@@ -116,22 +116,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#asosiasi_1"><span>Kegiatan</span> <i
+                            <li class="dropdown"><a href="#about"><span>Kegiatan</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
                                     <li class="dropdown"><a href="#about"><span>2020</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf"
+                                            <li><a href="<?= base_url();?>Infografis/infografis_data_null"
                                                     target="_blank">All</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_SUMSEL_TA_2020_1642079242.pdf"
                                                     target="_blank">Sumatera Selatan</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf "
                                                     target="_blank">Kep.
                                                     Bangka Belitung</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf"
                                                     target="_blank">Jambi</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf"
                                                     target="_blank">Bengkulu</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_Lampung_TA_2020_1642079213.pdf"
                                                     target="_blank">Lampung</a></li>
@@ -144,12 +144,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     target="_blank">All</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/01a_-_Laporan_Wilayah_Prov._SUMSEL_TA_2021_(FINAL)_1642078941.pdf"
                                                     target="_blank">Sumatera Selatan</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_BABEL_TA_2020_1642079270.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/02a_-_Laporan_Wilayah_Prov._KEP._BABEL_TA_2021_(FINAL)_1642079019.pdf"
                                                     target="_blank">Kep.
                                                     Bangka Belitung</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Laporan_Kegiatan_JAMBI_TA_2020_1642079182.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021-12-30_LAPORAN_PEMBINAAN_JASA_KONSTRUKSI_WILAYAH_PROVINSI_JAMBI_TAHUN_2021_OK_LENGKAP_1642079058.pdf "
                                                     target="_blank">Jambi</a></li>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/laporan_Kegiatan_Bengkulu_TA_2020_1642079294.pdf"
+                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/2021_-_12_-_24_Laporan_Wilayah_Provinsi_Bengkulu_2021_-_FINAL_1642078984.pdf"
                                                     target="_blank">Bengkulu</a></li>
                                             <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/05a_-_Laporan_Wilayah_Prov._LAMPUNG_TA_2021_(FINAL)_1642078848.pdf"
                                                     target="_blank">Lampung</a></li>
@@ -183,18 +183,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <ul>
                             <li><a href="#balai_pupr">Balai PUPR</a></li>
                             <li><a href="#opd_1">OPD</a></li>
-                            <li><a href="#vokasi_1">Vokasi</a></li>
+                            <li><a href="#opd_1">Vokasi</a></li>
                             <li class="dropdown"><a href="#asosiasi_1"><span>Asosiasi</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="#asosiasi_profesi">Asosiasi Profesi</a></li>
-                                    <li><a href="#asosiasi_bujk_1">Asosiasi BUJK</a></li>
+                                    <li><a href="#asosiasi_1">Asosiasi Profesi</a></li>
+                                    <li><a href="#asosiasi_1">Asosiasi BUJK</a></li>
                                 </ul>
                             </li>
                             <li><a href="#lapas_2">Lapas</a></li>
-                            <li><a href="#instansi_lain_1">Instansi Lain</a></li>
+                            <li><a href="#lapas_2">Instansi Lain</a></li>
                             <li><a href="#kso_1">KSO/PKS</a></li>
-                            <li><a href="#mtu_1">MTU</a></li>
+                            
 
                         </ul>
                     </li>
@@ -213,7 +213,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
-                    <li><a class="nav-link scrollto " href="#capaian_output">Capaian Output</a></li>
+                    <li class="dropdown"><a href="#capaian_output"><span>Capaian Output</span> <i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a style="font-size:12px" href="#capaian_output_1">Rekap Pelaksanaan Kegiatan</a></li>
+                            <li><a style="font-size:12px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a></li>
+                            <li><a style="font-size:12px" href="#mtu_1">MTU</a></li>
+                            <li><a style="font-size:12px" href="#ppp_1">Program Padat Karya</a></li>
+                            <li><a style="font-size:12px" href="#ppp_1">Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</a></li>
+                            <li><a style="font-size:12px" href="#RPKBMK_1">Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</a></li>
+                            <li><a style="font-size:12px" href="#RPKBJK_1">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</a></li>
+                            <li><a style="font-size:12px" href="#TKK_AHLI_1">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
+                            <li><a style="font-size:12px" href="#TKK_TERAMPIL_1">Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
+                            
+                        </ul>
+                    </li>
 
                     <li><a class="nav-link scrollto " href="#contact">Hubungi Kami</a></li>
                 </ul>
@@ -1020,76 +1034,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- KSO/PKS Section -->
-        <section id="mtu_1" class="about">
-            <div class="container">
-                <div class="row content">
-                    <div class="col">
-                        <div class="card mb-4">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Mobile Training Unit (MTU)</h6>
-                            </div>
-
-
-                            <div class="card-body" id="mtu">
-                                <div class="row">
-                                    <div class="container mt-2">
-                                        <a href="" id="chart-filter-file-MTU" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
-                                            File</a>
-                                        <a id="download-chart-MTU" download="ChartImage.png" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Download Gambar Chart">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-MTU">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All By Provinsi</option>
-                                                <option value="99">All By Kategori</option>
-                                                <option value="15">Sumatera Selatan</option>
-                                                <option value="16">Kep. Bangka Belitung</option>
-                                                <option value="17">Jambi</option>
-                                                <option value="18">Bengkulu</option>
-                                                <option value="19">Lampung</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypeMTU" id="chartTypeMTU">
-                                                <option value="bar">Vertical Bar</option>
-                                                <option value="horizontalBar">Horizontal Bar</option>
-                                                <option value="line">Line</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="doughnut">Doughnut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-center">
-                                    <div class="loader_MTU">
-                                    </div>
-                                </div>
-                                <div class="chart-container-MTU">
-                                    <canvas id="MTU" height=""></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- Capaian Output Section -->
+       <!-- Capaian Output Section -->
         <!-- ======= Instruktur ======= -->
         <section id="instruktur" class="instruktur">
             <div class="container">
@@ -1432,7 +1377,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- SE Kepala Daerah Section -->
         <!-- Balai Sektoral Kementerian PUPR Section -->
         <!-- ======= Capaian Output Section ======= -->
-        <section id="capaian_output" class="services">
+        <section id="capaian_output_1" class="services">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
@@ -1497,7 +1442,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPK">
-                                        <canvas id="RPK" width="590"></canvas>
+                                        <canvas id="RPK" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1560,7 +1505,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBK">
-                                        <canvas id="RPBK" width="590"></canvas>
+                                        <canvas id="RPBK" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1633,7 +1578,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-PPK">
-                                        <canvas id="PPK" width="590"></canvas>
+                                        <canvas id="PPK" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1697,7 +1642,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBWP">
-                                        <canvas id="RPBWP" width="590"></canvas>
+                                        <canvas id="RPBWP" width="500"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1992,6 +1937,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Capaian Output Section -->
+        <section id="mtu_1" class="about">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-md-6">
+                        <div class="card w-200">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Mobile Training Unit (MTU)</h6>
+                            </div>
+
+
+                            <div class="card-body" id="mtu">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-MTU" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
+                                            File</a>
+                                        <a id="download-chart-MTU" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Download Gambar Chart">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-MTU">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeMTU" id="chartTypeMTU">
+                                                <option value="bar">Vertical Bar</option>
+                                                <option value="horizontalBar">Horizontal Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_MTU">
+                                    </div>
+                                </div>
+                                <div class="chart-container-MTU">
+                                    <canvas id="MTU" height=""></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <section id="her">
             <div class="container">
 

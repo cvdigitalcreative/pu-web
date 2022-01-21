@@ -81,6 +81,8 @@ $(document).ready(function() {
 
 
 
+
+
     function drawChartMitra(id_provinsi, kategori) {
 
         $.ajax({
@@ -273,9 +275,9 @@ $(document).ready(function() {
 
 
     $('#chartType').on('change', function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-mitra").value
+        var provinsi = document.getElementById("chart-filter-provinsi-mitra").value
         mitra.destroy();
-        drawChartMitra(provinsi1, 1);
+        drawChartMitra(provinsi, 1);
     })
 
 
@@ -286,14 +288,16 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    // if ($(window).width() != width) {
+    var width = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-mitra").value
-        mitra.destroy();
-        drawChartMitra(provinsi1, 1);
-
+        if ($(document).width() != width) {
+            var provinsi = document.getElementById("chart-filter-provinsi-mitra").value
+            mitra.destroy();
+            drawChartMitra(provinsi, 1);
+            width = $(document).width()
+        }
     });
-
-
 
 
     function drawChartBalai_Sektoral(id_provinsi, kategori) {
@@ -487,10 +491,14 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_balai = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-Balai_Sektoral").value
-        balai_sektoral.destroy();
-        drawChartBalai_Sektoral(provinsi1, 2);
+        if ($(document).width() != width_balai) {
+            var provinsi = document.getElementById("chart-filter-provinsi-Balai_Sektoral").value
+            balai_sektoral.destroy();
+            drawChartBalai_Sektoral(provinsi, 1);
+            width_balai = $(document).width()
+        }
 
     });
 
@@ -2023,7 +2031,7 @@ $(document).ready(function() {
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
                                 },
-                                barPercentage: 0.8,
+                                barPercentage: 0.6,
                                 categoryPercentage: 0.7,
 
                             }],
@@ -2038,7 +2046,7 @@ $(document).ready(function() {
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
                                 },
-                                barPercentage: 0.8,
+                                barPercentage: 0.6,
                                 categoryPercentage: 0.7,
                             }]
                         }
