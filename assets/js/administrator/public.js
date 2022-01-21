@@ -2030,7 +2030,7 @@ $(document).ready(function() {
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
                                 },
-                                barPercentage: 0.8,
+                                barPercentage: 0.6,
                                 categoryPercentage: 0.7,
 
                             }],
@@ -2045,7 +2045,7 @@ $(document).ready(function() {
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
                                 },
-                                barPercentage: 0.8,
+                                barPercentage: 0.6,
                                 categoryPercentage: 0.7,
                             }]
                         }
