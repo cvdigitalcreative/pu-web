@@ -153,23 +153,23 @@ section#clients {
     background-size: 100% 100%;
 }
 
-section#capaian_output {
+section#capaian_output_1 {
     background-image: url('https://pupr-dev.classico.id/assets/image/Mitra.jpg');
     background-size: 100% 100%;
 }
 
 section#ppp_1 {
-    background-image: url('https://pupr-dev.classico.id/assets/image/Capaian.jpg');
-    background-size: 100% 100%;
-}
-
-section#RPKBMK_1 {
     background-image: url('https://pupr-dev.classico.id/assets/image/Mitra.jpg');
     background-size: 100% 100%;
 }
 
-section#RPKBJK_1 {
+section#RPKBMK_1 {
     background-image: url('https://pupr-dev.classico.id/assets/image/Capaian.jpg');
+    background-size: 100% 100%;
+}
+
+section#RPKBJK_1 {
+    background-image: url('https://pupr-dev.classico.id/assets/image/Mitra.jpg');
     background-size: 100% 100%;
 }
 
@@ -203,7 +203,7 @@ section#asosiasi_1 {
     background-size: 100% 100%;
 }
 
-section#lapas_1 {
+section#lapas_2 {
     background-image: url('https://pupr-dev.classico.id/assets/image/Mitra.jpg');
     background-size: 100% 100%;
 }
@@ -214,7 +214,7 @@ section#kso_1 {
 }
 
 section#mtu_1 {
-    background-image: url('https://pupr-dev.classico.id/assets/image/Mitra.jpg');
+    background-image: url('https://pupr-dev.classico.id/assets/image/Capaian.jpg');
     background-size: 100% 100%;
 }
 

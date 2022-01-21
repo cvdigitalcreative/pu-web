@@ -1516,7 +1516,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Capaian Output Section -->
+        <section id="mtu_1" class="about">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-md-6">
+                        <div class="card w-200">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-black" id="">Mobile Training Unit (MTU)</h6>
+                            </div>
 
+
+                            <div class="card-body" id="mtu">
+                                <div class="row">
+                                    <div class="container mt-2">
+                                        <a href="" id="chart-filter-file-MTU" type="button"
+                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
+                                            File</a>
+                                        <a id="download-chart-MTU" download="ChartImage.png" href=""
+                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
+                                            title="Download Gambar Chart">
+                                            Download Image
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1"
+                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
+                                            <select class="form-control" id="chart-filter-provinsi-MTU">
+                                                <option selected value="0">Choose..</option>
+                                                <option value="0">All By Provinsi</option>
+                                                <option value="99">All By Kategori</option>
+                                                <option value="15">Sumatera Selatan</option>
+                                                <option value="16">Kep. Bangka Belitung</option>
+                                                <option value="17">Jambi</option>
+                                                <option value="18">Bengkulu</option>
+                                                <option value="19">Lampung</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group py-2">
+                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
+                                                Chart</label>
+                                            <select class="form-control" name="chartTypeMTU" id="chartTypeMTU">
+                                                <option value="bar">Vertical Bar</option>
+                                                <option value="horizontalBar">Horizontal Bar</option>
+                                                <option value="line">Line</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_MTU">
+                                    </div>
+                                </div>
+                                <div class="chart-container-MTU">
+                                    <canvas id="MTU" height=""></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <!-- ======= Capaian Output Section ======= -->
         <section id="ppp_1" class="services">
             <div class="container">
@@ -1937,76 +2006,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Capaian Output Section -->
-        <section id="mtu_1" class="about">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col col-md-6">
-                        <div class="card w-200">
-                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-black" id="">Mobile Training Unit (MTU)</h6>
-                            </div>
-
-
-                            <div class="card-body" id="mtu">
-                                <div class="row">
-                                    <div class="container mt-2">
-                                        <a href="" id="chart-filter-file-MTU" type="button"
-                                            class="btn btn-warning float-right bg-flat-color-1" target="">Download
-                                            File</a>
-                                        <a id="download-chart-MTU" download="ChartImage.png" href=""
-                                            class="btn btn-warning float-right bg-flat-color-1 mr-2"
-                                            title="Download Gambar Chart">
-                                            Download Image
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1"
-                                                for="inlineFormCustomSelectPref text-primary">Provinsi</label>
-                                            <select class="form-control" id="chart-filter-provinsi-MTU">
-                                                <option selected value="0">Choose..</option>
-                                                <option value="0">All By Provinsi</option>
-                                                <option value="99">All By Kategori</option>
-                                                <option value="15">Sumatera Selatan</option>
-                                                <option value="16">Kep. Bangka Belitung</option>
-                                                <option value="17">Jambi</option>
-                                                <option value="18">Bengkulu</option>
-                                                <option value="19">Lampung</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group py-2">
-                                            <label class="my-1" for="inlineFormCustomSelectPref text-primary">Pilih
-                                                Chart</label>
-                                            <select class="form-control" name="chartTypeMTU" id="chartTypeMTU">
-                                                <option value="bar">Vertical Bar</option>
-                                                <option value="horizontalBar">Horizontal Bar</option>
-                                                <option value="line">Line</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="doughnut">Doughnut</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-center">
-                                    <div class="loader_MTU">
-                                    </div>
-                                </div>
-                                <div class="chart-container-MTU">
-                                    <canvas id="MTU" height=""></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
+        
         <section id="her">
             <div class="container">
 
