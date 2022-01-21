@@ -75,7 +75,7 @@ $(document).ready(function() {
         'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)', 'rgb(255, 255, 255, 0.2)', 'rgb(255, 225, 19, 0.2)',
         'rgb(25, 15, 39, 0.2)', 'rgb(83, 255, 139, 0.2)', 'rgb(24, 50, 173, 0.2)', 'rgb(257, 41, 90, 0.2)', 'rgb(55, 220, 175, 0.2)'
     ];
-    Chart.defaults.global.defaultFontSize = 11;
+    Chart.defaults.global.defaultFontSize = 10.5;
     Chart.defaults.global.defaultFontColor = "#000000"
     Chart.defaults.global.defaultFontFamily = "Century Gothic";
 
@@ -172,7 +172,7 @@ $(document).ready(function() {
 
                 if ($(window).width() > 1000) {
                     ctx.canvas.width = 100;
-                    var font_Size = 12;
+                    var font_Size = 11.5;
 
                 }
                 if ($(window).width() < 900) {
@@ -587,7 +587,7 @@ $(document).ready(function() {
                 var ctx = document.getElementById('OPD').getContext('2d');
                 if ($(window).width() > 1000) {
 
-                    var font_Size = 12;
+                    var font_Size = 10.2;
 
                 }
                 if ($(window).width() < 900) {
@@ -790,7 +790,7 @@ $(document).ready(function() {
                 var ctx = document.getElementById('vokasi').getContext('2d');
                 if ($(window).width() > 1000) {
 
-                    var font_Size = 12;
+                    var font_Size = 10.2;
 
                 }
                 if ($(window).width() < 900) {
@@ -990,7 +990,7 @@ $(document).ready(function() {
                 var ctx = document.getElementById('Asosiasi_Profesi').getContext('2d');
                 if ($(window).width() > 1000) {
 
-                    var font_Size = 12;
+                    var font_Size = 10.2;
 
                 }
                 if ($(window).width() < 900) {
@@ -1192,7 +1192,7 @@ $(document).ready(function() {
                 var ctx = document.getElementById('ABUJK').getContext('2d');
                 if ($(window).width() > 1000) {
 
-                    var font_Size = 12;
+                    var font_Size = 10.2;
 
                 }
                 if ($(window).width() < 900) {
@@ -1393,7 +1393,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('lapas').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -1583,7 +1583,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('instansi_lain').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -2225,7 +2225,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('DIV').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -2415,7 +2415,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('DINV').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -2610,7 +2610,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('AKTK').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -2804,7 +2804,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('DABU').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -3193,7 +3193,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('RPK').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -3385,7 +3385,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('RPBK').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -3821,7 +3821,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('RPBWP').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;
@@ -4255,7 +4255,7 @@ $(document).ready(function() {
 
                 var ctx = document.getElementById('PPK').getContext('2d');
                 if ($(window).width() > 1000) {
-                    var font_Size = 12;
+                    var font_Size = 10.2;
                 }
                 if ($(window).width() < 900) {
                     var font_Size = 7;

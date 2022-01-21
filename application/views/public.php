@@ -213,18 +213,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto " href="#se_kepala_daerah">SE Kepala Daerah</a></li>
-                    <li class="dropdown"><a href="#capaian_output"><span>Capaian Output</span> <i
+                    <li class="dropdown"><a href="#capaian_output_1"><span>Capaian Output</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a style="font-size:9px" href="#capaian_output_1">Rekap Pelaksanaan Kegiatan</a></li>
-                            <li><a style="font-size:9px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a></li>
-                            <li><a style="font-size:9px" href="#mtu_1">MTU</a></li>
-                            <li><a style="font-size:9px" href="#ppp_1">Program Padat Karya</a></li>
-                            <li><a style="font-size:9px" href="#ppp_1">Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</a></li>
-                            <li><a style="font-size:9px" href="#RPKBMK_1">Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</a></li>
-                            <li><a style="font-size:9px" href="#RPKBJK_1">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</a></li>
-                            <li><a style="font-size:9px" href="#TKK_AHLI_1">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
-                            <li><a style="font-size:9px" href="#TKK_TERAMPIL_1">Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
+                            <li><a style="font-size:11px" href="#capaian_output_1">Rekap Pelaksanaan Kegiatan</a></li>
+                            <li><a style="font-size:11px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a></li>
+                            <li><a style="font-size:11px" href="#mtu_1">MTU</a></li>
+                            <li><a style="font-size:11px" href="#ppp_1">Program Padat Karya</a></li>
+                            <li><a style="font-size:11px" href="#ppp_1">Rekap Peserta Berdasarkan<br> Wilayah dan Pembiayaan</a></li>
+                            <li><a style="font-size:11px" href="#RPKBMK_1">Rekap Peserta Kegiatan<br> Berdasarkan Mitra Kerja</a></li>
+                            <li><a style="font-size:11px" href="#RPKBJK_1">Rekap Pelaksanaan Kegiatan <br>Berdasarkan Jenis Kegiatan</a></li>
+                            <li><a style="font-size:11px" href="#TKK_AHLI_1">Jumlah TKK Ahli Terlatih dan <br>Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
+                            <li><a style="font-size:11px" href="#TKK_TERAMPIL_1">Jumlah TKK Terampil Terlatih dan <br>Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
                             
                         </ul>
                     </li>
