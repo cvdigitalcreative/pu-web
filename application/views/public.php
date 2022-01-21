@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Favicons -->
     <link href="<?=base_url('assets/image/pupr-logo.svg')?>" rel="icon">
 
-    <?php $this->load->view("components/head_public.php") ?>
+   
     <!-- =======================================================
   * Template Name: Vesperr - v4.7.0
   * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
