@@ -694,12 +694,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_opd = $(document).width()
     $(window).resize(function() {
-        var provinsi = $('#chart-filter-provinsi-opd').val()
-        Opd.destroy();
-        drawChartOPD(provinsi, 3);
+        if ($(document).width() != width_opd) {
+            var provinsi = $('#chart-filter-provinsi-opd').val()
+            Opd.destroy();
+            drawChartOPD(provinsi, 3);
+            width_opd = $(document).width()
+        }
 
     });
+
+
 
     function drawChartvokasi(id_provinsi, kategori) {
 
@@ -890,12 +896,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_vokasi = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-vokasi").value
-        vokasi.destroy();
-        drawChartvokasi(provinsi1, 4);
+        if ($(document).width() != width_vokasi) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-vokasi").value
+            vokasi.destroy();
+            drawChartvokasi(provinsi1, 4);
+            width_vokasi = $(document).width()
+        }
 
     });
+
 
 
     function drawChartAsosiasi_Profesi(id_provinsi, kategori) {
@@ -1086,12 +1097,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_asosiasi_profesi = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-Asosiasi_Profesi").value
-        Asosiasi_Profesi.destroy();
-        drawChartAsosiasi_Profesi(provinsi1, 5);
+        if ($(document).width() != width_asosiasi_profesi) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-Asosiasi_Profesi").value
+            Asosiasi_Profesi.destroy();
+            drawChartAsosiasi_Profesi(provinsi1, 5);
+            width_asosiasi_profesi = $(document).width()
+        }
 
     });
+
+
 
     function drawChartABUJK(id_provinsi, kategori) {
 
@@ -1281,12 +1298,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_ABUJK = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-ABUJK").value
-        ABUJK.destroy();
-        drawChartABUJK(provinsi1, 6);
+        if ($(document).width() != width_ABUJK) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-ABUJK").value
+            ABUJK.destroy();
+            drawChartABUJK(provinsi1, 6);
+            width_ABUJK = $(document).width()
+        }
 
     });
+
+
 
     function drawChartlapas(id_provinsi, kategori) {
 
@@ -1469,12 +1492,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_lapas = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-lapas").value
-        lapas.destroy();
-        drawChartlapas(provinsi1, 7);
+        if ($(document).width() != width_lapas) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-lapas").value
+            lapas.destroy();
+            drawChartlapas(provinsi1, 7);
+            width_lapas = $(document).width()
+        }
 
     });
+
 
     function drawChartinstansi_lain(id_provinsi, kategori) {
 
@@ -1653,12 +1681,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_instansi_lain = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-instansi_lain").value
-        instansi_lain.destroy();
-        drawChartinstansi_lain(provinsi1, 8);
+        if ($(document).width() != width_instansi_lain) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-instansi_lain").value
+            instansi_lain.destroy();
+            drawChartinstansi_lain(provinsi1, 8);
+            width_instansi_lain = $(document).width()
+        }
 
     });
+
 
 
     function drawChartKSO(id_provinsi, kategori, chart_type) {
@@ -1873,11 +1906,15 @@ $(document).ready(function() {
     });
 
 
+    var width_kso = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-KSO").value
-        var chart_type = document.getElementById("chartTypeKSO").value
-        KSO.destroy();
-        drawChartKSO(provinsi1, 27, chart_type);
+        if ($(document).width() != width_kso) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-KSO").value
+            var chart_type = document.getElementById("chartTypeKSO").value
+            KSO.destroy();
+            drawChartKSO(provinsi1, 27, chart_type);
+            width_kso = $(document).width()
+        }
 
     });
 
@@ -2093,13 +2130,19 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_mtu = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-MTU").value
-        var chart_type = document.getElementById("chartTypeMTU").value
-        MTU.destroy();
-        drawChartMTU(provinsi1, 28, chart_type);
+        if ($(document).width() != width_mtu) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-MTU").value
+            var chart_type = document.getElementById("chartTypeMTU").value
+            MTU.destroy();
+            drawChartMTU(provinsi1, 28, chart_type);
+            width_mtu = $(document).width()
+        }
 
     });
+
+
 
     function drawChartDIV(id_provinsi, kategori) {
 
@@ -2281,12 +2324,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_div = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-DIV").value
-        DIV.destroy();
-        drawChartDIV(provinsi1, 13);
+        if ($(document).width() != width_div) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-DIV").value
+            DIV.destroy();
+            drawChartDIV(provinsi1, 13);
+            width_div = $(document).width()
+        }
 
     });
+
 
     function drawChartDINV(id_provinsi, kategori) {
 
@@ -2468,12 +2516,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_dinv = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-DINV").value
-        DINV.destroy();
-        drawChartDINV(provinsi1, 12);
+        if ($(document).width() != width_dinv) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-DINV").value
+            DINV.destroy();
+            drawChartDINV(provinsi1, 12);
+            width_dinv = $(document).width()
+        }
 
     });
+
 
 
     function drawChartAKTK(id_provinsi, kategori) {
@@ -2658,10 +2711,14 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_aktk = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-AKTK").value
-        AKTK.destroy();
-        drawChartAKTK(provinsi1, 10);
+        if ($(document).width() != width_aktk) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-AKTK").value
+            AKTK.destroy();
+            drawChartAKTK(provinsi1, 10);
+            width_aktk = $(document).width()
+        }
 
     });
 
@@ -2848,12 +2905,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_dabu = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-DABU").value
-        DABU.destroy();
-        drawChartDABU(provinsi1, 11);
+        if ($(document).width() != width_dabu) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-DABU").value
+            DABU.destroy();
+            drawChartDABU(provinsi1, 11);
+            width_dabu = $(document).width()
+        }
 
     });
+
 
     function drawChartSE_Kepala_Daerah(id_provinsi, kategori) {
 
@@ -3037,12 +3099,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_se_kepala_daerah = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-SE_Kepala_Daerah").value
-        SE_Kepala_Daerah.destroy();
-        drawChartSE_Kepala_Daerah(provinsi1, 9);
+        if ($(document).width() != width_se_kepala_daerah) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-SE_Kepala_Daerah").value
+            SE_Kepala_Daerah.destroy();
+            drawChartSE_Kepala_Daerah(provinsi1, 9);
+            width_se_kepala_daerah = $(document).width()
+        }
 
     });
+
+
 
     function drawChartRPK(id_provinsi, kategori) {
 
@@ -3224,12 +3292,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_RPK = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPK").value
-        RPK.destroy();
-        drawChartRPK(provinsi1, 16);
+        if ($(document).width() != width_RPK) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-RPK").value
+            RPK.destroy();
+            drawChartRPK(provinsi1, 16);
+            width_RPK = $(document).width()
+        }
 
     });
+
+
 
     function drawChartRPBK(id_provinsi, kategori) {
 
@@ -3411,12 +3485,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_RPBK = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBK").value
-        RPBK.destroy();
-        drawChartRPBK(provinsi1, 20);
+        if ($(document).width() != width_RPBK) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-RPBK").value
+            RPBK.destroy();
+            drawChartRPBK(provinsi1, 20);
+            width_RPBK = $(document).width()
+        }
 
     });
+
 
 
     function drawChartRPKBS(id_provinsi, kategori, chart_type) {
@@ -3642,11 +3721,15 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_RPKBS = $(document).width()
     $(window).resize(function() {
-        var provinsi = document.getElementById("chart-filter-provinsi-RPKBS").value
-        var chart_type = document.getElementById("chartTypeRPKBS").value
-        RPKBS.destroy();
-        drawChartRPKBS(provinsi, 17, chart_type);
+        if ($(document).width() != width_RPKBS) {
+            var provinsi = document.getElementById("chart-filter-provinsi-RPKBS").value
+            var chart_type = document.getElementById("chartTypeRPKBS").value
+            RPKBS.destroy();
+            drawChartRPKBS(provinsi, 17, chart_type);
+            width_RPKBS = $(document).width()
+        }
 
     });
 
@@ -3831,11 +3914,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_RPBWP = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPBWP").value
-        RPBWP.destroy();
-        drawChartRPBWP(provinsi1, 18);
+        if ($(document).width() != width_RPBWP) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-RPBWP").value
+            RPBWP.destroy();
+            drawChartRPBWP(provinsi1, 18);
+            width_RPBWP = $(document).width()
+        }
+
     });
+
+
 
     function drawChartRPKBMK(id_provinsi, kategori, chart_type) {
 
@@ -4054,12 +4144,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_RPKBMK = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBMK").value
-        var chart_type = document.getElementById("chartTypeRPKBMK").value
-        RPKBMK.destroy();
-        drawChartRPKBMK(provinsi1, 21, chart_type);
+        if ($(document).width() != width_RPKBMK) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-RPKBMK").value
+            var chart_type = document.getElementById("chartTypeRPKBMK").value
+            RPKBMK.destroy();
+            drawChartRPKBMK(provinsi1, 21, chart_type);
+            width_RPKBMK = $(document).width()
+        }
+
     });
+
 
     function drawChartPPK(id_provinsi, kategori) {
 
@@ -4244,11 +4340,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_PPK = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-PPK").value
-        PPK.destroy();
-        drawChartPPK(provinsi1, 14);
+        if ($(document).width() != width_PPK) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-PPK").value
+            PPK.destroy();
+            drawChartPPK(provinsi1, 14);
+            width_PPK = $(document).width()
+        }
+
     });
+
 
     function drawChartTKK_AHLI(id_provinsi, kategori, chart_type) {
 
@@ -4473,12 +4575,18 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_TKK_AHLI = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_AHLI").value
-        var chart_type = document.getElementById("chartTypeTKK_AHLI").value
-        TKK_AHLI.destroy();
-        drawChartTKK_AHLI(provinsi1, 25, chart_type);
+        if ($(document).width() != width_TKK_AHLI) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_AHLI").value
+            var chart_type = document.getElementById("chartTypeTKK_AHLI").value
+            TKK_AHLI.destroy();
+            drawChartTKK_AHLI(provinsi1, 25, chart_type);
+            width_TKK_AHLI = $(document).width()
+        }
+
     });
+
 
     function drawChartTKK_TERAMPIL(id_provinsi, kategori, chart_type) {
 
@@ -4704,11 +4812,17 @@ $(document).ready(function() {
         a.href = image;
     });
 
+    var width_TKK_TERAMPIL = $(document).width()
     $(window).resize(function() {
-        var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_TERAMPIL").value
-        var chart_type = document.getElementById("chartTypeTKK_TERAMPIL").value
-        TKK_TERAMPIL.destroy();
-        drawChartTKK_TERAMPIL(provinsi1, 26, chart_type);
+        if ($(document).width() != width_TKK_TERAMPIL) {
+            var provinsi1 = document.getElementById("chart-filter-provinsi-TKK_TERAMPIL").value
+            var chart_type = document.getElementById("chartTypeTKK_TERAMPIL").value
+            TKK_TERAMPIL.destroy();
+            drawChartTKK_TERAMPIL(provinsi1, 26, chart_type);
+            width_TKK_TERAMPIL = $(document).width()
+        }
+
     });
+
 
 })
