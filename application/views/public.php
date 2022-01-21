@@ -216,15 +216,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li class="dropdown"><a href="#capaian_output"><span>Capaian Output</span> <i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a style="font-size:12px" href="#capaian_output_1">Rekap Pelaksanaan Kegiatan</a></li>
-                            <li><a style="font-size:12px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a></li>
-                            <li><a style="font-size:12px" href="#mtu_1">MTU</a></li>
-                            <li><a style="font-size:12px" href="#ppp_1">Program Padat Karya</a></li>
-                            <li><a style="font-size:12px" href="#ppp_1">Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</a></li>
-                            <li><a style="font-size:12px" href="#RPKBMK_1">Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</a></li>
-                            <li><a style="font-size:12px" href="#RPKBJK_1">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</a></li>
-                            <li><a style="font-size:12px" href="#TKK_AHLI_1">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
-                            <li><a style="font-size:12px" href="#TKK_TERAMPIL_1">Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
+                            <li><a style="font-size:9px" href="#capaian_output_1">Rekap Pelaksanaan Kegiatan</a></li>
+                            <li><a style="font-size:9px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a></li>
+                            <li><a style="font-size:9px" href="#mtu_1">MTU</a></li>
+                            <li><a style="font-size:9px" href="#ppp_1">Program Padat Karya</a></li>
+                            <li><a style="font-size:9px" href="#ppp_1">Rekap Peserta Berdasarkan Wilayah dan Pembiayaan</a></li>
+                            <li><a style="font-size:9px" href="#RPKBMK_1">Rekap Peserta Kegiatan Berdasarkan Mitra Kerja</a></li>
+                            <li><a style="font-size:9px" href="#RPKBJK_1">Rekap Pelaksanaan Kegiatan Berdasarkan Jenis Kegiatan</a></li>
+                            <li><a style="font-size:9px" href="#TKK_AHLI_1">Jumlah TKK Ahli Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
+                            <li><a style="font-size:9px" href="#TKK_TERAMPIL_1">Jumlah TKK Terampil Terlatih dan Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
                             
                         </ul>
                     </li>
@@ -1385,8 +1385,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
                 </div>
 
-                <div class="row">
-                    <div class="col d-flex">
+                <div class="row justify-content-md-center">
+                    <div class="col col-md-6">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="card mb-4">
                                 <div
@@ -1442,13 +1442,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPK">
-                                        <canvas id="RPK" width="500"></canvas>
+                                        <canvas id="RPK" width="480"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col d-flex">
+                    <div class="col col-md-6">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="card mb-4">
                                 <div
@@ -1505,7 +1505,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBK">
-                                        <canvas id="RPBK" width="500"></canvas>
+                                        <canvas id="RPBK" width="480"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -1520,8 +1520,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- ======= Capaian Output Section ======= -->
         <section id="ppp_1" class="services">
             <div class="container">
-                <div class="row">
-                    <div class="col d-flex">
+                <div class="row justify-content-md-center">
+                    <div class="col col-md-6">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="card mb-4">
                                 <div
@@ -1578,13 +1578,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-PPK">
-                                        <canvas id="PPK" width="500"></canvas>
+                                        <canvas id="PPK" width="480"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col d-flex">
+                    <div class="col col-md-6">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="card mb-4">
                                 <div
@@ -1642,7 +1642,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         </div>
                                     </div>
                                     <div class="chart-container-RPBWP">
-                                        <canvas id="RPBWP" width="500"></canvas>
+                                        <canvas id="RPBWP" width="480"></canvas>
                                     </div>
                                 </div>
                             </div>
