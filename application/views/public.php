@@ -1176,7 +1176,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
-                        id="aktk_1">
+                        >
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja
