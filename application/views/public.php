@@ -2105,7 +2105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Vendor JS Files -->
     <script src="<?= base_url('assets/public_component/vendor/purecounter/purecounter.js')?>"></script>
     <script src="<?= base_url('assets/public_component/vendor/aos/aos.js')?>"></script>
-    <script src="<?= base_url('assets/public_component/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+    
     <script src="<?=base_url('assets/public_component/vendor/glightbox/js/glightbox.min.js')?>"></script>
     <script src="<?=base_url('assets/public_component/vendor/isotope-layout/isotope.pkgd.min.js')?>"></script>
     <script src="<?=base_url('assets/public_component/vendor/swiper/swiper-bundle.min.js')?>"></script>
