@@ -247,10 +247,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <img id="home1" src="<?=base_url('assets/image/home1.png')?>" loading="lazy" width="100%" height="100%" alt="">
 
         </div>
+
+        
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients clients">
+        
             <div class="container">
-
+            
                 <div class="row">
 
                     <div class="col-lg-2 col-md-4 col-6">
@@ -261,35 +264,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <a href="#about">
+                        <a href="#mitra_section">
                             <img src="<?= base_url();?>assets/illustration/mitra.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <a href="#instruktur">
+                        <a href="#instruktur_section">
                             <img src="<?= base_url();?>assets/illustration/instruktur.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" data-aos-delay="100" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <a href="#asesor">
+                        <a href="#asesor_section">
                             <img src="<?= base_url();?>assets/illustration/asesor.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" data-aos-delay="200" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <a href="#se_kepala_daerah">
+                        <a href="#se_kepala_daerah_section">
                             <img src="<?= base_url();?>assets/illustration/SE_Kepala_Daerah.png" class="img-fluid"
                                 alt="" data-aos="zoom-in" data-aos-delay="300" style="width:100% height:100%" loading="lazy">
                         </a>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
-                        <a href="#capaian_output">
+                        <a href="#capaian_output_section">
                             <img src="<?= base_url();?>assets/illustration/Capaian_Output.png" class="img-fluid" alt=""
                                 data-aos="zoom-in" data-aos-delay="500" loading="lazy">
                         </a>
@@ -302,7 +305,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <!-- ======= Mitra Section ======= -->
         <section id="about" class="about mt-5">
-            <div class="container">
+        
+            <div class="container"  id="mitra_section">
 
                 <div class="section-title" data-aos="fade-up">
                     <h2>Mitra Balai Jasa Konstruksi Wilayah II Palembang</h2>
@@ -375,6 +379,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
         <!-- ======= Balai Sektoral Kemetrian PUPR Section ======= -->
         <section id="balai_pupr" class="balai_pupr">
+        
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -444,6 +449,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
         <!-- ======= OPD dan Vokasi ======= -->
         <section id="opd_1" class="count">
+        
             <div class="container">
                 <div class="row">
 
@@ -572,6 +578,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- OPD dan Vokasi Section -->
         <!-- ======= Asosiasi Profesi dan Asosias BUJK ======= -->
         <section id="asosiasi_1" class="asosiasi_profesi">
+        
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -1037,7 +1044,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        <!-- Capaian Output Section -->
         <!-- ======= Instruktur ======= -->
         <section id="instruktur" class="instruktur">
-            <div class="container">
+       
+            <div class="container" id="instruktur_section">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Instruktur</h2>
                     <p>Instruktur Vokasi dan Non Vokasi</p>
@@ -1169,7 +1177,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- Instruktur Section -->
         <!-- ======= Asesor ======= -->
         <section id="asesor" class="counts">
-            <div class="container">
+        
+            <div class="container" id="asesor_section">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Asesor</h2>
                     <p>Asesor Kompetensi Tenaga Kerja Konstruksi dan Asesor Badan Usaha</p>
@@ -1302,7 +1311,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- Asesor Section -->
         <!-- ======= SE Kepala Daerah ======= -->
         <section id="se_kepala_daerah" class="se_kepala_daerah">
-            <div class="container">
+        
+            <div class="container" id="se_kepala_daerah_section">
 
                 <div class="section-title" data-aos="fade-up">
                     <h2>Surat Edaran Kepala Daerah</h2>
@@ -1378,7 +1388,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Balai Sektoral Kementerian PUPR Section -->
         <!-- ======= Capaian Output Section ======= -->
         <section id="capaian_output_1" class="services">
-            <div class="container">
+
+            <div class="container" id="capaian_output_section">
 
                 <div class="section-title" data-aos="fade-up">
                     <h2>Capaian Output</h2>
