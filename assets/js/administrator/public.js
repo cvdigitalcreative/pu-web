@@ -4703,13 +4703,16 @@ $(document).ready(function() {
 
                     } while (i < data.data.length);
                     $('#TKK_TERAMPIL').attr('height', `2000vh`);
-                    var height_bar = 250
-                    var height_bar_mobile = 600
+
                     if (chart_type == 'horizontalBar') {
+                        var height_bar = 250
+                        var height_bar_mobile = 600
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
                         $('#TKK_TERAMPIL').attr('height', `200`);
+                        var height_bar = 80
+                        var height_bar_mobile = 600
                         var display_y_axis = false
                         var display_x_axis = true
                     }
@@ -4780,7 +4783,7 @@ $(document).ready(function() {
                             xAxes: [{
                                 ticks: {
 
-                                    max: max_1 + (max_1 * 37 / 100),
+                                    max: max_1 + (max_1 * 60 / 100),
                                     beginAtZero: true,
                                     display: display_x_axis
                                 },
