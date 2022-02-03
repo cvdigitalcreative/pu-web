@@ -1796,7 +1796,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_RPKBMK">
                                     </div>
                                 </div>
+                                <div class="chart-container-RPKBMK">
                                 <canvas id="RPKBMK" height=""></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1928,9 +1930,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option value="horizontalBar">Horizontal Bar</option>
                                                 <option value="bar">Vertical Bar</option>
                                                 <option value="line">Line</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="doughnut">Doughnut</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1998,9 +1997,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <option value="horizontalBar">Horizontal Bar</option>
                                                 <option value="bar">Vertical Bar</option>
                                                 <option value="line">Line</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="doughnut">Doughnut</option>
                                             </select>
                                         </div>
                                     </div>
