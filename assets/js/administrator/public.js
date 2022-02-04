@@ -1444,8 +1444,8 @@ $(document).ready(function() {
                             }],
                             xAxes: [{
                                 ticks: { fontSize: font_Size },
-                                barPercentage: 0.9,
-                                categoryPercentage: 0.9,
+                                barPercentage: 0.5,
+                                categoryPercentage: 0.5,
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",
                                 }

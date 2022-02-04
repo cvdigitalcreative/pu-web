@@ -230,6 +230,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </li>
 
                     <li><a class="nav-link scrollto " href="#contact">Hubungi Kami</a></li>
+                    <li><a class="nav-link scrollto " href="<?= base_url();?>pupr/login">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
