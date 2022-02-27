@@ -239,7 +239,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-6 mt-3">
+                        <div class="col mt-3">
                             <div class="card mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -269,7 +269,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-6 mt-3">
+                        <div class="col mt-3">
                             <div class="card mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
