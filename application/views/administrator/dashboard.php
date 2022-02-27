@@ -231,6 +231,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_profileProvinsi">
+                                        <h1>Loading Data ....</h1>
+                                    </div>
+                                </div>
+
 
 
                                 <canvas id="chartData"></canvas>
@@ -263,7 +269,11 @@
 											endif; ?>
                                         </select>
                                     </div>
-
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader_kegiatanStatus">
+                                            <h1>Loading Data ....</h1>
+                                        </div>
+                                    </div>
                                     <canvas id="chartKegiatanStatus"></canvas>
                                 </div>
                             </div>
@@ -293,7 +303,11 @@
 											endif; ?>
                                         </select>
                                     </div>
-
+                                    <div class="d-flex justify-content-center">
+                                        <div class="loader_kegiatanJenis">
+                                            <h1>Loading Data ....</h1>
+                                        </div>
+                                    </div>
                                     <canvas id="chartKegiatanJenis"></canvas>
                                 </div>
                             </div>
@@ -335,9 +349,9 @@
                         </div>
                     </div>
 
-                <div class="col mt-3">
+                    <div class="col mt-3">
                         <div class="card mb-4">
-                           
+
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="labelChartKegiatanProvinsi"></h6>
                             </div>
@@ -358,10 +372,15 @@
 										endif; ?>
                                     </select>
                                 </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="loader_kegiatanProvinsi">
+                                        <h1>Loading Data ....</h1>
+                                    </div>
+                                </div>
                                 <canvas id="chartKegiatanProvinsi"></canvas>
                             </div>
                         </div>
-                    </div> 
+                    </div>
 
 
 
@@ -378,7 +397,7 @@
                                 <canvas id="chartExpandKotaProvinsi"></canvas>
                             </div>
                         </div>
-                    </div> 
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->

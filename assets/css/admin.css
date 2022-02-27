@@ -1,9 +1,12 @@
 /* Card untuk rekapitulasi */
+
 .card-recap {
     border-radius: 14px;
 }
 
+
 /* kalender_kegiatan */
+
 .container-background {
     background-color: #fff;
     padding: 24px;
@@ -84,15 +87,14 @@
     font-weight: 800;
 }
 
+
 /* upload image kegiatan */
 
-#banner-kegiatan
-{
+#banner-kegiatan {
     display: none;
 }
 
-#banner-image
-{
+#banner-image {
     cursor: pointer;
 }
 
@@ -114,28 +116,28 @@
     height: 300px;
 }
 
+
 /* end of upload image kegiatan */
 
+
 /* upload image profile */
 
-#edit-banner-kegiatan
-{
+#edit-banner-kegiatan {
     display: none;
 }
 
-#banner-image-edit
-{
+#banner-image-edit {
     cursor: pointer;
 }
+
+
 /* upload image profile */
 
-#banner-profile
-{
+#banner-profile {
     display: none;
 }
 
-#banner-image-profile
-{
+#banner-image-profile {
     cursor: pointer;
 }
 
@@ -148,7 +150,7 @@
     -moz-border-radius: 14px;
     -ms-border-radius: 14px;
     -o-border-radius: 14px;
-    border-radius:50%;
+    border-radius: 50%;
     border: 2px solid#846d6d;
     margin-bottom: 20px;
 }
@@ -159,19 +161,20 @@
     height: 100%;
 }
 
+
 /* end of upload image profile */
+
 
 /* upload image kegiatan */
 
-#banner-berita
-{
+#banner-berita {
     display: none;
 }
 
-#banner-image-edit-berita
-{
+#banner-image-edit-berita {
     cursor: pointer;
 }
+
 
 /* end of upload image kegiatan */
 
@@ -194,7 +197,9 @@
     height: 100%;
 }
 
+
 /* Custom modal full screen */
+
 .modal-daftar-peserta-kegiatan-custom {
     max-width: 100%;
     padding: 0;
@@ -207,91 +212,96 @@
     display: flex;
 }
 
+
 /* show bigger image when hover */
+
 .image-hover {
     /* padding: 50px; */
     transition: transform .2s;
     margin: 0 auto;
-  }
-  
-  .image-hover:hover {
-    -ms-transform: scale(2.0); /* IE 9 */
-    -webkit-transform: scale(2.0); /* Safari 3-8 */
-    transform: scale(2.0); 
-  }
-
-  /* End of show bigger image when hover */
-  
-  .badge-status-user{
-      background-color: #FFC928;
-      font-size: 10px;
-      padding-top: 1px;
-      padding-bottom: 1px;
-      padding-left: 4px;
-      padding-right: 4px;
-      border: 1px solid #FFC928;
-      border-radius: 15px;
-      margin-top: -3px;
-  }
-
-  .form-data-pendidikan-title{
-      margin-top: 3rem;
-  }
-
-  .truncate {
-    max-width:50px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .truncate-judul-berita {
-    max-width:300px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .truncate-berita {
-    max-width:500px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  textarea{  
-    /* box-sizing: padding-box; */
-    overflow:hidden;
-    /* demo only: */
-    padding:10px;
-    width:250px;
-    font-size:14px;
-    display:block;
-    border-radius:10px;
-  }
-
-  .custom-radio-button-form input {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
-  
-  .custom-radio-button-form input[type="radio"] {
+
+.image-hover:hover {
+    -ms-transform: scale(2.0);
+    /* IE 9 */
+    -webkit-transform: scale(2.0);
+    /* Safari 3-8 */
+    transform: scale(2.0);
+}
+
+
+/* End of show bigger image when hover */
+
+.badge-status-user {
+    background-color: #FFC928;
+    font-size: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 1px solid #FFC928;
+    border-radius: 15px;
+    margin-top: -3px;
+}
+
+.form-data-pendidikan-title {
+    margin-top: 3rem;
+}
+
+.truncate {
+    max-width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.truncate-judul-berita {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.truncate-berita {
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+textarea {
+    /* box-sizing: padding-box; */
+    overflow: hidden;
+    /* demo only: */
+    padding: 10px;
+    width: 250px;
+    font-size: 14px;
+    display: block;
+    border-radius: 10px;
+}
+
+.custom-radio-button-form input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.custom-radio-button-form input[type="radio"] {
     opacity: 0.01;
     z-index: 100;
     visibility: hidden;
-  }
-  
-  .custom-radio-button-form .radio-custom input[type="radio"]:checked+label,
-  .Checked+label {
+}
+
+.custom-radio-button-form .radio-custom input[type="radio"]:checked+label,
+.Checked+label {
     background-color: #846d6d;
     color: white;
-  }
-  
-  .custom-radio-button-form .radio-custom label {
+}
+
+.custom-radio-button-form .radio-custom label {
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
@@ -302,13 +312,15 @@
     cursor: pointer;
     z-index: 90;
     display: inline-block;
-  }
-  
-  .custom-radio-button-form .radio-custom label:hover {
+}
+
+.custom-radio-button-form .radio-custom label:hover {
     background: #f0f0f0;
-  }
+}
+
 
 /* Add new kegiaan  */
+
 .btn-move-input-experts {
     color: #fff !important;
     cursor: pointer;
@@ -320,13 +332,13 @@
     cursor: pointer;
 }
 
-.btn-selesaikan-kegiatan{
-    background-color:#ffa742;
+.btn-selesaikan-kegiatan {
+    background-color: #ffa742;
     border-color: #ffa742;
     color: white;
 }
 
-.btn-selesaikan-kegiatan:hover{
+.btn-selesaikan-kegiatan:hover {
     color: white;
-    background-color:#f5901d;
+    background-color: #f5901d;
 }

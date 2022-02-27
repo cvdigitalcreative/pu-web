@@ -39,6 +39,12 @@ $(document).ready(function() {
             stringcolor = "#36b9cc"
         }
         $.ajax({
+            beforeSend: function() {
+                $('.loader_profileProvinsi').show();
+            },
+            complete: function() {
+                $('.loader_profileProvinsi').hide();
+            },
             url: `${BASE_URL}Dashboard/dataChart/${id_jenis}/${tahun}`,
             method: "GET",
             success: function(data) {
@@ -134,6 +140,12 @@ $(document).ready(function() {
 
     function drawChartKegiatanJenis(tahun) {
         $.ajax({
+            beforeSend: function() {
+                $('.loader_kegiatanJenis').show();
+            },
+            complete: function() {
+                $('.loader_kegiatanJenis').hide();
+            },
             url: `${BASE_URL}Dashboard/dataKegiatanbyJenis/${tahun}`,
             method: "GET",
             success: function(data) {
@@ -217,6 +229,12 @@ $(document).ready(function() {
 
     function drawChartKegiatanStatus(tahun) {
         $.ajax({
+            beforeSend: function() {
+                $('.loader_kegiatanStatus').show();
+            },
+            complete: function() {
+                $('.loader_kegiatanStatus').hide();
+            },
             url: `${BASE_URL}Dashboard/dataKegiatanbyStatus/${tahun}`,
             method: "GET",
             success: function(data) {
@@ -494,6 +512,12 @@ $(document).ready(function() {
 
     function drawChartKegiatanProvinsi(tahun) {
         $.ajax({
+            beforeSend: function() {
+                $('.loader_kegiatanProvinsi').show();
+            },
+            complete: function() {
+                $('.loader_kegiatanProvinsi').hide();
+            },
             url: `${BASE_URL}Dashboard/dataKegiatanbyProvinsi/${tahun}`,
             method: "GET",
             success: function(data) {
