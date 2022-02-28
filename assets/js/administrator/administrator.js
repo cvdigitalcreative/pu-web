@@ -276,7 +276,7 @@ $(document).ready(function() {
         var TableKegiatan = $('#kalender_kegiatan_table').DataTable({
             // "order": [0, 'asc'],
             processing: true,
-            serverSide: false,
+            serverSide: true,
             retrieve: true,
             scrollY: true,
             scrollX: true,

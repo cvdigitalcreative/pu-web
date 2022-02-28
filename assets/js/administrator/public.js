@@ -222,8 +222,6 @@ $(document).ready(function() {
                                     max: max_1 + (max_1 * 17 / 100),
                                     beginAtZero: true,
                                     display: false,
-
-
                                 },
                                 gridLines: {
                                     color: "rgba(0, 0, 0, 0)",

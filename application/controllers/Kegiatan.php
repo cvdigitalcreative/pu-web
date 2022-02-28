@@ -264,30 +264,24 @@ class Kegiatan extends CI_Controller
                             $data['kegiatan'][$indexKegiatan]['no_kegiatan'] = $noKegiatan;
                             // ======================= tanggal Kegiatan ================================
                             $tanggal_kegiatan = $val['tanggal_kegiatan'];
-                            $temparr = explode('-', $tanggal_kegiatan);
-                            $indextglreverse = 0;
-                            for ($j = count($temparr) - 1; $j >= 0; $j--) {
-                                $arrtemptanggal[$indextglreverse] = $temparr[$j];
-                                $indextglreverse++;
-                            }
-                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan'] = implode('-', $arrtemptanggal);
-                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = strtotime($val['tanggal_kegiatan']);
-                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text']);
+                            // Creating timestamp from given date
+                            $timestamp = strtotime($tanggal_kegiatan);
+                             
+                            // Creating new date format from that timestamp
+                            $new_date = date("d-m-Y", $timestamp);
+                        $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] =$new_date;
 
                             // ======================= tanggal Kegiatan Selesai ================================
                             $tanggal_kegiatan_selesai = $val['tanggal_kegiatan_selesai'];
-                            $temparrselesai = explode('-', $tanggal_kegiatan_selesai);
-                            $indextglselesaireverse = 0;
-                            for ($j = count($temparrselesai) - 1; $j >= 0; $j--) {
-                                $arrtemptanggalselesai[$indextglselesaireverse] = $temparrselesai[$j];
-                                $indextglselesaireverse++;
-                            }
-                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai'] = implode('-', $arrtemptanggalselesai);
-                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = strtotime($val['tanggal_kegiatan_selesai']);
-                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = date("d F Y", $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text']);
+                             // Creating timestamp from given date
+                            $timestamp = strtotime($tanggal_kegiatan_selesai);
+                             
+                            // Creating new date format from that timestamp
+                            $new_date = date("d-m-Y", $timestamp);
+                             $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'] = $new_date;
 
-                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_full_text'] = $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] . " - " . $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'];
-
+                            $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_full_text'] = $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_text'] . " sampai  " . $data['kegiatan'][$indexKegiatan]['tanggal_kegiatan_selesai_text'];
+                                
                             // ==================== Instruktur Kegiatan ===========================
                             $indexInstruktur = 0;
                             foreach ($data['kegiatan'][$indexKegiatan]['instruktur_kegiatan'] as $val2) {
@@ -299,6 +293,7 @@ class Kegiatan extends CI_Controller
                                 $indexInstruktur++;
                             }
                             // ==================== Asesor Kegiatan ===========================
+                            
                             $indexAsesor = 0;
                             foreach ($data['kegiatan'][$indexKegiatan]['asesor_kegiatan'] as $val2) {
                                 if ($indexAsesor == 0) {
@@ -307,39 +302,41 @@ class Kegiatan extends CI_Controller
                                     $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] = (string)  $data['kegiatan'][$indexKegiatan]['str_nama_asesor_kegiatan'] . ", " . $val2['nama'];
                                 $indexAsesor++;
                             }
-
+                             $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = null;
                             // ==================== File Berita Acara ===========================
-                            $file_berita = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
-                            if ($file_berita == null)
-                                $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = null;
-                            else {
-                                if ($file_berita['status'] == "Success" && count($file_berita['data']) > 0)
-                                    $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = $file_berita['data'];
-                                else
-                                    $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = null;
-                            }
-
+                            // $file_berita = $this->Kegiatan_model->view_berita_acara($val['id_kegiatan'], $this->session->userdata('token'));
+                            // if ($file_berita == null)
+                            //     $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = null;
+                            // else {
+                            //     if ($file_berita['status'] == "Success" && count($file_berita['data']) > 0)
+                            //         $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = $file_berita['data'];
+                            //     else
+                            //         $data['kegiatan'][$indexKegiatan]['file_berita_acara'] = null;
+                            // }
+                            // $data['kegiatan'][$indexKegiatan]['file_invoice'] = null;
                             // ==================== File invoice ===========================
-                            $file_invoice = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
-                            if ($file_invoice == null)
-                                $data['kegiatan'][$indexKegiatan]['file_invoice'] = null;
-                            else {
-                                if ($file_invoice['status'] == "Success" && count($file_invoice['data']) > 0)
-                                    $data['kegiatan'][$indexKegiatan]['file_invoice'] = $file_invoice['data'];
-                                else
-                                    $data['kegiatan'][$indexKegiatan]['file_invoice'] = null;
-                            }
-
-                            // ==================== File Bukti pembayaran ===========================
-                            $file_bukti_pembayaran = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
-                            if ($file_bukti_pembayaran == null)
-                                $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = null;
-                            else {
-                                if ($file_bukti_pembayaran['status'] == "Success" && count($file_bukti_pembayaran['data']) > 0)
-                                    $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = $file_bukti_pembayaran['data'];
-                                else
-                                    $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = null;
-                            }
+                            // $file_invoice = $this->Kegiatan_model->view_invoice($val['id_kegiatan'], $this->session->userdata('token'));
+                            // if ($file_invoice == null)
+                            //     $data['kegiatan'][$indexKegiatan]['file_invoice'] = null;
+                            // else {
+                            //     if ($file_invoice['status'] == "Success" && count($file_invoice['data']) > 0)
+                            //         $data['kegiatan'][$indexKegiatan]['file_invoice'] = $file_invoice['data'];
+                            //     else
+                            //         $data['kegiatan'][$indexKegiatan]['file_invoice'] = null;
+                            // }
+                            
+                            $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = null;
+                            
+                            // // ==================== File Bukti pembayaran ===========================
+                            // $file_bukti_pembayaran = $this->Kegiatan_model->view_bukti_pembayaran($val['id_kegiatan'], $this->session->userdata('token'));
+                            // if ($file_bukti_pembayaran == null)
+                            //     $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = null;
+                            // else {
+                            //     if ($file_bukti_pembayaran['status'] == "Success" && count($file_bukti_pembayaran['data']) > 0)
+                            //         $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = $file_bukti_pembayaran['data'];
+                            //     else
+                            //         $data['kegiatan'][$indexKegiatan]['file_bukti_pembayaran'] = null;
+                            // }
 
 
                             $indexKegiatan++;

@@ -10,7 +10,11 @@
 
 <!-- Page level plugins -->
 <script src="<?=base_url('assets/chart.js/Chart.min.js')?>"></script>
-  
+
+  <!-- Page level plugins -->
+  <script src="<?=base_url('assets/js/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js')?>"></script>
+<script src="<?=base_url('assets/datatables/jquery.dataTables.min.js')?>"></script>
+<script src="<?=base_url('assets/datatables/dataTables.bootstrap4.min.js')?>"></script>
 
 
 <!-- Page level plugins -->

@@ -1313,7 +1313,6 @@ class Infografis_data extends CI_Controller
                         $no_data_infografis = 1;
                         foreach ($data['infografis_file_balai_table'] as $val) {
                             $data['infografis_file_balai_table'][$index_data_infografis]['no_infografis_file'] = $no_data_infografis;
-
                             $index_data_infografis++;
                             $no_data_infografis++;
                         }
