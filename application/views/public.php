@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Favicons -->
     <link href="<?=base_url('assets/image/pupr-logo.svg')?>" rel="icon">
 
-   
+
     <!-- =======================================================
   * Template Name: Vesperr - v4.7.0
   * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
@@ -30,6 +30,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- Vendor CSS Files -->
     <link href="<?=base_url('assets/public_component/vendor/aos/aos.css')?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="<?=base_url('assets/public_component/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
     <link href="<?=base_url('assets/public_component/vendor/bootstrap-icons/bootstrap-icons.css')?>" rel="stylesheet">
     <link href="<?=base_url('assets/public_component/vendor/boxicons/css/boxicons.min.css')?>" rel="stylesheet">
@@ -66,7 +69,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <li class="dropdown"><a href="#about"><span>2020</span> <i
                                                 class="bi bi-chevron-right"></i></a>
                                         <ul>
-                                            <li><a href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf">All</a></li>
+                                            <li><a
+                                                    href="https://api.classico.id/pupr/uploads//file/file_modul/Infografis_BJKW_II_Plg_Update_26_-_02_-_2021_1642079316.pdf">All</a>
+                                            </li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Sumatera
                                                     Selatan</a></li>
                                             <li><a href="<?= base_url();?>Infografis/infografis_data_null">Kep.
@@ -194,7 +199,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <li><a href="#lapas_2">Lapas</a></li>
                             <li><a href="#lapas_2">Instansi Lain</a></li>
                             <li><a href="#kso_1">KSO/PKS</a></li>
-                            
+
 
                         </ul>
                     </li>
@@ -217,15 +222,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a style="font-size:11px" href="#capaian_output_1">Rekap Pelaksanaan Kegiatan</a></li>
-                            <li><a style="font-size:11px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a></li>
+                            <li><a style="font-size:11px" href="#capaian_output_1">Rekap Peserta Berdasarkan Skema</a>
+                            </li>
                             <li><a style="font-size:11px" href="#mtu_1">MTU</a></li>
                             <li><a style="font-size:11px" href="#ppp_1">Program Padat Karya</a></li>
-                            <li><a style="font-size:11px" href="#ppp_1">Rekap Peserta Berdasarkan<br> Wilayah dan Pembiayaan</a></li>
-                            <li><a style="font-size:11px" href="#RPKBMK_1">Rekap Peserta Kegiatan<br> Berdasarkan Mitra Kerja</a></li>
-                            <li><a style="font-size:11px" href="#RPKBJK_1">Rekap Pelaksanaan Kegiatan <br>Berdasarkan Jenis Kegiatan</a></li>
-                            <li><a style="font-size:11px" href="#TKK_AHLI_1">Jumlah TKK Ahli Terlatih dan <br>Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
-                            <li><a style="font-size:11px" href="#TKK_TERAMPIL_1">Jumlah TKK Terampil Terlatih dan <br>Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
-                            
+                            <li><a style="font-size:11px" href="#ppp_1">Rekap Peserta Berdasarkan<br> Wilayah dan
+                                    Pembiayaan</a></li>
+                            <li><a style="font-size:11px" href="#RPKBMK_1">Rekap Peserta Kegiatan<br> Berdasarkan Mitra
+                                    Kerja</a></li>
+                            <li><a style="font-size:11px" href="#RPKBJK_1">Rekap Pelaksanaan Kegiatan <br>Berdasarkan
+                                    Jenis Kegiatan</a></li>
+                            <li><a style="font-size:11px" href="#TKK_AHLI_1">Jumlah TKK Ahli Terlatih dan
+                                    <br>Tersertifikasi Berdasarkan Jabatan Kerja</a></li>
+                            <li><a style="font-size:11px" href="#TKK_TERAMPIL_1">Jumlah TKK Terampil Terlatih dan
+                                    <br>Tersertifikasi Berdasarkan Jabatan Kerja </a></li>
+
                         </ul>
                     </li>
 
@@ -245,16 +256,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div id="hero1">
 
-            <img id="home1" src="<?=base_url('assets/image/home1.png')?>" loading="lazy" width="100%" height="100%" alt="">
+            <img id="home1" src="<?=base_url('assets/image/home1.png')?>" loading="lazy" width="100%" height="100%"
+                alt="">
 
         </div>
 
-        
+
+
+
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients clients">
-        
+
             <div class="container">
-            
+
                 <div class="row">
 
                     <div class="col-lg-2 col-md-4 col-6">
@@ -288,7 +302,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-2 col-md-4 col-6">
                         <a href="#se_kepala_daerah_section">
                             <img src="<?= base_url();?>assets/illustration/SE_Kepala_Daerah.png" class="img-fluid"
-                                alt="" data-aos="zoom-in" data-aos-delay="300" style="width:100% height:100%" loading="lazy">
+                                alt="" data-aos="zoom-in" data-aos-delay="300" style="width:100% height:100%"
+                                loading="lazy">
                         </a>
                     </div>
 
@@ -304,10 +319,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </section><!-- End Clients Section -->
 
+        <div class="container">
+            <marquee width="100%" direction="right" height="100px">
+                <h2> Selamat Datang di Web Informasi Balai Jasa konstruksi 2
+                    Palembang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selamat
+                    Datang di Web Informasi Balai Jasa konstruksi 2 Palembang</h2>
+            </marquee>
+        </div>
+
         <!-- ======= Mitra Section ======= -->
         <section id="about" class="about mt-5">
-        
-            <div class="container"  id="mitra_section">
+
+            <div class="container" id="mitra_section">
 
                 <div class="section-title" data-aos="fade-up">
                     <h2>Mitra Balai Jasa Konstruksi Wilayah II Palembang</h2>
@@ -380,7 +403,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
         <!-- ======= Balai Sektoral Kemetrian PUPR Section ======= -->
         <section id="balai_pupr" class="balai_pupr">
-        
+
             <div class="container">
                 <div class="row content">
                     <div class="col">
@@ -450,7 +473,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section>
         <!-- ======= OPD dan Vokasi ======= -->
         <section id="opd_1" class="count">
-        
+
             <div class="container">
                 <div class="row">
 
@@ -579,7 +602,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- OPD dan Vokasi Section -->
         <!-- ======= Asosiasi Profesi dan Asosias BUJK ======= -->
         <section id="asosiasi_1" class="asosiasi_profesi">
-        
+
             <div class="container">
                 <div class="row">
                     <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
@@ -1042,10 +1065,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- KSO/PKS Section -->
-       <!-- Capaian Output Section -->
+        <!-- Capaian Output Section -->
         <!-- ======= Instruktur ======= -->
         <section id="instruktur" class="instruktur">
-       
+
             <div class="container" id="instruktur_section">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Instruktur</h2>
@@ -1178,15 +1201,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- Instruktur Section -->
         <!-- ======= Asesor ======= -->
         <section id="asesor" class="counts">
-        
+
             <div class="container" id="asesor_section">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Asesor</h2>
                     <p>Asesor Kompetensi Tenaga Kerja Konstruksi dan Asesor Badan Usaha</p>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start"
-                        >
+                    <div class="col-xl-6 d-flex align-items-stretch justify-content-center justify-content-xl-start">
                         <div class="card mb-4">
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-black" id="">Asesor Kompetensi Tenaga Kerja
@@ -1312,7 +1334,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </section><!-- Asesor Section -->
         <!-- ======= SE Kepala Daerah ======= -->
         <section id="se_kepala_daerah" class="se_kepala_daerah">
-        
+
             <div class="container" id="se_kepala_daerah_section">
 
                 <div class="section-title" data-aos="fade-up">
@@ -1798,7 +1820,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     </div>
                                 </div>
                                 <div class="chart-container-RPKBMK">
-                                <canvas id="RPKBMK" height=""></canvas>
+                                    <canvas id="RPKBMK" height=""></canvas>
                                 </div>
                             </div>
                         </div>
@@ -1869,9 +1891,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_RPKBS">
                                     </div>
                                 </div>
-                                
-                                    <canvas id="RPKBS" height=""></canvas>
-                             
+
+                                <canvas id="RPKBS" height=""></canvas>
+
                             </div>
                         </div>
                     </div>
@@ -2014,7 +2036,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- Capaian Output Section -->
-        
+
         <section id="her">
             <div class="container">
 
@@ -2025,10 +2047,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Capaian Output Section -->
-        <div id="her">
 
-            <img id="her" src="<?=base_url('assets/image/foto_bersama.jpg')?>" width="100%" height="100%" loading="lazy" alt="">
+        <div class="container">
+            <h2>Carousel Example</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
 
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="<?= base_url('assets/public_component/img/slide_1.jpeg')?>" alt="Kalender 1"
+                            style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="<?= base_url('assets/public_component/img/slide_2.jpeg')?>" alt="Kalender 2"
+                            style="width:100%;">
+                    </div>
+
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
 
         <!-- ======= Contact Section ======= -->
@@ -2108,12 +2162,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
     <?php $this->load->view("components/js_public.php") ?>
 
     <!-- Vendor JS Files -->
     <script src="<?= base_url('assets/public_component/vendor/purecounter/purecounter.js')?>"></script>
     <script src="<?= base_url('assets/public_component/vendor/aos/aos.js')?>"></script>
-    
+
     <script src="<?=base_url('assets/public_component/vendor/glightbox/js/glightbox.min.js')?>"></script>
     <script src="<?=base_url('assets/public_component/vendor/isotope-layout/isotope.pkgd.min.js')?>"></script>
     <script src="<?=base_url('assets/public_component/vendor/swiper/swiper-bundle.min.js')?>"></script>
@@ -2123,6 +2178,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?= base_url('assets/public_component/js/main.js')?>"></script>
     <script src="<?=base_url('assets/js/chartjs-plugin-datalabels/chartjs-plugin-datalabels.js')?>"></script>
     <script src="<?=base_url('assets/js/administrator/public.js')?>"></script>
+
 </body>
 
 </html>
