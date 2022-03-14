@@ -2047,9 +2047,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Capaian Output Section -->
+        <div id="her">
 
+            <img id="her" src="<?=base_url('assets/image/foto_bersama.jpg')?>" width="100%" height="100%" loading="lazy"
+                alt="">
+
+        </div>
+        <section id="her">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Jadwal Kegiatan</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                </div>
+
+            </div>
+        </section>
         <div class="container">
-            <h2>Carousel Example</h2>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -2062,12 +2076,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="carousel-inner">
                     <div class="item active">
                         <img src="<?= base_url('assets/public_component/img/slide_1.jpeg')?>" alt="Kalender 1"
-                            style="width:100%;">
+                            style="width:100%;" loading="lazy">
                     </div>
 
                     <div class="item">
                         <img src="<?= base_url('assets/public_component/img/slide_2.jpeg')?>" alt="Kalender 2"
-                            style="width:100%;">
+                            style="width:100%;" loading="lazy">
                     </div>
 
 
