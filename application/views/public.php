@@ -2047,9 +2047,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
             </div>
         </section><!-- End Capaian Output Section -->
+        <div id="her">
 
+            <img id="her" src="<?=base_url('assets/image/foto_bersama.jpg')?>" width="100%" height="100%" loading="lazy"
+                alt="">
+
+        </div>
+        <section id="her">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Jadwal Kegiatan</h2>
+                    <p>Balai Jasa Konstruksi Wilayah II Palembang</p>
+                </div>
+
+            </div>
+        </section>
         <div class="container">
-            <h2>Carousel Example</h2>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
