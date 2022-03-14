@@ -236,9 +236,6 @@
                                         <h1>Loading Data ....</h1>
                                     </div>
                                 </div>
-
-
-
                                 <canvas id="chartData"></canvas>
                             </div>
                         </div>
