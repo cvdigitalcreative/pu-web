@@ -2075,13 +2075,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="<?= base_url('assets/public_component/img/slide_1.jpeg')?>" alt="Kalender 1"
-                            style="width:100%;" loading="lazy">
-                    </div>
-
-                    <div class="item">
-                        <img src="<?= base_url('assets/public_component/img/slide_2.jpeg')?>" alt="Kalender 2"
-                            style="width:100%;" loading="lazy">
+                        <img src="<?= base_url('assets/public_component/img/slide_3.png')?>" alt="Kalender 1"
+                            style="width:110%;" loading="lazy">
                     </div>
 
 
