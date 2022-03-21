@@ -481,6 +481,11 @@ section {
     overflow: hidden;
 }
 
+#section_custom {
+    padding: 50px 0;
+    overflow: hidden;
+}
+
 .section-bg {
     background-color: #ed9a28;
 }
