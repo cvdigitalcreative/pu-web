@@ -4040,6 +4040,9 @@ $(document).ready(function() {
                         var display_y_axis = true
                         var display_x_axis = false
                     } else {
+                        var height_bar_mobile = 60
+                        var height_bar_mobile_300 = 160
+                        var height_bar = 50
                         var display_y_axis = false
                         var display_x_axis = true
                     }

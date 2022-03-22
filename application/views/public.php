@@ -1829,9 +1829,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <div class="loader_RPKBMK">
                                     </div>
                                 </div>
-                                <div class="chart-container-RPKBMK">
+                               
                                     <canvas id="RPKBMK" height=""></canvas>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
