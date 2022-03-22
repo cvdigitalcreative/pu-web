@@ -2857,7 +2857,7 @@ class Infografis_data extends CI_Controller
     public function delete_file_infografis_mitra($id_file_infografis){
         if($this->session->userdata('logged_in') == true){
             $delete_file_infografis = $this->Infografis_File_model->delete_infografis_file($id_file_infografis, $this->session->userdata('token'));
-            echo var_dump($delete_infografis);
+            
             if ($delete_file_infografis == null) {
                 $this->load->view('error_page');
             } else {
